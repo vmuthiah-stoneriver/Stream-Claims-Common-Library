@@ -1,0 +1,7 @@
+ClearCase CopyAreaDB|4
+iip_starter_kit\claim_starter_kit\common-intrg\src\main\java\com\client\iip\integration\reports
+2
+3
+18:ISOSearchRequestDTO.java|1|14c95712ac8|1311|fb99eb29|82a3f8753be84edfa410ebd325a2f650|0
+18:CLUEReportBatchTask.java|1|15044315db5|902|ca4a0f5d|5d0939f5d9da4534a59e441c2cee5b41|0
+12:CLUEReportDTO.java|1|14c95712a96|8f5|8d55efc4|e95a58d7004046b4a0cd37642d5e0b14|0

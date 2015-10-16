@@ -1,0 +1,32 @@
+<claimImportCompositeDTO>
+<claimNumber>PAL 29696700</claimNumber>
+<claimDocs class="list">
+      <documentDTO>
+      	 <recordSourceCode>cal</recordSourceCode>
+      	 <agreementTypeCodeDerived>clm</agreementTypeCodeDerived>
+         <sourceCode>elecmedafile</sourceCode>
+         <formatCode>jpg</formatCode>
+         <documentName>Claimant Information</documentName>
+         <documentSourceCode>elecmedafile</documentSourceCode>
+         <categoryCode>gnrl</categoryCode>
+         <categoryTypeCode>extlfile</categoryTypeCode>
+         <generatedByCode>system</generatedByCode>
+         <assignedUserId>2258</assignedUserId>
+         <assignedCompanyOrgUnitId>3000186</assignedCompanyOrgUnitId>
+         <companyIdDerived>2</companyIdDerived>
+         <companyLOBIdDerived>303</companyLOBIdDerived>
+         <marketTypeCodeDerived>stnd</marketTypeCodeDerived>
+          <documentDescription>Inbound Document attachment - FNOL</documentDescription>
+          <documentStatus>
+          	<currentStatus>
+          		<effectiveDateTime>2012-06-01 00:00:00.000 CDT</effectiveDateTime>
+          		<documentStatusCode>scan</documentStatusCode>
+          		<documentStateCode>attch</documentStateCode>
+          	</currentStatus>
+           </documentStatus>
+			<documentdueDate>2015-10-18 00:00:00.000 CDT</documentdueDate>
+			<documentFileName>87880000.jpg</documentFileName>
+			<documentFileLocationCode>network_file</documentFileLocationCode>
+      </documentDTO>
+   </claimDocs>
+</claimImportCompositeDTO>

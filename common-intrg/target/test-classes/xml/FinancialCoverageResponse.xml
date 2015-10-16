@@ -1,0 +1,26 @@
+<list>
+  <viewClaimReserveTransClaimLevelResult>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <reserveLevel>claim</reserveLevel>
+    <coverageTypeCode>mp</coverageTypeCode>
+    <coverageName>Medical Payment</coverageName>
+    <claimId>8401</claimId>
+    <outstandingLosses>90.00</outstandingLosses>
+    <outstandingExpenses>0</outstandingExpenses>
+    <outstandingRecoveries>0</outstandingRecoveries>
+    <lossesPaid>-10.00</lossesPaid>
+    <expensesPaid>0</expensesPaid>
+    <recoveriesPosted>0</recoveriesPosted>
+    <totalPaid>-10.00</totalPaid>
+    <totalIncurred>100.00</totalIncurred>
+    <totalLossIncurred>100.00</totalLossIncurred>
+    <pendingLossesPaid>0</pendingLossesPaid>
+    <scheduledLossesPaid>0</scheduledLossesPaid>
+    <pendingExpensesPaid>0</pendingExpensesPaid>
+    <scheduledExpensesPaid>0</scheduledExpensesPaid>
+    <pendingLossesReserve>0</pendingLossesReserve>
+    <pendingExpensesReserve>0</pendingExpensesReserve>
+  </viewClaimReserveTransClaimLevelResult>
+</list>

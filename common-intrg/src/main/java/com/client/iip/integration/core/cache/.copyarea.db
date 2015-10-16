@@ -1,0 +1,8 @@
+ClearCase CopyAreaDB|4
+iip_starter_kit\claim_starter_kit\common-intrg\src\main\java\com\client\iip\integration\core\cache
+2
+4
+17:CodeLookUpCacheKey.java|1|14c95712140|719|e64a1191|5a4a39cd07094aac98169a6bb6c59c68|0
+1f:ThreadLocalCodeLookUpCache.java|1|14c95712172|151a|d62dbf72|b587554b101742168ebb188a7658285f|0
+1e:CacheKeyNotFoundException.java|1|14c95712118|fd|ce2a4efc|d4f7cc7fd796463e85bf034cee190466|0
+14:CodeLookUpCache.java|1|14c9571214a|50c|23b7a3d7|9bd1e0b195344b04a35cbd6daafafbe5|0

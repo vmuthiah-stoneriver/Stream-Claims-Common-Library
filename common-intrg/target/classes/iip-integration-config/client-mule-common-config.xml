@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:vm="http://www.mulesoft.org/schema/mule/vm"
+   xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:mulexml="http://www.mulesoft.org/schema/mule/xml"
+   xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:spring="http://www.springframework.org/schema/beans"
+   xmlns:core="http://www.mulesoft.org/schema/mule/core" xmlns:jersey="http://www.mulesoft.org/schema/mule/jersey"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+   xmlns:jee="http://www.springframework.org/schema/jee" xmlns:stdio="http://www.mulesoft.org/schema/mule/stdio"
+   xmlns:scripting="http://www.mulesoft.org/schema/mule/scripting" xmlns:servlet="http://www.mulesoft.org/schema/mule/servlet"
+   xmlns:file="http://www.mulesoft.org/schema/mule/file" xmlns:https="http://www.mulesoft.org/schema/mule/https"
+   xsi:schemaLocation="
+http://www.mulesoft.org/schema/mule/vm http://www.mulesoft.org/schema/mule/vm/3.3/mule-vm.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/3.3/mule-http.xsd
+http://www.mulesoft.org/schema/mule/https http://www.mulesoft.org/schema/mule/https/3.3/mule-https.xsd 
+http://www.mulesoft.org/schema/mule/xml http://www.mulesoft.org/schema/mule/xml/3.3/mule-xml.xsd
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/3.3/mule.xsd
+http://www.mulesoft.org/schema/mule/jersey http://www.mulesoft.org/schema/mule/jersey/3.3/mule-jersey.xsd
+http://www.mulesoft.org/schema/mule/stdio http://www.mulesoft.org/schema/mule/stdio/3.3/mule-stdio.xsd
+http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/file/3.3/mule-file.xsd
+http://www.mulesoft.org/schema/mule/scripting http://www.mulesoft.org/schema/mule/scripting/3.3/mule-scripting.xsd
+http://www.mulesoft.org/schema/mule/servlet http://www.mulesoft.org/schema/mule/servlet/3.3/mule-servlet.xsd
+">
+
+    <configuration>
+        <default-dispatcher-threading-profile maxThreadsActive="200" maxThreadsIdle="25" doThreading="true"    
+			threadTTL="30000" threadWaitTimeout="6000" poolExhaustedAction="WAIT"    maxBufferSize="400"/>
+        <default-receiver-threading-profile  maxThreadsActive="200" maxThreadsIdle="25" doThreading="true"    
+			threadTTL="30000" threadWaitTimeout="6000" poolExhaustedAction="WAIT"    maxBufferSize="400"/>
+        <default-service-threading-profile  maxThreadsActive="200" maxThreadsIdle="25" doThreading="true"    
+			threadTTL="30000" threadWaitTimeout="6000" poolExhaustedAction="WAIT"    maxBufferSize="400"/>
+    </configuration>
+    
+
+   <message-properties-transformer name="MuleMessagePropertiesTransformer">
+      <!-- Delete Mule Sessions to remove Mule version dependency/incompatibility -->
+      <delete-message-property key="MULE_SESSION" />
+      <delete-message-property key="X-MULE_SESSION" />
+   </message-properties-transformer>
+
+   <byte-array-to-string-transformer name="ByteArrayToString" />
+
+
+   <!-- Payload filter service flow -->
+   <model>
+      <service name="payloadFilterService">
+         <inbound>
+            <vm:inbound-endpoint path="payloadRouter" exchange-pattern="request-response"
+               connector-ref="vmSync" />
+         </inbound>
+
+         <outbound>
+			
+            <filtering-router>
+               <vm:outbound-endpoint path="userErrorHandler" exchange-pattern="request-response"
+                  connector-ref="vmSync" />
+               <or-filter>
+                  <payload-type-filter expectedType="com.fiserv.isd.iip.core.util.IIPCoreSystemException" />
+                  <expression-filter evaluator="groovy"
+                     expression="message.getInboundProperty('interface','ERR')=='INBNDERR'" />
+               </or-filter>
+            </filtering-router>
+
+            <filtering-router>
+               <vm:outbound-endpoint path="partyUpdate" exchange-pattern="request-response"
+                  connector-ref="vmSync" />
+               <expression-filter evaluator="groovy" expression="message.getInboundProperty('interface','ERR')=='CUID'" />
+            </filtering-router>
+            
+            <!-- Order Response Flow Added -->
+            <filtering-router>
+               <vm:outbound-endpoint path="orderUpdate" exchange-pattern="request-response"
+                  connector-ref="vmSync" />
+               <expression-filter evaluator="groovy" expression="message.getInboundProperty('interface','ERR')=='ORDRESP'" />
+            </filtering-router>
+            <!-- End -->
+            
+            <filtering-router>
+               <vm:outbound-endpoint path="nextClaimNumber" exchange-pattern="request-response"
+                  connector-ref="vmSync" />
+               <and-filter>
+                  <payload-type-filter expectedType="com.stoneriver.iip.claims.ClaimDTO" />
+                  <expression-filter evaluator="groovy" expression="message.getInboundProperty('interface','ERR')=='GNCN'" />
+               </and-filter>
+            </filtering-router>
+
+            <filtering-router>
+               <vm:outbound-endpoint path="partyDuplicate" exchange-pattern="request-response"
+                  connector-ref="vmSync" />
+                  <expression-filter evaluator="groovy" expression="message.getInboundProperty('interface','ERR')=='DUPC'" />
+            </filtering-router>
+
+            <filtering-router>
+               <vm:outbound-endpoint path="customerSearch" exchange-pattern="request-response"
+                  connector-ref="vmSync" />
+               <and-filter>
+                  <payload-type-filter expectedType="com.fiserv.isd.iip.bc.party.search.PartySearchCriteria" />
+                  <expression-filter evaluator="groovy" expression="message.getInboundProperty('interface','ERR')=='CUSL'" />
+               </and-filter>
+            </filtering-router>
+
+            <filtering-router>
+               <vm:outbound-endpoint path="customerDetail" exchange-pattern="request-response"
+                  connector-ref="vmSync" />
+               <and-filter>
+                  <payload-type-filter expectedType="java.lang.Long" />
+                  <expression-filter evaluator="groovy" expression="message.getInboundProperty('interface','ERR')=='CUSD'" />
+               </and-filter>
+            </filtering-router>
+
+            <filtering-router>
+               <vm:outbound-endpoint path="retrieveCompany" exchange-pattern="request-response"
+                  connector-ref="vmSync" />
+               <and-filter>
+                  <payload-type-filter expectedType="java.lang.Long" />
+                  <expression-filter evaluator="groovy"
+                     expression="message.getInboundProperty('interface','ERR')=='GCNI_RCOMP'" />
+               </and-filter>
+            </filtering-router>
+
+            <filtering-router>
+               <vm:outbound-endpoint path="retrieveCompanyLOB" exchange-pattern="request-response"
+                  connector-ref="vmSync" />
+               <and-filter>
+                  <payload-type-filter expectedType="java.lang.Long" />
+                  <expression-filter evaluator="groovy"
+                     expression="message.getInboundProperty('interface','ERR')=='GCNI_RCLOB'" />
+               </and-filter>
+            </filtering-router>
+
+            <filtering-router>
+               <vm:outbound-endpoint path="retrieveCities" exchange-pattern="request-response"
+                  connector-ref="vmSync" />
+               <and-filter>
+                  <payload-type-filter expectedType="com.fiserv.isd.iip.bc.postalcodesearch.PostalCodeJurisdictionDTO" />
+                  <expression-filter evaluator="groovy"
+                     expression="message.getInboundProperty('interface','ERR')=='GCNI_RCITI'" />
+               </and-filter>
+            </filtering-router>
+
+            <filtering-router>
+               <vm:outbound-endpoint path="retrieveCounties" exchange-pattern="request-response"
+                  connector-ref="vmSync" />
+               <and-filter>
+                  <payload-type-filter expectedType="com.fiserv.isd.iip.bc.postalcodesearch.PostalCodeJurisdictionDTO" />
+                  <expression-filter evaluator="groovy"
+                     expression="message.getInboundProperty('interface','ERR')=='GCNI_RCNTY'" />
+               </and-filter>
+            </filtering-router>
+
+            <filtering-router>
+               <vm:outbound-endpoint path="retrieveStates" exchange-pattern="request-response"
+                  connector-ref="vmSync" />
+               <and-filter>
+                  <payload-type-filter expectedType="com.fiserv.isd.iip.bc.postalcodesearch.PostalCodeJurisdictionDTO" />
+                  <expression-filter evaluator="groovy"
+                     expression="message.getInboundProperty('interface','ERR')=='GCNI_RSTE'" />
+               </and-filter>
+            </filtering-router>
+
+            <filtering-router>
+               <vm:outbound-endpoint path="retrieveReserveFinancialData" exchange-pattern="request-response"
+                  connector-ref="vmSync" />
+               <and-filter>
+                  <payload-type-filter expectedType="com.stoneriver.iip.claims.reserve.ViewClaimReserveFTCriteria" />
+                  <expression-filter evaluator="groovy"
+                     expression="message.getInboundProperty('interface','ERR')=='GCNI_RRFT'" />
+               </and-filter>
+            </filtering-router>
+
+            <filtering-router>
+               <vm:outbound-endpoint path="retrieveCoverageFinancialData" exchange-pattern="request-response"
+                  connector-ref="vmSync" />
+               <and-filter>
+                  <payload-type-filter expectedType="com.stoneriver.iip.claims.reserve.ViewClaimReserveFTCriteria" />
+                  <expression-filter evaluator="groovy"
+                     expression="message.getInboundProperty('interface','ERR')=='GCNI_RCFT'" />
+               </and-filter>
+            </filtering-router>
+
+            <filtering-router>
+               <vm:outbound-endpoint path="retrieveMonetaryCategory" exchange-pattern="request-response"
+                  connector-ref="vmSync" />
+               <and-filter>
+                  <payload-type-filter expectedType="com.stoneriver.iip.claims.reserve.CALClaimReserveDTO" />
+                  <expression-filter evaluator="groovy"
+                     expression="message.getInboundProperty('interface','ERR')=='GCNI_RMCC'" />
+               </and-filter>
+            </filtering-router>
+
+            <filtering-router>
+               <vm:outbound-endpoint path="retrieveNestedReserves" exchange-pattern="request-response"
+                  connector-ref="vmSync" />
+               <and-filter>
+                  <payload-type-filter expectedType="com.stoneriver.iip.claims.reserve.ClaimOpenReserveCriteria" />
+                  <expression-filter evaluator="groovy"
+                     expression="message.getInboundProperty('interface','ERR')=='GCNI_RRTN'" />
+               </and-filter>
+            </filtering-router>
+
+            <filtering-router>
+               <vm:outbound-endpoint path="claimImportFNOL" exchange-pattern="request-response"
+                  connector-ref="vmSync" />
+               <and-filter>
+                  <payload-type-filter expectedType="com.client.iip.integration.claim.imports.ClaimImportCompositeDTO" />
+                  <expression-filter evaluator="groovy" expression="message.getInboundProperty('interface','ERR')=='CIFN'" />
+               </and-filter>
+            </filtering-router>
+
+            <filtering-router>
+               <vm:outbound-endpoint path="claimDetails" exchange-pattern="request-response"
+                  connector-ref="vmSync" />
+               <and-filter>
+                  <payload-type-filter expectedType="com.stoneriver.iip.claims.details.ClaimDetailRequestCriteria" />
+                  <expression-filter evaluator="groovy" expression="message.getInboundProperty('interface','ERR')=='GCIF'" />
+               </and-filter>
+            </filtering-router>
+            <filtering-router>
+               <vm:outbound-endpoint path="claimSearch" exchange-pattern="request-response"
+                  connector-ref="vmSync" />
+               <and-filter>
+                  <payload-type-filter expectedType="com.stoneriver.iip.claims.search.ClaimSearchCriteriaDTO" />
+                  <expression-filter evaluator="groovy" expression="message.getInboundProperty('interface','ERR')=='GTCH'" />
+               </and-filter>
+            </filtering-router>
+
+            <filtering-router>
+               <vm:outbound-endpoint path="exportPaymentEndpoint" exchange-pattern="request-response"
+                  connector-ref="vmSync" />
+               <expression-filter evaluator="groovy" expression="message.getInboundProperty('interface','ERR')=='APEA'" />
+            </filtering-router>
+            
+            <filtering-router>
+               <vm:outbound-endpoint path="importPaymentEndpoint" exchange-pattern="request-response"
+                  connector-ref="vmSync" />
+               <expression-filter evaluator="groovy" expression="message.getInboundProperty('interface','ERR')=='APID'" />
+            </filtering-router>
+
+            <!-- Re Export Disbursements -->
+            <filtering-router>
+               <vm:outbound-endpoint path="reExportDisbursementsEndpoint" exchange-pattern="request-response"
+                  connector-ref="vmSync" />
+               <expression-filter evaluator="groovy" expression="message.getInboundProperty('interface','ERR')=='APRE'" />
+            </filtering-router>
+
+            <filtering-router>
+               <vm:outbound-endpoint path="vendorExtractEndpoint" exchange-pattern="request-response"
+                  connector-ref="vmSync" />
+               <and-filter>
+                  <payload-type-filter expectedType="com.client.iip.integration.party.VendorExportRequest" />
+                  <expression-filter evaluator="groovy" expression="message.getInboundProperty('interface','ERR')=='VDEX'" />
+               </and-filter>
+
+            </filtering-router>
+
+            <filtering-router>
+               <vm:outbound-endpoint path="retrieveCodeLookupEndpoint" exchange-pattern="request-response"
+                  connector-ref="vmSync" />
+               <expression-filter evaluator="groovy"
+                  expression="message.getInboundProperty('interface','ERR')=='GCNI_RCLD'" />
+            </filtering-router>
+
+            <filtering-router>
+               <vm:outbound-endpoint path="retrieveUsersEndpoint" exchange-pattern="request-response"
+                  connector-ref="vmSync" />
+               <expression-filter evaluator="groovy"
+                  expression="message.getInboundProperty('interface','ERR')=='GCNI_UserInfo'" />
+            </filtering-router>
+
+            <filtering-router>
+               <vm:outbound-endpoint path="retrieveUserDetailsEndpoint" exchange-pattern="request-response"
+                  connector-ref="vmSync" />
+               <expression-filter evaluator="groovy"
+                  expression="message.getInboundProperty('interface','ERR')=='GCNI_UserDetails'" />
+            </filtering-router>
+
+            <filtering-router>
+               <vm:outbound-endpoint path="documentOutboundEndpoint" exchange-pattern="request-response"
+                  connector-ref="vmSync" />
+               <expression-filter evaluator="groovy" expression="message.getInboundProperty('interface','ERR')=='DPOI'" />
+            </filtering-router>
+
+            <filtering-router>
+               <vm:outbound-endpoint path="BatchJobEndpoint" exchange-pattern="request-response"
+                  connector-ref="vmSync" />
+               <expression-filter evaluator="groovy"
+                  expression="message.getInboundProperty('interface','ERR')=='BatchJob'" />
+            </filtering-router>
+
+            <filtering-router>
+               <vm:outbound-endpoint path="RetrieveJobStatusEndpoint" exchange-pattern="request-response"
+                  connector-ref="vmSync" />
+               <expression-filter evaluator="groovy"
+                  expression="message.getInboundProperty('interface','ERR')=='BatchJobStatus'" />
+            </filtering-router>
+
+            <!-- Retrieve All LOBs by Company -->
+            <filtering-router>
+               <vm:outbound-endpoint path="retrieveAllLOBsByCompEndpoint" exchange-pattern="request-response"
+                  connector-ref="vmSync" />
+               <expression-filter evaluator="groovy"
+                  expression="message.getInboundProperty('interface','ERR')=='GCNI_lobByCompany'" />
+            </filtering-router>
+
+            <!-- Retrieve All Reserve Types by company LOB -->
+            <filtering-router>
+               <vm:outbound-endpoint path="retrieveAllReserveTypesEndpoint" exchange-pattern="request-response"
+                  connector-ref="vmSync" />
+               <expression-filter evaluator="groovy"
+                  expression="message.getInboundProperty('interface','ERR')=='GCNI_ReserveTypesByCompLOB'" />
+            </filtering-router>
+
+            <!-- Retrieve All Reserve Types with Monetary types -->
+            <filtering-router>
+               <vm:outbound-endpoint path="retrieveAllMonetaryTypesEndpoint" exchange-pattern="request-response"
+                  connector-ref="vmSync" />
+               <expression-filter evaluator="groovy"
+                  expression="message.getInboundProperty('interface','ERR')=='GCNI_MonetaryTypes'" />
+            </filtering-router>
+
+            <!-- Retrieve All Claim number prefixes -->
+            <filtering-router>
+               <vm:outbound-endpoint path="retrieveAllClaimNumberPrefixesEndpoint"
+                  exchange-pattern="request-response" connector-ref="vmSync" />
+               <expression-filter evaluator="groovy"
+                  expression="message.getInboundProperty('interface','ERR')=='GCNI_ClaimNumberPrefixes'" />
+            </filtering-router>
+
+            <filtering-router>
+               <vm:outbound-endpoint path="retrieveAllOrgUnitsEndpoint" exchange-pattern="request-response"
+                  connector-ref="vmSync" />
+               <expression-filter evaluator="groovy"
+                  expression="message.getInboundProperty('interface','ERR')=='GCNI_AllOrgUnits'" />
+            </filtering-router>
+
+            <!-- Retrieve All coverages with company, LOB and reserve type -->
+            <filtering-router>
+               <vm:outbound-endpoint path="retrieveAllCoveragesCompLOBRTEndpoint" exchange-pattern="request-response"
+                  connector-ref="vmSync" />
+               <expression-filter evaluator="groovy"
+                  expression="message.getInboundProperty('interface','ERR')=='GCNI_CoveragesCompLOBRT'" />
+            </filtering-router>
+
+            <!-- Retrieve All loss types with coverage, company, LOB and reserve type info -->
+            <filtering-router>
+               <vm:outbound-endpoint path="retrieveAllLossTypesCovCompLOBRTEndpoint"
+                  exchange-pattern="request-response" connector-ref="vmSync" />
+               <expression-filter evaluator="groovy"
+                  expression="message.getInboundProperty('interface','ERR')=='GCNI_LossTypesCovCompLOBRT'" />
+            </filtering-router>
+
+            <filtering-router>
+               <vm:outbound-endpoint path="documentInboundIntegrationEndpoint" exchange-pattern="request-response"
+                  connector-ref="vmSync" />
+               <expression-filter evaluator="groovy" expression="message.getInboundProperty('interface','ERR')=='DPII'" />
+            </filtering-router>
+            
+            <filtering-router>
+               <vm:outbound-endpoint path="orderUpdate" exchange-pattern="request-response"
+                  connector-ref="vmSync" />
+               <expression-filter evaluator="groovy" expression="message.getInboundProperty('interface','ERR')=='ORDRESP'" />
+            </filtering-router>            
+
+            <forwarding-catch-all-strategy>
+               <vm:outbound-endpoint path="systemErrorHandler" exchange-pattern="one-way"
+                  connector-ref="vmAsync" />
+            </forwarding-catch-all-strategy>
+         </outbound>
+
+      </service>
+   </model>
+
+   <!-- User Error Handler -->
+   <model>
+      <service name="UserErrorHandler">
+         <inbound>
+            <vm:inbound-endpoint path="userErrorHandler" exchange-pattern="request-response"
+               connector-ref="vmSync" />
+         </inbound>
+         <outbound>
+            <!-- transform authentication errors to send the correct HTTP headers -->
+            <filtering-router>
+               <vm:outbound-endpoint path="authenticationErrorHandler" exchange-pattern="request-response"
+                  connector-ref="vmSync" />
+               <payload-type-filter expectedType="org.springframework.security.authentication.AuthenticationServiceException" />
+            </filtering-router>
+
+            <!-- forward all else to the default handling -->
+            <forwarding-catch-all-strategy>
+               <vm:outbound-endpoint path="defaultErrorHandler" exchange-pattern="request-response"
+                  connector-ref="vmSync" />
+            </forwarding-catch-all-strategy>
+         </outbound>
+      </service>
+   </model>
+
+   <!-- Handle any unexpected errors. Errors could also be routed elsewhere, e.g. into an error file, send via email to a 
+      list, stored in a database, etc. -->
+   <flow name="SystemErrorHandler">
+      <vm:inbound-endpoint path="systemErrorHandler" exchange-pattern="request-response"
+         connector-ref="vmSync" />
+      <outbound-endpoint address="stdio://ERR" exchange-pattern="one-way" />
+   </flow>
+
+
+   <flow name="AuthenticationErrorHandler">
+      <vm:inbound-endpoint path="authenticationErrorHandler" exchange-pattern="request-response"
+         connector-ref="vmSync" />
+      <response>
+         <custom-processor name="interfaceAuthenticationFailedProcessor"
+            class="com.client.iip.integration.core.security.FailedAuthenticationMessageProcessor" />
+      </response>
+   </flow>
+
+   <model>
+      <service name="DefaultErrorHandler">
+         <inbound>
+            <vm:inbound-endpoint path="defaultErrorHandler" responseTransformer-refs="IIPObject2XMLTransformer"
+               exchange-pattern="request-response" connector-ref="vmSync" />
+         </inbound>
+      </service>
+   </model>
+</mule>
+

@@ -1,0 +1,27 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:include schemaLocation="../xsd/Address.xsd" />
+
+	<xs:annotation>
+		<xs:documentation>Address Verification Response Schema
+		</xs:documentation>
+	</xs:annotation>
+
+	<xs:element name="list">
+		<xs:annotation>
+			<xs:documentation>Collection of Address matches for the given address
+				search criteria
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="verifyAddressDTO" type="VerifyAddressDTO"
+					minOccurs="0" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Verified address list.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+</xs:schema>

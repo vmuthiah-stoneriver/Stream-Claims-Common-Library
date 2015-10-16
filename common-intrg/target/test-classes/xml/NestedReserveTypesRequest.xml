@@ -1,0 +1,11 @@
+<claimOpenReserveCriteria>
+    <companyLobId>2</companyLobId>
+    <unitTypeCode>veh</unitTypeCode>
+    <unitSubTypeCode>sch</unitSubTypeCode>
+    <covCode>collsn</covCode>
+    <participantType>ownr</participantType>
+    <reserveType>exp</reserveType>
+    <monetaryCategoryTypes class="list">
+       <string>exp</string>
+    </monetaryCategoryTypes>
+</claimOpenReserveCriteria>

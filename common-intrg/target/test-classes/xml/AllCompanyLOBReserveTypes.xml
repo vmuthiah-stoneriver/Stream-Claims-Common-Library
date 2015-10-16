@@ -1,0 +1,1405 @@
+<list>
+  <claimCompanyReserveTypesDTO>
+    <recordId>6003906</recordId>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <userIdCreated>2</userIdCreated>
+    <createdDateTime>2012-06-08 14:07:25.167 MDT</createdDateTime>
+    <userIdUpdated>3000100</userIdUpdated>
+    <updatedDateTime>2013-08-07 12:51:30.343 MDT</updatedDateTime>
+    <effectiveDateTime>2012-02-02 00:00:00.000 MST</effectiveDateTime>
+    <corpName>Pilgrim Insurance Company</corpName>
+    <compName>Acadia Insurance Company (B/O)</compName>
+    <compLOBName>Commercial Auto</compLOBName>
+    <enterpriseLOB>Commercial Automobile</enterpriseLOB>
+    <thresholdAmount>999999.00</thresholdAmount>
+    <corpId>100</corpId>
+    <compId>114</compId>
+    <compLOBId>110</compLOBId>
+    <reservTypeCd>clm_exp</reservTypeCd>
+    <reservTypeName>Claim Expense</reservTypeName>
+    <monetaryCategoryCd>exp</monetaryCategoryCd>
+  </claimCompanyReserveTypesDTO>
+  <claimCompanyReserveTypesDTO>
+    <recordId>6003902</recordId>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <userIdCreated>2</userIdCreated>
+    <createdDateTime>2012-06-08 14:07:25.167 MDT</createdDateTime>
+    <userIdUpdated>2</userIdUpdated>
+    <updatedDateTime>2013-02-06 14:07:21.801 MST</updatedDateTime>
+    <effectiveDateTime>2012-02-02 00:00:00.000 MST</effectiveDateTime>
+    <corpName>Pilgrim Insurance Company</corpName>
+    <compName>Acadia Insurance Company (B/O)</compName>
+    <compLOBName>Commercial Auto</compLOBName>
+    <enterpriseLOB>Commercial Automobile</enterpriseLOB>
+    <thresholdAmount>9999999.00</thresholdAmount>
+    <corpId>100</corpId>
+    <compId>114</compId>
+    <compLOBId>110</compLOBId>
+    <reservTypeCd>exp_recov</reservTypeCd>
+    <reservTypeName>Expense Recovery</reservTypeName>
+    <monetaryCategoryCd>rcvr</monetaryCategoryCd>
+  </claimCompanyReserveTypesDTO>
+  <claimCompanyReserveTypesDTO>
+    <recordId>6006600</recordId>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <userIdCreated>2</userIdCreated>
+    <createdDateTime>2013-05-24 09:36:49.529 MDT</createdDateTime>
+    <userIdUpdated>3000100</userIdUpdated>
+    <updatedDateTime>2013-08-07 13:00:04.910 MDT</updatedDateTime>
+    <effectiveDateTime>2012-02-02 00:00:00.000 MST</effectiveDateTime>
+    <endDateTime>2012-02-02 00:00:00.000 MST</endDateTime>
+    <corpName>Pilgrim Insurance Company</corpName>
+    <compName>Acadia Insurance Company (B/O)</compName>
+    <compLOBName>Commercial Auto</compLOBName>
+    <enterpriseLOB>Commercial Automobile</enterpriseLOB>
+    <thresholdAmount>999999.00</thresholdAmount>
+    <corpId>100</corpId>
+    <compId>114</compId>
+    <compLOBId>110</compLOBId>
+    <reservTypeCd>lgl_exp</reservTypeCd>
+    <reservTypeName>Legal Expense</reservTypeName>
+    <monetaryCategoryCd>exp</monetaryCategoryCd>
+  </claimCompanyReserveTypesDTO>
+  <claimCompanyReserveTypesDTO>
+    <recordId>6003905</recordId>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <userIdCreated>2</userIdCreated>
+    <createdDateTime>2012-06-08 14:07:25.167 MDT</createdDateTime>
+    <userIdUpdated>2</userIdUpdated>
+    <updatedDateTime>2012-08-31 08:50:19.117 MDT</updatedDateTime>
+    <effectiveDateTime>2012-02-02 00:00:00.000 MST</effectiveDateTime>
+    <corpName>Pilgrim Insurance Company</corpName>
+    <compName>Acadia Insurance Company (B/O)</compName>
+    <compLOBName>Commercial Auto</compLOBName>
+    <enterpriseLOB>Commercial Automobile</enterpriseLOB>
+    <thresholdAmount>999999.00</thresholdAmount>
+    <corpId>100</corpId>
+    <compId>114</compId>
+    <compLOBId>110</compLOBId>
+    <reservTypeCd>loss</reservTypeCd>
+    <reservTypeName>Loss</reservTypeName>
+    <monetaryCategoryCd>loss</monetaryCategoryCd>
+  </claimCompanyReserveTypesDTO>
+  <claimCompanyReserveTypesDTO>
+    <recordId>6003907</recordId>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <userIdCreated>3</userIdCreated>
+    <createdDateTime>2012-06-12 10:06:07.947 MDT</createdDateTime>
+    <userIdUpdated>2</userIdUpdated>
+    <updatedDateTime>2012-08-31 08:50:19.117 MDT</updatedDateTime>
+    <effectiveDateTime>2012-02-02 00:00:00.000 MST</effectiveDateTime>
+    <corpName>Pilgrim Insurance Company</corpName>
+    <compName>Acadia Insurance Company (B/O)</compName>
+    <compLOBName>Commercial Auto</compLOBName>
+    <enterpriseLOB>Commercial Automobile</enterpriseLOB>
+    <thresholdAmount>999999.00</thresholdAmount>
+    <corpId>100</corpId>
+    <compId>114</compId>
+    <compLOBId>110</compLOBId>
+    <reservTypeCd>loss_coll</reservTypeCd>
+    <reservTypeName>Loss Collision</reservTypeName>
+    <monetaryCategoryCd>loss</monetaryCategoryCd>
+  </claimCompanyReserveTypesDTO>
+  <claimCompanyReserveTypesDTO>
+    <recordId>6003908</recordId>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <userIdCreated>2</userIdCreated>
+    <createdDateTime>2012-08-31 08:50:19.117 MDT</createdDateTime>
+    <userIdUpdated>2</userIdUpdated>
+    <updatedDateTime>2013-01-30 15:12:14.892 MST</updatedDateTime>
+    <effectiveDateTime>2012-02-02 00:00:00.000 MST</effectiveDateTime>
+    <corpName>Pilgrim Insurance Company</corpName>
+    <compName>Acadia Insurance Company (B/O)</compName>
+    <compLOBName>Commercial Auto</compLOBName>
+    <enterpriseLOB>Commercial Automobile</enterpriseLOB>
+    <thresholdAmount>999999.00</thresholdAmount>
+    <corpId>100</corpId>
+    <compId>114</compId>
+    <compLOBId>110</compLOBId>
+    <reservTypeCd>med</reservTypeCd>
+    <reservTypeName>Loss Medical</reservTypeName>
+    <monetaryCategoryCd>loss</monetaryCategoryCd>
+  </claimCompanyReserveTypesDTO>
+  <claimCompanyReserveTypesDTO>
+    <recordId>6003901</recordId>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <userIdCreated>2</userIdCreated>
+    <createdDateTime>2012-06-08 14:07:25.167 MDT</createdDateTime>
+    <userIdUpdated>2</userIdUpdated>
+    <updatedDateTime>2013-02-06 14:07:21.801 MST</updatedDateTime>
+    <effectiveDateTime>2012-02-02 00:00:00.000 MST</effectiveDateTime>
+    <corpName>Pilgrim Insurance Company</corpName>
+    <compName>Acadia Insurance Company (B/O)</compName>
+    <compLOBName>Commercial Auto</compLOBName>
+    <enterpriseLOB>Commercial Automobile</enterpriseLOB>
+    <corpId>100</corpId>
+    <compId>114</compId>
+    <compLOBId>110</compLOBId>
+    <reservTypeCd>payrcvr</reservTypeCd>
+    <reservTypeName>Loss Payment Recovery</reservTypeName>
+    <monetaryCategoryCd>rcvr</monetaryCategoryCd>
+  </claimCompanyReserveTypesDTO>
+  <claimCompanyReserveTypesDTO>
+    <recordId>6003903</recordId>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <userIdCreated>2</userIdCreated>
+    <createdDateTime>2012-06-08 14:07:25.167 MDT</createdDateTime>
+    <userIdUpdated>2</userIdUpdated>
+    <updatedDateTime>2013-02-06 14:07:21.801 MST</updatedDateTime>
+    <effectiveDateTime>2012-02-02 00:00:00.000 MST</effectiveDateTime>
+    <corpName>Pilgrim Insurance Company</corpName>
+    <compName>Acadia Insurance Company (B/O)</compName>
+    <compLOBName>Commercial Auto</compLOBName>
+    <enterpriseLOB>Commercial Automobile</enterpriseLOB>
+    <corpId>100</corpId>
+    <compId>114</compId>
+    <compLOBId>110</compLOBId>
+    <reservTypeCd>salv</reservTypeCd>
+    <reservTypeName>Salvage</reservTypeName>
+    <monetaryCategoryCd>rcvr</monetaryCategoryCd>
+  </claimCompanyReserveTypesDTO>
+  <claimCompanyReserveTypesDTO>
+    <recordId>6003904</recordId>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <userIdCreated>2</userIdCreated>
+    <createdDateTime>2012-06-08 14:07:25.167 MDT</createdDateTime>
+    <effectiveDateTime>2012-02-02 00:00:00.000 MST</effectiveDateTime>
+    <corpName>Pilgrim Insurance Company</corpName>
+    <compName>Acadia Insurance Company (B/O)</compName>
+    <compLOBName>Commercial Auto</compLOBName>
+    <enterpriseLOB>Commercial Automobile</enterpriseLOB>
+    <corpId>100</corpId>
+    <compId>114</compId>
+    <compLOBId>110</compLOBId>
+    <reservTypeCd>subro</reservTypeCd>
+    <reservTypeName>Subrogation</reservTypeName>
+    <monetaryCategoryCd>rcvr</monetaryCategoryCd>
+  </claimCompanyReserveTypesDTO>
+  <claimCompanyReserveTypesDTO>
+    <recordId>6006506</recordId>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <userIdCreated>2</userIdCreated>
+    <createdDateTime>2012-06-08 14:04:03.108 MDT</createdDateTime>
+    <userIdUpdated>3000100</userIdUpdated>
+    <updatedDateTime>2013-08-07 13:00:04.910 MDT</updatedDateTime>
+    <effectiveDateTime>2012-02-02 00:00:00.000 MST</effectiveDateTime>
+    <corpName>Pilgrim Insurance Company</corpName>
+    <compName>Allstate - MAIP</compName>
+    <compLOBName>Personal Auto</compLOBName>
+    <enterpriseLOB>Personal Automobile</enterpriseLOB>
+    <thresholdAmount>999999.00</thresholdAmount>
+    <corpId>100</corpId>
+    <compId>101</compId>
+    <compLOBId>101</compLOBId>
+    <reservTypeCd>clm_exp</reservTypeCd>
+    <reservTypeName>Claim Expense</reservTypeName>
+    <monetaryCategoryCd>exp</monetaryCategoryCd>
+  </claimCompanyReserveTypesDTO>
+  <claimCompanyReserveTypesDTO>
+    <recordId>6006504</recordId>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <userIdCreated>2</userIdCreated>
+    <createdDateTime>2012-06-08 14:04:03.108 MDT</createdDateTime>
+    <userIdUpdated>2</userIdUpdated>
+    <updatedDateTime>2013-02-06 14:07:21.801 MST</updatedDateTime>
+    <effectiveDateTime>2012-02-02 00:00:00.000 MST</effectiveDateTime>
+    <corpName>Pilgrim Insurance Company</corpName>
+    <compName>Allstate - MAIP</compName>
+    <compLOBName>Personal Auto</compLOBName>
+    <enterpriseLOB>Personal Automobile</enterpriseLOB>
+    <corpId>100</corpId>
+    <compId>101</compId>
+    <compLOBId>101</compLOBId>
+    <reservTypeCd>exp_recov</reservTypeCd>
+    <reservTypeName>Expense Recovery</reservTypeName>
+    <monetaryCategoryCd>rcvr</monetaryCategoryCd>
+  </claimCompanyReserveTypesDTO>
+  <claimCompanyReserveTypesDTO>
+    <recordId>6006616</recordId>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <userIdCreated>2</userIdCreated>
+    <createdDateTime>2013-05-24 10:16:35.700 MDT</createdDateTime>
+    <userIdUpdated>2</userIdUpdated>
+    <updatedDateTime>2013-06-25 13:35:32.113 MDT</updatedDateTime>
+    <effectiveDateTime>2012-02-02 00:00:00.000 MST</effectiveDateTime>
+    <endDateTime>2012-02-02 00:00:00.000 MST</endDateTime>
+    <corpName>Pilgrim Insurance Company</corpName>
+    <compName>Allstate - MAIP</compName>
+    <compLOBName>Personal Auto</compLOBName>
+    <enterpriseLOB>Personal Automobile</enterpriseLOB>
+    <corpId>100</corpId>
+    <compId>101</compId>
+    <compLOBId>101</compLOBId>
+    <reservTypeCd>lgl_exp</reservTypeCd>
+    <reservTypeName>Legal Expense</reservTypeName>
+    <monetaryCategoryCd>exp</monetaryCategoryCd>
+  </claimCompanyReserveTypesDTO>
+  <claimCompanyReserveTypesDTO>
+    <recordId>6006505</recordId>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <userIdCreated>2</userIdCreated>
+    <createdDateTime>2012-06-08 14:04:03.108 MDT</createdDateTime>
+    <userIdUpdated>2</userIdUpdated>
+    <updatedDateTime>2012-08-31 08:50:19.117 MDT</updatedDateTime>
+    <effectiveDateTime>2012-02-02 00:00:00.000 MST</effectiveDateTime>
+    <corpName>Pilgrim Insurance Company</corpName>
+    <compName>Allstate - MAIP</compName>
+    <compLOBName>Personal Auto</compLOBName>
+    <enterpriseLOB>Personal Automobile</enterpriseLOB>
+    <thresholdAmount>999999.00</thresholdAmount>
+    <corpId>100</corpId>
+    <compId>101</compId>
+    <compLOBId>101</compLOBId>
+    <reservTypeCd>loss</reservTypeCd>
+    <reservTypeName>Loss</reservTypeName>
+    <monetaryCategoryCd>loss</monetaryCategoryCd>
+  </claimCompanyReserveTypesDTO>
+  <claimCompanyReserveTypesDTO>
+    <recordId>6006507</recordId>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <userIdCreated>3</userIdCreated>
+    <createdDateTime>2012-06-12 10:05:16.682 MDT</createdDateTime>
+    <userIdUpdated>2</userIdUpdated>
+    <updatedDateTime>2012-08-31 08:50:19.117 MDT</updatedDateTime>
+    <effectiveDateTime>2012-02-02 00:00:00.000 MST</effectiveDateTime>
+    <corpName>Pilgrim Insurance Company</corpName>
+    <compName>Allstate - MAIP</compName>
+    <compLOBName>Personal Auto</compLOBName>
+    <enterpriseLOB>Personal Automobile</enterpriseLOB>
+    <thresholdAmount>999999.00</thresholdAmount>
+    <corpId>100</corpId>
+    <compId>101</compId>
+    <compLOBId>101</compLOBId>
+    <reservTypeCd>loss_coll</reservTypeCd>
+    <reservTypeName>Loss Collision</reservTypeName>
+    <monetaryCategoryCd>loss</monetaryCategoryCd>
+  </claimCompanyReserveTypesDTO>
+  <claimCompanyReserveTypesDTO>
+    <recordId>6006508</recordId>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <userIdCreated>2</userIdCreated>
+    <createdDateTime>2012-08-31 08:50:19.117 MDT</createdDateTime>
+    <userIdUpdated>2</userIdUpdated>
+    <updatedDateTime>2013-01-30 15:12:14.892 MST</updatedDateTime>
+    <effectiveDateTime>2012-02-02 00:00:00.000 MST</effectiveDateTime>
+    <corpName>Pilgrim Insurance Company</corpName>
+    <compName>Allstate - MAIP</compName>
+    <compLOBName>Personal Auto</compLOBName>
+    <enterpriseLOB>Personal Automobile</enterpriseLOB>
+    <thresholdAmount>999999.00</thresholdAmount>
+    <corpId>100</corpId>
+    <compId>101</compId>
+    <compLOBId>101</compLOBId>
+    <reservTypeCd>med</reservTypeCd>
+    <reservTypeName>Loss Medical</reservTypeName>
+    <monetaryCategoryCd>loss</monetaryCategoryCd>
+  </claimCompanyReserveTypesDTO>
+  <claimCompanyReserveTypesDTO>
+    <recordId>6006501</recordId>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <userIdCreated>2</userIdCreated>
+    <createdDateTime>2012-06-08 14:04:03.108 MDT</createdDateTime>
+    <userIdUpdated>2</userIdUpdated>
+    <updatedDateTime>2013-02-06 14:07:21.801 MST</updatedDateTime>
+    <effectiveDateTime>2012-02-02 00:00:00.000 MST</effectiveDateTime>
+    <corpName>Pilgrim Insurance Company</corpName>
+    <compName>Allstate - MAIP</compName>
+    <compLOBName>Personal Auto</compLOBName>
+    <enterpriseLOB>Personal Automobile</enterpriseLOB>
+    <corpId>100</corpId>
+    <compId>101</compId>
+    <compLOBId>101</compLOBId>
+    <reservTypeCd>payrcvr</reservTypeCd>
+    <reservTypeName>Loss Payment Recovery</reservTypeName>
+    <monetaryCategoryCd>rcvr</monetaryCategoryCd>
+  </claimCompanyReserveTypesDTO>
+  <claimCompanyReserveTypesDTO>
+    <recordId>6006502</recordId>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <userIdCreated>2</userIdCreated>
+    <createdDateTime>2012-06-08 14:04:03.108 MDT</createdDateTime>
+    <userIdUpdated>2</userIdUpdated>
+    <updatedDateTime>2013-02-06 14:07:21.801 MST</updatedDateTime>
+    <effectiveDateTime>2012-02-02 00:00:00.000 MST</effectiveDateTime>
+    <corpName>Pilgrim Insurance Company</corpName>
+    <compName>Allstate - MAIP</compName>
+    <compLOBName>Personal Auto</compLOBName>
+    <enterpriseLOB>Personal Automobile</enterpriseLOB>
+    <corpId>100</corpId>
+    <compId>101</compId>
+    <compLOBId>101</compLOBId>
+    <reservTypeCd>salv</reservTypeCd>
+    <reservTypeName>Salvage</reservTypeName>
+    <monetaryCategoryCd>rcvr</monetaryCategoryCd>
+  </claimCompanyReserveTypesDTO>
+  <claimCompanyReserveTypesDTO>
+    <recordId>6006503</recordId>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <userIdCreated>2</userIdCreated>
+    <createdDateTime>2012-06-08 14:04:03.108 MDT</createdDateTime>
+    <effectiveDateTime>2012-02-02 00:00:00.000 MST</effectiveDateTime>
+    <corpName>Pilgrim Insurance Company</corpName>
+    <compName>Allstate - MAIP</compName>
+    <compLOBName>Personal Auto</compLOBName>
+    <enterpriseLOB>Personal Automobile</enterpriseLOB>
+    <corpId>100</corpId>
+    <compId>101</compId>
+    <compLOBId>101</compLOBId>
+    <reservTypeCd>subro</reservTypeCd>
+    <reservTypeName>Subrogation</reservTypeName>
+    <monetaryCategoryCd>rcvr</monetaryCategoryCd>
+  </claimCompanyReserveTypesDTO>
+  <claimCompanyReserveTypesDTO>
+    <recordId>6003706</recordId>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <userIdCreated>2</userIdCreated>
+    <createdDateTime>2012-06-08 14:04:03.108 MDT</createdDateTime>
+    <userIdUpdated>3000100</userIdUpdated>
+    <updatedDateTime>2013-08-07 13:00:04.910 MDT</updatedDateTime>
+    <effectiveDateTime>2012-02-02 00:00:00.000 MST</effectiveDateTime>
+    <corpName>Pilgrim Insurance Company</corpName>
+    <compName>Bankers Standard - MAIP</compName>
+    <compLOBName>Personal Auto</compLOBName>
+    <enterpriseLOB>Personal Automobile</enterpriseLOB>
+    <thresholdAmount>999999.00</thresholdAmount>
+    <corpId>100</corpId>
+    <compId>102</compId>
+    <compLOBId>102</compLOBId>
+    <reservTypeCd>clm_exp</reservTypeCd>
+    <reservTypeName>Claim Expense</reservTypeName>
+    <monetaryCategoryCd>exp</monetaryCategoryCd>
+  </claimCompanyReserveTypesDTO>
+  <claimCompanyReserveTypesDTO>
+    <recordId>6003704</recordId>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <userIdCreated>2</userIdCreated>
+    <createdDateTime>2012-06-08 14:04:03.108 MDT</createdDateTime>
+    <userIdUpdated>2</userIdUpdated>
+    <updatedDateTime>2013-02-06 14:07:21.801 MST</updatedDateTime>
+    <effectiveDateTime>2012-02-02 00:00:00.000 MST</effectiveDateTime>
+    <corpName>Pilgrim Insurance Company</corpName>
+    <compName>Bankers Standard - MAIP</compName>
+    <compLOBName>Personal Auto</compLOBName>
+    <enterpriseLOB>Personal Automobile</enterpriseLOB>
+    <corpId>100</corpId>
+    <compId>102</compId>
+    <compLOBId>102</compLOBId>
+    <reservTypeCd>exp_recov</reservTypeCd>
+    <reservTypeName>Expense Recovery</reservTypeName>
+    <monetaryCategoryCd>rcvr</monetaryCategoryCd>
+  </claimCompanyReserveTypesDTO>
+  <claimCompanyReserveTypesDTO>
+    <recordId>6003705</recordId>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <userIdCreated>2</userIdCreated>
+    <createdDateTime>2012-06-08 14:04:03.108 MDT</createdDateTime>
+    <userIdUpdated>2</userIdUpdated>
+    <updatedDateTime>2012-08-31 08:50:19.117 MDT</updatedDateTime>
+    <effectiveDateTime>2012-02-02 00:00:00.000 MST</effectiveDateTime>
+    <corpName>Pilgrim Insurance Company</corpName>
+    <compName>Bankers Standard - MAIP</compName>
+    <compLOBName>Personal Auto</compLOBName>
+    <enterpriseLOB>Personal Automobile</enterpriseLOB>
+    <thresholdAmount>999999.00</thresholdAmount>
+    <corpId>100</corpId>
+    <compId>102</compId>
+    <compLOBId>102</compLOBId>
+    <reservTypeCd>loss</reservTypeCd>
+    <reservTypeName>Loss</reservTypeName>
+    <monetaryCategoryCd>loss</monetaryCategoryCd>
+  </claimCompanyReserveTypesDTO>
+  <claimCompanyReserveTypesDTO>
+    <recordId>6003707</recordId>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <userIdCreated>3</userIdCreated>
+    <createdDateTime>2012-06-12 10:05:16.682 MDT</createdDateTime>
+    <userIdUpdated>2</userIdUpdated>
+    <updatedDateTime>2012-08-31 08:50:19.117 MDT</updatedDateTime>
+    <effectiveDateTime>2012-02-02 00:00:00.000 MST</effectiveDateTime>
+    <corpName>Pilgrim Insurance Company</corpName>
+    <compName>Bankers Standard - MAIP</compName>
+    <compLOBName>Personal Auto</compLOBName>
+    <enterpriseLOB>Personal Automobile</enterpriseLOB>
+    <thresholdAmount>999999.00</thresholdAmount>
+    <corpId>100</corpId>
+    <compId>102</compId>
+    <compLOBId>102</compLOBId>
+    <reservTypeCd>loss_coll</reservTypeCd>
+    <reservTypeName>Loss Collision</reservTypeName>
+    <monetaryCategoryCd>loss</monetaryCategoryCd>
+  </claimCompanyReserveTypesDTO>
+  <claimCompanyReserveTypesDTO>
+    <recordId>6003708</recordId>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <userIdCreated>2</userIdCreated>
+    <createdDateTime>2012-08-31 08:50:19.117 MDT</createdDateTime>
+    <userIdUpdated>2</userIdUpdated>
+    <updatedDateTime>2013-01-30 15:12:14.892 MST</updatedDateTime>
+    <effectiveDateTime>2012-02-02 00:00:00.000 MST</effectiveDateTime>
+    <corpName>Pilgrim Insurance Company</corpName>
+    <compName>Bankers Standard - MAIP</compName>
+    <compLOBName>Personal Auto</compLOBName>
+    <enterpriseLOB>Personal Automobile</enterpriseLOB>
+    <thresholdAmount>999999.00</thresholdAmount>
+    <corpId>100</corpId>
+    <compId>102</compId>
+    <compLOBId>102</compLOBId>
+    <reservTypeCd>med</reservTypeCd>
+    <reservTypeName>Loss Medical</reservTypeName>
+    <monetaryCategoryCd>loss</monetaryCategoryCd>
+  </claimCompanyReserveTypesDTO>
+  <claimCompanyReserveTypesDTO>
+    <recordId>6003701</recordId>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <userIdCreated>2</userIdCreated>
+    <createdDateTime>2012-06-08 14:04:03.108 MDT</createdDateTime>
+    <userIdUpdated>2</userIdUpdated>
+    <updatedDateTime>2013-02-06 14:07:21.801 MST</updatedDateTime>
+    <effectiveDateTime>2012-02-02 00:00:00.000 MST</effectiveDateTime>
+    <corpName>Pilgrim Insurance Company</corpName>
+    <compName>Bankers Standard - MAIP</compName>
+    <compLOBName>Personal Auto</compLOBName>
+    <enterpriseLOB>Personal Automobile</enterpriseLOB>
+    <corpId>100</corpId>
+    <compId>102</compId>
+    <compLOBId>102</compLOBId>
+    <reservTypeCd>payrcvr</reservTypeCd>
+    <reservTypeName>Loss Payment Recovery</reservTypeName>
+    <monetaryCategoryCd>rcvr</monetaryCategoryCd>
+  </claimCompanyReserveTypesDTO>
+  <claimCompanyReserveTypesDTO>
+    <recordId>6003702</recordId>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <userIdCreated>2</userIdCreated>
+    <createdDateTime>2012-06-08 14:04:03.108 MDT</createdDateTime>
+    <userIdUpdated>2</userIdUpdated>
+    <updatedDateTime>2013-02-06 14:07:21.801 MST</updatedDateTime>
+    <effectiveDateTime>2012-02-02 00:00:00.000 MST</effectiveDateTime>
+    <corpName>Pilgrim Insurance Company</corpName>
+    <compName>Bankers Standard - MAIP</compName>
+    <compLOBName>Personal Auto</compLOBName>
+    <enterpriseLOB>Personal Automobile</enterpriseLOB>
+    <corpId>100</corpId>
+    <compId>102</compId>
+    <compLOBId>102</compLOBId>
+    <reservTypeCd>salv</reservTypeCd>
+    <reservTypeName>Salvage</reservTypeName>
+    <monetaryCategoryCd>rcvr</monetaryCategoryCd>
+  </claimCompanyReserveTypesDTO>
+  <claimCompanyReserveTypesDTO>
+    <recordId>6003703</recordId>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <userIdCreated>2</userIdCreated>
+    <createdDateTime>2012-06-08 14:04:03.108 MDT</createdDateTime>
+    <effectiveDateTime>2012-02-02 00:00:00.000 MST</effectiveDateTime>
+    <corpName>Pilgrim Insurance Company</corpName>
+    <compName>Bankers Standard - MAIP</compName>
+    <compLOBName>Personal Auto</compLOBName>
+    <enterpriseLOB>Personal Automobile</enterpriseLOB>
+    <corpId>100</corpId>
+    <compId>102</compId>
+    <compLOBId>102</compLOBId>
+    <reservTypeCd>subro</reservTypeCd>
+    <reservTypeName>Subrogation</reservTypeName>
+    <monetaryCategoryCd>rcvr</monetaryCategoryCd>
+  </claimCompanyReserveTypesDTO>
+  <claimCompanyReserveTypesDTO>
+    <recordId>6000701</recordId>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <userIdCreated>3</userIdCreated>
+    <createdDateTime>2012-06-28 13:23:29.510 MDT</createdDateTime>
+    <userIdUpdated>3000100</userIdUpdated>
+    <updatedDateTime>2013-08-07 13:00:04.910 MDT</updatedDateTime>
+    <effectiveDateTime>2012-03-05 00:00:00.000 MST</effectiveDateTime>
+    <corpName>Plymouth Rock Company</corpName>
+    <compName>Bunker Hill Insurance Casualty Company</compName>
+    <compLOBName>Dwelling Fire</compLOBName>
+    <enterpriseLOB>Dwelling Fire</enterpriseLOB>
+    <thresholdAmount>999999.00</thresholdAmount>
+    <corpId>1</corpId>
+    <compId>209</compId>
+    <compLOBId>311</compLOBId>
+    <reservTypeCd>clm_exp</reservTypeCd>
+    <reservTypeName>Claim Expense</reservTypeName>
+    <monetaryCategoryCd>exp</monetaryCategoryCd>
+  </claimCompanyReserveTypesDTO>
+  <claimCompanyReserveTypesDTO>
+    <recordId>6000703</recordId>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <userIdCreated>3</userIdCreated>
+    <createdDateTime>2012-06-28 13:25:20.231 MDT</createdDateTime>
+    <userIdUpdated>2</userIdUpdated>
+    <updatedDateTime>2013-02-06 14:07:21.801 MST</updatedDateTime>
+    <effectiveDateTime>2012-03-05 00:00:00.000 MST</effectiveDateTime>
+    <corpName>Plymouth Rock Company</corpName>
+    <compName>Bunker Hill Insurance Casualty Company</compName>
+    <compLOBName>Dwelling Fire</compLOBName>
+    <enterpriseLOB>Dwelling Fire</enterpriseLOB>
+    <corpId>1</corpId>
+    <compId>209</compId>
+    <compLOBId>311</compLOBId>
+    <reservTypeCd>exp_recov</reservTypeCd>
+    <reservTypeName>Expense Recovery</reservTypeName>
+    <monetaryCategoryCd>rcvr</monetaryCategoryCd>
+  </claimCompanyReserveTypesDTO>
+  <claimCompanyReserveTypesDTO>
+    <recordId>6000702</recordId>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <userIdCreated>3</userIdCreated>
+    <createdDateTime>2012-06-28 13:25:20.231 MDT</createdDateTime>
+    <userIdUpdated>2</userIdUpdated>
+    <updatedDateTime>2012-08-31 08:50:19.117 MDT</updatedDateTime>
+    <effectiveDateTime>2012-03-05 00:00:00.000 MST</effectiveDateTime>
+    <corpName>Plymouth Rock Company</corpName>
+    <compName>Bunker Hill Insurance Casualty Company</compName>
+    <compLOBName>Dwelling Fire</compLOBName>
+    <enterpriseLOB>Dwelling Fire</enterpriseLOB>
+    <thresholdAmount>999999.00</thresholdAmount>
+    <corpId>1</corpId>
+    <compId>209</compId>
+    <compLOBId>311</compLOBId>
+    <reservTypeCd>loss</reservTypeCd>
+    <reservTypeName>Loss</reservTypeName>
+    <monetaryCategoryCd>loss</monetaryCategoryCd>
+  </claimCompanyReserveTypesDTO>
+  <claimCompanyReserveTypesDTO>
+    <recordId>6000704</recordId>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <userIdCreated>3</userIdCreated>
+    <createdDateTime>2012-06-28 13:26:02.066 MDT</createdDateTime>
+    <userIdUpdated>2</userIdUpdated>
+    <updatedDateTime>2013-02-06 14:07:21.801 MST</updatedDateTime>
+    <effectiveDateTime>2012-03-05 00:00:00.000 MST</effectiveDateTime>
+    <corpName>Plymouth Rock Company</corpName>
+    <compName>Bunker Hill Insurance Casualty Company</compName>
+    <compLOBName>Dwelling Fire</compLOBName>
+    <enterpriseLOB>Dwelling Fire</enterpriseLOB>
+    <corpId>1</corpId>
+    <compId>209</compId>
+    <compLOBId>311</compLOBId>
+    <reservTypeCd>payrcvr</reservTypeCd>
+    <reservTypeName>Loss Payment Recovery</reservTypeName>
+    <monetaryCategoryCd>rcvr</monetaryCategoryCd>
+  </claimCompanyReserveTypesDTO>
+  <claimCompanyReserveTypesDTO>
+    <recordId>6000706</recordId>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <userIdCreated>3</userIdCreated>
+    <createdDateTime>2012-06-28 13:27:04.033 MDT</createdDateTime>
+    <userIdUpdated>2</userIdUpdated>
+    <updatedDateTime>2013-02-06 14:07:21.801 MST</updatedDateTime>
+    <effectiveDateTime>2012-03-05 00:00:00.000 MST</effectiveDateTime>
+    <corpName>Plymouth Rock Company</corpName>
+    <compName>Bunker Hill Insurance Casualty Company</compName>
+    <compLOBName>Dwelling Fire</compLOBName>
+    <enterpriseLOB>Dwelling Fire</enterpriseLOB>
+    <corpId>1</corpId>
+    <compId>209</compId>
+    <compLOBId>311</compLOBId>
+    <reservTypeCd>salv</reservTypeCd>
+    <reservTypeName>Salvage</reservTypeName>
+    <monetaryCategoryCd>rcvr</monetaryCategoryCd>
+  </claimCompanyReserveTypesDTO>
+  <claimCompanyReserveTypesDTO>
+    <recordId>6000705</recordId>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <userIdCreated>3</userIdCreated>
+    <createdDateTime>2012-06-28 13:27:04.033 MDT</createdDateTime>
+    <effectiveDateTime>2012-03-05 00:00:00.000 MST</effectiveDateTime>
+    <corpName>Plymouth Rock Company</corpName>
+    <compName>Bunker Hill Insurance Casualty Company</compName>
+    <compLOBName>Dwelling Fire</compLOBName>
+    <enterpriseLOB>Dwelling Fire</enterpriseLOB>
+    <corpId>1</corpId>
+    <compId>209</compId>
+    <compLOBId>311</compLOBId>
+    <reservTypeCd>subro</reservTypeCd>
+    <reservTypeName>Subrogation</reservTypeName>
+    <monetaryCategoryCd>rcvr</monetaryCategoryCd>
+  </claimCompanyReserveTypesDTO>
+  <claimCompanyReserveTypesDTO>
+    <recordId>6002306</recordId>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <userIdCreated>2</userIdCreated>
+    <createdDateTime>2012-06-08 14:09:09.077 MDT</createdDateTime>
+    <userIdUpdated>3000100</userIdUpdated>
+    <updatedDateTime>2013-08-07 13:00:04.910 MDT</updatedDateTime>
+    <effectiveDateTime>2012-02-02 00:00:00.000 MST</effectiveDateTime>
+    <corpName>Plymouth Rock Company</corpName>
+    <compName>Bunker Hill Insurance Casualty Company</compName>
+    <compLOBName>Home Owners</compLOBName>
+    <enterpriseLOB>Home Owners</enterpriseLOB>
+    <thresholdAmount>999999.00</thresholdAmount>
+    <corpId>1</corpId>
+    <compId>209</compId>
+    <compLOBId>312</compLOBId>
+    <reservTypeCd>clm_exp</reservTypeCd>
+    <reservTypeName>Claim Expense</reservTypeName>
+    <monetaryCategoryCd>exp</monetaryCategoryCd>
+  </claimCompanyReserveTypesDTO>
+  <claimCompanyReserveTypesDTO>
+    <recordId>6002305</recordId>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <userIdCreated>2</userIdCreated>
+    <createdDateTime>2012-06-08 14:09:09.077 MDT</createdDateTime>
+    <userIdUpdated>2</userIdUpdated>
+    <updatedDateTime>2013-02-06 14:07:21.801 MST</updatedDateTime>
+    <effectiveDateTime>2012-02-02 00:00:00.000 MST</effectiveDateTime>
+    <corpName>Plymouth Rock Company</corpName>
+    <compName>Bunker Hill Insurance Casualty Company</compName>
+    <compLOBName>Home Owners</compLOBName>
+    <enterpriseLOB>Home Owners</enterpriseLOB>
+    <corpId>1</corpId>
+    <compId>209</compId>
+    <compLOBId>312</compLOBId>
+    <reservTypeCd>exp_recov</reservTypeCd>
+    <reservTypeName>Expense Recovery</reservTypeName>
+    <monetaryCategoryCd>rcvr</monetaryCategoryCd>
+  </claimCompanyReserveTypesDTO>
+  <claimCompanyReserveTypesDTO>
+    <recordId>6002304</recordId>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <userIdCreated>2</userIdCreated>
+    <createdDateTime>2012-06-08 14:09:09.077 MDT</createdDateTime>
+    <userIdUpdated>2</userIdUpdated>
+    <updatedDateTime>2012-08-31 08:50:19.117 MDT</updatedDateTime>
+    <effectiveDateTime>2012-02-02 00:00:00.000 MST</effectiveDateTime>
+    <corpName>Plymouth Rock Company</corpName>
+    <compName>Bunker Hill Insurance Casualty Company</compName>
+    <compLOBName>Home Owners</compLOBName>
+    <enterpriseLOB>Home Owners</enterpriseLOB>
+    <thresholdAmount>999999.00</thresholdAmount>
+    <corpId>1</corpId>
+    <compId>209</compId>
+    <compLOBId>312</compLOBId>
+    <reservTypeCd>loss</reservTypeCd>
+    <reservTypeName>Loss</reservTypeName>
+    <monetaryCategoryCd>loss</monetaryCategoryCd>
+  </claimCompanyReserveTypesDTO>
+  <claimCompanyReserveTypesDTO>
+    <recordId>6002303</recordId>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <userIdCreated>2</userIdCreated>
+    <createdDateTime>2012-06-08 14:09:09.077 MDT</createdDateTime>
+    <userIdUpdated>2</userIdUpdated>
+    <updatedDateTime>2013-02-06 14:07:21.801 MST</updatedDateTime>
+    <effectiveDateTime>2012-02-02 00:00:00.000 MST</effectiveDateTime>
+    <corpName>Plymouth Rock Company</corpName>
+    <compName>Bunker Hill Insurance Casualty Company</compName>
+    <compLOBName>Home Owners</compLOBName>
+    <enterpriseLOB>Home Owners</enterpriseLOB>
+    <corpId>1</corpId>
+    <compId>209</compId>
+    <compLOBId>312</compLOBId>
+    <reservTypeCd>payrcvr</reservTypeCd>
+    <reservTypeName>Loss Payment Recovery</reservTypeName>
+    <monetaryCategoryCd>rcvr</monetaryCategoryCd>
+  </claimCompanyReserveTypesDTO>
+  <claimCompanyReserveTypesDTO>
+    <recordId>6002302</recordId>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <userIdCreated>2</userIdCreated>
+    <createdDateTime>2012-06-08 14:09:09.077 MDT</createdDateTime>
+    <userIdUpdated>2</userIdUpdated>
+    <updatedDateTime>2013-02-06 14:07:21.801 MST</updatedDateTime>
+    <effectiveDateTime>2012-02-02 00:00:00.000 MST</effectiveDateTime>
+    <corpName>Plymouth Rock Company</corpName>
+    <compName>Bunker Hill Insurance Casualty Company</compName>
+    <compLOBName>Home Owners</compLOBName>
+    <enterpriseLOB>Home Owners</enterpriseLOB>
+    <corpId>1</corpId>
+    <compId>209</compId>
+    <compLOBId>312</compLOBId>
+    <reservTypeCd>salv</reservTypeCd>
+    <reservTypeName>Salvage</reservTypeName>
+    <monetaryCategoryCd>rcvr</monetaryCategoryCd>
+  </claimCompanyReserveTypesDTO>
+  <claimCompanyReserveTypesDTO>
+    <recordId>6002301</recordId>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <userIdCreated>2</userIdCreated>
+    <createdDateTime>2012-06-08 14:09:09.077 MDT</createdDateTime>
+    <effectiveDateTime>2012-02-02 00:00:00.000 MST</effectiveDateTime>
+    <corpName>Plymouth Rock Company</corpName>
+    <compName>Bunker Hill Insurance Casualty Company</compName>
+    <compLOBName>Home Owners</compLOBName>
+    <enterpriseLOB>Home Owners</enterpriseLOB>
+    <corpId>1</corpId>
+    <compId>209</compId>
+    <compLOBId>312</compLOBId>
+    <reservTypeCd>subro</reservTypeCd>
+    <reservTypeName>Subrogation</reservTypeName>
+    <monetaryCategoryCd>rcvr</monetaryCategoryCd>
+  </claimCompanyReserveTypesDTO>
+  <claimCompanyReserveTypesDTO>
+    <recordId>3000000</recordId>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <userIdCreated>3</userIdCreated>
+    <createdDateTime>2012-06-28 13:23:29.510 MDT</createdDateTime>
+    <userIdUpdated>3000100</userIdUpdated>
+    <updatedDateTime>2013-08-07 13:00:04.910 MDT</updatedDateTime>
+    <effectiveDateTime>2012-03-05 00:00:00.000 MST</effectiveDateTime>
+    <corpName>Plymouth Rock Company</corpName>
+    <compName>Bunker Hill Insurance Company</compName>
+    <compLOBName>Dwelling Fire</compLOBName>
+    <enterpriseLOB>Dwelling Fire</enterpriseLOB>
+    <thresholdAmount>999999.00</thresholdAmount>
+    <corpId>1</corpId>
+    <compId>100</compId>
+    <compLOBId>200</compLOBId>
+    <reservTypeCd>clm_exp</reservTypeCd>
+    <reservTypeName>Claim Expense</reservTypeName>
+    <monetaryCategoryCd>exp</monetaryCategoryCd>
+  </claimCompanyReserveTypesDTO>
+  <claimCompanyReserveTypesDTO>
+    <recordId>3000002</recordId>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <userIdCreated>3</userIdCreated>
+    <createdDateTime>2012-06-28 13:25:20.231 MDT</createdDateTime>
+    <userIdUpdated>2</userIdUpdated>
+    <updatedDateTime>2013-02-06 14:07:21.801 MST</updatedDateTime>
+    <effectiveDateTime>2012-03-05 00:00:00.000 MST</effectiveDateTime>
+    <corpName>Plymouth Rock Company</corpName>
+    <compName>Bunker Hill Insurance Company</compName>
+    <compLOBName>Dwelling Fire</compLOBName>
+    <enterpriseLOB>Dwelling Fire</enterpriseLOB>
+    <corpId>1</corpId>
+    <compId>100</compId>
+    <compLOBId>200</compLOBId>
+    <reservTypeCd>exp_recov</reservTypeCd>
+    <reservTypeName>Expense Recovery</reservTypeName>
+    <monetaryCategoryCd>rcvr</monetaryCategoryCd>
+  </claimCompanyReserveTypesDTO>
+  <claimCompanyReserveTypesDTO>
+    <recordId>6006609</recordId>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <userIdCreated>2</userIdCreated>
+    <createdDateTime>2013-05-24 10:16:35.700 MDT</createdDateTime>
+    <userIdUpdated>3000100</userIdUpdated>
+    <updatedDateTime>2013-08-07 13:14:56.320 MDT</updatedDateTime>
+    <effectiveDateTime>2012-03-05 00:00:00.000 MST</effectiveDateTime>
+    <endDateTime>2012-03-05 00:00:00.000 MST</endDateTime>
+    <corpName>Plymouth Rock Company</corpName>
+    <compName>Bunker Hill Insurance Company</compName>
+    <compLOBName>Dwelling Fire</compLOBName>
+    <enterpriseLOB>Dwelling Fire</enterpriseLOB>
+    <thresholdAmount>999999.00</thresholdAmount>
+    <corpId>1</corpId>
+    <compId>100</compId>
+    <compLOBId>200</compLOBId>
+    <reservTypeCd>lgl_exp</reservTypeCd>
+    <reservTypeName>Legal Expense</reservTypeName>
+    <monetaryCategoryCd>exp</monetaryCategoryCd>
+  </claimCompanyReserveTypesDTO>
+  <claimCompanyReserveTypesDTO>
+    <recordId>3000001</recordId>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <userIdCreated>3</userIdCreated>
+    <createdDateTime>2012-06-28 13:25:20.231 MDT</createdDateTime>
+    <userIdUpdated>2</userIdUpdated>
+    <updatedDateTime>2012-08-31 08:50:19.117 MDT</updatedDateTime>
+    <effectiveDateTime>2012-03-05 00:00:00.000 MST</effectiveDateTime>
+    <corpName>Plymouth Rock Company</corpName>
+    <compName>Bunker Hill Insurance Company</compName>
+    <compLOBName>Dwelling Fire</compLOBName>
+    <enterpriseLOB>Dwelling Fire</enterpriseLOB>
+    <thresholdAmount>999999.00</thresholdAmount>
+    <corpId>1</corpId>
+    <compId>100</compId>
+    <compLOBId>200</compLOBId>
+    <reservTypeCd>loss</reservTypeCd>
+    <reservTypeName>Loss</reservTypeName>
+    <monetaryCategoryCd>loss</monetaryCategoryCd>
+  </claimCompanyReserveTypesDTO>
+  <claimCompanyReserveTypesDTO>
+    <recordId>3000003</recordId>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <userIdCreated>3</userIdCreated>
+    <createdDateTime>2012-06-28 13:26:02.066 MDT</createdDateTime>
+    <userIdUpdated>2</userIdUpdated>
+    <updatedDateTime>2013-02-06 14:07:21.801 MST</updatedDateTime>
+    <effectiveDateTime>2012-03-05 00:00:00.000 MST</effectiveDateTime>
+    <corpName>Plymouth Rock Company</corpName>
+    <compName>Bunker Hill Insurance Company</compName>
+    <compLOBName>Dwelling Fire</compLOBName>
+    <enterpriseLOB>Dwelling Fire</enterpriseLOB>
+    <corpId>1</corpId>
+    <compId>100</compId>
+    <compLOBId>200</compLOBId>
+    <reservTypeCd>payrcvr</reservTypeCd>
+    <reservTypeName>Loss Payment Recovery</reservTypeName>
+    <monetaryCategoryCd>rcvr</monetaryCategoryCd>
+  </claimCompanyReserveTypesDTO>
+  <claimCompanyReserveTypesDTO>
+    <recordId>3000005</recordId>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <userIdCreated>3</userIdCreated>
+    <createdDateTime>2012-06-28 13:27:04.033 MDT</createdDateTime>
+    <userIdUpdated>2</userIdUpdated>
+    <updatedDateTime>2013-02-06 14:07:21.801 MST</updatedDateTime>
+    <effectiveDateTime>2012-03-05 00:00:00.000 MST</effectiveDateTime>
+    <corpName>Plymouth Rock Company</corpName>
+    <compName>Bunker Hill Insurance Company</compName>
+    <compLOBName>Dwelling Fire</compLOBName>
+    <enterpriseLOB>Dwelling Fire</enterpriseLOB>
+    <corpId>1</corpId>
+    <compId>100</compId>
+    <compLOBId>200</compLOBId>
+    <reservTypeCd>salv</reservTypeCd>
+    <reservTypeName>Salvage</reservTypeName>
+    <monetaryCategoryCd>rcvr</monetaryCategoryCd>
+  </claimCompanyReserveTypesDTO>
+  <claimCompanyReserveTypesDTO>
+    <recordId>3000004</recordId>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <userIdCreated>3</userIdCreated>
+    <createdDateTime>2012-06-28 13:27:04.033 MDT</createdDateTime>
+    <effectiveDateTime>2012-03-05 00:00:00.000 MST</effectiveDateTime>
+    <corpName>Plymouth Rock Company</corpName>
+    <compName>Bunker Hill Insurance Company</compName>
+    <compLOBName>Dwelling Fire</compLOBName>
+    <enterpriseLOB>Dwelling Fire</enterpriseLOB>
+    <corpId>1</corpId>
+    <compId>100</compId>
+    <compLOBId>200</compLOBId>
+    <reservTypeCd>subro</reservTypeCd>
+    <reservTypeName>Subrogation</reservTypeName>
+    <monetaryCategoryCd>rcvr</monetaryCategoryCd>
+  </claimCompanyReserveTypesDTO>
+  <claimCompanyReserveTypesDTO>
+    <recordId>6000306</recordId>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <userIdCreated>2</userIdCreated>
+    <createdDateTime>2012-06-08 14:09:09.077 MDT</createdDateTime>
+    <userIdUpdated>3000100</userIdUpdated>
+    <updatedDateTime>2013-08-07 13:00:04.910 MDT</updatedDateTime>
+    <effectiveDateTime>2012-02-02 00:00:00.000 MST</effectiveDateTime>
+    <corpName>Plymouth Rock Company</corpName>
+    <compName>Bunker Hill Insurance Company</compName>
+    <compLOBName>Home Owners</compLOBName>
+    <enterpriseLOB>Home Owners</enterpriseLOB>
+    <thresholdAmount>999999.00</thresholdAmount>
+    <corpId>1</corpId>
+    <compId>100</compId>
+    <compLOBId>100</compLOBId>
+    <reservTypeCd>clm_exp</reservTypeCd>
+    <reservTypeName>Claim Expense</reservTypeName>
+    <monetaryCategoryCd>exp</monetaryCategoryCd>
+  </claimCompanyReserveTypesDTO>
+  <claimCompanyReserveTypesDTO>
+    <recordId>6000305</recordId>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <userIdCreated>2</userIdCreated>
+    <createdDateTime>2012-06-08 14:09:09.077 MDT</createdDateTime>
+    <userIdUpdated>2</userIdUpdated>
+    <updatedDateTime>2013-02-06 14:07:21.801 MST</updatedDateTime>
+    <effectiveDateTime>2012-02-02 00:00:00.000 MST</effectiveDateTime>
+    <corpName>Plymouth Rock Company</corpName>
+    <compName>Bunker Hill Insurance Company</compName>
+    <compLOBName>Home Owners</compLOBName>
+    <enterpriseLOB>Home Owners</enterpriseLOB>
+    <corpId>1</corpId>
+    <compId>100</compId>
+    <compLOBId>100</compLOBId>
+    <reservTypeCd>exp_recov</reservTypeCd>
+    <reservTypeName>Expense Recovery</reservTypeName>
+    <monetaryCategoryCd>rcvr</monetaryCategoryCd>
+  </claimCompanyReserveTypesDTO>
+  <claimCompanyReserveTypesDTO>
+    <recordId>6006608</recordId>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <userIdCreated>2</userIdCreated>
+    <createdDateTime>2013-05-24 10:16:35.700 MDT</createdDateTime>
+    <userIdUpdated>3000100</userIdUpdated>
+    <updatedDateTime>2013-08-07 13:14:56.320 MDT</updatedDateTime>
+    <effectiveDateTime>2012-02-02 00:00:00.000 MST</effectiveDateTime>
+    <endDateTime>2012-02-02 00:00:00.000 MST</endDateTime>
+    <corpName>Plymouth Rock Company</corpName>
+    <compName>Bunker Hill Insurance Company</compName>
+    <compLOBName>Home Owners</compLOBName>
+    <enterpriseLOB>Home Owners</enterpriseLOB>
+    <thresholdAmount>999999.00</thresholdAmount>
+    <corpId>1</corpId>
+    <compId>100</compId>
+    <compLOBId>100</compLOBId>
+    <reservTypeCd>lgl_exp</reservTypeCd>
+    <reservTypeName>Legal Expense</reservTypeName>
+    <monetaryCategoryCd>exp</monetaryCategoryCd>
+  </claimCompanyReserveTypesDTO>
+  <claimCompanyReserveTypesDTO>
+    <recordId>6000304</recordId>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <userIdCreated>2</userIdCreated>
+    <createdDateTime>2012-06-08 14:09:09.077 MDT</createdDateTime>
+    <userIdUpdated>2</userIdUpdated>
+    <updatedDateTime>2012-08-31 08:50:19.117 MDT</updatedDateTime>
+    <effectiveDateTime>2012-02-02 00:00:00.000 MST</effectiveDateTime>
+    <corpName>Plymouth Rock Company</corpName>
+    <compName>Bunker Hill Insurance Company</compName>
+    <compLOBName>Home Owners</compLOBName>
+    <enterpriseLOB>Home Owners</enterpriseLOB>
+    <thresholdAmount>999999.00</thresholdAmount>
+    <corpId>1</corpId>
+    <compId>100</compId>
+    <compLOBId>100</compLOBId>
+    <reservTypeCd>loss</reservTypeCd>
+    <reservTypeName>Loss</reservTypeName>
+    <monetaryCategoryCd>loss</monetaryCategoryCd>
+  </claimCompanyReserveTypesDTO>
+  <claimCompanyReserveTypesDTO>
+    <recordId>6000303</recordId>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <userIdCreated>2</userIdCreated>
+    <createdDateTime>2012-06-08 14:09:09.077 MDT</createdDateTime>
+    <userIdUpdated>2</userIdUpdated>
+    <updatedDateTime>2013-02-06 14:07:21.801 MST</updatedDateTime>
+    <effectiveDateTime>2012-02-02 00:00:00.000 MST</effectiveDateTime>
+    <corpName>Plymouth Rock Company</corpName>
+    <compName>Bunker Hill Insurance Company</compName>
+    <compLOBName>Home Owners</compLOBName>
+    <enterpriseLOB>Home Owners</enterpriseLOB>
+    <corpId>1</corpId>
+    <compId>100</compId>
+    <compLOBId>100</compLOBId>
+    <reservTypeCd>payrcvr</reservTypeCd>
+    <reservTypeName>Loss Payment Recovery</reservTypeName>
+    <monetaryCategoryCd>rcvr</monetaryCategoryCd>
+  </claimCompanyReserveTypesDTO>
+  <claimCompanyReserveTypesDTO>
+    <recordId>6000302</recordId>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <userIdCreated>2</userIdCreated>
+    <createdDateTime>2012-06-08 14:09:09.077 MDT</createdDateTime>
+    <userIdUpdated>2</userIdUpdated>
+    <updatedDateTime>2013-02-06 14:07:21.801 MST</updatedDateTime>
+    <effectiveDateTime>2012-02-02 00:00:00.000 MST</effectiveDateTime>
+    <corpName>Plymouth Rock Company</corpName>
+    <compName>Bunker Hill Insurance Company</compName>
+    <compLOBName>Home Owners</compLOBName>
+    <enterpriseLOB>Home Owners</enterpriseLOB>
+    <corpId>1</corpId>
+    <compId>100</compId>
+    <compLOBId>100</compLOBId>
+    <reservTypeCd>salv</reservTypeCd>
+    <reservTypeName>Salvage</reservTypeName>
+    <monetaryCategoryCd>rcvr</monetaryCategoryCd>
+  </claimCompanyReserveTypesDTO>
+  <claimCompanyReserveTypesDTO>
+    <recordId>6000301</recordId>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <userIdCreated>2</userIdCreated>
+    <createdDateTime>2012-06-08 14:09:09.077 MDT</createdDateTime>
+    <effectiveDateTime>2012-02-02 00:00:00.000 MST</effectiveDateTime>
+    <corpName>Plymouth Rock Company</corpName>
+    <compName>Bunker Hill Insurance Company</compName>
+    <compLOBName>Home Owners</compLOBName>
+    <enterpriseLOB>Home Owners</enterpriseLOB>
+    <corpId>1</corpId>
+    <compId>100</compId>
+    <compLOBId>100</compLOBId>
+    <reservTypeCd>subro</reservTypeCd>
+    <reservTypeName>Subrogation</reservTypeName>
+    <monetaryCategoryCd>rcvr</monetaryCategoryCd>
+  </claimCompanyReserveTypesDTO>
+  <claimCompanyReserveTypesDTO>
+    <recordId>6004306</recordId>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <userIdCreated>2</userIdCreated>
+    <createdDateTime>2012-06-08 14:04:03.108 MDT</createdDateTime>
+    <userIdUpdated>3000100</userIdUpdated>
+    <updatedDateTime>2013-08-07 13:15:29.805 MDT</updatedDateTime>
+    <effectiveDateTime>2012-02-02 00:00:00.000 MST</effectiveDateTime>
+    <corpName>Pilgrim Insurance Company</corpName>
+    <compName>Chartis - MAIP</compName>
+    <compLOBName>Personal Auto</compLOBName>
+    <enterpriseLOB>Personal Automobile</enterpriseLOB>
+    <thresholdAmount>999999.00</thresholdAmount>
+    <corpId>100</corpId>
+    <compId>103</compId>
+    <compLOBId>103</compLOBId>
+    <reservTypeCd>clm_exp</reservTypeCd>
+    <reservTypeName>Claim Expense</reservTypeName>
+    <monetaryCategoryCd>exp</monetaryCategoryCd>
+  </claimCompanyReserveTypesDTO>
+  <claimCompanyReserveTypesDTO>
+    <recordId>6004304</recordId>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <userIdCreated>2</userIdCreated>
+    <createdDateTime>2012-06-08 14:04:03.108 MDT</createdDateTime>
+    <userIdUpdated>2</userIdUpdated>
+    <updatedDateTime>2013-02-06 14:07:21.801 MST</updatedDateTime>
+    <effectiveDateTime>2012-02-02 00:00:00.000 MST</effectiveDateTime>
+    <corpName>Pilgrim Insurance Company</corpName>
+    <compName>Chartis - MAIP</compName>
+    <compLOBName>Personal Auto</compLOBName>
+    <enterpriseLOB>Personal Automobile</enterpriseLOB>
+    <corpId>100</corpId>
+    <compId>103</compId>
+    <compLOBId>103</compLOBId>
+    <reservTypeCd>exp_recov</reservTypeCd>
+    <reservTypeName>Expense Recovery</reservTypeName>
+    <monetaryCategoryCd>rcvr</monetaryCategoryCd>
+  </claimCompanyReserveTypesDTO>
+  <claimCompanyReserveTypesDTO>
+    <recordId>6004305</recordId>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <userIdCreated>2</userIdCreated>
+    <createdDateTime>2012-06-08 14:04:03.108 MDT</createdDateTime>
+    <userIdUpdated>2</userIdUpdated>
+    <updatedDateTime>2012-08-31 08:50:19.117 MDT</updatedDateTime>
+    <effectiveDateTime>2012-02-02 00:00:00.000 MST</effectiveDateTime>
+    <corpName>Pilgrim Insurance Company</corpName>
+    <compName>Chartis - MAIP</compName>
+    <compLOBName>Personal Auto</compLOBName>
+    <enterpriseLOB>Personal Automobile</enterpriseLOB>
+    <thresholdAmount>999999.00</thresholdAmount>
+    <corpId>100</corpId>
+    <compId>103</compId>
+    <compLOBId>103</compLOBId>
+    <reservTypeCd>loss</reservTypeCd>
+    <reservTypeName>Loss</reservTypeName>
+    <monetaryCategoryCd>loss</monetaryCategoryCd>
+  </claimCompanyReserveTypesDTO>
+  <claimCompanyReserveTypesDTO>
+    <recordId>6004307</recordId>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <userIdCreated>3</userIdCreated>
+    <createdDateTime>2012-06-12 10:05:16.682 MDT</createdDateTime>
+    <userIdUpdated>2</userIdUpdated>
+    <updatedDateTime>2012-08-31 08:50:19.117 MDT</updatedDateTime>
+    <effectiveDateTime>2012-02-02 00:00:00.000 MST</effectiveDateTime>
+    <corpName>Pilgrim Insurance Company</corpName>
+    <compName>Chartis - MAIP</compName>
+    <compLOBName>Personal Auto</compLOBName>
+    <enterpriseLOB>Personal Automobile</enterpriseLOB>
+    <thresholdAmount>999999.00</thresholdAmount>
+    <corpId>100</corpId>
+    <compId>103</compId>
+    <compLOBId>103</compLOBId>
+    <reservTypeCd>loss_coll</reservTypeCd>
+    <reservTypeName>Loss Collision</reservTypeName>
+    <monetaryCategoryCd>loss</monetaryCategoryCd>
+  </claimCompanyReserveTypesDTO>
+  <claimCompanyReserveTypesDTO>
+    <recordId>6004308</recordId>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <userIdCreated>2</userIdCreated>
+    <createdDateTime>2012-08-31 08:50:19.117 MDT</createdDateTime>
+    <effectiveDateTime>2012-02-02 00:00:00.000 MST</effectiveDateTime>
+    <corpName>Pilgrim Insurance Company</corpName>
+    <compName>Chartis - MAIP</compName>
+    <compLOBName>Personal Auto</compLOBName>
+    <enterpriseLOB>Personal Automobile</enterpriseLOB>
+    <thresholdAmount>999999.00</thresholdAmount>
+    <corpId>100</corpId>
+    <compId>103</compId>
+    <compLOBId>103</compLOBId>
+    <reservTypeCd>med</reservTypeCd>
+    <reservTypeName>Loss Medical</reservTypeName>
+    <monetaryCategoryCd>loss</monetaryCategoryCd>
+  </claimCompanyReserveTypesDTO>
+  <claimCompanyReserveTypesDTO>
+    <recordId>6004301</recordId>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <userIdCreated>2</userIdCreated>
+    <createdDateTime>2012-06-08 14:04:03.108 MDT</createdDateTime>
+    <userIdUpdated>2</userIdUpdated>
+    <updatedDateTime>2013-02-06 14:07:21.801 MST</updatedDateTime>
+    <effectiveDateTime>2012-02-02 00:00:00.000 MST</effectiveDateTime>
+    <corpName>Pilgrim Insurance Company</corpName>
+    <compName>Chartis - MAIP</compName>
+    <compLOBName>Personal Auto</compLOBName>
+    <enterpriseLOB>Personal Automobile</enterpriseLOB>
+    <corpId>100</corpId>
+    <compId>103</compId>
+    <compLOBId>103</compLOBId>
+    <reservTypeCd>payrcvr</reservTypeCd>
+    <reservTypeName>Loss Payment Recovery</reservTypeName>
+    <monetaryCategoryCd>rcvr</monetaryCategoryCd>
+  </claimCompanyReserveTypesDTO>
+  <claimCompanyReserveTypesDTO>
+    <recordId>6004302</recordId>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <userIdCreated>2</userIdCreated>
+    <createdDateTime>2012-06-08 14:04:03.108 MDT</createdDateTime>
+    <userIdUpdated>2</userIdUpdated>
+    <updatedDateTime>2013-02-06 14:07:21.801 MST</updatedDateTime>
+    <effectiveDateTime>2012-02-02 00:00:00.000 MST</effectiveDateTime>
+    <corpName>Pilgrim Insurance Company</corpName>
+    <compName>Chartis - MAIP</compName>
+    <compLOBName>Personal Auto</compLOBName>
+    <enterpriseLOB>Personal Automobile</enterpriseLOB>
+    <corpId>100</corpId>
+    <compId>103</compId>
+    <compLOBId>103</compLOBId>
+    <reservTypeCd>salv</reservTypeCd>
+    <reservTypeName>Salvage</reservTypeName>
+    <monetaryCategoryCd>rcvr</monetaryCategoryCd>
+  </claimCompanyReserveTypesDTO>
+  <claimCompanyReserveTypesDTO>
+    <recordId>6004303</recordId>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <userIdCreated>2</userIdCreated>
+    <createdDateTime>2012-06-08 14:04:03.108 MDT</createdDateTime>
+    <effectiveDateTime>2012-02-02 00:00:00.000 MST</effectiveDateTime>
+    <corpName>Pilgrim Insurance Company</corpName>
+    <compName>Chartis - MAIP</compName>
+    <compLOBName>Personal Auto</compLOBName>
+    <enterpriseLOB>Personal Automobile</enterpriseLOB>
+    <corpId>100</corpId>
+    <compId>103</compId>
+    <compLOBId>103</compLOBId>
+    <reservTypeCd>subro</reservTypeCd>
+    <reservTypeName>Subrogation</reservTypeName>
+    <monetaryCategoryCd>rcvr</monetaryCategoryCd>
+  </claimCompanyReserveTypesDTO>
+  <claimCompanyReserveTypesDTO>
+    <recordId>6006306</recordId>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <userIdCreated>2</userIdCreated>
+    <createdDateTime>2012-06-08 14:04:03.108 MDT</createdDateTime>
+    <userIdUpdated>3000100</userIdUpdated>
+    <updatedDateTime>2013-08-07 13:36:59.972 MDT</updatedDateTime>
+    <effectiveDateTime>2012-02-02 00:00:00.000 MST</effectiveDateTime>
+    <corpName>Pilgrim Insurance Company</corpName>
+    <compName>Concord Group - MAIP</compName>
+    <compLOBName>Personal Auto</compLOBName>
+    <enterpriseLOB>Personal Automobile</enterpriseLOB>
+    <thresholdAmount>999999.00</thresholdAmount>
+    <corpId>100</corpId>
+    <compId>6000004</compId>
+    <compLOBId>6000000</compLOBId>
+    <reservTypeCd>clm_exp</reservTypeCd>
+    <reservTypeName>Claim Expense</reservTypeName>
+    <monetaryCategoryCd>exp</monetaryCategoryCd>
+  </claimCompanyReserveTypesDTO>
+  <claimCompanyReserveTypesDTO>
+    <recordId>6006304</recordId>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <userIdCreated>2</userIdCreated>
+    <createdDateTime>2012-06-08 14:04:03.108 MDT</createdDateTime>
+    <userIdUpdated>2</userIdUpdated>
+    <updatedDateTime>2013-02-06 14:07:21.801 MST</updatedDateTime>
+    <effectiveDateTime>2012-02-02 00:00:00.000 MST</effectiveDateTime>
+    <corpName>Pilgrim Insurance Company</corpName>
+    <compName>Concord Group - MAIP</compName>
+    <compLOBName>Personal Auto</compLOBName>
+    <enterpriseLOB>Personal Automobile</enterpriseLOB>
+    <corpId>100</corpId>
+    <compId>6000004</compId>
+    <compLOBId>6000000</compLOBId>
+    <reservTypeCd>exp_recov</reservTypeCd>
+    <reservTypeName>Expense Recovery</reservTypeName>
+    <monetaryCategoryCd>rcvr</monetaryCategoryCd>
+  </claimCompanyReserveTypesDTO>
+  <claimCompanyReserveTypesDTO>
+    <recordId>6006305</recordId>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <userIdCreated>2</userIdCreated>
+    <createdDateTime>2012-06-08 14:04:03.108 MDT</createdDateTime>
+    <userIdUpdated>2</userIdUpdated>
+    <updatedDateTime>2012-08-31 08:50:19.117 MDT</updatedDateTime>
+    <effectiveDateTime>2012-02-02 00:00:00.000 MST</effectiveDateTime>
+    <corpName>Pilgrim Insurance Company</corpName>
+    <compName>Concord Group - MAIP</compName>
+    <compLOBName>Personal Auto</compLOBName>
+    <enterpriseLOB>Personal Automobile</enterpriseLOB>
+    <thresholdAmount>999999.00</thresholdAmount>
+    <corpId>100</corpId>
+    <compId>6000004</compId>
+    <compLOBId>6000000</compLOBId>
+    <reservTypeCd>loss</reservTypeCd>
+    <reservTypeName>Loss</reservTypeName>
+    <monetaryCategoryCd>loss</monetaryCategoryCd>
+  </claimCompanyReserveTypesDTO>
+  <claimCompanyReserveTypesDTO>
+    <recordId>6006307</recordId>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <userIdCreated>3</userIdCreated>
+    <createdDateTime>2012-06-12 10:05:16.682 MDT</createdDateTime>
+    <userIdUpdated>2</userIdUpdated>
+    <updatedDateTime>2012-08-31 08:50:19.117 MDT</updatedDateTime>
+    <effectiveDateTime>2012-02-02 00:00:00.000 MST</effectiveDateTime>
+    <corpName>Pilgrim Insurance Company</corpName>
+    <compName>Concord Group - MAIP</compName>
+    <compLOBName>Personal Auto</compLOBName>
+    <enterpriseLOB>Personal Automobile</enterpriseLOB>
+    <thresholdAmount>999999.00</thresholdAmount>
+    <corpId>100</corpId>
+    <compId>6000004</compId>
+    <compLOBId>6000000</compLOBId>
+    <reservTypeCd>loss_coll</reservTypeCd>
+    <reservTypeName>Loss Collision</reservTypeName>
+    <monetaryCategoryCd>loss</monetaryCategoryCd>
+  </claimCompanyReserveTypesDTO>
+  <claimCompanyReserveTypesDTO>
+    <recordId>6006308</recordId>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <userIdCreated>2</userIdCreated>
+    <createdDateTime>2012-08-31 08:50:19.117 MDT</createdDateTime>
+    <effectiveDateTime>2012-02-02 00:00:00.000 MST</effectiveDateTime>
+    <corpName>Pilgrim Insurance Company</corpName>
+    <compName>Concord Group - MAIP</compName>
+    <compLOBName>Personal Auto</compLOBName>
+    <enterpriseLOB>Personal Automobile</enterpriseLOB>
+    <thresholdAmount>999999.00</thresholdAmount>
+    <corpId>100</corpId>
+    <compId>6000004</compId>
+    <compLOBId>6000000</compLOBId>
+    <reservTypeCd>med</reservTypeCd>
+    <reservTypeName>Loss Medical</reservTypeName>
+    <monetaryCategoryCd>loss</monetaryCategoryCd>
+  </claimCompanyReserveTypesDTO>
+  <claimCompanyReserveTypesDTO>
+    <recordId>6006301</recordId>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <userIdCreated>2</userIdCreated>
+    <createdDateTime>2012-06-08 14:04:03.108 MDT</createdDateTime>
+    <userIdUpdated>2</userIdUpdated>
+    <updatedDateTime>2013-02-06 14:07:21.801 MST</updatedDateTime>
+    <effectiveDateTime>2012-02-02 00:00:00.000 MST</effectiveDateTime>
+    <corpName>Pilgrim Insurance Company</corpName>
+    <compName>Concord Group - MAIP</compName>
+    <compLOBName>Personal Auto</compLOBName>
+    <enterpriseLOB>Personal Automobile</enterpriseLOB>
+    <corpId>100</corpId>
+    <compId>6000004</compId>
+    <compLOBId>6000000</compLOBId>
+    <reservTypeCd>payrcvr</reservTypeCd>
+    <reservTypeName>Loss Payment Recovery</reservTypeName>
+    <monetaryCategoryCd>rcvr</monetaryCategoryCd>
+  </claimCompanyReserveTypesDTO>
+  </list>
+

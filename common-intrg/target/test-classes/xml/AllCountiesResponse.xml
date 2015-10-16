@@ -1,0 +1,114 @@
+<list>
+  <jurisdictionDetailDTO>
+    <code>Barnstable</code>
+    <value>Barnstable</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Barnstable County</code>
+    <value>Barnstable County</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Berkshire</code>
+    <value>Berkshire</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Berkshire County</code>
+    <value>Berkshire County</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Bristol</code>
+    <value>Bristol</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Bristol County</code>
+    <value>Bristol County</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Dukes</code>
+    <value>Dukes</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Dukes County</code>
+    <value>Dukes County</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Essex</code>
+    <value>Essex</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Essex County</code>
+    <value>Essex County</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Franklin</code>
+    <value>Franklin</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Franklin County</code>
+    <value>Franklin County</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Hampden</code>
+    <value>Hampden</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Hampden County</code>
+    <value>Hampden County</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Hampshire</code>
+    <value>Hampshire</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Hampshire County</code>
+    <value>Hampshire County</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Middlesex</code>
+    <value>Middlesex</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Middlesex County</code>
+    <value>Middlesex County</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Nantucket</code>
+    <value>Nantucket</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Nantucket County</code>
+    <value>Nantucket County</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Norfolk</code>
+    <value>Norfolk</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Norfolk County</code>
+    <value>Norfolk County</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Plymouth</code>
+    <value>Plymouth</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Plymouth County</code>
+    <value>Plymouth County</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Suffolk</code>
+    <value>Suffolk</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Suffolk County</code>
+    <value>Suffolk County</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Worcester</code>
+    <value>Worcester</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Worcester County</code>
+    <value>Worcester County</value>
+  </jurisdictionDetailDTO>
+</list>

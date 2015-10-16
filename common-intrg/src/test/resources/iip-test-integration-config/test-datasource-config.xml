@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+	xmlns:tx="http://www.springframework.org/schema/tx" 
+	xmlns:jms="http://www.mulesoft.org/schema/mule/jms"	
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"	   		 
+	xmlns:iipa="http://www.fiserv.com/isd/iip/core/schema/application" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd
+http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd
+http://www.mulesoft.org/schema/mule/jms http://www.mulesoft.org/schema/mule/jms/3.1/mule-jms.xsd
+http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
+http://www.fiserv.com/isd/iip/core/schema/application http://www.fiserv.com/isd/iip/core/schema/application/iip-application-extensions.xsd
+http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd">
+
+   <bean id="testDataSource" class="org.springframework.jdbc.datasource.SingleConnectionDataSource"
+        p:suppressClose="true"
+        p:driverClassName="${jdbc.driver}"
+        p:url="${jdbc.url}"
+        p:username="${jdbc.user}"
+        p:password="${jdbc.password}"/>
+	
+	 <!-- <bean id="jmsXAFactory" 
+		class="bitronix.tm.resource.jms.PoolingConnectionFactory" 
+		init-method="init" 
+		destroy-method="close">
+
+		<property name="className" value="org.apache.activemq.ActiveMQXAConnectionFactory" />		
+		<property name="allowLocalTransactions" value="false"/>		
+		<property name="cacheProducersConsumers" value="true"/>
+		<property name="uniqueName" value="IIP-JMS" />
+		<property name="minPoolSize" value="1" />
+		<property name="maxPoolSize" value="5" />
+		<property name="deferConnectionRelease" value="true"/>
+		<property name="useTmJoin" value="false"/>
+		<property name="driverProperties">
+			<props>
+				<prop key="brokerURL">vm://localhost</prop>
+			</props>
+		</property> 
+	</bean -->	
+	
+<!--  Bitronix Transaction Manager embedded configuration -->
+	<bean id="testBtmConfig" factory-method="getConfiguration" 
+		class="bitronix.tm.TransactionManagerServices"/>
+
+	<!-- create BTM transaction manager -->
+	<bean id="bitronixTransactionManager" factory-method="getTransactionManager"
+		class="bitronix.tm.TransactionManagerServices" 
+		depends-on="testBtmConfig, testDataSource" 
+		destroy-method="shutdown" />
+	
+	<!-- Spring JtaTransactionManager -->
+	<bean id="iipTransactionManager" class="org.springframework.transaction.jta.JtaTransactionManager">
+		<property name="transactionManager" ref="bitronixTransactionManager" />
+		<property name="userTransaction" ref="bitronixTransactionManager" />
+	</bean>
+	
+	<bean id="persistenceUnitManager" class="org.springframework.orm.jpa.persistenceunit.DefaultPersistenceUnitManager">
+	  <property name="dataSources" ref="dataSourceMap"/>
+	  <property name="loadTimeWeaver">
+            <bean class="org.springframework.instrument.classloading.InstrumentationLoadTimeWeaver"/>
+      </property>
+	  <property name="persistenceUnitPostProcessors">
+           <list>
+      		<bean class="com.fiserv.isd.iip.core.data.JtaPersistenceUnitPostProcessor">
+        		<property name="jtaMode" value="true"/>	
+      		</bean>
+           </list>
+       </property>
+	</bean>
+
+	
+	<util:map id="defaultJPAPropertyMap" >
+	        <entry key="hibernate.transaction.manager_lookup_class" 
+	        	value="com.fiserv.isd.iip.core.jta.bitronix.BitronixTransactionManagerLookup"/>
+	        <entry key="hibernate.transaction.flush_before_completion"
+	               value="false"/>
+	        <entry key="hibernate.current_session_context_class"
+	               value="jta"/>
+	        <entry key="hibernate.connection.release_mode"
+               	value="auto"/>                
+            <entry key="hibernate.dialect"
+            	value="${hibernate.dialect}"/>            
+	</util:map>
+	
+	<bean id="defaultJPAVendorAdapter" class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+        <property name="databasePlatform" value="${hibernate.dialect}"/>
+        <property name="showSql" value="false"/>
+    </bean>	
+
+    <tx:annotation-driven transaction-manager="iipTransactionManager"/>
+
+</beans>

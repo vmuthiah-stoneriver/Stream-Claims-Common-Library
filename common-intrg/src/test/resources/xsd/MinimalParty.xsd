@@ -1,0 +1,668 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:include schemaLocation="../xsd/PartyCommon.xsd" />
+	<xs:include schemaLocation="../xsd/Address.xsd" />
+
+	<xs:annotation>
+		<xs:documentation>Minimal party schema.</xs:documentation>
+	</xs:annotation>
+
+	<xs:element name="minimalPartyDTO" type="MinimalPartyDTO">
+		<xs:annotation>
+			<xs:documentation>Mainimal party.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+
+	<xs:complexType name="MinimalPartyDTO">
+		<xs:annotation>
+			<xs:documentation>Party with the most commonly used information to be
+				accessed by other components for adding/updating and displaying
+				inline party information.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="DataTransferObject">
+				<xs:sequence>
+					<xs:element name="context" type="string" minOccurs="1"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Context code, Maps to AGRE_TYP_CD Column from
+								AGREEMENT_TYPE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="partyTypeCode" type="string"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Party type, Maps to PARTY_TYP_CD Column from
+								PARTY_TYPE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="personName" type="PersonNameDTO"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Person name.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="organizationName" type="OrganizationNameDTO"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Organization name.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="taxStatusIndicator" type="TaxStatusIndicator"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Tax status flag.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="taxIdentifier" type="TaxIdentifierDTO"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Tax identifier.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="phoneNumber" type="PhoneChannelDTO"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Phone info.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="faxNumber" type="PhoneChannelDTO"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Fax info.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="emailAddress" type="AddressChannelDTO"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Email info.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="websiteAddress" type="AddressChannelDTO"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Website info.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="contact" type="MinimalPartyContactDTO"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Party contact.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="dateOfBirth" type="dateType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Person date of birth.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="displayAddress" type="AddressDTO"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>UI Display address.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="dbaNames" type="nameType" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Doing Business As (DBA) names.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="bankInformations" type="bankInformationType">
+						<xs:annotation>
+							<xs:documentation>Bank Details List</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="creditCards" type="creditCardType">
+						<xs:annotation>
+							<xs:documentation>Credit Card Details</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="partyRoleAgencyDTO" type="PartyRoleAgencyDTO"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Agency Role details.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="agencyMgaIndicator" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Agency Managing General Agent (MGA) indicator.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="primaryInsuredIndicator" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Primary insured flag.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="vendorRoleExists" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Vendor role flag.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="unknownParty" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Unknown party indicator.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="blockOnVendorRoleExists" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Party block on vendor role.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+
+					<xs:element name="customerBlockExists" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Party block indicator.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+
+					<!-- Attributes for Drivers -->
+					<xs:element name="personGenderCode" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Gender code, Maps to GNDR_CD Column from
+								GENDER_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="personMaritalStatusCode" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Marital status code, Maps to MAR_STS_CD Column
+								from MARITAL_STATUS_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="partyRoleDrivers" type="PartyRoleDriversDTO"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Party driver roles.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="isDriver" type="boolean" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Driver indicator.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="participantType" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Participant type code, Maps to PTCP_TYP_CD
+								Column from	CLAIM_PARTICIPATION_TYPE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="isSaved" type="boolean" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Saved flag.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="blocks" type="blockType" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Block type.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="isExternalCall" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>External call indicator.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="nameType">
+		<xs:sequence>
+			<xs:element name="organizationNameDTO" type="OrganizationNameDTO"
+				minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Organization names.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="class" type="collectionType" use="optional" />
+	</xs:complexType>
+
+	<xs:complexType name="MinimalPartyContactDTO">
+		<xs:annotation>
+			<xs:documentation>contact information for the party.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="phoneNumber" type="PhoneChannelDTO"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Phone details.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="faxNumber" type="PhoneChannelDTO"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Fax details.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="emailAddress" type="AddressChannelDTO"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Email address details.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="websiteAddress" type="AddressChannelDTO"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Website details.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="bankInformationType">
+		<xs:sequence>
+			<xs:element name="bankAccountDTO" type="BankAccountDTO"
+				minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Party bank accounts.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="class" type="collectionType" use="optional" />
+	</xs:complexType>
+
+	<xs:complexType name="creditCardType">
+		<xs:sequence>
+			<xs:element name="creditCardAccountDTO" type="CreditCardAccountDTO"
+				minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Credit card account details.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="class" type="collectionType" use="optional" />
+	</xs:complexType>
+
+	<xs:complexType name="PartyRoleAgencyDTO">
+		<xs:complexContent>
+			<xs:extension base="PartyRoleDTO">
+				<xs:sequence>
+					<xs:element name="mgaIndicator" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Agency MGA indicator.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="licenses" type="licenseType">
+						<xs:annotation>
+							<xs:documentation>Agency License Details.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="licenseType">
+		<xs:sequence>
+			<xs:element name="partyRoleAgencyLicenseDTO" type="PartyRoleAgencyLicenseDTO"
+				minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Agency license details.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="class" type="collectionType" use="optional" />
+	</xs:complexType>
+
+	<xs:complexType name="PartyRoleAgencyLicenseDTO">
+		<xs:complexContent>
+			<xs:extension base="AuditWithImportDTO">
+				<xs:sequence>
+					<xs:element name="agentResidencyTypeCode" type="string"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Agency residency code, Maps to
+								AGNT_RSDNC_TYP_CD Column from AGENT_RESIDENCY_TYPE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="jurisdictionCodeId" type="long"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Jurisdiction id, Maps to JUR_ID Column from
+								JURISDICTION_CD	Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="agencyLicenseNumber" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Agency license number.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="countersignerAuthIndicator" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Counter sign indicator.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="expiryDate" type="dateType" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>License expiry date.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="effectiveDate" type="dateType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>License effective date.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="licenseLOBs" type="licenseLobType"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>License LOB Details</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="licenseLobType">
+		<xs:sequence>
+			<xs:element name="partyRoleAgencyLicenseLOBDTO" type="PartyRoleAgencyLicenseLOBDTO"
+				minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>License LOB detail list.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="class" type="collectionType" use="optional" />
+	</xs:complexType>
+
+	<xs:complexType name="PartyRoleAgencyLicenseLOBDTO">
+		<xs:complexContent>
+			<xs:extension base="AuditWithDeleteDTO">
+				<xs:sequence>
+					<xs:element name="lineOfBusinessCode" type="string"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>LOB code, Maps to LOB_CD Column from
+								LINE_OF_BUSINESS_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="PartyRoleDTO">
+		<xs:complexContent>
+			<xs:extension base="AuditWithImportDTO">
+				<xs:sequence>
+					<xs:element name="partyRoleTypeCd" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Party role type, Maps to PARTY_ROLE_TYP_CD
+								Column from PARTY_ROLE_TYPE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="effectiveDateTime" type="dateType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Effective date.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="endDateTime" type="dateType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>End date.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="PartyRoleDriversDTO">
+		<xs:complexContent>
+			<xs:extension base="PartyRoleDTO">
+				<xs:sequence>
+					<xs:element name="licenses" type="partyRoleDriverLicensesType"
+						minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Driver Licenses.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="profileStatements" type="partyRoleDriverQuestionsType"
+						minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Driver custom profiles.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="trafficIncidentsColl" type="partyRoleDriverTrafficeIncidentsType"
+						minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Traffic incidents.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="context" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Context code, Maps to AGRE_TYP_CD Column from
+								AGREEMENT_TYPE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="partyRoleDriverLicensesType">
+		<xs:sequence>
+			<xs:element name="partyRoleDriverLicenseDTO" type="PartyRoleDriverLicenseDTO"
+				minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Driver license details.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="class" type="collectionType" use="optional" />
+	</xs:complexType>
+
+	<xs:complexType name="PartyRoleDriverLicenseDTO">
+		<xs:annotation>
+			<xs:documentation>Party Role Driver License Information
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="AuditWithDeleteDTO">
+				<xs:sequence>
+					<xs:element name="countryCode" type="string" minOccurs="1"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Country Code, 
+								Maps to CNTRY_CD Column from COUNTRY_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="licenseNumber" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>License Number of the Driver</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="licenseSuspendedIndicator" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Indicates whether the License is Suspended or
+								not
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="expirationDate" type="dateType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Expiry Date of the License</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="originalIssueDate" type="dateType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Issue Date of the License</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="jurisdictionId" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>License State, 
+								Maps to JUR_ID Column from JURISDICTION_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="driverClassTypeCode" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Driver class type, 
+								Maps to DRVR_CLS_TYP_CD Column from DRIVER_CLASS_TYPE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="externalSourceId" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>External Source Id</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="partyRoleDriverQuestionsType">
+		<xs:sequence>
+			<xs:element name="partyRoleDriverQuestionsProfile" type="ProfileStatementItem"
+				minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Driver custom profiles.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="class" type="collectionType" use="optional" />
+	</xs:complexType>
+
+	<xs:complexType name="partyRoleDriverTrafficeIncidentsType">
+		<xs:sequence>
+			<xs:element name="partyRoleTrafficIncidentDTO" type="PartyRoleTrafficIncidentDTO"
+				minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Traffic incidents.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="class" type="collectionType" use="optional" />
+	</xs:complexType>
+
+	<xs:complexType name="PartyRoleTrafficIncidentDTO">
+		<xs:annotation>
+			<xs:documentation>Party Role Driver Traffic Information
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="AuditWithImportDTO">
+				<xs:sequence>
+					<xs:element name="partyRoleId" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Party role id.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="trafficIncidentCode" type="string"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Traffic Incident Code, 
+								Maps to TRFC_INCDT_CD_ID Column from TRAFFIC_INCIDENT_CODE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="trafficIncidentSourceCode" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Incident source code, Maps to TRFC_INCDT_SRC_CD
+								Column from	TRAFFIC_INCIDENT_SOURCE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="penalityPointCode" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Pentaly point code, Maps to PENL_PT_CD Column
+								from PENALTY_POINT_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="damageAmount" type="dollarAmount"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Damage amount.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="trafficIncidentDate" type="dateType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Incident date.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="trafficIncidentConvictionDate" type="dateType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Incident conviction date.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="injuryOrDeathInd" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Injured/Death indicator.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="faultInd" type="boolean" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>ATFAULT indicator.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="profileStatements" type="partyRoleDriverTrafficeIncidentsType"
+						minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Traffic incident custom profile statements.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="accidentViolationTypeName" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Accident violation types.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>

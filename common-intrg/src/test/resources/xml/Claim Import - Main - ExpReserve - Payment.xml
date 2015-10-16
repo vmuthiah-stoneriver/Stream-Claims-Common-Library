@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?> 
+<claimImportCompositeDTO>
+	<claimNumber>PAL 29696700</claimNumber>
+   <claimReservesWithCoverages class="list">
+      <claimReserves>
+         <userIdCreated>6000302</userIdCreated>
+         <createdDateTime>2012-05-09 00:00:00.000 EDT</createdDateTime>
+         <clmCoverageCode>collsn</clmCoverageCode>
+         <clmReserveTypeCode>clm_exp</clmReserveTypeCode>
+         <clmLossTypeCode>bodinj</clmLossTypeCode>
+         <calClaimReserveAmtDerived>1450</calClaimReserveAmtDerived>
+         <monetaryCategoryCode>exp</monetaryCategoryCode>
+         <preApprovedIndicator>false</preApprovedIndicator>
+         <averageReserveIndicator>false</averageReserveIndicator>
+         <calClaimReserveStatus>
+            <current>
+               <userIdCreated>6000302</userIdCreated>
+               <createdDateTime>2012-05-09 00:00:00.000 EDT</createdDateTime>
+               <effectiveDateTime>2012-05-09 00:00:00.000 EDT</effectiveDateTime>
+               <calClaimReserveStatusCode>opn</calClaimReserveStatusCode>
+            </current>
+            <expired class="list"/>
+         </calClaimReserveStatus>
+         <reasonCode>open</reasonCode>
+         <actionType>opn</actionType>
+         <unconfirmedCoverage>false</unconfirmedCoverage>
+         <authGroupProvided>false</authGroupProvided>
+         <importReserve>false</importReserve>
+         <user>strmimpt</user>
+         <reserveTransactionDate>2012-06-15 00:00:00.000 EST</reserveTransactionDate>
+         <payment>false</payment>
+         <externalParticipantIdentifier>2056</externalParticipantIdentifier>
+         <externalUnitIdentifier>000014PAL00001004092201117000106/19/20112-2</externalUnitIdentifier>
+         <paymentAuthorizations class="list"/>
+      </claimReserves>
+   </claimReservesWithCoverages>	
+<claimPayments class="list">
+      <claimPayment>
+         <claimPayables class="list">
+            <claimPayable>
+               <transactionTypeName>Exp Pay</transactionTypeName>
+               <transactionTypeCode>c_exp_due</transactionTypeCode>
+               <transactionAmount>1450</transactionAmount>
+               <transactionDate>2012-06-15 00:00:00.000 EST</transactionDate>
+               <accountingDate>2012-06-15 00:00:00.000 EST</accountingDate>
+               <partyId>1609</partyId>
+               <companyId>201</companyId>
+               <claimNumber>PAL 29696962</claimNumber>
+               <externalUnitIdentifier>000014PAL00001004092201117000106/19/20112-2</externalUnitIdentifier>
+               <externalParticipantIdentifier>2056</externalParticipantIdentifier>
+               <clmCoverageCode>collsn</clmCoverageCode>
+               <clmReserveTypeCode>clm_exp</clmReserveTypeCode>
+               <clmLossTypeCode>bodinj</clmLossTypeCode>
+               <monitoryTypeCode>no_wvr</monitoryTypeCode>
+               <invoiceNumber>1</invoiceNumber>
+               <closeReserveIndicator>true</closeReserveIndicator>
+               <surchargeIndicator>false</surchargeIndicator>
+               <monetaryCategoryCode>exp</monetaryCategoryCode>
+            </claimPayable>
+         </claimPayables>
+         <claimPaymentDisbursements class="list">
+            <claimPaymentDisbursement>
+               <disbursementTypeCode>clmpay</disbursementTypeCode>
+               <disbursementNumber>2312369121</disbursementNumber>
+               <disbursementAmount>1450</disbursementAmount>
+               <partyId>1609</partyId>
+               <addressLine1>1375 Washington Street</addressLine1>
+               <city>Denver</city>
+               <primarySubDivision>CO</primarySubDivision>
+               <postalCode>80203-2055</postalCode>
+               <country>usa</country>
+               <inCareOfPayeeId>1609</inCareOfPayeeId>
+               <inCareOfPayeeName>Pete</inCareOfPayeeName>
+               <onDemand>false</onDemand>
+               <manualCheckIndicator>true</manualCheckIndicator>
+               <scheduled>true</scheduled>
+               <paymentMethodType>chck</paymentMethodType>
+               <bulkPaymentIndicator>false</bulkPaymentIndicator>
+               <comment/>
+               <disbursementCreatedDate>2012-06-15 00:00:00.000 EST</disbursementCreatedDate>
+               <disbursementInPaymentOfText>payment</disbursementInPaymentOfText>
+               <disbursementPrintGroupCode>batch</disbursementPrintGroupCode>
+               <disbursementPayToTheOrderOf>Pete</disbursementPayToTheOrderOf>
+               <percentageAllocation>100</percentageAllocation>
+               <companyId>201</companyId>
+               <partyIdPayee>1609</partyIdPayee>
+               <payeeName>Mark Watson</payeeName>
+               <transactionDate>2012-06-15 00:00:00.000 EST</transactionDate>
+               <accountingDate>2012-06-15 00:00:00.000 EST</accountingDate>               
+            </claimPaymentDisbursement>
+         </claimPaymentDisbursements>
+         <userName>mbrady</userName>
+         <authorizationRequired>false</authorizationRequired>
+      </claimPayment>
+   </claimPayments>
+</claimImportCompositeDTO>

@@ -1,0 +1,140 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<xs:annotation>
+		<xs:documentation>Claim Recovery Listings.</xs:documentation>
+	</xs:annotation>
+
+	<xs:element name="viewRecoveryListingDTO" type="ViewRecoveryListingDTO">
+		<xs:annotation>
+			<xs:documentation>Claim recovery view.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+
+	<xs:complexType name="ViewRecoveryListingDTO">
+		<xs:annotation>
+			<xs:documentation>Recovery Listing.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="DataTransferObject">
+				<xs:sequence>
+					<xs:element name="remittanceNumber" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Remittance Number.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="remittanceDate" type="dateType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Remittance Date.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="createdDate" type="dateType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Created Date</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="paymentMethod" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Payment Method, Maps to PAY_METH_PRF_CD Column
+								from PAYMENT_METHOD_PREFERENCE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="remitter" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Remitter Name</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="recoveredBy" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Recovery User</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="transactionNumber" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Transaction Reference number</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="recoveryType" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Recovery Type, Maps to FNCL_CLM_RECOV_RECT_CD
+								Column from FINANCIAL_CLAIM_RECOV_RECT_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="remittanceId" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Remittance Id</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="remittanceAmount" type="dollarAmount"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Remittance Amount</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="allocatedAmount" type="dollarAmount"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Allocated Amount</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="recoveryStatus" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Recovery Status, Maps to FNCL_CLM_RECT_STS_CD
+								Column from FINANCIAL_CLAIM_RECEIPT_STS_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="remittanceReverseIndicator" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Reverse Remittance indicator.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="recoveryReverseIndicator" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Recovery Reverse indicator.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="recoveryDescription" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Recovery Description</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="comment" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Recovery Comment</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="feeAmount" type="dollarAmount"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Recovery Fee</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="recoveryAmount" type="dollarAmount"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Recovery Amount</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+</xs:schema>

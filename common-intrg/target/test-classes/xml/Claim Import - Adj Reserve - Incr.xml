@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<claimImportCompositeDTO>
+	<claimNumber>PAL 29696700</claimNumber>
+	<claimReservesWithCoverages class="list">
+		<claimReserves>
+         		<userIdCreated>6000302</userIdCreated>
+         		<createdDateTime>2012-05-09 00:00:00.000 EDT</createdDateTime>
+         		<clmCoverageCode>tow_lab</clmCoverageCode>
+         		<clmReserveTypeCode>loss</clmReserveTypeCode>
+         		<clmLossTypeCode>tow_lab</clmLossTypeCode>
+         		<calClaimReserveAmtDerived>0</calClaimReserveAmtDerived>
+			<monetaryCategoryCode>loss</monetaryCategoryCode>
+			<calClaimReserveStatus>
+				<current>
+				       <effectiveDateTime>2012-05-09 10:56:40.641 MDT</effectiveDateTime>
+				       <calClaimReserveStatusCode>cls</calClaimReserveStatusCode>
+				</current>
+				<expired class="list"/>
+			</calClaimReserveStatus>
+			<reasonCode>updtamt</reasonCode>
+			<actionType>adj</actionType>
+			<existingOutstandingAmount>0</existingOutstandingAmount>
+			<adjustmentIndicator>incr</adjustmentIndicator>
+			<adjustmentAmount>564</adjustmentAmount>
+			<unconfirmedCoverage>false</unconfirmedCoverage>
+			<authGroupProvided>false</authGroupProvided>
+			<importReserve>true</importReserve>
+			<user>strmimpt</user>
+         		<reserveTransactionDate>2012-05-20 00:00:00.000 EST</reserveTransactionDate>
+         		<payment>false</payment>
+         		<externalParticipantIdentifier>2046</externalParticipantIdentifier>
+         		<externalUnitIdentifier>000014PAL00001004092201117000106/19/20112</externalUnitIdentifier>			
+		</claimReserves>
+	</claimReservesWithCoverages>
+</claimImportCompositeDTO>

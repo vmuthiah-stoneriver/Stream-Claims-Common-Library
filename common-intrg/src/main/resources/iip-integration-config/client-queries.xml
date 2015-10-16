@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<iipda:queries xmlns:iipda="http://www.fiserv.com/isd/iip/core/data/query/file" category="client" subcategory="client">
+
+
+		<iipda:rdbms accessId="client.events.retrieveEventsByDateAndType">
+			<iipda:content>
+				SELECT
+                    EUD.EVNT_UPDT_DATA_ID recordId,
+                    EUD.AGRE_ID contextId,
+                    EUD.EVNT_TYP_CD eventTypeCd,
+                    EUD.EVNT_UPDT_DATA_DTM eventDate,
+                    EUD.AGRE_TYP_CD contextTypeCd
+				FROM
+					EVENT_UPDATE_DATA EUD
+				WHERE
+					EUD.EVNT_UPDT_DATA_DTM &gt;= :startDate
+				AND
+					EUD.EVNT_UPDT_DATA_DTM &lt;= :endDate
+				AND
+					EUD.EVNT_TYP_CD IN (:eventCodes)
+			</iipda:content>
+			<iipda:description>
+				Retrieves the updated events for a time period based on the event codes
+			</iipda:description>
+		</iipda:rdbms>
+		
+		<iipda:rdbms accessId="client.events.retrieveEventContextIdsByDateAndType">
+			<iipda:content>
+				SELECT DISTINCT
+                    EUD.AGRE_ID contextId
+				FROM
+					EVENT_UPDATE_DATA EUD
+				WHERE
+					EUD.EVNT_UPDT_DATA_DTM &gt;= :startDate
+				AND
+					EUD.EVNT_UPDT_DATA_DTM &lt;= :endDate
+				AND
+					EUD.EVNT_TYP_CD IN (:eventCodes)
+			</iipda:content>
+			<iipda:description>
+				Retrieves the updated event context IDs for a date range and event code type list
+			</iipda:description>
+		</iipda:rdbms>
+      
+      <iipda:rdbms accessId="user.retrieveUserLoginNameByUserId">
+         <iipda:content>
+            SELECT USER_LGN_NM userName
+            FROM USER_LOGIN_CD
+            WHERE USER_ID = :userId
+         </iipda:content>
+         <iipda:description>
+            Retrieve a user by user ID
+         </iipda:description>
+      </iipda:rdbms>
+      
+     <iipda:rdbms accessId="client.entconfig.query.retrieveCompanyLOBByCompanies">
+        <iipda:content>
+         SELECT 
+            CLOBX.CMPY_ID           companyId, 
+            CLOBX.CMPY_LOB_NM          lobName,
+            CLOBX.CMPY_LOB_ID          lobId,
+            CLOBX.LOB_CD            lobCode,
+            LOBC.LOB_PKG_IND        lobPkgIndInternal,
+            CLOBX.EFF_DTM           effectiveDateTime
+         FROM COMPANY_CD CMPYC
+            JOIN COMPANY_LINE_OF_BUSINESS_XREF CLOBX
+            ON     CLOBX.CMPY_ID=CMPYC.CMPY_ID
+            AND (
+               CLOBX.EFF_DTM &lt;= :curdatetime
+               AND (
+                  CLOBX.END_DTM &gt; :curdatetime
+                  OR CLOBX.END_DTM IS NULL
+               )
+            )
+            JOIN LINE_OF_BUSINESS_CD LOBC
+            ON     LOBC.LOB_CD=CLOBX.LOB_CD
+               WHERE CLOBX.CMPY_LOB_PKG_ONLY_IND='n' and CMPYC.CMPY_ID IN (:companyIds) 
+               ORDER BY CLOBX.CMPY_LOB_NM
+        </iipda:content>
+        <iipda:description>
+            Retrieves the Company LOBs for the list of company IDs
+        </iipda:description>
+      </iipda:rdbms>
+
+ 	<iipda:rdbms accessId="client.entconfig.retrieveCompanyRelatedInformation">
+	      	<iipda:content>
+			SELECT      CC.CMPY_NO  naicsCode,
+			CC.CMPY_NCCI_GRP_CD ncciGroupCode,
+            CC.CMPY_NCCI_CAR_CD ncciCarrierCode,
+            CC.CMPY_ISO_GRP_NO isoGroupNumber,
+            CC.CMPY_ISO_CMPY_NO isoCompanyNumber,
+            CLC.CMPY_LOGO_NM_FILE companyLogoFileName,
+            CDNC.CMPY_DBA_NM_DBA_NM companyDBAName
+           	FROM COMPANY_CD CC
+            LEFT OUTER JOIN  COMPANY_LOGO_CD CLC
+            ON CLC.CMPY_ID = CC.CMPY_ID 
+            AND CLC.CMPY_LOGO_EFF_DT &lt;= :curdatetime
+	        AND (
+	               CLC.CMPY_LOGO_END_DT &gt; :curdatetime
+	               OR CLC.CMPY_LOGO_END_DT IS NULL
+	           	 ) 
+            LEFT OUTER JOIN COMPANY_DBA_NAME_CD CDNC
+            ON CDNC.CMPY_ID = CC.CMPY_ID
+            AND CDNC.CMPY_DBA_NM_PRI_IND = 'y'
+	        AND CDNC.CMPY_DBA_NM_EFF_DT &lt;= :curdatetime
+	        AND (
+	               CDNC.CMPY_DBA_NM_END_DT &gt; :curdatetime
+	               OR CDNC.CMPY_DBA_NM_END_DT IS NULL
+	           	 ) 
+		   	WHERE CC.CMPY_ID = :companyId
+            AND CC.EFF_DTM &lt;= :curdatetime
+	        AND (
+	               CC.END_DTM &gt; :curdatetime
+	               OR CC.END_DTM IS NULL
+	           	 ) 
+	         ORDER BY CC.END_DTM DESC
+	  		</iipda:content>
+	  		<iipda:description>
+	      		retrieve company related information NAIC, ISO information, DBA Name, LOGO file name.
+	  		</iipda:description>
+ 	</iipda:rdbms>
+ 	
+      <iipda:rdbms accessId="retrieveBatchLog">
+                  <iipda:content>
+             		SELECT 
+					    bl.BTCH_LOG_ID recordId,
+					    bl.BTCH_LOG_TYP_CD batchLogTypeCode,
+					    bl.AGRE_TYP_CD agreementTypeCode,
+					    bl.AGRE_SUBTYP_CD agreementSubTypeCode,
+					    bl.BTCH_JOB_TYP_CD batchJobTypeCode,
+					    bl.JOB_EXECUTION_ID jobId,
+					    bl.STEP_EXECUTION_ID stepId,
+					    bl.AGRE_ID agreementId,
+					    bl.AGRE_SUBTYP_ID agreementSubId,
+					    bl.BTCH_LOG_DESC description,
+					    bl.BTCH_LOG_RUN_DT runDate,
+					    bl.CNCURNCY_ID version,
+					    bl.AUDT_USER_CREA_ID userIdCreated,
+					    bl.AUDT_USER_CREA_DTM createdDateTime,
+					    bl.AUDT_USER_UPDT_ID userIdUpdated,
+					    bl.AUDT_USER_UPDT_DTM updatedDateTime
+					FROM BATCH_LOG bl
+					WHERE bl.JOB_EXECUTION_ID = :jobId ORDER BY bl.BTCH_LOG_ID
+                  </iipda:content>
+            <iipda:description>
+                  Batch Log Info
+            </iipda:description>
+      </iipda:rdbms>
+      
+      <iipda:rdbms accessId="retrieveBatchLogDetailInfo">
+                  <iipda:content>
+             		SELECT 
+					    bld.BTCH_LOG_DTL_ID recordId,
+					    bld.CNCURNCY_ID version,
+					    bld.BTCH_LOG_DTL_DTM createDate,
+					    bld.BTCH_LOG_DTL_MSG message,
+					    bld.AUDT_USER_CREA_ID userIdCreated,
+					    bld.AUDT_USER_CREA_DTM createdDateTime,
+					    bld.AUDT_USER_UPDT_ID userIdUpdated,
+					    bld.AUDT_USER_UPDT_DTM updatedDateTime
+					FROM BATCH_LOG_DETAIL bld
+					WHERE bld.BTCH_LOG_ID = :batchLogId
+                  </iipda:content>
+            <iipda:description>
+                  Batch Log Detail Info
+            </iipda:description>
+      </iipda:rdbms>
+      
+      <iipda:rdbms accessId="retrieveProfileStatements">
+                  <iipda:content>
+             		SELECT 
+					    prfl.PRFL_STMT_ID recordId,
+					    prfl.AGRE_TYP_CD agreementTypeCode,
+					    prfl.STMT_RSPNS_TYP_CD statementResponseTypeCode,
+					    prfl.PRFL_DATA_TYP_CD profileDataTypeCode,
+					    prfl.PRFL_STMT_TYP_CD profileStatementTypeCode,
+					    prfl.PRFL_STMT_NO profileStatementNumber,
+					    prfl.PRFL_STMT_DESC profileStatementDescription,
+					    prfl.AUDT_USER_CREA_ID userIdCreated,
+					    prfl.AUDT_USER_CREA_DTM createdDateTime,
+					    prfl.AUDT_USER_UPDT_ID userIdUpdated,
+					    prfl.AUDT_USER_UPDT_DTM updatedDateTime					    
+					FROM PROFILE_STATEMENT_CD prfl
+					WHERE prfl.AGRE_TYP_CD = :agreementTypeCode
+                  </iipda:content>
+            <iipda:description>
+                  Profile Statement Info
+            </iipda:description>
+      </iipda:rdbms>       
+ 
+</iipda:queries>

@@ -1,0 +1,1218 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<xs:annotation>
+		<xs:documentation>The Schema Represents All Common Definitions that
+			are Referenced by other Schemas</xs:documentation>
+	</xs:annotation>
+
+	<xs:simpleType name="string">
+		<xs:annotation>
+			<xs:documentation>String Type</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string" />
+	</xs:simpleType>
+
+	<xs:simpleType name="boolean">
+		<xs:annotation>
+			<xs:documentation>Boolean Type (true/false)</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:boolean" />
+	</xs:simpleType>
+
+	<xs:simpleType name="long">
+		<xs:annotation>
+			<xs:documentation>Long Type</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:long" />
+	</xs:simpleType>
+
+	<xs:simpleType name="double">
+		<xs:annotation>
+			<xs:documentation>Double Type</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:double" />
+	</xs:simpleType>
+
+	<xs:simpleType name="int">
+		<xs:annotation>
+			<xs:documentation>Integer</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:int" />
+	</xs:simpleType>
+
+	<xs:simpleType name="decimal">
+		<xs:annotation>
+			<xs:documentation>Decimal Integer</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:decimal" />
+	</xs:simpleType>
+
+	<xs:simpleType name="float">
+		<xs:annotation>
+			<xs:documentation>Floating Point</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:float" />
+	</xs:simpleType>
+
+	<xs:complexType name="attributeType" mixed="true">
+		<xs:sequence>
+			<xs:any minOccurs="0" />
+		</xs:sequence>
+		<xs:attribute name="name" type="string" use="optional" />
+	</xs:complexType>
+
+	<xs:complexType name="CriteriaDefaultImpl">
+		<xs:annotation>
+			<xs:documentation>This is the base type for the searches in the
+				system, Not Used by the interface</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="endingWildcardSearch" type="wildCardType"
+				minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>WildCard Search</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="uppercaseWildcardSearch" type="wildCardType"
+				minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>WildCard Search</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="wildcardSearch" type="wildCardType"
+				minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>WildCard Search</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="pageSize" type="long" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Number of records per page</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="totalCount" type="long" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Total Number of Records</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="totalPageCount" type="long" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Total Number of Pages</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="currentPage" type="long" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Current Page Number</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="pageable" type="boolean" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Indicates Pageability, Default false
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="sortOrderBy" type="orderType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Sort Order</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="orderType">
+		<xs:annotation>
+			<xs:documentation>Collection of OrderByDTO</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="orderByDTO" type="OrderByDTO" minOccurs="0"
+				maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Order by criteria.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="class" type="collectionType" use="optional" />
+	</xs:complexType>
+
+	<xs:complexType name="OrderByDTO">
+		<xs:annotation>
+			<xs:documentation>Pagination Order By clause.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="columnName" type="string" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Sort Column Name</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="sortOrder" type="string" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Sort Order(asc, desc)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="wildCardType">
+		<xs:annotation>
+			<xs:documentation>Collection of WildCarded Properties
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="string" type="string" minOccurs="0"
+				maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Wild card char.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="class" type="collectionType" use="optional" />
+	</xs:complexType>
+
+
+	<xs:complexType name="AuditWithDeleteAndExpireDTO">
+		<xs:annotation>
+			<xs:documentation>Represents the soft-delete and effective
+				date
+				concept for entities.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="AuditWithDeleteDTO">
+				<xs:sequence>
+					<xs:element name="effectiveDateTime" type="dateType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Effective Date</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="endDateTime" type="dateType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Expiry Date</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="AuditWithDeleteImportDTO">
+		<xs:annotation>
+			<xs:documentation>Representation for the soft-delete functionality,
+				as well as support the importing from an external system.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="AuditWithDeleteDTO">
+				<xs:sequence>
+					<xs:element name="externalSourceId" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>External enity source id.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+
+	<xs:complexType name="AuditWithDeleteDTO">
+		<xs:annotation>
+			<xs:documentation>Representation for soft-delete functionality.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="AuditDTO">
+				<xs:sequence>
+					<xs:element name="delInd" type="boolean" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>soft-delete flag.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="AuditDTO">
+		<xs:annotation>
+			<xs:documentation>Holds audit information.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="DataTransferObject">
+				<xs:sequence>
+					<xs:element name="userIdCreated" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Logged in Session user id, Recorded when the
+								entity is created.
+								If the interface does not establish
+								authentication credentials then the user id defaults to 0 which
+								is the default value for Long and
+								does not represents actual user id in the system.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="createdDateTime" type="dateType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>System Date Time stamp, Internal Use
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="userIdUpdated" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Logged in Session user id, Recorded when the
+								entity is updated.
+								If the interface does not establish
+								authentication credentials then the user id defaults to 0 which
+								is the default value for Long and
+								does not represents actual user id in the system.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="updatedDateTime" type="dateType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>System Date Time stamp, Internal Use
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+
+
+	<xs:simpleType name="dateType">
+		<xs:annotation>
+			<xs:documentation>The following examples outlines the allowed Date
+				time formats
+				2014-02-05 16:46:53.5 CDT (All US Time Zones including DST representations)
+				2014-02-05 16:46:53.532 CDT (Default Format)
+				2014-02-05 16:46:53.5 (Defaults to Server Time Zone)
+				2014-02-05 16:46:53.532 (Defaults to Server Time Zone)
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="string">
+			<xs:pattern
+				value="[0-9]{4}-[01][0-9]-[0-3][0-9] [0-2][0-9]:[0-5][0-9]:[0-6][0-9].([0-9][0-9])*[0-9]( [EMCP][SD][T])?" />
+		</xs:restriction>
+	</xs:simpleType>
+
+
+	<xs:simpleType name="longCollectionType">
+		<xs:annotation>
+			<xs:documentation>Collection of Long Data Types</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="long">
+			<xs:pattern value="list|map" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="collectionType">
+		<xs:annotation>
+			<xs:documentation>Collection of String Data Types</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="string">
+			<xs:pattern value="list|map" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="phoneType">
+		<xs:annotation>
+			<xs:documentation>Phone Number Type can be Alpha
+				Numeric(1-800-HOT-LINE), Accepts everything except CRLF
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="string">
+			<!-- <xs:pattern value="[0-9]{10}"/> <xs:pattern value="[0-9]{7}"/> -->
+			<!-- Accept any char except CRLF -->
+			<xs:pattern value=".*" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="taxType">
+		<xs:annotation>
+			<xs:documentation>Tax Identifier, Numeric Only and should be of 9
+				Charecters</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="string">
+			<xs:pattern value="[0-9]{9}" />
+		</xs:restriction>
+	</xs:simpleType>
+
+
+	<xs:complexType name="DataTransferObject">
+		<xs:annotation>
+			<xs:documentation>Base Type for Data Transfer Objects.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="BaseValidationDTO">
+				<xs:sequence>
+					<xs:element name="recordId" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Record Id, Record Primary Key
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="version" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Record Version, Used for detecting concurrency
+								and optimistic locking</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="objectId" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Object GUID, Internal Use, In the case of
+								policy import we are using this to map the
+								logical record id of the party.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="updated" type="boolean" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Set when the entity is updated, Internal Use
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="childUpdated" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Set when the child entity is updated, Internal
+								Use</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="dtoUtilsSynchronized" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Set when the entity is saved, Internal Use
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="infoMsg" type="infoMessageType"
+						minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Info Messages used by the validation framework,
+								Internal Use</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="literalDescriptionMap" type="MapItemType"
+						minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>Literal Description Map, key value pair of
+								reference data code look up, Internal Use</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="MapItemType">
+		<xs:annotation>
+			<xs:documentation>Collection of Name Value pairs as Map Type
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="entry" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Map Entry name value pairs.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:element name="entry">
+		<xs:annotation>
+			<xs:documentation>Map Element entry types</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="string" type="string" minOccurs="0"
+					maxOccurs="unbounded" />
+				<xs:element name="long" type="long" minOccurs="0"
+					maxOccurs="unbounded" />
+				<xs:element name="null" type="string" minOccurs="0"
+					maxOccurs="unbounded" />
+				<xs:element name="boolean" type="boolean" minOccurs="0"
+					maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="infoMessageType">
+		<xs:annotation>
+			<xs:documentation>Collection of Info Messages</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="infoMessageDTO" type="InfoMessageDTO"
+				minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Info messages.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="class" type="collectionType" use="optional" />
+	</xs:complexType>
+
+	<xs:complexType name="InfoMessageDTO">
+		<xs:annotation>
+			<xs:documentation>Informational Message</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="code" type="string" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Code to be used to resolve the message
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="target" type="string" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Name of the bound root object</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="arguments" type="objectType">
+				<xs:annotation>
+					<xs:documentation>Info Messages.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="objectType">
+		<xs:annotation>
+			<xs:documentation>Collection of Message Strings</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="object" type="string" minOccurs="0"
+				maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Message object.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="class" type="collectionType" use="optional" />
+	</xs:complexType>
+
+	<xs:complexType name="BaseValidationDTO">
+		<xs:annotation>
+			<xs:documentation>Base Complex Type used by Validation Framework and
+				changesets</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="objectType" type="string" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Object Type</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="changesetId" type="long" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Used for maintaining and promoting Configuration
+						Changesets, Internal use - 
+						Maps to CHGSET_ID Column from CHANGESET Table.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="changesetStatusCd" type="string"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Represents Changeset Status, Internal use - 
+						Maps to CHGSET_STS_TYP_CD Column from CHANGESET_STATUS_TYPE_CD Table.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+
+	<xs:complexType name="AuditWithImportDTO">
+		<xs:annotation>
+			<xs:documentation>Audit Type to support the importing from an
+				external system.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="AuditDTO">
+				<xs:sequence>
+					<xs:element name="externalSourceId" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>External Source Idnetifier, Used for Updating
+								Stream Data, If this is used then
+								care needs to be taken to make sure the Id is Unique to avoid
+								unpredicTable. results.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="AuditWithExpireImportDTO">
+		<xs:annotation>
+			<xs:documentation>Expirable Import Type to support the importing from
+				an
+				external system.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="AuditWithExpireDTO">
+				<xs:sequence>
+					<xs:element name="externalSourceId" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>External Source Idnetifier, Used for Updating
+								Stream Data, If this is used then
+								care needs to be taken to make sure the Id is Unique to avoid
+								unpredicTable. results.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="AuditWithExpireDTO">
+		<xs:annotation>
+			<xs:documentation>Represents data that will have audit
+				information and
+				is expirable (instead of being voidable).
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="AuditDTO">
+				<xs:sequence>
+					<xs:element name="effectiveDateTime" type="dateType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Represents the date when record would be
+								effective.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="endDateTime" type="dateType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Record Expiry Date, Can not preceed effective
+								date</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+
+	<xs:simpleType name="dollarAmount">
+		<xs:annotation>
+			<xs:documentation>Currency format- For Ex: 35 Dollars and 66 cents
+				represented as 35.66 and Negative amount
+				Represented as -35.66
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="decimal">
+			<xs:fractionDigits value="2" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:complexType name="dummyType">
+		<xs:annotation>
+			<xs:documentation>Place Holder Type to accomodate Claim Details
+				validation errors</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="dummy" type="string" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Palce holder type.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="class" type="collectionType" use="optional" />
+	</xs:complexType>
+
+	<xs:complexType name="UserDetailsDTO">
+		<xs:annotation>
+			<xs:documentation>Represents Stream User Details.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="AuditWithExpireData">
+				<xs:sequence>
+					<xs:element name="firstName" type="string" minOccurs="1"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>User First Name</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="lastName" type="string" minOccurs="1"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>User Last Name</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="middleName" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>User Middle Name</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="email" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Email Addres</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="title" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>User Title, Maps to USER_TTL_CD Column from
+								USER_TITLE_CD Table.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="phone" type="phoneType" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>User Contact Number</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="superUserId" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Supervisor Identifier, Internal Use
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="supervisor" type="UserDetailsDTO"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Supervisor Name and Contact Details
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="expired" type="boolean" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Indicates if the user is expired.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="requestPasswordPopupRequired" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Password required flag</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="emailInd" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Email flag</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="textInd" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>TextMessage flag</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="AuditWithExpireData">
+		<xs:annotation>
+			<xs:documentation>Represents Expirable Audit Records.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="AuditData">
+				<xs:sequence>
+					<xs:element name="effectiveDateTime" type="dateType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Represents the date when record would be
+								effective.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="endDateTime" type="dateType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Record Expiry Date, Can not preceed effective
+								date</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="AuditData">
+		<xs:annotation>
+			<xs:documentation>Audit Record</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="VersionedData">
+				<xs:sequence>
+					<xs:element name="userIdCreated" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Logged in Session user id, Recorded when the
+								entity is created.
+								If the interface does not establish
+								authentication credentials then the user id defaults to 0 which
+								is the default value for Long and
+								does not represents actual user id in the system.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="createdDateTime" type="dateType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>System Date Time stamp, Internal Use
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="userIdUpdated" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Logged in Session user id, Recorded when the
+								entity is updated.
+								If the interface does not establish
+								authentication credentials then the user id defaults to 0 which
+								is the default value for Long and
+								does not represents actual user id in the system.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="updatedDateTime" type="dateType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>System Date Time stamp, Internal Use
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="VersionedData">
+		<xs:annotation>
+			<xs:documentation>Record Version</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="EntityData">
+				<xs:sequence>
+					<xs:element name="version" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Version Number.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="EntityData">
+		<xs:annotation>
+			<xs:documentation>Base Entity Representation</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="recordId" type="long" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Record primary Key, Internal Use
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="modified" type="boolean" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Record Updated Flag.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="folderType">
+		<xs:annotation>
+			<xs:documentation>Folder Information.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="AuditDTO">
+				<xs:sequence>
+					<xs:element name="agreTypeCd" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Context Type Code, Maps to AGRE_TYP_CD Column
+								in AGREEMENT_TYPE_CD Table.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="recordSrcCd" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Record Source, Maps to REC_SRC_CD Column from
+								RECORD_SOURCE_CD Table.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="agreId" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Primary key that represents the Context.
+								For Ex:
+								if agreTypeCd = 'clm' then agreId is CLM_ID Column Value from
+								CLAIM Table.
+								if agreTypeCd = 'case' then agreId is CASE_ID Column
+								Value from CASES Table.
+								if agreTypeCd = 'party' then agreId is
+								PARTY_ID Column Value from PARTY Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="folderNumber" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>The folder number as generated by the folder
+								template.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="folderName" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>The folder name as generated by the folder
+								template.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="phyFileLoc" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>The description of the physical file's
+								location.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="phyFileLocStatus" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Description of the physical file's location
+								status.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="folderGenBy" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Folder Generation Source Code, Maps to
+								FOLD_GEN_BY_CD Column from FOLDER_GENERATED_BY_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="SysAdminChangeSetBaseDTO">
+		<xs:annotation>
+			<xs:documentation>Base Representation for Sysadmin Changeset
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="changesetId" type="long" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Used for maintaining and promoting Configuration
+						Changesets, Internal use - 
+						Maps to CHGSET_ID Column from CHANGESET Table.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="changesetStatusCd" type="string"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Represents Changeset Status, Internal use - 
+						Maps to CHGSET_STS_TYP_CD Column from CHANGESET_STATUS_TYPE_CD Table.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="SysAdminCompanyAddressDTO">
+		<xs:annotation>
+			<xs:documentation>Sysadmin Company Address</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="AuditWithExpireDTO">
+				<xs:sequence>
+					<xs:element name="companyOrgUnitId" type="long"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Company Organization Id</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="countryCode" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Country Code, Maps to CNTRY_CD Column from
+								COUNTRY_CD Table.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="addressTypeCode" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Country Code, Maps to CMPY_ADDR_TYP_CD Column
+								in COMPANY_ADDRESS_TYPE_CD Table.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="postalServiceRegionId" type="long"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Postal Region, Maps to PSTL_SERV_RGN_ID Column
+								in POSTAL_SERVICE_REGION_CD Table.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="postalCode" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Zip Code</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="addressLine1" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Address Line 1</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="addressLine2" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Address Line 2</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="cityName" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>City Name</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="subdivisionName" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Subdivision Name</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="manualPostalRegionName" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Postal Region Override Name</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="longitude" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>GPS Location, Longtitude</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="latitude" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>GPS Location, Latitude</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="verifiedIndicator" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Flag to indicate if address was verified with
+								the external verification sysatem.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="overrideIndicator" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Indicates if this was an overridden address
+								line</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="companyId" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Stream Company Id, Internal Use
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="postalSvcRegionCode" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Postal Region Code, Maps to PSTL_SERV_RGN_ABRV
+								Column from POSTAL_SERVICE_REGION_CD Table.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="postalSvcRegionName" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Postal service region</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="addressLine1UpperCase" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Address Line 1</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="addressLine2UpperCase" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Address Line 2</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="cityNameUpperCase" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>City</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="subdivisionNameUpperCase" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>County</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="ToolContextInfoDTO">
+		<xs:annotation>
+			<xs:documentation>Common ToolContext Info</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="contextId" type="long" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Context Id - For clm contextType it is Claim Id,
+						For case contextType it is Case Id and party contextType it is
+						Party Id
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="contextType" type="string" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Context Type - can be 'clm', 'case', 'party'
+						etc.,
+						Refer AGRE_TYP_CD Column from AGREEMENT_TYPE_CD Table.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="contextNo" type="string" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Record identification Number- can be clm_no,
+						party_no, case_no etc., depending on the context.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="contextName" type="string" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Context Name</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="subContextName" type="string" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>SubContext Name</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="subContextId" type="long" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>SubContext Id - For clmplcy subContextType it is
+						Claim Policy Id,
+						For clmuntcov subContextType it is Claim Unit
+						Coverage Id and partyaddr subContextType it is Party Address Id
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="subContextType" type="string" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>SubContext Type - can be 'clmuntcov',
+						'clmunttyp', 'clmuntptcp' etc.,
+						Refer AGRE_SUBTYP_CD Column from AGREEMENT_SUBTYPE_CD Table.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="userInterfaceLinkCode" type="string"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Context Code used for Linking UI Elements.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="recordSourceCode" type="string"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Record Source Code, Maps to REC_SRC_CD Column from
+						RECORD_SOURCE_CD Table.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="parentToolId" type="long" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Parent Record Id, Internal Use</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="parentToolType" type="string" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Parent Record Type, Internal Use
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="lob" type="string" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>LOB code, Maps to LOB_CD Column from
+						LINE_OF_BUSINESS_CD Table.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="contextAttributeMap" type="MapItemType"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Context attribute map.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="subcontextInfo" type="ToolContextInfoDTO"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>SubContext Tool Information</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+</xs:schema>

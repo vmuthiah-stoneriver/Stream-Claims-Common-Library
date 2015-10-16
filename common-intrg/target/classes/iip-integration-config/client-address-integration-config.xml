@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mule xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:vm="http://www.mulesoft.org/schema/mule/vm"
+	xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:mulexml="http://www.mulesoft.org/schema/mule/xml"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:spring="http://www.springframework.org/schema/beans" xmlns:core="http://www.mulesoft.org/schema/mule/core"
+	xmlns:jersey="http://www.mulesoft.org/schema/mule/jersey" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+	xsi:schemaLocation="
+http://www.mulesoft.org/schema/mule/vm http://www.mulesoft.org/schema/mule/vm/3.3/mule-vm.xsd 
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/3.3/mule-http.xsd 
+http://www.mulesoft.org/schema/mule/xml http://www.mulesoft.org/schema/mule/xml/3.3/mule-xml.xsd 
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd 
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/3.3/mule.xsd
+http://www.mulesoft.org/schema/mule/jersey http://www.mulesoft.org/schema/mule/jersey/3.3/mule-jersey.xsd
+">
+
+    <!-- TODO: Delete this file once the spelling of this configuration file is corrected
+         in the base application!!!  Spelling should be prc-address-verification-config.xml
+         which is an existing/duplicate version of this file already present in the
+         iip-integration-config directory.
+    -->
+	
+	<!-- Verify Address Flow -->
+	<flow name="Client Verify Address">
+
+		<inbound-endpoint ref="party.endpoint.verifyAddress"></inbound-endpoint>
+
+        <outbound-endpoint
+            name="partyAddressVerificationEndPoint"
+            address="${addressVerificationURL}"
+            exchange-pattern="request-response"
+            mimeType="text/xml"
+            ref="OutBoundEnpointRef"
+            transformer-refs="SecurityOutboundRequestTransformer IIPObject2XMLTransformer"
+            responseTransformer-refs="ByteArrayToString"
+        />
+
+		<message-properties-transformer>
+			<add-message-property key="xsd"
+				value="xsd/Address_Verification_Response.xsd" />
+		</message-properties-transformer>
+		
+		<transformer ref="SecurityOutboundResponseTransformer" />
+		<transformer ref="XSDValidationTransformer" />
+		<transformer ref="IIPXML2ObjectTransformer" />
+		<transformer ref="VerifyAddresTransformer" />
+		
+	</flow>
+	
+	<!-- Verify GeoCode US Flow -->
+	<flow name="Client GeoCode US">
+
+		<inbound-endpoint ref="party.endpoint.geocodeUSAddress"></inbound-endpoint>
+
+        <outbound-endpoint
+            name="GeoCodeUSEndPoint"
+            address="${geoCodeURL}"
+            exchange-pattern="request-response"
+            mimeType="text/xml"
+            ref="OutBoundEnpointRef"
+            transformer-refs="SecurityOutboundRequestTransformer IIPObject2XMLTransformer"
+            responseTransformer-refs="ByteArrayToString"
+        />
+
+		<message-properties-transformer>
+			<add-message-property key="xsd"
+				value="xsd/Address_GeoCode_Response.xsd" />
+		</message-properties-transformer>
+		
+		<transformer ref="SecurityOutboundResponseTransformer" />	
+		<transformer ref="XSDValidationTransformer" />
+		<transformer ref="IIPXML2ObjectTransformer" />
+		<transformer ref="VerifyAddresTransformer" />	
+	</flow>
+	
+</mule>

@@ -1,0 +1,11 @@
+ClearCase CopyAreaDB|4
+iip_starter_kit\claim_starter_kit\common-intrg\src\main\java\com\client\iip\integration\user
+2
+7
+1d:ClientUserDetailsService.java|1|14ff59e0712|eb6|fb1bedb2|2243a4c9fe0e4949a5ac148c2538dfc2|0
+24:ClientUserDetailRequestCriteria.java|1|14c95712da2|cd3|e143245d|0473940435e642ecb8e4f4a4ddbb2612|0
+1d:UserInformationComposite.java|1|14c95712d98|63f|60162070|01ec2812e4cb448c8a2d97a2649847da|0
+22:ClientUserDetailsCompositeDTO.java|1|14c95712db6|1042|afd87304|1bc73c374db64554870a3ca5b849a658|0
+21:ClientUserDetailsServiceImpl.java|1|14ff59d9ae8|3b31|da31052c|c08d02a3be5c41fc97eb6d29249928fc|0
+24:ClientUserAuthorizationLimitDTO.java|1|14c95712d52|7c0|f62d59fa|0609ba66e3a3414eb1eab217f9d54367|0
+2a:ClientUserAuthorizationLimitsCriteria.java|1|14c95712d5c|810|9ebf73cb|44161a6397724b66b3b48a197f37f787|0

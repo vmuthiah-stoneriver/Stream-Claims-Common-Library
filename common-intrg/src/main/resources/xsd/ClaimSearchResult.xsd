@@ -1,0 +1,380 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<xs:include schemaLocation="../xsd/Common.xsd" />
+
+	<xs:annotation>
+		<xs:documentation>Claim search response schema.</xs:documentation>
+	</xs:annotation>
+	
+	<xs:element name="list">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="claimSearchResultDTO" type="ClaimSearchResultDTO"
+					minOccurs="0" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Claim search results.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>	
+
+	<xs:complexType name="ClaimSearchResultDTO">
+		<xs:annotation>
+			<xs:documentation>Results of a claim search.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="DataTransferObject">
+				<xs:sequence>
+					<xs:element name="claimNumber" type="string" minOccurs="1"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Claim number.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="lossDescription" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Loss description.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="occurrenceDate" type="dateType"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Loss date.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="occurrenceTime" type="string"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Loss time.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="occurrenceTimeZone" type="string"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Loss time zone.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="notificationDate" type="dateType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Loss Notification date.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="claimStatus" type="string" minOccurs="1"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Claim status.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="claimStatusCode" type="string"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Claim status code, Maps to CLM_STS_CD Column
+								from CLAIM_STATUS_CD Table.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="claimStateCode" type="string"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Claim state code, Maps to CLM_STT_CD Column
+								from CLAIM_STATE_CD Table.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="claimId" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Claim id.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="claimType" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Claim type, Maps to CLM_TYP_CD Column from
+								CLAIM_TYPE_CD Table.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="insuredPartyId" type="long" minOccurs="1"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Insured party id.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="insuredName" type="string" minOccurs="1"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Insured name.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="lineOfBusiness" type="string"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>LOB code, Maps to LOB_CD Column from
+								LINE_OF_BUSINESS_CD Table.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="policyNumber" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Policy number.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="jurisdiction" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Jurisdiction code, Maps to JUR_ID Column from
+								JURISDICTION_CD Table.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="injuredName" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Injured person name.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="injuredAddress" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Injured person address lines.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="injuredCity" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Injured person city.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="injuredCountry" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Injured person country.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="injuredPostalCode" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Injured person zip code.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="injuredState" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Injured person state code.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="insuredAddress" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Insured address lines.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="insuredCity" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Insured city.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="insuredCountry" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Insured country.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="insuredPostalCode" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Insured zip code.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="insuredState" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Insured state.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="policyEffectiveDate" type="dateType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Policy effective date.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="policyEndDate" type="dateType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Policy end date.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="blockFlag" type="boolean" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Claim block indicator.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="catastropheCode" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Catastrophe code, Maps to CTRPH_CD Column from
+								CATASTROPHE Table.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="mcoCode" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>MCO Code, Maps to CTRPH_CD Column from
+								CATASTROPHE Table.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="company" type="string" minOccurs="1"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Coampany name, Maps to CMPY_NM Column from
+								COMPANY_CD Table.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="corporation" type="string" minOccurs="1"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Corporation name, Maps to CORP_NM Column from
+								CORPORATION_CD Table.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="claimOwner" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Claim owner.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="office" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Office name, Maps to CMPY_ORG_UNT_NM Column
+								from COMPANY_ORGANIZATION_UNIT_CD Table.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="team" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Team name, Maps to CMPY_ORG_UNT_NM Column from
+								COMPANY_ORGANIZATION_UNIT_CD Table.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="unverified" type="boolean" minOccurs="1"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Unverified claim flag.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="companyId" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Company id.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="policyModNumber" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Policy mod number.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="catastropheCd" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>CAT code, Maps to CTRPH_CD Column from
+								CATASTROPHE Table.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="atFaultReasons" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>ATFAULT reasons, Maps to AT_FLT_RSN_NM Column
+								from AT_FAULT_REASON_CD Table.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="atFaultInd" type="boolean" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>ATFAULT indicator.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="policyState" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Policy state.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="catastropheNumber" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>CAT Number.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="claimAliasNumber" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Claim alias number.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="aliasType" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Claim alias type.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="injuryIndicator" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Claim injury indicator.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="litigated" type="boolean" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Litigation flag.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="settled" type="boolean" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Settled flag.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="catastrophe" type="boolean" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Catastrphe name, Maps to CTRPH_CD Column from
+								CATASTROPHE Table.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="primaryPartOfBodyDesc" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Injured parts of body.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="mcoNumber" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>MCO number, Maps to CTRPH_NM Column from
+								CATASTROPHE Table.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="catastropheId" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>CT id.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="mcoId" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>MCO id.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+</xs:schema>

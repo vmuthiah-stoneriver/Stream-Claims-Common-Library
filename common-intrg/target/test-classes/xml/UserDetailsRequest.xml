@@ -1,0 +1,17 @@
+<clientUserDetailRequestCriteria>
+   <userId>2</userId>
+   <returnUserCommunication>false</returnUserCommunication>
+   <returnUserCredentialInfo>false</returnUserCredentialInfo>
+   <returnUserAuthorizationInfo>true</returnUserAuthorizationInfo>
+   <returnUserSecurityGroups>false</returnUserSecurityGroups>
+   <returnUserWorkGroupInfo>false</returnUserWorkGroupInfo>
+   <userAuthorizationLimitsCriteria>
+   	<authorizationTypes class="list">
+   		<string>Reserve Limit</string>
+   		<string>Payment Limit</string>
+   	</authorizationTypes>
+   	<monetaryCode>loss</monetaryCode>
+   	<coverageCode>collsn</coverageCode>
+   	<companyLobId>2</companyLobId>
+   </userAuthorizationLimitsCriteria>
+</clientUserDetailRequestCriteria>

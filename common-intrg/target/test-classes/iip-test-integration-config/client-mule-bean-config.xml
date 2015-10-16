@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:vm="http://www.mulesoft.org/schema/mule/vm"
+   xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:mulexml="http://www.mulesoft.org/schema/mule/xml"
+   xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:spring="http://www.springframework.org/schema/beans"
+   xmlns:core="http://www.mulesoft.org/schema/mule/core" xmlns:jersey="http://www.mulesoft.org/schema/mule/jersey"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+   xmlns:jee="http://www.springframework.org/schema/jee" xmlns:stdio="http://www.mulesoft.org/schema/mule/stdio"
+   xmlns:scripting="http://www.mulesoft.org/schema/mule/scripting" xmlns:servlet="http://www.mulesoft.org/schema/mule/servlet"
+   xmlns:file="http://www.mulesoft.org/schema/mule/file" xmlns:p="http://www.springframework.org/schema/p"
+   xsi:schemaLocation="
+http://www.mulesoft.org/schema/mule/vm http://www.mulesoft.org/schema/mule/vm/3.3/mule-vm.xsd 
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/3.3/mule-http.xsd 
+http://www.mulesoft.org/schema/mule/xml http://www.mulesoft.org/schema/mule/xml/3.3/mule-xml.xsd 
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd 
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/3.3/mule.xsd
+http://www.mulesoft.org/schema/mule/jersey http://www.mulesoft.org/schema/mule/jersey/3.3/mule-jersey.xsd
+http://www.mulesoft.org/schema/mule/stdio http://www.mulesoft.org/schema/mule/stdio/3.3/mule-stdio.xsd 
+http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/file/3.3/mule-file.xsd 
+http://www.mulesoft.org/schema/mule/scripting http://www.mulesoft.org/schema/mule/scripting/3.3/mule-scripting.xsd
+http://www.mulesoft.org/schema/mule/servlet http://www.mulesoft.org/schema/mule/servlet/3.3/mule-servlet.xsd
+">
+
+	<spring:beans>
+	
+		<spring:import
+			resource="classpath*:/iip-integration-config/${iip.interface.communication.protocol}-mule-endpoint-config.xml" />	
+	
+		<spring:bean id="powersuite.claims.service" 
+			class="com.stoneriver.iip.powersuite.claims.proxy.PowerSuiteServiceFactory">
+		</spring:bean>
+
+		<spring:bean id="core.pojo.bpRuleServiceMap" 
+			class="java.util.HashMap">
+		</spring:bean>
+		
+		<spring:bean id="core.pojo.bpActionServiceMap" 
+			class="java.util.HashMap">
+		</spring:bean>
+		
+		<spring:bean id="dataSourceMap" 
+			class="java.util.HashMap">
+		</spring:bean>
+		
+		<spring:bean id="core.pojo.history.rollup.includedContextIds" 
+			class="java.util.ArrayList">
+		</spring:bean>		
+		
+		<spring:bean id="baseJob" class="java.lang.Object"/>
+		
+		<spring:bean id="integration.serviceObject.ClientPartyService"	
+			class="com.client.iip.integration.party.ClientPartyServiceImpl" />	
+			
+		<spring:bean id="integration.serviceObject.ClientClaimDetailsService" 
+			class="com.client.iip.integration.claim.details.ClientClaimDetailsServiceImpl" />
+
+		<spring:bean id="integration.serviceObject.ClientClaimImportService" 
+			class="com.client.iip.integration.claim.imports.ClientClaimImportServiceImpl" />
+			
+		<spring:bean id="integration.serviceObject.ClientDocumentService" 
+			class="com.client.iip.integration.documents.ClientDocumentServiceImpl" />
+			
+		<spring:bean id="client.document.pojo.clientDocumentHelper" 
+			class="com.client.iip.integration.documents.ClientDocumentHelper" />			
+			
+		<spring:bean id="integration.serviceObject.ClientDisbursementService" 
+			class="com.client.iip.integration.financials.disbursement.ClientDisbursementServiceImpl" />
+			
+		<spring:bean id="integration.serviceObject.ClientConfigService" 
+			class="com.client.iip.integration.sa.ClientConfigServiceImpl" />
+			
+		<spring:bean id="integration.serviceObject.ClientUserDetailsService" 
+			class="com.client.iip.integration.user.ClientUserDetailsServiceImpl" />
+			
+		<spring:bean id="com.client.iip.integration.claims.details.JurisdictionHelper" 
+			class="com.client.iip.integration.claim.details.JurisdictionHelper" />
+			
+		<spring:bean id="com.client.iip.integration.claims.details.ClaimDetailsHelper" 
+			class="com.client.iip.integration.claim.details.ClaimDetailsHelper" />
+			
+		<spring:bean id="client.financials.disbursement.serviceobject.PaymentService" 
+			class="com.client.iip.integration.financials.disbursement.ClientPaymentServiceImpl" />
+			
+		<spring:bean id="client.financials.disbursement.pojo.exportPaymentPojo" 
+			class="com.client.iip.integration.financials.disbursement.helper.ClientExportPaymentHelper" />
+			
+		<spring:bean id="client.financials.disbursement.pojo.importPaymentPojo" 
+			class="com.client.iip.integration.financials.disbursement.helper.ClientImportPaymentHelper" />
+			
+		<spring:bean id="financials.disbursement.pojo.clientPaymentHeaderProcessorPojo" 
+			class="com.client.iip.integration.financials.disbursement.external.processor.ClientPaymentHeaderProcessor" />
+			
+		<spring:bean id="financials.disbursement.pojo.clientPaymentBillingProcessorPojo" 
+			class="com.client.iip.integration.financials.disbursement.external.processor.ClientPaymentBillingProcessor" />
+			
+		<spring:bean id="financials.disbursement.pojo.clientPaymentClaimProcessorPojo" 
+			class="com.client.iip.integration.financials.disbursement.external.processor.ClientPaymentClaimProcessor" />
+			
+		<spring:bean id="financials.disbursement.pojo.clientPaymentAgencyProcessorPojo" 
+			class="com.client.iip.integration.financials.disbursement.external.processor.ClientPaymentDetailAgencyProcessor" />
+			
+		<spring:bean id="financials.disbursement.pojo.clientPaymentPayeeCheckProcessorPojo" 
+			class="com.client.iip.integration.financials.disbursement.external.processor.ClientPaymentPayeeCheckProcessor" />
+			
+		<spring:bean id="financials.disbursement.pojo.clientPaymentPayeeEFTProcessorPojo" 
+			class="com.client.iip.integration.financials.disbursement.external.processor.ClientPaymentPayeeEFTProcessor" />	
+			
+		<spring:bean id="client.financials.disbursement.pojo.issuedPaymentImportPojo" 
+			class="com.client.iip.integration.financials.disbursement.helper.ClientIssuedPaymentImportPojo" />
+			
+		<spring:bean id="core.pojo.history.HistoryContext"
+				scope="prototype" class="com.fiserv.isd.iip.util.hibernate.history.tx.HistoryContext">
+				<spring:property name="saveSyncronously" value="false"/>
+		</spring:bean>																			
+			
+	</spring:beans>
+
+</mule>

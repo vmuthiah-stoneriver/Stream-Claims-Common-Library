@@ -1,0 +1,3898 @@
+<list>
+  <jurisdictionDetailDTO>
+    <code>Abington</code>
+    <value>Abington</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Accord</code>
+    <value>Accord</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Acton</code>
+    <value>Acton</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Acushnet</code>
+    <value>Acushnet</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Adams</code>
+    <value>Adams</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Aetna Life &amp; Casualty Co</code>
+    <value>Aetna Life &amp; Casualty Co</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Agawam</code>
+    <value>Agawam</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Alford</code>
+    <value>Alford</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Allendale</code>
+    <value>Allendale</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Allston</code>
+    <value>Allston</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Amesbury</code>
+    <value>Amesbury</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Amherst</code>
+    <value>Amherst</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Andover</code>
+    <value>Andover</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Aquinnah</code>
+    <value>Aquinnah</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Arlington</code>
+    <value>Arlington</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Arlington Heights</code>
+    <value>Arlington Heights</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Arlington Hts</code>
+    <value>Arlington Hts</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Ashburnham</code>
+    <value>Ashburnham</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Ashby</code>
+    <value>Ashby</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Ashfield</code>
+    <value>Ashfield</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Ashland</code>
+    <value>Ashland</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Ashley Falls</code>
+    <value>Ashley Falls</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Assinippi</code>
+    <value>Assinippi</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Assoc Of Marian Helpers</code>
+    <value>Assoc Of Marian Helpers</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Assonet</code>
+    <value>Assonet</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>At&amp;T</code>
+    <value>At&amp;T</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Athol</code>
+    <value>Athol</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Attleboro</code>
+    <value>Attleboro</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Attleboro Falls</code>
+    <value>Attleboro Falls</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Attleboro Fls</code>
+    <value>Attleboro Fls</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Auburn</code>
+    <value>Auburn</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Auburndale</code>
+    <value>Auburndale</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Avon</code>
+    <value>Avon</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Ayer</code>
+    <value>Ayer</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Babson Park</code>
+    <value>Babson Park</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Baldwinville</code>
+    <value>Baldwinville</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Bank Of America</code>
+    <value>Bank Of America</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Baptist Corner</code>
+    <value>Baptist Corner</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Bar Coded I R S</code>
+    <value>Bar Coded I R S</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Barnstable</code>
+    <value>Barnstable</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Barre</code>
+    <value>Barre</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Bass River</code>
+    <value>Bass River</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Bay State Village</code>
+    <value>Bay State Village</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Bay State Vlg</code>
+    <value>Bay State Vlg</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Bay State W Tower</code>
+    <value>Bay State W Tower</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Baystate Medical</code>
+    <value>Baystate Medical</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Beachmont</code>
+    <value>Beachmont</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Becket</code>
+    <value>Becket</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Becket Corners</code>
+    <value>Becket Corners</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Bedford</code>
+    <value>Bedford</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Belchertown</code>
+    <value>Belchertown</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Bell Atlantic Telephone Co</code>
+    <value>Bell Atlantic Telephone Co</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Bellingham</code>
+    <value>Bellingham</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Belmont</code>
+    <value>Belmont</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Berkley</code>
+    <value>Berkley</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Berkshire</code>
+    <value>Berkshire</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Berkshire Heights</code>
+    <value>Berkshire Heights</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Berlin</code>
+    <value>Berlin</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Bernardston</code>
+    <value>Bernardston</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Beverly</code>
+    <value>Beverly</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Beverly Farms</code>
+    <value>Beverly Farms</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Big Pond</code>
+    <value>Big Pond</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Billerica</code>
+    <value>Billerica</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Blackstone</code>
+    <value>Blackstone</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Blandford</code>
+    <value>Blandford</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Blissville</code>
+    <value>Blissville</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Bolton</code>
+    <value>Bolton</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Bondsville</code>
+    <value>Bondsville</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Boston</code>
+    <value>Boston</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Boston City Hall</code>
+    <value>Boston City Hall</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Boston Clg</code>
+    <value>Boston Clg</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Boston College</code>
+    <value>Boston College</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Boston Financial Data Servic</code>
+    <value>Boston Financial Data Servic</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Boston University</code>
+    <value>Boston University</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Bourne</code>
+    <value>Bourne</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Boxboro</code>
+    <value>Boxboro</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Boxborough</code>
+    <value>Boxborough</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Boxford</code>
+    <value>Boxford</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Boylston</code>
+    <value>Boylston</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Bradford</code>
+    <value>Bradford</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Braintree</code>
+    <value>Braintree</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Braintree Highlands</code>
+    <value>Braintree Highlands</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Braintree Hld</code>
+    <value>Braintree Hld</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Braintree Phantom</code>
+    <value>Braintree Phantom</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Brant Rock</code>
+    <value>Brant Rock</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Brewster</code>
+    <value>Brewster</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Bridgewater</code>
+    <value>Bridgewater</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Bridgewater State College</code>
+    <value>Bridgewater State College</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Brighton</code>
+    <value>Brighton</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Brightwood</code>
+    <value>Brightwood</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Brimfield</code>
+    <value>Brimfield</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Brockton</code>
+    <value>Brockton</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Brookfield</code>
+    <value>Brookfield</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Brookline</code>
+    <value>Brookline</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Brookline Village</code>
+    <value>Brookline Village</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Brookline Vlg</code>
+    <value>Brookline Vlg</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Bryantville</code>
+    <value>Bryantville</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Buckland</code>
+    <value>Buckland</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Burlington</code>
+    <value>Burlington</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Buzzards Bay</code>
+    <value>Buzzards Bay</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Byfield</code>
+    <value>Byfield</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Cambridge</code>
+    <value>Cambridge</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Cambridgeport</code>
+    <value>Cambridgeport</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Canton</code>
+    <value>Canton</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Carlisle</code>
+    <value>Carlisle</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Carver</code>
+    <value>Carver</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Cash Management</code>
+    <value>Cash Management</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Cataumet</code>
+    <value>Cataumet</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Cedarville</code>
+    <value>Cedarville</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Centerville</code>
+    <value>Centerville</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Central Mass P &amp; D Ctr</code>
+    <value>Central Mass P &amp; D Ctr</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Chadwicks Of Boston</code>
+    <value>Chadwicks Of Boston</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Chappaquiddick Island</code>
+    <value>Chappaquiddick Island</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Charlemont</code>
+    <value>Charlemont</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Charlestown</code>
+    <value>Charlestown</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Charlton</code>
+    <value>Charlton</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Charlton City</code>
+    <value>Charlton City</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Charlton Depot</code>
+    <value>Charlton Depot</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Charlton Dept</code>
+    <value>Charlton Dept</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Charlton Dpt</code>
+    <value>Charlton Dpt</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Chartley</code>
+    <value>Chartley</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Chatham</code>
+    <value>Chatham</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Chelmsford</code>
+    <value>Chelmsford</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Chelsea</code>
+    <value>Chelsea</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Cherry Brook</code>
+    <value>Cherry Brook</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Cherry Valley</code>
+    <value>Cherry Valley</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Cheshire</code>
+    <value>Cheshire</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Chester</code>
+    <value>Chester</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Chesterfield</code>
+    <value>Chesterfield</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Chestnut Hill</code>
+    <value>Chestnut Hill</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Chicopee</code>
+    <value>Chicopee</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Chilmark</code>
+    <value>Chilmark</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Clarksburg</code>
+    <value>Clarksburg</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Clinton</code>
+    <value>Clinton</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Cochituate</code>
+    <value>Cochituate</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Cohasset</code>
+    <value>Cohasset</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Cold Spring</code>
+    <value>Cold Spring</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Colrain</code>
+    <value>Colrain</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Com/Energy Services</code>
+    <value>Com/Energy Services</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Concord</code>
+    <value>Concord</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Conway</code>
+    <value>Conway</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Cotuit</code>
+    <value>Cotuit</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Crescent Mills</code>
+    <value>Crescent Mills</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Cummaquid</code>
+    <value>Cummaquid</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Cummington</code>
+    <value>Cummington</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Cushman</code>
+    <value>Cushman</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Cuttyhunk</code>
+    <value>Cuttyhunk</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Dalton</code>
+    <value>Dalton</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Danvers</code>
+    <value>Danvers</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Dartmouth</code>
+    <value>Dartmouth</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Dedham</code>
+    <value>Dedham</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Deerfield</code>
+    <value>Deerfield</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Dennis</code>
+    <value>Dennis</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Dennis Port</code>
+    <value>Dennis Port</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Dennisport</code>
+    <value>Dennisport</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Devens</code>
+    <value>Devens</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Dighton</code>
+    <value>Dighton</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Dorchester</code>
+    <value>Dorchester</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Dorchester Center</code>
+    <value>Dorchester Center</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Dorchestr Ctr</code>
+    <value>Dorchestr Ctr</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Douglas</code>
+    <value>Douglas</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Dover</code>
+    <value>Dover</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Dracut</code>
+    <value>Dracut</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Drury</code>
+    <value>Drury</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Dudley</code>
+    <value>Dudley</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Dudley Hill</code>
+    <value>Dudley Hill</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Dunstable</code>
+    <value>Dunstable</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Duxbury</code>
+    <value>Duxbury</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>E Arlington</code>
+    <value>E Arlington</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>E Blackstone</code>
+    <value>E Blackstone</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>E Boston</code>
+    <value>E Boston</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>E Braintree</code>
+    <value>E Braintree</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>E Bridgewater</code>
+    <value>E Bridgewater</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>E Bridgewtr</code>
+    <value>E Bridgewtr</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>E Brookfield</code>
+    <value>E Brookfield</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>E Cambridge</code>
+    <value>E Cambridge</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>E Dennis</code>
+    <value>E Dennis</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>E Falmouth</code>
+    <value>E Falmouth</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>E Hampton</code>
+    <value>E Hampton</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>E Harwich</code>
+    <value>E Harwich</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>E Longmeadow</code>
+    <value>E Longmeadow</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>E Mansfield</code>
+    <value>E Mansfield</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>E Otis</code>
+    <value>E Otis</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>E Pepperell</code>
+    <value>E Pepperell</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>E Princeton</code>
+    <value>E Princeton</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>E Sandwich</code>
+    <value>E Sandwich</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>E Somerville</code>
+    <value>E Somerville</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>E Templeton</code>
+    <value>E Templeton</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>E Walpole</code>
+    <value>E Walpole</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>E Wareham</code>
+    <value>E Wareham</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>E Watertown</code>
+    <value>E Watertown</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Ea Falmouth</code>
+    <value>Ea Falmouth</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Eagleville</code>
+    <value>Eagleville</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>East Arlington</code>
+    <value>East Arlington</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>East Blackstone</code>
+    <value>East Blackstone</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>East Boston</code>
+    <value>East Boston</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>East Braintree</code>
+    <value>East Braintree</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>East Bridgewater</code>
+    <value>East Bridgewater</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>East Brimfield</code>
+    <value>East Brimfield</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>East Brookfield</code>
+    <value>East Brookfield</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>East Cambridge</code>
+    <value>East Cambridge</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>East Carver</code>
+    <value>East Carver</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>East Charlemont</code>
+    <value>East Charlemont</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>East Deerfield</code>
+    <value>East Deerfield</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>East Dennis</code>
+    <value>East Dennis</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>East Douglas</code>
+    <value>East Douglas</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>East Falmouth</code>
+    <value>East Falmouth</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>East Freetown</code>
+    <value>East Freetown</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>East Harwich</code>
+    <value>East Harwich</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>East Leverett</code>
+    <value>East Leverett</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>East Longmeadow</code>
+    <value>East Longmeadow</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>East Lynn</code>
+    <value>East Lynn</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>East Mansfield</code>
+    <value>East Mansfield</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>East Millbury</code>
+    <value>East Millbury</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>East Milton</code>
+    <value>East Milton</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>East Orleans</code>
+    <value>East Orleans</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>East Otis</code>
+    <value>East Otis</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>East Pembroke</code>
+    <value>East Pembroke</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>East Pepperell</code>
+    <value>East Pepperell</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>East Princeton</code>
+    <value>East Princeton</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>East Sandwich</code>
+    <value>East Sandwich</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>East Somerville</code>
+    <value>East Somerville</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>East Taunton</code>
+    <value>East Taunton</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>East Templeton</code>
+    <value>East Templeton</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>East Walpole</code>
+    <value>East Walpole</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>East Wareham</code>
+    <value>East Wareham</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>East Watertown</code>
+    <value>East Watertown</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>East Weymouth</code>
+    <value>East Weymouth</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>East Windsor</code>
+    <value>East Windsor</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Eastham</code>
+    <value>Eastham</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Easthampton</code>
+    <value>Easthampton</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Easton</code>
+    <value>Easton</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Edgartown</code>
+    <value>Edgartown</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Edgemere</code>
+    <value>Edgemere</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Egremont</code>
+    <value>Egremont</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Elmwood</code>
+    <value>Elmwood</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Emc</code>
+    <value>Emc</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Erving</code>
+    <value>Erving</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Essex</code>
+    <value>Essex</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Everett</code>
+    <value>Everett</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Fairhaven</code>
+    <value>Fairhaven</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Fall River</code>
+    <value>Fall River</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Falmouth</code>
+    <value>Falmouth</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Farley</code>
+    <value>Farley</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Fayville</code>
+    <value>Fayville</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Feeding Hills</code>
+    <value>Feeding Hills</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Fidelity Service Company</code>
+    <value>Fidelity Service Company</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Field Premium Inc</code>
+    <value>Field Premium Inc</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Fiskdale</code>
+    <value>Fiskdale</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Fitchburg</code>
+    <value>Fitchburg</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Fleet Bank</code>
+    <value>Fleet Bank</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Fleet Bank Boston</code>
+    <value>Fleet Bank Boston</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Fleet National Shawmut</code>
+    <value>Fleet National Shawmut</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Florence</code>
+    <value>Florence</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Florida</code>
+    <value>Florida</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Forestdale</code>
+    <value>Forestdale</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Forge Village</code>
+    <value>Forge Village</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Fort Devens</code>
+    <value>Fort Devens</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Foxboro</code>
+    <value>Foxboro</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Foxborough</code>
+    <value>Foxborough</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Framingham</code>
+    <value>Framingham</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Framingham Center</code>
+    <value>Framingham Center</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Framingham So</code>
+    <value>Framingham So</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Franklin</code>
+    <value>Franklin</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Freetown</code>
+    <value>Freetown</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Ft Devens</code>
+    <value>Ft Devens</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Gardner</code>
+    <value>Gardner</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Gay Head</code>
+    <value>Gay Head</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>General Elec Co</code>
+    <value>General Elec Co</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>General Mail Facility-Bmc</code>
+    <value>General Mail Facility-Bmc</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Georgetown</code>
+    <value>Georgetown</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Gilbertville</code>
+    <value>Gilbertville</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Gill</code>
+    <value>Gill</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Glendale</code>
+    <value>Glendale</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Globe Village</code>
+    <value>Globe Village</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Gloucester</code>
+    <value>Gloucester</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Goshen</code>
+    <value>Goshen</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Gosnold</code>
+    <value>Gosnold</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Grafton</code>
+    <value>Grafton</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Granby</code>
+    <value>Granby</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Granville</code>
+    <value>Granville</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Granville Center</code>
+    <value>Granville Center</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Great Barrington</code>
+    <value>Great Barrington</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Green Harbor</code>
+    <value>Green Harbor</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Greenbush</code>
+    <value>Greenbush</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Greendale</code>
+    <value>Greendale</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Greenfield</code>
+    <value>Greenfield</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Groton</code>
+    <value>Groton</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Grove Hall</code>
+    <value>Grove Hall</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Groveland</code>
+    <value>Groveland</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Gt Barrington</code>
+    <value>Gt Barrington</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Hadley</code>
+    <value>Hadley</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Halifax</code>
+    <value>Halifax</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Halland</code>
+    <value>Halland</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Halyoke</code>
+    <value>Halyoke</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Hamilton</code>
+    <value>Hamilton</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Hampden</code>
+    <value>Hampden</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Hampton</code>
+    <value>Hampton</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Hancock</code>
+    <value>Hancock</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Hanover</code>
+    <value>Hanover</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Hanover Insurance</code>
+    <value>Hanover Insurance</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Hanscom Afb</code>
+    <value>Hanscom Afb</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Hanson</code>
+    <value>Hanson</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Hardwich</code>
+    <value>Hardwich</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Hardwick</code>
+    <value>Hardwick</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Hartsville</code>
+    <value>Hartsville</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Harvard</code>
+    <value>Harvard</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Harvard Sq</code>
+    <value>Harvard Sq</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Harvard Square</code>
+    <value>Harvard Square</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Harwich</code>
+    <value>Harwich</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Harwich Port</code>
+    <value>Harwich Port</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Harwichport</code>
+    <value>Harwichport</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Harwood Station</code>
+    <value>Harwood Station</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Hassanamisco Indian Reservat</code>
+    <value>Hassanamisco Indian Reservat</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Hastings</code>
+    <value>Hastings</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Hatchville</code>
+    <value>Hatchville</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Hatfield</code>
+    <value>Hatfield</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Hathorne</code>
+    <value>Hathorne</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Haverhill</code>
+    <value>Haverhill</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Hawley</code>
+    <value>Hawley</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Haydenville</code>
+    <value>Haydenville</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Heath</code>
+    <value>Heath</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Hingham</code>
+    <value>Hingham</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Hinsdale</code>
+    <value>Hinsdale</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Hntgtn</code>
+    <value>Hntgtn</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Holbrook</code>
+    <value>Holbrook</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Holden</code>
+    <value>Holden</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Holland</code>
+    <value>Holland</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Holliston</code>
+    <value>Holliston</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Holyoke</code>
+    <value>Holyoke</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Hoosac Tunnel</code>
+    <value>Hoosac Tunnel</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Hopedale</code>
+    <value>Hopedale</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Hopkinton</code>
+    <value>Hopkinton</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Horseneck Beach</code>
+    <value>Horseneck Beach</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Houghs Neck</code>
+    <value>Houghs Neck</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Housatonic</code>
+    <value>Housatonic</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Hubbardston</code>
+    <value>Hubbardston</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Hudson</code>
+    <value>Hudson</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Hull</code>
+    <value>Hull</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Humarock</code>
+    <value>Humarock</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Huntington</code>
+    <value>Huntington</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Hyannis</code>
+    <value>Hyannis</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Hyannis Port</code>
+    <value>Hyannis Port</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Hyde Park</code>
+    <value>Hyde Park</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Indian Orch</code>
+    <value>Indian Orch</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Indian Orchard</code>
+    <value>Indian Orchard</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Inman Square</code>
+    <value>Inman Square</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Interlaken</code>
+    <value>Interlaken</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Internal Revenue Service</code>
+    <value>Internal Revenue Service</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Ipswich</code>
+    <value>Ipswich</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Irs Service Center</code>
+    <value>Irs Service Center</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Islington</code>
+    <value>Islington</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Jamaica Plain</code>
+    <value>Jamaica Plain</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Jefferson</code>
+    <value>Jefferson</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>John Hancock Mutual Ins</code>
+    <value>John Hancock Mutual Ins</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>John Hancock P O Box 192</code>
+    <value>John Hancock P O Box 192</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>John Hancock P O Box 505</code>
+    <value>John Hancock P O Box 505</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Kates Corner</code>
+    <value>Kates Corner</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Kendal Green</code>
+    <value>Kendal Green</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Kendall Square</code>
+    <value>Kendall Square</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Kenmore</code>
+    <value>Kenmore</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Kingston</code>
+    <value>Kingston</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Knightville</code>
+    <value>Knightville</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Lahey Clinic Med Ctr</code>
+    <value>Lahey Clinic Med Ctr</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Lake Mattawa</code>
+    <value>Lake Mattawa</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Lake Pleasant</code>
+    <value>Lake Pleasant</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Lakeville</code>
+    <value>Lakeville</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Lakeville Phantom</code>
+    <value>Lakeville Phantom</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Lambs Grove</code>
+    <value>Lambs Grove</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Lancaster</code>
+    <value>Lancaster</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Lanesboro</code>
+    <value>Lanesboro</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Lanesborough</code>
+    <value>Lanesborough</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Lawrence</code>
+    <value>Lawrence</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Lee</code>
+    <value>Lee</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Leeds</code>
+    <value>Leeds</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Leicester</code>
+    <value>Leicester</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Lenox</code>
+    <value>Lenox</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Lenox Dale</code>
+    <value>Lenox Dale</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Leominster</code>
+    <value>Leominster</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Leverett</code>
+    <value>Leverett</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Lexington</code>
+    <value>Lexington</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Leyden</code>
+    <value>Leyden</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Lincoln</code>
+    <value>Lincoln</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Lincoln Center</code>
+    <value>Lincoln Center</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Linwood</code>
+    <value>Linwood</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Lithia</code>
+    <value>Lithia</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Littleton</code>
+    <value>Littleton</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Longmeadow</code>
+    <value>Longmeadow</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Loudville</code>
+    <value>Loudville</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Lowell</code>
+    <value>Lowell</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Ludlow</code>
+    <value>Ludlow</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Lunenburg</code>
+    <value>Lunenburg</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Lynn</code>
+    <value>Lynn</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Lynnfield</code>
+    <value>Lynnfield</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Magnolia</code>
+    <value>Magnolia</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Malden</code>
+    <value>Malden</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Manchaug</code>
+    <value>Manchaug</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Manchester</code>
+    <value>Manchester</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Manchester By The Sea</code>
+    <value>Manchester By The Sea</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Manomet</code>
+    <value>Manomet</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Mansfield</code>
+    <value>Mansfield</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Marblehead</code>
+    <value>Marblehead</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Marian Helpers</code>
+    <value>Marian Helpers</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Marina Bay</code>
+    <value>Marina Bay</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Marion</code>
+    <value>Marion</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Marion Fathers</code>
+    <value>Marion Fathers</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Marlboro</code>
+    <value>Marlboro</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Marlborough</code>
+    <value>Marlborough</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Marshfield</code>
+    <value>Marshfield</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Marshfield Hills</code>
+    <value>Marshfield Hills</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Marshfld Hls</code>
+    <value>Marshfld Hls</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Marstons Mills</code>
+    <value>Marstons Mills</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Marstons Mls</code>
+    <value>Marstons Mls</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Mashpee</code>
+    <value>Mashpee</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Mass Mutual Life Ins Co</code>
+    <value>Mass Mutual Life Ins Co</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Mass Tax</code>
+    <value>Mass Tax</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Massachusetts District</code>
+    <value>Massachusetts District</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Massachusetts Tax</code>
+    <value>Massachusetts Tax</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Mattapan</code>
+    <value>Mattapan</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Mattapoisett</code>
+    <value>Mattapoisett</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Maynard</code>
+    <value>Maynard</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Medfield</code>
+    <value>Medfield</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Medford</code>
+    <value>Medford</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Medway</code>
+    <value>Medway</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Mellon Financial Services</code>
+    <value>Mellon Financial Services</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Melrose</code>
+    <value>Melrose</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Mendon</code>
+    <value>Mendon</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Menemsha</code>
+    <value>Menemsha</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Merrimac</code>
+    <value>Merrimac</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Methuen</code>
+    <value>Methuen</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Mhead</code>
+    <value>Mhead</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Middleboro</code>
+    <value>Middleboro</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Middleborough</code>
+    <value>Middleborough</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Middlefield</code>
+    <value>Middlefield</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Middleton</code>
+    <value>Middleton</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Milford</code>
+    <value>Milford</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Mill River</code>
+    <value>Mill River</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Millbury</code>
+    <value>Millbury</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Millers Falls</code>
+    <value>Millers Falls</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Millerville</code>
+    <value>Millerville</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Millis</code>
+    <value>Millis</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Millville</code>
+    <value>Millville</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Milton</code>
+    <value>Milton</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Milton Village</code>
+    <value>Milton Village</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Milton Vlg</code>
+    <value>Milton Vlg</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Minot</code>
+    <value>Minot</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Mission Hill</code>
+    <value>Mission Hill</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Monarch Life Ins Co</code>
+    <value>Monarch Life Ins Co</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Monponsett</code>
+    <value>Monponsett</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Monroe</code>
+    <value>Monroe</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Monroe Bridge</code>
+    <value>Monroe Bridge</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Monson</code>
+    <value>Monson</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Montague</code>
+    <value>Montague</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Monterey</code>
+    <value>Monterey</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Montgomery</code>
+    <value>Montgomery</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Monument Bch</code>
+    <value>Monument Bch</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Monument Beach</code>
+    <value>Monument Beach</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Morningdale</code>
+    <value>Morningdale</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Mount Hermon</code>
+    <value>Mount Hermon</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Mount Tom</code>
+    <value>Mount Tom</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Mount Washington</code>
+    <value>Mount Washington</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Mt Hermon</code>
+    <value>Mt Hermon</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Mt Washington</code>
+    <value>Mt Washington</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>N Adams</code>
+    <value>N Adams</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>N Andover</code>
+    <value>N Andover</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>N Attleboro</code>
+    <value>N Attleboro</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>N Billerica</code>
+    <value>N Billerica</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>N Brookfield</code>
+    <value>N Brookfield</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>N Cambridge</code>
+    <value>N Cambridge</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>N Chatham</code>
+    <value>N Chatham</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>N Chelmsford</code>
+    <value>N Chelmsford</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>N Dartmouth</code>
+    <value>N Dartmouth</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>N Dighton</code>
+    <value>N Dighton</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>N Easton</code>
+    <value>N Easton</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>N Egremont</code>
+    <value>N Egremont</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>N Falmouth</code>
+    <value>N Falmouth</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>N Field</code>
+    <value>N Field</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>N Grafton</code>
+    <value>N Grafton</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>N Hatfield</code>
+    <value>N Hatfield</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>N Marshfield</code>
+    <value>N Marshfield</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>N Natick</code>
+    <value>N Natick</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>N Orange</code>
+    <value>N Orange</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>N Pembroke</code>
+    <value>N Pembroke</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>N Quincy</code>
+    <value>N Quincy</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>N Reading</code>
+    <value>N Reading</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>N Scituate</code>
+    <value>N Scituate</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>N Sudbury</code>
+    <value>N Sudbury</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>N Uxbridge</code>
+    <value>N Uxbridge</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>N Weymouth</code>
+    <value>N Weymouth</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Nabnasset</code>
+    <value>Nabnasset</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Nahant</code>
+    <value>Nahant</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Nantasket Beach</code>
+    <value>Nantasket Beach</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Nantucket</code>
+    <value>Nantucket</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Natick</code>
+    <value>Natick</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>National Grid</code>
+    <value>National Grid</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>National Grid Co</code>
+    <value>National Grid Co</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Needham</code>
+    <value>Needham</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Needham Heights</code>
+    <value>Needham Heights</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Needham Hgts</code>
+    <value>Needham Hgts</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Needham Jct</code>
+    <value>Needham Jct</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>New Ashford</code>
+    <value>New Ashford</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>New Bedford</code>
+    <value>New Bedford</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>New Braintree</code>
+    <value>New Braintree</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>New England Business</code>
+    <value>New England Business</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>New England Business Svc Inc</code>
+    <value>New England Business Svc Inc</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>New Marlboro</code>
+    <value>New Marlboro</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>New Marlborou</code>
+    <value>New Marlborou</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>New Marlborough</code>
+    <value>New Marlborough</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>New Salem</code>
+    <value>New Salem</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>New Seabury</code>
+    <value>New Seabury</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>New Town</code>
+    <value>New Town</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Newbury</code>
+    <value>Newbury</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Newburyport</code>
+    <value>Newburyport</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Newton</code>
+    <value>Newton</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Newton Center</code>
+    <value>Newton Center</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Newton Centre</code>
+    <value>Newton Centre</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Newton Cntr</code>
+    <value>Newton Cntr</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Newton Ctr</code>
+    <value>Newton Ctr</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Newton Highlands</code>
+    <value>Newton Highlands</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Newton Hlds</code>
+    <value>Newton Hlds</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Newton L F</code>
+    <value>Newton L F</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Newton Lower Falls</code>
+    <value>Newton Lower Falls</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Newton U F</code>
+    <value>Newton U F</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Newton Upper Falls</code>
+    <value>Newton Upper Falls</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Newtonville</code>
+    <value>Newtonville</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>No Adams</code>
+    <value>No Adams</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>No Attleboro</code>
+    <value>No Attleboro</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>No Easton</code>
+    <value>No Easton</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>No Egremont</code>
+    <value>No Egremont</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>No Field</code>
+    <value>No Field</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>No Grafton</code>
+    <value>No Grafton</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>No Hatfield</code>
+    <value>No Hatfield</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>No Natick</code>
+    <value>No Natick</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>No Quincy</code>
+    <value>No Quincy</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Nonantum</code>
+    <value>Nonantum</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Nonquitt</code>
+    <value>Nonquitt</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Norfolk</code>
+    <value>Norfolk</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Norfolk Downs</code>
+    <value>Norfolk Downs</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>North Abington</code>
+    <value>North Abington</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>North Adams</code>
+    <value>North Adams</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>North Amherst</code>
+    <value>North Amherst</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>North Andover</code>
+    <value>North Andover</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>North Attleboro</code>
+    <value>North Attleboro</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>North Billerica</code>
+    <value>North Billerica</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>North Brookfield</code>
+    <value>North Brookfield</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>North Cambridge</code>
+    <value>North Cambridge</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>North Carver</code>
+    <value>North Carver</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>North Chatham</code>
+    <value>North Chatham</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>North Chelmsford</code>
+    <value>North Chelmsford</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>North Chester</code>
+    <value>North Chester</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>North Dartmouth</code>
+    <value>North Dartmouth</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>North Dighton</code>
+    <value>North Dighton</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>North Eastham</code>
+    <value>North Eastham</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>North Easton</code>
+    <value>North Easton</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>North Egremont</code>
+    <value>North Egremont</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>North Falmouth</code>
+    <value>North Falmouth</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>North Grafton</code>
+    <value>North Grafton</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>North Hadley</code>
+    <value>North Hadley</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>North Hampton</code>
+    <value>North Hampton</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>North Hatfield</code>
+    <value>North Hatfield</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>North Lancaster</code>
+    <value>North Lancaster</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>North Leverett</code>
+    <value>North Leverett</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>North Marshfield</code>
+    <value>North Marshfield</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>North Natick</code>
+    <value>North Natick</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>North Orange</code>
+    <value>North Orange</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>North Otis</code>
+    <value>North Otis</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>North Oxford</code>
+    <value>North Oxford</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>North Pembroke</code>
+    <value>North Pembroke</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>North Quincy</code>
+    <value>North Quincy</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>North Reading</code>
+    <value>North Reading</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>North Scituate</code>
+    <value>North Scituate</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>North Sudbury</code>
+    <value>North Sudbury</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>North Tisbury</code>
+    <value>North Tisbury</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>North Truro</code>
+    <value>North Truro</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>North Uxbridge</code>
+    <value>North Uxbridge</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>North Waltham</code>
+    <value>North Waltham</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>North Weymouth</code>
+    <value>North Weymouth</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Northampton</code>
+    <value>Northampton</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Northboro</code>
+    <value>Northboro</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Northborough</code>
+    <value>Northborough</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Northbridge</code>
+    <value>Northbridge</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Northfield</code>
+    <value>Northfield</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Northfield Mount Hermon</code>
+    <value>Northfield Mount Hermon</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Northfield Mt Hermon</code>
+    <value>Northfield Mt Hermon</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Norton</code>
+    <value>Norton</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Norwell</code>
+    <value>Norwell</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Norwood</code>
+    <value>Norwood</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Nutting Lake</code>
+    <value>Nutting Lake</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Nuttings Lake</code>
+    <value>Nuttings Lake</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Oak Bluffs</code>
+    <value>Oak Bluffs</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Oakdale</code>
+    <value>Oakdale</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Oakham</code>
+    <value>Oakham</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Ocean Bluff</code>
+    <value>Ocean Bluff</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Ocean Spray</code>
+    <value>Ocean Spray</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Old Furnace</code>
+    <value>Old Furnace</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Onset</code>
+    <value>Onset</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Orange</code>
+    <value>Orange</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Orleans</code>
+    <value>Orleans</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Osterville</code>
+    <value>Osterville</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Otis</code>
+    <value>Otis</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Otis A F B</code>
+    <value>Otis A F B</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Otis Afb</code>
+    <value>Otis Afb</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Otis Air National Guard</code>
+    <value>Otis Air National Guard</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Otis Ang</code>
+    <value>Otis Ang</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Otis Angb</code>
+    <value>Otis Angb</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Otter River</code>
+    <value>Otter River</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Oxford</code>
+    <value>Oxford</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Padanaram The Packet</code>
+    <value>Padanaram The Packet</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Palmer</code>
+    <value>Palmer</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Paxton</code>
+    <value>Paxton</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Peabody</code>
+    <value>Peabody</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Pelham</code>
+    <value>Pelham</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Pembroke</code>
+    <value>Pembroke</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Pepperell</code>
+    <value>Pepperell</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Peru</code>
+    <value>Peru</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Petersham</code>
+    <value>Petersham</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Phillipston</code>
+    <value>Phillipston</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Pigeon Cove</code>
+    <value>Pigeon Cove</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Pinehurst</code>
+    <value>Pinehurst</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Pingryville</code>
+    <value>Pingryville</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Pittsfield</code>
+    <value>Pittsfield</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Plainfield</code>
+    <value>Plainfield</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Plainville</code>
+    <value>Plainville</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Plum Island</code>
+    <value>Plum Island</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Plymouth</code>
+    <value>Plymouth</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Plympton</code>
+    <value>Plympton</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Pocasset</code>
+    <value>Pocasset</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Porter Square</code>
+    <value>Porter Square</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Prides Crossing</code>
+    <value>Prides Crossing</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Prides Crssng</code>
+    <value>Prides Crssng</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Prides Xing</code>
+    <value>Prides Xing</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Princeton</code>
+    <value>Princeton</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Provincetown</code>
+    <value>Provincetown</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Quincy</code>
+    <value>Quincy</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Quincy Center</code>
+    <value>Quincy Center</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Randolph</code>
+    <value>Randolph</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Raynham</code>
+    <value>Raynham</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Raynham Center</code>
+    <value>Raynham Center</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Raynham Ctr</code>
+    <value>Raynham Ctr</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Reading</code>
+    <value>Reading</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Readville</code>
+    <value>Readville</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Rehoboth</code>
+    <value>Rehoboth</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Revere</code>
+    <value>Revere</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Revere Beach</code>
+    <value>Revere Beach</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Richardson Corners</code>
+    <value>Richardson Corners</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Richmond</code>
+    <value>Richmond</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Risingdale</code>
+    <value>Risingdale</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Riverside</code>
+    <value>Riverside</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Rochdale</code>
+    <value>Rochdale</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Rochester</code>
+    <value>Rochester</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Rockdale</code>
+    <value>Rockdale</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Rockland</code>
+    <value>Rockland</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Rockport</code>
+    <value>Rockport</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Rocky Nook</code>
+    <value>Rocky Nook</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Roslindale</code>
+    <value>Roslindale</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Rowe</code>
+    <value>Rowe</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Rowley</code>
+    <value>Rowley</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Roxbury</code>
+    <value>Roxbury</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Roxbury Crossing</code>
+    <value>Roxbury Crossing</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Roxbury Xing</code>
+    <value>Roxbury Xing</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Royalston</code>
+    <value>Royalston</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Russell</code>
+    <value>Russell</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Rutland</code>
+    <value>Rutland</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>S Attleboro</code>
+    <value>S Attleboro</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>S Boston</code>
+    <value>S Boston</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>S Chelmsford</code>
+    <value>S Chelmsford</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>S Chesterfield</code>
+    <value>S Chesterfield</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>S Dartmouth</code>
+    <value>S Dartmouth</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>S Deerfield</code>
+    <value>S Deerfield</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>S Dennis</code>
+    <value>S Dennis</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>S Easton</code>
+    <value>S Easton</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>S Egremont</code>
+    <value>S Egremont</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>S Hadley</code>
+    <value>S Hadley</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>S Hamilton</code>
+    <value>S Hamilton</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>S Lancaster</code>
+    <value>S Lancaster</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>S Lawrence</code>
+    <value>S Lawrence</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>S Natick</code>
+    <value>S Natick</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>S Royalston</code>
+    <value>S Royalston</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>S Walpole</code>
+    <value>S Walpole</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>S Wellfleet</code>
+    <value>S Wellfleet</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>S Weymouth</code>
+    <value>S Weymouth</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>S Yarmouth</code>
+    <value>S Yarmouth</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Sagamore</code>
+    <value>Sagamore</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Sagamore Bch</code>
+    <value>Sagamore Bch</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Sagamore Beach</code>
+    <value>Sagamore Beach</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Salem</code>
+    <value>Salem</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Salisbury</code>
+    <value>Salisbury</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Salisbury Bch</code>
+    <value>Salisbury Bch</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Salisbury Beach</code>
+    <value>Salisbury Beach</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Sandersdale</code>
+    <value>Sandersdale</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Sandisfield</code>
+    <value>Sandisfield</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Sandwich</code>
+    <value>Sandwich</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Saugus</code>
+    <value>Saugus</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Saundersville</code>
+    <value>Saundersville</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Savoy</code>
+    <value>Savoy</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Saxonville</code>
+    <value>Saxonville</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Scituate</code>
+    <value>Scituate</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Scituate Center</code>
+    <value>Scituate Center</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Scituate Harbor</code>
+    <value>Scituate Harbor</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Sconset</code>
+    <value>Sconset</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Seekonk</code>
+    <value>Seekonk</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Shared Firm Zip Code</code>
+    <value>Shared Firm Zip Code</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Sharon</code>
+    <value>Sharon</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Shattuckville</code>
+    <value>Shattuckville</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Sheffield</code>
+    <value>Sheffield</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Shelburne</code>
+    <value>Shelburne</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Shelburne Falls</code>
+    <value>Shelburne Falls</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Shelburne Fls</code>
+    <value>Shelburne Fls</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Sheldonville</code>
+    <value>Sheldonville</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Sherborn</code>
+    <value>Sherborn</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Sherwood Forest</code>
+    <value>Sherwood Forest</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Shirley</code>
+    <value>Shirley</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Shirley Center</code>
+    <value>Shirley Center</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Shirley Ctr</code>
+    <value>Shirley Ctr</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Shrewsbury</code>
+    <value>Shrewsbury</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Shutesbury</code>
+    <value>Shutesbury</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Siasconset</code>
+    <value>Siasconset</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Silver Beach</code>
+    <value>Silver Beach</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Silver Hill</code>
+    <value>Silver Hill</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Silver Lake</code>
+    <value>Silver Lake</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Simons Rock</code>
+    <value>Simons Rock</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Smith College</code>
+    <value>Smith College</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>So Deerfield</code>
+    <value>So Deerfield</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>So Easton</code>
+    <value>So Easton</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>So Egremont</code>
+    <value>So Egremont</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>So Hadley</code>
+    <value>So Hadley</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>So Lancaster</code>
+    <value>So Lancaster</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>So Natick</code>
+    <value>So Natick</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>So Yarmouth</code>
+    <value>So Yarmouth</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Soldiers Field</code>
+    <value>Soldiers Field</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Somerset</code>
+    <value>Somerset</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Somerville</code>
+    <value>Somerville</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>South Amherst</code>
+    <value>South Amherst</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>South Ashburnham</code>
+    <value>South Ashburnham</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>South Ashfield</code>
+    <value>South Ashfield</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>South Attleboro</code>
+    <value>South Attleboro</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>South Barre</code>
+    <value>South Barre</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>South Boston</code>
+    <value>South Boston</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>South Carver</code>
+    <value>South Carver</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>South Chatham</code>
+    <value>South Chatham</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>South Chesterfield</code>
+    <value>South Chesterfield</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>South Dartmouth</code>
+    <value>South Dartmouth</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>South Deerfield</code>
+    <value>South Deerfield</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>South Dennis</code>
+    <value>South Dennis</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>South Easton</code>
+    <value>South Easton</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>South Egremont</code>
+    <value>South Egremont</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>South Grafton</code>
+    <value>South Grafton</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>South Hadley</code>
+    <value>South Hadley</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>South Hadley Falls</code>
+    <value>South Hadley Falls</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>South Hamilton</code>
+    <value>South Hamilton</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>South Harwich</code>
+    <value>South Harwich</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>South Lancaster</code>
+    <value>South Lancaster</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>South Lawrence</code>
+    <value>South Lawrence</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>South Lee</code>
+    <value>South Lee</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>South Lynnfield</code>
+    <value>South Lynnfield</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>South Mashpee</code>
+    <value>South Mashpee</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>South Natick</code>
+    <value>South Natick</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>South Orleans</code>
+    <value>South Orleans</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>South Quincy</code>
+    <value>South Quincy</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>South Sandisfield</code>
+    <value>South Sandisfield</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>South Walpole</code>
+    <value>South Walpole</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>South Waltham</code>
+    <value>South Waltham</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>South Wellfleet</code>
+    <value>South Wellfleet</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>South Weymouth</code>
+    <value>South Weymouth</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>South Worthington</code>
+    <value>South Worthington</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>South Yarmouth</code>
+    <value>South Yarmouth</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Southampton</code>
+    <value>Southampton</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Southboro</code>
+    <value>Southboro</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Southborough</code>
+    <value>Southborough</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Southbridge</code>
+    <value>Southbridge</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Southfield</code>
+    <value>Southfield</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Southwick</code>
+    <value>Southwick</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Spencer</code>
+    <value>Spencer</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Spfld</code>
+    <value>Spfld</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Spfld (Long)</code>
+    <value>Spfld (Long)</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Springfield</code>
+    <value>Springfield</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Springfield Bmc</code>
+    <value>Springfield Bmc</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Squantum</code>
+    <value>Squantum</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>State St Bank And Trust</code>
+    <value>State St Bank And Trust</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Sterling</code>
+    <value>Sterling</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Sterling Junction</code>
+    <value>Sterling Junction</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Still River</code>
+    <value>Still River</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Stockbridge</code>
+    <value>Stockbridge</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Stoneham</code>
+    <value>Stoneham</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Stonehill Clg</code>
+    <value>Stonehill Clg</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Stonehill Col</code>
+    <value>Stonehill Col</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Stonehill Coll</code>
+    <value>Stonehill Coll</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Stonehill College</code>
+    <value>Stonehill College</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Stoneville</code>
+    <value>Stoneville</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Stony Brook</code>
+    <value>Stony Brook</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Stoughton</code>
+    <value>Stoughton</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Stow</code>
+    <value>Stow</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Sturbridge</code>
+    <value>Sturbridge</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Sudbury</code>
+    <value>Sudbury</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Sunderland</code>
+    <value>Sunderland</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Sutton</code>
+    <value>Sutton</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Swampscott</code>
+    <value>Swampscott</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Swansea</code>
+    <value>Swansea</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Talbots</code>
+    <value>Talbots</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Taunton</code>
+    <value>Taunton</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Teaticket</code>
+    <value>Teaticket</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Templeton</code>
+    <value>Templeton</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Tewksbury</code>
+    <value>Tewksbury</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Thorndike</code>
+    <value>Thorndike</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Three Rivers</code>
+    <value>Three Rivers</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Tisbury</code>
+    <value>Tisbury</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Tolland</code>
+    <value>Tolland</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Topsfield</code>
+    <value>Topsfield</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Townsend</code>
+    <value>Townsend</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Truro</code>
+    <value>Truro</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Tufts Univ</code>
+    <value>Tufts Univ</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Tufts University</code>
+    <value>Tufts University</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Turners Falls</code>
+    <value>Turners Falls</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Tyco</code>
+    <value>Tyco</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Tyngsboro</code>
+    <value>Tyngsboro</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Tyngsborough</code>
+    <value>Tyngsborough</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Tyringham</code>
+    <value>Tyringham</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Uphams Corner</code>
+    <value>Uphams Corner</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Upton</code>
+    <value>Upton</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Uxbridge</code>
+    <value>Uxbridge</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Van Deusenville</code>
+    <value>Van Deusenville</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Verizon</code>
+    <value>Verizon</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Village Of Nagog Woods</code>
+    <value>Village Of Nagog Woods</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Vineyard Haven</code>
+    <value>Vineyard Haven</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Vineyard Hvn</code>
+    <value>Vineyard Hvn</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Vlg Nagog Wds</code>
+    <value>Vlg Nagog Wds</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Vlg Of Nagog Woods</code>
+    <value>Vlg Of Nagog Woods</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>W Acton</code>
+    <value>W Acton</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>W Barnstable</code>
+    <value>W Barnstable</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>W Barnstble</code>
+    <value>W Barnstble</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>W Becket</code>
+    <value>W Becket</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>W Bridgewater</code>
+    <value>W Bridgewater</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>W Brookfield</code>
+    <value>W Brookfield</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>W Chesterfld</code>
+    <value>W Chesterfld</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>W Concord</code>
+    <value>W Concord</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>W Dennis</code>
+    <value>W Dennis</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>W Falmouth</code>
+    <value>W Falmouth</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>W Groton</code>
+    <value>W Groton</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>W Hatfield</code>
+    <value>W Hatfield</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>W Hyannisport</code>
+    <value>W Hyannisport</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>W Hyannisprt</code>
+    <value>W Hyannisprt</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>W Medford</code>
+    <value>W Medford</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>W Newton</code>
+    <value>W Newton</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>W Roxbury</code>
+    <value>W Roxbury</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>W Somerville</code>
+    <value>W Somerville</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>W Springfield</code>
+    <value>W Springfield</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>W Stockbridge</code>
+    <value>W Stockbridge</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>W Townsend</code>
+    <value>W Townsend</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>W Upton</code>
+    <value>W Upton</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>W Wareham</code>
+    <value>W Wareham</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>W Warren</code>
+    <value>W Warren</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>W Yarmouth</code>
+    <value>W Yarmouth</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Waban</code>
+    <value>Waban</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Wakefield</code>
+    <value>Wakefield</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Wales</code>
+    <value>Wales</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Walpole</code>
+    <value>Walpole</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Waltham</code>
+    <value>Waltham</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Waquoit</code>
+    <value>Waquoit</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Ward Hill</code>
+    <value>Ward Hill</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Ware</code>
+    <value>Ware</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Wareham</code>
+    <value>Wareham</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Warren</code>
+    <value>Warren</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Warwick</code>
+    <value>Warwick</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Washington</code>
+    <value>Washington</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Watertown</code>
+    <value>Watertown</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Watertown Financial</code>
+    <value>Watertown Financial</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Waverley</code>
+    <value>Waverley</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Wayland</code>
+    <value>Wayland</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Wearguard</code>
+    <value>Wearguard</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Webster</code>
+    <value>Webster</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Webster Square</code>
+    <value>Webster Square</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Wellesley</code>
+    <value>Wellesley</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Wellesley Fms</code>
+    <value>Wellesley Fms</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Wellesley Hills</code>
+    <value>Wellesley Hills</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Wellesley Hls</code>
+    <value>Wellesley Hls</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Wellfleet</code>
+    <value>Wellfleet</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Wendell</code>
+    <value>Wendell</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Wendell Depot</code>
+    <value>Wendell Depot</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Wenham</code>
+    <value>Wenham</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>West Acton</code>
+    <value>West Acton</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>West Barnstable</code>
+    <value>West Barnstable</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>West Boxford</code>
+    <value>West Boxford</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>West Boylston</code>
+    <value>West Boylston</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>West Bridgewater</code>
+    <value>West Bridgewater</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>West Brookfield</code>
+    <value>West Brookfield</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>West Chatham</code>
+    <value>West Chatham</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>West Chesterfield</code>
+    <value>West Chesterfield</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>West Chop</code>
+    <value>West Chop</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>West Concord</code>
+    <value>West Concord</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>West Cummington</code>
+    <value>West Cummington</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>West Deerfield</code>
+    <value>West Deerfield</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>West Dennis</code>
+    <value>West Dennis</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>West Falmouth</code>
+    <value>West Falmouth</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>West Granville</code>
+    <value>West Granville</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>West Groton</code>
+    <value>West Groton</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>West Hanover</code>
+    <value>West Hanover</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>West Harwich</code>
+    <value>West Harwich</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>West Hatfield</code>
+    <value>West Hatfield</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>West Hawley</code>
+    <value>West Hawley</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>West Hyannisport</code>
+    <value>West Hyannisport</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>West Lynn</code>
+    <value>West Lynn</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>West Medford</code>
+    <value>West Medford</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>West Millbury</code>
+    <value>West Millbury</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>West Newbury</code>
+    <value>West Newbury</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>West Newton</code>
+    <value>West Newton</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>West Otis</code>
+    <value>West Otis</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>West Peabody</code>
+    <value>West Peabody</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>West Quincy</code>
+    <value>West Quincy</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>West Roxbury</code>
+    <value>West Roxbury</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>West Side</code>
+    <value>West Side</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>West Somerville</code>
+    <value>West Somerville</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>West Springfield</code>
+    <value>West Springfield</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>West Springfld</code>
+    <value>West Springfld</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>West Stockbridge</code>
+    <value>West Stockbridge</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>West Stockbridge Center</code>
+    <value>West Stockbridge Center</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>West Tisbury</code>
+    <value>West Tisbury</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>West Townsend</code>
+    <value>West Townsend</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>West Upton</code>
+    <value>West Upton</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>West Wareham</code>
+    <value>West Wareham</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>West Warren</code>
+    <value>West Warren</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>West Whately</code>
+    <value>West Whately</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>West Yarmouth</code>
+    <value>West Yarmouth</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Westboro</code>
+    <value>Westboro</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Westborough</code>
+    <value>Westborough</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Westboylston</code>
+    <value>Westboylston</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Westbrookfield</code>
+    <value>Westbrookfield</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Westfield</code>
+    <value>Westfield</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Westford</code>
+    <value>Westford</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Westhampton</code>
+    <value>Westhampton</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Westminster</code>
+    <value>Westminster</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Weston</code>
+    <value>Weston</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Westover Afb</code>
+    <value>Westover Afb</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Westport</code>
+    <value>Westport</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Westport Point</code>
+    <value>Westport Point</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Westport Pt</code>
+    <value>Westport Pt</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Westwood</code>
+    <value>Westwood</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Weymouth</code>
+    <value>Weymouth</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Weymouth Lndg</code>
+    <value>Weymouth Lndg</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Weymouth Nas</code>
+    <value>Weymouth Nas</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Whately</code>
+    <value>Whately</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Wheelwright</code>
+    <value>Wheelwright</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>White Horse Beach</code>
+    <value>White Horse Beach</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Whitinsville</code>
+    <value>Whitinsville</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Whitman</code>
+    <value>Whitman</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Wht Horse Bch</code>
+    <value>Wht Horse Bch</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Wilbraham</code>
+    <value>Wilbraham</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Wilkinsonvile</code>
+    <value>Wilkinsonvile</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Wilkinsonville</code>
+    <value>Wilkinsonville</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Williamsburg</code>
+    <value>Williamsburg</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Williamstn</code>
+    <value>Williamstn</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Williamstown</code>
+    <value>Williamstown</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Willimansett</code>
+    <value>Willimansett</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Wilmington</code>
+    <value>Wilmington</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Winchdon Spgs</code>
+    <value>Winchdon Spgs</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Winchendon</code>
+    <value>Winchendon</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Winchendon Springs</code>
+    <value>Winchendon Springs</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Winchester</code>
+    <value>Winchester</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Windsor</code>
+    <value>Windsor</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Winter Hill</code>
+    <value>Winter Hill</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Winthrop</code>
+    <value>Winthrop</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Wmstown</code>
+    <value>Wmstown</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Woburn</code>
+    <value>Woburn</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Wollaston</code>
+    <value>Wollaston</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Woods Hole</code>
+    <value>Woods Hole</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Woodshole</code>
+    <value>Woodshole</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Woodville</code>
+    <value>Woodville</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Worcester</code>
+    <value>Worcester</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Woronoco</code>
+    <value>Woronoco</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Worthington</code>
+    <value>Worthington</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Wrentham</code>
+    <value>Wrentham</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Yarmouth</code>
+    <value>Yarmouth</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Yarmouth Port</code>
+    <value>Yarmouth Port</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Yarmouthport</code>
+    <value>Yarmouthport</value>
+  </jurisdictionDetailDTO>
+  <jurisdictionDetailDTO>
+    <code>Zoar</code>
+    <value>Zoar</value>
+  </jurisdictionDetailDTO>
+</list>

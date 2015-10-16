@@ -1,0 +1,78 @@
+<clientUserDetailsCompositeDTO>
+  <userId>2</userId>
+  <userInfoDTO>
+    <recordId>2</recordId>
+    <version>12</version>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <userIdCreated>1001</userIdCreated>
+    <createdDateTime>2012-01-30 12:24:54.441 MST</createdDateTime>
+    <userIdUpdated>2</userIdUpdated>
+    <updatedDateTime>2014-03-27 15:44:40.371 MDT</updatedDateTime>
+    <userNumber>2</userNumber>
+    <userTypeCode>intrnl</userTypeCode>
+    <firstName>Michael</firstName>
+    <lastName>Brady</lastName>
+    <middleName>J</middleName>
+    <userTitle>dev</userTitle>
+    <dateofHire>1995-03-08 00:00:00.000 MST</dateofHire>
+    <supervisorUserId>1</supervisorUserId>
+    <supervisesOthers>false</supervisesOthers>
+    <effectiveDateTime>2012-01-30 00:00:00.000 MST</effectiveDateTime>
+    <userEmailAddr>anothertest@email.com</userEmailAddr>
+    <userWorkLevel>admin</userWorkLevel>
+    <languages class="list">
+      <userLanguageDTO>
+        <recordId>2</recordId>
+        <version>0</version>
+        <updated>false</updated>
+        <childUpdated>false</childUpdated>
+        <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+        <userIdCreated>1001</userIdCreated>
+        <createdDateTime>2012-01-30 12:24:54.441 MST</createdDateTime>
+        <languageTypeCode>en</languageTypeCode>
+        <primaryLanguageIndicator>true</primaryLanguageIndicator>
+      </userLanguageDTO>
+    </languages>
+  </userInfoDTO>
+  <userAuthorizationInfoCompositeDTO>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <userAuthorizationInfoDTO>
+      <recordId>2</recordId>
+      <version>6788</version>
+      <updated>false</updated>
+      <childUpdated>false</childUpdated>
+      <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+      <userIdCreated>1001</userIdCreated>
+      <createdDateTime>2012-01-30 12:17:20.948 MST</createdDateTime>
+      <userIdUpdated>2</userIdUpdated>
+      <updatedDateTime>2014-04-10 14:42:18.433 MDT</updatedDateTime>
+      <loginId>mbrady</loginId>
+      <password>********</password>
+      <confirmPassword>********</confirmPassword>
+      <resetPasswordInd>false</resetPasswordInd>
+      <loginSetDate>2014-01-13 16:28:04.912 MST</loginSetDate>
+      <userId>2</userId>
+    </userAuthorizationInfoDTO>
+    <externUserAccessList class="list"/>
+  </userAuthorizationInfoCompositeDTO>
+  <userAuthorizationLimits class="list">
+    <clientUserAuthorizationLimitDTO>
+      <authorizationType>Reserve Limit</authorizationType>
+      <authorizationLimit>9999999</authorizationLimit>
+      <coverageType>collsn</coverageType>
+      <monetaryCategory>loss</monetaryCategory>
+      <lob>2</lob>
+    </clientUserAuthorizationLimitDTO>
+    <clientUserAuthorizationLimitDTO>
+      <authorizationType>Payment Limit</authorizationType>
+      <authorizationLimit>9999999</authorizationLimit>
+      <coverageType>collsn</coverageType>
+      <monetaryCategory>loss</monetaryCategory>
+      <lob>2</lob>
+    </clientUserAuthorizationLimitDTO>
+  </userAuthorizationLimits>
+</clientUserDetailsCompositeDTO>

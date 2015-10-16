@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?> 
+<claimImportCompositeDTO>
+	<claimNumber>PAL 29696700</claimNumber>
+<claimPayments class="list">
+      <claimPayment>
+         <claimPayables class="list">
+            <claimPayable>
+               <transactionTypeName>Loss Pay</transactionTypeName>
+               <transactionTypeCode>c_loss_due</transactionTypeCode>
+               <transactionAmount>6000</transactionAmount>
+               <transactionDate>2012-06-03 00:00:00.000 EST</transactionDate>
+               <accountingDate>2012-06-03 00:00:00.000 EST</accountingDate>
+               <partyId>11</partyId>
+               <companyId>201</companyId>
+               <claimNumber>PAL 29696700</claimNumber>
+               <externalUnitIdentifier>000014PAL00001004092201117000106/19/20112-2</externalUnitIdentifier>
+               <externalParticipantIdentifier>2056</externalParticipantIdentifier>
+               <clmCoverageCode>collsn</clmCoverageCode>
+               <clmReserveTypeCode>loss_coll</clmReserveTypeCode>
+               <clmLossTypeCode>collsn</clmLossTypeCode>
+               <monitoryTypeCode>no_wvr</monitoryTypeCode>
+               <invoiceNumber>1</invoiceNumber>
+               <closeReserveIndicator>true</closeReserveIndicator>
+               <surchargeIndicator>false</surchargeIndicator>
+               <monetaryCategoryCode>loss</monetaryCategoryCode>
+            </claimPayable>
+         </claimPayables>
+         <claimPaymentDisbursements class="list">
+            <claimPaymentDisbursement>
+               <disbursementTypeCode>clmpay</disbursementTypeCode>
+               <disbursementNumber>2312369121</disbursementNumber>
+               <disbursementAmount>6000</disbursementAmount>
+               <partyId>11</partyId>
+               <addressLine1>1375 Washington Street</addressLine1>
+               <city>Denver</city>
+               <primarySubDivision>CO</primarySubDivision>
+               <postalCode>80203-2055</postalCode>
+               <country>usa</country>
+               <inCareOfPayeeId>11</inCareOfPayeeId>
+               <inCareOfPayeeName>Pete</inCareOfPayeeName>
+               <onDemand>false</onDemand>
+               <manualCheckIndicator>true</manualCheckIndicator>
+               <scheduled>true</scheduled>
+               <paymentMethodType>chck</paymentMethodType>
+               <bulkPaymentIndicator>false</bulkPaymentIndicator>
+               <comment/>
+               <disbursementCreatedDate>2012-06-03 00:00:00.000 EST</disbursementCreatedDate>
+               <disbursementInPaymentOfText>payment</disbursementInPaymentOfText>
+               <disbursementPrintGroupCode>batch</disbursementPrintGroupCode>
+               <disbursementPayToTheOrderOf>Pete</disbursementPayToTheOrderOf>
+               <percentageAllocation>100</percentageAllocation>
+               <companyId>201</companyId>
+               <partyIdPayee>11</partyIdPayee>
+               <payeeName>Mark Field</payeeName>
+               <transactionDate>2012-06-03 00:00:00.000 EST</transactionDate>
+               <accountingDate>2012-06-03 00:00:00.000 EST</accountingDate>               
+            </claimPaymentDisbursement>
+         </claimPaymentDisbursements>
+         <userName>mbrady</userName>
+         <authorizationRequired>false</authorizationRequired>
+      </claimPayment>
+   </claimPayments>
+ <persons class="list">
+            <personDTO>
+               <recordId>11</recordId>
+               <updated>false</updated>
+               <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+               <partyTypeCode>pers</partyTypeCode>
+               <countryCode>usa</countryCode>
+               <context>clm</context>
+               <incompDocuments>false</incompDocuments>
+               <protectedRecordIndicator>false</protectedRecordIndicator>
+               <taxStatusIndicator>
+                              <taxIdExempt>false</taxIdExempt>
+                              <taxIdUnavailable>true</taxIdUnavailable>
+                              <taxIdDocumentReceiver>false</taxIdDocumentReceiver>
+                              <taxIdDocumentReceived>false</taxIdDocumentReceived>
+                              <foreignCitizen>false</foreignCitizen>
+                         </taxStatusIndicator>
+               <languages class="list"/>
+               <interactionChannels class="list"/>
+               <bankInformations class="list"/>
+               <relationships class="list"/>
+               <inverseRelationships class="list"/>
+               <contacts class="list"/>
+               <identifiers class="list"/>
+               <childSupports class="list"/>
+               <blocks class="list"/>
+               <addressCollectionDTO>
+                  <addresses class="list">
+                     <addressDTO>
+                        <postalServiceRegionId>42</postalServiceRegionId>
+                        <postalCode>03053</postalCode>
+                        <addressLine1>50 Shore Dr</addressLine1>
+                        <cityName>LONDONDERRY</cityName>
+                        <countryCode>usa</countryCode>
+                        <postalSvcRegionCode>NH</postalSvcRegionCode>
+                        <verifiedIndicator>false</verifiedIndicator>
+                        <usages class="list"/>
+                     </addressDTO>
+                  </addresses>
+               </addressCollectionDTO>
+                <creditCards class="list"/>
+               <partyInteractionChannelCompositeDTO>
+                  <phoneChannels class="list"/>
+                  <emailChannels class="list"/>
+                  <otherChannels class="list"/>
+               </partyInteractionChannelCompositeDTO>
+               <partyAgreementTypes class="list"/>
+               <agreementTypesPtcp class="list"/>
+               <bankruptcyDetails class="list"/>
+               <authorizations class="list"/>
+               <dateOfBirth>1974-06-07 00:00:00.0 EST</dateOfBirth>
+               <names class="list">
+                              <personNameDTO>
+                                   <nameTypeCode>lgl_nm</nameTypeCode>
+                                   <personLastName>Larson</personLastName>
+                                   <personFirstName>Joe</personFirstName>
+                                   <personName>Joe Larson</personName>
+               			   <personNameEffectiveDate>2012-05-09 00:00:00.000 EDT</personNameEffectiveDate>                                   
+                              </personNameDTO>
+                         </names>
+               <degrees class="list"/>
+            </personDTO>  
+</persons>   
+</claimImportCompositeDTO>

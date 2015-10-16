@@ -1,0 +1,39 @@
+<claimImportCompositeDTO>
+<claimNumber>PAL 29696700</claimNumber>
+  <notes class="list">
+      <notepadDTO>
+         <recordSourceCode>cal</recordSourceCode>
+         <agreementTypeCodeDerived>clm</agreementTypeCodeDerived>
+         <noteTypeCd>gnrl_note</noteTypeCd>
+         <categoryCd>fnol</categoryCd>
+         <subcategoryCd>rmk</subcategoryCd>
+         <noteSourceCd>sys_note</noteSourceCd>
+         <subjectText>Caller Contact Information</subjectText>
+         <notepadText class="list">
+            <notepadTextDTO>
+               <noteTextSequenceId>0</noteTextSequenceId>
+               <noteText>&lt;b&gt;Caller - Eileen Morris&lt;/b&gt;&#xD;&lt;b&gt;Home Phone:&lt;/b&gt;  &#x20; &#xc; (215) 385-8304 (Preferred)&#xD;&lt;b&gt;Business Phone:&lt;/b&gt;  &#x9; &#xA; (800) 759-2805&#xD;&lt;b&gt;Personal Email:&lt;/b&gt;  emorris@plymouthrock.com</noteText>
+            </notepadTextDTO>
+         </notepadText>
+         <originalNoteCreatedDateTime>2012-05-14 13:03:26.231 CST</originalNoteCreatedDateTime>
+      </notepadDTO>
+      <notepadDTO>
+         <recordSourceCode>cal</recordSourceCode>
+         <agreementTypeCodeDerived>clm</agreementTypeCodeDerived>
+         <noteTypeCd>gnrl_note</noteTypeCd>
+         <categoryCd>fnol</categoryCd>
+         <subcategoryCd>rmk</subcategoryCd>
+         <noteSourceCd>sys_note</noteSourceCd>
+         <subjectText>Police and/or Fire Department At Scene</subjectText>
+         <notepadText class="list">
+            <notepadTextDTO>
+               <noteTextSequenceId>0</noteTextSequenceId>
+               <noteText>&lt;b&gt;Police Department - boston court house&lt;/b&gt;&#xD;&#xD;&lt;b&gt;Case Number - 123456&lt;/b&gt;</noteText>
+            </notepadTextDTO>
+         </notepadText>
+         <originalNoteCreatedDateTime>2012-05-15 13:03:26.231 CST</originalNoteCreatedDateTime>
+      </notepadDTO>
+   </notes>  
+</claimImportCompositeDTO>   
+   
+   

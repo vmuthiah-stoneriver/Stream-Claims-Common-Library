@@ -1,0 +1,21 @@
+<list>
+<claimsPolicySearchResultDTO>
+      <policyNumber>MWA10009386666</policyNumber>
+      <effectiveDate>2011-10-21 00:00:00.000 EDT</effectiveDate>
+      <expirationDate>2012-10-21 00:00:00.000 EDT</expirationDate>
+      <lineOfBusiness>PA</lineOfBusiness>
+      <companyLobId>2</companyLobId>
+      <corporationId>1</corporationId>
+      <companyId>1</companyId>
+      <companyName>Mt Washington Assurance Corporation</companyName>
+      <corporationName>Plymouth Rock Company</corporationName>
+      <insuredName>Richard Reed</insuredName>
+      <addressLine1>25 Watson st</addressLine1>
+      <city>Nashua</city>
+      <zipCd>03064</zipCd>
+      <stateCd>NH</stateCd>
+      <countryCd>USA</countryCd>
+      <recordSrcCd>pstar</recordSrcCd>
+      <policyExternalId/>
+</claimsPolicySearchResultDTO>
+</list>

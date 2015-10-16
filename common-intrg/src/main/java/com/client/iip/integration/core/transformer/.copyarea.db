@@ -1,0 +1,13 @@
+ClearCase CopyAreaDB|4
+iip_starter_kit\claim_starter_kit\common-intrg\src\main\java\com\client\iip\integration\core\transformer
+2
+9
+27:SecurityOutboundRequestTransformer.java|1|14c9571226c|c8c|7b1f1dc9|0c603315f7a24fc1a526cb5f34e3b93f|0
+23:InputStreamToStringTransformer.java|1|14c95712244|431|eea377e1|3c8191514d0f486baf55faea21edfc14|0
+1d:IIPObject2XMLTransformer.java|1|14f4d2185a9|221e|970a69d2|bce36f9cd86f4626b082995a28c9aa63|0
+16:IIPXSLTransformer.java|1|14ffaf030d3|eb0|3831c9d0|caef93096af4486ca0ce058bcb37aaf2|0
+20:SMTPEMailMessageTransformer.java|1|14c9571224e|b78|3ed5d6ec|4727d349845743688ce7e32eb943e3dd|0
+1d:XSDValidationTransformer.java|1|14d058d02a8|1293|296e2c0e|a9b8f622e1a04333b9f695ee31ed8294|0
+1d:IIPXML2ObjectTransformer.java|1|14c95712226|136a|48e46c5a|8d8b6abdd83f4c538a8d58decfb449a8|0
+26:SecurityInboundRequestTransformer.java|1|14e3f82dbc3|2d08|235be49c|71b750b3a06847d784d746c94f2f865e|0
+28:SecurityOutboundResponseTransformer.java|1|14e3f82dc13|13e6|ff5ea0e2|0e6021e4790a482e93ba624dd2c83513|0

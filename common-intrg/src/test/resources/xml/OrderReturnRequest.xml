@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<orderReturnDataDTO>
+	<orderReturnText>Order - Police Report Processed Successfully</orderReturnText>
+	<orderId>303</orderId>
+	<orderReturnCodes class="list">
+		<orderReturnCodeDTO>
+			<orderReturnCodeId>1</orderReturnCodeId>
+			<orderReturnName>Accident Report</orderReturnName>
+			<orderReturnDesc>Accident Scene and Witness Report</orderReturnDesc>
+		</orderReturnCodeDTO>
+	</orderReturnCodes>
+	<orderDocs>
+		<documentDTO>
+			<recordSourceCode>cal</recordSourceCode>
+			<agreementTypeCodeDerived>clm</agreementTypeCodeDerived>
+			<sourceCode>elecmedafile</sourceCode>
+			<formatCode>pdf</formatCode>
+			<documentName>Order Response - Image File</documentName>
+			<documentSourceCode>elecmedafile</documentSourceCode>
+			<categoryCode>gnrl</categoryCode>
+			<categoryTypeCode>extlfile</categoryTypeCode>
+			<generatedByCode>system</generatedByCode>
+			<assignedUserId>7</assignedUserId>
+			<assignedCompanyOrgUnitId>103</assignedCompanyOrgUnitId>
+			<companyIdDerived>1000000</companyIdDerived>
+			<companyLOBIdDerived>1000500</companyLOBIdDerived>
+			<marketTypeCodeDerived>stnd</marketTypeCodeDerived>
+			<documentDescription>Order Response Document</documentDescription>
+			<documentStatus>
+				<currentStatus>
+					<effectiveDateTime>2012-06-01 00:00:00.000 CDT</effectiveDateTime>
+					<documentStatusCode>scan</documentStatusCode>
+					<documentStateCode>attch</documentStateCode>
+				</currentStatus>
+			</documentStatus>
+			<documentdueDate>2015-10-18 00:00:00.000 CDT</documentdueDate>
+			<documentFileName>17800023</documentFileName>
+			<documentFileLocationCode>image_file</documentFileLocationCode>
+		</documentDTO>
+		<documentDTO>
+			<recordSourceCode>cal</recordSourceCode>
+			<agreementTypeCodeDerived>clm</agreementTypeCodeDerived>
+			<sourceCode>elecmedafile</sourceCode>
+			<formatCode>jpg</formatCode>
+			<documentName>Order Response - Network File</documentName>
+			<documentSourceCode>elecmedafile</documentSourceCode>
+			<categoryCode>gnrl</categoryCode>
+			<categoryTypeCode>extlfile</categoryTypeCode>
+			<generatedByCode>system</generatedByCode>
+			<assignedUserId>7</assignedUserId>
+			<assignedCompanyOrgUnitId>103</assignedCompanyOrgUnitId>
+			<companyIdDerived>1000000</companyIdDerived>
+			<companyLOBIdDerived>1000500</companyLOBIdDerived>
+			<marketTypeCodeDerived>stnd</marketTypeCodeDerived>
+			<documentDescription>Order Response Document</documentDescription>
+			<documentStatus>
+				<currentStatus>
+					<effectiveDateTime>2012-06-01 00:00:00.000 CDT</effectiveDateTime>
+					<documentStatusCode>scan</documentStatusCode>
+					<documentStateCode>attch</documentStateCode>
+				</currentStatus>
+			</documentStatus>
+			<documentdueDate>2015-10-18 00:00:00.000 CDT</documentdueDate>
+			<documentFileName>87880000.jpg</documentFileName>
+			<documentFileLocationCode>network_file</documentFileLocationCode>
+		</documentDTO>		
+	</orderDocs>
+</orderReturnDataDTO>

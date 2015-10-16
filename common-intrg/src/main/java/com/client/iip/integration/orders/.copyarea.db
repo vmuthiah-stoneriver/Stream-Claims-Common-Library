@@ -1,0 +1,7 @@
+ClearCase CopyAreaDB|4
+iip_starter_kit\claim_starter_kit\common-intrg\src\main\java\com\client\iip\integration\orders
+2
+3
+20:OrderRequestDateTransformer.java|1|14c95712500|c1a|468aeaae|58c4f46a03b1475b81348b58ad397ed5|0
+1d:ClientOrderReturnDataDTO.java|1|14d4a03c749|38c|35eb25ed|f663fe6dd90444d192f17326a3fb8d51|0
+1e:OrdersOutboundTransformer.java|1|14c95712500|382|e4a9315b|c8bf0b4e9dce4612937e5f78f4ec7a10|0

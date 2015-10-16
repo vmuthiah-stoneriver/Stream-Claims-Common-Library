@@ -1,0 +1,25 @@
+ClearCase CopyAreaDB|4
+iip_starter_kit\claim_starter_kit\common-intrg\src\main\java\com\client\iip\integration\claim\details
+2
+15
+21:ClaimsCompositeServiceHelper.java|1|14c957119fc|2b6|2d97f7b4|4d42238b979c4d69abb1cde52c06ba4f|0
+17:NoticeOfLossHelper.java|1|14c95711a9c|1083|9596648d|37851aff0e8440709174c6db523a5bad|0
+29:ClaimDetailLiteralDescriptionUtility.java|1|14c957119c0|24c2|cbb1fef7|38ae93fd29b64921b8c8761675627f2c|0
+17:JurisdictionHelper.java|1|14c95711a92|708|96d24ef4|2ee341cd8fed482f8869ffb2a496db50|0
+14:ClaimUnitHelper.java|1|14c95711a06|22e3|f872c786|6fadef001a874050bbe347231def9634|0
+1b:CompositeServiceHelper.java|1|14c95711a56|f80|e5df4e63|3880d00634024d3b918c0a6c1c2ac666|0
+17:ClaimDetailsHelper.java|1|14c957119fc|8025|aea13db0|715439e37bbb481282ac73ffd0c2aeb8|0
+19:ClaimsServicesHelper.java|1|14c95711a06|a07|c0f06da2|d28fdf053fc649919ff5a69a80d52145|0
+16:ClaimPolicyHelper.java|1|14c957119fc|fe9|a4b363c9|b0f7e26e0edc4c2993b758afda85a4a2|0
+19:ClientClaimStatusDAO.java|1|14c95711a56|2fb|72060962|a15a0f1a2f70463c935481ac007ed74b|0
+1d:ClaimParticipationHelper.java|1|14c957119fc|10d3|5768c7c2|22f814c612424940861ddf8332e7aceb|0
+18:InjuredWorkerHelper.java|1|14c95711a88|5f2|d32b1050|4f7e2dd85cd14df9b5bde69b93154c53|0
+19:ClientClaimPolicyDTO.java|1|14c95711a4c|286|2315d230|abc38f8adce44bbf865a694bde91b83c|0
+11:EntityHelper.java|1|14c95711a88|8686|6b4a95a8|cf468df49efd42f9bc08f40a9e9da645|0
+1e:ClientClaimDetailsService.java|1|14ff57501cc|884|17cbe7c1|fe2bf684091f4e2bbd2a4078e3446888|0
+22:ClientViewAssignmentResultDTO.java|1|14c95711a56|3d3|f2b6433b|7a52e96d133f4c848b4b6483bcd9b6ab|0
+22:ClientClaimDetailsServiceImpl.java|1|14ff0c161d8|ac05|8c610363|2444ce882bf94c98ad7fa1a1c91e7011|0
+1b:ProfileStatementHelper.java|1|14c95711a9c|16d1|31c85989|7d40b65008a34b58975d78f92a02503b|0
+10:ClaimHelper.java|1|14c957119fc|370|f8962e83|b10eb227dfa347c0813e230e6953bb35|0
+23:ClientClaimDetailsCompositeDTO.java|1|14c95711a42|297|b1a5d9cf|efee6eac88cb4f8bbe9670419c52dc49|0
+17:RelatedClaimHelper.java|1|14c95711a9c|e6f|db55b126|f8f5838ca0634b599ff688b0c63c9ebe|0

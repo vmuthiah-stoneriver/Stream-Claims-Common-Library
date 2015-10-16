@@ -1,0 +1,140 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:include schemaLocation="../xsd/CodeLookupCommon.xsd" />
+	<xs:include schemaLocation="../xsd/Common.xsd" />
+
+	<xs:annotation>
+		<xs:documentation>Reserve Type Code Lookup</xs:documentation>
+	</xs:annotation>
+
+	<xs:element name="list">
+		<xs:annotation>
+			<xs:documentation>Collection of Claim Reserve Loss Type
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="claimReserveTypeLossTypeNestedCodeLookUp"
+					type="ClaimReserveTypeLossTypeNestedCodeLookUp" minOccurs="0"
+					maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Claim reserve and loss type codes.
+						</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="ClaimReserveTypeLossTypeNestedCodeLookUp">
+		<xs:annotation>
+			<xs:documentation>Claim Reserve/LossType Lookup</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="CodeLookupType">
+				<xs:sequence>
+					<xs:element name="loseTypeColl" type="ReserveLossTypeCodeLookUpType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Reserve Loss Type List</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="monetoryCatCode" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Monetary Category Code, Maps to CLM_MNY_CTG_CD
+								Column from CLAIM_MONETARY_CATEGORY_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="undefinedUnitIndicator" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Undefined Unit Flag</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="defaultReserve" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Default Reserve</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="defaultReserveLossMap" type="MapItemType"
+						minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Default Reserve Loss Map</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="defaultLoss" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Default Loss</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="defaultReserveIndicator" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Default Reserve Indicator</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+
+	</xs:complexType>
+
+	<xs:complexType name="ReserveLossTypeCodeLookUpType">
+		<xs:annotation>
+			<xs:documentation>Collection of Reserve Loss Type Code
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="reserveLoseTypeCodeLookUp" type="ReserveLoseTypeCodeLookUp"
+				minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Reserve lose type codes.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="class" type="collectionType" use="optional" />
+	</xs:complexType>
+
+	<xs:complexType name="ReserveLoseTypeCodeLookUp">
+		<xs:annotation>
+			<xs:documentation>Reserve LossType CodeLookup</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="CodeLookupType">
+				<xs:sequence>
+					<xs:element name="avgReserveDeftAvgAmt" type="dollarAmount"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Average Default Reserve Amount
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="avgReserveDeftSpecAmt" type="dollarAmount"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Specific Reserve Default Amount
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="approved" type="boolean" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Pre Approved indicator</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="lossDefaultIndicator" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Default Loss indicator</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+
+	</xs:complexType>
+
+</xs:schema>

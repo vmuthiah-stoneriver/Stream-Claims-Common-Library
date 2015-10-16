@@ -1,0 +1,15 @@
+ClearCase CopyAreaDB|4
+iip_starter_kit\claim_starter_kit\common-intrg\src\test\resources
+2
+b
+9:log4j.xml|1|14c957141ca|8fa|4be8c951|f1f7151480ab43338228788847f0c99b|0
+a:Readme.txt|1|14c957141c0|2e0|e3fa018c|866b7d92836f44909fda0af48a5ce9e9|0
+b:xsddocindex|2|0|0|0|80dc59971c074d1f92cfeef269a5e69a|0
+f:jdbc.properties|1|14c957141c0|2b9|db73f140|dbf68bb0c902405cba11a961981ead5d|0
+3:xsd|2|0|0|0|0da2ed9a8329473388f0fd76e0c58aef|0
+1b:iip-test-integration-config|2|0|0|0|9f05f660e2c348dba6904b73470f31d1|0
+18:StreamRegressionTest.bat|1|14ff05c397e|1e2|88e79095|9c3432ebc091443b9edbd1e23e583929|0
+3:xml|2|0|0|0|5584cbbf3bd24ecd95b25b9c1d114e0d|0
+a:properties|2|0|0|0|9ad1549e12514a25a82fc7fd3c253948|0
+f:StreamBatch.ksh|1|14e744223f2|257|31f0b2e6|5f2a5bca9ac94c5bb799f7767ff2de56|0
+f:StreamBatch.bat|1|14ff0293bdc|2a7|2345c0a5|bb9ca8a2b501468ab25f51e19219b12f|0

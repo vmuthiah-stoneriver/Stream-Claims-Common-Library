@@ -1,0 +1,8 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:include schemaLocation="../xsd/PolicyImportRequest.xsd" />
+
+	<xs:annotation>
+		<xs:documentation>Policy Retrieve Details Request Schema
+		</xs:documentation>
+	</xs:annotation>
+</xs:schema>

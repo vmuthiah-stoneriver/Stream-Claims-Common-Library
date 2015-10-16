@@ -1,0 +1,27 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:include schemaLocation="../xsd/Common.xsd" />
+	<xs:include schemaLocation="../xsd/PolicyCommon.xsd" />
+
+	<xs:annotation>
+		<xs:documentation>List Units Response</xs:documentation>
+	</xs:annotation>
+
+	<xs:element name="list">
+		<xs:annotation>
+			<xs:documentation>Policy List Units Response Schema
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="policyUnitDescDTO" type="PolicyUnitDescDTO"
+					minOccurs="0" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Policy units.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+</xs:schema>
+

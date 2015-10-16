@@ -1,0 +1,250 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:include schemaLocation="../xsd/Common.xsd" />
+
+	<xs:annotation>
+		<xs:documentation>Disbursement import Schema</xs:documentation>
+	</xs:annotation>
+
+	<xs:element name="list" type="SummaryListType">
+		<xs:annotation>
+			<xs:documentation>Disbursement import summary.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+
+	<xs:complexType name="SummaryListType">
+		<xs:annotation>
+			<xs:documentation>Collection of Disbursement import summary data to
+				be processed for AP import
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="disbursementImportSummaryDTO" type="DisbursementImportSummaryDTO"
+				minOccurs="1" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>AP import summary list.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+
+	<xs:complexType name="DisbursementImportSummaryDTO">
+		<xs:annotation>
+			<xs:documentation>Disbursement Import Summary</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="AuditDTO">
+				<xs:sequence>
+					<xs:element name="recordType" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Record Type - Indicates the Payment Type
+								I -
+								Issued Payment, P - Cleared Payment, S - Stopped Payment, V -
+								Voided Payment,
+								S - Stale Dated Payment, E - Unclaimed Property
+								Payment.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="processingDate" type="dateType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Current Datetime</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="totalBatchAmount" type="dollarAmount"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Total Batch Amount</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="batchCount" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Batch Size</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="disbursementImportDetails" type="DisbursementImportDetailList">
+						<xs:annotation>
+							<xs:documentation>Disbursement Import Details</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="DisbursementImportDetailList">
+		<xs:annotation>
+			<xs:documentation>Collection of Disbursement imports
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="disbursementImportDetailDTO" type="DisbursementImportDetailDTO"
+				minOccurs="1" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Disbursement import details.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="class" type="collectionType" use="optional" />
+	</xs:complexType>
+
+	<xs:complexType name="DisbursementImportDetailDTO">
+		<xs:annotation>
+			<xs:documentation>Disbursement import detail</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="DataTransferObject">
+				<xs:sequence>
+					<xs:element name="recordType" type="string" minOccurs="1"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Record Type - Indicates the Payment Type
+								I -
+								Issued Payment, P - Cleared Payment, S - Stopped Payment, V -
+								Voided Payment,
+								S - Stale Dated Payment, E - Unclaimed Property
+								Payment.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="reissuedIndicator" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Reissued Payment flag</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="dsbId" type="long" minOccurs="1"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Disbursement Id.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="payerRoutingNumber" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Payer Routing Number</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="payerAccountNumber" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Payer Account Number</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="disbursementNumber" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Check Number</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="disbursementAmount" type="dollarAmount"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Check Amount</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="issuedDate" type="dateType" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Issued Date</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="stopPaymentDate" type="dateType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Stop payment date</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="stopPaymentNumber" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Stop payment number</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="voidDate" type="dateType" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Voided date</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="paidDate" type="dateType" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Paid date</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="staleDate" type="dateType" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Stale date</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="escheatedDate" type="dateType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Escheated date</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="payeeId" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Stream Payee Id</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="payeeName" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Payee name</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="statusUpdateInd" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Status update indicator</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="comment" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Comment</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="disbursementReasonCode" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Disbursement Reason code</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="validReasonCode" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Validation Reason code</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="importProcess" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Import Flag</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="disbursementRequestNumber" type="long"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Disbursement Request number</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="processedIndicator" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Processed Flag</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+</xs:schema>

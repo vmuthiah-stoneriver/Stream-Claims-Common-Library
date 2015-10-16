@@ -1,0 +1,7 @@
+<partySearchCriteria>
+  <firstNameFilter>ta*</firstNameFilter>
+  <includeName>true</includeName>
+  <includeAddress>true</includeAddress>
+  <includeTaxInfo>false</includeTaxInfo>
+  <includeCommunication>false</includeCommunication>
+</partySearchCriteria> 

@@ -1,0 +1,354 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:include schemaLocation="../xsd/CodeLookupCommon.xsd" />
+	<xs:include schemaLocation="../xsd/Common.xsd" />
+
+	<xs:annotation>
+		<xs:documentation>Company Orgunit (Office)</xs:documentation>
+	</xs:annotation>
+
+	<xs:element name="list">
+		<xs:annotation>
+			<xs:documentation>Company Organization unit Listing
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="sysAdminCompanyOrgUnitDetailDTO" type="SysAdminCompanyOrgUnitDetailDTO"
+					minOccurs="0" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Company orgunits.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="SysAdminCompanyOrgUnitDetailDTO">
+		<xs:annotation>
+			<xs:documentation>CompanyOrgunit detail</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="SysAdminCompanyOrganizationUnitDTO">
+				<xs:sequence>
+					<xs:element name="effectiveDateTime" type="dateType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Effective date</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="endDateTime" type="dateType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Expiry date</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+
+	</xs:complexType>
+
+	<xs:complexType name="SysAdminCompanyOrganizationUnitDTO">
+		<xs:annotation>
+			<xs:documentation>Company Organization Unit</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="AuditDTO">
+				<xs:sequence>
+					<xs:element name="companyId" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Company Id, Maps to CMPY_ID Column from
+								COMPANY_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="companyOrgUnitParId" type="long"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Parent Org Unit id, Maps to CMPY_ORG_UNT_ID_PAR
+								Column from COMPANY_ORGANIZATION_UNIT_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="organizationUnitTypeCode" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Office Unit Type code, Maps to ORG_UNT_TYP_CD
+								Column from ORGANIZATION_UNIT_TYPE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="organizationUnitTypeName" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Office Unit Type code, Maps to ORG_UNT_TYP_NM
+								Column from ORGANIZATION_UNIT_TYPE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="costCenterCode" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Cost Center, Maps to ORG_UNT_CST_CNTR_CD Column
+								from ORGANIZATIONAL_UNT_CST_CNTR_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="organizationUnitName" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Office name, Maps to CMPY_ORG_UNT_NM Column
+								from COMPANY_ORGANIZATION_UNIT_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="orgUnitAbbreviateName" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Abreviated office name, Maps to
+								CMPY_ORG_UNT_ABBR_NM Column from COMPANY_ORGANIZATION_UNIT_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="workThreshold" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Work assignment threshold count, Maps to
+								CMPY_ORG_UNT_ASGN_THRSHLD_CNT Column from COMPANY_ORGANIZATION_UNIT_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="teamIndicator" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Team indicator, true if
+								organizationUnitTypeCode is 'team'
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="evaluateAllUserIndicator" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Indicates all users belonging to the
+								organizational unit should be evaluated as a potential
+								authorizer.
+								Maps to CMPY_ORG_UNT_EVAL_ALL_USER_IND Column from
+								COMPANY_ORGANIZATION_UNIT_CD
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="structure" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Organization Unit structure, Physical vs Workflow, 
+								Maps to ORG_UNT_STRC_TYP_NM Column from	ORGANIZATIONAL_UNT_STRC_TYP_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="isSystemLevel" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>System Wide flag.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="definitionDetails" type="DefinitionDetailType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>List of Organization Unit definitions
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="teamMemberDetails" type="TeamMemberDetailType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>List of Organization unit user work group
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="companyAddress" type="CompanyAddressType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>List of Company Address</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="teamAndThresholdIndicator" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Team threshold indicator, Set to true if
+								structure is 'wkflw'
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="DefinitionDetailType">
+		<xs:annotation>
+			<xs:documentation>Collection of Unit definition details
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="sysAdminCompanyOrgUnitDefinitionDTO"
+				type="SysAdminCompanyOrgUnitDefinitionDTO" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Company org unit details.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="class" type="collectionType" use="optional" />
+	</xs:complexType>
+
+	<xs:complexType name="SysAdminCompanyOrgUnitDefinitionDTO">
+		<xs:annotation>
+			<xs:documentation>Company Organization Unit Definition
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="AuditWithExpireDTO">
+				<xs:sequence>
+					<xs:element name="corporationId" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Corporation Id, Maps to CORP_ID Column from
+								CORPORATION_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="companyId" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Company Id, Maps to CMPY_ID Column from
+								COMPANY_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="TeamMemberDetailType">
+		<xs:annotation>
+			<xs:documentation>Collection of Team member details
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="sysAdminOrgUnitUserWorkGroupDTO" type="SysAdminOrgUnitUserWorkGroupDTO"
+				minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Organization unit user work groups.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="class" type="collectionType" use="optional" />
+	</xs:complexType>
+
+	<xs:complexType name="SysAdminOrgUnitUserWorkGroupDTO">
+		<xs:annotation>
+			<xs:documentation>Organization Unit User WorkGroup</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="AuditDTO">
+				<xs:sequence>
+					<xs:element name="userId" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>User id, Maps to USER_ID Column from USER_CD
+								Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="functionalRoleCode" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>User role, Maps to SEC_GRP_CD Column from
+								SECURITY_GROUP_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="userWorkGroupSupervisorIndicator"
+						type="boolean" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Supervisor Flag</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="effectiveDateTime" type="dateType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Effective date</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="endDateTime" type="dateType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Expiry date</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="CompanyAddressType">
+		<xs:annotation>
+			<xs:documentation>Company Address List</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="sysAdminCompanyAddressCompositeDTO"
+				type="SysAdminCompanyAddressCompositeDTO" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Company address composite details.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="class" type="collectionType" use="optional" />
+	</xs:complexType>
+
+	<xs:complexType name="SysAdminCompanyAddressCompositeDTO">
+		<xs:annotation>
+			<xs:documentation>Company Address Composite Type</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="addressForm" type="SysAdminCompanyAddressDTO"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Company Address Form</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="current" type="SysAdminCompanyAddressDTO"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Current Address</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="expired" type="SysAdminCompanyAddressDTOListType"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Expired Address List</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+
+	</xs:complexType>
+
+	<xs:complexType name="SysAdminCompanyAddressDTOListType">
+		<xs:annotation>
+			<xs:documentation>Collection of Company Addresses</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="sysAdminCompanyAddressDTO" type="SysAdminCompanyAddressDTO"
+				minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Company address details.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="class" type="collectionType" use="optional" />
+	</xs:complexType>
+
+</xs:schema>

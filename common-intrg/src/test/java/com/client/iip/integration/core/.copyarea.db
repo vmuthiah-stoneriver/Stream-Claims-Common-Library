@@ -1,0 +1,13 @@
+ClearCase CopyAreaDB|4
+iip_starter_kit\claim_starter_kit\common-intrg\src\test\java\com\client\iip\integration\core
+2
+9
+1e:ClientServiceBaseTestCase.java|1|14e44b071cc|3305|24497105|0a8401285b474f469a6183f046aaa6d0|0
+18:SpringBatchTestCase.java|1|14f27f51710|fb0|5c01b4b|47eaa8421d7b49f3926b2fdd5b680482|0
+1a:BatchRequestProcessor.java|1|1500051c7bd|271f|a2e7f36a|d77bc5799074494fbe22371642b0940a|0
+11:XSDValidator.java|1|14c95714166|d03|da484275|0328ed9c03844d398e04b2e2b9fb10ea|0
+1c:PayloadRequestProcessor.java|1|1503f5ba95a|273c|9be55a34|886d04ccd7494882bec9b0d74b6549e3|0
+f:DIBaseTest.java|1|14c95713f90|8df|32fcea12|a08d60a7d4824833a6274b13d5989d44|0
+15:ResourceResolver.java|1|14c95713f86|382|ebf3303d|803e020ae3fb4506afac225f94134ed6|0
+a:Input.java|1|14c95713f90|926|ed40bff2|e876301c862f4228ba1b8bd4000f486e|0
+f:XMLUtility.java|1|14e478aa508|2742|711a6987|e2240aeaabc8474abaecbc7528c758bd|0

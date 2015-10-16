@@ -1,0 +1,119 @@
+ClearCase CopyAreaDB|4
+iip_starter_kit\claim_starter_kit\common-intrg\src\test\resources\xml
+2
+73
+1f:MonetaryCategoryCodeRequest.xml|1|14c957148b4|82|7aa52c17|4ed383590ac941429302c4557c2efd5c|0
+14:AllStatesRequest.xml|1|14c957144ae|5e|4384212b|be113a4881b542f3a42b44250fdb2dd4|0
+17:PolicyImportRequest.xml|1|14c95714c4c|17c|593b7e0c|9c0ccbde17ea4ad689638983d2cc6e9d|0
+28:AllLossTypeCompanyLOBReserveCoverage.xml|1|14c95714486|3c5a|77b0e2d1|65b29f9b19294bcba19e8cfded5fe330|0
+18:PartyDupcheckRequest.xml|1|14c95714bf2|4f2|e0ee7036|483963ee543a4301a38dc651bbc5ee23|0
+1f:PartyOrganizationNewRequest.xml|1|14c95714d0a|3112|10aa110a|681d7cb9281b48e494492187ad078144|0
+18:PolicyImportResponse.xml|1|14c95714c56|19700|4ec70194|b38a17ff69f34c5dbc5868bc0c38855c|0
+18:AllOrganizationsList.xml|1|14c9571467a|20cc5|3702359b|adda00c6802d4a5b8df560c119315556|0
+16:ClaimNumberRequest.xml|1|14c957146de|39|1494119b|62cf4529d36b4d02a76d1f58ceafd8d1|0
+16:DisbursementExport.xml|1|14c957147a6|1b6ba|553c610a|53089430518a413982007d6ccee36fff|0
+1e:FinancialCoverageRequest_2.xml|1|14c95714828|a3|124e35ee|03b92d0ab8534a6fb71a4f7a083ba50e|0
+18:Claim Import - Notes.xml|1|14c95714de6|79f|451a4e60|444be77f0c774626ba382c31f4316fda|0
+1e:OrganizationDetailResponse.xml|1|14c957148f0|d2ee|2c7d84f1|753c8e827f684d8f93e9741afde1bd89|0
+20:DisbursementReExportResponse.xml|1|14c957147ec|50a73|6c2fb1ad|fcccc398429743ee859c2b5d484b65ba|0
+18:VendorExportResponse.xml|1|14c95714cc4|1249b|be06354e|fccfdf28f4ae4d8886b6eb9ba4a27b45|0
+34:Claim Import - Main - UnderPayment - OpenReserve.xml|1|14c95714d8c|d80|7184fd6a|3659938f202e4022aff83138e36d3cb2|0
+1a:BatchJobStatusResponse.xml|1|14e6a663905|1cd2|2c552f68|4360813a021c411b9f8ab1e3492082e4|0
+1f:AllCompaniesForCorpResponse.xml|1|14c9571442d|4dd4|f3137842|b8a0d54294f543258797bc9a12bd0d91|0
+17:PolicySearchRequest.xml|1|14c95714c7e|158|8d67737c|df290e589a064a40a8ae4026c95f3f60|0
+18:PolicyDetailsRequest.xml|1|14c95714c4c|17a|861e7da4|0caca6e7f71648b695ee6d60a51e58b8|0
+15:CodeLookupRequest.xml|1|14c9571476a|22|c8660ae1|1aab9f3605454098a13ea654643a6321|0
+17:ClaimDetailsRequest.xml|1|14c9571472e|542|b853f27f|7a86332c22494693956095ba218efadb|0
+1d:NestedReserveTypesRequest.xml|1|14c957148be|182|66a382a1|319d3043c2ef43faaa1b02dc01f40937|0
+16:ClaimUpdateRequest.xml|1|14c95714788|20db0|4903a139|2d33e1e3f27746d0b05826c17985f255|0
+18:EditDocumentResponse.xml|1|14c95714832|4d|5d7b1ae8|b956627e65cb46a39480b8bef738ca70|0
+10:ClaimPayment.xml|1|14c9571472e|c34|1b02d092|a2099f194a864457b12b8edf885e085f|0
+15:AllStatesResponse.xml|1|14c9571467a|3624|3c5a55a7|e9975480006d456db57fca8165b7bf1e|0
+1e:NestedReserveTypesResponse.xml|1|14c957148b4|4c8|58728d05|f75c860c14cb48c68af7b6dcc6a28776|0
+10:AllUsersList.xml|1|14c9571467a|3409|41c5cc0b|d568d41b21e74b378b31522e5a20eaad|0
+19:PolicyReimportRequest.xml|1|14cc3e4f734|2af|fc1bdd70|936cfe277fd64cb78d9c3d7eff3a2d8d|0
+2f:Claim Import - Adj Reserve - Incr - Payment.xml|1|14c95714df0|206b|61353b76|742b58c9d8084a54939c6da6f125e0fa|0
+1c:PartyPersonUpdateRequest.xml|1|14c95714bf2|30ea|838297ae|9c30b2b6b5e2440b9adb4af2b666fa61|0
+17:VendorExportRequest.xml|1|14c95714cb0|66|7c211ff0|570b6b78bff14a9c927847b03e0c743d|0
+1d:FinancialCoverageResponse.xml|1|14c9571485a|44e|f192760f|b608fe7cf8ab4f83bd90a3c2b4a94174|0
+20:CompanyLOBForCompanyResponse.xml|1|14c95714760|332|4b1af510|6a582cf2734a4c7bb584e6645701efb5|0
+1c:DocumentDeliveryResponse.xml|1|14c95714d1e|2c7|18d5ee4f|35a6ddd436d545f9bf286bac73ab37e2|0
+1c:DuplicatePartiesResponse.xml|1|14c95714832|2685|b3cf0d3|d0975b3df73640ea8f2c0b5c7c1cb4af|0
+16:ClaimSearchRequest.xml|1|14c9571477e|ac|d3553a2c|525bc38c413c4845899ba749e674cee7|0
+18:ClaimDetailsResponse.xml|1|14c9571472e|5e41f|f8658a01|208bef72a6f743839c6f4ff5111a0b5e|0
+16:PartySearchRequest.xml|1|14c95714c38|104|d93b5cae|b8e75b6566d34a799ad945282c78d939|0
+14:OutboundDocument.xml|1|14c95714be8|1a68|16c44b6b|b0ec1dde09d5468e8df1b7eb14ea238b|0
+1a:PolicyListUnitsRequest.xml|1|14c95714d1e|151|477a6aca|08f694033807423f92f9544098bab8e4|0
+1e:AllCompanyLOBMonetaryTypes.xml|1|14c9571467a|54cc|39b94cf0|629ad7bf618c4cb0919ef12a1cd9dd63|0
+1b:PolicyListUnitsResponse.xml|1|14c95714d28|2bd|123ce1b|a2f33c3b84654143ae6529dd77d63d11|0
+2e:Claim Import - Main - ExpReserve - Payment.xml|1|14c95714d46|1442|b82f0c9b|05214fd9f477426cb5562b06c68ec7fc|0
+1a:PolicyReimportResponse.xml|1|14c95714c6a|19700|4ec70194|e92c30516383411caba74b7c6551747a|0
+13:BatchJobRequest.xml|1|14c9571467a|7c|b0d62c2f|adab22aa5794404fb9ba40b7a1099176|0
+35:Claim Import - Main - UnderPayment - CloseReserve.xml|1|14c95714d78|d7d|890fcd4|bff287d8410c4bf8969158e8b7c6027d|0
+17:PartySearchResponse.xml|1|14c95714c2e|1314|cac242a1|651f0fccfb4b4092af1fd78b2b7ac503|0
+25:Claim Import - Adj Reserve - Incr.xml|1|14c95714dfa|659|73bd0377|0d97d4dfaf7049aeb3f3eae725b751c8|0
+1d:FinancialReserveRequest_2.xml|1|14c95714878|a1|a66d35d7|ff8e53903e5c4ccd924f7d24bf8a70d4|0
+1f:AddressVerificationResponse.xml|1|14c95714257|4b4|8b6c90db|d4f291f474d543a49f2ada3755d57d54|0
+26:Claim Import - Main - CloseReserve.xml|1|14c95714f26|71f|600e31e8|4a55929b7b644947a1beb18ca712834c|0
+1d:FinancialReserveRequest_1.xml|1|14c9571485a|82|b632b7b|a942146cc9904899856301922e47e769|0
+1d:PartyPersonUpdateResponse.xml|1|14c95714be8|8cc3|16cbac1b|5a7991c2f5344e1c81dad49a1ed50fbe|0
+1d:DisbursementExportRequest.xml|1|14c957147d8|79|a30e27f5|26019ef5fc2b4484a3e1484b75eb7a3b|0
+1a:AllClaimCompanyLOBInfo.xml|1|14c9571442d|3570|58fd5f33|d4100bb6ef7741f9a6e5c4d028f98ce7|0
+19:PartyPersonNewRequest.xml|1|14c95714d00|1cda|653b5fea|94d2a20368684a28819b0508562a7996|0
+2a:Claim Import - Document - ImageServer .xml|1|14e693896a4|5fc|f016e300|9df5b18225494b699ac77d7864b49e77|0
+11:ClaimResponse.xml|1|14c9571472e|1f|947708cb|5194d74bf5ff47eba4acc38074d2fe59|0
+10:OrderRequest.xml|1|14fe16028d8|43d2|c4f22b49|290374adff364777ab0f3e146252985b|0
+18:PolicySearchResponse.xml|1|14c95714cb0|33f|88b0020a|d37c6b282fb845be923b4e4d4a3f2af3|0
+16:UserDetailsRequest.xml|1|14c95714cb0|2e7|744f06f3|5d8fb7ee420a4f70bad84e0cbd5e1d65|0
+18:PersonDetailResponse.xml|1|14c95714c2e|a565|5ecfc02b|c9c55aa6f64e45b4914f1d8b3212a2c0|0
+15:AllCitiesResponse.xml|1|14c9571442d|1bad7|ed6f0d2b|742b07602a6946e39ae80073cf83558b|0
+16:PartyDetailRequest.xml|1|14c95714be8|13|3a46055d|ca310633e43c47139983c121cbf58313|0
+1e:AllCompaniesForCorpRequest.xml|1|14c9571442d|e|236804b5|d30b1a72748f493a8db40fc29194c2da|0
+1f:CompanyLOBForCompanyRequest.xml|1|14c95714774|10|2d0004cd|81076c96fb2d45c4933c41e1bf939a80|0
+25:AllCompanyLOBCoverageReserveTypes.xml|1|14c9571447c|e90|41f6bea5|fbe53744cc284207ad7c2f930e68718a|0
+14:BatchJobResponse.xml|1|14c9571467a|11|2f8c0545|c7d569bf018f4853ac522c76bb273042|0
+19:PolicyDetailsResponse.xml|1|14c95714c38|7d0|25c95846|174fe711593d41bfbff84a2cd7e49ba7|0
+c:GLExport.xml|1|14f285cf140|8750|6171e648|7ca5865782f74f60aa576c13c63ea308|0
+1d:AllCompanyLOBReserveTypes.xml|1|14c9571447c|f5e1|810b5675|0e0a3d89176541d1a03cd15700e1dc3e|0
+34:Claim Import - Main - OverPayment - CloseReserve.xml|1|14c95714d6e|1a69|d40a6178|6b66d11d9379431e938a86929821613e|0
+26:Claim Import - Main - Open Reserve.xml|1|14c95714d82|76d|f29d46a1|be076bb6c5664f5eaf6880d6bc5ea0ef|0
+1e:DisbursementExportResponse.xml|1|14c957147d8|c623|2c9d70a4|38408539a1ea469195e9526152c6f505|0
+12:OutboundLetter.xml|1|14c95714bf2|6423|d84e1675|448c0d8ddf19408a8c401f4244281619|0
+1b:ClaimUpdateNotification.xml|1|14c95714d28|6ab99|aa8e43b9|756beb53327f4bef899f96f1d371b285|0
+11:ErrorResponse.xml|1|14c95714846|22d|3c58b2b1|fa06fe76ac4a4781b491335a14221ae1|0
+17:UserDetailsResponse.xml|1|14c95714cb0|cb6|2ac0f87|7396cce8cc854707bb77b1f5e283f1cd|0
+1e:FinancialCoverageRequest_1.xml|1|14c9571483c|d4|e6b24669|1f70b0e5d5a1437081e075141ba3b040|0
+1a:AddressGeoCodeResponse.xml|1|14c9571442d|565|c8c7c0c4|bdcc55e1730047bcb094fba910c92ab0|0
+28:Claim Import - Main - Open Reserve_2.xml|1|14c95714f58|767|7d894610|ddfc2ace3eb3438c8cb0d73e35244a07|0
+20:DocumentStatusUpdateResponse.xml|1|14c957147e2|36|2fc113a2|a661add2b5a64d629b5c5620af037d79|0
+33:Claim Import - Main - OverPayment - OpenReserve.xml|1|14c95714d82|d7d|333ffc3b|60d6071aed0741a09a65acb24417502d|0
+1c:FinancialReserveResponse.xml|1|14c95714882|38e|fbc62bdd|8b2247700a3c4349b3b77bae594d7c0e|0
+16:ClaimImportRequest.xml|1|14c957146d4|ea25|72044f3d|bb65b98cf5a34215bbe77a864c4e080e|0
+26:Claim Import - Main - with Reserve.xml|1|14c95714da0|12212|601187e0|a8535e07611548e680a907ec88861bcd|0
+3d:Claim Import - Main - OverPayment - Reopen - CloseReserve.xml|1|14c95714d78|d78|a498fb32|bf169b63524d406c98dd082c52097195|0
+14:FastTrackPayment.xml|1|14c9571481e|c32|79cad07b|c3c26ea95bc741039daa6d440c946836|0
+17:AllCountiesResponse.xml|1|14c95714486|ceb|670e34fb|32c68c644ea3442f9d3e5b454ffb2062|0
+24:Claim Import - Main - CloseClaim.xml|1|14c95714e0e|6f1|583c28cf|82a18dcca5284c3cb1ddedd5e3639133|0
+2e:Claim Import - Main -Open Recovery Reserve.xml|1|14c95714de6|761|9dfa444a|34f72e9fbec7496fb25f00abe28bbaed|0
+16:CodeLookupResponse.xml|1|14c95714774|68b|1075f59a|cafe7ffae35a4c78bde4a9a9b4ac5e0b|0
+16:DisbursementImport.xml|1|14c957147e2|5e5|28c6c36a|0a8419d929f54ba69010c82cbf3d7ce1|0
+17:OrderReturnResponse.xml|1|14c957148b4|39e|6782f3b|c67b5f9d34b44f069c24a2e164aa7826|0
+1d:FinancialReserveRequest_3.xml|1|14c95714882|d2|59ea4652|e4b19aa446374b58849bda8106dd810c|0
+19:PartyDupCheckResponse.xml|1|14c95714bf2|4b8d|262b2156|ef3b8f1b1e7e494b82af879dd3a398e6|0
+20:MonetaryCategoryCodeResponse.xml|1|14c957148be|17|69f1082a|fcae1f8b11144d8c8aecb8d8d3d5c9dc|0
+14:AllCitiesRequest.xml|1|14c9571442d|7c|919e2a8b|ed14b3a32ff14fb796a7a06788cb3b15|0
+1c:Claim Import-Assignments.xml|1|14c95714de6|418|86df467b|e596f31ede52470bb2e969c6a432faac|0
+1f:DisbursementReExportRequest.xml|1|14c957147e2|ad|544135f6|8828efc3cfb84356800bf9117d32b022|0
+1a:RenderDocumentResponse.xml|1|14c95714cb0|1a|6fbb07c1|9d9e1b1f7a0b4affb5f9089754ac9370|0
+19:AddressGeoCodeRequest.xml|1|14e92c5497d|4a5|fc3982d5|6a6cb6374c004f619e76bded765b0f41|0
+1e:FinancialCoverageRequest_3.xml|1|14c9571483c|82|b632b7b|81f67c78f18247febe995809b93aa21c|0
+19:BatchJobStatusRequest.xml|1|14e47a72275|10|2b86051b|a14376640fc84433953316a11c387b93|0
+1e:AddressVerificationRequest.xml|1|14c95714261|18e|23be8478|2a24becb979b4c4fa094b785e6d890a7|0
+1b:DuplicatePartiesRequest.xml|1|14c957147e2|7b0|dfe474f2|cdefd2f3e6f84905936a184cf32279b5|0
+16:OrderReturnRequest.xml|1|14e6911e6b9|bb9|4833e2bc|d4c4f1d6bc704a65bce1b3a3a2cb3e38|0
+17:ClaimSearchResponse.xml|1|14c95714774|2639|ff9218c9|2889c5020d38483abee142d0c52bc463|0
+16:AllCountiesRequest.xml|1|14c95714468|7c|919e2a8b|fb342219349543e1820a84592b748725|0
+22:Claim Import - Documents- DISK.xml|1|14e69397c4d|602|9a0ee576|986376c56fab45598ab3a24d9b3fe445|0
+37:Claim Import - Main -RecoveryPayment - CloseReserve.xml|1|14c95714dd2|6db|cbfc1e43|9599417f6f32444cb47bb65c35d7eedc|0
+25:Claim Import - Adj Reserve - Decr.xml|1|14c95714ddc|6a8|602944|ec3911e1d3714bf6aa5daf1c9567d6d7|0
+17:ClaimNumberResponse.xml|1|14c9571472e|1d|833f08ba|ef1698669f0c4a6f9d8a1287ffb93975|0

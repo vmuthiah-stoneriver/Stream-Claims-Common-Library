@@ -1,0 +1,377 @@
+<list>
+  <lossTypeCompLOBResCovDTO>
+    <corpId>100</corpId>
+    <corporation>Pilgrim Insurance Company</corporation>
+    <compId>114</compId>
+    <company>Acadia Insurance Company (B/O)</company>
+    <companyLOBId>110</companyLOBId>
+    <lobCode>ca</lobCode>
+    <lobName>Commercial Automobile</lobName>
+    <reserveTypeCode>clm_exp</reserveTypeCode>
+    <reserveTypeName>Claim Expense</reserveTypeName>
+    <coverageCode>audio</coverageCode>
+    <coverageName>Audio Visual Data</coverageName>
+    <lossTypeCode>allothr</lossTypeCode>
+    <lossTypeName>All Other</lossTypeName>
+  </lossTypeCompLOBResCovDTO>
+  <lossTypeCompLOBResCovDTO>
+    <corpId>100</corpId>
+    <corporation>Pilgrim Insurance Company</corporation>
+    <compId>114</compId>
+    <company>Acadia Insurance Company (B/O)</company>
+    <companyLOBId>110</companyLOBId>
+    <lobCode>ca</lobCode>
+    <lobName>Commercial Automobile</lobName>
+    <reserveTypeCode>exp_recov</reserveTypeCode>
+    <reserveTypeName>Expense Recovery</reserveTypeName>
+    <coverageCode>audio</coverageCode>
+    <coverageName>Audio Visual Data</coverageName>
+    <lossTypeCode>allothr</lossTypeCode>
+    <lossTypeName>All Other</lossTypeName>
+  </lossTypeCompLOBResCovDTO>
+  <lossTypeCompLOBResCovDTO>
+    <corpId>100</corpId>
+    <corporation>Pilgrim Insurance Company</corporation>
+    <compId>114</compId>
+    <company>Acadia Insurance Company (B/O)</company>
+    <companyLOBId>110</companyLOBId>
+    <lobCode>ca</lobCode>
+    <lobName>Commercial Automobile</lobName>
+    <reserveTypeCode>loss</reserveTypeCode>
+    <reserveTypeName>Loss</reserveTypeName>
+    <coverageCode>audio</coverageCode>
+    <coverageName>Audio Visual Data</coverageName>
+    <lossTypeCode>allothr</lossTypeCode>
+    <lossTypeName>All Other</lossTypeName>
+  </lossTypeCompLOBResCovDTO>
+  <lossTypeCompLOBResCovDTO>
+    <corpId>100</corpId>
+    <corporation>Pilgrim Insurance Company</corporation>
+    <compId>114</compId>
+    <company>Acadia Insurance Company (B/O)</company>
+    <companyLOBId>110</companyLOBId>
+    <lobCode>ca</lobCode>
+    <lobName>Commercial Automobile</lobName>
+    <reserveTypeCode>payrcvr</reserveTypeCode>
+    <reserveTypeName>Loss Payment Recovery</reserveTypeName>
+    <coverageCode>audio</coverageCode>
+    <coverageName>Audio Visual Data</coverageName>
+    <lossTypeCode>allothr</lossTypeCode>
+    <lossTypeName>All Other</lossTypeName>
+  </lossTypeCompLOBResCovDTO>
+  <lossTypeCompLOBResCovDTO>
+    <corpId>100</corpId>
+    <corporation>Pilgrim Insurance Company</corporation>
+    <compId>114</compId>
+    <company>Acadia Insurance Company (B/O)</company>
+    <companyLOBId>110</companyLOBId>
+    <lobCode>ca</lobCode>
+    <lobName>Commercial Automobile</lobName>
+    <reserveTypeCode>salv</reserveTypeCode>
+    <reserveTypeName>Salvage</reserveTypeName>
+    <coverageCode>audio</coverageCode>
+    <coverageName>Audio Visual Data</coverageName>
+    <lossTypeCode>allothr</lossTypeCode>
+    <lossTypeName>All Other</lossTypeName>
+  </lossTypeCompLOBResCovDTO>
+  <lossTypeCompLOBResCovDTO>
+    <corpId>100</corpId>
+    <corporation>Pilgrim Insurance Company</corporation>
+    <compId>114</compId>
+    <company>Acadia Insurance Company (B/O)</company>
+    <companyLOBId>110</companyLOBId>
+    <lobCode>ca</lobCode>
+    <lobName>Commercial Automobile</lobName>
+    <reserveTypeCode>subro</reserveTypeCode>
+    <reserveTypeName>Subrogation</reserveTypeName>
+    <coverageCode>audio</coverageCode>
+    <coverageName>Audio Visual Data</coverageName>
+    <lossTypeCode>allothr</lossTypeCode>
+    <lossTypeName>All Other</lossTypeName>
+  </lossTypeCompLOBResCovDTO>
+  <lossTypeCompLOBResCovDTO>
+    <corpId>100</corpId>
+    <corporation>Pilgrim Insurance Company</corporation>
+    <compId>114</compId>
+    <company>Acadia Insurance Company (B/O)</company>
+    <companyLOBId>110</companyLOBId>
+    <lobCode>ca</lobCode>
+    <lobName>Commercial Automobile</lobName>
+    <reserveTypeCode>clm_exp</reserveTypeCode>
+    <reserveTypeName>Claim Expense</reserveTypeName>
+    <coverageCode>autoloancomp</coverageCode>
+    <coverageName>Auto Loan Lease Comprehensive</coverageName>
+    <lossTypeCode>allothr</lossTypeCode>
+    <lossTypeName>All Other</lossTypeName>
+  </lossTypeCompLOBResCovDTO>
+  <lossTypeCompLOBResCovDTO>
+    <corpId>100</corpId>
+    <corporation>Pilgrim Insurance Company</corporation>
+    <compId>114</compId>
+    <company>Acadia Insurance Company (B/O)</company>
+    <companyLOBId>110</companyLOBId>
+    <lobCode>ca</lobCode>
+    <lobName>Commercial Automobile</lobName>
+    <reserveTypeCode>exp_recov</reserveTypeCode>
+    <reserveTypeName>Expense Recovery</reserveTypeName>
+    <coverageCode>autoloancomp</coverageCode>
+    <coverageName>Auto Loan Lease Comprehensive</coverageName>
+    <lossTypeCode>allothr</lossTypeCode>
+    <lossTypeName>All Other</lossTypeName>
+  </lossTypeCompLOBResCovDTO>
+  <lossTypeCompLOBResCovDTO>
+    <corpId>100</corpId>
+    <corporation>Pilgrim Insurance Company</corporation>
+    <compId>114</compId>
+    <company>Acadia Insurance Company (B/O)</company>
+    <companyLOBId>110</companyLOBId>
+    <lobCode>ca</lobCode>
+    <lobName>Commercial Automobile</lobName>
+    <reserveTypeCode>loss</reserveTypeCode>
+    <reserveTypeName>Loss</reserveTypeName>
+    <coverageCode>autoloancomp</coverageCode>
+    <coverageName>Auto Loan Lease Comprehensive</coverageName>
+    <lossTypeCode>allothr</lossTypeCode>
+    <lossTypeName>All Other</lossTypeName>
+  </lossTypeCompLOBResCovDTO>
+  <lossTypeCompLOBResCovDTO>
+    <corpId>100</corpId>
+    <corporation>Pilgrim Insurance Company</corporation>
+    <compId>114</compId>
+    <company>Acadia Insurance Company (B/O)</company>
+    <companyLOBId>110</companyLOBId>
+    <lobCode>ca</lobCode>
+    <lobName>Commercial Automobile</lobName>
+    <reserveTypeCode>payrcvr</reserveTypeCode>
+    <reserveTypeName>Loss Payment Recovery</reserveTypeName>
+    <coverageCode>autoloancomp</coverageCode>
+    <coverageName>Auto Loan Lease Comprehensive</coverageName>
+    <lossTypeCode>allothr</lossTypeCode>
+    <lossTypeName>All Other</lossTypeName>
+  </lossTypeCompLOBResCovDTO>
+  <lossTypeCompLOBResCovDTO>
+    <corpId>100</corpId>
+    <corporation>Pilgrim Insurance Company</corporation>
+    <compId>114</compId>
+    <company>Acadia Insurance Company (B/O)</company>
+    <companyLOBId>110</companyLOBId>
+    <lobCode>ca</lobCode>
+    <lobName>Commercial Automobile</lobName>
+    <reserveTypeCode>salv</reserveTypeCode>
+    <reserveTypeName>Salvage</reserveTypeName>
+    <coverageCode>autoloancomp</coverageCode>
+    <coverageName>Auto Loan Lease Comprehensive</coverageName>
+    <lossTypeCode>allothr</lossTypeCode>
+    <lossTypeName>All Other</lossTypeName>
+  </lossTypeCompLOBResCovDTO>
+  <lossTypeCompLOBResCovDTO>
+    <corpId>100</corpId>
+    <corporation>Pilgrim Insurance Company</corporation>
+    <compId>114</compId>
+    <company>Acadia Insurance Company (B/O)</company>
+    <companyLOBId>110</companyLOBId>
+    <lobCode>ca</lobCode>
+    <lobName>Commercial Automobile</lobName>
+    <reserveTypeCode>subro</reserveTypeCode>
+    <reserveTypeName>Subrogation</reserveTypeName>
+    <coverageCode>autoloancomp</coverageCode>
+    <coverageName>Auto Loan Lease Comprehensive</coverageName>
+    <lossTypeCode>allothr</lossTypeCode>
+    <lossTypeName>All Other</lossTypeName>
+  </lossTypeCompLOBResCovDTO>
+  <lossTypeCompLOBResCovDTO>
+    <corpId>100</corpId>
+    <corporation>Pilgrim Insurance Company</corporation>
+    <compId>114</compId>
+    <company>Acadia Insurance Company (B/O)</company>
+    <companyLOBId>110</companyLOBId>
+    <lobCode>ca</lobCode>
+    <lobName>Commercial Automobile</lobName>
+    <reserveTypeCode>clm_exp</reserveTypeCode>
+    <reserveTypeName>Claim Expense</reserveTypeName>
+    <coverageCode>cell</coverageCode>
+    <coverageName>Cell Phone</coverageName>
+    <lossTypeCode>allothr</lossTypeCode>
+    <lossTypeName>All Other</lossTypeName>
+  </lossTypeCompLOBResCovDTO>
+  <lossTypeCompLOBResCovDTO>
+    <corpId>100</corpId>
+    <corporation>Pilgrim Insurance Company</corporation>
+    <compId>114</compId>
+    <company>Acadia Insurance Company (B/O)</company>
+    <companyLOBId>110</companyLOBId>
+    <lobCode>ca</lobCode>
+    <lobName>Commercial Automobile</lobName>
+    <reserveTypeCode>exp_recov</reserveTypeCode>
+    <reserveTypeName>Expense Recovery</reserveTypeName>
+    <coverageCode>cell</coverageCode>
+    <coverageName>Cell Phone</coverageName>
+    <lossTypeCode>allothr</lossTypeCode>
+    <lossTypeName>All Other</lossTypeName>
+  </lossTypeCompLOBResCovDTO>
+  <lossTypeCompLOBResCovDTO>
+    <corpId>100</corpId>
+    <corporation>Pilgrim Insurance Company</corporation>
+    <compId>114</compId>
+    <company>Acadia Insurance Company (B/O)</company>
+    <companyLOBId>110</companyLOBId>
+    <lobCode>ca</lobCode>
+    <lobName>Commercial Automobile</lobName>
+    <reserveTypeCode>loss</reserveTypeCode>
+    <reserveTypeName>Loss</reserveTypeName>
+    <coverageCode>cell</coverageCode>
+    <coverageName>Cell Phone</coverageName>
+    <lossTypeCode>allothr</lossTypeCode>
+    <lossTypeName>All Other</lossTypeName>
+  </lossTypeCompLOBResCovDTO>
+  <lossTypeCompLOBResCovDTO>
+    <corpId>100</corpId>
+    <corporation>Pilgrim Insurance Company</corporation>
+    <compId>114</compId>
+    <company>Acadia Insurance Company (B/O)</company>
+    <companyLOBId>110</companyLOBId>
+    <lobCode>ca</lobCode>
+    <lobName>Commercial Automobile</lobName>
+    <reserveTypeCode>payrcvr</reserveTypeCode>
+    <reserveTypeName>Loss Payment Recovery</reserveTypeName>
+    <coverageCode>cell</coverageCode>
+    <coverageName>Cell Phone</coverageName>
+    <lossTypeCode>allothr</lossTypeCode>
+    <lossTypeName>All Other</lossTypeName>
+  </lossTypeCompLOBResCovDTO>
+  <lossTypeCompLOBResCovDTO>
+    <corpId>100</corpId>
+    <corporation>Pilgrim Insurance Company</corporation>
+    <compId>114</compId>
+    <company>Acadia Insurance Company (B/O)</company>
+    <companyLOBId>110</companyLOBId>
+    <lobCode>ca</lobCode>
+    <lobName>Commercial Automobile</lobName>
+    <reserveTypeCode>salv</reserveTypeCode>
+    <reserveTypeName>Salvage</reserveTypeName>
+    <coverageCode>cell</coverageCode>
+    <coverageName>Cell Phone</coverageName>
+    <lossTypeCode>allothr</lossTypeCode>
+    <lossTypeName>All Other</lossTypeName>
+  </lossTypeCompLOBResCovDTO>
+  <lossTypeCompLOBResCovDTO>
+    <corpId>100</corpId>
+    <corporation>Pilgrim Insurance Company</corporation>
+    <compId>114</compId>
+    <company>Acadia Insurance Company (B/O)</company>
+    <companyLOBId>110</companyLOBId>
+    <lobCode>ca</lobCode>
+    <lobName>Commercial Automobile</lobName>
+    <reserveTypeCode>subro</reserveTypeCode>
+    <reserveTypeName>Subrogation</reserveTypeName>
+    <coverageCode>cell</coverageCode>
+    <coverageName>Cell Phone</coverageName>
+    <lossTypeCode>allothr</lossTypeCode>
+    <lossTypeName>All Other</lossTypeName>
+  </lossTypeCompLOBResCovDTO>
+  <lossTypeCompLOBResCovDTO>
+    <corpId>100</corpId>
+    <corporation>Pilgrim Insurance Company</corporation>
+    <compId>114</compId>
+    <company>Acadia Insurance Company (B/O)</company>
+    <companyLOBId>110</companyLOBId>
+    <lobCode>ca</lobCode>
+    <lobName>Commercial Automobile</lobName>
+    <reserveTypeCode>clm_exp</reserveTypeCode>
+    <reserveTypeName>Claim Expense</reserveTypeName>
+    <coverageCode>comp</coverageCode>
+    <coverageName>Comprehensive</coverageName>
+    <lossTypeCode>allothr</lossTypeCode>
+    <lossTypeName>All Other</lossTypeName>
+  </lossTypeCompLOBResCovDTO>
+  <lossTypeCompLOBResCovDTO>
+    <corpId>100</corpId>
+    <corporation>Pilgrim Insurance Company</corporation>
+    <compId>114</compId>
+    <company>Acadia Insurance Company (B/O)</company>
+    <companyLOBId>110</companyLOBId>
+    <lobCode>ca</lobCode>
+    <lobName>Commercial Automobile</lobName>
+    <reserveTypeCode>exp_recov</reserveTypeCode>
+    <reserveTypeName>Expense Recovery</reserveTypeName>
+    <coverageCode>comp</coverageCode>
+    <coverageName>Comprehensive</coverageName>
+    <lossTypeCode>allothr</lossTypeCode>
+    <lossTypeName>All Other</lossTypeName>
+  </lossTypeCompLOBResCovDTO>
+  <lossTypeCompLOBResCovDTO>
+    <corpId>100</corpId>
+    <corporation>Pilgrim Insurance Company</corporation>
+    <compId>114</compId>
+    <company>Acadia Insurance Company (B/O)</company>
+    <companyLOBId>110</companyLOBId>
+    <lobCode>ca</lobCode>
+    <lobName>Commercial Automobile</lobName>
+    <reserveTypeCode>loss</reserveTypeCode>
+    <reserveTypeName>Loss</reserveTypeName>
+    <coverageCode>comp</coverageCode>
+    <coverageName>Comprehensive</coverageName>
+    <lossTypeCode>allothr</lossTypeCode>
+    <lossTypeName>All Other</lossTypeName>
+  </lossTypeCompLOBResCovDTO>
+  <lossTypeCompLOBResCovDTO>
+    <corpId>100</corpId>
+    <corporation>Pilgrim Insurance Company</corporation>
+    <compId>114</compId>
+    <company>Acadia Insurance Company (B/O)</company>
+    <companyLOBId>110</companyLOBId>
+    <lobCode>ca</lobCode>
+    <lobName>Commercial Automobile</lobName>
+    <reserveTypeCode>payrcvr</reserveTypeCode>
+    <reserveTypeName>Loss Payment Recovery</reserveTypeName>
+    <coverageCode>comp</coverageCode>
+    <coverageName>Comprehensive</coverageName>
+    <lossTypeCode>allothr</lossTypeCode>
+    <lossTypeName>All Other</lossTypeName>
+  </lossTypeCompLOBResCovDTO>
+  <lossTypeCompLOBResCovDTO>
+    <corpId>100</corpId>
+    <corporation>Pilgrim Insurance Company</corporation>
+    <compId>114</compId>
+    <company>Acadia Insurance Company (B/O)</company>
+    <companyLOBId>110</companyLOBId>
+    <lobCode>ca</lobCode>
+    <lobName>Commercial Automobile</lobName>
+    <reserveTypeCode>salv</reserveTypeCode>
+    <reserveTypeName>Salvage</reserveTypeName>
+    <coverageCode>comp</coverageCode>
+    <coverageName>Comprehensive</coverageName>
+    <lossTypeCode>allothr</lossTypeCode>
+    <lossTypeName>All Other</lossTypeName>
+  </lossTypeCompLOBResCovDTO>
+  <lossTypeCompLOBResCovDTO>
+    <corpId>100</corpId>
+    <corporation>Pilgrim Insurance Company</corporation>
+    <compId>114</compId>
+    <company>Acadia Insurance Company (B/O)</company>
+    <companyLOBId>110</companyLOBId>
+    <lobCode>ca</lobCode>
+    <lobName>Commercial Automobile</lobName>
+    <reserveTypeCode>subro</reserveTypeCode>
+    <reserveTypeName>Subrogation</reserveTypeName>
+    <coverageCode>comp</coverageCode>
+    <coverageName>Comprehensive</coverageName>
+    <lossTypeCode>allothr</lossTypeCode>
+    <lossTypeName>All Other</lossTypeName>
+  </lossTypeCompLOBResCovDTO>
+  <lossTypeCompLOBResCovDTO>
+    <corpId>100</corpId>
+    <corporation>Pilgrim Insurance Company</corporation>
+    <compId>114</compId>
+    <company>Acadia Insurance Company (B/O)</company>
+    <companyLOBId>110</companyLOBId>
+    <lobCode>ca</lobCode>
+    <lobName>Commercial Automobile</lobName>
+    <reserveTypeCode>clm_exp</reserveTypeCode>
+    <reserveTypeName>Claim Expense</reserveTypeName>
+    <coverageCode>cust_comp</coverageCode>
+    <coverageName>Customizing Equipment Comprehensive</coverageName>
+    <lossTypeCode>allothr</lossTypeCode>
+    <lossTypeName>All Other</lossTypeName>
+  </lossTypeCompLOBResCovDTO>
+</list>

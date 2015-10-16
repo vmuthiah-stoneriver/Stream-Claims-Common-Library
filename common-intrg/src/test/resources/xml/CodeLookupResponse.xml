@@ -1,0 +1,51 @@
+<list>
+  <codeLookupBO>
+    <code class="string">disc</code>
+    <value>Discretionary</value>
+    <permission>1</permission>
+    <effectiveDate>2012-02-02 00:00:00.000 MST</effectiveDate>
+  </codeLookupBO>
+  <codeLookupBO>
+    <code class="string">hol</code>
+    <value>Holiday</value>
+    <permission>1</permission>
+    <effectiveDate>2012-02-02 00:00:00.000 MST</effectiveDate>
+  </codeLookupBO>
+  <codeLookupBO>
+    <code class="string">jury</code>
+    <value>Jury Duty</value>
+    <permission>1</permission>
+    <effectiveDate>2012-02-02 00:00:00.000 MST</effectiveDate>
+  </codeLookupBO>
+  <codeLookupBO>
+    <code class="string">leav</code>
+    <value>Leave of Absence</value>
+    <permission>1</permission>
+    <effectiveDate>2012-02-02 00:00:00.000 MST</effectiveDate>
+  </codeLookupBO>
+  <codeLookupBO>
+    <code class="string">mat</code>
+    <value>Maternity</value>
+    <permission>1</permission>
+    <effectiveDate>2012-02-02 00:00:00.000 MST</effectiveDate>
+  </codeLookupBO>
+  <codeLookupBO>
+    <code class="string">othr</code>
+    <value>Other</value>
+    <permission>1</permission>
+    <effectiveDate>1990-01-01 00:00:00.000 MST</effectiveDate>
+    <endDate>1990-01-01 00:00:00.000 MST</endDate>
+  </codeLookupBO>
+  <codeLookupBO>
+    <code class="string">sick</code>
+    <value>Sickness</value>
+    <permission>1</permission>
+    <effectiveDate>2012-02-02 00:00:00.000 MST</effectiveDate>
+  </codeLookupBO>
+  <codeLookupBO>
+    <code class="string">vac</code>
+    <value>Vacation</value>
+    <permission>1</permission>
+    <effectiveDate>1990-01-01 00:00:00.000 MST</effectiveDate>
+  </codeLookupBO>
+</list>

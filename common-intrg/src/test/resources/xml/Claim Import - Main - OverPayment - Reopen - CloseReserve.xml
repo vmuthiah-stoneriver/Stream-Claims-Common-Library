@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?> 
+<claimImportCompositeDTO>
+	<claimNumber>PAL 29696700</claimNumber>
+<claimPayments class="list">
+      <claimPayment>
+         <claimPayables class="list">
+            <claimPayable>
+               <transactionTypeName>Loss Pay</transactionTypeName>
+               <transactionTypeCode>c_loss_due</transactionTypeCode>
+               <transactionAmount>850</transactionAmount>
+               <transactionDate>2012-05-30 00:00:00.000 EST</transactionDate>
+               <accountingDate>2012-05-30 00:00:00.000 EST</accountingDate>
+               <partyId>1609</partyId>
+               <companyId>201</companyId>
+               <claimNumber>PAL 29696962</claimNumber>
+               <externalUnitIdentifier>000014PAL00001004092201117000106/19/20112</externalUnitIdentifier>
+               <externalParticipantIdentifier>2046</externalParticipantIdentifier>
+               <clmCoverageCode>collsn</clmCoverageCode>
+               <clmReserveTypeCode>loss_coll</clmReserveTypeCode>
+               <clmLossTypeCode>collsn</clmLossTypeCode>
+               <monitoryTypeCode>no_wvr</monitoryTypeCode>
+               <invoiceNumber>1</invoiceNumber>
+               <closeReserveIndicator>true</closeReserveIndicator>
+               <surchargeIndicator>false</surchargeIndicator>
+               <monetaryCategoryCode>loss</monetaryCategoryCode>
+            </claimPayable>
+         </claimPayables>
+         <claimPaymentDisbursements class="list">
+            <claimPaymentDisbursement>
+               <disbursementTypeCode>clmpay</disbursementTypeCode>
+               <disbursementNumber>2312369121</disbursementNumber>
+               <disbursementAmount>850</disbursementAmount>
+               <partyId>1609</partyId>
+               <addressLine1>1375 Washington Street</addressLine1>
+               <city>Denver</city>
+               <primarySubDivision>CO</primarySubDivision>
+               <postalCode>80203-2055</postalCode>
+               <country>usa</country>
+               <inCareOfPayeeId>1609</inCareOfPayeeId>
+               <inCareOfPayeeName>Pete</inCareOfPayeeName>
+               <onDemand>false</onDemand>
+               <manualCheckIndicator>true</manualCheckIndicator>
+               <scheduled>true</scheduled>
+               <paymentMethodType>chck</paymentMethodType>
+               <bulkPaymentIndicator>false</bulkPaymentIndicator>
+               <comment/>
+               <disbursementCreatedDate>2012-05-30 00:00:00.000 EST</disbursementCreatedDate>
+               <disbursementInPaymentOfText>payment</disbursementInPaymentOfText>
+               <disbursementPrintGroupCode>batch</disbursementPrintGroupCode>
+               <disbursementPayToTheOrderOf>Pete</disbursementPayToTheOrderOf>
+               <percentageAllocation>100</percentageAllocation>
+               <companyId>201</companyId>
+               <partyIdPayee>1609</partyIdPayee>
+               <payeeName>Mark Field</payeeName>
+               <transactionDate>2012-05-30 00:00:00.000 EST</transactionDate>
+               <accountingDate>2012-05-30 00:00:00.000 EST</accountingDate>               
+            </claimPaymentDisbursement>
+         </claimPaymentDisbursements>
+         <userName>mbrady</userName>
+         <authorizationRequired>false</authorizationRequired>
+      </claimPayment>
+   </claimPayments>
+</claimImportCompositeDTO>

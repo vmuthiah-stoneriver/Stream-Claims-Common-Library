@@ -1,0 +1,468 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:include schemaLocation="../xsd/Common.xsd" />
+
+	<xs:annotation>
+		<xs:documentation>Customer search request schema.</xs:documentation>
+	</xs:annotation>
+
+	<xs:element name="partySearchCriteria" type="ClientPartySearchCriteria">
+		<xs:annotation>
+			<xs:documentation>Party search criteria.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+
+	<xs:complexType name="PartySearchCriteria">
+		<xs:annotation>
+			<xs:documentation>Party search criteria, Wild card searches need
+				astrisk(*) as placeholder
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="CriteriaDefaultImpl">
+				<xs:sequence>
+					<xs:element name="partyIdsFilter" type="partyIdsFilterType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>To search for a collection of specific parties
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="firstNameFilter" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>First name, Supports wildcards
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="middleNameFilter" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Middle name, Supports wildcards
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="lastNameFilter" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Last name, Supports wildcards
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="includeBlockedCustomers" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Filter blocked customers, Initialized via
+								system configuration - incl_block_cust
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="includeBlockedVendors" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Filter blocked vendors, Initialized via system
+								configuration - incl_block_vend
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="partyNumberFilter" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Party number (not the same as internal id),
+								supports wildcards
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="partyNameFilter" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Person's last name or organization's business
+								name
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="partyTypeFilter" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Exact match on party type ('pers' or 'org')
+								(see
+								PARTY_TYPE_CD)
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="dateOfBirthFilter" type="xs:date"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Person only, exact match on date of birth
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="addressLine1Filter" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Address number and street, supports wildcards
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="addressLine2Filter" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Address line 2, supports wildcards
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="addressCityFilter" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>City, supports wildcards</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="addressCountyFilter" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>County, supports wildcards</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="addressStateFilter" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Exact match on state code</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="addressCountryFilter" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Exact match on country code</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="addressZipcodeFilter" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>US/Canada zipcodes, supports wildcards
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="taxIdentifierFilter" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Person's SSN or business' TIN, supports
+								wildcards
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="communicationTypeFilter" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Exact match on communication usage type:
+								'email',
+								'mail_addr', etc (see USAGE_TYPE_CD)
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="communicationFilter" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Communications (email address, phone number,
+								etc), supports wildcards
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="partyIdentifierTypeFilter" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Exact match of the party identifier type code
+								(see PARTY_IDENTIFIER_TYPE_CD)
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="partyIdentifierFilter" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Party identifier (license numbers), supports
+								wildcards
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="includeName" type="boolean" minOccurs="1"
+						maxOccurs="1" default="false">
+						<xs:annotation>
+							<xs:documentation>Control if the search results populate various
+								name fields
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="includeAddress" type="boolean"
+						minOccurs="1" maxOccurs="1" default="false">
+						<xs:annotation>
+							<xs:documentation>Control if the search results populate various
+								address fields
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="includeTaxInfo" type="boolean"
+						minOccurs="1" maxOccurs="1" default="false">
+						<xs:annotation>
+							<xs:documentation>Control if the search results populate various
+								tax fields
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="includeCommunication" type="boolean"
+						minOccurs="1" maxOccurs="1" default="false">
+						<xs:annotation>
+							<xs:documentation>Control if the search results populate various
+								communication fields
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="rolesFilter" type="rolesFilterType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Exact match on a collection of party role type
+								codes (See PARTY_ROLE_TYPE_CD)
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="routingNumberFilter" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Exact match on bank routing number in case of
+								financial institution role
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="partyAddressUsageFilter" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Exact match on the code of the type of address
+								(see USAGE_TYPE_CD)
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="vendorTypeFilter" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Code for the type of vendor (see
+								VENDOR_TYPE_CD),
+								supports wildcards
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="vendorCategoryFilter" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Code for the category of the vendor (see
+								VENDOR_CATEGORY_CD), supports wildcards
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="locationSearch" type="boolean"
+						minOccurs="0" maxOccurs="1" default="false">
+						<xs:annotation>
+							<xs:documentation>Must be true if any address criteria are
+								passed,
+								otherwise ignored
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="membershipIdFilter" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Membership number, supports wildcards
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="includePrimaryMembership" type="boolean"
+						minOccurs="0" maxOccurs="1" default="false">
+						<xs:annotation>
+							<xs:documentation>Limits membership number search to primary only
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="recommendedVendor" type="boolean"
+						minOccurs="0" maxOccurs="1" default="false">
+						<xs:annotation>
+							<xs:documentation>Limits vendor search to recommended vendors
+								only
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="languageFilter" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Exact match on code of the party's language
+								(see
+								LANGUAGE_CD)
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="genderFilter" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Exact match on code of the party's gender (see
+								GENDER_CD)
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="specialtyType" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Limit the vendor search to health care
+								providers
+								specializing in partOfBody (see VENDOR_SPECIALTY_CD),
+								supports wildcards
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="partOfBody" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Code of the part of the body for health care
+								vendors (see PART_OF_BODY_CD), supports wildcards
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="meIndicator" type="boolean" minOccurs="0"
+						maxOccurs="1" default="false">
+						<xs:annotation>
+							<xs:documentation>if true, limit the search results to records
+								with
+								IME indicator of true, Used only in health care vendor
+								searches.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="maxSearchResults" type="long"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Max Search Results, Set through system option -
+								mprc
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="conextTypeCode" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Conext type code, Maps to AGRE_TYP_CD Column
+								from AGREEMENT_TYPE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="participationTypeCode" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Participation type code, Maps to PTCP_TYP_CD
+								Column from PARTICIPATION_TYPE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="agreementIdTextFilter" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Agreemnt Id for the Conext.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="resultAddressAgreementType" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Search results agreementType</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="ClientPartySearchCriteria">
+		<xs:annotation>
+			<xs:documentation>Client Party Search Criteria</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="PartySearchCriteria">
+				<xs:sequence>
+					<xs:element name="includeLien" type="boolean" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Flag to indicate if Lien Restriction code is
+								required in the Response.
+								Goes with Vendor Seach
+								rolesFilter('vend')
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="includeProfileName" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Profile Description (Case sensitive)
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="partyEventsFilter" type="eventFilterType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Party update event list.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="eventStartDate" type="dateType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Party event begin date</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="eventEndDate" type="dateType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Party event end date</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+
+	<xs:complexType name="partyIdsFilterType">
+		<xs:annotation>
+			<xs:documentation>Party id list</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="long" type="long" minOccurs="0"
+				maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Party ids.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="class" type="collectionType" use="optional" />
+	</xs:complexType>
+
+	<xs:complexType name="rolesFilterType">
+		<xs:annotation>
+			<xs:documentation>Party role id list</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="string" type="string" minOccurs="0"
+				maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Party role ids.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="class" type="collectionType" use="optional" />
+	</xs:complexType>
+
+	<xs:complexType name="eventFilterType">
+		<xs:annotation>
+			<xs:documentation>Event type list</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="string" type="string" minOccurs="0"
+				maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Event types.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="class" type="collectionType" use="optional" />
+	</xs:complexType>
+
+</xs:schema>  

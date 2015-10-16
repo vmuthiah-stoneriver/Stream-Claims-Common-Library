@@ -1,0 +1,384 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<xs:annotation>
+		<xs:documentation>Assignment Schema.</xs:documentation>
+	</xs:annotation>
+	
+	<xs:element name="assignmentStatusDTO" type="AssignmentStatusDTO" />
+
+	<xs:element name="importAssignmentDTO" type="ClientImportAssignmentDTO">
+		<xs:annotation>
+			<xs:documentation>Assignments.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+
+	<xs:complexType name="ClientImportAssignmentDTO">
+		<xs:annotation>
+			<xs:documentation>Assignment for import</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="ImportAssignmentDTO">
+				<xs:sequence>
+					<xs:element name="clientAssignmentStatus" type="ClientAssignmentStatusCompositeDTO"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Client assignment status</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="userFaxNumber" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Assigned user fax number</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="supervisorFaxNumber" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Supervisor fax number</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="userFirstName" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>User first name</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="userMiddleName" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>User middle name</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="userLastName" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>User last name</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="supervisorPhoneNumber" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Supervisor phone number</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="ImportAssignmentDTO">
+		<xs:annotation>
+			<xs:documentation>Assignment status Type</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="AssignmentDTO">
+				<xs:sequence>
+					<xs:element name="asgnStatus" type="string" minOccurs="1"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Assignment Status, Maps to ASGN_STS_CD Column
+								from ASSIGNMENT_STATUS_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="AssignmentDTO">
+		<xs:annotation>
+			<xs:documentation>Assignment type</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="BaseToolDTO">
+				<xs:sequence>
+					<xs:element name="functionalRoleCode" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Functional Role of the User, 
+								Maps to FNCT_ROLE_CD Column from FUNCTIONAL_ROLE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="userId" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Assigned User Id, 
+								Maps to USER_ID Column from USER_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="companyOrgUnitId" type="long"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Maps to CMPY_ORG_UNT_ID Column from COMPANY_ORGANIZATION_UNIT_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="loadBalancingRuleCode" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Load balancing rules, 
+								Maps to LD_BAL_RL_CD column	in LOAD_BALANCING_RULE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="assignmentPrimary" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Identifies the primary assignee within a
+								context.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="assignmentOveride" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Indicates that the assignment is an override
+								and should not be reassigned by the system.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="assignedToUser" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Indicates whether the assignment is to a user
+								or not.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="assignmentOverideComment" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Comment describing the reasons for the
+								override.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="userPhoneNumber" type="phoneType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Assigned user phone number</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="userEmail" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Assigned user email</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="userTitle" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Assigned user title</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="userSupervisor" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Supervisor name</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="saveEvenIfRuleExist" type="boolean"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Indicates whether to save assignments even if
+								rule exists.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="assignmentStatus" type="AssignmentStatusCompositeDTO"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Assignment Status Composite</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="updatedUserDetails" type="UserDetailsDTO"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Not used for Claim Import, Place holder for
+								Claim Details
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="createdUserDetails" type="UserDetailsDTO"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Not used for Claim Import, Place holder for
+								Claim Details
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="folder" type="folderType" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Not used for Claim Import, Place holder for
+								Claim Details
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="assignmentTypeCode" type="string"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Assignment Type Code,
+								Maps to ASGN_TYP_CD Column from ASSIGNMENT_TYPE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="reasgnmntNotification" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Reassignment flag</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="effectiveDateTime" type="dateType"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Effective Date for the assignment
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="endDateTime" type="dateType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>End Date for the assignment</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="agreementSubTypeCode" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Agreement type code, Maps to AGRE_SUBTYP_CD
+								Column from AGREEMENT_SUBTYPE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="segmentationAccess" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Segmentation access flag, Check if the
+								segmented user can be assigned.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="AssignmentStatusCompositeDTO">
+		<xs:annotation>
+			<xs:documentation>Complete Assignment Status Information
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="currentStatus" type="AssignmentStatusDTO"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Current status of the Assignment
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="expiredStatusCollection" type="expiredAssignmentStatus"
+				minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Collection of previous statuses of the Assignment
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="ClientAssignmentStatusCompositeDTO">
+		<xs:annotation>
+			<xs:documentation>Client Assignment Status composite
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="AssignmentStatusCompositeDTO">
+				<xs:sequence>
+					<xs:element name="assignmentStatusDTO" type="AssignmentStatusDTO"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Current status of the assignment
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="expiredAssignmentStatusCollection"
+						type="expiredAssignmentStatus" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Collection of previous statuses of the
+								Assignment
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="expiredAssignmentStatus">
+		<xs:annotation>
+			<xs:documentation>List of expired assignment status
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="assignmentStatusDTO" type="AssignmentStatusDTO"
+				minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Assignment status list.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="class" type="collectionType" use="optional" />
+	</xs:complexType>
+
+	<xs:complexType name="AssignmentStatusDTO">
+		<xs:annotation>
+			<xs:documentation>Assignment status</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="AuditWithExpireDTO">
+				<xs:sequence>
+					<xs:element name="assignmentStatusCode" type="string"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Assignment Status Code, 
+								Maps to ASGN_STS_CD	Column from ASSIGNMENT_STATUS_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="SearchAssignedAssignmentResponseDTO">
+		<xs:sequence>
+			<xs:element name="assignedUserId" type="long" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Assigned userid.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="assignedUserName" type="string"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Assigned username.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="assignedOrganizationId" type="long"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Assigned user officeId.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="assignedOrganizationTeam" type="string"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Assigned user Team Name.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

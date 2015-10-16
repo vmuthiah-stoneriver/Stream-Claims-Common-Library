@@ -1,0 +1,646 @@
+<list>
+  <generalLedgerExportBatchDTO>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <genLedgerActivityCode>sum</genLedgerActivityCode>
+    <corporationId>1000000</corporationId>
+    <companyId>1000000</companyId>
+    <genLedgerActivityJournalDate>2015-07-31 00:00:00.000 CDT</genLedgerActivityJournalDate>
+    <genLedgerActivityPostDate>2015-08-11 00:00:00.000 CDT</genLedgerActivityPostDate>
+    <accountPeriodMonthCode>08</accountPeriodMonthCode>
+    <accountPeriodMonthName>August</accountPeriodMonthName>
+    <accountPeriodYear>2015</accountPeriodYear>
+    <glAccountCode>411000</glAccountCode>
+    <glAccountName>Case Resv Direct</glAccountName>
+    <glCompanyAccountCode>411000</glCompanyAccountCode>
+    <glCompanyAccountName>Case Resv Direct</glCompanyAccountName>
+    <genLedgerDebitCount>0</genLedgerDebitCount>
+    <genLedgerDebitAmount>0</genLedgerDebitAmount>
+    <genLedgerCreditCount>11</genLedgerCreditCount>
+    <genLedgerCreditAmount>662788.00</genLedgerCreditAmount>
+    <genLedgerTotalCount>11</genLedgerTotalCount>
+    <genLedgerNetAmount>-662788.00</genLedgerNetAmount>
+  </generalLedgerExportBatchDTO>
+  <generalLedgerExportBatchDTO>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <genLedgerActivityCode>sum</genLedgerActivityCode>
+    <corporationId>1000000</corporationId>
+    <companyId>1000000</companyId>
+    <genLedgerActivityJournalDate>2015-08-05 00:00:00.000 CDT</genLedgerActivityJournalDate>
+    <genLedgerActivityPostDate>2015-08-11 00:00:00.000 CDT</genLedgerActivityPostDate>
+    <accountPeriodMonthCode>08</accountPeriodMonthCode>
+    <accountPeriodMonthName>August</accountPeriodMonthName>
+    <accountPeriodYear>2015</accountPeriodYear>
+    <glAccountCode>700000</glAccountCode>
+    <glAccountName>Direct Losses Paid</glAccountName>
+    <glCompanyAccountCode>700000</glCompanyAccountCode>
+    <glCompanyAccountName>Direct Losses Paid</glCompanyAccountName>
+    <genLedgerDebitCount>21</genLedgerDebitCount>
+    <genLedgerDebitAmount>773869.65</genLedgerDebitAmount>
+    <genLedgerCreditCount>12</genLedgerCreditCount>
+    <genLedgerCreditAmount>280000.99</genLedgerCreditAmount>
+    <genLedgerTotalCount>33</genLedgerTotalCount>
+    <genLedgerNetAmount>493868.66</genLedgerNetAmount>
+  </generalLedgerExportBatchDTO>
+  <generalLedgerExportBatchDTO>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <genLedgerActivityCode>sum</genLedgerActivityCode>
+    <corporationId>1000000</corporationId>
+    <companyId>1000000</companyId>
+    <genLedgerActivityJournalDate>2015-07-24 00:00:00.000 CDT</genLedgerActivityJournalDate>
+    <genLedgerActivityPostDate>2015-08-11 00:00:00.000 CDT</genLedgerActivityPostDate>
+    <accountPeriodMonthCode>07</accountPeriodMonthCode>
+    <accountPeriodMonthName>July</accountPeriodMonthName>
+    <accountPeriodYear>2015</accountPeriodYear>
+    <glAccountCode>721000</glAccountCode>
+    <glAccountName>Chg Case Loss Resv Direct</glAccountName>
+    <glCompanyAccountCode>721000</glCompanyAccountCode>
+    <glCompanyAccountName>Chg Case Loss Resv Direct</glCompanyAccountName>
+    <genLedgerDebitCount>37</genLedgerDebitCount>
+    <genLedgerDebitAmount>1188420.00</genLedgerDebitAmount>
+    <genLedgerCreditCount>4</genLedgerCreditCount>
+    <genLedgerCreditAmount>9050.00</genLedgerCreditAmount>
+    <genLedgerTotalCount>41</genLedgerTotalCount>
+    <genLedgerNetAmount>1179370.00</genLedgerNetAmount>
+  </generalLedgerExportBatchDTO>
+  <generalLedgerExportBatchDTO>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <genLedgerActivityCode>sum</genLedgerActivityCode>
+    <corporationId>1000000</corporationId>
+    <companyId>1000000</companyId>
+    <genLedgerActivityJournalDate>2015-07-24 00:00:00.000 CDT</genLedgerActivityJournalDate>
+    <genLedgerActivityPostDate>2015-08-11 00:00:00.000 CDT</genLedgerActivityPostDate>
+    <accountPeriodMonthCode>07</accountPeriodMonthCode>
+    <accountPeriodMonthName>July</accountPeriodMonthName>
+    <accountPeriodYear>2015</accountPeriodYear>
+    <glAccountCode>100005</glAccountCode>
+    <glAccountName>Point Positive Pay Claim - Cash Account</glAccountName>
+    <glCompanyAccountCode>100005</glCompanyAccountCode>
+    <glCompanyAccountName>Point Positive Pay Claim - Cash Account</glCompanyAccountName>
+    <genLedgerDebitCount>0</genLedgerDebitCount>
+    <genLedgerDebitAmount>0</genLedgerDebitAmount>
+    <genLedgerCreditCount>15</genLedgerCreditCount>
+    <genLedgerCreditAmount>36820.00</genLedgerCreditAmount>
+    <genLedgerTotalCount>15</genLedgerTotalCount>
+    <genLedgerNetAmount>-36820.00</genLedgerNetAmount>
+  </generalLedgerExportBatchDTO>
+  <generalLedgerExportBatchDTO>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <genLedgerActivityCode>sum</genLedgerActivityCode>
+    <corporationId>1000000</corporationId>
+    <companyId>1000000</companyId>
+    <genLedgerActivityJournalDate>2015-08-05 00:00:00.000 CDT</genLedgerActivityJournalDate>
+    <genLedgerActivityPostDate>2015-08-11 00:00:00.000 CDT</genLedgerActivityPostDate>
+    <accountPeriodMonthCode>08</accountPeriodMonthCode>
+    <accountPeriodMonthName>August</accountPeriodMonthName>
+    <accountPeriodYear>2015</accountPeriodYear>
+    <glAccountCode>948401</glAccountCode>
+    <glAccountName>Misc Outside Claim Exp-Claims</glAccountName>
+    <glCompanyAccountCode>948401</glCompanyAccountCode>
+    <glCompanyAccountName>Misc Outside Claim Exp-Claims</glCompanyAccountName>
+    <genLedgerDebitCount>1</genLedgerDebitCount>
+    <genLedgerDebitAmount>3000.00</genLedgerDebitAmount>
+    <genLedgerCreditCount>1</genLedgerCreditCount>
+    <genLedgerCreditAmount>3000.00</genLedgerCreditAmount>
+    <genLedgerTotalCount>2</genLedgerTotalCount>
+    <genLedgerNetAmount>0.00</genLedgerNetAmount>
+  </generalLedgerExportBatchDTO>
+  <generalLedgerExportBatchDTO>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <genLedgerActivityCode>sum</genLedgerActivityCode>
+    <corporationId>1000000</corporationId>
+    <companyId>1000000</companyId>
+    <genLedgerActivityJournalDate>2015-07-31 00:00:00.000 CDT</genLedgerActivityJournalDate>
+    <genLedgerActivityPostDate>2015-08-11 00:00:00.000 CDT</genLedgerActivityPostDate>
+    <accountPeriodMonthCode>08</accountPeriodMonthCode>
+    <accountPeriodMonthName>August</accountPeriodMonthName>
+    <accountPeriodYear>2015</accountPeriodYear>
+    <glAccountCode>x1300</glAccountCode>
+    <glAccountName>Claims Payable</glAccountName>
+    <glCompanyAccountCode>x1300</glCompanyAccountCode>
+    <glCompanyAccountName>Claims Payable</glCompanyAccountName>
+    <genLedgerDebitCount>8</genLedgerDebitCount>
+    <genLedgerDebitAmount>156002.00</genLedgerDebitAmount>
+    <genLedgerCreditCount>8</genLedgerCreditCount>
+    <genLedgerCreditAmount>156002.00</genLedgerCreditAmount>
+    <genLedgerTotalCount>16</genLedgerTotalCount>
+    <genLedgerNetAmount>0.00</genLedgerNetAmount>
+  </generalLedgerExportBatchDTO>
+  <generalLedgerExportBatchDTO>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <genLedgerActivityCode>sum</genLedgerActivityCode>
+    <corporationId>1000000</corporationId>
+    <companyId>1000000</companyId>
+    <genLedgerActivityJournalDate>2015-08-05 00:00:00.000 CDT</genLedgerActivityJournalDate>
+    <genLedgerActivityPostDate>2015-08-11 00:00:00.000 CDT</genLedgerActivityPostDate>
+    <accountPeriodMonthCode>08</accountPeriodMonthCode>
+    <accountPeriodMonthName>August</accountPeriodMonthName>
+    <accountPeriodYear>2015</accountPeriodYear>
+    <glAccountCode>411000</glAccountCode>
+    <glAccountName>Case Resv Direct</glAccountName>
+    <glCompanyAccountCode>411000</glCompanyAccountCode>
+    <glCompanyAccountName>Case Resv Direct</glCompanyAccountName>
+    <genLedgerDebitCount>23</genLedgerDebitCount>
+    <genLedgerDebitAmount>553100.99</genLedgerDebitAmount>
+    <genLedgerCreditCount>67</genLedgerCreditCount>
+    <genLedgerCreditAmount>5934102.99</genLedgerCreditAmount>
+    <genLedgerTotalCount>90</genLedgerTotalCount>
+    <genLedgerNetAmount>-5381002.00</genLedgerNetAmount>
+  </generalLedgerExportBatchDTO>
+  <generalLedgerExportBatchDTO>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <genLedgerActivityCode>sum</genLedgerActivityCode>
+    <corporationId>1000000</corporationId>
+    <companyId>1000000</companyId>
+    <genLedgerActivityJournalDate>2015-08-05 00:00:00.000 CDT</genLedgerActivityJournalDate>
+    <genLedgerActivityPostDate>2015-08-11 00:00:00.000 CDT</genLedgerActivityPostDate>
+    <accountPeriodMonthCode>08</accountPeriodMonthCode>
+    <accountPeriodMonthName>August</accountPeriodMonthName>
+    <accountPeriodYear>2015</accountPeriodYear>
+    <glAccountCode>100005</glAccountCode>
+    <glAccountName>Point Positive Pay Claim - Cash Account</glAccountName>
+    <glCompanyAccountCode>100005</glCompanyAccountCode>
+    <glCompanyAccountName>Point Positive Pay Claim - Cash Account</glCompanyAccountName>
+    <genLedgerDebitCount>0</genLedgerDebitCount>
+    <genLedgerDebitAmount>0</genLedgerDebitAmount>
+    <genLedgerCreditCount>35</genLedgerCreditCount>
+    <genLedgerCreditAmount>1059870.64</genLedgerCreditAmount>
+    <genLedgerTotalCount>35</genLedgerTotalCount>
+    <genLedgerNetAmount>-1059870.64</genLedgerNetAmount>
+  </generalLedgerExportBatchDTO>
+  <generalLedgerExportBatchDTO>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <genLedgerActivityCode>sum</genLedgerActivityCode>
+    <corporationId>1000000</corporationId>
+    <companyId>1000000</companyId>
+    <genLedgerActivityJournalDate>2015-07-31 00:00:00.000 CDT</genLedgerActivityJournalDate>
+    <genLedgerActivityPostDate>2015-08-11 00:00:00.000 CDT</genLedgerActivityPostDate>
+    <accountPeriodMonthCode>08</accountPeriodMonthCode>
+    <accountPeriodMonthName>August</accountPeriodMonthName>
+    <accountPeriodYear>2015</accountPeriodYear>
+    <glAccountCode>100005</glAccountCode>
+    <glAccountName>Point Positive Pay Claim - Cash Account</glAccountName>
+    <glCompanyAccountCode>100005</glCompanyAccountCode>
+    <glCompanyAccountName>Point Positive Pay Claim - Cash Account</glCompanyAccountName>
+    <genLedgerDebitCount>0</genLedgerDebitCount>
+    <genLedgerDebitAmount>0</genLedgerDebitAmount>
+    <genLedgerCreditCount>4</genLedgerCreditCount>
+    <genLedgerCreditAmount>78001.00</genLedgerCreditAmount>
+    <genLedgerTotalCount>4</genLedgerTotalCount>
+    <genLedgerNetAmount>-78001.00</genLedgerNetAmount>
+  </generalLedgerExportBatchDTO>
+  <generalLedgerExportBatchDTO>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <genLedgerActivityCode>sum</genLedgerActivityCode>
+    <corporationId>1000000</corporationId>
+    <companyId>1000000</companyId>
+    <genLedgerActivityJournalDate>2015-08-11 00:00:00.000 CDT</genLedgerActivityJournalDate>
+    <genLedgerActivityPostDate>2015-08-11 00:00:00.000 CDT</genLedgerActivityPostDate>
+    <accountPeriodMonthCode>08</accountPeriodMonthCode>
+    <accountPeriodMonthName>August</accountPeriodMonthName>
+    <accountPeriodYear>2015</accountPeriodYear>
+    <glAccountCode>700000</glAccountCode>
+    <glAccountName>Direct Losses Paid</glAccountName>
+    <glCompanyAccountCode>700000</glCompanyAccountCode>
+    <glCompanyAccountName>Direct Losses Paid</glCompanyAccountName>
+    <genLedgerDebitCount>8</genLedgerDebitCount>
+    <genLedgerDebitAmount>20287.00</genLedgerDebitAmount>
+    <genLedgerCreditCount>3</genLedgerCreditCount>
+    <genLedgerCreditAmount>10000.00</genLedgerCreditAmount>
+    <genLedgerTotalCount>11</genLedgerTotalCount>
+    <genLedgerNetAmount>10287.00</genLedgerNetAmount>
+  </generalLedgerExportBatchDTO>
+  <generalLedgerExportBatchDTO>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <genLedgerActivityCode>sum</genLedgerActivityCode>
+    <corporationId>1000000</corporationId>
+    <companyId>1000000</companyId>
+    <genLedgerActivityJournalDate>2015-07-20 00:00:00.000 CDT</genLedgerActivityJournalDate>
+    <genLedgerActivityPostDate>2015-08-11 00:00:00.000 CDT</genLedgerActivityPostDate>
+    <accountPeriodMonthCode>07</accountPeriodMonthCode>
+    <accountPeriodMonthName>July</accountPeriodMonthName>
+    <accountPeriodYear>2015</accountPeriodYear>
+    <glAccountCode>948401</glAccountCode>
+    <glAccountName>Misc Outside Claim Exp-Claims</glAccountName>
+    <glCompanyAccountCode>948401</glCompanyAccountCode>
+    <glCompanyAccountName>Misc Outside Claim Exp-Claims</glCompanyAccountName>
+    <genLedgerDebitCount>1</genLedgerDebitCount>
+    <genLedgerDebitAmount>12.00</genLedgerDebitAmount>
+    <genLedgerCreditCount>0</genLedgerCreditCount>
+    <genLedgerCreditAmount>0</genLedgerCreditAmount>
+    <genLedgerTotalCount>1</genLedgerTotalCount>
+    <genLedgerNetAmount>12.00</genLedgerNetAmount>
+  </generalLedgerExportBatchDTO>
+  <generalLedgerExportBatchDTO>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <genLedgerActivityCode>sum</genLedgerActivityCode>
+    <corporationId>1000000</corporationId>
+    <companyId>1000000</companyId>
+    <genLedgerActivityJournalDate>2015-07-20 00:00:00.000 CDT</genLedgerActivityJournalDate>
+    <genLedgerActivityPostDate>2015-08-11 00:00:00.000 CDT</genLedgerActivityPostDate>
+    <accountPeriodMonthCode>07</accountPeriodMonthCode>
+    <accountPeriodMonthName>July</accountPeriodMonthName>
+    <accountPeriodYear>2015</accountPeriodYear>
+    <glAccountCode>700000</glAccountCode>
+    <glAccountName>Direct Losses Paid</glAccountName>
+    <glCompanyAccountCode>700000</glCompanyAccountCode>
+    <glCompanyAccountName>Direct Losses Paid</glCompanyAccountName>
+    <genLedgerDebitCount>2</genLedgerDebitCount>
+    <genLedgerDebitAmount>4910.00</genLedgerDebitAmount>
+    <genLedgerCreditCount>0</genLedgerCreditCount>
+    <genLedgerCreditAmount>0</genLedgerCreditAmount>
+    <genLedgerTotalCount>2</genLedgerTotalCount>
+    <genLedgerNetAmount>4910.00</genLedgerNetAmount>
+  </generalLedgerExportBatchDTO>
+  <generalLedgerExportBatchDTO>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <genLedgerActivityCode>sum</genLedgerActivityCode>
+    <corporationId>1000000</corporationId>
+    <companyId>1000000</companyId>
+    <genLedgerActivityJournalDate>2015-07-20 00:00:00.000 CDT</genLedgerActivityJournalDate>
+    <genLedgerActivityPostDate>2015-08-11 00:00:00.000 CDT</genLedgerActivityPostDate>
+    <accountPeriodMonthCode>07</accountPeriodMonthCode>
+    <accountPeriodMonthName>July</accountPeriodMonthName>
+    <accountPeriodYear>2015</accountPeriodYear>
+    <glAccountCode>721000</glAccountCode>
+    <glAccountName>Chg Case Loss Resv Direct</glAccountName>
+    <glCompanyAccountCode>721000</glCompanyAccountCode>
+    <glCompanyAccountName>Chg Case Loss Resv Direct</glCompanyAccountName>
+    <genLedgerDebitCount>7</genLedgerDebitCount>
+    <genLedgerDebitAmount>157120.00</genLedgerDebitAmount>
+    <genLedgerCreditCount>1</genLedgerCreditCount>
+    <genLedgerCreditAmount>100.00</genLedgerCreditAmount>
+    <genLedgerTotalCount>8</genLedgerTotalCount>
+    <genLedgerNetAmount>157020.00</genLedgerNetAmount>
+  </generalLedgerExportBatchDTO>
+  <generalLedgerExportBatchDTO>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <genLedgerActivityCode>sum</genLedgerActivityCode>
+    <corporationId>1000000</corporationId>
+    <companyId>1000000</companyId>
+    <genLedgerActivityJournalDate>2015-08-11 00:00:00.000 CDT</genLedgerActivityJournalDate>
+    <genLedgerActivityPostDate>2015-08-11 00:00:00.000 CDT</genLedgerActivityPostDate>
+    <accountPeriodMonthCode>08</accountPeriodMonthCode>
+    <accountPeriodMonthName>August</accountPeriodMonthName>
+    <accountPeriodYear>2015</accountPeriodYear>
+    <glAccountCode>721000</glAccountCode>
+    <glAccountName>Chg Case Loss Resv Direct</glAccountName>
+    <glCompanyAccountCode>721000</glCompanyAccountCode>
+    <glCompanyAccountName>Chg Case Loss Resv Direct</glCompanyAccountName>
+    <genLedgerDebitCount>41</genLedgerDebitCount>
+    <genLedgerDebitAmount>500414.00</genLedgerDebitAmount>
+    <genLedgerCreditCount>15</genLedgerCreditCount>
+    <genLedgerCreditAmount>2148601.00</genLedgerCreditAmount>
+    <genLedgerTotalCount>56</genLedgerTotalCount>
+    <genLedgerNetAmount>-1648187.00</genLedgerNetAmount>
+  </generalLedgerExportBatchDTO>
+  <generalLedgerExportBatchDTO>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <genLedgerActivityCode>sum</genLedgerActivityCode>
+    <corporationId>1000000</corporationId>
+    <companyId>1000000</companyId>
+    <genLedgerActivityJournalDate>2015-07-20 00:00:00.000 CDT</genLedgerActivityJournalDate>
+    <genLedgerActivityPostDate>2015-08-11 00:00:00.000 CDT</genLedgerActivityPostDate>
+    <accountPeriodMonthCode>07</accountPeriodMonthCode>
+    <accountPeriodMonthName>July</accountPeriodMonthName>
+    <accountPeriodYear>2015</accountPeriodYear>
+    <glAccountCode>x1300</glAccountCode>
+    <glAccountName>Claims Payable</glAccountName>
+    <glCompanyAccountCode>x1300</glCompanyAccountCode>
+    <glCompanyAccountName>Claims Payable</glCompanyAccountName>
+    <genLedgerDebitCount>4</genLedgerDebitCount>
+    <genLedgerDebitAmount>5020.00</genLedgerDebitAmount>
+    <genLedgerCreditCount>8</genLedgerCreditCount>
+    <genLedgerCreditAmount>10040.00</genLedgerCreditAmount>
+    <genLedgerTotalCount>12</genLedgerTotalCount>
+    <genLedgerNetAmount>-5020.00</genLedgerNetAmount>
+  </generalLedgerExportBatchDTO>
+  <generalLedgerExportBatchDTO>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <genLedgerActivityCode>sum</genLedgerActivityCode>
+    <corporationId>1000000</corporationId>
+    <companyId>1000000</companyId>
+    <genLedgerActivityJournalDate>2015-07-20 00:00:00.000 CDT</genLedgerActivityJournalDate>
+    <genLedgerActivityPostDate>2015-08-11 00:00:00.000 CDT</genLedgerActivityPostDate>
+    <accountPeriodMonthCode>07</accountPeriodMonthCode>
+    <accountPeriodMonthName>July</accountPeriodMonthName>
+    <accountPeriodYear>2015</accountPeriodYear>
+    <glAccountCode>948402</glAccountCode>
+    <glAccountName>Misc Outside Claim Exp-Legal</glAccountName>
+    <glCompanyAccountCode>948402</glCompanyAccountCode>
+    <glCompanyAccountName>Misc Outside Claim Exp-Legal</glCompanyAccountName>
+    <genLedgerDebitCount>1</genLedgerDebitCount>
+    <genLedgerDebitAmount>98.00</genLedgerDebitAmount>
+    <genLedgerCreditCount>0</genLedgerCreditCount>
+    <genLedgerCreditAmount>0</genLedgerCreditAmount>
+    <genLedgerTotalCount>1</genLedgerTotalCount>
+    <genLedgerNetAmount>98.00</genLedgerNetAmount>
+  </generalLedgerExportBatchDTO>
+  <generalLedgerExportBatchDTO>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <genLedgerActivityCode>sum</genLedgerActivityCode>
+    <corporationId>1000000</corporationId>
+    <companyId>1000000</companyId>
+    <genLedgerActivityJournalDate>2015-08-11 00:00:00.000 CDT</genLedgerActivityJournalDate>
+    <genLedgerActivityPostDate>2015-08-11 00:00:00.000 CDT</genLedgerActivityPostDate>
+    <accountPeriodMonthCode>08</accountPeriodMonthCode>
+    <accountPeriodMonthName>August</accountPeriodMonthName>
+    <accountPeriodYear>2015</accountPeriodYear>
+    <glAccountCode>411000</glAccountCode>
+    <glAccountName>Case Resv Direct</glAccountName>
+    <glCompanyAccountCode>411000</glCompanyAccountCode>
+    <glCompanyAccountName>Case Resv Direct</glCompanyAccountName>
+    <genLedgerDebitCount>15</genLedgerDebitCount>
+    <genLedgerDebitAmount>2148601.00</genLedgerDebitAmount>
+    <genLedgerCreditCount>41</genLedgerCreditCount>
+    <genLedgerCreditAmount>500414.00</genLedgerCreditAmount>
+    <genLedgerTotalCount>56</genLedgerTotalCount>
+    <genLedgerNetAmount>1648187.00</genLedgerNetAmount>
+  </generalLedgerExportBatchDTO>
+  <generalLedgerExportBatchDTO>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <genLedgerActivityCode>sum</genLedgerActivityCode>
+    <corporationId>1000000</corporationId>
+    <companyId>1000000</companyId>
+    <genLedgerActivityJournalDate>2015-07-31 00:00:00.000 CDT</genLedgerActivityJournalDate>
+    <genLedgerActivityPostDate>2015-08-11 00:00:00.000 CDT</genLedgerActivityPostDate>
+    <accountPeriodMonthCode>08</accountPeriodMonthCode>
+    <accountPeriodMonthName>August</accountPeriodMonthName>
+    <accountPeriodYear>2015</accountPeriodYear>
+    <glAccountCode>700000</glAccountCode>
+    <glAccountName>Direct Losses Paid</glAccountName>
+    <glCompanyAccountCode>700000</glCompanyAccountCode>
+    <glCompanyAccountName>Direct Losses Paid</glCompanyAccountName>
+    <genLedgerDebitCount>4</genLedgerDebitCount>
+    <genLedgerDebitAmount>78001.00</genLedgerDebitAmount>
+    <genLedgerCreditCount>0</genLedgerCreditCount>
+    <genLedgerCreditAmount>0</genLedgerCreditAmount>
+    <genLedgerTotalCount>4</genLedgerTotalCount>
+    <genLedgerNetAmount>78001.00</genLedgerNetAmount>
+  </generalLedgerExportBatchDTO>
+  <generalLedgerExportBatchDTO>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <genLedgerActivityCode>sum</genLedgerActivityCode>
+    <corporationId>1000000</corporationId>
+    <companyId>1000000</companyId>
+    <genLedgerActivityJournalDate>2015-07-24 00:00:00.000 CDT</genLedgerActivityJournalDate>
+    <genLedgerActivityPostDate>2015-08-11 00:00:00.000 CDT</genLedgerActivityPostDate>
+    <accountPeriodMonthCode>07</accountPeriodMonthCode>
+    <accountPeriodMonthName>July</accountPeriodMonthName>
+    <accountPeriodYear>2015</accountPeriodYear>
+    <glAccountCode>700000</glAccountCode>
+    <glAccountName>Direct Losses Paid</glAccountName>
+    <glCompanyAccountCode>700000</glCompanyAccountCode>
+    <glCompanyAccountName>Direct Losses Paid</glCompanyAccountName>
+    <genLedgerDebitCount>11</genLedgerDebitCount>
+    <genLedgerDebitAmount>36795.00</genLedgerDebitAmount>
+    <genLedgerCreditCount>5</genLedgerCreditCount>
+    <genLedgerCreditAmount>90.00</genLedgerCreditAmount>
+    <genLedgerTotalCount>16</genLedgerTotalCount>
+    <genLedgerNetAmount>36705.00</genLedgerNetAmount>
+  </generalLedgerExportBatchDTO>
+  <generalLedgerExportBatchDTO>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <genLedgerActivityCode>sum</genLedgerActivityCode>
+    <corporationId>1000000</corporationId>
+    <companyId>1000000</companyId>
+    <genLedgerActivityJournalDate>2015-08-05 00:00:00.000 CDT</genLedgerActivityJournalDate>
+    <genLedgerActivityPostDate>2015-08-11 00:00:00.000 CDT</genLedgerActivityPostDate>
+    <accountPeriodMonthCode>08</accountPeriodMonthCode>
+    <accountPeriodMonthName>August</accountPeriodMonthName>
+    <accountPeriodYear>2015</accountPeriodYear>
+    <glAccountCode>x1300</glAccountCode>
+    <glAccountName>Claims Payable</glAccountName>
+    <glCompanyAccountCode>x1300</glCompanyAccountCode>
+    <glCompanyAccountName>Claims Payable</glCompanyAccountName>
+    <genLedgerDebitCount>83</genLedgerDebitCount>
+    <genLedgerDebitAmount>2402742.27</genLedgerDebitAmount>
+    <genLedgerCreditCount>57</genLedgerCreditCount>
+    <genLedgerCreditAmount>1836740.29</genLedgerCreditAmount>
+    <genLedgerTotalCount>140</genLedgerTotalCount>
+    <genLedgerNetAmount>566001.98</genLedgerNetAmount>
+  </generalLedgerExportBatchDTO>
+  <generalLedgerExportBatchDTO>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <genLedgerActivityCode>sum</genLedgerActivityCode>
+    <corporationId>1000000</corporationId>
+    <companyId>1000000</companyId>
+    <genLedgerActivityJournalDate>2015-07-24 00:00:00.000 CDT</genLedgerActivityJournalDate>
+    <genLedgerActivityPostDate>2015-08-11 00:00:00.000 CDT</genLedgerActivityPostDate>
+    <accountPeriodMonthCode>07</accountPeriodMonthCode>
+    <accountPeriodMonthName>July</accountPeriodMonthName>
+    <accountPeriodYear>2015</accountPeriodYear>
+    <glAccountCode>411000</glAccountCode>
+    <glAccountName>Case Resv Direct</glAccountName>
+    <glCompanyAccountCode>411000</glCompanyAccountCode>
+    <glCompanyAccountName>Case Resv Direct</glCompanyAccountName>
+    <genLedgerDebitCount>4</genLedgerDebitCount>
+    <genLedgerDebitAmount>9050.00</genLedgerDebitAmount>
+    <genLedgerCreditCount>37</genLedgerCreditCount>
+    <genLedgerCreditAmount>1188420.00</genLedgerCreditAmount>
+    <genLedgerTotalCount>41</genLedgerTotalCount>
+    <genLedgerNetAmount>-1179370.00</genLedgerNetAmount>
+  </generalLedgerExportBatchDTO>
+  <generalLedgerExportBatchDTO>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <genLedgerActivityCode>sum</genLedgerActivityCode>
+    <corporationId>1000000</corporationId>
+    <companyId>1000000</companyId>
+    <genLedgerActivityJournalDate>2015-07-24 00:00:00.000 CDT</genLedgerActivityJournalDate>
+    <genLedgerActivityPostDate>2015-08-11 00:00:00.000 CDT</genLedgerActivityPostDate>
+    <accountPeriodMonthCode>07</accountPeriodMonthCode>
+    <accountPeriodMonthName>July</accountPeriodMonthName>
+    <accountPeriodYear>2015</accountPeriodYear>
+    <glAccountCode>948402</glAccountCode>
+    <glAccountName>Misc Outside Claim Exp-Legal</glAccountName>
+    <glCompanyAccountCode>948402</glCompanyAccountCode>
+    <glCompanyAccountName>Misc Outside Claim Exp-Legal</glCompanyAccountName>
+    <genLedgerDebitCount>1</genLedgerDebitCount>
+    <genLedgerDebitAmount>25.00</genLedgerDebitAmount>
+    <genLedgerCreditCount>0</genLedgerCreditCount>
+    <genLedgerCreditAmount>0</genLedgerCreditAmount>
+    <genLedgerTotalCount>1</genLedgerTotalCount>
+    <genLedgerNetAmount>25.00</genLedgerNetAmount>
+  </generalLedgerExportBatchDTO>
+  <generalLedgerExportBatchDTO>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <genLedgerActivityCode>sum</genLedgerActivityCode>
+    <corporationId>1000000</corporationId>
+    <companyId>1000000</companyId>
+    <genLedgerActivityJournalDate>2015-08-11 00:00:00.000 CDT</genLedgerActivityJournalDate>
+    <genLedgerActivityPostDate>2015-08-11 00:00:00.000 CDT</genLedgerActivityPostDate>
+    <accountPeriodMonthCode>08</accountPeriodMonthCode>
+    <accountPeriodMonthName>August</accountPeriodMonthName>
+    <accountPeriodYear>2015</accountPeriodYear>
+    <glAccountCode>100005</glAccountCode>
+    <glAccountName>Point Positive Pay Claim - Cash Account</glAccountName>
+    <glCompanyAccountCode>100005</glCompanyAccountCode>
+    <glCompanyAccountName>Point Positive Pay Claim - Cash Account</glCompanyAccountName>
+    <genLedgerDebitCount>0</genLedgerDebitCount>
+    <genLedgerDebitAmount>0</genLedgerDebitAmount>
+    <genLedgerCreditCount>11</genLedgerCreditCount>
+    <genLedgerCreditAmount>30287.00</genLedgerCreditAmount>
+    <genLedgerTotalCount>11</genLedgerTotalCount>
+    <genLedgerNetAmount>-30287.00</genLedgerNetAmount>
+  </generalLedgerExportBatchDTO>
+  <generalLedgerExportBatchDTO>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <genLedgerActivityCode>sum</genLedgerActivityCode>
+    <corporationId>1000000</corporationId>
+    <companyId>1000000</companyId>
+    <genLedgerActivityJournalDate>2015-07-24 00:00:00.000 CDT</genLedgerActivityJournalDate>
+    <genLedgerActivityPostDate>2015-08-11 00:00:00.000 CDT</genLedgerActivityPostDate>
+    <accountPeriodMonthCode>07</accountPeriodMonthCode>
+    <accountPeriodMonthName>July</accountPeriodMonthName>
+    <accountPeriodYear>2015</accountPeriodYear>
+    <glAccountCode>x1300</glAccountCode>
+    <glAccountName>Claims Payable</glAccountName>
+    <glCompanyAccountCode>x1300</glCompanyAccountCode>
+    <glCompanyAccountName>Claims Payable</glCompanyAccountName>
+    <genLedgerDebitCount>37</genLedgerDebitCount>
+    <genLedgerDebitAmount>73730.00</genLedgerDebitAmount>
+    <genLedgerCreditCount>29</genLedgerCreditCount>
+    <genLedgerCreditAmount>73640.00</genLedgerCreditAmount>
+    <genLedgerTotalCount>66</genLedgerTotalCount>
+    <genLedgerNetAmount>90.00</genLedgerNetAmount>
+  </generalLedgerExportBatchDTO>
+  <generalLedgerExportBatchDTO>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <genLedgerActivityCode>sum</genLedgerActivityCode>
+    <corporationId>1000000</corporationId>
+    <companyId>1000000</companyId>
+    <genLedgerActivityJournalDate>2015-07-20 00:00:00.000 CDT</genLedgerActivityJournalDate>
+    <genLedgerActivityPostDate>2015-08-11 00:00:00.000 CDT</genLedgerActivityPostDate>
+    <accountPeriodMonthCode>07</accountPeriodMonthCode>
+    <accountPeriodMonthName>July</accountPeriodMonthName>
+    <accountPeriodYear>2015</accountPeriodYear>
+    <glAccountCode>411000</glAccountCode>
+    <glAccountName>Case Resv Direct</glAccountName>
+    <glCompanyAccountCode>411000</glCompanyAccountCode>
+    <glCompanyAccountName>Case Resv Direct</glCompanyAccountName>
+    <genLedgerDebitCount>1</genLedgerDebitCount>
+    <genLedgerDebitAmount>100.00</genLedgerDebitAmount>
+    <genLedgerCreditCount>7</genLedgerCreditCount>
+    <genLedgerCreditAmount>157120.00</genLedgerCreditAmount>
+    <genLedgerTotalCount>8</genLedgerTotalCount>
+    <genLedgerNetAmount>-157020.00</genLedgerNetAmount>
+  </generalLedgerExportBatchDTO>
+  <generalLedgerExportBatchDTO>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <genLedgerActivityCode>sum</genLedgerActivityCode>
+    <corporationId>1000000</corporationId>
+    <companyId>1000000</companyId>
+    <genLedgerActivityJournalDate>2015-08-11 00:00:00.000 CDT</genLedgerActivityJournalDate>
+    <genLedgerActivityPostDate>2015-08-11 00:00:00.000 CDT</genLedgerActivityPostDate>
+    <accountPeriodMonthCode>08</accountPeriodMonthCode>
+    <accountPeriodMonthName>August</accountPeriodMonthName>
+    <accountPeriodYear>2015</accountPeriodYear>
+    <glAccountCode>x1300</glAccountCode>
+    <glAccountName>Claims Payable</glAccountName>
+    <glCompanyAccountCode>x1300</glCompanyAccountCode>
+    <glCompanyAccountName>Claims Payable</glCompanyAccountName>
+    <genLedgerDebitCount>25</genLedgerDebitCount>
+    <genLedgerDebitAmount>70574.00</genLedgerDebitAmount>
+    <genLedgerCreditCount>19</genLedgerCreditCount>
+    <genLedgerCreditAmount>50574.00</genLedgerCreditAmount>
+    <genLedgerTotalCount>44</genLedgerTotalCount>
+    <genLedgerNetAmount>20000.00</genLedgerNetAmount>
+  </generalLedgerExportBatchDTO>
+  <generalLedgerExportBatchDTO>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <genLedgerActivityCode>sum</genLedgerActivityCode>
+    <corporationId>1000000</corporationId>
+    <companyId>1000000</companyId>
+    <genLedgerActivityJournalDate>2015-07-31 00:00:00.000 CDT</genLedgerActivityJournalDate>
+    <genLedgerActivityPostDate>2015-08-11 00:00:00.000 CDT</genLedgerActivityPostDate>
+    <accountPeriodMonthCode>08</accountPeriodMonthCode>
+    <accountPeriodMonthName>August</accountPeriodMonthName>
+    <accountPeriodYear>2015</accountPeriodYear>
+    <glAccountCode>721000</glAccountCode>
+    <glAccountName>Chg Case Loss Resv Direct</glAccountName>
+    <glCompanyAccountCode>721000</glCompanyAccountCode>
+    <glCompanyAccountName>Chg Case Loss Resv Direct</glCompanyAccountName>
+    <genLedgerDebitCount>11</genLedgerDebitCount>
+    <genLedgerDebitAmount>662788.00</genLedgerDebitAmount>
+    <genLedgerCreditCount>0</genLedgerCreditCount>
+    <genLedgerCreditAmount>0</genLedgerCreditAmount>
+    <genLedgerTotalCount>11</genLedgerTotalCount>
+    <genLedgerNetAmount>662788.00</genLedgerNetAmount>
+  </generalLedgerExportBatchDTO>
+  <generalLedgerExportBatchDTO>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <genLedgerActivityCode>sum</genLedgerActivityCode>
+    <corporationId>1000000</corporationId>
+    <companyId>1000000</companyId>
+    <genLedgerActivityJournalDate>2015-08-05 00:00:00.000 CDT</genLedgerActivityJournalDate>
+    <genLedgerActivityPostDate>2015-08-11 00:00:00.000 CDT</genLedgerActivityPostDate>
+    <accountPeriodMonthCode>08</accountPeriodMonthCode>
+    <accountPeriodMonthName>August</accountPeriodMonthName>
+    <accountPeriodYear>2015</accountPeriodYear>
+    <glAccountCode>721000</glAccountCode>
+    <glAccountName>Chg Case Loss Resv Direct</glAccountName>
+    <glCompanyAccountCode>721000</glCompanyAccountCode>
+    <glCompanyAccountName>Chg Case Loss Resv Direct</glCompanyAccountName>
+    <genLedgerDebitCount>67</genLedgerDebitCount>
+    <genLedgerDebitAmount>5934102.99</genLedgerDebitAmount>
+    <genLedgerCreditCount>23</genLedgerCreditCount>
+    <genLedgerCreditAmount>553100.99</genLedgerCreditAmount>
+    <genLedgerTotalCount>90</genLedgerTotalCount>
+    <genLedgerNetAmount>5381002.00</genLedgerNetAmount>
+  </generalLedgerExportBatchDTO>
+</list>

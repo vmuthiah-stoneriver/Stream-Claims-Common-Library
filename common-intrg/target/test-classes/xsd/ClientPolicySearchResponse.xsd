@@ -1,0 +1,169 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<xs:element name="PolicySearchResults">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Policy" type="PolicySearchResult"
+					minOccurs="0" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="PolicySearchResult">
+		<xs:sequence>
+			<xs:element name="addressLine1" type="xs:string"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Participant Address line 1.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="addressLine2" type="xs:string"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Participant Address line 2.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="city" type="xs:string" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>City.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="companyName" type="xs:string" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Insurance carrier company name.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="corporationName" type="xs:string"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Insurance carrier corporation name.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="country" type="xs:string" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>County code.
+						usa
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="effectiveDate" type="xs:date" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Effective date.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="expiryDate" type="xs:date" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Expiry date.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="externalPolicyId" type="xs:string"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>External policy id.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="faxNumber" type="xs:string" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Fax number.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="insuredName" type="xs:string" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Insured name.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="jurisdiction" type="xs:string"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Legal jurisdiction for the policy.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="lineOfBusiness" type="xs:string"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>LOB code.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="orgUnitName" type="xs:string" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Insurer subdivision office name.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="participantTaxId" type="xs:string"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Participant tax id.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="participantType" type="xs:string"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Claim policy participant types
+						insrd - Insured
+						ownr - Owner
+						drvr - Driver
+						agcy - Agency
+						fnclinte - Financial
+						agnt -
+						Agent
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="phoneNumber" type="xs:string" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Phone number.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="policyNumber" type="xs:string"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Policy number.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="policyStatusCode" type="xs:string"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Claim policy status
+						Issued
+						Cancelled
+						Incomplete
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="postalCode" type="xs:string" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Postal code.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="postalSvcRegionCode" type="xs:string"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>State code.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="recordSourceCode" type="xs:string"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Policy system code. Used to identify source
+						policy system.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+</xs:schema>

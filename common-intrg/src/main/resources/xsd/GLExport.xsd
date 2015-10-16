@@ -1,0 +1,176 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:include schemaLocation="../xsd/Common.xsd" />
+
+	<xs:annotation>
+		<xs:documentation>GL Export Schema</xs:documentation>
+	</xs:annotation>
+	
+	<xs:element name="list">
+		<xs:annotation>
+			<xs:documentation>Collection of GL Entries</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="generalLedgerExportBatchDTO" type="GeneralLedgerExportBatchDTO"
+					minOccurs="0" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>GL Export Detail</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="GeneralLedgerExportBatchDTO">
+		<xs:annotation>
+			<xs:documentation>GL Export batch.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="AuditDTO">
+				<xs:sequence>
+					<xs:element name="genLedgerActivityCode" type="string"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>GL Activity code, Maps to GL_TRAN_SRC_CD Column
+								from GENERAL_LEDGER_TRAN_SRC_CD Table.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="corporationId" type="long" minOccurs="1"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Corporation id.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="companyId" type="long" minOccurs="1"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Company id, Maps to CMPY_ID Column from
+								COMPANY_CD Table.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="companyLineOfBussinessId" type="long"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Company LOB id, Maps to CMPY_LOB_ID Column from
+								COMPANY_LINE_OF_BUSINESS_XREF Table.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="marketTypeCode" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Market type code, Maps to MRKT_TYP_CD Column from
+								MARKET_TYPE_CD Table.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="jurisdictionId" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Jurisdiction id, Maps to JUR_ID Column from
+								JURISDICTION_CD Table.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="genLedgerActivityJournalDate" type="dateType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>GL Activity date.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="genLedgerActivityPostDate" type="dateType"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>GL Activity post date.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="accountPeriodMonthCode" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>GL account period month code, Maps to
+								GL_ACCT_METH_CD Column from GENERAL_LEDGER_ACCT_METH_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="accountPeriodMonthName" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>GL account period month name, Maps to
+								GL_ACCT_METH_NM Column from GENERAL_LEDGER_ACCT_METH_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="accountPeriodYear" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>GL account period year.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="glAccountCode" type="string"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>GL Account code, Maps to GL_CHRT_OF_ACCT_CD
+								Column from GENERAL_LEDGER_CHRT_OF_ACCT_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="glAccountName" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>GL Account name, Maps to GL_CHRT_OF_ACCT_DESC
+								Column from GENERAL_LEDGER_CHRT_OF_ACCT_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="glCompanyAccountCode" type="string"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>GL Account code, Maps to CGLCOA_CD Column from
+								COMPANY_GL_CHRT_OF_ACCT_XREF Table.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="glCompanyAccountName" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>GL Account name, Maps to CGLCOA_NM Column from
+								COMPANY_GL_CHRT_OF_ACCT_XREF Table.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="genLedgerDebitCount" type="long"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>GL Debit count.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="genLedgerDebitAmount" type="dollarAmount"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>GL Debit amount.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="genLedgerCreditCount" type="long"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>GL Credit count.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="genLedgerCreditAmount" type="dollarAmount"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>GL Credit amount.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="genLedgerTotalCount" type="long"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>GL Total count.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="genLedgerNetAmount" type="dollarAmount"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>GL net amount.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>

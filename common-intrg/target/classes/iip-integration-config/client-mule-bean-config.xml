@@ -1,0 +1,536 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:vm="http://www.mulesoft.org/schema/mule/vm"
+   xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:mulexml="http://www.mulesoft.org/schema/mule/xml"
+   xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:spring="http://www.springframework.org/schema/beans"
+   xmlns:core="http://www.mulesoft.org/schema/mule/core" xmlns:jersey="http://www.mulesoft.org/schema/mule/jersey"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+   xmlns:jee="http://www.springframework.org/schema/jee" xmlns:stdio="http://www.mulesoft.org/schema/mule/stdio"
+   xmlns:scripting="http://www.mulesoft.org/schema/mule/scripting" xmlns:servlet="http://www.mulesoft.org/schema/mule/servlet"
+   xmlns:file="http://www.mulesoft.org/schema/mule/file"
+   xsi:schemaLocation="
+http://www.mulesoft.org/schema/mule/vm http://www.mulesoft.org/schema/mule/vm/3.3/mule-vm.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/3.3/mule-http.xsd
+http://www.mulesoft.org/schema/mule/xml http://www.mulesoft.org/schema/mule/xml/3.3/mule-xml.xsd
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/3.3/mule.xsd
+http://www.mulesoft.org/schema/mule/jersey http://www.mulesoft.org/schema/mule/jersey/3.3/mule-jersey.xsd
+http://www.mulesoft.org/schema/mule/stdio http://www.mulesoft.org/schema/mule/stdio/3.3/mule-stdio.xsd
+http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/file/3.3/mule-file.xsd
+http://www.mulesoft.org/schema/mule/scripting http://www.mulesoft.org/schema/mule/scripting/3.3/mule-scripting.xsd
+http://www.mulesoft.org/schema/mule/servlet http://www.mulesoft.org/schema/mule/servlet/3.3/mule-servlet.xsd
+">
+
+	
+
+	<file:connector name="APExport" outputPattern="Disbursement_#[function:datestamp].xml" />
+	
+	<file:connector name="BatchExport" outputPattern="#[message.inboundProperties['jobName']]_#[function:datestamp].xml" />
+	
+	<vm:endpoint name="batchJobEndpoint" path="batch.in"
+      exchange-pattern="request-response" connector-ref="vmSync" />
+         
+	<vm:endpoint name="batchExportEndpoint" path="batch.out"
+		exchange-pattern="request-response" connector-ref="vmSync" />	
+
+   <vm:endpoint name="integration.endpoint.claimDetailsInboundEndPoint" path="claim.details.in"
+		exchange-pattern="request-response" connector-ref="vmSync" />
+
+		
+	<vm:endpoint name="integration.endpoint.clientDisbursementServiceInbound"
+		path="disbursement.service.in" exchange-pattern="request-response"
+		connector-ref="vmSync" />				
+
+	<vm:endpoint name="integration.endpoint.documentInboundEndPoint" path="document.system.in"
+		exchange-pattern="request-response" connector-ref="vmSync" />
+		
+	<vm:endpoint name="documents.endpoint.DSSProxyServiceInbound" path="dss.system.in"
+		exchange-pattern="request-response" connector-ref="vmSync" />		
+		
+	<vm:endpoint name="integration.endpoint.claimImportInboundEndPoint" path="claim.import.in"
+		exchange-pattern="request-response" connector-ref="vmSync" />
+		
+	<vm:endpoint name="integration.endpoint.userDetailsInboundEndPoint" path="user.detail.in"
+		exchange-pattern="request-response" connector-ref="vmSync" />
+		
+	<vm:endpoint name="integration.endpoint.configInboundEndPoint" path="config.detail.in"
+		exchange-pattern="request-response" connector-ref="vmSync" />	
+
+	<vm:endpoint name="integration.endpoint.clientPartyServiceInbound"
+		path="ClientPartyService.in" exchange-pattern="request-response"
+		connector-ref="vmSync" />
+
+	<!--  Common Beans -->
+    <!--Client specific transformers using XStream to transform XML <> Java DTOs. Set alias name to user friendly naming convention 
+      so XML isn't generated using Stream DTO package/class naming convention. -->
+
+   <!-- Transformer used for converting XML message to Object -->
+   <custom-transformer name="IIPXML2ObjectTransformer" class="com.client.iip.integration.core.transformer.IIPXML2ObjectTransformer">
+      <spring:property name="aliasFileList">
+         <spring:list>
+            <spring:value>properties/client-mule-alias-map</spring:value>
+             <spring:value>properties/custom-mule-alias-map</spring:value>
+         </spring:list>
+      </spring:property>
+   </custom-transformer>
+
+   <!-- Transformer used for converting Object to XML message -->
+   <custom-transformer name="IIPObject2XMLTransformer" class="com.client.iip.integration.core.transformer.IIPObject2XMLTransformer">
+      <spring:property name="aliasFileList">
+         <spring:list>
+            <spring:value>properties/client-mule-alias-map</spring:value>
+             <spring:value>properties/custom-mule-alias-map</spring:value>
+         </spring:list>
+      </spring:property>
+   </custom-transformer>
+   
+      <custom-transformer name="InputStreamToStringTransformer"
+      class="com.client.iip.integration.core.transformer.InputStreamToStringTransformer" />
+      
+      <custom-transformer name="SOAPHeaderTransformer"
+      class="com.client.iip.integration.core.webservice.SOAPHeaderTransformer" />
+      
+      <custom-transformer name="SOAPRequestTransformer"
+      class="com.client.iip.integration.core.webservice.SOAPRequestTransformer" />
+      
+      <custom-transformer name="SOAPResponseTransformer"
+      class="com.client.iip.integration.core.webservice.SOAPResponseTransformer" />
+      
+      <custom-transformer name="PolicyFileReaderTransformer"
+      class="com.client.iip.integration.policy.PolicyFileReaderTransformer" />                       
+      
+ <!--  Party Beans -->
+ 
+	<flow name="clientPartyService">
+		<vm:inbound-endpoint ref="integration.endpoint.clientPartyServiceInbound"
+			exchange-pattern="request-response"/>
+		
+       <component>
+       		<spring-object bean="integration.serviceObject.ClientPartyService"/>
+       </component>
+	</flow>
+ 
+ 
+
+   <message-properties-transformer name="savePartyMethod">
+      <add-message-property key="method" value="saveParty" />
+   </message-properties-transformer>
+
+   <message-properties-transformer name="partyDetailMethod">
+      <add-message-property key="method" value="retrievePartyDetails" />
+   </message-properties-transformer>
+   
+   <message-properties-transformer name="partySearchMethod">
+      <add-message-property key="method" value="searchParty" />
+   </message-properties-transformer> 
+   
+   <message-properties-transformer name="partyDuplicateMethod">
+      <add-message-property key="method" value="duplicatePartySearch" />
+   </message-properties-transformer>  
+  
+	<message-properties-transformer name="vendorExportMethod">
+		<add-message-property key="method" value="retrieveVendors" />
+	</message-properties-transformer>    
+   
+	<!-- Transformer used for converting Object to XML message -->
+	<custom-transformer name="PartyObject2XMLTransformer"
+		class="com.client.iip.integration.core.transformer.IIPObject2XMLTransformer">
+		<spring:property name="aliasFileList">
+			<spring:list>
+				<spring:value>properties/client-mule-alias-map</spring:value>
+				<spring:value>properties/CUSD-alias-map</spring:value>
+			</spring:list>
+		</spring:property>
+	</custom-transformer>
+
+	<message-properties-transformer name="OrganizationUpdateMethod">
+		<add-message-property key="method" value="saveOrganization" />
+	</message-properties-transformer>
+	
+	<message-properties-transformer name="PersonUpdateMethod">
+		<add-message-property key="method" value="savePerson" />
+	</message-properties-transformer>
+	
+	<custom-transformer name="PostalServiceRegionTransformer"
+			class="com.client.iip.integration.party.PostalServiceRegionTransformer" />
+			
+  <!--  Claim Details Beans -->
+  
+
+	<flow name="clientClaimDetailsService">
+		<vm:inbound-endpoint ref="integration.endpoint.claimDetailsInboundEndPoint"
+			exchange-pattern="request-response"/>
+	
+        <component>
+        	<spring-object bean="integration.serviceObject.ClientClaimDetailsService"/>
+        </component>
+	</flow>
+
+	
+	<message-properties-transformer name="claimDetailMethod">
+		<add-message-property key="method" value="retrieveClaimDetails" />
+	</message-properties-transformer>
+	
+	<message-properties-transformer name="claimSearchMethod">
+		<add-message-property key="method" value="searchClaim" />
+	</message-properties-transformer>
+
+ <!--  Exception Beans -->
+
+   <!-- Common Exception Transformer used for services error handling. -->
+   <custom-transformer name="clientExceptionTransformer" class="com.client.iip.integration.core.exception.IIPExceptionTransformer" />
+
+   <!-- Transformer used for converting DOM from XML validator to XML message. -->
+   <custom-transformer class="org.mule.module.xml.transformer.DomDocumentToXml" name="DomDocumentToXml" />
+
+ <!--  XSD Validation Beans -->
+   <!-- Transformer used for schema validation of XML message -->
+   <custom-transformer name="XSDValidationTransformer" class="com.client.iip.integration.core.transformer.XSDValidationTransformer" />
+
+	<!--  Security Beans -->
+   <!-- Transformer used for processing header to mule message for inbound -->
+   <custom-transformer name="SecurityInboundRequestTransformer"
+      class="com.client.iip.integration.core.transformer.SecurityInboundRequestTransformer" />
+   <!-- Transformer used for adding header to mule message for outbound -->
+   <custom-transformer name="SecurityOutboundRequestTransformer"
+      class="com.client.iip.integration.core.transformer.SecurityOutboundRequestTransformer" />
+   <!-- Transformer used to retrieve header to mule message from outbound response -->
+   <custom-transformer name="SecurityOutboundResponseTransformer"
+      class="com.client.iip.integration.core.transformer.SecurityOutboundResponseTransformer" />
+
+	<!--  Batch Job Service Beans -->
+      
+   <spring:beans>
+      <spring:bean id="client.component.batchJob"
+         class="com.client.iip.integration.batch.BatchJobComponent">
+         <spring:property name="jobExplorer" ref="jobExplorerFact" />
+      </spring:bean>
+         
+      <spring:bean id="jobExplorerFact" class="org.springframework.batch.core.explore.support.JobExplorerFactoryBean"> 
+         <spring:property name="dataSource" ref="streamDataSource" />
+      </spring:bean>          
+   </spring:beans>
+   
+   <message-properties-transformer name="callJobMethod">
+      <add-message-property key="method" value="callJob" />
+   </message-properties-transformer>
+   
+   <message-properties-transformer name="retrieveJobStatusMethod">
+      <add-message-property key="method" value="retrieveJobStatus" />
+   </message-properties-transformer>
+   
+      
+   <flow name="batchService" doc:name="Batch Service Flow">
+      <vm:inbound-endpoint ref="batchJobEndpoint" 
+      	exchange-pattern="request-response" />
+      <component>
+            <spring-object bean="client.component.batchJob"></spring-object>
+      </component>
+   </flow>
+   
+   <!--  Claim Import Beans -->
+  
+	<flow name="clientClaimImportService">	
+		
+		<vm:inbound-endpoint ref="integration.endpoint.claimImportInboundEndPoint" 
+			exchange-pattern="request-response"	/>
+		
+            <component>
+                <spring-object bean="integration.serviceObject.ClientClaimImportService"/>
+            </component>
+	</flow>   
+   
+	<spring:beans>
+	       <spring:bean
+         id=" claims.serviceObject.claimReserveRecoveryService"
+         class="com.client.iip.integration.claim.imports.ClientClaimReserveRecoveryServiceImpl" />
+         
+		<spring:bean id="entconfig.iipservice.date"
+			class="com.client.iip.integration.core.util.ClientDateServiceImpl" />
+	</spring:beans>
+   
+   	<!-- Transformer used for converting XML message to Object -->
+	<custom-transformer name="CIFNXML2ObjectTransformer"
+		class="com.client.iip.integration.core.transformer.IIPXML2ObjectTransformer">
+		<spring:property name="aliasFileList">
+			<spring:list>
+				<spring:value>properties/client-mule-alias-map</spring:value>
+				<spring:value>properties/CIFN-alias-map</spring:value>
+			</spring:list>
+		</spring:property>
+	</custom-transformer>
+
+	<!-- Transformer used for converting Object to XML message -->
+	<custom-transformer name="CIFNObject2XMLTransformer"
+		class="com.client.iip.integration.core.transformer.IIPObject2XMLTransformer">
+		<spring:property name="aliasFileList">
+			<spring:list>
+				<spring:value>properties/client-mule-alias-map</spring:value>
+				<spring:value>properties/CIFN-alias-map</spring:value>
+			</spring:list>
+		</spring:property>
+	</custom-transformer>
+
+
+	<message-properties-transformer name="importClaimMethod">
+		<add-message-property key="method" value="importClaim" />
+	</message-properties-transformer>
+
+	
+
+	<!--  Address Verification Beans -->
+    
+	<custom-transformer name="VerifyAddresTransformer"
+			class="com.client.iip.integration.party.VerifyAddressPostalRegionTransformer" />
+	
+	<!--  SMTP Email Beans -->
+	
+	<custom-transformer name="smtpEmailMessageTransformer" class="com.client.iip.integration.core.transformer.SMTPEMailMessageTransformer" />				
+			
+
+	<!--  Disbursement Beans -->
+	
+		<flow name="clientDisbursementService">
+			<vm:inbound-endpoint ref="integration.endpoint.clientDisbursementServiceInbound"
+				exchange-pattern="request-response"/>
+		
+            <component>
+                <spring-object bean="integration.serviceObject.ClientDisbursementService"/>
+            </component>
+		</flow>
+
+	
+   <message-properties-transformer name="importDisbursement">
+      <add-message-property key="method" value="importPayment" />
+   </message-properties-transformer>
+   
+   <message-properties-transformer name="reExportDisbursements">
+      <add-message-property key="method" value="reExport" />
+   </message-properties-transformer>
+   
+   <message-properties-transformer name="exportDisbursements">
+      <add-message-property key="method" value="export" />
+   </message-properties-transformer> 		
+
+ <spring:beans>
+
+         <spring:bean id="financials.pojo.external.exportResourceManager" class="com.fiserv.isd.iip.bc.financials.disbursement.external.helper.ExportResourceManager">
+         <spring:property name="resourceManagerMap">
+               <spring:map> 
+	              <spring:entry key="pay_head" value-ref="financials.disbursement.pojo.clientPaymentHeaderProcessorPojo"/>
+                  <spring:entry key="bill" value-ref="financials.disbursement.pojo.clientPaymentBillingProcessorPojo"/>
+                  <spring:entry key="clm" value-ref="financials.disbursement.pojo.clientPaymentClaimProcessorPojo"/>
+                  <spring:entry key="agcy" value-ref="financials.disbursement.pojo.clientPaymentAgencyProcessorPojo"/>
+                  <spring:entry key="chck" value-ref="financials.disbursement.pojo.clientPaymentPayeeCheckProcessorPojo"/>
+                  <spring:entry key="eft" value-ref="financials.disbursement.pojo.clientPaymentPayeeEFTProcessorPojo"/>
+	              <spring:entry key="pay_tail" value-ref="financials.disbursement.pojo.paymentTrailerProcessorPojo"/>
+                  <spring:entry key="detail_head" value-ref="financials.disbursement.pojo.paymentDetailHeaderProcessorPojo"/>
+                  <spring:entry key="pay_pfle" value-ref="financials.disbursement.pojo.paymentProfileProcessorPojo"/>
+                  <spring:entry key="detail_tail" value-ref="financials.disbursement.pojo.paymentDetailTrailerProcessorPojo"/>
+                  <spring:entry key="man_chkwrt" value-ref="financials.disbursement.pojo.paymentPayeeCheckProcessorPojo"/>
+                  <spring:entry key="vend_cc" value-ref="financials.disbursement.pojo.paymentPayeeCheckProcessorPojo"/>
+                  <spring:entry key="appCtx_plcy" value-ref="financials.disbursement.pojo.paymentApplCtxtPolicyFactoryProcessorPojo"/>
+                  <spring:entry key="file_tail" value-ref="financials.disbursement.pojo.paymentFileTrailerProcessorPojo"/>
+               </spring:map>
+           </spring:property>
+           <spring:property name="lds" ref="financialsLogicalDataSource"/>
+             <spring:property name="disbursementDAO" ref="financials.daointerface.disbursementDAO"/>
+        </spring:bean>
+        
+      <spring:bean id="client.financials.disbursement.pojo.importDisbursementFactory" 
+            class="com.fiserv.isd.iip.bc.financials.disbursement.importPayment.helper.ImportDisbursementFactory">
+           <spring:property name="importPojos">
+               <spring:map> 
+                   <!--<spring:entry key="I" value-ref="financials.disbursement.pojo.issuedPaymentImportPojo"/>-->
+                  <spring:entry key="I" value-ref="client.financials.disbursement.pojo.issuedPaymentImportPojo"/>
+                  <spring:entry key="P" value-ref="financials.disbursement.pojo.clearedPaymentImportPojo"/>
+                  <spring:entry key="S" value-ref="financials.disbursement.pojo.stoppedPaymentImportPojo"/>
+                  <spring:entry key="V" value-ref="financials.disbursement.pojo.voidPaymentImportPojo"/>
+                  <spring:entry key="T" value-ref="financials.disbursement.pojo.staleDatedPaymentImportPojo"/>
+                  <spring:entry key="E" value-ref="financials.disbursement.pojo.unclaimedPropertyPaymentImportPojo"/>
+               </spring:map>
+           </spring:property>
+        </spring:bean>
+   </spring:beans>
+   
+   <!-- GL Export Beans -->
+   <spring:beans>
+  		 <spring:bean
+         id=" financials.helper.generalledger.generalLedgerExportHelper"
+         class="com.client.iip.integration.financials.disbursement.helper.ClientGeneralLedgerExportHelper" /> 	
+   
+   </spring:beans>
+   
+	<!--  Orders Beans -->
+	
+   <message-properties-transformer name="saveOrderReturnMethod">
+      <add-message-property key="method" value="saveOrderReturnData" />
+   </message-properties-transformer>
+   
+   	
+	<custom-transformer name="OrderRequestDateTransformer"
+		class="com.client.iip.integration.orders.OrderRequestDateTransformer" />
+
+	<!--  Document Beans -->
+	
+	<message-properties-transformer name="updateDocumentStatusMethod">
+		<add-message-property key="method" value="updateDocumentStatus" />
+	</message-properties-transformer>
+		
+		
+	<flow name="clientDocumentService" doc:name="Document Service Flow">
+		<vm:inbound-endpoint ref="integration.endpoint.documentInboundEndPoint" 
+			exchange-pattern="request-response"	/>
+		<component>
+				<spring-object bean="integration.serviceObject.ClientDocumentService"></spring-object>
+		</component>
+	</flow>
+	
+	<flow name="ClientDSSProxyService" doc:name="DSS ProxyService Flow">
+		<vm:inbound-endpoint ref="documents.endpoint.DSSProxyServiceInbound" 
+			exchange-pattern="request-response"	/>
+		<component>
+				<spring-object bean="integration.serviceObject.ClientDSSProxyService"></spring-object>
+		</component>
+	</flow>
+	
+	<!--  Configuration Beans -->
+	
+	<flow name="clientUserDetailsService" doc:name="User Service Flow">
+		<vm:inbound-endpoint ref="integration.endpoint.userDetailsInboundEndPoint" 
+			exchange-pattern="request-response"	/>
+		<component>
+				<spring-object bean="integration.serviceObject.ClientUserDetailsService"></spring-object>
+		</component>
+	</flow>
+
+	<flow name="clientConfigService">
+		<vm:inbound-endpoint ref="integration.endpoint.configInboundEndPoint"
+			exchange-pattern="request-response"/>
+
+		<component>
+			<spring-object bean="integration.serviceObject.ClientConfigService"/>
+		</component>
+	</flow>
+		
+	
+	<!-- Transformer used for converting XML message to Object -->
+	<custom-transformer name="GCNIXML2ObjectTransformer"
+		class="com.client.iip.integration.core.transformer.IIPXML2ObjectTransformer">
+		<spring:property name="aliasFileList">
+			<spring:list>
+				<spring:value>properties/client-mule-alias-map</spring:value>
+				<spring:value>properties/GCNI-alias-map</spring:value>
+			</spring:list>
+		</spring:property>
+	</custom-transformer>
+
+	<!-- Transformer used for converting Object to XML message -->
+	<custom-transformer name="GCNIObject2XMLTransformer"
+		class="com.client.iip.integration.core.transformer.IIPObject2XMLTransformer">
+		<spring:property name="aliasFileList">
+			<spring:list>
+				<spring:value>properties/client-mule-alias-map</spring:value>
+				<spring:value>properties/GCNI-alias-map</spring:value>
+			</spring:list>
+		</spring:property>
+	</custom-transformer>
+
+	<message-properties-transformer name="userDetailsMethod">
+		<add-message-property key="method" value="retrieveUserDetails" />
+	</message-properties-transformer>
+	
+
+	<message-properties-transformer name="retrieveUsersMethod">
+		<add-message-property key="method" value="retrieveUsers" />
+	</message-properties-transformer>
+	
+	
+	<message-properties-transformer name="retrieveCodesMethod">
+		<add-message-property key="method" value="retrieveCodeValue" />
+	</message-properties-transformer>
+	
+	<!-- Transformer used for converting . -->
+	<custom-transformer name="CodeLookUpBOToDTOTransformer"
+		class="com.client.iip.integration.sa.CodeLookUpBOToDTOTransformer" />	
+		
+	<message-properties-transformer name="retrieveCompaniesForCorporationMethod">
+		<add-message-property key="method" value="retrieveCompaniesForCorporation" />
+	</message-properties-transformer>
+	
+	<message-properties-transformer name="retrieveCompanyLOBForCompanyMethod">
+		<add-message-property key="method" value="retrieveCompanyLOBForCompany" />
+	</message-properties-transformer>
+	
+	<message-properties-transformer name="retrieveCitiesMethod">
+		<add-message-property key="method" value="retrieveCities" />
+	</message-properties-transformer>
+	
+	<message-properties-transformer name="retrieveCountiesMethod">
+		<add-message-property key="method" value="retrieveCounties" />
+	</message-properties-transformer>
+	
+	<message-properties-transformer name="retrieveStatesMethod">
+		<add-message-property key="method" value="retrieveStates" />
+	</message-properties-transformer>
+	
+	<message-properties-transformer name="retrieveReserveFinancialDataMethod">
+		<add-message-property key="method" value="retrieveReserveFinanicalData" />
+	</message-properties-transformer>
+	
+	<message-properties-transformer name="retrieveCoverageFinancialDataMethod">
+		<add-message-property key="method" value="retrieveCoverageFinanicalData" />
+	</message-properties-transformer>
+	
+	<message-properties-transformer name="reteriveMonetaryCategoryCodeMethod">
+		<add-message-property key="method" value="reteriveMonetaryCategoryCode" />
+	</message-properties-transformer>
+	
+	<message-properties-transformer name="retrieveReserveTypeNestedDataMethod">
+		<add-message-property key="method" value="retrieveReserveTypeNestedData" />
+	</message-properties-transformer>
+	
+	<message-properties-transformer name="retrieveAllLOBsByCompanyDataMethod">
+		<add-message-property key="method" value="retrieveClaimCompanyLOBInfo" />
+	</message-properties-transformer>
+	
+	<message-properties-transformer name="retrieveAllReserveTypesDataMethod">
+		<add-message-property key="method" value="retrieveReserveTypes" />
+	</message-properties-transformer>
+	
+	<message-properties-transformer name="retrieveAllMonetaryTypesDataMethod">
+		<add-message-property key="method" value="retrieveReserveMonetaryTypes" />
+	</message-properties-transformer>
+	
+	<message-properties-transformer name="retrieveAllOrgUnitsDataMethod">
+		<add-message-property key="method" value="retrieveAllOrgUnits" />
+	</message-properties-transformer>
+	
+	<message-properties-transformer name="retrieveAllCoveragesByComLOBRTDataMethod">
+		<add-message-property key="method" value="retrieveAllCoveragesByComLOBRT" />
+	</message-properties-transformer>
+	
+	<message-properties-transformer name="retrieveAllLossTypesByCompLOBRTCovDataMethod">
+		<add-message-property key="method" value="retrieveAllLossTypesByCompLOBRTCov" />
+	</message-properties-transformer>
+	
+   <!--  Claim Search Bean -->
+
+	<custom-transformer name="ClaimSearchTransformer"
+		class="com.client.iip.integration.claim.ClientClaimSearchResultTransformer" />   
+
+   
+	<!--  Vendor Export Bean -->
+		
+	<custom-transformer name="VDEXObject2XMLTransformer"
+		class="com.client.iip.integration.core.transformer.IIPObject2XMLTransformer">
+		<spring:property name="aliasFileList">
+			<spring:list>
+                <spring:value>properties/client-mule-alias-map</spring:value>
+				<spring:value>properties/VDEX-alias-map</spring:value>
+			</spring:list>
+		</spring:property>
+	</custom-transformer>
+
+</mule> 	      
+	   

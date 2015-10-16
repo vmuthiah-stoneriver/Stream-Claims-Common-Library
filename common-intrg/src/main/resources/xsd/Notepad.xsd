@@ -1,0 +1,236 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:include schemaLocation="../xsd/BaseTool.xsd" />
+
+	<xs:annotation>
+		<xs:documentation>Notepad Import Schema</xs:documentation>
+	</xs:annotation>
+
+	<xs:element name="notepadDTO" type="NotepadDTO">
+		<xs:annotation>
+			<xs:documentation>Note Type.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+
+	<xs:complexType name="NotepadDTO">
+		<xs:annotation>
+			<xs:documentation>Note information.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="BaseToolDTO">
+				<xs:sequence>
+					<xs:element name="noteTypeCd" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Note types such as general note or linked note, 
+								Maps to NOTE_TYP_CD Column from NOTE_TYPE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="categoryCd" type="string" minOccurs="1"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Categories for Note, 
+								Maps to NOTE_CTG_CD Column from NOTE_CATEGORY_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="subcategoryCd" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Sub-category for Note, 
+								Maps to NOTE_SUBCTG_CD	Column from NOTE_SUBCATEGORY_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="noteSourceCd" type="string" minOccurs="1"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Note Source code, 
+								Maps to NOTE_SRC_CD Column from NOTE_SOURCE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="phoneCallTypeCode" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Phone call type such as call received or call
+								placed, 
+								Maps to NPCT_CD Column from NOTE_PHONE_CALL_TYPE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="callValueCd" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Defines the call value by context for both call
+								from and call to, 
+								Maps to NOTE_CALL_VAL_CD Column from NOTE_CALL_VALUE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="callNamePerson" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Name of the person who called or whom the call
+								was made to.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="subjectText" type="string" minOccurs="1"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Subject of the note</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="highPriority" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>High Priority Indicator indicates whether the
+								note is of high priority or not
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="keyNote" type="boolean" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Key note indicator indicates whether note is
+								key to the context or not
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="doNotPrint" type="boolean" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Print indicator indicates whether the note is
+								printable or not.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="privateNote" type="boolean" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Private note indicator indicates whether the
+								note is private or public
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="confidentialNote" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Confidential Note Indicator indicates whether
+								the note is confidential or not if it is the private note.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="notepadText" type="NotepadTextDTOType"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Collection of NotepadTextDTO.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="orginalNoteUserId" type="long"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Original user id.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="originalNoteCreatedDateTime" type="dateType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Original creation date.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="delInd" type="boolean" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Delete flag.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="NotepadTextDTOType">
+		<xs:sequence>
+			<xs:element name="notepadTextDTO" type="NotepadTextDTO"
+				minOccurs="1" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Note text details.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="class" type="collectionType" use="optional" />
+	</xs:complexType>
+
+	<xs:complexType name="NotepadTextDTO">
+		<xs:annotation>
+			<xs:documentation>Notepad Text.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="AuditDTO">
+				<xs:sequence>
+					<xs:element name="noteTextSequenceId" type="long"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Represents the order of note text for the given
+								note.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+
+					<xs:element name="noteText" type="string" minOccurs="1"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Text for the note.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="readOnly" type="boolean" minOccurs="0"
+						maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>Read only flag.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="updatedUserDetails" type="UserDetailsDTO"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Update user info.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="createdUserDetails" type="UserDetailsDTO"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Create user info.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="userNameWithDate" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Note user name and date.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="orginalNoteUserId" type="long"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Original note user id.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="originalNoteCreatedDateTime" type="dateType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Original note created time.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="externalSourceId" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>External Source Id for Note Text.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>

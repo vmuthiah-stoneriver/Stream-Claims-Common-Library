@@ -1,0 +1,9 @@
+ClearCase CopyAreaDB|4
+iip_starter_kit\claim_starter_kit\common-intrg\src\main\java\com\client\iip\integration\core\converter
+2
+5
+1c:IIPXStreamDateConverter.java|1|14d01fca6b7|495|b9477720|c30816583dff4fcdbf5019feaae58cc5|0
+1e:ProfileAttributeConverter.java|1|14c95712190|4f2|7366b6d1|bff3a7e4c29240ccb90ec2a96a22c7aa|0
+24:IIPFlex2JavaCollectionConverter.java|1|14c95712190|b98|1af28ddb|5d3f5691748948159dab9e2935325a51|0
+1e:CustomReflectionConverter.java|1|14f4d22201a|203d|2bfd9621|b857c3a832d64c97a0e091b82ae15c59|0
+25:IIPXStreamDateTimestampConverter.java|1|14cddf76588|ab8|c02d852e|4cfc11bdd462426d94866d46d82bfb06|0

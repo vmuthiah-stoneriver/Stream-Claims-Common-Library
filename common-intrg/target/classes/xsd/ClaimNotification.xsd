@@ -1,0 +1,355 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:include schemaLocation="../xsd/Claim.xsd" />
+	<xs:include schemaLocation="../xsd/CompanyLOBType.xsd" />
+
+	<xs:annotation>
+		<xs:documentation>Claim notification Schema</xs:documentation>
+	</xs:annotation>
+
+
+	<xs:element name="clientFileUploadClaimDetailsCompositeDTO"
+		type="ClientFileUploadClaimDetailsCompositeDTO">
+		<xs:annotation>
+			<xs:documentation>Claim file upload details.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+
+	<xs:complexType name="ClientFileUploadClaimDetailsCompositeDTO">
+		<xs:annotation>
+			<xs:documentation>Claim Details Composite.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="DataTransferObject">
+				<xs:sequence>
+					<xs:element name="claimDTO" type="ClaimDTO" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Claim info.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="updateEventDTO" type="UpdateEventDTO"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Claim event information that triggered the
+								notification.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="assignments" type="AssignmentViewType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Claim assignments.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="companyLOBInfo" type="CompanyLOBInfo"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Company LOB info.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="UpdateEventDTO">
+		<xs:annotation>
+			<xs:documentation>UpdateEvent DTO.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="DataTransferObject">
+				<xs:sequence>
+					<xs:element name="contextId" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Context key id.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="contextTypeCd" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Context type, Maps to AGRE_TYP_CD Column from
+								AGREEMENT_TYPE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="eventTypeCd" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Evenet type code, Maps to EVNT_TYP_CD Column
+								from EVENT_TYPE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="eventDate" type="dateType" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Claim event occurred date.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="AssignmentViewType">
+		<xs:annotation>
+			<xs:documentation>Collection of assignments.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="viewAssignmentResultDTO" type="ViewAssignmentResultDTO"
+				minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Assignment results.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="class" type="collectionType" use="optional" />
+	</xs:complexType>
+
+	<xs:complexType name="ViewAssignmentResultDTO">
+		<xs:annotation>
+			<xs:documentation>Assignment Results View.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="DataTransferObject">
+				<xs:sequence>
+					<xs:element name="assignmentId" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Assignment record id.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="agreementTypeCodeDerived" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Assignment type code, Maps to AGRE_TYP_CD
+								Column from AGREEMENT_TYPE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="functionalRole" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Functional role, Maps to FNCT_ROLE_CD Column
+								from FUNCTIONAL_ROLE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="primaryIndicator" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Primary nassignment indicator.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="overideIndicator" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Assignment override flag.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="effectiveDate" type="dateType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Effective date.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="endDate" type="dateType" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Expiry date.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="recordSource" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Record source code, Maps to REC_SRC_CD Column
+								from RECORD_SOURCE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="statusCode" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Assignment status code, Maps to ASGN_STS_CD
+								Column from ASSIGNMENT_STATUS_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="folderName" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Folder name.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="userFirstName" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>User first name.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="userLastName" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>User last name.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="folderNumber" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Folder number.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="userMidName" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>User middle name.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="teamName" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Team name, Maps to CMPY_ORG_UNT_NM Column from
+								COMPANY_ORGANIZATION_UNIT_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="assignmentAlertIndicator" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Assignment alert indicator.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="userEmailAddress" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>User email.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="userPhoneNumber" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>User Phone number.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="supervisorFirstName" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Supervisor first name.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="supervisorLastName" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Supervisor last name.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="supervisorMidName" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Supervisor last name.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="supervisorEmailAddress" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Supervisor email.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="supervisorPhoneNumber" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Supervisor phone number.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="subContextId" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Subcontext record id.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="subContext" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Subcontext type code, Maps to AGRE_SUBTYP_CD
+								Column from AGREEMENT_SUBTYPE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="userId" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>User id, Maps to USER_ID Column from USER_CD
+								Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="teamId" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Team id, Maps to CMPY_ORG_UNT_ID Column from
+								COMPANY_ORGANIZATION_UNIT_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="userUpdatedDateTime" type="dateType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Updated timestamp.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="userUpdatedId" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Updated by.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="userCreateDateTime" type="dateType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Created timestamp.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="userCreatedId" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Created by.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="contextId" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Context id, Maps to Corresponding entity
+								Primary key column for the context.
+								For Ex: If contextCd is clm
+								then contextId would be CLM_ID from
+								Claim Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="toolContextInfo" type="ToolContextInfoDTO"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Tool context.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="segmentationAccess" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>User segmentation access flag.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="contextStatus" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Context status.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+</xs:schema>

@@ -1,0 +1,24 @@
+ClearCase CopyAreaDB|4
+iip_starter_kit\claim_starter_kit\common-intrg\src\main\java\com\client\iip\integration\claim\imports
+2
+14
+26:ClientCaseIssueStatusCompositeDTO.java|1|14c95711aec|848|88a1d23c|099edc485d474f26b60c280cb2014535|0
+17:ClientCaseIssueDTO.java|1|14c95711ae2|409|f28a5f28|cd953082c89e4efbb26bdf7850d9a599|0
+1e:ClientImportAssignmentDTO.java|1|14c9571212c|ba8|ed27c90c|7132e6f4a379480ca9772677a7004c78|0
+17:ClientClaimBillDTO.java|1|14c957120aa|527|94d8a8f9|341a75f792cd4898ae31df45ecb76b4d|0
+21:ClientClaimImportServiceImpl.java|1|14e4696bc5b|bf93|b21625ae|dbe1ec3b751c461b9ee69fa542a92d41|0
+2a:ClientClaimReserveRecoveryServiceImpl.java|1|14c957120b4|cf0|d8a989c|4b053f2b94f34c92b61c6fddc21ef6ba|0
+1c:ClientClaimBillCycleDTO.java|1|14c95711aec|384|24b2517|eed7a096b7604f8281f7aa06db1074b4|0
+21:ClientCaseStatusCompositeDTO.java|1|14c95711aec|82e|6ac0b90b|24b6caffd1104281a8cd58c626a5fa84|0
+1d:ClientClaimImportService.java|1|14c957120b4|21f|6a55bc8a|645ad57278e94af1b58b76702b3f4526|0
+25:ClientDocumentStatusCompositeDTO.java|1|14c957120fa|3bf|587635b5|883e97dcc09844f58b8fc632cb112fbe|0
+25:ClientWorkItemStatusCompositeDTO.java|1|14c9571212c|78f|ed2c8dc3|2aa18a8cbcb94ea1aa9d1d88fc00c397|0
+13:ClientClaimDTO.java|1|14c957120be|102|e55551dc|3c0b08e36a074af69816d781262ed3fc|0
+27:ClientAssignmentStatusCompositeDTO.java|1|14c95711ad8|804|91ffb7e6|3be95fa6e6f84193aa85c4f4b0b63e6a|0
+1c:ClaimImportCompositeDTO.java|1|14c95711aa6|1380|2b004c5a|1531efadc18142ad89cbd7496466b843|0
+20:ClientClaimParticipationDTO.java|1|14c957120c8|3bb|b32b4364|b6ded6c65d294ff990d332fddf8631a8|0
+16:ClientWorkItemDTO.java|1|14c95712118|1308|5152afa3|a1a8e06245ac45d1b04995ec5d42c4f6|0
+17:ClientClaimReserve.java|1|14c957120aa|2e5|fe97ebde|9ac2aca0e3fa46f18ae4be6856464303|0
+1e:ClientClaimUnitVehicleDTO.java|1|14c957120fa|397|8c872cbd|278cfaab8a2d4e6795af62c327c7f6df|0
+12:ClientCaseDTO.java|1|14c95711ae2|769|c36e6c03|05d3f5972cf24913b637b228939306d0|0
+16:ClaimImportHelper.java|1|14f23c6675a|1e51c|9a448379|33ae48094de64d07bb181c9605a25d16|0

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:spring="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:stdio="http://www.mulesoft.org/schema/mule/stdio"
+	xmlns:vm="http://www.mulesoft.org/schema/mule/vm"
+	xmlns:file="http://www.mulesoft.org/schema/mule/file"
+	xmlns:cxf="http://www.mulesoft.org/schema/mule/cxf"
+	xmlns:jms="http://www.mulesoft.org/schema/mule/jms"
+	xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns:mulexml="http://www.mulesoft.org/schema/mule/xml"
+	xmlns:scripting="http://www.mulesoft.org/schema/mule/scripting"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/3.3/mule-http.xsd 
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd
+		http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-2.5.xsd
+		http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/3.3/mule.xsd
+		http://www.mulesoft.org/schema/mule/stdio http://www.mulesoft.org/schema/mule/stdio/3.3/mule-stdio.xsd
+		http://www.mulesoft.org/schema/mule/vm http://www.mulesoft.org/schema/mule/vm/3.3/mule-vm.xsd
+		http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/file/3.3/mule-file.xsd
+		http://www.mulesoft.org/schema/mule/cxf http://www.mulesoft.org/schema/mule/cxf/3.3/mule-cxf.xsd
+		http://www.mulesoft.org/schema/mule/xml http://www.mulesoft.org/schema/mule/xml/3.3/mule-xml.xsd
+		http://www.mulesoft.org/schema/mule/scripting http://www.mulesoft.org/schema/mule/scripting/3.3/mule-scripting.xsd
+		http://www.mulesoft.org/schema/mule/jms http://www.mulesoft.org/schema/mule/jms/3.3/mule-jms.xsd">
+
+	<!-- Party Update -->
+	<flow name="customerUpdateFlow" doc:name="Customer Update Flow">
+
+        <vm:inbound-endpoint path="customerUpdate" exchange-pattern="request-response" connector-ref="vmSync" >
+
+            <response>
+                <custom-processor class="com.fiserv.isd.iip.core.routing.mule.ThreadCtxClearingProcessor"/>
+            </response>
+
+        </vm:inbound-endpoint>
+        
+        <custom-processor class="com.fiserv.isd.iip.core.routing.mule.TransactionStartingMessageProcessor"/>
+        <custom-processor class="com.fiserv.isd.iip.core.routing.mule.ThreadCtxInitializingProcessor">
+            <spring:property name="acceptConfirmations" value="true"/>
+            <spring:property name="requestType" value="INTERFACE"/>
+        </custom-processor>
+
+		<message-properties-transformer>
+			<add-message-property key="xsd" value="xsd/Party.xsd" />
+			<add-message-property key="interface" value="CUID"/>	
+		</message-properties-transformer>
+
+		<transformer ref="SecurityInboundRequestTransformer" />
+		<transformer ref="XSDValidationTransformer" />
+		<transformer ref="IIPXML2ObjectTransformer" />
+		<transformer ref="PostalServiceRegionTransformer" />
+	<!-- <transformer ref="PartyUpdateRequestTransformer" />  -->
+		<vm:outbound-endpoint path="payloadRouter" exchange-pattern="request-response" connector-ref="vmSync" />
+		
+		 <!-- Route unexpected errors to separate error handler -->
+        <default-exception-strategy>
+            <vm:outbound-endpoint path="userErrorHandler" exchange-pattern="request-response" connector-ref="vmSync" />
+        </default-exception-strategy> 			
+	</flow>
+		
+	<flow name="patyUpdateSubFlow" doc:name="Party Update Subflow">
+	
+		<vm:inbound-endpoint path="partyUpdate" exchange-pattern="request-response" connector-ref="vmSync" />
+	
+		<outbound-endpoint ref="integration.endpoint.clientPartyServiceInbound"
+							transformer-refs="savePartyMethod"
+            	           responseTransformer-refs="clientExceptionTransformer PartyObject2XMLTransformer" />
+	</flow>
+
+</mule>
+

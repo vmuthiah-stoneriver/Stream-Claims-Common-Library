@@ -1,0 +1,220 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:include schemaLocation="../xsd/Common.xsd" />
+
+	<xs:annotation>
+		<xs:documentation>Policy Search Response Schema</xs:documentation>
+	</xs:annotation>
+
+	<xs:element name="list">
+		<xs:annotation>
+			<xs:documentation>Collection of policy search results returned for
+				the given search criteria
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="claimsPolicySearchResultDTO" type="ClaimsPolicySearchResultDTO"
+					minOccurs="0" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Claim policy search results.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="ClaimsPolicySearchResultDTO">
+		<xs:annotation>
+			<xs:documentation>Policy Search result</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="DataTransferObject">
+				<xs:sequence>
+					<xs:element name="policyNumber" type="string" minOccurs="1"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Policy number</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="effectiveDate" type="dateType"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Term Effective Date</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="expirationDate" type="dateType"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Term Expiration Date</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="lineOfBusiness" type="string"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>LOB Code, Maps to LOB_CD Column from
+								COMPANY_LINE_OF_BUSINESS_XREF Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="companyLobId" type="long" minOccurs="1"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>LOB Id, Maps to CMPY_LOB_ID Column from
+								COMPANY_LINE_OF_BUSINESS_XREF Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="corporationId" type="long" minOccurs="1"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Corporation Id, Maps to CORP_ID Column from
+								CORPORATION_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="companyId" type="long" minOccurs="1"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Company Id, Maps to CMPY_ID Column from
+								COMPANY_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="companyName" type="string" minOccurs="1"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Company name, Maps to CMPY_NM Column from
+								COMPANY_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="corporationName" type="string"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Corporation name, Maps to CORP_NM Column from
+								CORPORATION_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="insuredName" type="string" minOccurs="1"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Insured name</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="addressLine1" type="string" minOccurs="1"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Address Line 1</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="addressLine2" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Address Line 2</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="city" type="string" minOccurs="1"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>City Name</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="zipCd" type="string" minOccurs="1"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Postal Code</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="stateCd" type="string" minOccurs="1"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>State Code, Maps to PSTL_SERV_RGN_ABRV Column
+								from POSTAL_SERVICE_REGION_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="countryCd" type="string" minOccurs="1"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Country Code, Maps to CNTRY_CD Column from
+								COUNTRY_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="phoneNumber" type="phoneType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Phone number.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="faxNumber" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Fax</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="recordSrcCd" type="string" minOccurs="1"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Record Source Code, Maps to REC_SRC_CD from
+								RECORD_SOURCE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="policyExternalId" type="string"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>External Policy Id.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="regOfcCmpyOrgUnitName" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Company Org(Team) Name, Maps to CMPY_ORG_UNT_NM
+								from COMPANY_ORGANIZATION_UNIT_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="companyPkgLobName" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Company Org(Office) Name, Maps to CMPY_LOB_NM
+								Column from COMPANY_LINE_OF_BUSINESS_XREF Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="policyStatusCode" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Policy Status Code, Maps to CLM_PLCY_STS_CD
+								Column from CLAIM_POLICY_STATUS_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="translatedPolicyStatus" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Translated Policy Status Code.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="invalidPlcyStatus" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Invalid Policy Flag.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="jurisdictionId" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Jurisdiction Id, Maps to JUR_ID Column from
+								JURISDICTION_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>

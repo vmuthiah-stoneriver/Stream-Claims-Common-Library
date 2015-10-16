@@ -1,0 +1,12 @@
+ClearCase CopyAreaDB|4
+iip_starter_kit\claim_starter_kit\common-intrg\src\test\resources\iip-test-integration-config
+2
+8
+16:xml-xsd-map.properties|1|14c9571421b|df1|71dc50c0|334e3a79f03c4350b373c52b714f7833|0
+1c:authentication-providers.xml|1|14c95714211|148c|1d78dbf5|b5da8c08873b47b2ac0821aa4974a632|0
+11:stream.properties|1|14f2807993e|682|2492560e|1aa5325134294185b4d82dbe0df11cbc|0
+20:client-mule-bootstrap-config.xml|1|14f2802365b|2674|c7e47432|d6a6bf5d2362475aab5314292623aff4|0
+1b:activiti-process-engine.xml|1|14c957141c0|7e8|420dc004|2849adb3ad87463b966dec6082834f56|0
+1a:test-datasource-config.xml|1|14c95714211|1264|b9702286|c0a38a9e3094413b9aeca216fbc0c627|0
+16:application-config.xml|1|14d25a474eb|bd3|ae2008e6|81ce6ea5fb2f4502bb6d2849bd3a86bc|0
+1b:client-mule-bean-config.xml|1|14e98014471|19ed|324f0d4e|7950232b07a14dcd8e6f79ce4f0190c5|0

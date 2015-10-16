@@ -1,0 +1,11 @@
+ClearCase CopyAreaDB|4
+iip_starter_kit\claim_starter_kit\common-intrg\src\main\java\com\client\iip\integration\core\security
+2
+7
+29:FailedAuthenticationMessageProcessor.java|1|14c95712208|73c|b5f28176|44057f7e34584706ae9839cc08b8036a|0
+31:InterfaceAuthenticationInializationProcessor.java|1|14c95712208|259|5509da7c|7304419ff4214a4db2feeb957246e36c|0
+1c:ClientLDAPAuthenticator.java|1|14c9571221c|a7d|4d666cb3|4434497ef77b468eb2eeb5f2576ef137|0
+24:ClientDaoAuthenticationProvider.java|1|14c957121e0|806|76d6c721|86047a3e7215427a8eaba08d7f7e6441|0
+1c:InterfaceSecurityFilter.java|1|14c95712230|2d7|9885faa3|2762b95a296d44cfb49905b6add29960|0
+21:LDAPUserDetailsContextMapper.java|1|14c95712226|556|3a6de0fa|0001f30eb56c45788289e9755da9c914|0
+24:ClientAuthenticationServiceImpl.java|1|14c957121d6|6bb|31955781|ed5c5e3295474b429eac1a33b63099ab|0

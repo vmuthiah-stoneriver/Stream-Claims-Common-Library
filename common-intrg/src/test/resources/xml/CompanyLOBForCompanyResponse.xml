@@ -1,0 +1,26 @@
+<list>
+  <companyLOBInfo>
+    <companyId>2</companyId>
+    <lobId>6</lobId>
+    <lobCode>ca</lobCode>
+    <lobName>Commercial Auto</lobName>
+    <lobPkgInd>false</lobPkgInd>
+    <effectiveDateTime>2012-02-02 00:00:00.000 MST</effectiveDateTime>
+  </companyLOBInfo>
+  <companyLOBInfo>
+    <companyId>2</companyId>
+    <lobId>5</lobId>
+    <lobCode>pa</lobCode>
+    <lobName>Personal Auto</lobName>
+    <lobPkgInd>false</lobPkgInd>
+    <effectiveDateTime>2012-02-02 00:00:00.000 MST</effectiveDateTime>
+  </companyLOBInfo>
+  <companyLOBInfo>
+    <companyId>2</companyId>
+    <lobId>202</lobId>
+    <lobCode>pum</lobCode>
+    <lobName>Personal Umbrella</lobName>
+    <lobPkgInd>false</lobPkgInd>
+    <effectiveDateTime>2012-03-14 00:00:00.000 MDT</effectiveDateTime>
+  </companyLOBInfo>
+</list>

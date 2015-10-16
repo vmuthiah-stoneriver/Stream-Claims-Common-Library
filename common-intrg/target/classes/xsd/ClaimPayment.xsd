@@ -1,0 +1,749 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<xs:annotation>
+		<xs:documentation>Claim Payment Schema</xs:documentation>
+	</xs:annotation>
+
+	<xs:element name="claimPayment" type="ClaimPayment">
+		<xs:annotation>
+			<xs:documentation>Claim payment.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+
+	<xs:complexType name="ClaimPayment">
+		<xs:annotation>
+			<xs:documentation>Claim Payable Information</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="DataTransferObject">
+				<xs:sequence>
+					<xs:element name="claimPayables" type="claimPayableType"
+						minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Collection of Claim Payables</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="claimPaymentDisbursements" type="claimPaymentDisbursementType"
+						minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Collection of Claim Payment Disbursements
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="teamId" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Team information to check for Authorization
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="userName" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>User information to check for Authorization
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="authorizationRequired" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Indicates whether authorization is required for
+								making payments
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="operationTypeForPayment" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Indicates the type of payment being like Issue
+								Payment, Fast Track Payment or Issue Payment after Close
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="claimPayableType">
+		<xs:annotation>
+			<xs:documentation>Collection of claim payables.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="claimPayable" type="ClaimPayable"
+				minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Claim payables.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="class" type="collectionType" use="optional" />
+	</xs:complexType>
+
+	<xs:complexType name="claimPaymentDisbursementType">
+		<xs:annotation>
+			<xs:documentation>Collection of claim payment disbursments.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="claimPaymentDisbursement" type="ClaimPaymentDisbursement"
+				minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Claim payment disbursements.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="class" type="collectionType" use="optional" />
+	</xs:complexType>
+
+	<xs:complexType name="ClaimPayable">
+		<xs:annotation>
+			<xs:documentation>Claim Payable information.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="DataTransferObject">
+				<xs:sequence>
+					<xs:element name="transactionTypeName" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Transaction Type Name</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="transactionTypeCode" type="string"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Transaction Type Code, 
+								Maps to FNCL_TRAN_TYP_CD Column from FINANCIAL_TRANSACTION_TYPE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="transactionAmount" type="dollarAmount"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Transaction Amount</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="transactionDate" type="dateType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Transaction Date</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="accountingDate" type="dateType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Accounting Date</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="partyId" type="long" minOccurs="1"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Party associated with Transaction
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="companyId" type="long" minOccurs="1"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Company Id, 
+								Maps to CMPY_ID Column from COMPANY_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="claimNumber" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Claim associated to the Financial Transaction
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="externalClaimIdentifier" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Claim External Source Id, If External Claim
+								Identifier is not available then Claim Id is required
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="externalUnitIdentifier" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Unit External Source Id, If External Unit
+								Identifier is not available then Claim Unit Id is required
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="externalParticipantIdentifier" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Claim Participant External Source Id, If
+								External Participant Identifier is not available then Claim
+								Participant Id is required
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="clmCoverageCode" type="string"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Coverage Type for the Transaction, 
+								Maps to CLM_COV_CD Column from CLAIM_COVERAGE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="clmReserveTypeCode" type="string"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Reserve Type Code, 
+								Maps to CLM_RSRV_TYP_CD Column from CLAIM_RESERVE_TYPE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="clmLossTypeCode" type="string"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Loss Type, 
+								Maps to CLM_LOSS_TYP_CD Column from	CLAIM_LOSS_TYPE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="monitoryTypeCode" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Monetary Type Code, 
+								Mapped to CLM_MNY_TYP_CD Column from CLAIM_MONETARY_TYPE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="invoiceNumber" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Invoice number for the transaction
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="invoiceDate" type="dateType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Invoice date for the transaction
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="serviceEffectiveDate" type="dateType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Service From Date</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="serviceEndDate" type="dateType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Service End Date</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="closeReserveIndicator" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Indicates whether to close the reserve after
+								payment
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="lineOfBusiness" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Line Of Business</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="marketType" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Market Type</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="jurId" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>State (Jurisdiction) associated with the
+								transaction, 
+								Maps to JUR_ID Column from JURISDICTION_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="comment" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Comment for the transaction</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="surchargeIndicator" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Surcharge Indicator</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="claimId" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Claim for which the Payment is associated, If
+								Claim Id is not available Claim External Identifier is required.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="unitId" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Unit for which the Payment is associated, If
+								Claim Unit Id is not available Claim Unit External Identifier is
+								required.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="participantId" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Participant to whom the Payment is associated.
+								If Claim Participant Id is not available Claim Paricipant
+								External Identifier is required.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="monetaryCategoryCode" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Monetary Type Code
+								Mapped to CLM_MNY_CTG_CD
+								Column from CLAIM_MONETARY_CATEGORY_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="disbursementId" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Disbursement Id</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+
+	<xs:complexType name="ClaimPaymentDisbursement">
+		<xs:annotation>
+			<xs:documentation>Claim Payment Disbursements</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="DataTransferObject">
+				<xs:sequence>
+					<xs:element name="disbursementId" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Disbursement Id</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="disbursementTypeCode" type="string"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Disbursement Type Code
+								Maps to DSB_TYP_CD column
+								in DISBURSEMENT_TYPE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="disbursementNumber" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Disbursement Number</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="disbursementAmount" type="dollarAmount"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Disbursement Amount</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="partyId" type="long" minOccurs="1"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Claim Disbursement In care of Payee Id
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="addressLine1" type="string" minOccurs="1"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Disbursement Address Line 1</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="addressLine2" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Disbursement Address Line 2</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="city" type="string" minOccurs="1"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Disbursement Address City Name
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="primarySubDivision" type="string"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Disbursement Address Primary Sub Division Name
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="secondarySubDivision" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Disbursement Address Secondary Sub Division
+								Name
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="postalCode" type="string" minOccurs="1"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Disbursement Address Postal Code
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="country" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Disbursement Address Country</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="inCareOfNameType" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>in care of Name Type</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="inCareOfPayeeId" type="long"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Claim Disbursement In care of Payee Id
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="inCareOfPayeeName" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Claim Disbursement In care of Payee Name
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="additionalPayeeName" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Disbursement Secondary Payee Name
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="onDemand" type="boolean" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Indicates whether the Disbursement will be
+								created immediately
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="manualCheckIndicator" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Indicates whether the Check is manually
+								produced or not
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="scheduled" type="boolean" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Indicates whether the Disbursement is scheduled
+								or not.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="paymentMethodType" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Preferred Payment Method, 
+								Maps to	PAY_METH_PRF_CD Column from PAYMENT_METHOD_PREFERENCE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="bulkPaymentIndicator" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Bulk Payment Indicator</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="comment" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Claim Disbursement Payee Comment
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="disbursementCreatedDate" type="dateType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Disbursement Created date</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="disbursementInPaymentOfCode" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Disbursement In Payment of Code, 
+								Maps to DIPO_CD	Column from DISBURSEMENT_IN_PAYMENT_OF_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="disbursementInPaymentOfText" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Disbursement In Payment of Text
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="disbursementPrintGroupCode" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Disbursement Print Group, 
+								Maps to DSB_PRNT_GRP_CD	Column from DISBURSEMENT_PRINT_GROUP_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="additionalPayeeId" type="long"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Disbursement Secondary Payee Id
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="disbursementPayToTheOrderOf" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Disbursement Pay to the order of name
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="percentageAllocation" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Percentage Allocation</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="bankAccountTypeCodePayee" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Disbursement Banking Info Account Type code of
+								Payee
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="partyBankAccountIdPayee" type="long"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Disbursement Banking Info Account Id of Payee, 
+								Maps to PARTY_BANK_ACCT_ID Column from PARTY_BANK_ACCOUNT Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="partyBankAccountNoPayee" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Disbursement Banking Info Account Number of
+								Payee
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="financialInstitutionRouteNoPayee"
+						type="string" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Disbursement Banking Info Routing Number of
+								Payee
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="bankAccountTypeCodeCompany" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Disbursement Banking Info Account Type code of
+								Company
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="partyBankAccountNoCompany" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Disbursement Banking Info Account Number of
+								Company
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="financialInstitutionRouteNoCompany"
+						type="string" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Disbursement Banking Info Routing Number of
+								Payee
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="companyId" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Company's Bank Account Information, 
+								Maps to	CMPY_BANK_ACCT_ID Column from COMPANY_BANK_ACCOUNT_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="organizationUnitId" type="long"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Company Organization Unit Id to find Company's
+								Bank Account Information, 
+								Maps to CMPY_ORG_UNT_ID Column from	COMPANY_ORGANIZATION_UNIT_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="partyIdPayee" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Please use ClaimDisbursementAdditionalPayee for
+								setting the Payees
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="payeeName" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>This is not required, Party Id set in
+								ClaimDisbursementAdditionalPayee will be used to set the name.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="transactionDate" type="dateType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Transaction Date</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="accountingDate" type="dateType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Accounting Date</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="teamId" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Team information to check for Authorization
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="userName" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>User information to check for Authorization
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="claimDisbursementAdditionalPayees"
+						type="claimDisbursementAdditionalPayeeType" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Disbursment additional payees
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="disbursementProfileStatements" type="ProfileStatementItemType"
+						minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Profile Statements for Claim Payments
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="cmnt" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Comment.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="onDemandInt" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>On demand flag.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="manualCheckIndicatorInt" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Manual check indicator.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="bulkPaymentIndicatorInt" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Bulk payment indicator.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="claimDisbursementAdditionalPayeeType">
+		<xs:annotation>
+			<xs:documentation>Collection of claim disbursement additional payees.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="claimDisbursementAdditionalPayee" type="ClaimDisbursementAdditionalPayee"
+				minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Claim additional payee disbursements.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="class" type="collectionType" use="optional" />
+	</xs:complexType>
+
+	<xs:complexType name="ClaimDisbursementAdditionalPayee">
+		<xs:annotation>
+			<xs:documentation>Claim disbursement additional payee
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="DataTransferObject">
+				<xs:sequence>
+					<xs:element name="partyIdPayee" type="long" minOccurs="1"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Payee party id.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="payToTheOrderOfSequence" type="long"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Pay to the order of sequence.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="legalWordingCode" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Legal wording code, Maps to DSB_LGL_WRD_CD
+								Column from DISBURSEMENT_LEGAL_WORDING_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+</xs:schema>

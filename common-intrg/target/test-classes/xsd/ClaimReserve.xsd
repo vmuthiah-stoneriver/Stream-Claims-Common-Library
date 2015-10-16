@@ -1,0 +1,1846 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<xs:annotation>
+		<xs:documentation>Claim Reserve Schema.</xs:documentation>
+	</xs:annotation>
+	
+	<xs:element name="authClaimPaymentStatusDTO" type="AuthorizationClaimPaymentStatusDTO" />
+
+	<xs:element name="claimReserve" type="CALClaimReserveDTO">
+		<xs:annotation>
+			<xs:documentation>Claim reserve.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+
+	<xs:complexType name="CALClaimReserveDTO">
+		<xs:annotation>
+			<xs:documentation>Claim Reserves.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="AuditWithImportDTO">
+				<xs:sequence>
+					<xs:element name="calClaimIdDerived" type="long"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Reserve claim id.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="calClaimUnitIdDerived" type="long"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Reserve claim unit id.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="calClaimPtcpId" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Reserve claim participant id.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="clmCoverageCode" type="string"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Claim coverage code, Maps to CLM_COV_CD Column
+								from CLAIM_COVERAGE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="clmReserveTypeCode" type="string"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Claim reserve type code, Maps to
+								CLM_RSRV_TYP_CD Column from CLAIM_RESERVE_TYPE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="clmLossTypeCode" type="string"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Claim loss type code, Maps to CLM_LOSS_TYP_CD
+								Column from CLAIM_LOSS_TYPE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="calClaimReserveAmtDerived" type="string"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Claim reserve amount.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="monetaryCategoryCode" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Rserve monetary category code, Maps to
+								CLM_MNY_CTG_CD Column from CLAIM_MONETARY_CATEGORY_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="preApprovedIndicator" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Approved reserve indicator.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="averageReserveIndicator" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Averaged reserve indicator.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="calClaimReserveStatus" type="CalClaimReserveStatusCompositeDTO"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Claim reserve status.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="calClaimReserveTransactionCollections"
+						type="claimReserveTransactionCollectionType" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Claim reserve transaction list
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="reasonCode" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Reserve transaction reason code, Maps to
+								CLM_RSRV_TRAN_RSN_NC_CD Column from CLAIM_RESERVE_TRAN_RSN_NC_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="actionType" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Reserve Tran action, Maps to
+								CLM_RSRV_TRAN_TYP_NC_CD Column from CLAIM_RESERVE_TRAN_TYP_NC_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="companyLobId" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Company LOB Id, Maps to CMPY_LOB_ID Column from
+								COMPANY_LINE_OF_BUSINESS_XREF Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="existingOutstandingAmount" type="dollarAmount"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Outstanding amount.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="adjustmentIndicator" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Adjustment flag.
+								incr - Increase amount
+								decr -
+								Decrease amount
+								repl - Replace amount
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="adjustmentAmount" type="dollarAmount"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Adjustment amount.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="claimCoverageId" type="long"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Claim coverage id.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="unconfirmedCoverage" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Unconfirmed coverage indicator.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="reserveTxnAuthStatus" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Reserve auth status.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="userIdAuthorizer" type="long"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Auth user id.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="companyOrganizationUnitIdAuthorizer"
+						type="long" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Authorizer org unit id, Maps to CMPY_ORG_UNT_ID
+								Column from COMPANY_ORGANIZATION_UNIT_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="companyOrgUnitIdOrginator" type="long"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Origin org unit id, Maps to CMPY_ORG_UNT_ID
+								Column from COMPANY_ORGANIZATION_UNIT_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="userIdOrginator" type="long"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Orgin user id</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="selectedAuthGroup" type="long"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>place holder for the Authorizable Request
+								interface
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="authGroupProvided" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Authorization group.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="paymentTypeCode" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Payment type code, Maps to CLM_MNY_TYP_CD
+								Column from CLAIM_MONETARY_TYPE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="paymentAdjustmentAmount" type="dollarAmount"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Payment addjustment amount.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="claimNumber" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Claim number.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="claimPolicyUnitId" type="long"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Claim policy unit id.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="importReserve" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Import reserve flag.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="teamId" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Team id, Maps to CMPY_ORG_UNT_ID Column from
+								COMPANY_ORGANIZATION_UNIT_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="teamName" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Team name.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="user" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Reserve user</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="transactionAmount" type="dollarAmount"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Reserve transaction amount</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="reserveTransactionDate" type="dateType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Reserve transaction date</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="externalSourceId" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>External source identifier.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="unitDescription" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Claim unit description</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="participantName" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Claim reserve participant name.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="reserveTypeName" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Reserve type name, Maps to CLM_RSRV_TYP_NM
+								Column from CLAIM_RESERVE_TYPE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="payment" type="boolean" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Payment flag.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="recoveryAdjustmentAmount" type="dollarAmount"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Recovery adjument amount.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="adjustedOutsandingReserve" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Adjusted outstanding reserve.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="externalParticipantIdentifier" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Claim participant external id.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="externalUnitIdentifier" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Claim unit external id.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="externalClaimNumber" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>External claim number.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="externalClaimIdentifier" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Claim external id.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="authDetails" type="dummyType"
+						minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>Not used for Claim Import, Place holder for
+								Claim Details
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="coverages" type="claimCoverageType"
+						minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Claim coverage type.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="paymentAuthorizations" type="paymentAuthorizationsType"
+						minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Payment authorization.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="reopenAndCloseReserve" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Reopen reserve flag</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="agreementDataMap" type="MapItemType"
+						minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>Agreement Data Type Map.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="versionGroupId" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Version group id.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="unitIds" type="longCollectionType"
+						minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Collection of Unit Ids, Not used for Claim
+								Import, Place holder for Claim Details
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="reserveLevel" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Not used for Claim Import, Place holder for
+								Claim Details
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="participantTypeName" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Used for showing error message when participant
+								is expired
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="declineFastTrackPayment" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Not used for Claim Import, Place holder for
+								Claim Details
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="closeReserveIssuePayment" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Not used for Claim Import, Place holder for
+								Claim Details
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="userIdRqst" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Not used for Claim Import, User who created a
+								financial transaction which required authorization
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="importPaymentFlow" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Indicates that the payment is through import.
+								This will be set in the integration code.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<!-- Newly Added for 8.1 Release -->
+					<xs:element name="classCode" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Reserve class code, Maps to CLM_CLS_CD_CD
+								Column from CLAIM_CLASS_CODE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="classSuffixCode" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Class suffix code, Maps to CLM_CLS_CD_SUFX_CD
+								Column from CLAIM_CLASS_CODE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="closedReserveFromFastTrack" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Fast track close reserve indicator.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<!-- End -->
+					<xs:element name="operationType" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Operation type.
+								rsrv - Rserve
+								fasttrkpmt - Fast
+								track payment
+								authpmt - Authorized payment
+								authrsrv - Authorized
+								reserve
+								mdfypendpmt - Modify pending payment
+								adjstrcvry - Adjust
+								recovery
+								fasttrkrcvry - Fast track recovery
+								mdfypmt - Modify
+								payment
+								rcvry - Post recovery
+								adjstpmt - Adjust payment
+								issuepmtaftrcls - Issue payment after close
+								issuepmt - Issue
+								paument
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="benefitCalculatedWorksheetId" type="long"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Benefit calculator work sheet id, (Workers
+								comp)
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="authorizingGroup" type="long"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Authorization group id.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="authorizationGroupProvided" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Authorization group flag.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="authorizationDetails" type="dummyType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Internal use.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="authorizingUserId" type="long"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Authorization user id.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="multipleAuthorization" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Multiple auth required flag.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="additionalAuthorizer" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Additional authorizer flag.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="signatureCount" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Signature count.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="requiredSignatureCount" type="long"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Mandatory Signature count.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="benefitWorksheetDTO" type="claimIndemnityBenefitWorksheetDTO"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Claim Indemnity Benefit Worksheet.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="claimIndemnityBenefitWorksheetDTO">
+		<xs:annotation>
+			<xs:documentation>Indemnity Benefit.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="AuditDTO">
+				<xs:sequence>
+					<xs:element name="claimNumber" type="string" minOccurs="1"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Claim Number.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="participantId" type="long" minOccurs="1"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Participant id.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="partyId" type="long" minOccurs="1"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Party id.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="jurId" type="long" minOccurs="1"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Jurisdiction id.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="claimId" type="long" minOccurs="1"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Claim id.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="effectiveDateSourceType" type="dateType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Effective date.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="reserveTypeCode" type="string"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Reserve Type code, Maps to CLM_RSRV_TYP_CD
+								Column from CLAIM_RESERVE_TYPE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="lossTypeCode" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Loss Type code, 
+								Maps to CLM_LOSS_TYP_CD Column from CLAIM_LOSS_TYPE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="claimWageMethodCode" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Claim Wage method code, Maps to CLM_WG_METH_CD
+								Column from	CLAIM_WAGE_METHOD_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="jurisdiction" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Jusridiction.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="occurrenceDate" type="dateType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Loss date.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="benefitEffectiveDate" type="dateType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Benefit effective date.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="injuredWorker" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Worker name.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="taxFilingStatus" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Tax Status.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="benefitType" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Benefit type, Maps to BNFT_TYP_CD Column from
+								BENEFIT_TYPE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="noOfDependents" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Number of dependents.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="deathDate" type="dateType" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Number of dependents.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="noOfExemptions" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Number of exemptions.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="disabilityBeganDate" type="dateType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Disability start date.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="startDate" type="dateType" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Start date.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="endDate" type="dateType" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>End date.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="weeks" type="double" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Number of weeks.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="days" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Number of days.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="daysWorked" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Number of days worked.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="claimAverageWageAmount" type="decimal"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Claim average wage amount.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="postInjuryWageAmount" type="decimal"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Post injury wage amount.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="earningCapacityAmount" type="decimal"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Earning capacity amount.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="overrideBenefitRate" type="decimal"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Override rate.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="offsetAmount" type="decimal"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Offset amount.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="rateAddOnAmount" type="decimal"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Addon amount rate.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="totalAddOnAmount" type="decimal"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Total addon amount.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="useWaitingPeriodIndicator" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Waiting perion indicator.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="injuredWorkerDeathDatePresent" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Death date indicator.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="maritalStatus" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Marital status, Maps to MAR_STS_CD Column from MARITAL_STATUS_CD Table.</xs:documentation>
+						</xs:annotation>
+					</xs:element>					
+					<xs:element name="benefitWorksheetResult"
+						type="claimBenefitCalculationWorksheetResultDTO" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Benefit Calculation worksheet type.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="saw" type="decimal" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Internal Use.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="wgTypeCd" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Internal Use.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="netWgFIT" type="boolean" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Internal Use.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="netWgFICA" type="boolean" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Internal Use.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="netWgMed" type="boolean" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Internal Use.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="netWgSIT" type="boolean" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Internal Use.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="sitCalcMethod" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Internal Use.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="minWageAmt" type="decimal" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Internal Use.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="minWageDesc" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Internal Use.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="minWagePct" type="decimal" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Internal Use.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="maxWageAmt" type="decimal" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Internal Use.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="maxWageDesc" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Internal Use.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="maxWagePct" type="decimal" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Internal Use.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="calcSrc" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Internal Use.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="bnftRtType" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Internal Use.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="pInjWageCalcTyp" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Internal Use.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="usePostInjWage" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Internal Use.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="useEarnCap" type="boolean" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Internal Use.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="avgWagePct" type="decimal" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Internal Use.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="minRateAppls" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Internal Use.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="minBenDesc" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Internal Use.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="minBenAmt" type="decimal" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Internal Use.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="minBenPct" type="decimal" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Internal Use.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="compareMinToCAW" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Internal Use.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="maxRateAppls" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Internal Use.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="maxBenDesc" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Internal Use.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="maxBenAmt" type="decimal" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Internal Use.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="maxBenPct" type="decimal" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Internal Use.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="useDaysWorked" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Internal Use.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="fromAverageWagesCalculationFlow" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Internal Use.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="minMaxApply" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Internal Use.</xs:documentation>
+						</xs:annotation>
+					</xs:element>										
+					<xs:element name="benefitProperties"
+						type="claimIndemnityBenefitPropertiesDTOType" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Collection of Benefit properties.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="jurisdictionProperties"
+						type="claimIndemnityBenefitPropertiesDTOType" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Collection of Jurisdiction properties.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="claimIndemnityBenefitPropertiesDTOType">
+		<xs:sequence>
+			<xs:element name="claimIndemnityBenefitPropertiesDTO"
+				type="ClaimIndemnityBenefitPropertiesDTO" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Claim Benefit Property</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="class" type="collectionType" use="optional" />
+	</xs:complexType>
+
+	<xs:complexType name="ClaimIndemnityBenefitPropertiesDTO">
+		<xs:annotation>
+			<xs:documentation>Property type.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="property" type="string" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Property name.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="code" type="string" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Property code.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="value" type="string" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Property value.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="dataTypeCode" type="string" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Data type code.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="claimBenefitCalculationWorksheetResultDTO">
+		<xs:annotation>
+			<xs:documentation>Benefit calculation worksheet result.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="AuditDTO">
+				<xs:sequence>
+					<xs:element name="claimAvgWageAmountDrv" type="decimal"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Average wage amount.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="postWageInjuryWageAmountDrv" type="decimal"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Injury wage amount.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="earningCapacityAmountDrv" type="decimal"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Earning capacity amount.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="grossLostWageAmount" type="decimal"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Gross loss wage amount.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="federalIncomeTaxAmount" type="decimal"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Federal tax amount.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="socialSecurityTaxAmount" type="decimal"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Social secutity tax amount.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="medicareTaxAmount" type="decimal"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Medicare tax amount.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="taxWageAmount" type="decimal"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Tble wage amount.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="stateTaxIncomeAmount" type="decimal"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>State tax amount.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="netLossWageAmount" type="decimal"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Net Wage loss amount.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="minWageAmount" type="decimal"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Min wage amount.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="maxWageAmount" type="decimal"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Max wage amount.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="lostWageAmount" type="decimal"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Lost wage amount.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="baseCompensationRateAmount" type="decimal"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Base comp rate amount.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="rateAddonAmount" type="decimal"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Addon rate amount.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="postInjuryReductionAmount" type="decimal"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Post injury reduction amount.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="minBenefitAmountInit" type="decimal"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Initial min benefit amount.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="minBenefitAmount" type="decimal"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Min benefit amount.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="maxBenefitAmount" type="decimal"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Max benefit amount.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="claimBenefitRateAmount" type="decimal"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Benefit rate amount.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="dailyRateAmount" type="decimal"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Daily rate amount.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="monthlyRateAmount" type="decimal"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Monthly rate amount.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="days" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Number of benefit days.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="fullMonth" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Number of full benefit month.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="partialMonthDay" type="long"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Number of partial month days.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="indemnityPaymentAmount" type="decimal"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Indemnity amount.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="totalAddonAmount" type="decimal"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Total addon amount.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="noPayDay" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Number of pay days.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="waitPeriodAmount" type="decimal"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Waiting period amount.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="totalIndemnityPaymentAmount" type="decimal"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Total indemnity amount.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="totalOffsetAmount" type="decimal"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Total offset amount.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="schedulePaymentAmount" type="decimal"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Scheduled payment amount.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="totalFullWeekAmount" type="decimal"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Total full week amount.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="totalPartialWeekAmount" type="decimal"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Total partial week amount.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="resultDescriptions"
+						type="claimBenefitCalculationWorksheetResultDescDTOType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Benefit calculation worksheet result
+								description.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="claimBenefitCalculationWorksheetResultDescDTOType">
+		<xs:annotation>
+			<xs:documentation>Benfit result column description.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="AuditDTO">
+				<xs:sequence>
+					<xs:element name="columnName" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Column name.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="description" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Description.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="CalClaimReserveStatusCompositeDTO">
+		<xs:annotation>
+			<xs:documentation>Claim Reserve status composite</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="current" type="CalClaimReserveStatusDTO"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Claim Reserve Status information
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="expired" type="reserveStatusType"
+				minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Expired Claim Reserve Status information
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="reserveStatusType">
+		<xs:annotation>
+			<xs:documentation>Collection of claim reserve status
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="calClaimReserveStatusDTO" type="CalClaimReserveStatusDTO"
+				minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Claim reserve status list.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="class" type="collectionType" use="optional" />
+	</xs:complexType>
+
+	<xs:complexType name="CalClaimReserveStatusDTO">
+		<xs:annotation>
+			<xs:documentation>Claim Reserve Status information</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="AuditWithExpireImportDTO">
+				<xs:sequence>
+					<xs:element name="calClaimReserveStatusCode" type="string"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Claim Reserve Status code.
+								Maps to	CLM_RSRV_STS_NC_CD Column from CLAIM_RESERVE_STATUS_NC_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="claimReserveTransactionCollectionType">
+		<xs:annotation>
+			<xs:documentation>Collection claim reserve transaction.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="calClaimReserveTransactionDTO" type="CalClaimReserveTransactionDTO"
+				minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Claim reserve transaction list.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="class" type="collectionType" use="optional" />
+	</xs:complexType>
+
+	<xs:complexType name="CalClaimReserveTransactionDTO">
+		<xs:annotation>
+			<xs:documentation>Claim Reserve Transaction.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="AuditDTO">
+				<xs:sequence>
+					<xs:element name="reserveTransTypeCode" type="string"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Reserve transaction type cod, Maps to
+								CLM_RSRV_TRAN_TYP_NC_CD Column from CLAIM_RESERVE_TRAN_TYP_NC_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="reserveTransReasonCode" type="string"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Reserve transaction reason code, Maps to
+								CLM_RSRV_TRAN_RSN_NC_CD Column from CLAIM_RESERVE_TRAN_RSN_NC_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="reserveTransAdjustedAmount" type="dollarAmount"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Reserve transaction adjust amount.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="preApprovedIndicator" type="boolean"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Approved flag.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="averageReserveIndicator" type="boolean"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Average reserve flag.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="reserveId" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Reserve id.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="calClaimReserveTransactionStatus"
+						type="CalClaimReserveTransactionStatusCompositeDTO" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Reserve transaction status composite
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="reserveTransactionDate" type="dateType"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Reserve transaction date</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="userIdRqst" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Not used for Claim Import, User who created a
+								financial transaction which required authorization
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="benefitCalculatedWorksheetId" type="long"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Benfit calculation worksheet id, (Workers Comp)
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="CalClaimReserveTransactionStatusCompositeDTO">
+		<xs:annotation>
+			<xs:documentation>Rserve transaction status composite
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="current" type="CalClaimReserveTransactionStatusDTO"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Current reserve status</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="expired" type="calClaimReserveTransactionStatusType"
+				minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Expired reserve status</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="savedEffectiveDate" type="dateType"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Update effective date</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="calClaimReserveTransactionStatusType">
+		<xs:annotation>
+			<xs:documentation>Collection of Reserve transaction status.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="calClaimReserveTransactionStatusDTO"
+				type="CalClaimReserveTransactionStatusDTO" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Claim reserve transaction status list.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="class" type="collectionType" use="optional" />
+	</xs:complexType>
+
+	<xs:complexType name="CalClaimReserveTransactionStatusDTO">
+		<xs:annotation>
+			<xs:documentation>Claim Reserve Transaction Status.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="AuditWithExpireDTO">
+				<xs:sequence>
+					<xs:element name="reserveTransactionStatusCode" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Reserve transaction status code, Maps to
+								CLM_RSRV_STS_NC_CD Column from CLAIM_RESERVE_STATUS_NC_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="userIdAuthorizer" type="long"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Authorizer user id.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="companyOrganizationUnitIdAuthorizer"
+						type="long" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Org unit id for authorizer, Maps to
+								CMPY_ORG_UNT_ID Column from COMPANY_ORGANIZATION_UNIT_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="companyOrgUnitIdOrginator" type="long"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Orgin org unit id, Maps to CMPY_ORG_UNT_ID
+								Column from COMPANY_ORGANIZATION_UNIT_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="userIdOrginator" type="long"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Orgin user id.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="transactionStatusAuthMessageText"
+						type="string" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Holds the authorization message
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="claimCoverageType">
+		<xs:annotation>
+			<xs:documentation>Collection of claim coverage type
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="claimCoverageDTO" type="ClaimCoverageDTO"
+				minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Claim coverages.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="class" type="collectionType" use="optional" />
+	</xs:complexType>
+
+	<xs:complexType name="ClaimCoverageDTO">
+		<xs:annotation>
+			<xs:documentation>Claim coverage</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="AuditDTO">
+				<xs:sequence>
+					<xs:element name="calClaimParticipantId" type="long"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Claim participant id.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="claimCoverageCode" type="string"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Claim coverage code, Maps to CLM_COV_CD Column
+								from CLAIM_COVERAGE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="calClaimUNCFMIndicator" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Unconfirmed coverage indicator.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="calClaimInactiveIndicator" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Claim inactive indicator.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="classCode" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Class code.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="classSuffixCode" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Class suffix code.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="paymentAuthorizationsType">
+		<xs:annotation>
+			<xs:documentation>Collection of payment authorization
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="paymentAuthorizations" type="AuthorizationClaimPaymentDTO"
+				minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Payment authorizations.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="class" type="collectionType" use="optional" />
+	</xs:complexType>
+
+	<xs:complexType name="AuthorizationClaimPaymentDTO">
+		<xs:annotation>
+			<xs:documentation>Claim payment authorization</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="AuditDTO">
+				<xs:sequence>
+					<xs:element name="reserveId" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Reserve id.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="authInvoiceNumber" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Authorized invoice number.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="authInvoiceDate" type="dateType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Authorized invoice date.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="authServiceStartDate" type="dateType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Auth service begin date.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="authServiceEndDate" type="dateType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Auth service end date.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="authCloseReserveIndicator" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Auth Close reserve flag.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="authorizationClaimPaymentStatusDTO"
+						type="AuthorizationClaimPaymentStatusCompositeDTO" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Authorized payment status</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="claimPayables" type="authorizationClaimPayableType"
+						minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Auth claim payables</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="benefitCalculatedWorksheetId" type="long"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Benefit calculation id.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="AuthorizationClaimPaymentStatusCompositeDTO">
+		<xs:annotation>
+			<xs:documentation>Auth claim payment status composite.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="current" type="AuthorizationClaimPaymentStatusDTO"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Current auth claim payment status
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="expired" type="authorizationClaimPaymentStatusType"
+				minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Expired auth claim payment status
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="authorizationClaimPaymentStatusType">
+		<xs:annotation>
+			<xs:documentation>Collection of Auth claim payment status
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="authClaimPaymentStatusDTO"
+				type="AuthorizationClaimPaymentStatusDTO" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Authorized payment status list.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="class" type="collectionType" use="optional" />
+	</xs:complexType>
+
+	<xs:complexType name="AuthorizationClaimPaymentStatusDTO">
+		<xs:annotation>
+			<xs:documentation>Authorizated claim payment status
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="AuditWithExpireDTO">
+				<xs:sequence>
+					<xs:element name="statusCode" type="string" minOccurs="1"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Status code, Maps to FTAS_CD Column from
+								FINANCIAL_TRAN_AUTH_STS_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="userIdOrginataor" type="long"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Origin User id.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="companyIdOriginator" type="long"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Origin company id, Maps to CMPY_ID Column from
+								COMPANY_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="userIdAuth" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Authorized user id.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="companyIdAuth" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Authorized company id.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="claimAuthStatusComment" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Auth status comment.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="authorizedMessage" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Authorization message</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="claimPaymentAggregateLimitInd" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Aggregate payment limit flag</xs:documentation>
+						</xs:annotation>
+					</xs:element>					
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="authorizationClaimPayableType">
+		<xs:annotation>
+			<xs:documentation>Collection of claim payable.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="authorizationClaimPayableDTO" type="AuthorizationClaimPayableDTO"
+				minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Authorized claim payable list</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="class" type="collectionType" use="optional" />
+	</xs:complexType>
+
+	<xs:complexType name="AuthorizationClaimPayableDTO">
+		<xs:annotation>
+			<xs:documentation>Authorized claim payable </xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="AuditDTO">
+				<xs:sequence>
+					<xs:element name="mnyTypeCode" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Monetary type code, Maps to CLM_MNY_TYP_CD
+								Column from CLAIM_MONETARY_TYPE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="authPayableAmount" type="dollarAmount"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Paybale amount</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="impactIncurredIndicator" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Impact total incurred flag</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>

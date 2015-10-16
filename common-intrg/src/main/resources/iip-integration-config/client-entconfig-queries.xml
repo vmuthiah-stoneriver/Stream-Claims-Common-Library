@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<iipda:queries xmlns:iipda="http://www.fiserv.com/isd/iip/core/data/query/file" category="entconfig" subcategory="codelookup">
+	<iipda:rdbms accessId="client.entconfig.query.retrieveFunctionalRolesForUserAndCompOrgUnit">
+		<iipda:content>
+			SELECT DISTINCT UWGC.FNCT_ROLE_CD code, FRC.FNCT_ROLE_NM_NM value,
+				UWGC.USER_WRK_GRP_EFF_DT effectiveDate,
+				UWGC.USER_WRK_GRP_END_DT endDate
+			FROM USER_WORK_GROUP_CD UWGC, FUNCTIONAL_ROLE_CD FRC 
+			WHERE FRC.FNCT_ROLE_CD = UWGC.FNCT_ROLE_CD
+			AND UWGC.USER_ID = :userId
+			AND UWGC.CMPY_ORG_UNT_ID = :companyOrgUnitId
+			AND ( UWGC.USER_WRK_GRP_END_DT &gt; :curdatetime
+										OR UWGC.USER_WRK_GRP_END_DT IS NULL)
+		</iipda:content>
+		<iipda:description>
+			retrieve Functional Roles based on User and Company Org Unit.
+		</iipda:description>
+	</iipda:rdbms>
+	
+	<iipda:rdbms accessId="client.entconfig.query.retrieveCompOrgUnitForFunctionalRoleAndUser">
+		<iipda:content>
+			SELECT DISTINCT UWGC.CMPY_ORG_UNT_ID code, UWGC.CMPY_ORG_UNT_ID value, 
+                UWGC.USER_WRK_GRP_EFF_DT effectiveDate,
+                UWGC.USER_WRK_GRP_END_DT endDate
+			FROM USER_WORK_GROUP_CD UWGC, FUNCTIONAL_ROLE_CD FRC 
+				WHERE FRC.FNCT_ROLE_CD = UWGC.FNCT_ROLE_CD
+					AND UWGC.USER_ID = :userId
+					AND FRC.FNCT_ROLE_CD = :func_role_cd
+					AND ( UWGC.USER_WRK_GRP_END_DT &gt; :curdatetime
+												OR UWGC.USER_WRK_GRP_END_DT IS NULL)
+		</iipda:content>
+		<iipda:description>
+			retrieve Company Org Units for Functional Role and User.
+		</iipda:description>
+	</iipda:rdbms>
+	
+	<iipda:rdbms accessId="client.entconfig.query.retrieveConfirmationMessageRules">
+		<iipda:content>
+			select DISTINCT RL_COND_ACTN_ID code, 
+					RL_COND_ACTN_ERR_TYP_CD value 
+			FROM RULE_CONDITION_ACTION_ERROR_CD 
+			WHERE RL_COND_ACTN_ERR_TYP_CD = 'conf_msg'
+		</iipda:content>
+		<iipda:description>
+			retrieve all rules with Confirmation messages.
+		</iipda:description>
+	</iipda:rdbms>
+	
+	<iipda:rdbms accessId="client.entconfig.query.retrieveCorpCompanyForCompanyOrgUnit">
+		<iipda:content>
+			select CORP_ID corporationId, 
+			CMPY_ID companyId, 
+			EFF_DTM effectiveDateTime, 
+			END_DTM endDateTime
+			FROM COMPANY_ORG_UNT_CORP_CMPY_CD 
+			WHERE CMPY_ORG_UNT_ID = :companyOrgUnitId
+		</iipda:content>
+		<iipda:description>
+			retrieve Corporation and/or Company associated to a Company Org Unit.
+	</iipda:description>
+</iipda:rdbms>
+	
+</iipda:queries>

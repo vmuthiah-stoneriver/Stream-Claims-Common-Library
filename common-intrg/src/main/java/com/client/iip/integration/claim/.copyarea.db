@@ -1,0 +1,13 @@
+ClearCase CopyAreaDB|4
+iip_starter_kit\claim_starter_kit\common-intrg\src\main\java\com\client\iip\integration\claim
+2
+9
+21:ClientClaimSearchCriteriaDTO.java|1|14c9571197a|6b0|4e273e63|1a8378fdbc084b7383884a13819677c8|0
+7:details|2|0|0|0|95c5b7b3759041f3b26136744bfd733e|0
+1f:ClientClaimSearchResultDTO.java|1|14c957119ac|347|6efb1210|227636f2fea64cc3a1113e4684b77ad8|0
+20:ControlNumberSearchCriteria.java|1|14c957119c0|20af|47ab24f0|06dba632b9bf4b3b8a3265630666eb3c|0
+14:ControlNumberBO.java|1|14c957119b6|67e|fac709c6|0d6f328a774541f5a1ad88572c94ec8c|0
+27:ClientClaimSearchResultTransformer.java|1|14c957119ac|b83|a160cf14|b41c3ddc80304289b2572c9ce269b9e5|0
+7:imports|2|0|0|0|7b75edfe9e6b4f08be8f39f04290c547|0
+24:CustomCALClaimNumberServiceImpl.java|1|14c957119c0|111e|8c32bc90|0d6db35a82f64fec91390993a4843c6a|0
+15:ControlNumberDAO.java|1|14c957119c0|306|be5b1391|dba70c3b0c3347cda0ff17f7af3eaf7e|0

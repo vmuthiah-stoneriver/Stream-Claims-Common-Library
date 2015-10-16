@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mule xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:vm="http://www.mulesoft.org/schema/mule/vm"
+	xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:mulexml="http://www.mulesoft.org/schema/mule/xml"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:spring="http://www.springframework.org/schema/beans" xmlns:core="http://www.mulesoft.org/schema/mule/core"
+	xmlns:jersey="http://www.mulesoft.org/schema/mule/jersey" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+	xsi:schemaLocation="
+http://www.mulesoft.org/schema/mule/vm http://www.mulesoft.org/schema/mule/vm/3.3/mule-vm.xsd 
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/3.3/mule-http.xsd 
+http://www.mulesoft.org/schema/mule/xml http://www.mulesoft.org/schema/mule/xml/3.3/mule-xml.xsd 
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd 
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/3.3/mule.xsd
+http://www.mulesoft.org/schema/mule/jersey http://www.mulesoft.org/schema/mule/jersey/3.3/mule-jersey.xsd
+">
+
+	<vm:endpoint name="policySearchEndpoint" path="policy.search.in"
+		exchange-pattern="request-response" connector-ref="vmSync" />
+
+	<vm:endpoint name="policyRetrieveDetailsEndpoint" path="policy.retrieveDetails.in"
+		exchange-pattern="request-response" connector-ref="vmSync" />
+
+	<vm:endpoint name="policyImportEndpoint" path="policy.importPolicy.in"
+		exchange-pattern="request-response" connector-ref="vmSync" />
+
+	<vm:endpoint name="policyReImportEndpoint" path="policy.reImportPolicy.in"
+		exchange-pattern="request-response" connector-ref="vmSync" />
+
+	<vm:endpoint name="policyListUnitsEndpoint" path="policy.listUnits.in"
+		exchange-pattern="request-response" connector-ref="vmSync" />
+
+
+	<flow name="policySearchService" doc:name="PolicySearchService Flow">
+
+		<vm:inbound-endpoint ref="policySearchEndpoint"
+			exchange-pattern="request-response" />
+
+      <transformer ref="IIPObject2XMLTransformer" />
+       
+      <logger message="Policy Search=#[payload]=" level="INFO" />
+       
+		<message-properties-transformer >
+   			<add-message-property key="function" value="search" />
+		</message-properties-transformer>
+	
+		<transformer ref="PolicyFileReaderTransformer" />
+
+		<message-properties-transformer>
+			<add-message-property key="xsd"
+				value="xsd/PolicySearchResponse.xsd" />
+		</message-properties-transformer>
+
+		<transformer ref="XSDValidationTransformer" />
+		<transformer ref="IIPXML2ObjectTransformer" />
+	</flow>
+
+	<flow name="policyRetrieveDetailsService" doc:name="PolicyRetrieveDetails Flow">
+		<vm:inbound-endpoint ref="policyRetrieveDetailsEndpoint"
+			exchange-pattern="request-response" />
+
+      <transformer ref="IIPObject2XMLTransformer" />
+      
+      <logger message="Policy Retrieve=#[payload]=" level="INFO" />
+      
+		<message-properties-transformer >
+   			<add-message-property key="function" value="retrieveDetails" />
+		</message-properties-transformer>
+	
+		<transformer ref="PolicyFileReaderTransformer" />
+
+		<message-properties-transformer>
+			<add-message-property key="xsd"
+				value="xsd/PolicyRetrieveDetailsResponse.xsd" />
+		</message-properties-transformer>
+		
+		<transformer ref="XSDValidationTransformer" />
+		<transformer ref="IIPXML2ObjectTransformer" />
+	</flow>
+
+	<flow name="policyImportPolicyService" doc:name="PolicyImportService Flow">
+		<vm:inbound-endpoint ref="policyImportEndpoint"
+			exchange-pattern="request-response" />
+
+      	<transformer ref="IIPObject2XMLTransformer" />
+      
+      	<logger message="Policy Import=#[payload]=" level="INFO" />
+      
+		<message-properties-transformer >
+   			<add-message-property key="function" value="importPolicy" />
+		</message-properties-transformer>
+	
+		<transformer ref="PolicyFileReaderTransformer" />
+
+		<message-properties-transformer>
+			<add-message-property key="xsd"
+				value="xsd/PolicyImportResponse.xsd" />
+		</message-properties-transformer>
+		
+		<transformer ref="XSDValidationTransformer" />
+		<transformer ref="IIPXML2ObjectTransformer" />
+	</flow>
+
+	<flow name="policyListPolicyUnitsService" doc:name="PolicyListPolicyUnitsService Flow">
+		<vm:inbound-endpoint ref="policyListUnitsEndpoint"
+			exchange-pattern="request-response" />
+
+      	<transformer ref="IIPObject2XMLTransformer" />
+        
+		<logger message="Policy ListUnits=#[payload]=" level="INFO" />        				
+
+		<message-properties-transformer >
+   			<add-message-property key="function" value="listPolicyUnits" />
+		</message-properties-transformer>
+	
+		<transformer ref="PolicyFileReaderTransformer" />
+
+		<message-properties-transformer>
+			<add-message-property key="xsd"
+				value="xsd/PolicyListUnitsResponse.xsd" />
+		</message-properties-transformer>
+
+		<transformer ref="XSDValidationTransformer" />
+		<transformer ref="IIPXML2ObjectTransformer" />
+	</flow>
+
+	<flow name="policyReImportPolicyService" doc:name="PolicyReImportService Flow">
+		<vm:inbound-endpoint ref="policyReImportEndpoint"
+			exchange-pattern="request-response" />
+
+      	<transformer ref="IIPObject2XMLTransformer" />
+
+      	<logger message="Policy ReImport=#[payload]=" level="INFO" />
+
+		<message-properties-transformer >
+   			<add-message-property key="function" value="reImportPolicy" />
+		</message-properties-transformer>
+	
+		<transformer ref="PolicyFileReaderTransformer" />
+
+		<message-properties-transformer>
+			<add-message-property key="xsd"
+				value="xsd/PolicyImportResponse.xsd" />
+		</message-properties-transformer>
+
+		<transformer ref="XSDValidationTransformer" />
+		<transformer ref="IIPXML2ObjectTransformer" />
+	</flow>
+
+</mule>

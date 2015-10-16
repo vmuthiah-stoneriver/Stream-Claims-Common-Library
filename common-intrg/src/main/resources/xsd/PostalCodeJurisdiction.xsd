@@ -1,0 +1,65 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:include schemaLocation="../xsd/Common.xsd" />
+
+	<xs:annotation>
+		<xs:documentation>Postal Code Jurisdiction</xs:documentation>
+	</xs:annotation>
+
+	<xs:element name="postalCodeJurisdictionDTO" type="PostalCodeJurisdictionDTO">
+		<xs:annotation>
+			<xs:documentation>Jurisdiction search.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+
+	<xs:complexType name="PostalCodeJurisdictionDTO">
+		<xs:annotation>
+			<xs:documentation>Postal Code Jurisdiction search criteria
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="countryCode" type="string" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Country Code, Maps to CNTRY_CD Column from
+						COUNTRY_CD Table.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="stateCode" type="string" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>State Code, Maps to PSTL_SERV_RGN_ABRV Column
+						from POSTAL_SERVICE_REGION_CD Table.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="countyName" type="string" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>County Name</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="cityName" type="string" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>City Name</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="militaryCodeSearch" type="boolean"
+				minOccurs="0" maxOccurs="1" default="false">
+				<xs:annotation>
+					<xs:documentation>Flag to include military cities and state
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="stateName" type="string" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>State Name, Maps to PSTL_SERV_RGN_NM Column from
+						POSTAL_SERVICE_REGION_CD Table.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>  

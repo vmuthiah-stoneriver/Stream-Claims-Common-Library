@@ -1,0 +1,16 @@
+ClearCase CopyAreaDB|4
+iip_starter_kit\claim_starter_kit\common-intrg\src\main\java\com\client\iip\integration\core\util
+2
+c
+1a:ClientQueryLoaderImpl.java|1|14c9571228a|4d0|970293f0|b73d6402c93242fd900988b44622cff6|0
+1a:ClientDateServiceImpl.java|1|14c95712280|7ab|cd3a8790|d535ccb76e2a42a1829d38249045c930|0
+e:CloneUtil.java|1|14c957122e4|98b|69ece7e9|0af646566f2249e9bebbc0c601988b5a|0
+f:IIPXStream.java|1|1505c69e9d7|91e|f2db0aa3|f6011c61449f4c70a078b66780cc6f88|0
+16:ClientQueryHelper.java|1|14c957122f8|1325|adc9f98d|791cc5a3714a46efbe0bf8b553858910|0
+13:MessageTracker.java|1|14c957122d0|50c|f5219d8a|e2bf4b04297f45369573461f86813161|0
+11:XSDValidator.java|1|14c957122ee|aa6|6bc78cf5|e71d4e01e4ba44488b8b62dc2bb21747|0
+15:ResourceResolver.java|1|14c957122c6|38a|46f23289|a3d6f070223446feb9489402a6a64dc7|0
+f:XMLUtility.java|1|1502403665c|29ff|d4fd4f62|2cb4b9cdf5464d19bd3f3b6cf60b7f50|0
+18:MuleEndpointAdapter.java|1|14c957122c6|12a8|ac6aef5c|da4742ba2e054360b8a550495e600471|0
+14:IIPXSLExtension.java|1|14f51e69f8b|2c5b|c192ba9a|0a0f0544a7354d15bfd2d8fa91d8cfde|0
+a:Input.java|1|14c957122b2|92b|8870c1de|ee460a9b1f744bffa4dfcbf895c6f827|0

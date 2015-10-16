@@ -1,0 +1,133 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:include schemaLocation="../xsd/PartySearchResult.xsd" />
+	<xs:include schemaLocation="../xsd/Common.xsd" />
+
+	<xs:annotation>
+		<xs:documentation>Customer search response schema</xs:documentation>
+	</xs:annotation>
+
+	<xs:element name="list">
+		<xs:annotation>
+			<xs:documentation>Collection of Party search results
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="partySearchResult" type="ClientPartySearchResult"
+					minOccurs="0" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Party results.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="ClientPartySearchResult">
+		<xs:annotation>
+			<xs:documentation>Party search result</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="PartySearchResult">
+				<xs:sequence>
+					<xs:element name="vendorTypeCode" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Vendor Type, Maps to VEND_TYP_CD column from
+								VENDOR_TYPE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="vendorCategoryCode" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Vendor Category, Maps to VEND_CTG_CD column
+								from VENDOR_CATEGORY_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="vendorStatus" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Vendor Status, Maps to VEND_SERV_STS_CD column
+								from VENDOR_SERVICE_STATUS_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="lienRestrictionCode" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Lien Restriction Code, Maps to PLRT_CD column
+								from PARTY_LIEN_RESTRICTION_TYPE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="businessPhone" type="phoneType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Business Phone Number</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="homePhone" type="phoneType" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Home Phone Number</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="cellPhone" type="phoneType" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Cell Phone Number</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="personalEmail" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Personal Email</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="businessEmail" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Business Email</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="primaryDBAName" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Primary DBA Name</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="secondaryDBAName" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Secondary DBA Name</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="profile" type="attributeType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Profile Description</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="blockExists" type="attributeType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Block Exists Flag</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="blockType" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Block Type Code, Maps to PARTY_BLK_TYP_CD
+								column from PARTY_BLOCK_TYPE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+
+</xs:schema>

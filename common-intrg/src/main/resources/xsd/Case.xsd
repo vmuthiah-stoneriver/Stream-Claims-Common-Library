@@ -1,0 +1,1239 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<xs:annotation>
+		<xs:documentation>Case schema.</xs:documentation>
+	</xs:annotation>
+	
+	<xs:element name="caseIssueStatusDTO" type="CaseIssueStatusDTO" />
+
+	<xs:element name="caseDTO" type="ClientCaseDTO">
+		<xs:annotation>
+			<xs:documentation>Case.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+
+	<xs:complexType name="ClientCaseDTO">
+		<xs:annotation>
+			<xs:documentation>Client Case</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="CaseDTO">
+				<xs:sequence>
+					<xs:element name="clientCaseStatus" type="ClientCaseStatusCompositeDTO"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Case status composite</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="clientCaseIssueColl" type="clientCaseIssueType"
+						minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Case issued list</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="CaseDTO">
+		<xs:annotation>
+			<xs:documentation>Case Details</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="BaseToolDTO">
+				<xs:sequence>
+					<xs:element name="agreementTypeCode" type="string"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Agreement Type Code, 
+								Maps to AGRE_TYP_CD column
+								in AGREEMENT_TYPE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="caseSourceCode" type="string"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Case Source Code, 
+								Maps to CASE_SRC_CD Column from
+								CASE_SOURCE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="caseTypeCode" type="string" minOccurs="1"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Case Type Code, 
+								Maps to CASE_TYP_CD Column from
+								CASE_TYPE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="casePriorityCode" type="string"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Case Priority Code, 
+								Maps to CASE_PRTY_CD column
+								in CASE_PRIORITY_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="caseResolutionCode" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Case Resolution Code, 
+								Maps to CASE_RSOL_CD column
+								in CASE_RESOLUTION_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="caseNumber" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Reference number assigned to identify the case.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="caseExternalNumber" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Reference number assigned to a case by an
+								external entity.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="caseName" type="string" minOccurs="1"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Name assigned to the Case.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="caseInitiateDate" type="dateType"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Case initiation date.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="caseDueDate" type="dateType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Case Due Date.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="caseReasonDescription" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Reason summary for the case.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="caseCompleteDate" type="dateType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Case completion date.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="caseOwnerName" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Case Owner Name</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+
+					<xs:element name="caseCategoryCode" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>case Category Code.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="caseProfileStatements" type="ProfileStatementItemType"
+						minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Case Profile Statements</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="caseContext" type="CaseContextDTO"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Case Context Type</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="caseStatus" type="CaseStatusCompositeDTO"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Case status composite</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="caseIssueColl" type="CaseIssueType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Case issue list</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="participationCompositeDTO" type="CaseParticipationCompositeDTO"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Case Participants</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="actionPlan" type="CaseActionPlanDTO"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Case Action.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="isCaseGeneratedFromSystemRules" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Syatem generated case flag</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="CaseIssueType">
+		<xs:annotation>
+			<xs:documentation>Collection of case issue type</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="caseIssueDTO" type="CaseIssueDTO"
+				minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Case issues.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="class" type="collectionType" use="optional" />
+	</xs:complexType>
+
+	<xs:complexType name="clientCaseIssueType">
+		<xs:annotation>
+			<xs:documentation>Collection of case issue type</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="caseIssueDTO" type="ClientCaseIssueDTO"
+				minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Client case issues.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="class" type="collectionType" use="optional" />
+	</xs:complexType>
+
+
+	<xs:complexType name="ClientCaseIssueDTO">
+		<xs:annotation>
+			<xs:documentation>Client case issue</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="CaseIssueDTO">
+				<xs:sequence>
+					<xs:element name="clientCaseIssueStatusColl" type="ClientCaseIssueStatusCompositeDTO"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Case issue status composite</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="CaseContextDTO">
+		<xs:annotation>
+			<xs:documentation>Case Context Information</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="AuditDTO">
+				<xs:sequence>
+					<xs:element name="contextSourceCode" type="string"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Source of the Case context, 
+								Maps to	CASE_CNTX_SRC_CD Column from CASE_CONTEXT_SOURCE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="agreementTypeCode" type="string"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Agreement Type for the Case, 
+								Maps to AGRE_TYP_CD
+								Column from AGREEMENT_TYPE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="agreementId" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Internal Agreement ID when the Case Source is
+								Internal
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="recordSourceCode" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Record Source for the Case, 
+								Maps to REC_SRC_CD
+								Column from RECORD_SOURCE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="contextNumber" type="string"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Case Context Number</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="contextVersionNumber" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Case context version number to the particular
+								agreement type.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="contextEffectiveDate" type="dateType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Case context version number to the particular
+								agreement type.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="lineofBusiness" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>LOB associated with the Case, 
+								Maps to LOB_CD
+								Column from LINE_OF_BUSINESS_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="companyId" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Company Associated with the Case.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="ClientCaseStatusCompositeDTO">
+		<xs:annotation>
+			<xs:documentation>Case Issue status information.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="CaseStatusCompositeDTO">
+				<xs:sequence>
+					<xs:element name="caseStatusDTO" type="CaseStatusDTO"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Current status of the Case</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="expiredCaseStatusCollection" type="caseStatusType"
+						minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>Collection of Expired statuses for Case as
+								CaseStatusDTO
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="CaseStatusCompositeDTO">
+		<xs:annotation>
+			<xs:documentation>Case status composite</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="currentStatus" type="CaseStatusDTO"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Current status</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="expiredStatusCollection" type="caseStatusType"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Expired status list</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="caseStatusReasons" type="MapItemType"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Case status reson map, Maps to CASE_STS_RSN_CD
+						Column from CASE_STATUS_REASON_CD Table.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="caseActionStatusCodeMap" type="MapItemType"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Case action status code map.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="caseResolutions" type="caseCodeLookupType"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Case resolution codes, Maps to CASE_RSOL_CD
+						Column from CASE_RESOLUTION_CD Table.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="caseActions" type="caseCodeLookupType"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Case action lookup, Maps to CASE_ACTN_CD Column
+						from CASE_ACTION_CD Table.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="nextStatusReasonCode" type="string"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Next case status reson code</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="caseCompleteDate" type="dateType"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Case compeletion date</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="caseResolutionCode" type="string"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Case resoltion code, Maps to CASE_RSOL_CD Column
+						from CASE_RESOLUTION_CD Table.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="caseCodeLookupType">
+		<xs:annotation>
+			<xs:documentation>Collection of case code lookup</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="codeLookupBO" type="CodeLookupType"
+				minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Lookup codes.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="class" type="collectionType" use="optional" />
+	</xs:complexType>
+
+	<xs:complexType name="caseStatusType">
+		<xs:annotation>
+			<xs:documentation>Collection of case status</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="caseStatusDTO" type="CaseStatusDTO"
+				minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Case statuses.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="class" type="collectionType" use="optional" />
+	</xs:complexType>
+
+	<xs:complexType name="CaseStatusDTO">
+		<xs:annotation>
+			<xs:documentation>Case Status information.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="AuditWithExpireDTO">
+				<xs:sequence>
+					<xs:element name="caseId" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Case id.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="caseStatusCode" type="string"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Case Status, 
+								Maps to CASE_STS_CD Column from
+								CASE_STATUS_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="caseStatusReasonCode" type="string"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Case Status Reason, 
+								Maps to CASE_STS_RSN_CD
+								Column from CASE_STATUS_REASON_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="caseStatusComments" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Case Status Comment</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="nextStatusActionCode" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Next status action code.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="CaseIssueDTO">
+		<xs:annotation>
+			<xs:documentation>Issues associated with the Case.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="AuditDTO">
+				<xs:sequence>
+					<xs:element name="caseIssueCode" type="string"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Case Issue Code, 
+								Maps to CASE_ISS_CD Column from
+								CASE_ISSUE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="caseIssueSumDesc" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Case Issue Summary description.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="caseIssuePrimaryIndicator" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Indicates the Primary Case Issue
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="caseIssueStatusColl" type="CaseIssueStatusCompositeDTO"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Case issue status composite</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="CaseIssueStatusCompositeDTO">
+		<xs:annotation>
+			<xs:documentation>Case Issue status information.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="currentStatus" type="CaseIssueStatusDTO"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Current status of the case issued
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="expiredStatusCollection" type="caseIssueStatusType"
+				minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Collection of Expired statuses for Case Issue as
+						CaseIssueStatusDTO
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="ClientCaseIssueStatusCompositeDTO">
+		<xs:annotation>
+			<xs:documentation>Case Issue status information.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="caseIssueStatus" type="CaseIssueStatusDTO"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Current status of the Case Issued.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="expiredCaseIssueStatusCollection" type="caseIssueStatusType"
+				minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Collection of Expired statuses for Case Issue as
+						CaseIssueStatusDTO
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="caseIssueStatusType">
+		<xs:annotation>
+			<xs:documentation>Collection of issued case status</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="caseIssueStatus" type="CaseIssueStatusDTO"
+				minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Case issue statuses.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="class" type="collectionType" use="optional" />
+	</xs:complexType>
+
+	<xs:complexType name="CaseIssueStatusDTO">
+		<xs:annotation>
+			<xs:documentation>Status of the Case Issued.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="AuditWithExpireDTO">
+				<xs:sequence>
+					<xs:element name="issueStatusCode" type="string"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Case Issued status code, 
+								Maps to CASE_ISS_STS_CD
+								Column from CASE_ISSUE_STATUS_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="resolutionAmount" type="dollarAmount"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Resolution Amount for the Case Issue status
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="resolutionTermsDesc" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Resolution term description for the Case Issue
+								status
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="CaseParticipationCompositeDTO">
+		<xs:annotation>
+			<xs:documentation>Case Participation information.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="DataTransferObject">
+				<xs:sequence>
+					<xs:element name="caseId" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Case id.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="caseParticipations" type="CaseParticipationDTOType"
+						minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Collection of Case Participants as
+								CaseParticipationDTO
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="CaseParticipationDTOType">
+		<xs:annotation>
+			<xs:documentation>Collection of case participation</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="caseParticipationDTO" type="CaseParticipationDTO"
+				minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Case participants.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="class" type="collectionType" use="optional" />
+	</xs:complexType>
+
+	<xs:complexType name="CaseParticipationDTO">
+		<xs:annotation>
+			<xs:documentation>Case Participant information.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="AuditDTO">
+				<xs:sequence>
+					<xs:element name="ptcpTypeCode" type="string" minOccurs="1"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Case Participant Type Code, 
+								Maps to PTCP_TYP_CD
+								Column from PARTICIPATION_TYPE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="ptcpTypeSrcCode" type="string"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Case Participant Source Code, 
+								Maps to CASE_PTCP_SRC_CD Column from CASE_PARTICIPATION_SOURCE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="partyId" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Party Associated with the Case Participant.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="userId" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>User associated to the Case participant.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="ptcpEffDate" type="dateType"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Case Participant Effective Date
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="ptcpEndDate" type="dateType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Case Participant Expiration Date
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="ptcpPrimaryIndicator" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Indicates whether the participant is primary
+								for the case.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="keyIndicator" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Indicates whether the participant is Key
+								participant for the case.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="externalPartyInfo" type="CaseParticipationExternalPartyDTO"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>External Participant Information.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="party" type="MinimalPartyWithExternalContactDTO"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Minimal party info</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="investigationParticipants" type="CaseInvestigationParticipantDTO"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Collection of Case Investigation Participants
+								as CaseInvestigationParticipantDTO.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<!-- Newly Added for 8.1 Release -->
+					<xs:element name="vendorCategory" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Vendor category code, Maps to VEND_CTG_CD
+								Column from VENDOR_CATEGORY_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="vendorType" type="boolean" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Vendor type code, Maps to VEND_TYP_CD Column
+								from VENDOR_TYPE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="ptcpTypeValue" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Participant type code, Maps to PTCP_TYP_CD
+								Column from PARTICIPATION_TYPE_CD Table.s
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<!-- End -->
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="CaseActionPlanDTO">
+		<xs:annotation>
+			<xs:documentation>Action Description associated to the Case Action
+				Plan.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="AuditWithExpireDTO">
+				<xs:sequence>
+					<xs:element name="caseActionPlanNameId" type="long"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Case Action Plan Name, 
+								Maps to CASE_ACTN_PLN_NM_ID Column from CASE_ACTION_PLAN_NAME_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="caseActionPlanDescription" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Case Action Plan description.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="actions" type="caseActionPlanActionType"
+						minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Collection of Activity for each Action Plan as
+								CaseActionPlanActionDTO
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="caseActionPlanActionType">
+		<xs:annotation>
+			<xs:documentation>Collection of case action plan</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="caseActionPlanActionDTO" type="CaseActionPlanActionDTO"
+				minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Case action plans.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="class" type="collectionType" use="optional" />
+	</xs:complexType>
+
+	<xs:complexType name="CaseActionPlanReminderRecipientsDTO">
+		<xs:annotation>
+			<xs:documentation>Contains the reminder recipients for the
+				Action/Activity.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="AuditDTO">
+				<xs:sequence>
+					<xs:element name="actionPlanId" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Case action plan id.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="userId" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>User Id to whom the reminder will be sent
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="CaseActionPlanActionDTO">
+		<xs:annotation>
+			<xs:documentation>Details for each Activity for an Action Plan.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="AuditWithDeleteDTO">
+				<xs:sequence>
+					<xs:element name="actionPlanId" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Case action plan id.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="actionPlanActionTypeCd" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Action Type for the Case Action Plan,
+								Maps to	CASE_ACTN_PLN_ACTN_TYP_CD Column from
+								CASE_ACTION_PLAN_ACTION_TYP_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="actionPlanActionId" type="long"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Action of the Action Type, 
+								Maps to	CASE_ACTN_PLN_ACTN_ID Column from CASE_ACTION_PLAN_ACTION_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="participantType" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Participant type code, Maps to PTCP_TYP_CD
+								Column from PARTICIPATION_TYPE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="participant" type="CaseParticipationDTO"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Participant Associated with the Case Action
+								Plan
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="participantId" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Participant Associated with the Case Action
+								Plan
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="userId" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>User associated with the Case Action Plan
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="companyOrganizationUnitId" type="long"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Maps to CMPY_ORG_UNT_ID Column from
+								COMPANY_ORGANIZATION_UNIT_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="stepNumber" type="double" minOccurs="1"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Step Number for the activity</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="documentTypeId" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Document Template Id</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="workItemId" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Work Item template Id</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="otherActionText" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Action when Action Type is Other.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="comment" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Comment about the activity</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="dueDate" type="dateType" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Date the activity is due</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="completionDate" type="dateType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Completed Date</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="firstReminderDate" type="dateType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Date the initial work item reminder will be
+								sent.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="secondReminderDate" type="dateType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Date the subsequent work item will be sent
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="customActivityInd" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Custom activity indicator</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="promptForReminderInd" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Prompt for Reminder Indicator
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="reminderRecipients" type="CaseActionPlanReminderRecipientsDTO"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Collection of Reminder recipients as
+								CaseActionPlanReminderRecipientsDTO
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="CaseInvestigationParticipantDTO">
+		<xs:annotation>
+			<xs:documentation>Case Investigation Participant.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="AuditWithDeleteDTO">
+				<xs:sequence>
+					<xs:element name="caseId" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Case id.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="gender" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Gender of the Participant, 
+								Maps to GENDER_CD
+								Column from GNDR_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="age" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Age of the Participant</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="ptcptHeight" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Height of the Participant</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="weight" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Weight of the Participant</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="hairColor" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Hair Color of the participant
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="race" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Race of the Pariticipant.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="glasses" type="boolean" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Indicates whether the participant wears glasses
+								or not.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="comments" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Additional details about the Participant
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="oralStatementIndicator" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Indicates whether Oral statement was received
+								or not
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="caseParticipant" type="CaseParticipationDTO"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Investigation Participant information.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="caseProfileStatements" type="ProfileStatementItemType"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Collection of Profile Statements as
+								ProfileStatementItemType
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="CaseParticipationExternalPartyDTO">
+		<xs:annotation>
+			<xs:documentation>Additional details for Participants of the Case
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="AuditDTO">
+				<xs:sequence>
+					<xs:element name="countryCode" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Maps to CNTRY_CD Column from COUNTRY_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="postalServiceRegionId" type="long"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Maps to PSTL_SERV_RGN_ID Column from
+								POSTAL_SERVICE_REGION_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="externalPartyName" type="string"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Participant Name</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="addLine1" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>First Line of the street address
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="addLine2" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Second Line of the street address
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="city" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>City Name</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="subdivisionName" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Subdivision Name</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="postalCode" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Postal Code</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="manualPostalRegionName" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Postal service region.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="phoneNumber" type="phoneType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Phone Number</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="faxNumber" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Fax Number</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="emailId" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>E-mail Address</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="website" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Web site Address</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="verifiedIndicator" type="boolean" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Verified address indicator.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="overrideIndicator" type="boolean" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Address override indicator.</xs:documentation>
+						</xs:annotation>
+					</xs:element>					
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+</xs:schema>

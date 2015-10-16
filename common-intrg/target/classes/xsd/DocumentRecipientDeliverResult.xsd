@@ -1,0 +1,43 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:include schemaLocation="../xsd/DocumentResponse.xsd" />
+
+	<xs:annotation>
+		<xs:documentation>Document Recipient Result</xs:documentation>
+	</xs:annotation>
+
+	<xs:element name="list">
+		<xs:annotation>
+			<xs:documentation>Collection of Document Recipient Data
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="clientDocumentRecipientDeliverResult"
+					type="ClientDocumentRecipientDeliverResult" minOccurs="0"
+					maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Document recipient details.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="ClientDocumentRecipientDeliverResult">
+		<xs:sequence>
+			<xs:element name="documentId" type="long" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Stream Doc Id.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="recipients" type="RecipientType"
+				minOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Doc Recipients</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+</xs:schema>

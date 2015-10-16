@@ -1,0 +1,1684 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<xs:include schemaLocation="../xsd/PolicyImport.xsd" />
+	<xs:include schemaLocation="../xsd/ClaimCommon.xsd" />
+	<xs:include schemaLocation="../xsd/CodeLookupCommon.xsd" />
+	<xs:include schemaLocation="../xsd/ClaimUnit.xsd" />
+	<xs:include schemaLocation="../xsd/Assignment.xsd" />
+	<xs:include schemaLocation="../xsd/Case.xsd" />
+	<xs:include schemaLocation="../xsd/WorkItem.xsd" />
+	<xs:include schemaLocation="../xsd/ClaimBill.xsd" />
+	<xs:include schemaLocation="../xsd/ClaimPayment.xsd" />
+	<xs:include schemaLocation="../xsd/Document.xsd" />
+	<xs:include schemaLocation="../xsd/ClaimRecovery.xsd" />
+	<xs:include schemaLocation="../xsd/ClaimReserve.xsd" />
+	<xs:include schemaLocation="../xsd/FinancialView.xsd" />
+	<xs:include schemaLocation="../xsd/ClaimReserveListing.xsd" />
+	<xs:include schemaLocation="../xsd/ClaimPaymentListing.xsd" />
+	<xs:include schemaLocation="../xsd/ClaimRecoveryListing.xsd" />
+
+	<xs:annotation>
+		<xs:documentation>This XML schema specifies ClaimImportComposite that
+			encompases
+			Claim information (includes Claim and Claim Policy), Claim
+			Unit Information and other
+			information required for Claim Import.
+		</xs:documentation>
+	</xs:annotation>
+
+	<xs:complexType name="ClaimStatusDTO">
+		<xs:annotation>
+			<xs:documentation>Claim Status information</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="AuditWithExpireImportDTO">
+				<xs:sequence>
+					<xs:element name="claimId" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Claim id.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="openedDate" type="dateType" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Claim opened date.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="closedDate" type="dateType" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Closed date.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="reOpenedDate" type="dateType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Reopened date.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="reClosedDate" type="dateType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Reclosed date.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="actionCode" type="string" minOccurs="1"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Claim Status action code, 
+								Maps to	CLM_STS_ACTN_CD Column from CLAIM_STATUS_ACTION_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="statusCode" type="string" minOccurs="1"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Claim Status code.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="stateCode" type="string" minOccurs="1"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Claim State code, 
+								Maps to CLM_STT_CD Column from CLAIM_STATE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="reasonCode" type="string" minOccurs="1"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Claim Status action reason code, 
+								Maps to	CLM_ACTN_RSN_CD Column from CLAIM_ACTION_REASON_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="comments" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Comment for the Claim Status.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="reasonName" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Reason name, Maps to CLM_ACTN_RSN_NM Column
+								from CLAIM_ACTION_REASON_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="lastUpdatedUser" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Last updated user id.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="lastUpdatedDateTime" type="dateType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Last updated time.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="nextStatusActionCode" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Next status action code, Maps to
+								CLM_STS_ACTN_CD Column from CLAIM_STATUS_ACTION_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="additionalReasons" type="claimStatusAdditionalReasonsType"
+						minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>Collection of Claim Status reasons as
+								ClaimStatusAdditionalReasonDTO
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="expiredStatus" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Not used for Claim Import, Place holder for
+								Claim Details
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="claimExternalSourceId" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>External Source Id for Claim.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="statusReserveFlag" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Not used for Claim Import, Place holder for
+								Claim Details
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="statusWorkItemFlowFlag" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Not used for Claim Import, Place holder for
+								Claim Details
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="statusCloseReserveFlag" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Status Close Reserve Flag.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="ClaimDetailsResponseDTO">
+		<xs:annotation>
+			<xs:documentation>Claim details response</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="claimId" type="long" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Used for importing individual entities without
+						requiring Claim Information
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+
+			<xs:element name="claimNumber" type="string" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Used for importing individual entities without
+						requiring Claim Information
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="claimExternalSourceId" type="string"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Used for importing individual entities without
+						requiring Claim Information
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="claimDTO" type="ClaimDTO" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Claim Information, Required for Claim Import FNOL
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="units" type="ClaimUnitListType"
+				minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Collection of Claim Unit information used for
+						Claim Import EDI
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+
+			<xs:element name="claimServices" type="claimDamageServicesDTOType"
+				minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Collection of Services for Claim to be imported.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="relatedClaims" type="relatedClaimType"
+				minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Collection of Related Claims to be imported
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="authorities" type="authorityType"
+				minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Collections of Authorities associated with the
+						Claim
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="witnesses" type="witnessType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Collections of Witnesses associated with the
+						Claim
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+
+			<xs:element name="claimMiscTransactions" type="miscTransactionType"
+				minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Collections of Claim Miscellaneous transactions
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="claimReservesWithCoverages" type="reserveType"
+				minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Collection of Claim Reserves</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="claimPayments" type="claimPaymentType"
+				minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Collection of Claim Payments</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="recoveries" type="recoveryType"
+				minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Collection of Recovery Payments
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="billDetails" type="ClaimBillDTO"
+				minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Collections of Bills associated with the Claim
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="notes" type="notesType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Collection of Notes associated with the Claim
+						Not
+						Required
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="claimDocs" type="documentType"
+				minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Collection of Documents to be imported.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="injuredWorkerParticipant" type="dummyType"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Not used for Claim Import, Place holder for Claim
+						Details
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="adjusterList" type="adjusterType"
+				minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Not used for Claim Import, Place holder for Claim
+						Details
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="financialTransactionListing" type="financialTransactionListingType"
+				minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Not used for Claim Import, Place holder for Claim
+						Details
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="claimReserveSummary" type="claimReserveSummaryType"
+				minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Not used for Claim Import, Place holder for Claim
+						Details
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="claimReserveListing" type="claimReserveListingType"
+				minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Not used for Claim Import, Place holder for Claim
+						Details
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="claimPaymentSummary" type="ViewPaymentSummaryDTO"
+				minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Not used for Claim Import, Place holder for Claim
+						Details
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="claimPaymentListing" type="claimPaymentListingType"
+				minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Not used for Claim Import, Place holder for Claim
+						Details
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="claimRecoveryListings" type="claimRecoveryListingType"
+				minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Not used for Claim Import, Place holder for Claim
+						Details
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="claimPaymentSchedule" type="ViewClaimScheduleLisitingCompositeDTO"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Not used for Claim Import, Place holder for Claim
+						Details
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="isActiveCompanyLobCode" type="boolean"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>boolean indicating whether Compnay LOB is active
+						or not
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:element name="claimImportCompositeDTO" type="ClaimImportCompositeDTO">
+		<xs:annotation>
+			<xs:documentation>Claim import composite.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+
+	<xs:complexType name="ClaimImportCompositeDTO">
+		<xs:annotation>
+			<xs:documentation>Composite Type to include all Claim Information
+				like Claim, Claim Policy, Claim Units, Participants, Financial
+				Transactions etc
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="ClaimDetailsResponseDTO">
+				<xs:sequence>
+					<xs:element name="policy" type="PolicyImportDTO"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Policy Information, Used in Claim Import FNOL.
+								If available will be used for creating Claim, If not available
+								then Policy Mediation will be used to retrieve Policy
+								Information
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="persons" type="personType" minOccurs="0"
+						maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>Collection of Person information to the
+								imported
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="organizations" type="organizationType"
+						minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Collection of Organizations</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="claimAssignments" type="assignmentType"
+						minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Collections of Claim Assignments.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="workItems" type="workItemType"
+						minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Collections of Work Items associated with the
+								Claim
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="bills" type="claimBillType" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Collection of Claim Bill</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="claimCases" type="caseType" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Collection of Legal/Case Information associated
+								with the Claim
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="claimBlocksCompositeDTO" type="ClaimBlocksCompositeDTO"
+						minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Collection of Blocks associated with the Claim
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="companyId" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Company Associated with the Claim.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="closeRecovery" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Indicates if Recovery Reserve needs to be
+								closed after payment.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="ClaimBlocksCompositeDTO">
+		<xs:annotation>
+			<xs:documentation>Claim Block Composite</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="DataTransferObject">
+				<xs:sequence>
+					<xs:element name="claimBlocks" type="claimBlockType"
+						minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Claim Block list</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="segmentationBlockInd" type="boolean"
+						minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Segmentation block indicator</xs:documentation>
+						</xs:annotation>
+					</xs:element>					
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="claimBlockType">
+		<xs:annotation>
+			<xs:documentation>Collection of Claim Blocks</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="claimBlocksDTO" type="ClaimBlocksDTO"
+				minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Claim blocks.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="class" type="collectionType" use="optional" />
+	</xs:complexType>
+
+	<xs:complexType name="ClaimBlocksDTO">
+		<xs:annotation>
+			<xs:documentation>Block information for the Claim.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="AuditWithDeleteDTO">
+				<xs:sequence>
+					<xs:element name="blockType" type="string" minOccurs="1"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Block Type</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="blockEffDate" type="dateType"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Block Effective Date</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="blockEndDate" type="dateType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Block End Date</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="blockReason" type="string" minOccurs="1"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Block Reason</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="blockLevel" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Block Level</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="claimId" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Claim Id</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="ClaimUnitListType">
+		<xs:annotation>
+			<xs:documentation>Collection of claim units.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="claimUnitVehicleDTO" type="ClaimUnitVehicleDTO"
+				minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Claim vehicle unit</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="claimUnitDTO" type="ClaimUnitDTO"
+				minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Claim unit.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="class" type="collectionType" use="optional" />
+	</xs:complexType>
+
+
+	<xs:complexType name="ClaimPolicyDTO">
+		<xs:annotation>
+			<xs:documentation>Claim Policy information</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="AuditWithDeleteDTO">
+				<xs:sequence>
+					<xs:element name="claimId" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Not used for Claim Import, Place holder for
+								Claim Details
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="companyLOBId" type="long" minOccurs="1"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Company Line Of Business, 
+								Maps to CMPY_LOB_ID	Column from COMPANY_LINE_OF_BUSINESS_XREF Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="regOfcCmpyOrgUnitId" type="long"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Company organization unit id, 
+								Maps to	CMPY_ORG_UNT_ID Column from COMPANY_ORGANIZATION_UNIT_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="undrwrtCmpyOrgUnitId" type="long"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Underwriting Company organization unit id, 
+								Maps to CMPY_ORG_UNT_ID Column from COMPANY_ORGANIZATION_UNIT_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="planCode" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Policy Plan code, 
+								Maps to PLN_CD Column from PLAN_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="jurisdictionId" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Policy State, 
+								Maps to JUR_ID Column from JURISDICTION_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="recordSourceCode" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Policy source system code - 
+								Maps to REC_SRC_CD Column from RECORD_SOURCE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="pullStatusCode" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Policy pull code whether it is a partial pull,
+								complete pull or auto pull - 
+								Maps to CLM_PLCY_PULL_STS_CD Column from CLAIM_POLICY_PULL_STATUS_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="statusCode" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Not used for Claim Import, Place holder for
+								Claim Details
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="policyId" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Not used for Claim Import, Place holder for
+								Claim Details
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="modNumber" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Claim Policy Mod Number or Term Number
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="policyNumber" type="string" minOccurs="1"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Policy Number</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="policyNumberUpper" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Not used for Claim Import, Place holder for
+								Claim Details
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="policyEffectiveDate" type="dateType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Policy period effective date</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="policyEndDate" type="dateType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Policy period expiration date
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="origPolicyEffectiveDate" type="dateType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Policy Original Effective Date.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="priorCarrierName" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Policy prior carrier name</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="coverageBoundDate" type="dateType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Coverage bound date</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="manual" type="boolean" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Indicates whether the Policy was entered
+								manually or not.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="otherResponsibleInd" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Identifies whether the Policy is associated to
+								Other Responsible Insured participant or not.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="marketTypeCode" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Market Type of the Policy, 
+								Maps to MRKT_TYP_CD Column from MARKET_TYPE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+
+					<xs:element name="policyCancelationDate" type="dateType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Policy Cancellation Date</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="groupCode" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Policy Group Code, 
+								Maps to CLM_PLCY_GRP_CD Column from CLAIM_POLICY_GROUP_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="isUnverified" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Indicates whether the policy is unverified or
+								not.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="agentNumber" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Agent Number for the Agent on the Policy
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="externalSourceId" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>External Source Id for Policy.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="claimExternalSourceId" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>External Source Id for Claim.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="cmpyId" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Company Id</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="corpId" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Corp Id</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="cntryCd" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Country Code</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="clmPlcyQuestions" type="ProfileStatementItemType"
+						minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Questions and Answers associated with Claim
+								Policy
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="entryStatus" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Entry Status, Possible values are "cmpl" and
+								"aprv" and used when creating Claim for
+								manual policy
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="oldEntryStatus" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Old Entry Status</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="units" type="claimPolicyUnitVehicleType"
+						minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Collection of Policy Units as
+								ClaimPolicyUnitVehicleDTO.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="participations" type="claimPolicyParticipantsType"
+						minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>Collection returned by Claim Details, For Claim
+								Import Policy Participants will be sent in
+								separate Collections
+								they are clmPolicyAgencyParticipants,
+								clmPolicyDriverParticipants,
+								clmPolicyFinancialInterestParticipants,
+								clmPolicyInsuredParticipants
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="endorsements" type="claimPolicyEndorsementType"
+						minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Policy level endorsements as a collection of
+								ClaimPolicyEndorsementDTO.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="deductible" type="ClaimPolicyDeductibleDTO"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Policy level deductible as
+								ClaimPolicyDeductibleDTO.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="clmPlcyPrflResponses" type="claimPolicyProfileResponseType"
+						minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Not used for Claim Import, Place holder for
+								Claim Details
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="clmPolicyFinancialInterestParticipants"
+						type="claimPolicyFinancialInterestType" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Claim Policy Financial Interests as a
+								collection of ClaimPolicyFinancialInterestParticipationDTO.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="clmPolicyDriverParticipants" type="claimPolicyDriverType"
+						minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>Claim Policy Drivers as a collection of
+								ClaimPolicyDriverParticipationDTO.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="clmPolicyAgencyParticipants" type="claimPolicyAgencyType"
+						minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>Claim Policy Agencies as a collection of
+								ClaimPolicyAgencyParticipationDTO.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="clmPolicyInsuredParticipants" type="claimPolicyInsuredType"
+						minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Claim Policy Insured as a collection of
+								ClaimPolicyInsuredParticipationDTO.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="insuredName" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Not used for Claim Import, Place holder for
+								Claim Details
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="insuredPartyId" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Primary insured Party Id pointing to Party
+								Stream.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="changePolicyAllowed" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Indicates whether Change policy is allowed or
+								not.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="differentOwner" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Not used for Claim Import, Place holder for
+								Claim Details
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="lobCode" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Lob Code, Maps to LOB_CD Column from
+								LINE_OF_BUSINESS_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="insuredContact" type="ClaimContactDTO"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Primary insured contact details.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="claimsByPolicy" type="dummyType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Not used for Claim Import, Place holder for
+								Claim Details
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="ClaimWitnessDTO">
+		<xs:annotation>
+			<xs:documentation>Claim Witness information.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="CALClaimParticipationDTO">
+				<xs:sequence>
+					<xs:element name="witnessComment" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Comments provided by the witness.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="witnessTypeCode" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Witness Type, 
+								Maps to WTN_TYP_CD Column from WITNESS_TYPE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="ClaimParticipationAuthorityDTO">
+		<xs:annotation>
+			<xs:documentation>Claim Authority information.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="CALClaimParticipationDTO">
+				<xs:sequence>
+					<xs:element name="authorityDescription" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Description of the Authority.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="authorityTypeCode" type="string"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Authority Type, 
+								Maps to ATHRTY_TYP_CD Column from AUTHORITY_TYPE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="citations" type="claimCitationType"
+						minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Citiation information as Collection of
+								ClaimCitationDTO
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="questions" type="ProfileStatementItemType"
+						minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Citiation Profile questions</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="claimCitationType">
+		<xs:annotation>
+			<xs:documentation>Collection of claim citation.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="claimCitationDTO" type="ClaimCitationDTO"
+				minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Claim citations.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="class" type="collectionType" use="optional" />
+	</xs:complexType>
+
+	<xs:complexType name="ClaimCitationDTO">
+		<xs:annotation>
+			<xs:documentation>Citations issued by Authority.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="CALClaimParticipationDTO">
+				<xs:sequence>
+					<xs:element name="citationCode" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Citation Code, 
+								Maps to CIT_CD Column from CITATION_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="caseNumber" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Case Number issued by the Authority.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="citationDate" type="dateType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Citation Date</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="ClaimMiscTransactionDTO">
+		<xs:annotation>
+			<xs:documentation>Transactions at Claim, Claim Unit, Claim
+				Participant or Claim Reserve level.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="DataTransferObject">
+				<xs:sequence>
+					<xs:element name="transactionDate" type="dateType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Transaction Date, if not available defaulted to
+								the current date.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="accountingDate" type="dateType"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Accounting Date</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="comment" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Financial Transaction Comment
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="externalUnitIdentifier" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>External Unit associated to the transaction.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="coverageCode" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Coverage code for the transactions, 
+								Maps to	CLM_COV_CD Column from CLAIM_COVERAGE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="externalParticipantIdentifier" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>External Participant associated to the
+								transaction.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="lossType" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Loss Type associated with the transaction (from
+								reserve) - 
+								Maps to CLM_LOSS_TYP_CD Column from CLAIM_LOSS_TYPE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="reseveType" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Reserve Type Code, 
+								Maps to CLM_RSRV_TYP_CD Column from CLAIM_RESERVE_TYPE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="miscTransType" type="string"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Misc Transaction Type, 
+								Maps to	CLM_RSRV_TRAN_TYP_NC_CD Column from CLAIM_RESERVE_TRAN_TYP_NC_CD
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="partyId" type="long" minOccurs="1"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Party associated with the Misc transaction
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="companyId" type="long" minOccurs="1"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Company associated with the Misc transaction
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="reserveId" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Reserve associated with the Misc transaction
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="transactionAmount" type="dollarAmount"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Transaction Amount</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="teamId" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Team information to check for Authorization
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="user" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>User information to check for Authorization
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="externalClaimIdentifier" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>External Claim identifier to find the claim to
+								which the mesc transaction is associated.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="claimId" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Claim for which the Misc Transaction is
+								associated
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="unitId" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Unit for which the Misc Transaction is
+								associated
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="participantId" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Participant to whom the Misc Transaction is
+								associated
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="RelatedClaimDTO">
+		<xs:annotation>
+			<xs:documentation>Related claim information.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="AuditWithDeleteDTO">
+				<xs:sequence>
+					<xs:element name="claimId" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Existing claim that the claim relationship is
+								being added to
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="relatedClaimId" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Represents the claim that is being related to
+								an existing specific claim.
+								If this is an external claim, this
+								will be null and the user will
+								enter the External Claim Number
+								and Name.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="relationshipTypeCode" type="string"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Type of relationship being established between
+								the Claims, 
+								Maps to CLM_RLT_TYP_CD Column from CLAIM_RELATIONSHIP_TYPE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="relationshipTypeComment" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>User entered description of the nature of the
+								relationship between the
+								Claims when the selected relationship
+								type is Other.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="externalClaimFlag" type="boolean"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Represents the source of the Related Claim as
+								either being a
+								Claim internal to the system (Internal indication)
+								or external to the
+								system (External Indication).
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="externalClaimNumber" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Represents the user entered reference number of
+								the Claim to be related to
+								the existing specified Claim, when the
+								related claim is identified
+								as External.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="externalClaimInsuredName" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Represents the Claim Name associated to the
+								existing specified Claim for a
+								related Claim identified as
+								External.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="createdBy" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>User who created the related Claim
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="externalSourceId" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>External Source Id of the related Claim
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="claimExternalSourceId" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Claim External Source Id</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="relatedClaimNumber" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>If Related Claim Id is not available for
+								Internal Claims then Related Claim Number will be used to
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="notesType">
+		<xs:annotation>
+			<xs:documentation>Collection of notes.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="notepadDTO" type="NotepadDTO" minOccurs="0"
+				maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Notepad list.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="class" type="collectionType" use="optional" />
+	</xs:complexType>
+
+	<xs:complexType name="organizationType">
+		<xs:annotation>
+			<xs:documentation>Collection of organization party type.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="organizationDTO" type="ClientOrganizationDTO"
+				minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Party organizations.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="class" type="collectionType" use="optional" />
+	</xs:complexType>
+
+	<xs:complexType name="personType">
+		<xs:annotation>
+			<xs:documentation>Collection of person party type.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="personDTO" type="ClientPersonDTO"
+				minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Party persons.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="class" type="collectionType" use="optional" />
+	</xs:complexType>
+
+	<xs:complexType name="assignmentType">
+		<xs:annotation>
+			<xs:documentation>Collection of assignments.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="importAssignmentDTO" type="ClientImportAssignmentDTO"
+				minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Assigment list.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="class" type="collectionType" use="optional" />
+	</xs:complexType>
+
+	<xs:complexType name="workItemType">
+		<xs:annotation>
+			<xs:documentation>Collection of work items.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="workItemDTO" type="ClientWorkItemDTO"
+				minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Claim work items.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="class" type="collectionType" use="optional" />
+	</xs:complexType>
+
+	<xs:complexType name="caseType">
+		<xs:annotation>
+			<xs:documentation>Collection of case.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="caseDTO" type="ClientCaseDTO" minOccurs="0"
+				maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Claim case list.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="class" type="collectionType" use="optional" />
+	</xs:complexType>
+
+	<xs:complexType name="witnessType">
+		<xs:annotation>
+			<xs:documentation>Collection of witnesses.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="claimWitnessDTO" type="ClaimWitnessDTO"
+				minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Claim witness list.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="class" type="collectionType" use="optional" />
+	</xs:complexType>
+
+	<xs:complexType name="authorityType">
+		<xs:annotation>
+			<xs:documentation>Collection of authorities.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="claimParticipationAuthorityDTO" type="ClaimParticipationAuthorityDTO"
+				minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Claim authorities.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="class" type="collectionType" use="optional" />
+	</xs:complexType>
+
+	<xs:complexType name="reserveType">
+		<xs:annotation>
+			<xs:documentation>Collection of claim reserves.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="claimReserves" type="CALClaimReserveDTO"
+				minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Claim reserves.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="class" type="collectionType" use="optional" />
+	</xs:complexType>
+
+	<xs:complexType name="miscTransactionType">
+		<xs:annotation>
+			<xs:documentation>Collection of miscellaneous transaction types.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="claimMiscTransactionDTO" type="ClaimMiscTransactionDTO"
+				minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Miscellaneous transactions.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="class" type="collectionType" use="optional" />
+	</xs:complexType>
+
+	<xs:complexType name="claimBillType">
+		<xs:annotation>
+			<xs:documentation>Collection of claim bills.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="claimBill" type="ClientClaimBillDTO"
+				minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Claim bills.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="class" type="collectionType" use="optional" />
+	</xs:complexType>
+
+	<xs:complexType name="claimPaymentType">
+		<xs:annotation>
+			<xs:documentation>Collection of claim payaments.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="claimPayment" type="ClaimPayment"
+				minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Claim payments.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="class" type="collectionType" use="optional" />
+	</xs:complexType>
+
+	<xs:complexType name="documentType">
+		<xs:annotation>
+			<xs:documentation>Collection of documents.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="documentDTO" type="ClientDocumentDTO"
+				minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Claim documents.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="class" type="collectionType" use="optional" />
+	</xs:complexType>
+
+	<xs:complexType name="relatedClaimType">
+		<xs:annotation>
+			<xs:documentation>Collection of related claims.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="relatedClaimDTO" type="RelatedClaimDTO"
+				minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Claim related claims.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="class" type="collectionType" use="optional" />
+	</xs:complexType>
+
+	<xs:complexType name="recoveryType">
+		<xs:annotation>
+			<xs:documentation>Collection of recoveries.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="claimRecovery" type="ClaimRecovery"
+				minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Claim recoveries.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="class" type="collectionType" use="optional" />
+	</xs:complexType>
+
+	<xs:complexType name="claimDamageServicesDTOType">
+		<xs:annotation>
+			<xs:documentation>Collection of claim damage services.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="claimDamageServicesDTO" type="ClaimDamageServicesDTO"
+				minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Claim damage services.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="class" type="collectionType" use="optional" />
+	</xs:complexType>
+
+	<xs:complexType name="adjusterType">
+		<xs:annotation>
+			<xs:documentation>Collection of adjusters.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="adjusterDetail" type="SearchAssignedAssignmentResponseDTO"
+				minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Adjuster details.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="class" type="collectionType" use="optional" />
+	</xs:complexType>
+
+	<xs:complexType name="financialTransactionListingType">
+		<xs:annotation>
+			<xs:documentation>Collection of financial transactions.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="viewClaimFTResult" type="ViewClaimFinancialTransactionBaseResult"
+				minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Claim Fasttrak payments.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="class" type="collectionType" use="optional" />
+	</xs:complexType>
+
+	<xs:complexType name="claimReserveListingType">
+		<xs:annotation>
+			<xs:documentation>Collection of claim financial transactions
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="claimReserveFinancialTransactionResult"
+				type="ClaimReserveFinancialTransactionResult" minOccurs="0"
+				maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Claim reserve transactions.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="class" type="collectionType" use="optional" />
+	</xs:complexType>
+
+	<xs:complexType name="claimPaymentListingType">
+		<xs:annotation>
+			<xs:documentation>Collection of claim payment listings.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="claimPaymentListings" type="ViewPaymentListingDTO"
+				minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Claim payments.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="class" type="collectionType" use="optional" />
+	</xs:complexType>
+
+	<xs:complexType name="claimRecoveryListingType">
+		<xs:annotation>
+			<xs:documentation>Collection of claim recovery listings.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="viewRecoveryListingDTO" type="ViewRecoveryListingDTO"
+				minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Claim recoveries.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="class" type="collectionType" use="optional" />
+	</xs:complexType>
+
+</xs:schema>

@@ -1,0 +1,10 @@
+ClearCase CopyAreaDB|4
+iip_starter_kit\claim_starter_kit\common-intrg\src\main\java\com\client\iip\integration\financials\disbursement\external\processor
+2
+6
+25:ClientPaymentPayeeCheckProcessor.java|1|14c957124a6|18a2|4b98786a|de9b4cc7f38b4349957815a683458fa5|0
+27:ClientPaymentDetailAgencyProcessor.java|1|14c95712492|2c5f|a5581421|94556f6055f2403190474e092b3daeb5|0
+20:ClientPaymentClaimProcessor.java|1|14c95712488|13de|ab89c506|de3286d02dba4573bf388606049bb923|0
+23:ClientPaymentPayeeEFTProcessor.java|1|14fe14c7df8|2789|fc87829c|c0af35e43c8d4e82a42efeb1b7b644b8|0
+22:ClientPaymentBillingProcessor.java|1|14c95712488|10e8|acccdb31|5e0be134bf7849379eb9a8b986c4e246|0
+21:ClientPaymentHeaderProcessor.java|1|14c9571249c|3e51|70587dda|0d24077407b94fcbb333e3c4d69a0077|0

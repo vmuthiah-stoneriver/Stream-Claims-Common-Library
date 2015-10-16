@@ -1,0 +1,105 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<xs:annotation>
+		<xs:documentation>Company LOB coverage reserve schema.
+		</xs:documentation>
+	</xs:annotation>
+
+	<xs:complexType name="CoverageCompLOBResTypeDTO">
+		<xs:annotation>
+			<xs:documentation>Coverage LOB Reserve Type</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="corpId" type="long" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Corporation Id, Maps to CORP_ID Column from
+						CORPORATION_CD Table.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="corporation" type="string" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Corporation Name, Maps to CORP_NM Column from
+						CORPORATION_CD Table.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="compId" type="long" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Company Id, Maps to CMPY_ID Column from COMPANY_CD
+						Table.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="company" type="string" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Company Name, Maps to CMPY_NM Column from COMPANY_CD
+						Table.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="companyLOBId" type="long" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>LOB Id, Maps to CMPY_LOB_ID Column from
+						COMPANY_LINE_OF_BUSINESS_XREF Table.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="lobCode" type="string" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>LOB Code, Maps to LOB_CD Column from
+						COMPANY_LINE_OF_BUSINESS_XREF Table.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="lobName" type="string" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>LOB Name, Maps to CMPY_LOB_NM Column from
+						COMPANY_LINE_OF_BUSINESS_XREF Table.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="reserveTypeCode" type="string"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Reserve Type Code, Maps to CLM_RSRV_TYP_CD Column from
+						CLAIM_RESERVE_TYPE_CD Table.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="reserveTypeName" type="string"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Reserve Type Name, Maps to CLM_RSRV_TYP_NM Column from
+						CLAIM_RESERVE_TYPE_CD Table.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="coverageCode" type="string" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Coverage Code, Maps to CLM_COV_CD Column from
+						CLAIM_COVERAGE_CD Table.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="coverageName" type="string" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Coverage Name, Maps to CLM_COV_NM Column from
+						CLAIM_COVERAGE_CD Table.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+
+	</xs:complexType>
+
+</xs:schema>	

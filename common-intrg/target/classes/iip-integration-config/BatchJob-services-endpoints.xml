@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:vm="http://www.mulesoft.org/schema/mule/vm"
+   xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:mulexml="http://www.mulesoft.org/schema/mule/xml"
+   xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+   xmlns:spring="http://www.springframework.org/schema/beans" xmlns:core="http://www.mulesoft.org/schema/mule/core"
+   xmlns:jersey="http://www.mulesoft.org/schema/mule/jersey" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xmlns:file="http://www.mulesoft.org/schema/mule/file"
+   xsi:schemaLocation="
+http://www.mulesoft.org/schema/mule/vm http://www.mulesoft.org/schema/mule/vm/3.3/mule-vm.xsd 
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/3.3/mule-http.xsd 
+http://www.mulesoft.org/schema/mule/xml http://www.mulesoft.org/schema/mule/xml/3.3/mule-xml.xsd 
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/file/3.3/mule-file.xsd 
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/3.3/mule.xsd
+http://www.mulesoft.org/schema/mule/jersey http://www.mulesoft.org/schema/mule/jersey/3.3/mule-jersey.xsd
+">
+
+	<flow name="batchExportServiceFlow" doc:name="Batch Export Flow">
+		<vm:inbound-endpoint ref="batchExportEndpoint"
+			transformer-refs="IIPObject2XMLTransformer" />
+
+    	<file:outbound-endpoint connector-ref="BatchExport" path="${batchfolder}" />
+
+	</flow>       
+
+   <!-- Batch Job Interface -->
+   <flow name="BatchJobInboundFlow" doc:name="BatchJobInboundFlow">
+
+        <vm:inbound-endpoint path="batchJobSubmit" exchange-pattern="request-response" connector-ref="vmSync" />
+   
+
+        <message-properties-transformer>
+            <add-message-property key="xsd" value="xsd/BatchJobRequest.xsd" />
+            <add-message-property key="interface" value="BatchJob"/>       
+        </message-properties-transformer>
+
+   	  <transformer ref="SecurityInboundRequestTransformer" />
+      <transformer ref="XSDValidationTransformer" />
+      <transformer ref="IIPXML2ObjectTransformer" />
+      <vm:outbound-endpoint path="payloadRouter" exchange-pattern="request-response" connector-ref="vmSync" />
+
+        <!-- Route unexpected errors to separate error handler -->
+        <default-exception-strategy>
+            <vm:outbound-endpoint path="userErrorHandler" exchange-pattern="request-response" connector-ref="vmSync" />
+        </default-exception-strategy>
+               
+   </flow>     
+       
+    <flow name="BatchJobExecutionFlow" doc:name="BatchJobExecutionFlow">
+   
+      <vm:inbound-endpoint path="BatchJobEndpoint" exchange-pattern="request-response" connector-ref="vmSync" />   
+      <!-- 
+       <component>
+            <method-entry-point-resolver>
+                <include-entry-point method="callJob" />
+            </method-entry-point-resolver>
+            <spring-object bean="client.component.batchJob" />
+        </component>
+         
+        <transformer ref="exceptionTransformer IIPObject2XMLTransformer" />      -->
+        
+          <outbound-endpoint ref="batchJobEndpoint"
+                          transformer-refs="callJobMethod"
+                          responseTransformer-refs="clientExceptionTransformer IIPObject2XMLTransformer" />          
+   </flow>
+   
+   <!-- Batch Job Status Interface -->
+   <flow name="BatchJobStatusInboundFlow" doc:name="BatchJobStatusInboundFlow">
+
+       <vm:inbound-endpoint path="batchJobStatusInquiry" exchange-pattern="request-response" connector-ref="vmSync" />
+
+        <message-properties-transformer>
+            <add-message-property key="xsd" value="xsd/BatchJob.xsd" />
+            <add-message-property key="interface" value="BatchJobStatus"/>       
+        </message-properties-transformer>
+
+      <transformer ref="SecurityInboundRequestTransformer" />
+      <transformer ref="XSDValidationTransformer" />
+      <transformer ref="IIPXML2ObjectTransformer" />
+      <vm:outbound-endpoint path="payloadRouter" exchange-pattern="request-response" connector-ref="vmSync" />
+
+        <!-- Route unexpected errors to separate error handler -->
+        <default-exception-strategy>
+            <vm:outbound-endpoint path="userErrorHandler" exchange-pattern="request-response" connector-ref="vmSync" />
+        </default-exception-strategy>
+               
+   </flow>     
+       
+    <flow name="RetrieveJobStatusFlow" doc:name="RetrieveJobStatusFlow">
+   
+      <vm:inbound-endpoint path="RetrieveJobStatusEndpoint" exchange-pattern="request-response" connector-ref="vmSync" />   
+      <!--  
+       <component>
+            <method-entry-point-resolver>
+                <include-entry-point method="retrieveJobStatus" />
+            </method-entry-point-resolver>
+            <spring-object bean="client.component.batchJob" />
+        </component>
+         
+        <transformer ref="exceptionTransformer IIPObject2XMLTransformer" />      -->
+        
+          <outbound-endpoint ref="batchJobEndpoint"
+                          transformer-refs="retrieveJobStatusMethod"
+                          responseTransformer-refs="clientExceptionTransformer IIPObject2XMLTransformer" />          
+   </flow>
+
+</mule>
+
+

@@ -1,0 +1,455 @@
+<list>
+  <claimCompanyReserveTypesDTO>
+    <recordId>6003906</recordId>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <userIdCreated>2</userIdCreated>
+    <createdDateTime>2012-06-08 14:07:25.167 MDT</createdDateTime>
+    <userIdUpdated>3000100</userIdUpdated>
+    <updatedDateTime>2013-08-07 12:51:30.343 MDT</updatedDateTime>
+    <effectiveDateTime>2012-02-02 00:00:00.000 MST</effectiveDateTime>
+    <corpName>Pilgrim Insurance Company</corpName>
+    <compName>Acadia Insurance Company (B/O)</compName>
+    <compLOBName>Commercial Auto</compLOBName>
+    <enterpriseLOB>Commercial Automobile</enterpriseLOB>
+    <thresholdAmount>999999.00</thresholdAmount>
+    <corpId>100</corpId>
+    <compId>114</compId>
+    <compLOBId>110</compLOBId>
+    <reservTypeCd>clm_exp</reservTypeCd>
+    <reservTypeName>Claim Expense</reservTypeName>
+    <monetaryCategoryCd>exp</monetaryCategoryCd>
+    <monetaryTypeColl class="list">
+      <claimsMonetaryTypesDTO>
+        <changesetId>0</changesetId>
+        <recordId>6003921</recordId>
+        <version>0</version>
+        <updated>false</updated>
+        <childUpdated>false</childUpdated>
+        <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+        <userIdCreated>3000100</userIdCreated>
+        <createdDateTime>2012-06-26 11:50:39.591 MDT</createdDateTime>
+        <userIdUpdated>0</userIdUpdated>
+        <effectiveDateTime>2012-02-02 00:00:00.000 MST</effectiveDateTime>
+        <monetaryTypeCd>medbill</monetaryTypeCd>
+        <impactIncurInd>false</impactIncurInd>
+        <monetaryTypeTransactionTypeColl class="list"/>
+        <monetaryFnclTranTypeId>0</monetaryFnclTranTypeId>
+        <reserveId>0</reserveId>
+        <monetaryTypeName>Medical Expense</monetaryTypeName>
+      </claimsMonetaryTypesDTO>
+      <claimsMonetaryTypesDTO>
+        <changesetId>0</changesetId>
+        <recordId>6003925</recordId>
+        <version>0</version>
+        <updated>false</updated>
+        <childUpdated>false</childUpdated>
+        <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+        <userIdCreated>3000100</userIdCreated>
+        <createdDateTime>2012-06-26 12:06:09.142 MDT</createdDateTime>
+        <userIdUpdated>0</userIdUpdated>
+        <effectiveDateTime>2012-02-02 00:00:00.000 MST</effectiveDateTime>
+        <monetaryTypeCd>ind_cnsl</monetaryTypeCd>
+        <impactIncurInd>false</impactIncurInd>
+        <monetaryTypeTransactionTypeColl class="list"/>
+        <monetaryFnclTranTypeId>0</monetaryFnclTranTypeId>
+        <reserveId>0</reserveId>
+        <monetaryTypeName>Independent Counsel</monetaryTypeName>
+      </claimsMonetaryTypesDTO>
+      <claimsMonetaryTypesDTO>
+        <changesetId>0</changesetId>
+        <recordId>6003924</recordId>
+        <version>0</version>
+        <updated>false</updated>
+        <childUpdated>false</childUpdated>
+        <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+        <userIdCreated>3000100</userIdCreated>
+        <createdDateTime>2012-06-26 12:03:20.948 MDT</createdDateTime>
+        <userIdUpdated>0</userIdUpdated>
+        <effectiveDateTime>2012-02-02 00:00:00.000 MST</effectiveDateTime>
+        <monetaryTypeCd>lgl_sub</monetaryTypeCd>
+        <impactIncurInd>false</impactIncurInd>
+        <monetaryTypeTransactionTypeColl class="list"/>
+        <monetaryFnclTranTypeId>0</monetaryFnclTranTypeId>
+        <reserveId>0</reserveId>
+        <monetaryTypeName>Legal Subro/Collections</monetaryTypeName>
+      </claimsMonetaryTypesDTO>
+      <claimsMonetaryTypesDTO>
+        <changesetId>0</changesetId>
+        <recordId>6003922</recordId>
+        <version>0</version>
+        <updated>false</updated>
+        <childUpdated>false</childUpdated>
+        <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+        <userIdCreated>3000100</userIdCreated>
+        <createdDateTime>2012-06-26 11:57:14.229 MDT</createdDateTime>
+        <userIdUpdated>0</userIdUpdated>
+        <effectiveDateTime>2012-02-02 00:00:00.000 MST</effectiveDateTime>
+        <monetaryTypeCd>med_fee</monetaryTypeCd>
+        <impactIncurInd>false</impactIncurInd>
+        <monetaryTypeTransactionTypeColl class="list"/>
+        <monetaryFnclTranTypeId>0</monetaryFnclTranTypeId>
+        <reserveId>0</reserveId>
+        <monetaryTypeName>Legal Mediation/Arbitration</monetaryTypeName>
+      </claimsMonetaryTypesDTO>
+      <claimsMonetaryTypesDTO>
+        <changesetId>0</changesetId>
+        <recordId>6003926</recordId>
+        <version>0</version>
+        <updated>false</updated>
+        <childUpdated>false</childUpdated>
+        <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+        <userIdCreated>3000100</userIdCreated>
+        <createdDateTime>2012-06-26 12:08:07.514 MDT</createdDateTime>
+        <userIdUpdated>0</userIdUpdated>
+        <effectiveDateTime>2012-02-02 00:00:00.000 MST</effectiveDateTime>
+        <monetaryTypeCd>hse_cnsl</monetaryTypeCd>
+        <impactIncurInd>false</impactIncurInd>
+        <monetaryTypeTransactionTypeColl class="list"/>
+        <monetaryFnclTranTypeId>0</monetaryFnclTranTypeId>
+        <reserveId>0</reserveId>
+        <monetaryTypeName>House Counsel Expense</monetaryTypeName>
+      </claimsMonetaryTypesDTO>
+      <claimsMonetaryTypesDTO>
+        <changesetId>0</changesetId>
+        <recordId>6003919</recordId>
+        <version>0</version>
+        <updated>false</updated>
+        <childUpdated>false</childUpdated>
+        <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+        <userIdCreated>3000100</userIdCreated>
+        <createdDateTime>2012-06-26 11:42:13.346 MDT</createdDateTime>
+        <userIdUpdated>0</userIdUpdated>
+        <effectiveDateTime>2012-02-02 00:00:00.000 MST</effectiveDateTime>
+        <monetaryTypeCd>invst</monetaryTypeCd>
+        <impactIncurInd>false</impactIncurInd>
+        <monetaryTypeTransactionTypeColl class="list"/>
+        <monetaryFnclTranTypeId>0</monetaryFnclTranTypeId>
+        <reserveId>0</reserveId>
+        <monetaryTypeName>Investigation (non legal)</monetaryTypeName>
+      </claimsMonetaryTypesDTO>
+      <claimsMonetaryTypesDTO>
+        <changesetId>0</changesetId>
+        <recordId>6003918</recordId>
+        <version>0</version>
+        <updated>false</updated>
+        <childUpdated>false</childUpdated>
+        <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+        <userIdCreated>3000100</userIdCreated>
+        <createdDateTime>2012-06-26 11:39:58.701 MDT</createdDateTime>
+        <userIdUpdated>0</userIdUpdated>
+        <effectiveDateTime>2012-02-02 00:00:00.000 MST</effectiveDateTime>
+        <monetaryTypeCd>plc_fir_rpt</monetaryTypeCd>
+        <impactIncurInd>false</impactIncurInd>
+        <monetaryTypeTransactionTypeColl class="list"/>
+        <monetaryFnclTranTypeId>0</monetaryFnclTranTypeId>
+        <reserveId>0</reserveId>
+        <monetaryTypeName>Police/Fire Reports</monetaryTypeName>
+      </claimsMonetaryTypesDTO>
+      <claimsMonetaryTypesDTO>
+        <changesetId>0</changesetId>
+        <recordId>6003923</recordId>
+        <version>0</version>
+        <updated>false</updated>
+        <childUpdated>false</childUpdated>
+        <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+        <userIdCreated>3000100</userIdCreated>
+        <createdDateTime>2012-06-26 12:01:23.532 MDT</createdDateTime>
+        <userIdUpdated>0</userIdUpdated>
+        <effectiveDateTime>2012-02-02 00:00:00.000 MST</effectiveDateTime>
+        <monetaryTypeCd>lgl_exp</monetaryTypeCd>
+        <impactIncurInd>false</impactIncurInd>
+        <monetaryTypeTransactionTypeColl class="list"/>
+        <monetaryFnclTranTypeId>0</monetaryFnclTranTypeId>
+        <reserveId>0</reserveId>
+        <monetaryTypeName>Other Legal Expense</monetaryTypeName>
+      </claimsMonetaryTypesDTO>
+      <claimsMonetaryTypesDTO>
+        <changesetId>0</changesetId>
+        <recordId>6003920</recordId>
+        <version>0</version>
+        <updated>false</updated>
+        <childUpdated>false</childUpdated>
+        <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+        <userIdCreated>3000100</userIdCreated>
+        <createdDateTime>2012-06-26 11:47:12.274 MDT</createdDateTime>
+        <userIdUpdated>0</userIdUpdated>
+        <effectiveDateTime>2012-02-02 00:00:00.000 MST</effectiveDateTime>
+        <monetaryTypeCd>indpadj</monetaryTypeCd>
+        <impactIncurInd>false</impactIncurInd>
+        <monetaryTypeTransactionTypeColl class="list"/>
+        <monetaryFnclTranTypeId>0</monetaryFnclTranTypeId>
+        <reserveId>0</reserveId>
+        <monetaryTypeName>Independent Appraiser/Adjuster</monetaryTypeName>
+      </claimsMonetaryTypesDTO>
+    </monetaryTypeColl>
+  </claimCompanyReserveTypesDTO>
+  <claimCompanyReserveTypesDTO>
+    <recordId>6003902</recordId>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <userIdCreated>2</userIdCreated>
+    <createdDateTime>2012-06-08 14:07:25.167 MDT</createdDateTime>
+    <userIdUpdated>2</userIdUpdated>
+    <updatedDateTime>2013-02-06 14:07:21.801 MST</updatedDateTime>
+    <effectiveDateTime>2012-02-02 00:00:00.000 MST</effectiveDateTime>
+    <corpName>Pilgrim Insurance Company</corpName>
+    <compName>Acadia Insurance Company (B/O)</compName>
+    <compLOBName>Commercial Auto</compLOBName>
+    <enterpriseLOB>Commercial Automobile</enterpriseLOB>
+    <thresholdAmount>9999999.00</thresholdAmount>
+    <corpId>100</corpId>
+    <compId>114</compId>
+    <compLOBId>110</compLOBId>
+    <reservTypeCd>exp_recov</reservTypeCd>
+    <reservTypeName>Expense Recovery</reservTypeName>
+    <monetaryCategoryCd>rcvr</monetaryCategoryCd>
+    <monetaryTypeColl class="list">
+      <claimsMonetaryTypesDTO>
+        <changesetId>0</changesetId>
+        <recordId>6003911</recordId>
+        <version>0</version>
+        <updated>false</updated>
+        <childUpdated>false</childUpdated>
+        <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+        <userIdCreated>3000100</userIdCreated>
+        <createdDateTime>2012-06-26 12:24:55.556 MDT</createdDateTime>
+        <userIdUpdated>0</userIdUpdated>
+        <effectiveDateTime>2012-02-02 00:00:00.000 MST</effectiveDateTime>
+        <monetaryTypeCd>lgl_sub_rcvy</monetaryTypeCd>
+        <impactIncurInd>false</impactIncurInd>
+        <monetaryTypeTransactionTypeColl class="list"/>
+        <monetaryFnclTranTypeId>0</monetaryFnclTranTypeId>
+        <reserveId>0</reserveId>
+        <monetaryTypeName>Legal Subro/Collections Recovery</monetaryTypeName>
+      </claimsMonetaryTypesDTO>
+      <claimsMonetaryTypesDTO>
+        <changesetId>0</changesetId>
+        <recordId>6003905</recordId>
+        <version>0</version>
+        <updated>false</updated>
+        <childUpdated>false</childUpdated>
+        <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+        <userIdCreated>3000100</userIdCreated>
+        <createdDateTime>2012-06-26 12:21:09.605 MDT</createdDateTime>
+        <userIdUpdated>0</userIdUpdated>
+        <effectiveDateTime>2012-02-02 00:00:00.000 MST</effectiveDateTime>
+        <monetaryTypeCd>ind_appr_rcvy</monetaryTypeCd>
+        <impactIncurInd>false</impactIncurInd>
+        <monetaryTypeTransactionTypeColl class="list"/>
+        <monetaryFnclTranTypeId>0</monetaryFnclTranTypeId>
+        <reserveId>0</reserveId>
+        <monetaryTypeName>Independent Appraiser/Adjuster Recovery</monetaryTypeName>
+      </claimsMonetaryTypesDTO>
+      <claimsMonetaryTypesDTO>
+        <changesetId>0</changesetId>
+        <recordId>6003903</recordId>
+        <version>0</version>
+        <updated>false</updated>
+        <childUpdated>false</childUpdated>
+        <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+        <userIdCreated>3000100</userIdCreated>
+        <createdDateTime>2012-06-26 12:19:23.189 MDT</createdDateTime>
+        <userIdUpdated>0</userIdUpdated>
+        <effectiveDateTime>2012-02-02 00:00:00.000 MST</effectiveDateTime>
+        <monetaryTypeCd>plc_fire_rcvy</monetaryTypeCd>
+        <impactIncurInd>false</impactIncurInd>
+        <monetaryTypeTransactionTypeColl class="list"/>
+        <monetaryFnclTranTypeId>0</monetaryFnclTranTypeId>
+        <reserveId>0</reserveId>
+        <monetaryTypeName>Police/Fire Reports Recovery</monetaryTypeName>
+      </claimsMonetaryTypesDTO>
+      <claimsMonetaryTypesDTO>
+        <changesetId>0</changesetId>
+        <recordId>6003902</recordId>
+        <version>0</version>
+        <updated>false</updated>
+        <childUpdated>false</childUpdated>
+        <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+        <userIdCreated>3000100</userIdCreated>
+        <createdDateTime>2012-06-26 12:18:29.110 MDT</createdDateTime>
+        <userIdUpdated>2</userIdUpdated>
+        <updatedDateTime>2013-08-01 14:21:50.065 MDT</updatedDateTime>
+        <effectiveDateTime>2012-02-02 00:00:00.000 MST</effectiveDateTime>
+        <endDateTime>2012-02-02 00:00:00.000 MST</endDateTime>
+        <monetaryTypeCd>mscexppymtrecvy</monetaryTypeCd>
+        <impactIncurInd>false</impactIncurInd>
+        <monetaryTypeTransactionTypeColl class="list"/>
+        <monetaryFnclTranTypeId>0</monetaryFnclTranTypeId>
+        <reserveId>0</reserveId>
+        <monetaryTypeName>Misc Expense Payment Recovery</monetaryTypeName>
+      </claimsMonetaryTypesDTO>
+      <claimsMonetaryTypesDTO>
+        <changesetId>0</changesetId>
+        <recordId>6003906</recordId>
+        <version>0</version>
+        <updated>false</updated>
+        <childUpdated>false</childUpdated>
+        <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+        <userIdCreated>3000100</userIdCreated>
+        <createdDateTime>2012-06-26 12:21:51.127 MDT</createdDateTime>
+        <userIdUpdated>0</userIdUpdated>
+        <effectiveDateTime>2012-02-02 00:00:00.000 MST</effectiveDateTime>
+        <monetaryTypeCd>med_exp_rcvy</monetaryTypeCd>
+        <impactIncurInd>false</impactIncurInd>
+        <monetaryTypeTransactionTypeColl class="list"/>
+        <monetaryFnclTranTypeId>0</monetaryFnclTranTypeId>
+        <reserveId>0</reserveId>
+        <monetaryTypeName>Medical Expense Recovery</monetaryTypeName>
+      </claimsMonetaryTypesDTO>
+      <claimsMonetaryTypesDTO>
+        <changesetId>0</changesetId>
+        <recordId>6003904</recordId>
+        <version>0</version>
+        <updated>false</updated>
+        <childUpdated>false</childUpdated>
+        <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+        <userIdCreated>3000100</userIdCreated>
+        <createdDateTime>2012-06-26 12:20:00.895 MDT</createdDateTime>
+        <userIdUpdated>0</userIdUpdated>
+        <effectiveDateTime>2012-02-02 00:00:00.000 MST</effectiveDateTime>
+        <monetaryTypeCd>invst_rcvy</monetaryTypeCd>
+        <impactIncurInd>false</impactIncurInd>
+        <monetaryTypeTransactionTypeColl class="list"/>
+        <monetaryFnclTranTypeId>0</monetaryFnclTranTypeId>
+        <reserveId>0</reserveId>
+        <monetaryTypeName>Investigation Recovery</monetaryTypeName>
+      </claimsMonetaryTypesDTO>
+      <claimsMonetaryTypesDTO>
+        <changesetId>0</changesetId>
+        <recordId>6003907</recordId>
+        <version>0</version>
+        <updated>false</updated>
+        <childUpdated>false</childUpdated>
+        <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+        <userIdCreated>3000100</userIdCreated>
+        <createdDateTime>2012-06-26 12:22:51.731 MDT</createdDateTime>
+        <userIdUpdated>0</userIdUpdated>
+        <effectiveDateTime>2012-02-02 00:00:00.000 MST</effectiveDateTime>
+        <monetaryTypeCd>med_rcvy</monetaryTypeCd>
+        <impactIncurInd>false</impactIncurInd>
+        <monetaryTypeTransactionTypeColl class="list"/>
+        <monetaryFnclTranTypeId>0</monetaryFnclTranTypeId>
+        <reserveId>0</reserveId>
+        <monetaryTypeName>Legal Mediation/Arbitration Recovery</monetaryTypeName>
+      </claimsMonetaryTypesDTO>
+      <claimsMonetaryTypesDTO>
+        <changesetId>0</changesetId>
+        <recordId>6003909</recordId>
+        <version>0</version>
+        <updated>false</updated>
+        <childUpdated>false</childUpdated>
+        <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+        <userIdCreated>3000100</userIdCreated>
+        <createdDateTime>2012-06-26 12:23:51.108 MDT</createdDateTime>
+        <userIdUpdated>0</userIdUpdated>
+        <effectiveDateTime>2012-02-02 00:00:00.000 MST</effectiveDateTime>
+        <monetaryTypeCd>hse_cnsl_rcvy</monetaryTypeCd>
+        <impactIncurInd>false</impactIncurInd>
+        <monetaryTypeTransactionTypeColl class="list"/>
+        <monetaryFnclTranTypeId>0</monetaryFnclTranTypeId>
+        <reserveId>0</reserveId>
+        <monetaryTypeName>House Counsel Expense Recovery</monetaryTypeName>
+      </claimsMonetaryTypesDTO>
+      <claimsMonetaryTypesDTO>
+        <changesetId>0</changesetId>
+        <recordId>6003910</recordId>
+        <version>0</version>
+        <updated>false</updated>
+        <childUpdated>false</childUpdated>
+        <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+        <userIdCreated>3000100</userIdCreated>
+        <createdDateTime>2012-06-26 12:24:22.586 MDT</createdDateTime>
+        <userIdUpdated>0</userIdUpdated>
+        <effectiveDateTime>2012-02-02 00:00:00.000 MST</effectiveDateTime>
+        <monetaryTypeCd>oth_lgl_exprcv</monetaryTypeCd>
+        <impactIncurInd>false</impactIncurInd>
+        <monetaryTypeTransactionTypeColl class="list"/>
+        <monetaryFnclTranTypeId>0</monetaryFnclTranTypeId>
+        <reserveId>0</reserveId>
+        <monetaryTypeName>Other Legal Expense Recovery</monetaryTypeName>
+      </claimsMonetaryTypesDTO>
+      <claimsMonetaryTypesDTO>
+        <changesetId>0</changesetId>
+        <recordId>6003908</recordId>
+        <version>0</version>
+        <updated>false</updated>
+        <childUpdated>false</childUpdated>
+        <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+        <userIdCreated>3000100</userIdCreated>
+        <createdDateTime>2012-06-26 12:23:22.647 MDT</createdDateTime>
+        <userIdUpdated>0</userIdUpdated>
+        <effectiveDateTime>2012-02-02 00:00:00.000 MST</effectiveDateTime>
+        <monetaryTypeCd>ind_cnsl_rcvy</monetaryTypeCd>
+        <impactIncurInd>false</impactIncurInd>
+        <monetaryTypeTransactionTypeColl class="list"/>
+        <monetaryFnclTranTypeId>0</monetaryFnclTranTypeId>
+        <reserveId>0</reserveId>
+        <monetaryTypeName>Independent Counsel Recovery</monetaryTypeName>
+      </claimsMonetaryTypesDTO>
+    </monetaryTypeColl>
+  </claimCompanyReserveTypesDTO>
+  <claimCompanyReserveTypesDTO>
+    <recordId>6006600</recordId>
+    <updated>false</updated>
+    <childUpdated>false</childUpdated>
+    <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+    <userIdCreated>2</userIdCreated>
+    <createdDateTime>2013-05-24 09:36:49.529 MDT</createdDateTime>
+    <userIdUpdated>3000100</userIdUpdated>
+    <updatedDateTime>2013-08-07 13:00:04.910 MDT</updatedDateTime>
+    <effectiveDateTime>2012-02-02 00:00:00.000 MST</effectiveDateTime>
+    <endDateTime>2012-02-02 00:00:00.000 MST</endDateTime>
+    <corpName>Pilgrim Insurance Company</corpName>
+    <compName>Acadia Insurance Company (B/O)</compName>
+    <compLOBName>Commercial Auto</compLOBName>
+    <enterpriseLOB>Commercial Automobile</enterpriseLOB>
+    <thresholdAmount>999999.00</thresholdAmount>
+    <corpId>100</corpId>
+    <compId>114</compId>
+    <compLOBId>110</compLOBId>
+    <reservTypeCd>lgl_exp</reservTypeCd>
+    <reservTypeName>Legal Expense</reservTypeName>
+    <monetaryCategoryCd>exp</monetaryCategoryCd>
+    <monetaryTypeColl class="list">
+      <claimsMonetaryTypesDTO>
+        <changesetId>0</changesetId>
+        <recordId>6006708</recordId>
+        <version>0</version>
+        <updated>false</updated>
+        <childUpdated>false</childUpdated>
+        <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+        <userIdCreated>2</userIdCreated>
+        <createdDateTime>2013-05-24 09:36:49.529 MDT</createdDateTime>
+        <userIdUpdated>0</userIdUpdated>
+        <effectiveDateTime>2012-02-02 00:00:00.000 MST</effectiveDateTime>
+        <monetaryTypeCd>plc_fir_rpt</monetaryTypeCd>
+        <impactIncurInd>false</impactIncurInd>
+        <monetaryTypeTransactionTypeColl class="list"/>
+        <monetaryFnclTranTypeId>0</monetaryFnclTranTypeId>
+        <reserveId>0</reserveId>
+        <monetaryTypeName>Police/Fire Reports</monetaryTypeName>
+      </claimsMonetaryTypesDTO>
+      <claimsMonetaryTypesDTO>
+        <changesetId>0</changesetId>
+        <recordId>6006707</recordId>
+        <version>0</version>
+        <updated>false</updated>
+        <childUpdated>false</childUpdated>
+        <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+        <userIdCreated>2</userIdCreated>
+        <createdDateTime>2013-05-24 09:36:49.529 MDT</createdDateTime>
+        <userIdUpdated>0</userIdUpdated>
+        <effectiveDateTime>2012-02-02 00:00:00.000 MST</effectiveDateTime>
+        <monetaryTypeCd>lgl_exp</monetaryTypeCd>
+        <impactIncurInd>false</impactIncurInd>
+        <monetaryTypeTransactionTypeColl class="list"/>
+        <monetaryFnclTranTypeId>0</monetaryFnclTranTypeId>
+        <reserveId>0</reserveId>
+        <monetaryTypeName>Other Legal Expense</monetaryTypeName>
+      </claimsMonetaryTypesDTO>
+</monetaryTypeColl>
+</claimCompanyReserveTypesDTO>
+</list>

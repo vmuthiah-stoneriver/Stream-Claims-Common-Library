@@ -1,0 +1,20 @@
+ClearCase CopyAreaDB|4
+iip_starter_kit\claim_starter_kit\common-intrg\src\main\java\com\client\iip\integration\documents
+2
+10
+14:XMLSchemaWriter.java|1|14c957123f2|1282|b25523fa|17d8699f1d384aca994e0ae532d93acb|0
+26:OutBoundDocumentObjectTransformer.java|1|14c957123c0|861|352becf4|d34093d3493b4f4f845a83d3265e5360|0
+1e:ClientDSSProxyServiceImpl.java|1|14d4df37daa|9a6|26303841|0adbaec4094f44b79d82deecfbe4dce8|0
+29:ClientDocumentRecipientDeliverResult.java|1|14c95712384|334|a93f0459|9d4f9b6a35244516b1c4ef4addc52898|0
+16:ClientDocumentDTO.java|1|14d4ea0a839|312|5c9506c6|1f824d50c5434e03be5d8aa532cad38c|0
+18:DocumentTransformer.java|1|14c957123b6|5d2|d54aef50|e94a613e5fd449b48c7c6716372c922d|0
+1e:ClientDocumentServiceImpl.java|1|14d5349ca8c|2ae7|f5c6e360|3e2e9e64610845018448cc6e7578f8b2|0
+14:XMLSchemaHelper.java|1|14c957123e8|30a2|f2ecd326|dc26f7bfcfc244d890af553936721248|0
+1b:DocumentPreviewServlet.java|1|14c957123a2|13f9|9fab67f8|f689417ecacb4a8099c77026b24e3095|0
+19:ClientDocumentHelper.java|1|14c95712366|499d|9508c044|b3bc91f21ea8436fb7838d86461b998c|0
+1c:DocumentRedirectServlet.java|1|14c957123ac|af0|736e6ae4|63db2c2e5f2543dcb0b70c19141487ca|0
+16:ClientDocumentDAO.java|1|14d0b1a6c41|381|50be30bf|ac68d4a8fe4a4e239d742c6e01539a79|0
+1a:DocumentRecipientType.java|1|14c957123a2|615|9a3de337|114ca3f019984518a6be1849c85b8607|0
+23:DocumentAttachmentRetrieveImpl.java|1|14c95712398|1275|80ba03d6|69cb3bc8096e4ac9a078d00414e83da9|0
+23:OutBoundDocumentXMLTransformer.java|1|14c957123ca|f20|e2d20739|5bdefe9b1ef64002a48e81594dccd1d7|0
+1a:ClientDocumentService.java|1|14d24b29589|274|a69ad805|18eec58265114235976b5e90106e1757|0

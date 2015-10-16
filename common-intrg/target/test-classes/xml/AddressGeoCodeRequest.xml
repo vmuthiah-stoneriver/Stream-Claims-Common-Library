@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<list>
+	<addressDTO>
+		<postalServiceRegionId>34</postalServiceRegionId>
+		<postalCode>01144</postalCode>
+		<addressLine1>7780 Office Plaza Drive</addressLine1>
+		<addressLine2>Apt. 220</addressLine2>
+		<cityName>Springfield</cityName>
+		<subdivisionName>BARNSTABLE</subdivisionName>
+		<countryCode>usa</countryCode>
+		<postalSvcRegionCode>IA</postalSvcRegionCode>
+	</addressDTO>
+
+	<addressDTO>
+		<postalServiceRegionId>34</postalServiceRegionId>
+		<postalCode>01144-0660</postalCode>
+		<addressLine1>7780 South Office Plaza Drive</addressLine1>
+		<cityName>Springfield</cityName>
+		<subdivisionName>BARNSTABLE</subdivisionName>
+		<countryCode>usa</countryCode>
+		<postalSvcRegionCode>IA</postalSvcRegionCode>
+	</addressDTO>
+
+	<addressDTO>
+		<postalServiceRegionId>34</postalServiceRegionId>
+		<postalCode>01144-0662</postalCode>
+		<addressLine1>7780 Office Plaza Dr S</addressLine1>
+		<addressLine2>Apt. 220</addressLine2>
+		<cityName>Springfield</cityName>
+		<subdivisionName>BARNSTABLE</subdivisionName>
+		<countryCode>usa</countryCode>
+		<postalSvcRegionCode>IA</postalSvcRegionCode>
+	</addressDTO>
+</list>

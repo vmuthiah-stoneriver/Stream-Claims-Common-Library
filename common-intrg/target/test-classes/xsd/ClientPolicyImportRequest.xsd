@@ -1,0 +1,131 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<xs:element name="PolicyImportRequest" type="PolicyImportRequest" />
+
+	<xs:complexType name="PolicyImportRequest">
+		<xs:sequence>
+			<xs:element name="dateOfLoss" type="xs:date" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Date of loss.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="externalPolicyId" type="xs:string"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>External Policy id.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="includeUnitDesc" type="xs:boolean"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Include Units.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="lineOfBusiness" type="xs:string"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>LOB Code.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="policyNumber" type="xs:string"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Policy Number.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="recordSourceCode" type="xs:string"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Policy system code. Used to identify source
+						policy system.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Units" type="RequestUnitList" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>List of units.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="RequestUnitList">
+		<xs:sequence>
+			<xs:element name="unit" type="RequestUnit" minOccurs="0"
+				maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Unit type.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="RequestUnit">
+		<xs:sequence>
+			<xs:element name="unitIdTxt" type="xs:string" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Unit idnetifier.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="unitDataTypeCode" type="xs:string"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Unit Data Type
+						Vehicle
+						Property
+						Location
+						Other
+						Individual
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="unitTypeCode" type="xs:string"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Unit Type
+						Blanket Property
+						Boat
+						Building
+						Business
+						Personal Property - Scheduled
+						Camper/Trailer
+						Contents
+						Death Indemnity
+						Dwelling
+						Equipment
+						Farm Other Structures
+						First Pedestrian
+						Hired Auto
+						Non-owned Auto
+						Other Structures
+						Other Third Party Property
+						Property
+						of Others
+						Recreational Vehicle
+						Risk Location
+						Scheduled Farm Personal
+						Property
+						Structures/Buildings
+						Third Party Injry
+						Third Party Injury
+						Third Party Location
+						Third Party Pedestrian
+						Third Party Vehicle
+						Unscheduled Farm Personal Property
+						Vehicle
+						Watercraft
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="description" type="xs:string" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Unit description.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

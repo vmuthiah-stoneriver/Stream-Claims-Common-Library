@@ -1,0 +1,1874 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<xs:element name="PolicyImport" type="PolicyImportWrapper">
+		<xs:annotation>
+			<xs:documentation>Policy import.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+
+	<xs:complexType name="PolicyImportWrapper">
+		<xs:sequence>
+			<xs:element name="policy" type="Policy" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Policy Information containing Units,
+						Participants, Coverages, Limits and Deductibles.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="persons" type="personList" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Individual participants.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="organizations" type="orgList" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Organization (Vendor, Bank, Agency etc)
+						Participants
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="orgList">
+		<xs:sequence>
+			<xs:element name="organization" type="Organization"
+				minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Organization.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="personList">
+		<xs:sequence>
+			<xs:element name="person" type="Person" minOccurs="0"
+				maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Person.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="Profile">
+		<xs:sequence>
+			<xs:element name="profileName" type="xs:string" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Profile name.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="externalSourceId" type="xs:string"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>External identifier.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="profileResponseText" type="xs:string"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Profile value.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="Deductibledetail">
+		<xs:sequence>
+			<xs:element name="deductibleAmount" type="xs:double"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Deductible amount.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="deductibleTypeCode" type="xs:string"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Deductible detail type
+						Water Back Up
+						Windstorm or
+						Hail
+						Identity Fraud
+						Hull
+						Refrigerated Products
+						Earthquake Assessment
+						Earthquake
+						Flat
+						PIP
+						Liability
+						Combined Single Limit
+						Boat
+						Workers Comp
+						Inland Marine
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="externalSourceId" type="xs:string"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>External identifier.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="Deductible">
+		<xs:sequence>
+			<xs:element name="deductibleTypeCode" type="xs:string"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Deductible type
+						Single
+						Multiple
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="effectiveDate" type="xs:date" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Effective date.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="expiryDate" type="xs:date" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Expiry date.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="externalSourceId" type="xs:string"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>External identifier.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Deductibledetails" type="DeductibleDetailList"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Deductibles.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="DeductibleDetailList">
+		<xs:sequence>
+			<xs:element name="deductibledetail" type="Deductibledetail"
+				minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Deductible detail.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="Limitdetail">
+		<xs:sequence>
+			<xs:element name="externalSourceId" type="xs:string"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>External identifier.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="limitAmount" type="xs:double" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Limit amount.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="limitTypeCode" type="xs:string"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Limit detail types
+						Each Person
+						Each Occurrence
+						Agreed Value
+						Medical Pay
+						Per Day
+						Physical Damage
+						Liability
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="Limit">
+		<xs:sequence>
+			<xs:element name="effectiveDate" type="xs:date" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Effective date.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="expiryDate" type="xs:date" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Expiry date.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="externalSourceId" type="xs:string"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>External identifier.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="limitTypeCode" type="xs:string"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Limit types
+						Single
+						Multiple
+						Split
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Limitdetails" type="LimitdetailList"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Limits.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="LimitdetailList">
+		<xs:sequence>
+			<xs:element name="limitdetail" type="Limitdetail"
+				minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Limit details.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="Coverage">
+		<xs:sequence>
+			<xs:element name="coverageCode" type="xs:string"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Coverages
+						Auto Death Indemnity
+						Additions and
+						Alterations
+						Audio &amp; Electronic Equipment &amp; Accessories
+						..
+						..
+						Coverages configured in CLAIM_COVERAGE_CD Table and Policy-Stream
+						Coverage XREF Table (CLAIM_COVERAGE_COVERAGE_XREF)
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="effectiveDate" type="xs:date" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Effective date</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="expiryDate" type="xs:date" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Expiry date.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="externalSourceId" type="xs:string"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>External identifier.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="externalStatusId" type="xs:string"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>External stat identifier. (Used for PSTAR)
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Limits" type="LimitList" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Limits</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Deductibles" type="DeductibleList"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Deductibles.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Profiles" type="ProfileList" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Additional custom attributes for coverage.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="LimitList">
+		<xs:sequence>
+			<xs:element name="limit" type="Limit" minOccurs="0"
+				maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Limit detail.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+
+	<xs:complexType name="DeductibleList">
+		<xs:sequence>
+			<xs:element name="deductible" type="Deductible" minOccurs="0"
+				maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Deductibel detail.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="ProfileList">
+		<xs:sequence>
+			<xs:element name="profile" type="Profile" minOccurs="0"
+				maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Profile detail.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="VehicleUnit">
+		<xs:sequence>
+			<xs:element name="make" type="xs:string" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Make.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="model" type="xs:string" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Model.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="vin" type="xs:string" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>VIN Numbe.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="year" type="xs:string" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Year.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="PersonName">
+		<xs:sequence>
+			<xs:element name="effectiveDate" type="xs:date" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Effective date.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="expiryDate" type="xs:date" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Expiry date.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="externalSourceId" type="xs:string"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>External identifier.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="firstName" type="xs:string" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>First name.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="lastName" type="xs:string" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Last name.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="middleName" type="xs:string" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Middle name.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="nameTitleCode" type="xs:string"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Name title code.
+						Mr.
+						Ms.
+						Mrs.
+						Fr.
+						Sr.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="nameTypeCode" type="xs:string"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Name types
+						Legal Name
+						Alias Name
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="personName" type="xs:string" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Person name.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="Address">
+		<xs:sequence>
+			<xs:element name="addressLine1" type="xs:string"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Address line 1.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="addressLine2" type="xs:string"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Address line 2.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="city" type="xs:string" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>City.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="country" type="xs:string" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Country.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="latitude" type="xs:string" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Latitude.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="longitude" type="xs:string" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Longtitude.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="overrideIndicator" type="xs:boolean"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Indicates if the address verification was
+						overridden.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="postalCode" type="xs:string" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Postal code.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="postalSvcRegionCode" type="xs:string"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>State code.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="subdivision" type="xs:string" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>County.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="usageType" type="xs:string" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Address type
+						Billing Address
+						Physical Address
+						Vendor Address
+						1099 Address
+						Mailing Address
+						Payment Address
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="verifiedIndicator" type="xs:boolean"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Flag indicating if the address was verified by
+						the third party service.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="Communication">
+		<xs:sequence>
+			<xs:element name="email" type="xs:string" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Email address.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="faxNumber" type="xs:string" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Fax number.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="phoneNumber" type="xs:string" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Phone number.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="usageType" type="xs:string" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Communication type
+						Business Phone
+						Cellular Phone
+						Home Phone
+						Fax
+						Personal Email
+						Work Email
+						Website
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="website" type="xs:string" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Website address.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="TaxIdentifier">
+		<xs:sequence>
+			<xs:element name="effectiveDate" type="xs:date" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Effective date.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="expiryDate" type="xs:date" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Expiry date.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="taxidNumber" type="xs:string" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Tax id number.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="taxTypeCode" type="xs:string" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Tax type
+						FEIN
+						SSN
+						ITIN
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="Vendor">
+		<xs:sequence>
+			<xs:element name="accountsPayableVendorId" type="xs:string"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>AP Vendor id.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="areaWideServiceIndicator" type="xs:string"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Areawide service flag.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="externalSourceId" type="xs:string"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>External identifier.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="primaryIndicator" type="xs:boolean"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Parimary indicator flag.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="recommendedVendor" type="xs:boolean"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Recommended vendor indicator.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="subjectToSurcharge" type="xs:boolean"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Surcharge flag.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="surchargeJurisdiction" type="xs:string"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Surcharge jurisdiction.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="surchargeRecipent" type="xs:boolean"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Surcharge recipient.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="surchargeTypeCode" type="xs:string"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Surcharge type
+						HCRA Surcharge
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="vendorCategoryCode" type="xs:string"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						Adjuster Services
+						Audit Services
+						Legal Services
+						Investigation Services
+						Law Enforcement Services
+						Producer
+						Health Care
+						Provider
+						Service Vendor
+						Government Services
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="vendorFeeAmount" type="xs:double"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Vendor fee.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="vendorFeeTypeCode" type="xs:string"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						Administrative Fees
+						Vendor Service Fees
+						Miscellaneous Fees
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="vendorRatingCode" type="xs:string"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Vendor rating
+						Excellent
+						Good
+						Fair
+						Poor
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="vendorTypeCode" type="xs:string"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Vendor type
+						Acupuncturist
+						Ambulance
+						Airline
+						..
+						..
+						All
+						codes configured in VENDOR_TYPE_CD Table.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="Driver">
+		<xs:sequence>
+			<xs:element name="countryCode" type="xs:string" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Country code.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="driverClassTypeCode" type="xs:string"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						Commercial
+						Motorcycle
+						Non-Commercial
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="expirationDate" type="xs:date"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Expiry date.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="externalSourceId" type="xs:string"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>External Identifier.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="jurisdiction" type="xs:string"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>License jurisdiction.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="licenseNumber" type="xs:string"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Driver license number.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="originalIssueDate" type="xs:date"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Original issue date.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="FinancialInstitution">
+		<xs:sequence>
+			<xs:element name="routingNumber" type="xs:string"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Financial institution role.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="Agency">
+		<xs:sequence>
+			<xs:element name="agentResidencyTypeCode" type="xs:string"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Residency types
+						Resident
+						Non-resident
+						Temporary
+						Permanent
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="countersignerAuthIndicator" type="xs:string"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Countersign auth flag.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="effectiveDate" type="xs:date" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Effective date.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="expiryDate" type="xs:date" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Expiry date.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="jurisdiction" type="xs:string"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Agent jurisdiction.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="licenseNumber" type="xs:string"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Agency licensenumber.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="lineOfBusinessCode" type="xs:string"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>LOB code.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="mgaIndicator" type="xs:string"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>MGA Indicator.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="Regulator">
+		<xs:sequence>
+			<xs:element name="jurisdiction" type="xs:string"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Regulator jurisdiction.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="regulatorTypeCode" type="xs:string"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Regulator type
+						Federal Agency
+						State Agency
+						Reporting Agency
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="Role">
+		<xs:sequence>
+			<xs:element name="effectiveDate" type="xs:date" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Effective date.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="expiryDate" type="xs:date" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Expiry date.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="roleTypeCode" type="xs:string"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Role types
+						Driver
+						Financial Institution
+						Insurance
+						Agency
+						Insurance Agent
+						Lease Group
+						Third Party Administrator
+						Vendor
+						Mortgagee
+						Insurance Carrier
+						Regulator
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="agency" type="Agency" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Agency Role.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="driver" type="Driver" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Driver Role.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="financialInstitution" type="FinancialInstitution"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Financial institution Role.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="regulator" type="Regulator" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Regulator Role.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="vendor" type="Vendor" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Vendor Role.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="Person">
+		<xs:sequence>
+			<xs:element name="recordId" type="xs:int" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Identifer for the policy participant.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="context" type="xs:string" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Stream context
+						Policy
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="countryCode" type="xs:string" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Country code.
+						usa
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="dateOfBirth" type="xs:date" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Date of Birth.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="gender" type="xs:string" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Gender.
+						Male
+						Female
+						Unknown
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="maritalStatus" type="xs:string"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Marital Status.
+						Single
+						Married
+						Divorced
+						Widowed
+						Separated
+						Common Law
+						Unknown
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="partyTypeCode" type="xs:string"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Party type
+						Person
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Addresses" type="AddressList" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Person Address.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Communications" type="CommunicationList"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Person communciation.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="taxIdentifier" type="TaxIdentifier"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Tax identifier.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Names" type="PersonNameList" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Person names.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Roles" type="RoleList" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Person Role.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Profiles" type="ProfileList" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Person additional custom attributes.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="mergeAdditionalPartyInfoOnly" type="xs:boolean"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>true indicates if only new information would be
+						added for party.
+						Existing information will not be updated.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="AddressList">
+		<xs:sequence>
+			<xs:element name="address" type="Address" minOccurs="0"
+				maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Address.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="CommunicationList">
+		<xs:sequence>
+			<xs:element name="communication" type="Communication"
+				minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Communication.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="PersonNameList">
+		<xs:sequence>
+			<xs:element name="personName" type="PersonName" minOccurs="0"
+				maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Person name.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="OrganizationName">
+		<xs:sequence>
+			<xs:element name="effectiveDate" type="xs:date" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Org effective date.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="expiryDate" type="xs:date" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Expiry date.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="externalSourceId" type="xs:string"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>External Identifier.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="nameTypeCode" type="xs:string"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Org name types
+						Legal Name
+						Alias Name
+						Primary DBA
+						Name
+						Secondary DBA Name
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="organizationName" type="xs:string"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Organization name.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="primaryIndicator" type="xs:boolean"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Primary flag.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="Organization">
+		<xs:sequence>
+			<xs:element name="recordId" type="xs:int" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Identifer for the policy participant.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="context" type="xs:string" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Stream context
+						Policy
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="countryCode" type="xs:string" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Country code.
+						usa
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="partyTypeCode" type="xs:string"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Party type
+						Organization
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Addresses" type="AddressList" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Org address.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Communications" type="CommunicationList"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Org Communications.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="taxIdentifier" type="TaxIdentifier"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Tax identifier.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Roles" type="RoleList" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Org Roles.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Names" type="OrganizationNameList"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Organization names.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Profiles" type="ProfileList" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Org additional custom attributres
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="mergeAdditionalPartyInfoOnly" type="xs:boolean"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>true indicates if only new information would be
+						added for party.
+						Existing information will not be updated.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="RoleList">
+		<xs:sequence>
+			<xs:element name="role" type="Role" minOccurs="0"
+				maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Organization Role.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="OrganizationNameList">
+		<xs:sequence>
+			<xs:element name="organizationName" type="OrganizationName"
+				minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Organization name.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="FinancialInterestList">
+		<xs:sequence>
+			<xs:element name="financialInterestDetail" type="FinancialInterestDetail"
+				minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Financial interest detail</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="FinancialInterestDetail">
+		<xs:sequence>
+			<xs:element name="financialTypeCode" type="xs:string"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Financial type
+						Additional Insured
+						Additional
+						Interest
+						Loss Payee
+						Mortgagee
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="loanNumber" type="xs:string" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Loan number.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="lease" type="xs:boolean" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Leased indicator.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="Participant">
+		<xs:sequence>
+			<xs:element name="effectiveDate" type="xs:date" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Effective date.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="expiryDate" type="xs:date" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Expiration date.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="externalSourceId" type="xs:string"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>External Identifier.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="objectId" type="xs:int" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Logical participant id. Should match the Party
+						record id
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="participationTypeCode" type="xs:string"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Partcipant type
+						Driver
+						Insured
+						Financial client
+						Agency
+						Agent
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="primaryIndicator" type="xs:boolean"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Primary participant flag.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="financialInterest" type="FinancialInterestList"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Financial interest details.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="insuredTypeCode" type="xs:string"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Insured type
+						Secondary
+						Additional
+						Other
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="agencyNumber" type="xs:string"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Agency number.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Profiles" type="ProfileList" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Additional custom attributes for participant.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="Unit">
+		<xs:sequence>
+			<xs:element name="effectiveDate" type="xs:date" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Effective date.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="expiryDate" type="xs:date" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Expiry date.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="externalSourceId" type="xs:string"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>External Identifier.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="itemDescription" type="xs:string"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Unit description.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="manualIndicator" type="xs:boolean"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Manual creation flag.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="unitCategoryCode" type="xs:string"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Unit category
+						Vehicle
+						Location
+						Recreational Vehicle
+						Personal Property
+						Property
+						Individual
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="unitDataTypeCode" type="xs:string"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Unit Data Type
+						Vehicle
+						Property
+						Location
+						Other
+						Individual
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="unitIdTxt" type="xs:string" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Unit identifier.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="unitNo" type="xs:string" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Unit number.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="unitRoleCategoryCode" type="xs:string"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Unit role category.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="unitSubTypeCode" type="xs:string"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Unit subtypes
+						Scheduled
+						Unscheduled
+						Third Party
+						Combo
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="unitTypeCode" type="xs:string"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Unit Type
+						Vehicle
+						Third Party Vehicle
+						Recreational
+						Named Nonowned Vehicle
+						Property
+						Third Party Property
+						Scheduled
+						Personal Property
+						Unscheduled Personal Property
+						Residence
+						Location
+						Garage Location
+						Other Third Party
+						Other Structure
+						Individual
+						First
+						Party Injury
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Addresses" type="AddressList" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Unit adderss.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Coverages" type="CoverageList"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Coverages.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Participants" type="ParticipantList"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Policy unit level participants.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Endorsements" type="EndorsementList"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Policy Endorsement forms.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Profiles" type="ProfileList" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Additional custom attributes for unit.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="VehicleUnit" type="VehicleUnit"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Vehicle unit.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="ParticipantList">
+		<xs:sequence>
+			<xs:element name="participant" type="Participant"
+				minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Participant detail.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="CoverageList">
+		<xs:sequence>
+			<xs:element name="coverage" type="Coverage" minOccurs="0"
+				maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Coverage detail.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="Form">
+		<xs:sequence>
+			<xs:element name="deductibleAmount" type="xs:double"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Deductible amount.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="editDate" type="xs:date" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Edition date.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="effectiveDate" type="xs:date" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Effective date.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="expiryDate" type="xs:date" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Expiry date.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="formName" type="xs:string" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Endorsement form name.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="formNumber" type="xs:string" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Endorsement form number.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="formSuffix" type="xs:string" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Endorsement form suffix.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="limitAmount" type="xs:double" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Limit amount.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="externalIndexId" type="xs:string"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>External index id.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="Endorsement">
+		<xs:sequence>
+			<xs:element name="amount" type="xs:double" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Endorsement Amount.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="effectiveDate" type="xs:date" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Endorsment effective date.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="expiryDate" type="xs:date" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Endorsement effective date.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="externalSourceId" type="xs:string"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>External identifier.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Forms" type="FormList" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Endorsement forms.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="FormList">
+		<xs:sequence>
+			<xs:element name="form" type="Form" minOccurs="0"
+				maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Endorsement form.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="Policy">
+		<xs:sequence>
+			<xs:element name="agentNumber" type="xs:string" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Agency number.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="companyName" type="xs:string" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Insurance carrier company name.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="corporationName" type="xs:string"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Insurance carrier corporation name.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="externalSourceId" type="xs:string"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>External identifier.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="jurisdiction" type="xs:string"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Policy jurisdiction.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="lineOfBusiness" type="xs:string"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>LOB code.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="modNumber" type="xs:string" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Policy Mod.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="origPolicyEffectiveDate" type="xs:date"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Policy scheduled effective date.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="policyEffectiveDate" type="xs:date"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Policy effective date.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="policyEndDate" type="xs:date" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Policy expiry date.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="policyNumber" type="xs:string"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Policy number.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="policyStatusCode" type="xs:string"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Policy status
+						Issued
+						Cancelled
+						Incomplete
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="recordSourceCode" type="xs:string"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Policy system source code</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Endorsements" type="EndorsementList"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Policy Endorsement forms.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Units" type="UnitList" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Policy units.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Risklocations" type="RiskLocationList"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Policy Risk locations - Workers comp.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Participants" type="ParticipantList"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Policy level partcipants.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Profiles" type="ProfileList" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Policy additional custom attributes.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="EndorsementList">
+		<xs:sequence>
+			<xs:element name="endorsement" type="Endorsement"
+				minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Policy Endorsement.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="UnitList">
+		<xs:sequence>
+			<xs:element name="unit" type="Unit" minOccurs="0"
+				maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Policy unit.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="RiskLocationList">
+		<xs:sequence>
+			<xs:element name="riskLocation" type="PolicyRiskLocation"
+				minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Risk location.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="PolicyRiskLocation">
+		<xs:sequence>
+			<xs:element name="name" type="xs:string" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Location name.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="description" type="xs:string" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Description.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="primaryIndicator" type="xs:boolean"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Primary flag.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="jurisdiction" type="xs:string"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Jurisdiction name.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="address" type="Address" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Location address.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="WCompCoverages" type="WCCoverageList"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Workers Comp Coverages.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Coverages" type="CoverageList"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Unit coverages.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Endorsements" type="EndorsementList"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Endorsements.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="WCCoverageList">
+		<xs:sequence>
+			<xs:element name="wccoverage" type="WCCoverage" minOccurs="0"
+				maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Workerscomp coverage.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="WCCoverage">
+		<xs:sequence>
+			<xs:element name="classCode" type="xs:string" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Coverage class.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="suffixCode" type="xs:string" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Covearge suffix.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ratingTypeCode" type="xs:string"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Policy coverage rating category codes for score
+						card.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="jurisdiction" type="xs:string"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Policy coverage jurisdiction.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+</xs:schema>

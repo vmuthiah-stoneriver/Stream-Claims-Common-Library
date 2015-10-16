@@ -1,0 +1,225 @@
+<organizationDTO>
+            <partyTypeCode>org</partyTypeCode>
+            <countryCode>usa</countryCode>
+            <context>party</context>
+  			<taxStatusIndicator>
+    			<taxIdUnavailable>false</taxIdUnavailable>
+  			</taxStatusIndicator>            
+            <languages class="list"/>
+            <interactionChannels class="list"/>
+            <preferences class="list"/>
+            <bankInformations class="list"/>
+            <relationships class="list"/>
+            <inverseRelationships class="list"/>
+            <contacts class="list"/>
+            <identifiers class="list"/>
+            <childSupports class="list"/>
+            <blocks class="list"/>
+            <addressCollectionDTO>
+                <addresses class="list">
+                    <addressDTO>
+                        <postalServiceRegionId>34</postalServiceRegionId>
+                        <postalCode>01852</postalCode>
+                        <addressLine1>327 Peach Street</addressLine1>
+                        <cityName>Lowell</cityName>
+                        <countryCode>usa</countryCode>
+                        <postalSvcRegionCode>MA</postalSvcRegionCode>
+                        <verifiedIndicator>false</verifiedIndicator>
+                        <usages class="list">
+                            <addressUsageDTO>
+                                <effectiveDateTime>2012-11-19 00:00:00.000 EST</effectiveDateTime>
+                                <agreementTypeCd>plcy</agreementTypeCd>
+                                <usageTypeCd>phy_addr</usageTypeCd>
+                                <isSeasonal>false</isSeasonal>
+                                <usageTypeValue>phy_addr</usageTypeValue>
+                            </addressUsageDTO>
+                            <addressUsageDTO>
+                                <effectiveDateTime>2012-11-19 00:00:00.000 EST</effectiveDateTime>
+                                <agreementTypeCd>clm</agreementTypeCd>
+                                <usageTypeCd>phy_addr</usageTypeCd>
+                                <isSeasonal>false</isSeasonal>
+                                <usageTypeValue>phy_addr</usageTypeValue>
+                            </addressUsageDTO>
+                            <addressUsageDTO>
+                                <effectiveDateTime>2012-11-19 00:00:00.000 EST</effectiveDateTime>
+                                <agreementTypeCd>agcy</agreementTypeCd>
+                                <usageTypeCd>phy_addr</usageTypeCd>
+                                <isSeasonal>false</isSeasonal>
+                                <usageTypeValue>phy_addr</usageTypeValue>
+                            </addressUsageDTO>
+                            <addressUsageDTO>
+                                <effectiveDateTime>2012-11-19 00:00:00.000 EST</effectiveDateTime>
+                                <agreementTypeCd>clm</agreementTypeCd>
+                                <usageTypeCd>mail_addr</usageTypeCd>
+                                <isSeasonal>false</isSeasonal>
+                                <usageTypeValue>mail_addr</usageTypeValue>
+                            </addressUsageDTO>
+                            <addressUsageDTO>
+                                <effectiveDateTime>2012-11-19 00:00:00.000 EST</effectiveDateTime>
+                                <agreementTypeCd>party</agreementTypeCd>
+                                <usageTypeCd>mail_addr</usageTypeCd>
+                                <isSeasonal>false</isSeasonal>
+                                <usageTypeValue>mail_addr</usageTypeValue>
+                            </addressUsageDTO>
+                            <addressUsageDTO>
+                                <effectiveDateTime>2012-11-19 00:00:00.000 EST</effectiveDateTime>
+                                <agreementTypeCd>plcy</agreementTypeCd>
+                                <usageTypeCd>mail_addr</usageTypeCd>
+                                <isSeasonal>false</isSeasonal>
+                                <usageTypeValue>mail_addr</usageTypeValue>
+                            </addressUsageDTO>
+                            <addressUsageDTO>
+                                <effectiveDateTime>2012-11-19 00:00:00.000 EST</effectiveDateTime>
+                                <agreementTypeCd>agcy</agreementTypeCd>
+                                <usageTypeCd>mail_addr</usageTypeCd>
+                                <isSeasonal>false</isSeasonal>
+                                <usageTypeValue>mail_addr</usageTypeValue>
+                            </addressUsageDTO>
+                            <addressUsageDTO>
+                                <effectiveDateTime>2012-11-19 00:00:00.000 EST</effectiveDateTime>
+                                <agreementTypeCd>clm</agreementTypeCd>
+                                <usageTypeCd>pay_addr</usageTypeCd>
+                                <isSeasonal>false</isSeasonal>
+                                <usageTypeValue>pay_addr</usageTypeValue>
+                            </addressUsageDTO>
+                            <addressUsageDTO>
+                                <effectiveDateTime>2012-11-19 00:00:00.000 EST</effectiveDateTime>
+                                <agreementTypeCd>agcy</agreementTypeCd>
+                                <usageTypeCd>pay_addr</usageTypeCd>
+                                <isSeasonal>false</isSeasonal>
+                                <usageTypeValue>pay_addr</usageTypeValue>
+                            </addressUsageDTO>
+                            <addressUsageDTO>
+                                <effectiveDateTime>2012-11-19 00:00:00.000 EST</effectiveDateTime>
+                                <agreementTypeCd>clm</agreementTypeCd>
+                                <usageTypeCd>vend_addr</usageTypeCd>
+                                <isSeasonal>false</isSeasonal>
+                                <usageTypeValue>vend_addr</usageTypeValue>
+                            </addressUsageDTO>
+                            <addressUsageDTO>
+                                <effectiveDateTime>2012-11-19 00:00:00.000 EST</effectiveDateTime>
+                                <agreementTypeCd>agcy</agreementTypeCd>
+                                <usageTypeCd>vend_addr</usageTypeCd>
+                                <isSeasonal>false</isSeasonal>
+                                <usageTypeValue>vend_addr</usageTypeValue>
+                            </addressUsageDTO>
+                            <addressUsageDTO>
+                                <effectiveDateTime>2012-11-19 00:00:00.000 EST</effectiveDateTime>
+                                <agreementTypeCd>clm</agreementTypeCd>
+                                <usageTypeCd>1099_addr</usageTypeCd>
+                                <isSeasonal>false</isSeasonal>
+                                <usageTypeValue>1099_addr</usageTypeValue>
+                            </addressUsageDTO>
+                            <addressUsageDTO>
+                                <effectiveDateTime>2012-11-19 00:00:00.000 EST</effectiveDateTime>
+                                <agreementTypeCd>agcy</agreementTypeCd>
+                                <usageTypeCd>1099_addr</usageTypeCd>
+                                <isSeasonal>false</isSeasonal>
+                                <usageTypeValue>1099_addr</usageTypeValue>
+                            </addressUsageDTO>
+                        </usages>
+                    </addressDTO>
+                </addresses>
+            </addressCollectionDTO>
+            <partyRoleCollection class="list">
+		<partyRoleVendorDTO>
+			<partyRoleTypeCd>vend</partyRoleTypeCd>
+			<effectiveDateTime>2012-11-19 00:00:00.000 EST</effectiveDateTime>
+			<accountsPayableVendorTypeCode>perm</accountsPayableVendorTypeCode>
+			<daysHoursOfService>12</daysHoursOfService>
+			<recommendedVendorIndicator>true</recommendedVendorIndicator>
+				<vendorFees class="list">
+					<partyRoleVendorFeesDTO>
+						<vendorFeeTypeCode>vendserv</vendorFeeTypeCode>
+						<vendorFeeAmount>25.00</vendorFeeAmount>
+					</partyRoleVendorFeesDTO>
+				</vendorFees>
+				<vendorSurcharges class="list"/>
+				<vendorTypes class="list">
+					<partyRoleVendorTypeDTO>
+						<vendorCategoryCode>prov</vendorCategoryCode>
+						<vendorTypeCode>052</vendorTypeCode>
+						<primaryIndicator>true</primaryIndicator>
+						<areaWideServiceIndicator>true</areaWideServiceIndicator>
+						<performDrugTestingIndicator>true</performDrugTestingIndicator>
+						<foreignJurisdictions class="list"/>
+						<specialtyCollections class="list"/>
+						<costToChargeCollections class="list"/>
+						<perDiemCollections class="list"/>
+						<partOfBodyCollections class="list"/>
+						<taxonomyData>
+							<taxonomyTypeCode>17</taxonomyTypeCode>
+							<taxonomyClsCode>11</taxonomyClsCode>
+							<taxonomySplCode>00000</taxonomySplCode>
+							<taxonomyCode>171100000N</taxonomyCode>
+							<taxonomyDescription>Acupuncturist</taxonomyDescription>
+						</taxonomyData>
+						<feeScheduleCollections class="list"/>
+						<partyRoleVendorServiceStatus>
+							<current>
+								<effectiveDateTime>2012-11-19 00:00:00.000 EST</effectiveDateTime>
+								<serviceStatusType>aprv</serviceStatusType>
+							</current>
+						</partyRoleVendorServiceStatus>
+						<legalServiceCollections class="list"/>
+					</partyRoleVendorTypeDTO>
+				</vendorTypes>
+			<vendorSubjectToSurchargeInd>false</vendorSubjectToSurchargeInd>
+			<vendorReceipentOfSurchargeInd>false</vendorReceipentOfSurchargeInd>
+		</partyRoleVendorDTO>
+	    </partyRoleCollection>
+            <partyInteractionChannelCompositeDTO>
+                <phoneChannels class="list">
+                    <phoneChannelDTO>
+                        <interactionChannelTypeCode>fax</interactionChannelTypeCode>
+                        <usageTypeCode>fax</usageTypeCode>
+                        <phoneNumber>8005551212</phoneNumber>
+                        <interactionChannelAgreementTypes class="list">
+                            <interactionChannelAgreementTypeDTO>
+                                <agreementTypeCode>plcy</agreementTypeCode>
+                                <primaryUsageIndicator>true</primaryUsageIndicator>
+                                <effectiveDate>2012-11-19 00:00:00.000 EST</effectiveDate>
+                            </interactionChannelAgreementTypeDTO>
+                        </interactionChannelAgreementTypes>
+                    </phoneChannelDTO>
+                </phoneChannels>
+                <emailChannels class="list"/>
+                <otherChannels class="list"/>
+            </partyInteractionChannelCompositeDTO>
+            <agreementTypesPtcp class="list">
+                <partyAgreementTypeDTO>
+                    <aggrementType>plcy</aggrementType>
+                    <effectiveDateTime>2012-11-19 00:00:00.000 EST</effectiveDateTime>
+                </partyAgreementTypeDTO>
+                <partyAgreementTypeDTO>
+                    <aggrementType>clm</aggrementType>
+                    <effectiveDateTime>2012-11-19 00:00:00.000 EST</effectiveDateTime>
+                </partyAgreementTypeDTO>
+            </agreementTypesPtcp>
+            <bankruptcyDetails class="list"/>
+            <authorizations class="list"/>
+            <names class="list">
+                <organizationNameDTO>
+                    <nameTypeCode>lgl_nm</nameTypeCode>
+                    <organizationName>Dale's Holistic Cure</organizationName>
+                    <organizationNameEffectiveDate>2012-11-19 00:00:00.000 EST</organizationNameEffectiveDate>
+                </organizationNameDTO>
+            </names>
+ 	<notes class="list">
+      	<notepadDTO>
+         <recordSourceCode>cust_mgmt</recordSourceCode>
+         <agreementTypeCodeDerived>party</agreementTypeCodeDerived>
+         <noteTypeCd>gnrl_note</noteTypeCd>
+         <categoryCd>gnrl</categoryCd>
+         <subcategoryCd>demograph</subcategoryCd>
+         <noteSourceCd>basic_note</noteSourceCd>
+         <subjectText>Person Listing</subjectText>
+         <notepadText class="list">
+            <notepadTextDTO>
+               <noteTextSequenceId>0</noteTextSequenceId>
+               <noteText>Treats all kinds of injuries located in kansas</noteText>
+            </notepadTextDTO>
+         </notepadText>
+      </notepadDTO>
+      </notes>            
+ </organizationDTO>

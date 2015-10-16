@@ -1,0 +1,8 @@
+ClearCase CopyAreaDB|4
+iip_starter_kit\claim_starter_kit\common-intrg\src\test\java\com\client\iip\integration\claims
+2
+4
+1d:EnterpriseConfigTestCase.java|1|14c95713f86|1c9b|f30bf0c3|6eb4de559c27424cbc857bdc29000e79|0
+1b:ClaimsServicesTestCase.java|1|14c95713cd4|695|c9d30ee2|b328a082a7984e569b8336cdd591b4da|0
+17:PolicyPullTestCase.java|1|14c95713f86|1833|2dead2b2|828d927320c544f0b537b75a61077888|0
+13:OrdersTestCase.java|1|14c95713f86|7b7|8ae7e4b|628d1085548e44b1b8712c37759f0b6c|0

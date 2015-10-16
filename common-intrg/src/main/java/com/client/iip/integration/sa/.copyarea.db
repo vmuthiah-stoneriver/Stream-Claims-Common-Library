@@ -1,0 +1,19 @@
+ClearCase CopyAreaDB|4
+iip_starter_kit\claim_starter_kit\common-intrg\src\main\java\com\client\iip\integration\sa
+2
+f
+20:UnitDataTypeRoleCategoryDTO.java|1|14cbeeab510|6d4|54be39b2|cde223e031104fc6a498b59674fbf2c8|0
+21:CodeLookUpBOToDTOTransformer.java|1|14c95712d52|9d8|da040f0|b6553bc6866b4089ac61189297193c25|0
+2c:ClientClaimCompanyLineOfBusinessInfoDTO.java|1|14c95712adc|2fb|b6c50310|2bec97ea99724e66be32c73b8147aa4c|0
+1c:ClientConfigServiceImpl.java|1|14f51e1c785|42d6|f844818c|ef5a6796f95d475cb31ef976cbf742ba|0
+1c:ClientSysAdminClaimsDAO.java|1|14e3f6f623f|121f|fb4e2c6a|0c962ea73ab148c9b19c2f03d573d09d|0
+21:ClientClaimsMonetaryTypesDTO.java|1|14c95712b68|1e2|7081aa60|c2fa81f70f8a40f1800db1b33b04d640|0
+20:ClientClaimsMonetaryTypesBO.java|1|14c95712b68|884|98bacfc2|dfa76171346a4a4f8e62b56ce14024b6|0
+25:ClientClaimCompanyReserveTypesBO.java|1|14c95712b68|b4f|3198a8d4|ab0fb1010ee24ea38fedf52d1d2372fd|0
+24:SysAdminCompanyOrgUnitDetailDTO.java|1|14c95712d5c|659|4db908e6|0a7b06d34f384e9b8069117f1358df4f|0
+1e:ClientEnterpriseConfigDAO.java|1|15062841376|1675|eb718275|efbd1f982e834ac0b0ef439f615fa195|0
+2f:ClientClaimsMonetaryTypesTransactionTypeBO.java|1|14c95712b68|964|4b371681|b0a7c28e6d834e4f882a4ff5227083a2|0
+18:ClientConfigService.java|1|14f51d8e441|f8e|64ae1b7f|ab3052efaf8048be9cac4e622f044feb|0
+1d:LossTypeCompLOBResCovDTO.java|1|14c95712d5c|359|d549131b|f9fa757b4b644b32904bee589d98b250|0
+15:ControlNumberDTO.java|1|14c95712d5c|824|a0487620|3f14a0196b9c414e8e15752aadd81939|0
+1e:CoverageCompLOBResTypeDTO.java|1|14c95712d5c|ccb|10ade708|ada9e4bf3dad483e83846a3d524651bc|0

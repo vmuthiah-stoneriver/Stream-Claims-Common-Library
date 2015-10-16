@@ -1,0 +1,135 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:include schemaLocation="../xsd/Common.xsd" />
+	<xs:annotation>
+		<xs:documentation>Batch Job Status Schema</xs:documentation>
+	</xs:annotation>
+
+	<xs:element name="batchLogDTO" type="BatchLogDTO" />
+
+	<xs:complexType name="BatchLogDTO">
+		<xs:annotation>
+			<xs:documentation>Batch Log</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="AuditDTO">
+				<xs:sequence>
+					<xs:element name="batchLogTypeCode" type="string"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Batch Log Type, Maps to BTCH_LOG_TYP_CD column
+								in BATCH_LOG_TYPE_CD Table.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="agreementTypeCode" type="string"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Agreement type code, Maps to AGRE_TYP_CD column
+								in AGREEMENT_TYPE_CD Table.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="agreementSubTypeCode" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Agreement subtype code, Maps to AGRE_SUBTYP_CD
+								Column from AGREEMENT_SUBTYPE_CD Table.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="batchJobTypeCode" type="string"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Batch job type code, Maps to BTCH_JOB_TYP_CD
+								Column from BATCH_JOB_TYPE_CD Table.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="agreementId" type="long" minOccurs="1"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Agreement id.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="agreementSubId" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Sub Agreement id.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="jobId" type="long" minOccurs="1"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Job Id.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="stepId" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Step Id.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="description" type="string" minOccurs="1"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Description.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="runDate" type="dateType" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Run date.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="logDetails" type="BatchLogDetailDTOType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Collection of Details.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="BatchLogDetailDTOType">
+		<xs:sequence>
+			<xs:element name="batchLogDetailDTO" type="BatchLogDetailDTO"
+				minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Batch Logs.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="class" type="collectionType" use="optional" />
+	</xs:complexType>
+
+	<xs:complexType name="BatchLogDetailDTO">
+		<xs:annotation>
+			<xs:documentation>Batch Log Detail.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="AuditDTO">
+				<xs:sequence>
+					<xs:element name="batchLog" type="BatchLogDTO"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Batch Log Type.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="createDate" type="dateType" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Created Date.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="message" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Detail message.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+</xs:schema>  
+
+

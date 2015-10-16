@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<iipda:queries xmlns:iipda="http://www.fiserv.com/isd/iip/core/data/query/file" category="claimssa"
+	subcategory="claimssa">
+
+
+	<iipda:rdbms accessId="client.claims.sa.query.retrieveClaimCompanyLOBInfo">
+		<iipda:content>
+			SELECT CORPC.CORP_NM corporation,
+			CORPC.CORP_ID corpId,
+			CMPYC.CMPY_NM company,
+			CMPYC.CMPY_ID compId,
+			CLOBX.CMPY_LOB_NM companyLOB,
+			CLOBX.CMPY_LOB_ID companyLOBId,
+			CLOBX.LOB_CD lobCode,
+			CLOBX.CMPY_LOB_NM lobName,
+			CLOBX.CMPY_LOB_PKG_ONLY_IND lobPkgInd, 
+			LOB.LOB_NM enterpriseLOB,
+			CCCLC.CCLC_NO_TMPL_NM claimNumberMask,
+			CLOBX.EFF_DTM effectiveDateTime,
+			CLOBX.END_DTM endDateTime,
+			CCCLC.EFF_DTM effectiveDate,
+			CCCLC.END_DTM endDate
+			FROM COMPANY_LINE_OF_BUSINESS_XREF CLOBX JOIN LINE_OF_BUSINESS_CD LOB
+			ON CLOBX.LOB_CD=LOB.LOB_CD
+			JOIN COMPANY_CD CMPYC ON
+			CMPYC.CMPY_ID=CLOBX.CMPY_ID
+			JOIN CORPORATION_CD CORPC ON CORPC.CORP_ID=CMPYC.CORP_ID
+			LEFT OUTER
+			JOIN (Select * from CLAIM_COMPANY_LOB_CD CCLC
+			WHERE
+			CCLC.END_DTM IS NULL) CCCLC
+			ON CCCLC.CMPY_LOB_ID = CLOBX.CMPY_LOB_ID
+			ORDER BY company,companyLOB
+		</iipda:content>
+		<iipda:description>
+			Returns all Company Line of Business and Claims Info.
+		</iipda:description>
+	</iipda:rdbms>
+
+	<iipda:rdbms accessId="client.claims.sa.query.retrieveCompanyReserveColl">
+		<iipda:name>clientRetrieveCompanyReserveColl</iipda:name>
+		<iipda:description>
+			All Company Reserve type and associated monetary category.
+		</iipda:description>
+	</iipda:rdbms>
+
+	<iipda:rdbms accessId="client.claims.sa.query.retrieveCompanyLossColl">
+		<iipda:name>clientRetrieveCompanyLossColl</iipda:name>
+		<iipda:description>
+			All Company Reserve type and associated monetary category.
+		</iipda:description>
+	</iipda:rdbms>
+
+	<iipda:rdbms accessId="client.claims.sa.query.retrieveClaimsMonetaryTypeTransactionTypeColl">
+		<iipda:name>clientRetrieveClaimsMonetaryTypeTransactionTypeColl</iipda:name>
+		<iipda:description>
+			Returns All Claims Monetary Type TransactionTypeColl.
+		</iipda:description>
+	</iipda:rdbms>
+
+
+	<iipda:rdbms accessId="client.claims.sa.query.retrieveClaimReserveType">
+		<iipda:content>
+			SELECT
+			CLM_RSRV_TYP_CD code,
+			CLM_RSRV_TYP_NM value,
+			EFF_DTM effectiveDate,
+			END_DTM endDate
+			FROM CLAIM_RESERVE_TYPE_CD
+			ORDER BY value
+		</iipda:content>
+		<iipda:description>
+			Returns All Claim Reserve Type.
+		</iipda:description>
+	</iipda:rdbms>
+
+	<iipda:rdbms accessId="client.claims.sa.query.retrieveAllOrgUnits">
+		<iipda:content>
+			SELECT
+			CMPY_ORG_UNT_ID recordId,
+			ORG_UNT_TYP_CD organizationUnitTypeCode,
+			CMPY_ORG_UNT_NM organizationUnitName,
+			CMPY_ORG_UNT_EFF_DT effectiveDateTime,
+			CMPY_ORG_UNT_END_DT endDateTime
+			FROM COMPANY_ORGANIZATION_UNIT_CD
+		</iipda:content>
+		<iipda:description>
+			Returns All Organization Units.
+		</iipda:description>
+	</iipda:rdbms>
+
+	<iipda:rdbms accessId="client.claims.sa.query.retrieveCoveragesCompLOBReserveTypeInfo">
+		<iipda:content>
+			SELECT DISTINCT CORPC.CORP_ID corpId ,
+			CORPC.CORP_NM corporation ,
+			CC.CMPY_ID compId ,
+			CC.CMPY_NM company ,
+			UTDC.CMPY_LOB_ID companyLOBId ,
+			LOBC.LOB_CD lobCode ,
+			LOBC.LOB_NM lobName ,
+			UCRTX.CLM_RSRV_TYP_CD reserveTypeCode,
+			CRTC.CLM_RSRV_TYP_NM reserveTypeName,
+			UTDRTCX.CLM_COV_CD coverageCode,
+			CCC.CLM_COV_NM coverageName
+
+			FROM UNIT_TYPE_DEFINITION_CD UTDC
+			JOIN UNIT_TYPE_DEF_ROLE_TYP_XREF UTDRTX
+			ON UTDC.UNT_TYP_DEF_ID=UTDRTX.UNT_TYP_DEF_ID
+			JOIN UNT_TYP_DEF_ROLE_TYP_COV_XREF UTDRTCX
+			ON UTDRTX.UTDRTX_ID=UTDRTCX.UTDRTX_ID
+			JOIN UTDRTCX_CLM_RSRV_TYP_XREF UCRTX
+			ON UCRTX.UTDRTCX_ID=UTDRTCX.UTDRTCX_ID
+			JOIN CLAIM_COVERAGE_CD CCC
+			ON CCC.CLM_COV_CD=UTDRTCX.CLM_COV_CD
+			JOIN CLAIM_RESERVE_TYPE_CD CRTC
+			ON CRTC.CLM_RSRV_TYP_CD=UCRTX.CLM_RSRV_TYP_CD
+			JOIN COMPANY_LINE_OF_BUSINESS_XREF CLOBX
+			ON CLOBX.CMPY_LOB_ID=UTDC.CMPY_LOB_ID
+			JOIN LINE_OF_BUSINESS_CD LOBC
+			ON LOBC.LOB_CD=CLOBX.LOB_CD
+			JOIN COMPANY_CD CC
+			ON CC.CMPY_ID=CLOBX.CMPY_ID
+			JOIN CORPORATION_CD CORPC
+			ON CORPC.CORP_ID=CC.CORP_ID
+			ORDER BY company, lobname
+
+		</iipda:content>
+		<iipda:description>
+			Returns all coverages with company, LOB and reserve type.
+		</iipda:description>
+	</iipda:rdbms>
+
+	<iipda:rdbms accessId="client.claims.sa.query.retrieveLossTypesCovCompLOBReserveTypeInfo">
+		<iipda:content>
+			SELECT DISTINCT CORPC.CORP_ID corpId ,
+			CORPC.CORP_NM corporation ,
+			CC.CMPY_ID compId ,
+			CC.CMPY_NM company ,
+			UTDC.CMPY_LOB_ID companyLOBId ,
+			LOBC.LOB_CD lobCode ,
+			LOBC.LOB_NM lobName ,
+			UCRTX.CLM_RSRV_TYP_CD reserveTypeCode,
+			CRTC.CLM_RSRV_TYP_NM reserveTypeName,
+			UTDRTCX.CLM_COV_CD coverageCode,
+			CCC.CLM_COV_NM coverageName,
+			CLTC.CLM_LOSS_TYP_CD lossTypeCode,
+			CLTC.CLM_LOSS_TYP_NM lossTypeName
+			FROM UNIT_TYPE_DEFINITION_CD UTDC
+			JOIN UNIT_TYPE_DEF_ROLE_TYP_XREF UTDRTX
+			ON UTDC.UNT_TYP_DEF_ID=UTDRTX.UNT_TYP_DEF_ID
+			JOIN UNT_TYP_DEF_ROLE_TYP_COV_XREF UTDRTCX
+			ON UTDRTX.UTDRTX_ID=UTDRTCX.UTDRTX_ID
+			JOIN UTDRTCX_CLM_RSRV_TYP_XREF UCRTX
+			ON UCRTX.UTDRTCX_ID=UTDRTCX.UTDRTCX_ID
+			JOIN UCRTX_CLM_LOSS_TYP_XREF UCLTX
+			ON UCLTX.UCRTX_ID=UCRTX.UCRTX_ID
+			JOIN CLAIM_COVERAGE_CD CCC
+			ON CCC.CLM_COV_CD=UTDRTCX.CLM_COV_CD
+			JOIN CLAIM_RESERVE_TYPE_CD CRTC
+			ON CRTC.CLM_RSRV_TYP_CD=UCRTX.CLM_RSRV_TYP_CD
+			JOIN CLAIM_LOSS_TYPE_CD CLTC
+			ON CLTC.CLM_LOSS_TYP_CD=UCLTX.CLM_LOSS_TYP_CD
+			JOIN COMPANY_LINE_OF_BUSINESS_XREF CLOBX
+			ON CLOBX.CMPY_LOB_ID=UTDC.CMPY_LOB_ID
+			JOIN LINE_OF_BUSINESS_CD LOBC
+			ON LOBC.LOB_CD=CLOBX.LOB_CD
+			JOIN COMPANY_CD CC
+			ON CC.CMPY_ID=CLOBX.CMPY_ID
+			JOIN CORPORATION_CD CORPC
+			ON CORPC.CORP_ID=CC.CORP_ID
+			ORDER BY company, lobname
+
+		</iipda:content>
+		<iipda:description>
+			Returns all loss types with coverages, company, LOB and reserve type.
+		</iipda:description>
+	</iipda:rdbms>
+	
+	<iipda:rdbms accessId="client.claims.sa.query.retrieveClmPlcyEndorsementFormInfoByLOB">
+		<iipda:content>
+			SELECT
+				EFC.CLM_PLCY_ENDRS_FORM_CD code,
+				EFC.CLM_PLCY_ENDRS_FORM_NM value,
+				EFC.CLM_PLCY_ENDRS_FORM_NO formNumber,
+				EFC.CLM_PLCY_ENDRS_FORM_SUFX formSuffix,
+				EFC.CLM_PLCY_ENDRS_FORM_ED_DT formEditionDate,
+				EFC.EFF_DTM effectiveDate,
+				EFC.END_DTM endDate
+			FROM 
+				CLAIM_POLICY_ENDRS_FORM_CD EFC, CLAIM_POLICY_ENDRS_FORM_DEF_CD EFDC
+			WHERE EFC.CLM_PLCY_ENDRS_FORM_CD = EFDC.CLM_PLCY_ENDRS_FORM_CD
+			AND EFDC.LOB_CD = :lobCode	
+			ORDER BY value 
+		</iipda:content>
+		<iipda:description>
+			Returns Claim Policy Unit Endorsement Form Code Data.
+		</iipda:description>
+	</iipda:rdbms>
+	
+	<iipda:rdbms accessId="client.claims.sa.query.retrieveUnitRoleCategoryInfoByLOB">
+		<iipda:content>
+			SELECT
+			    DISTINCT UTC.UNT_DATA_TYP_CD unitDataTypeCode, 
+			    UTC.UNT_TYP_CD unitTypeCode, 
+			    UTDC.UNT_SUBTYP_CD unitSubTypeCode, 
+			    UCDC.UNT_CTG_CD unitCategoryCode, 
+			    URCD.UNT_ROLE_CTG_CD unitRoleCategoryCode
+			FROM
+			    UNIT_TYPE_DEF_ROLE_TYP_XREF UTDRTX,
+			    UNIT_ROLE_TYPE_USAGE_CD URCD,
+			    UNIT_TYPE_DEFINITION_CD UTDC,
+			    UNIT_TYPE_CD UTC,
+			    UNIT_CATEGORY_DEFINITION_CD UCDC,
+			    COMPANY_LINE_OF_BUSINESS_XREF LOBX
+			WHERE
+			    UTDC.CMPY_LOB_ID = LOBX.CMPY_LOB_ID
+			    AND UTDC.UNT_TYP_DEF_ID = UTDRTX.UNT_TYP_DEF_ID
+			    AND UTDRTX.PTCP_TYP_CD = URCD.PTCP_TYP_CD
+			    AND UTC.UNT_DATA_TYP_CD = URCD.UNT_DATA_TYP_CD
+			    AND UTC.UNT_TYP_CD = UTDC.UNT_TYP_CD
+			    AND UCDC.UNT_TYP_CD = UTC.UNT_TYP_CD
+			    AND UCDC.CMPY_LOB_ID = UTDC.CMPY_LOB_ID
+			    AND LOBX.LOB_CD =  :lobCode	 
+		</iipda:content>
+		<iipda:description>
+			Returns Claim Policy Unit Data
+		</iipda:description>
+	</iipda:rdbms>
+	
+	<iipda:rdbms
+		accessId="client.claims.sa.query.retrieveUnitRoleCategoryInfoForCoverageLOB">
+		<iipda:content>	
+			SELECT
+			    DISTINCT UTC.UNT_DATA_TYP_CD unitDataTypeCode, 
+			    UTC.UNT_TYP_CD unitTypeCode, 
+			    UTDC.UNT_SUBTYP_CD unitSubTypeCode, 
+			    UCDC.UNT_CTG_CD unitCategoryCode, 
+			    URCD.UNT_ROLE_CTG_CD unitRoleCategoryCode
+			FROM
+			    UNIT_TYPE_DEF_ROLE_TYP_XREF UTDRTX,
+			    UNT_TYP_DEF_ROLE_TYP_COV_XREF UTDRTCX,
+			    UNIT_ROLE_TYPE_USAGE_CD URCD,
+			    UNIT_TYPE_DEFINITION_CD UTDC,
+			    UNIT_TYPE_CD UTC,
+			    UNIT_CATEGORY_DEFINITION_CD UCDC,
+			    COMPANY_LINE_OF_BUSINESS_XREF LOBX
+			WHERE
+			    UTDC.CMPY_LOB_ID = LOBX.CMPY_LOB_ID
+			    AND UTDC.UNT_TYP_DEF_ID = UTDRTX.UNT_TYP_DEF_ID
+			    AND UTDRTX.PTCP_TYP_CD = URCD.PTCP_TYP_CD
+			    AND UTC.UNT_DATA_TYP_CD = URCD.UNT_DATA_TYP_CD
+			    AND UTC.UNT_TYP_CD = UTDC.UNT_TYP_CD
+			    AND UCDC.UNT_TYP_CD = UTC.UNT_TYP_CD
+			    AND UCDC.CMPY_LOB_ID = UTDC.CMPY_LOB_ID
+			    AND UTDRTCX.UTDRTX_ID=UTDRTX.UTDRTX_ID	 
+            	AND UTDRTCX.CLM_COV_CD = :covCode AND UTDC.CMPY_LOB_ID= :companyLobId AND UTDRTX.PTCP_TYP_CD= 'ownr'	
+		</iipda:content>
+		<iipda:description>
+			Retrieves Unit type from Coverage Code.
+		</iipda:description>
+	</iipda:rdbms>	
+	
+</iipda:queries>

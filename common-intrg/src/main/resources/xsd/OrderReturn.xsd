@@ -1,0 +1,108 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:include schemaLocation="../xsd/Common.xsd" />
+	<xs:include schemaLocation="../xsd/Document.xsd" />
+	<xs:include schemaLocation="../xsd/BaseTool.xsd" />
+
+	<xs:annotation>
+		<xs:documentation>Order Return Schema.</xs:documentation>
+	</xs:annotation>
+
+	<xs:element name="orderReturnDataDTO" type="OrderReturnDataDTO" />
+
+	<xs:complexType name="OrderReturnDataDTO">
+		<xs:annotation>
+			<xs:documentation>Order Return Data information.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="DataTransferObject">
+				<xs:sequence>
+					<xs:element name="orderReturnText" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Order Return status Description
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="orderId" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Order Id.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="orderReturnCodes" type="orderReturnCodeType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>List of Order Return Codes</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="orderDocs" type="ClientDocumentDTOList"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Order Response Documents</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="ClientDocumentDTOList">
+		<xs:sequence>
+			<xs:element name="documentDTO" type="ClientDocumentDTO"
+				minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Document Reference.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="class" type="collectionType" use="optional" />
+	</xs:complexType>
+
+	<xs:complexType name="orderReturnCodeType">
+		<xs:sequence>
+			<xs:element name="orderReturnCodeDTO" type="OrderReturnCodeDTO"
+				minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Order return codes.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="class" type="collectionType" use="optional" />
+	</xs:complexType>
+
+	<xs:complexType name="OrderReturnCodeDTO">
+		<xs:annotation>
+			<xs:documentation>Order Return Code</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="AuditDTO">
+				<xs:sequence>
+					<xs:element name="orderReturnCodeId" type="long"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Order Return Code Id, Maps to ORD_RTN_CD_ID
+								Column from ORDER_RETURN_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="orderReturnName" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Order Return Name, Maps to ORD_RTN_CD_NM Column
+								from ORDER_RETURN_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="orderReturnDesc" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Order Return Description.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+</xs:schema>
+               

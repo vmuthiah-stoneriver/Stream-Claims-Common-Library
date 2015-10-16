@@ -1,0 +1,201 @@
+ <searchResultsDTO>
+  <updated>false</updated>
+  <childUpdated>false</childUpdated>
+  <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+  <searchResults class="list">
+    <claimSearchResultsDTO>
+      <changesetId>0</changesetId>
+      <recordId>114</recordId>
+      <version>0</version>
+      <updated>false</updated>
+      <childUpdated>false</childUpdated>
+      <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+      <claimNumber>141500000015</claimNumber>
+      <occurrenceDate>2015-01-20 00:00:00.000 MST</occurrenceDate>
+      <occurrenceTime>1970-01-01 00:00:00.0</occurrenceTime>
+      <occurrenceTimeZone>MST</occurrenceTimeZone>
+      <notificationDate>2015-01-22 00:00:00.000 MST</notificationDate>
+      <claimStatus>Accepted</claimStatus>
+      <claimStatusCode>acpt</claimStatusCode>
+      <claimStateCode>opn</claimStateCode>
+      <claimId>0</claimId>
+      <claimType>Towing</claimType>
+      <insuredPartyId>146</insuredPartyId>
+      <insuredName>Huffmeister, Erwin</insuredName>
+      <lineOfBusiness>pa</lineOfBusiness>
+      <policyNumber>MWA00001007720</policyNumber>
+      <jurisdiction>New Hampshire</jurisdiction>
+      <insuredAddress>141 Constance Lane</insuredAddress>
+      <insuredCity>NORTH HAVERHILL</insuredCity>
+      <insuredCountry>United States</insuredCountry>
+      <insuredPostalCode>03774</insuredPostalCode>
+      <insuredState>New Hampshire</insuredState>
+      <policyEffectiveDate>2012-01-16 00:00:00.000 MST</policyEffectiveDate>
+      <policyEndDate>2014-01-16 00:00:00.000 MST</policyEndDate>
+      <blockFlag>false</blockFlag>
+      <company>Mt Washington Assurance Corporation</company>
+      <corporation>Plymouth Rock Company</corporation>
+      <unverified>false</unverified>
+      <companyId>1</companyId>
+      <atFaultInd>false</atFaultInd>
+      <policyState>New Hampshire</policyState>
+      <dateClaimReported>2015-01-26 10:19:59.055 MST</dateClaimReported>
+    </claimSearchResultsDTO>
+    <claimSearchResultsDTO>
+      <changesetId>0</changesetId>
+      <recordId>300</recordId>
+      <version>0</version>
+      <updated>false</updated>
+      <childUpdated>false</childUpdated>
+      <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+      <claimNumber>PAL 29696700</claimNumber>
+      <lossDescription>Insured vehicle struck by other vehicle while pulling from private drive</lossDescription>
+      <occurrenceDate>2012-05-08 00:00:00.000 MDT</occurrenceDate>
+      <occurrenceTime>1970-01-01 18:10:00.0</occurrenceTime>
+      <occurrenceTimeZone>EST</occurrenceTimeZone>
+      <notificationDate>2012-05-09 00:00:00.000 MDT</notificationDate>
+      <claimStatus>Completed</claimStatus>
+      <claimStatusCode>cmpl</claimStatusCode>
+      <claimStateCode>clos</claimStateCode>
+      <claimId>0</claimId>
+      <claimType>Insured vehicle struck by other vehicle while pulling from private drive</claimType>
+      <insuredPartyId>401</insuredPartyId>
+      <insuredName>Levaugh, Mark A</insuredName>
+      <lineOfBusiness>pa</lineOfBusiness>
+      <jurisdiction>New Hampshire</jurisdiction>
+      <insuredAddress>6000 Thunderbird Rd</insuredAddress>
+      <insuredCity>Wilmot</insuredCity>
+      <insuredCountry>United States</insuredCountry>
+      <insuredPostalCode>03287</insuredPostalCode>
+      <insuredState>New Hampshire</insuredState>
+      <policyEffectiveDate>2011-06-19 00:00:00.000 MDT</policyEffectiveDate>
+      <policyEndDate>2012-06-19 00:00:00.000 MDT</policyEndDate>
+      <blockFlag>false</blockFlag>
+      <company>High Point Safety and Insurance Company</company>
+      <corporation>Plymouth Rock Company</corporation>
+      <unverified>false</unverified>
+      <companyId>201</companyId>
+      <atFaultInd>false</atFaultInd>
+      <policyState>New Jersey</policyState>
+      <dateClaimReported>2015-01-26 10:19:59.056 MST</dateClaimReported>
+    </claimSearchResultsDTO>
+    <claimSearchResultsDTO>
+      <changesetId>0</changesetId>
+      <recordId>400</recordId>
+      <version>0</version>
+      <updated>false</updated>
+      <childUpdated>false</childUpdated>
+      <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+      <claimNumber>PAL 29696701</claimNumber>
+      <lossDescription>Insured vehicle struck by other vehicle while pulling from private drive</lossDescription>
+      <occurrenceDate>2012-05-08 00:00:00.000 MDT</occurrenceDate>
+      <occurrenceTime>1970-01-01 18:10:00.0</occurrenceTime>
+      <occurrenceTimeZone>EST</occurrenceTimeZone>
+      <notificationDate>2012-05-09 00:00:00.000 MDT</notificationDate>
+      <claimStatus>Completed</claimStatus>
+      <claimStatusCode>cmpl</claimStatusCode>
+      <claimStateCode>clos</claimStateCode>
+      <claimId>0</claimId>
+      <claimType>Insured vehicle struck by other vehicle while pulling from private drive</claimType>
+      <insuredPartyId>401</insuredPartyId>
+      <insuredName>Levaugh, Mark A</insuredName>
+      <lineOfBusiness>pa</lineOfBusiness>
+      <jurisdiction>New Hampshire</jurisdiction>
+      <insuredAddress>6000 Thunderbird Rd</insuredAddress>
+      <insuredCity>Wilmot</insuredCity>
+      <insuredCountry>United States</insuredCountry>
+      <insuredPostalCode>03287</insuredPostalCode>
+      <insuredState>New Hampshire</insuredState>
+      <policyEffectiveDate>2011-06-19 00:00:00.000 MDT</policyEffectiveDate>
+      <policyEndDate>2012-06-19 00:00:00.000 MDT</policyEndDate>
+      <blockFlag>false</blockFlag>
+      <company>High Point Safety and Insurance Company</company>
+      <corporation>Plymouth Rock Company</corporation>
+      <unverified>false</unverified>
+      <companyId>201</companyId>
+      <atFaultInd>false</atFaultInd>
+      <policyState>New Jersey</policyState>
+      <dateClaimReported>2015-01-26 10:19:59.057 MST</dateClaimReported>
+    </claimSearchResultsDTO>
+    <claimSearchResultsDTO>
+      <changesetId>0</changesetId>
+      <recordId>103</recordId>
+      <version>0</version>
+      <updated>false</updated>
+      <childUpdated>false</childUpdated>
+      <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+      <claimNumber>34400000004</claimNumber>
+      <occurrenceDate>2015-01-13 00:00:00.000 MST</occurrenceDate>
+      <occurrenceTime>1970-01-01 00:00:00.0</occurrenceTime>
+      <occurrenceTimeZone>MST</occurrenceTimeZone>
+      <notificationDate>2015-01-13 00:00:00.000 MST</notificationDate>
+      <claimStatus>Accepted</claimStatus>
+      <claimStatusCode>acpt</claimStatusCode>
+      <claimStateCode>opn</claimStateCode>
+      <claimId>0</claimId>
+      <claimType>Insured vehicle damaged by hail</claimType>
+      <insuredPartyId>100</insuredPartyId>
+      <insuredName>Van Laer, Alexandra</insuredName>
+      <lineOfBusiness>pa</lineOfBusiness>
+      <policyNumber>PAA00002669418</policyNumber>
+      <jurisdiction>New Jersey</jurisdiction>
+      <insuredAddress>1011 Grant Ave</insuredAddress>
+      <insuredCity>Collingswood</insuredCity>
+      <insuredCountry>United States</insuredCountry>
+      <insuredPostalCode>08107-2010</insuredPostalCode>
+      <insuredState>New Jersey</insuredState>
+      <policyEffectiveDate>2013-10-04 00:00:00.000 MDT</policyEffectiveDate>
+      <policyEndDate>2014-10-04 00:00:00.000 MDT</policyEndDate>
+      <blockFlag>false</blockFlag>
+      <company>Palisades Insurance Company</company>
+      <corporation>Plymouth Rock Company</corporation>
+      <unverified>false</unverified>
+      <companyId>205</companyId>
+      <policyModNumber>0</policyModNumber>
+      <atFaultInd>false</atFaultInd>
+      <policyState>New Jersey</policyState>
+      <dateClaimReported>2015-01-26 10:19:59.058 MST</dateClaimReported>
+    </claimSearchResultsDTO>
+    <claimSearchResultsDTO>
+      <changesetId>0</changesetId>
+      <recordId>102</recordId>
+      <version>0</version>
+      <updated>false</updated>
+      <childUpdated>false</childUpdated>
+      <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+      <claimNumber>34300000003</claimNumber>
+      <lossDescription>Stuff Got Broken</lossDescription>
+      <occurrenceDate>2014-10-01 00:00:00.000 MDT</occurrenceDate>
+      <occurrenceTime>1970-01-01 00:00:00.0</occurrenceTime>
+      <occurrenceTimeZone>CST</occurrenceTimeZone>
+      <notificationDate>2015-01-09 00:00:00.000 MST</notificationDate>
+      <claimStatus>Accepted</claimStatus>
+      <claimStatusCode>acpt</claimStatusCode>
+      <claimStateCode>opn</claimStateCode>
+      <claimId>0</claimId>
+      <claimType>Insured vehicle damaged by vandalism</claimType>
+      <insuredPartyId>100</insuredPartyId>
+      <insuredName>Van Laer, Alexandra</insuredName>
+      <lineOfBusiness>pa</lineOfBusiness>
+      <policyNumber>PAA00002669418</policyNumber>
+      <jurisdiction>New Jersey</jurisdiction>
+      <insuredAddress>1011 Grant Ave</insuredAddress>
+      <insuredCity>Collingswood</insuredCity>
+      <insuredCountry>United States</insuredCountry>
+      <insuredPostalCode>08107-2010</insuredPostalCode>
+      <insuredState>New Jersey</insuredState>
+      <policyEffectiveDate>2013-10-04 00:00:00.000 MDT</policyEffectiveDate>
+      <policyEndDate>2014-10-04 00:00:00.000 MDT</policyEndDate>
+      <blockFlag>false</blockFlag>
+      <company>Palisades Insurance Company</company>
+      <corporation>Plymouth Rock Company</corporation>
+      <unverified>false</unverified>
+      <companyId>205</companyId>
+      <policyModNumber>0</policyModNumber>
+      <atFaultInd>false</atFaultInd>
+      <policyState>New Jersey</policyState>
+      <dateClaimReported>2015-01-26 10:19:59.059 MST</dateClaimReported>
+    </claimSearchResultsDTO>
+  </searchResults>
+  <maximumResultsAllowed>0</maximumResultsAllowed>
+</searchResultsDTO>

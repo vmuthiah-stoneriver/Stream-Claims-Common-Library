@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<personDTO>
+  <partyTypeCode>pers</partyTypeCode>
+  <countryCode>usa</countryCode>
+  <context>party</context>
+  <taxStatusIndicator>
+    <taxIdUnavailable>false</taxIdUnavailable>
+  </taxStatusIndicator>
+  <taxIdentifier>
+  	<taxIdentifierTypeCode>ssn</taxIdentifierTypeCode>
+        <taxIdentifierNumber>124583151</taxIdentifierNumber>
+  	<taxIdentifierEffDate>2012-11-19 00:00:00.000 EST</taxIdentifierEffDate>
+  </taxIdentifier>  
+  <languages class="list"/>
+  <interactionChannels class="list"/>
+  <preferences class="list"/>
+  <bankInformations class="list"/>
+  <relationships class="list"/>
+  <inverseRelationships class="list"/>
+  <contacts class="list"/>
+  <identifiers class="list"/>
+  <childSupports class="list"/>
+  <blocks class="list"/>
+  <addressCollectionDTO>
+    <addresses class="list">
+      <addressDTO>
+        <postalServiceRegionId>42</postalServiceRegionId>
+        <postalCode>03605</postalCode>
+        <addressLine1>90 SILVER SPRINGS DRIVE</addressLine1>
+        <cityName>EAST LEMPSTER</cityName>
+        <countryCode>usa</countryCode>
+        <postalSvcRegionCode>NH</postalSvcRegionCode>
+        <verifiedIndicator>true</verifiedIndicator>
+        <usages class="list">
+                <addressUsageDTO>
+                    <effectiveDateTime>2012-11-19 00:00:00.000 EST</effectiveDateTime>
+                    <agreementTypeCd>party</agreementTypeCd>
+                    <usageTypeCd>phy_addr</usageTypeCd>
+                    <isSeasonal>false</isSeasonal>
+                    <usageTypeValue>phy_addr</usageTypeValue>
+                </addressUsageDTO>        
+                <addressUsageDTO>
+                    <effectiveDateTime>2012-11-19 00:00:00.000 EST</effectiveDateTime>
+                    <agreementTypeCd>plcy</agreementTypeCd>
+                    <usageTypeCd>phy_addr</usageTypeCd>
+                    <isSeasonal>false</isSeasonal>
+                    <usageTypeValue>phy_addr</usageTypeValue>
+                </addressUsageDTO>
+                <addressUsageDTO>
+                    <effectiveDateTime>2012-11-19 00:00:00.000 EST</effectiveDateTime>
+                    <agreementTypeCd>clm</agreementTypeCd>
+                    <usageTypeCd>phy_addr</usageTypeCd>
+                    <isSeasonal>false</isSeasonal>
+                    <usageTypeValue>phy_addr</usageTypeValue>
+                </addressUsageDTO>
+                <addressUsageDTO>
+                    <effectiveDateTime>2012-11-19 00:00:00.000 EST</effectiveDateTime>
+                    <agreementTypeCd>case</agreementTypeCd>
+                    <usageTypeCd>phy_addr</usageTypeCd>
+                    <isSeasonal>false</isSeasonal>
+                    <usageTypeValue>phy_addr</usageTypeValue>
+                </addressUsageDTO>        
+        </usages>
+      </addressDTO>
+    </addresses>
+  </addressCollectionDTO>
+  <partyRoleCollection class="list"/>
+  <partyInteractionChannelCompositeDTO>
+    <phoneChannels class="list">
+      <phoneChannelDTO>
+        <interactionChannelTypeCode>phn</interactionChannelTypeCode>
+        <usageTypeCode>hm_phn</usageTypeCode>
+        <phoneNumber>6038634773</phoneNumber>
+        <interactionChannelAgreementTypes class="list">
+                            <interactionChannelAgreementTypeDTO>
+                                <agreementTypeCode>plcy</agreementTypeCode>
+                                <primaryUsageIndicator>true</primaryUsageIndicator>
+                                <effectiveDate>2012-11-19 00:00:00.000 EST</effectiveDate>
+                            </interactionChannelAgreementTypeDTO>
+                            <interactionChannelAgreementTypeDTO>
+                                <agreementTypeCode>clm</agreementTypeCode>
+                                <primaryUsageIndicator>true</primaryUsageIndicator>
+                                <effectiveDate>2012-11-19 00:00:00.000 EST</effectiveDate>
+                            </interactionChannelAgreementTypeDTO>
+                            <interactionChannelAgreementTypeDTO>
+                                <agreementTypeCode>case</agreementTypeCode>
+                                <primaryUsageIndicator>true</primaryUsageIndicator>
+                                <effectiveDate>2012-11-19 00:00:00.000 EST</effectiveDate>
+                            </interactionChannelAgreementTypeDTO>
+         </interactionChannelAgreementTypes>
+      </phoneChannelDTO>
+    </phoneChannels>
+    <emailChannels class="list">
+      <addressChannelDTO>
+        <interactionChannelTypeCode>email</interactionChannelTypeCode>
+        <usageTypeCode>prsn_email</usageTypeCode>
+        <interactionChannelTypeAddress>wendy@rmarkadams.com</interactionChannelTypeAddress>
+        <interactionChannelAgreementTypes class="list">
+                            <interactionChannelAgreementTypeDTO>
+                                <agreementTypeCode>plcy</agreementTypeCode>
+                                <primaryUsageIndicator>true</primaryUsageIndicator>
+                                <effectiveDate>2012-11-19 00:00:00.000 EST</effectiveDate>
+                            </interactionChannelAgreementTypeDTO>
+                            <interactionChannelAgreementTypeDTO>
+                                <agreementTypeCode>clm</agreementTypeCode>
+                                <primaryUsageIndicator>true</primaryUsageIndicator>
+                                <effectiveDate>2012-11-19 00:00:00.000 EST</effectiveDate>
+                            </interactionChannelAgreementTypeDTO>
+                            <interactionChannelAgreementTypeDTO>
+                                <agreementTypeCode>case</agreementTypeCode>
+                                <primaryUsageIndicator>true</primaryUsageIndicator>
+                                <effectiveDate>2012-11-19 00:00:00.000 EST</effectiveDate>
+                            </interactionChannelAgreementTypeDTO>
+         </interactionChannelAgreementTypes>        
+      </addressChannelDTO>
+    </emailChannels>
+    <otherChannels class="list">
+    	<addressChannelDTO>                
+        	<interactionChannelTypeCode>othr</interactionChannelTypeCode>
+            <usageTypeCode>website</usageTypeCode>
+            <interactionChannelTypeAddress>www.aninsuranceagency.com</interactionChannelTypeAddress>
+            <interactionChannelAgreementTypes class="list"/>
+        </addressChannelDTO>                
+    </otherChannels>
+  </partyInteractionChannelCompositeDTO>
+  <agreementTypesPtcp class="list"/>
+  <bankruptcyDetails class="list"/>
+  <personGenderCode>ml</personGenderCode>
+  <personMaritalStatusCode>mrd</personMaritalStatusCode>
+  <dateOfBirth>1950-10-06 00:00:00.000 EST</dateOfBirth>
+  <names class="list">
+    <personNameDTO>
+      <nameTypeCode>lgl_nm</nameTypeCode>
+      <personLastName>Adams</personLastName>
+      <personFirstName>Randall</personFirstName>
+      <personMiddleName>M</personMiddleName>
+      <personName>Randall M Adams</personName>
+      <personNameEffectiveDate>2013-09-17 00:00:00.000 EDT</personNameEffectiveDate>
+    </personNameDTO>
+  </names>
+  <degrees class="list"/>
+  <mergeAdditionalPartyInfoOnly>true</mergeAdditionalPartyInfoOnly>
+</personDTO>

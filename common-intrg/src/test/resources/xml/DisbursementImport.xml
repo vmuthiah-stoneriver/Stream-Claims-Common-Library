@@ -1,0 +1,34 @@
+<list>
+   <disbursementImportSummaryDTO>
+      <recordType>I</recordType>
+      <processingDate>2014-08-18 16:38:27.141 EST</processingDate>
+      <totalBatchAmount>180.00</totalBatchAmount>
+      <batchCount>2</batchCount>
+      <disbursementImportDetails class="list">
+         <disbursementImportDetailDTO>
+            <recordType>I</recordType>
+            <reissuedIndicator>false</reissuedIndicator>
+            <dsbId>3212</dsbId>
+            <disbursementNumber>1016</disbursementNumber>
+            <disbursementAmount>200.00</disbursementAmount>
+            <issuedDate>2014-08-18 16:38:27.141 EST</issuedDate>
+	    	<payeeId>706</payeeId>
+            <payeeName>Erwin Huffmeister</payeeName>
+            <statusUpdateInd>true</statusUpdateInd>
+            <comment>Updated</comment>
+         </disbursementImportDetailDTO>
+         <disbursementImportDetailDTO>
+            <recordType>I</recordType>
+            <reissuedIndicator>false</reissuedIndicator>
+            <dsbId>3221</dsbId>
+            <disbursementNumber>1017</disbursementNumber>
+            <disbursementAmount>25.00</disbursementAmount>
+            <issuedDate>2014-08-18 16:38:27.141 EST</issuedDate>
+	    	<payeeId>706</payeeId>
+            <payeeName>Erwin Huffmeister</payeeName>
+            <statusUpdateInd>true</statusUpdateInd>
+            <comment>Updated</comment>
+         </disbursementImportDetailDTO>
+      </disbursementImportDetails>
+   </disbursementImportSummaryDTO>   
+</list>

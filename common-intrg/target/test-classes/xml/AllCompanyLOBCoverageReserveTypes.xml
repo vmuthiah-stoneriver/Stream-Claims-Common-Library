@@ -1,0 +1,93 @@
+<list>
+  <coverageCompLOBResTypeDTO>
+    <corpId>100</corpId>
+    <corporation>Pilgrim Insurance Company</corporation>
+    <compId>114</compId>
+    <company>Acadia Insurance Company (B/O)</company>
+    <companyLOBId>110</companyLOBId>
+    <lobCode>ca</lobCode>
+    <lobName>Commercial Automobile</lobName>
+    <reserveTypeCode>clm_exp</reserveTypeCode>
+    <reserveTypeName>Claim Expense</reserveTypeName>
+    <coverageCode>alt_nj_pip</coverageCode>
+    <coverageName>ALT NJ PIP</coverageName>
+  </coverageCompLOBResTypeDTO>
+  <coverageCompLOBResTypeDTO>
+    <corpId>100</corpId>
+    <corporation>Pilgrim Insurance Company</corporation>
+    <compId>114</compId>
+    <company>Acadia Insurance Company (B/O)</company>
+    <companyLOBId>110</companyLOBId>
+    <lobCode>ca</lobCode>
+    <lobName>Commercial Automobile</lobName>
+    <reserveTypeCode>exp_recov</reserveTypeCode>
+    <reserveTypeName>Expense Recovery</reserveTypeName>
+    <coverageCode>alt_nj_pip</coverageCode>
+    <coverageName>ALT NJ PIP</coverageName>
+  </coverageCompLOBResTypeDTO>
+  <coverageCompLOBResTypeDTO>
+    <corpId>100</corpId>
+    <corporation>Pilgrim Insurance Company</corporation>
+    <compId>114</compId>
+    <company>Acadia Insurance Company (B/O)</company>
+    <companyLOBId>110</companyLOBId>
+    <lobCode>ca</lobCode>
+    <lobName>Commercial Automobile</lobName>
+    <reserveTypeCode>loss</reserveTypeCode>
+    <reserveTypeName>Loss</reserveTypeName>
+    <coverageCode>alt_nj_pip</coverageCode>
+    <coverageName>ALT NJ PIP</coverageName>
+  </coverageCompLOBResTypeDTO>
+  <coverageCompLOBResTypeDTO>
+    <corpId>100</corpId>
+    <corporation>Pilgrim Insurance Company</corporation>
+    <compId>114</compId>
+    <company>Acadia Insurance Company (B/O)</company>
+    <companyLOBId>110</companyLOBId>
+    <lobCode>ca</lobCode>
+    <lobName>Commercial Automobile</lobName>
+    <reserveTypeCode>med</reserveTypeCode>
+    <reserveTypeName>Loss Medical</reserveTypeName>
+    <coverageCode>alt_nj_pip</coverageCode>
+    <coverageName>ALT NJ PIP</coverageName>
+  </coverageCompLOBResTypeDTO>
+  <coverageCompLOBResTypeDTO>
+    <corpId>100</corpId>
+    <corporation>Pilgrim Insurance Company</corporation>
+    <compId>114</compId>
+    <company>Acadia Insurance Company (B/O)</company>
+    <companyLOBId>110</companyLOBId>
+    <lobCode>ca</lobCode>
+    <lobName>Commercial Automobile</lobName>
+    <reserveTypeCode>payrcvr</reserveTypeCode>
+    <reserveTypeName>Loss Payment Recovery</reserveTypeName>
+    <coverageCode>alt_nj_pip</coverageCode>
+    <coverageName>ALT NJ PIP</coverageName>
+  </coverageCompLOBResTypeDTO>
+  <coverageCompLOBResTypeDTO>
+    <corpId>100</corpId>
+    <corporation>Pilgrim Insurance Company</corporation>
+    <compId>114</compId>
+    <company>Acadia Insurance Company (B/O)</company>
+    <companyLOBId>110</companyLOBId>
+    <lobCode>ca</lobCode>
+    <lobName>Commercial Automobile</lobName>
+    <reserveTypeCode>subro</reserveTypeCode>
+    <reserveTypeName>Subrogation</reserveTypeName>
+    <coverageCode>alt_nj_pip</coverageCode>
+    <coverageName>ALT NJ PIP</coverageName>
+  </coverageCompLOBResTypeDTO>
+  <coverageCompLOBResTypeDTO>
+    <corpId>100</corpId>
+    <corporation>Pilgrim Insurance Company</corporation>
+    <compId>114</compId>
+    <company>Acadia Insurance Company (B/O)</company>
+    <companyLOBId>110</companyLOBId>
+    <lobCode>ca</lobCode>
+    <lobName>Commercial Automobile</lobName>
+    <reserveTypeCode>clm_exp</reserveTypeCode>
+    <reserveTypeName>Claim Expense</reserveTypeName>
+    <coverageCode>audio</coverageCode>
+    <coverageName>Audio Visual Data</coverageName>
+  </coverageCompLOBResTypeDTO>
+  </list>

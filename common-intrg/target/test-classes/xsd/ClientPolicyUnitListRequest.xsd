@@ -1,0 +1,30 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<xs:element name="ListUnitsCriteria" type="UnitsCriteria" />
+
+	<xs:complexType name="UnitsCriteria">
+		<xs:sequence>
+			<xs:element name="dateOfLoss" type="xs:date" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Date of loss.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="policyNumber" type="xs:string"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Policy number.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="recordSourceCode" type="xs:string"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Policy system code. Used to identify source
+						policy system.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+</xs:schema>

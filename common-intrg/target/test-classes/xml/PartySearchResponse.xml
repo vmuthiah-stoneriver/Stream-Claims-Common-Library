@@ -1,0 +1,130 @@
+<list>
+  <partySearchResult>
+    <partyId>4024</partyId>
+    <partyTypeCode>pers</partyTypeCode>
+    <partyTypeName>Person</partyTypeName>
+    <name>Cumberlan, Tammy TAXID</name>
+    <nameOther></nameOther>
+    <firstName>Tammy</firstName>
+    <lastName>Cumberlan</lastName>
+    <middleName>TAXID</middleName>
+    <addressId>2525</addressId>
+    <addressLine1>1400 Pennsylvania Ave.</addressLine1>
+    <addressCity>Des Moines</addressCity>
+    <addressRegionId>28</addressRegionId>
+    <addressState>Iowa</addressState>
+    <addressCountry>United States</addressCountry>
+    <addressZipcode>50316</addressZipcode>
+    <addressCountryCode>usa</addressCountryCode>
+    <addressStateCode>IA</addressStateCode>
+    <blockExists>false</blockExists>
+  </partySearchResult>
+  <partySearchResult>
+    <partyId>8906</partyId>
+    <partyTypeCode>pers</partyTypeCode>
+    <partyTypeName>Person</partyTypeName>
+    <name>Newcomb, Tammy</name>
+    <nameOther></nameOther>
+    <firstName>Tammy</firstName>
+    <lastName>Newcomb</lastName>
+    <addressId>7304</addressId>
+    <addressLine1>2712 Washington</addressLine1>
+    <addressCity>Des Moines</addressCity>
+    <addressRegionId>28</addressRegionId>
+    <addressState>Iowa</addressState>
+    <addressCountry>United States</addressCountry>
+    <addressZipcode>50311</addressZipcode>
+    <addressCountryCode>usa</addressCountryCode>
+    <addressStateCode>IA</addressStateCode>
+    <blockExists>false</blockExists>
+  </partySearchResult>
+  <partySearchResult>
+    <partyId>12402</partyId>
+    <partyTypeCode>pers</partyTypeCode>
+    <partyTypeName>Person</partyTypeName>
+    <name>Thompson, Tanya</name>
+    <nameOther></nameOther>
+    <firstName>Tanya</firstName>
+    <lastName>Thompson</lastName>
+    <middleName></middleName>
+    <addressId>10701</addressId>
+    <addressLine1> PO Box 706</addressLine1>
+    <addressCity>North Conway</addressCity>
+    <addressRegionId>42</addressRegionId>
+    <addressState>New Hampshire</addressState>
+    <addressCountry>United States</addressCountry>
+    <addressZipcode>03860</addressZipcode>
+    <addressCountryCode>usa</addressCountryCode>
+    <addressStateCode>NH</addressStateCode>
+    <blockExists>false</blockExists>
+  </partySearchResult>
+  <partySearchResult>
+    <partyId>17367</partyId>
+    <partyTypeCode>pers</partyTypeCode>
+    <partyTypeName>Person</partyTypeName>
+    <name>Sammy, Tammy</name>
+    <nameOther></nameOther>
+    <firstName>Tammy</firstName>
+    <lastName>Sammy</lastName>
+    <addressId>14867</addressId>
+    <addressLine1>2333 Test Lane</addressLine1>
+    <addressCity>Denver</addressCity>
+    <addressRegionId>19</addressRegionId>
+    <addressState>Colorado</addressState>
+    <addressCountry>United States</addressCountry>
+    <addressZipcode>80014</addressZipcode>
+    <addressCountryCode>usa</addressCountryCode>
+    <addressStateCode>CO</addressStateCode>
+    <blockExists>false</blockExists>
+  </partySearchResult>
+  <partySearchResult>
+    <partyId>24008</partyId>
+    <partyTypeCode>pers</partyTypeCode>
+    <partyTypeName>Person</partyTypeName>
+    <name>Personally, Tammy</name>
+    <nameOther></nameOther>
+    <firstName>Tammy</firstName>
+    <lastName>Personally</lastName>
+    <addressId>21808</addressId>
+    <addressLine1>1233 Personal Lane</addressLine1>
+    <addressCity>Denver</addressCity>
+    <addressRegionId>43</addressRegionId>
+    <addressState>New Jersey</addressState>
+    <addressCountry>United States</addressCountry>
+    <addressZipcode>80237</addressZipcode>
+    <addressCountryCode>usa</addressCountryCode>
+    <addressStateCode>NJ</addressStateCode>
+    <blockExists>false</blockExists>
+  </partySearchResult>
+  <partySearchResult>
+    <partyId>26001</partyId>
+    <partyTypeCode>pers</partyTypeCode>
+    <partyTypeName>Person</partyTypeName>
+    <name>Smith, Tammi</name>
+    <nameOther></nameOther>
+    <firstName>Tammi</firstName>
+    <lastName>Smith</lastName>
+    <addressId>23802</addressId>
+    <addressLine1>101  i have an address</addressLine1>
+    <addressCity>Indianola</addressCity>
+    <addressRegionId>28</addressRegionId>
+    <addressState>Iowa</addressState>
+    <addressCountry>United States</addressCountry>
+    <addressZipcode>50125</addressZipcode>
+    <addressCountryCode>usa</addressCountryCode>
+    <addressStateCode>IA</addressStateCode>
+    <blockExists>false</blockExists>
+  </partySearchResult>
+  <partySearchResult>
+    <partyId>4030</partyId>
+    <partyTypeCode>pers</partyTypeCode>
+    <partyTypeName>Person</partyTypeName>
+    <name>SSnEX, TaxID2</name>
+    <nameOther></nameOther>
+    <firstName>TaxID2</firstName>
+    <lastName>SSnEX</lastName>
+    <addressId>0</addressId>
+    <addressRegionId>0</addressRegionId>
+    <blockExists>false</blockExists>
+  </partySearchResult>
+</list>

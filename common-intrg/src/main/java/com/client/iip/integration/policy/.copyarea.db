@@ -1,0 +1,10 @@
+ClearCase CopyAreaDB|4
+iip_starter_kit\claim_starter_kit\common-intrg\src\main\java\com\client\iip\integration\policy
+2
+6
+22:ClientPolicySearchServiceImpl.java|1|14c9571292e|dbd|959686e8|74cbb10f55b44b4a9fda8bac26e9e2b0|0
+1a:PolicyImportProcessor.java|1|14c95712a96|10b1|8967904a|952ec5ac0b904f2ea3c4f661a2e877ba|0
+22:ClientPolicyImportServiceImpl.java|1|14c95712a96|207b|5b79eeca|ae5eb8a4d6ad4b7e91510d282cd01961|0
+20:PolicyFileReaderTransformer.java|1|14c9571291a|14d3|22adc86d|645698d436124ba0809e87ad84543cc3|0
+21:ClientPolicyImportWrapperDTO.java|1|14c95712a96|716|16f05608|b7d6d70b30a24c35a397f42828790e83|0
+23:PolicyPullMediationAdapterImpl.java|1|15061ce119a|4c84|14478573|681bc8b43e764accae6e16840499ded1|0

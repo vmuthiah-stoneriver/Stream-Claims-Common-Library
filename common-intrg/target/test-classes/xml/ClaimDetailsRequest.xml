@@ -1,0 +1,27 @@
+<claimDetailCriteria>
+   	<claimNumber>148300000183</claimNumber>
+	<returnAssignments>false</returnAssignments>
+	<returnBills>false</returnBills>
+	<returnDocuments>false</returnDocuments>
+	<returnFinancialSummary>false</returnFinancialSummary>
+	<returnNotes>false</returnNotes>
+	<returnWorkItems>false</returnWorkItems>
+	<returnUnits>true</returnUnits>
+	<returnAuthorities>false</returnAuthorities>
+	<returnClaimLossIndicatorProfiles>false</returnClaimLossIndicatorProfiles>
+	<returnWitnesses>false</returnWitnesses>
+	<returnClaimServices>false</returnClaimServices>
+	<returnClaimPolicy>true</returnClaimPolicy>
+	<returnRelatedClaims>false</returnRelatedClaims>
+	<returnInjuredWorker>false</returnInjuredWorker>
+	<returnAdjusterDetails>false</returnAdjusterDetails>
+	<returnClaimLossProfiles>false</returnClaimLossProfiles>
+	<returnClaimJurisdictionProfiles>false</returnClaimJurisdictionProfiles>
+	<returnClaimReservesWithCoverages>true</returnClaimReservesWithCoverages>
+	<returnClaimPayment>true</returnClaimPayment>
+	<returnClaimRecovery>false</returnClaimRecovery>
+	<returnClaimMiscTransaction>false</returnClaimMiscTransaction>
+	<returnCases>false</returnCases>
+	<returnClaimPaymentSchedule>false</returnClaimPaymentSchedule>
+	<returnDetailsForClaimImport>false</returnDetailsForClaimImport>
+</claimDetailCriteria>

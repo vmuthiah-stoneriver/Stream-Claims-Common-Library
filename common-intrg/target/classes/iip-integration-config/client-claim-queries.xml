@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<iipda:queries xmlns:iipda="http://www.fiserv.com/isd/iip/core/data/query/file"
+	category="client" subcategory="events">
+
+	<iipda:rdbms
+		accessId="client.claims.retrieveControlNumberByCompanyLOBAndJurisdiction">
+		<iipda:content>
+			SELECT
+				CCNC.CLM_CTL_NO controlNumber,
+				CCNC.CMPY_LOB_ID companyLOBId,
+				CCNC.JUR_ID jurisdictionId
+			FROM 
+				CLAIM_CONTROL_NUMBER_CD CCNC 
+			WHERE 
+				(CCNC.CMPY_LOB_ID=:companyLOBId OR CCNC.CMPY_LOB_ID IS NULL) 
+			AND 
+				(CCNC.JUR_ID=:jurisdictionId OR CCNC.JUR_ID IS NULL)
+			AND
+				CCNC.CLM_CTL_HRCHY_LVL_ID =
+				(SELECT 
+					MAX(CCNC1.CLM_CTL_HRCHY_LVL_ID)
+				FROM 
+					CLAIM_CONTROL_NUMBER_CD CCNC1 
+				WHERE 
+					(CCNC1.CMPY_LOB_ID=:companyLOBId OR CCNC1.CMPY_LOB_ID IS NULL) 
+				AND 
+					(CCNC1.JUR_ID=:jurisdictionId OR CCNC1.JUR_ID IS NULL)
+				)
+
+		</iipda:content>
+		<iipda:description>
+			Retrieves the control number for a claim based on the company LOB and jurisdiction
+		</iipda:description>
+	</iipda:rdbms>
+	
+	<iipda:rdbms
+		accessId="client.company.retrieveCompanyPrefixNameByCompanyId">
+		<iipda:content>
+			SELECT
+				CMPY_ID companyId,
+				CMPY_NM_PRFX cmpyName
+			FROM 
+				COMPANY_CD  
+			WHERE 
+				CMPY_ID =:companyId
+		</iipda:content>
+		<iipda:description>
+			Retrieves the Company Prefix Name on the basis of Company Id.
+		</iipda:description>
+	</iipda:rdbms>
+	
+	<iipda:rdbms
+		accessId="client.claims.retrieveAllPrefixes">
+		<iipda:content>
+			SELECT
+				CCNC.CLM_CTL_NO controlNumber,
+				CCNC.CMPY_LOB_ID companyLOBId,
+				CCNC.JUR_ID jurisdictionId
+			FROM 
+				CLAIM_CONTROL_NUMBER_CD CCNC 
+		</iipda:content>
+		<iipda:description>
+			Retrieves All prefix (control numbers) with company lob id and jurisdiction Id
+		</iipda:description>
+	</iipda:rdbms>
+
+	<iipda:rdbms
+		accessId="client.claims.allStatusTransitions">
+		<iipda:content>
+					SELECT 
+						CSTC.CLM_STS_TRANS_ID recordId,
+					    CSTC.CLM_STS_ACTN_CD actionCode,
+					    CSTC.CLM_STS_CD_FR statusFromCode,
+					    CSTC.CLM_STT_CD_FR stateFromCode,
+					    CSTC.CLM_STS_CD_TO statusToCode,
+					    CSTC.CLM_STT_CD_TO stateToCode
+					FROM
+					    CLAIM_STATUS_TRANSITION_CD CSTC
+					ORDER BY CSTC.CLM_STS_TRANS_ID
+		</iipda:content>
+		<iipda:description>
+			Retrieves All Claim Status Transitions.
+		</iipda:description>
+	</iipda:rdbms>
+	
+	<iipda:rdbms
+		accessId="client.claims.claimCoverageCodeForPolicyCoverage">
+		<iipda:content>
+			SELECT CCCX.CLM_COV_CD coverageCd			
+			FROM CLAIM_COVERAGE_COVERAGE_XREF CCCX
+			WHERE CCCX.COV_CD = :policyCovCode
+			AND CCCX.EFF_DTM &lt;= :curdatetime AND END_DTM IS NULL
+		</iipda:content>
+		<iipda:description>
+			Retrieves Corresponding Claim Coverage codes for Policy coverages.
+		</iipda:description>
+	</iipda:rdbms>
+	
+	<iipda:rdbms
+		accessId="client.claims.isoSearch">
+		<iipda:content>
+				SELECT 	a.CLM_NO claimNumber, 
+						b.CLM_PLCY_NO policyNumber,
+						a.CLM_LOSS_DT lossDate, 
+						c.CLM_TYP_NM lossType, 
+						CASE WHEN d.CLLA_LOC_NM IS NULL OR LTRIM(d.CLLA_LOC_NM) = ''  THEN 
+							d.CLLA_LN1_TXT || ',' || d.CLLA_CITY_NM || ',' || d.CLLA_PSTL_CD
+						ELSE d.CLLA_LOC_NM END lossLocation,
+						cuv.CLM_UNT_VEH_VIN_NO vehicleVIN,
+						cuv.CLM_UNT_VEH_LIC_NO licensePlateNo,
+						prdl.PARTY_ROLE_DRVR_LIC_NO driverLicenseNo,
+						f.PARTY_PERS_NM_NM_DISP_DRV insuredName,
+						j.PARTY_PERS_BRTH_DT insuredDOB,
+						k.PARTY_TAX_ID_TAX_ID_NO insuredSSN,
+						g.PARTY_ADDR_LN1_TXT insuredAddressLine1,
+						g.PARTY_ADDR_LN2_TXT insuredAddressLine2, 
+						g.PARTY_ADDR_CITY_NM insuredCity,
+						i.PSTL_SERV_RGN_NM insuredState, 
+						g.PARTY_ADDR_PSTL_CD insuredZip
+						FROM CLAIM a, CLAIM_POLICY b, CLAIM_TYPE_CD c, CLAIM_LOSS_LOCATION_ADDR d, CLAIM_UNIT cu 
+						LEFT OUTER JOIN CLAIM_UNIT_VEHICLE cuv ON cu.CLM_UNT_ID = cuv.CLM_UNT_ID,
+						CLAIM_PARTICIPATION e, PARTY_PERSON_NAME f, PARTY_ADDRESS g, PARTY_ADDRESS_USAGE h, POSTAL_SERVICE_REGION_CD i, PARTY_PERSON j
+						LEFT OUTER JOIN PARTY_TAX_IDENTIFIER k ON j.PARTY_ID = k.PARTY_ID AND k.TAX_ID_TYP_CD = 'ssn'
+						AND k.PARTY_TAX_ID_END_DTM IS NULL AND k.PARTY_TAX_ID_EFF_DTM &lt;= :curdatetime
+						LEFT OUTER JOIN (SELECT prl.PARTY_ROLE_DRVR_LIC_NO, pr.PARTY_ID FROM PARTY_ROLE pr, PARTY_ROLE_DRIVER_LICENSE prl WHERE pr.PARTY_ROLE_ID = prl.PARTY_ROLE_ID
+						AND prl.PARTY_ROLE_DRVR_LIC_EXP_DT IS NULL AND pr.END_DTM IS NULL) prdl ON prdl.PARTY_ID = j.PARTY_ID
+						WHERE a.CLM_ID = b.CLM_ID
+						AND a.CLM_TYP_CD = c.CLM_TYP_CD AND a.CLM_ID = d.CLM_ID
+						AND a.CLM_ID=e.CLM_ID AND e.PTCP_TYP_CD='insrd'
+						AND e.PARTY_ID=f.PARTY_ID AND f.PARTY_ID=g.PARTY_ID AND g.PARTY_ADDR_ID = h.PARTY_ADDR_ID AND h.USG_TYP_CD = 'mail_addr' AND h.AGRE_TYP_CD = 'clm'
+						AND h.PARTY_ADDR_USG_END_DT IS NULL AND h.PARTY_ADDR_USG_EFF_DT &lt;= :curdatetime
+						AND f.PARTY_PERS_NM_EFF_DT &lt;= :curdatetime AND f.PARTY_PERS_NM_END_DT IS NULL AND f.DEL_IND = 'n'
+						AND f.PERS_NM_TYP_CD = 'lgl_nm'
+						AND e.CLM_PTCP_EFF_DT &lt;= :curdatetime AND e.CLM_PTCP_END_DT IS NULL AND e.DEL_IND = 'n'
+						AND g.PSTL_SERV_RGN_ID = i.PSTL_SERV_RGN_ID AND a.DEL_IND = 'n' AND b.DEL_IND = 'n'
+						AND e.PARTY_ID = j.PARTY_ID
+						AND a.CLM_ID = cu.CLM_ID AND cu.DEL_IND = 'n'
+						AND cu.UNT_TYP_CD IN ('veh')
+						AND a.CLM_NO_UPCS_SRCH = :claimNumber
+		</iipda:content>
+		<iipda:description>
+			Retrieves ISO Claim Search Parameters.
+		</iipda:description>
+	</iipda:rdbms>	
+	
+
+</iipda:queries>

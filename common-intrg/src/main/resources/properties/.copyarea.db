@@ -1,0 +1,13 @@
+ClearCase CopyAreaDB|4
+iip_starter_kit\claim_starter_kit\common-intrg\src\main\resources\properties
+2
+9
+19:GCNI-alias-map.properties|1|14c957133ba|47|cc1d1abd|fa43642422674e35985a20bc98c8dd83|0
+20:client-mule-alias-map.properties|1|14ff833d16f|8991|6f05fb00|625649dbcb0e44e7914ff81407e53933|0
+19:CIFN-alias-map.properties|1|14c95713252|397|47cc6933|3cd2080a26884accbe317c199a0aa1c6|0
+19:VDEX-alias-map.properties|1|14c957133ba|76|3cf32adf|7ff272e8bdf04f95a00edec3f810d161|0
+19:CUSD-alias-map.properties|1|14ff573d167|96|4d763947|74fc587151a14579ae577b056cecbd8e|0
+28:webservice-operation-bindings.properties|1|14c9571340a|c1|4f6a4ad2|3a405af102314497868f64afa7bbd126|0
+20:StreamPolicyInterface.properties|1|14c9571341e|f3|4b065d18|c6c9fc954ffb4951a6f36aa325774319|0
+e:logback.groovy|1|14c957133ba|45b|ad537fd3|272a729ec88542c78338b59bf3eccf54|0
+1d:client-error-codes.properties|1|14c957133ba|1fd|73fabbf0|5b958751b36d43a3ab540e6c36bffd53|0

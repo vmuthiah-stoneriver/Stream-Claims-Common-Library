@@ -1,0 +1,11 @@
+ClearCase CopyAreaDB|4
+iip_starter_kit\claim_starter_kit\common-intrg\src\main\java\com\client\iip\integration\core\webservice
+2
+7
+1d:WebserviceLogicalHandler.java|1|14c95712352|1486|b2cb6cd7|24a0ed2d8a1e486caf8cb79c4172b6a7|0
+15:SOAPReceiverImpl.java|1|14c9571233e|68d|fbbc2f8a|c51ec9a695254dc3bae653266994d43d|0
+1c:SOAPResponseTransformer.java|1|14ff5750111|fdd|afd21c33|96e9e7b852d346c6ba94652e61d85536|0
+1b:SOAPRequestTransformer.java|1|14e0da01ac2|d16|79555048|54263a7e16a146e2accfbb775521974f|0
+1a:SOAPHeaderTransformer.java|1|14c95712316|7c2|604f8c4a|99f36880639143ea84b2f95ec22866f5|0
+11:SOAPReceiver.java|1|14c9571232a|c2|f90e4200|68bbff8658ed4a86a9f1e2a54a4c4b27|0
+17:SOAPMessageBuilder.java|1|14d2bee748d|1514|1b9ea21b|298052a781224dbd9c3fa18d64bf0f10|0

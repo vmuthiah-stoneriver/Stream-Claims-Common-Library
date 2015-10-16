@@ -1,0 +1,991 @@
+<clientExportDisbursementsResultDTO>
+  <totalRecordCount>6</totalRecordCount>
+  <totalDisbursementAmount>20335.88</totalDisbursementAmount>
+  <executionDate>2014-03-31 00:00:00.000 MDT</executionDate>
+  <accountingDate>2014-03-21 09:41:40.000 MDT</accountingDate>
+  <paymentList class="list">
+    <payment>
+      <updated>false</updated>
+      <childUpdated>false</childUpdated>
+      <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+      <recordTypeId>200</recordTypeId>
+      <payorAdddressId>6000300</payorAdddressId>
+      <controlNumber>8</controlNumber>
+      <disbursmentId>24706</disbursmentId>
+      <disbursementNumber></disbursementNumber>
+      <paymentRequestTarget>schedule</paymentRequestTarget>
+      <paymentMethodType>chck</paymentMethodType>
+      <referenceNumber>4360</referenceNumber>
+      <paymentDate>2013-01-09 00:00:00.000 MST</paymentDate>
+      <paymentAmount>18.00</paymentAmount>
+      <checkExpireDate>2013-01-09 00:00:00.000 MST</checkExpireDate>
+      <paymentID>4360</paymentID>
+      <payorNameLine1>Mt Washington Assurance Corporation</payorNameLine1>
+      <payorAddressLine1>81 Hall St</payorAddressLine1>
+      <payorCity>Concord</payorCity>
+      <payorAddressZip>033013488</payorAddressZip>
+      <payorCountry>United States</payorCountry>
+      <corporationId>1</corporationId>
+      <companyId>1</companyId>
+      <printGroupCode>batch</printGroupCode>
+      <comment></comment>
+      <dipoName>pay towing</dipoName>
+      <paymentDetailHeader class="list">
+        <paymentDetail>
+          <updated>false</updated>
+          <childUpdated>false</childUpdated>
+          <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+          <recordTypeId>300</recordTypeId>
+          <detailControlNumber>1</detailControlNumber>
+          <paymentType>clmpay</paymentType>
+          <context>clm</context>
+          <paymentDetailClaim class="list">
+            <paymentDetailClaimDTO>
+              <changesetId>0</changesetId>
+              <recordId>0</recordId>
+              <version>0</version>
+              <updated>false</updated>
+              <childUpdated>false</childUpdated>
+              <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+              <recordTypeId>320</recordTypeId>
+              <claimId>24121</claimId>
+              <claimNumber>142100125221</claimNumber>
+              <claimType>ovrear</claimType>
+              <claimStatusCode>cmpl</claimStatusCode>
+              <claimStateCode>clos</claimStateCode>
+              <policyNumber>PRA10000115</policyNumber>
+              <companyLobId>2</companyLobId>
+              <policyPeriodBeginDate>2011-12-01 00:00:00.000 MST</policyPeriodBeginDate>
+              <policyPeriodEndDate>2017-12-01 00:00:00.000 MST</policyPeriodEndDate>
+              <plcyJurisdictionId>40</plcyJurisdictionId>
+              <claimMadeDate>2013-01-09 00:00:00.000 MST</claimMadeDate>
+              <claimJursidicationId>0</claimJursidicationId>
+              <participantName>Sally Field*</participantName>
+              <participationType>insrd</participationType>
+              <customerNumber>1349</customerNumber>
+              <addressLine1>50 Bridgewood Dr</addressLine1>
+              <addressCity>LONDONDERRY</addressCity>
+              <addressState>NH</addressState>
+              <addressCountry>usa</addressCountry>
+              <postalRegion>03053</postalRegion>
+              <lossDate>2012-06-21 00:00:00.000 MDT</lossDate>
+              <lossTime>1970-01-01 13:45:22.000 MST</lossTime>
+              <lossTimeZone>est</lossTimeZone>
+              <lossJursidicationId>19</lossJursidicationId>
+              <benefitJursidicationId>40</benefitJursidicationId>
+              <adjusterName>Michael J Brady</adjusterName>
+              <adjusterTitle>dev</adjusterTitle>
+              <adjusterOffice>STG</adjusterOffice>
+              <adjusterPhoneNumber>3035551212</adjusterPhoneNumber>
+              <adjusterEmailAddress>anothertest@email.com</adjusterEmailAddress>
+              <paymentDetailItemClaim class="list">
+                <paymentDetailItemClaimDTO>
+                  <updated>false</updated>
+                  <childUpdated>false</childUpdated>
+                  <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+                  <recordTypeId>321</recordTypeId>
+                  <transactionType>Loss Pay</transactionType>
+                  <unitType>veh</unitType>
+                  <unitDescription>2008 - Nissan - Maxima | VIN1JA1547B284714F1A</unitDescription>
+                  <unitParticipantName>Sally Field*</unitParticipantName>
+                  <reserveStatus>Closed</reserveStatus>
+                  <coverageTypeName>Towing &amp; Labor</coverageTypeName>
+                  <coverageTypeCode>tow_lab</coverageTypeCode>
+                  <reserveTypeName>Loss</reserveTypeName>
+                  <reserveTypeCode>loss</reserveTypeCode>
+                  <lossTypeName>Towing and Labor</lossTypeName>
+                  <lossTypeCode>tow_lab</lossTypeCode>
+                  <ftcId>28112</ftcId>
+                  <partyId>10917</partyId>
+                  <companyId>1</companyId>
+                  <surchangeIndicator>n</surchangeIndicator>
+                  <transactionTypeCode>c_loss_due</transactionTypeCode>
+                  <invoiceId>24806</invoiceId>
+                  <invoiceNumber>1</invoiceNumber>
+                  <disbursementId>24706</disbursementId>
+                  <reserveId>21846</reserveId>
+                  <monetoryTypeCode>loss_pymnt</monetoryTypeCode>
+                  <monetoryTypeName>Loss Payment </monetoryTypeName>
+                  <montetoryCategoryCode>loss</montetoryCategoryCode>
+                  <payableId>28112</payableId>
+                  <claimPaymentAllocatedAmount>18.00</claimPaymentAllocatedAmount>
+                  <claimId>24121</claimId>
+                  <transactionTypeId>50004</transactionTypeId>
+                </paymentDetailItemClaimDTO>
+              </paymentDetailItemClaim>
+              <claimPaymentAmount>18.00</claimPaymentAmount>
+              <claimParticipant class="list">
+                <claimParticipantData>
+                  <participantName>Sally Field*</participantName>
+                  <participationType>insrd</participationType>
+                  <customerNumber>1349</customerNumber>
+                  <addressLine1>50 Bridgewood Dr</addressLine1>
+                  <addressCity>LONDONDERRY</addressCity>
+                  <addressState>NH</addressState>
+                  <addressCountry>usa</addressCountry>
+                  <addressZipcode>03053</addressZipcode>
+                </claimParticipantData>
+              </claimParticipant>
+            </paymentDetailClaimDTO>
+          </paymentDetailClaim>
+          <paymentDetailTrailer>
+            <updated>false</updated>
+            <childUpdated>false</childUpdated>
+            <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+            <recordTypeId>399</recordTypeId>
+            <itemCount>1</itemCount>
+          </paymentDetailTrailer>
+        </paymentDetail>
+      </paymentDetailHeader>
+      <paymentPayeeCheck class="list">
+        <paymentPayeeCheckDTO>
+          <updated>false</updated>
+          <childUpdated>false</childUpdated>
+          <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+          <recordTypeId>210</recordTypeId>
+          <primaryPayeeName>Sally Field*</primaryPayeeName>
+          <inCareOfPayeeName>Wes Field</inCareOfPayeeName>
+          <addressLine1>1375 Washington Street</addressLine1>
+          <city>Denver</city>
+          <state>CO</state>
+          <addressZip>80203-2055</addressZip>
+          <country>usa</country>
+          <cresPreference>chck</cresPreference>
+          <primaryPayeePartyId>10917</primaryPayeePartyId>
+          <partyPayOrdOfNameDerived>Wes Field</partyPayOrdOfNameDerived>
+        </paymentPayeeCheckDTO>
+      </paymentPayeeCheck>
+      <paymentTrailer>
+        <updated>false</updated>
+        <childUpdated>false</childUpdated>
+        <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+        <recordTypeId>299</recordTypeId>
+        <itemCount>1</itemCount>
+        <summaryAmount>18.00</summaryAmount>
+      </paymentTrailer>
+      <accountingBusinessDate>2014-02-09 00:00:00.000 MST</accountingBusinessDate>
+    </payment>
+    <payment>
+      <updated>false</updated>
+      <childUpdated>false</childUpdated>
+      <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+      <recordTypeId>200</recordTypeId>
+      <payorAdddressId>6000300</payorAdddressId>
+      <controlNumber>9</controlNumber>
+      <disbursmentId>24707</disbursmentId>
+      <disbursementNumber>5123</disbursementNumber>
+      <paymentRequestTarget>schedule</paymentRequestTarget>
+      <paymentMethodType>chck</paymentMethodType>
+      <referenceNumber>4361</referenceNumber>
+      <paymentDate>2013-01-09 00:00:00.000 MST</paymentDate>
+      <paymentAmount>18.00</paymentAmount>
+      <checkExpireDate>2013-01-09 00:00:00.000 MST</checkExpireDate>
+      <paymentID>4361</paymentID>
+      <payorNameLine1>Mt Washington Assurance Corporation</payorNameLine1>
+      <payorAddressLine1>81 Hall St</payorAddressLine1>
+      <payorCity>Concord</payorCity>
+      <payorAddressZip>033013488</payorAddressZip>
+      <payorCountry>United States</payorCountry>
+      <corporationId>1</corporationId>
+      <companyId>1</companyId>
+      <printGroupCode>batch</printGroupCode>
+      <comment></comment>
+      <dipoName>pay towing</dipoName>
+      <paymentDetailHeader class="list">
+        <paymentDetail>
+          <updated>false</updated>
+          <childUpdated>false</childUpdated>
+          <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+          <recordTypeId>300</recordTypeId>
+          <detailControlNumber>1</detailControlNumber>
+          <paymentType>clmpay</paymentType>
+          <context>clm</context>
+          <paymentDetailClaim class="list">
+            <paymentDetailClaimDTO>
+              <changesetId>0</changesetId>
+              <recordId>0</recordId>
+              <version>0</version>
+              <updated>false</updated>
+              <childUpdated>false</childUpdated>
+              <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+              <recordTypeId>320</recordTypeId>
+              <claimId>24124</claimId>
+              <claimNumber>142400125224</claimNumber>
+              <claimType>ovrear</claimType>
+              <claimStatusCode>cmpl</claimStatusCode>
+              <claimStateCode>clos</claimStateCode>
+              <policyNumber>PRA10000115</policyNumber>
+              <companyLobId>2</companyLobId>
+              <policyPeriodBeginDate>2011-12-01 00:00:00.000 MST</policyPeriodBeginDate>
+              <policyPeriodEndDate>2017-12-01 00:00:00.000 MST</policyPeriodEndDate>
+              <plcyJurisdictionId>40</plcyJurisdictionId>
+              <claimMadeDate>2013-01-09 00:00:00.000 MST</claimMadeDate>
+              <claimJursidicationId>0</claimJursidicationId>
+              <participantName>Jane Winters</participantName>
+              <participationType>insrd</participationType>
+              <customerNumber>1374</customerNumber>
+              <addressLine1>50 Shore Dr</addressLine1>
+              <addressCity>LONDONDERRY</addressCity>
+              <addressState>NH</addressState>
+              <addressCountry>usa</addressCountry>
+              <postalRegion>03053</postalRegion>
+              <lossDate>2012-06-21 00:00:00.000 MDT</lossDate>
+              <lossTime>1970-01-01 13:45:22.000 MST</lossTime>
+              <lossTimeZone>est</lossTimeZone>
+              <lossJursidicationId>19</lossJursidicationId>
+              <benefitJursidicationId>40</benefitJursidicationId>
+              <adjusterName>Michael J Brady</adjusterName>
+              <adjusterTitle>dev</adjusterTitle>
+              <adjusterOffice>STG</adjusterOffice>
+              <adjusterPhoneNumber>3035551212</adjusterPhoneNumber>
+              <adjusterEmailAddress>anothertest@email.com</adjusterEmailAddress>
+              <paymentDetailItemClaim class="list">
+                <paymentDetailItemClaimDTO>
+                  <updated>false</updated>
+                  <childUpdated>false</childUpdated>
+                  <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+                  <recordTypeId>321</recordTypeId>
+                  <transactionType>Loss Pay</transactionType>
+                  <unitType>veh</unitType>
+                  <unitDescription>2008 - Nissan - Maxima | VIN1JA1547B284714F1A</unitDescription>
+                  <unitParticipantName>Jane Winters</unitParticipantName>
+                  <reserveStatus>Closed</reserveStatus>
+                  <coverageTypeName>Towing &amp; Labor</coverageTypeName>
+                  <coverageTypeCode>tow_lab</coverageTypeCode>
+                  <reserveTypeName>Loss</reserveTypeName>
+                  <reserveTypeCode>loss</reserveTypeCode>
+                  <lossTypeName>Towing and Labor</lossTypeName>
+                  <lossTypeCode>tow_lab</lossTypeCode>
+                  <ftcId>28114</ftcId>
+                  <partyId>10942</partyId>
+                  <companyId>1</companyId>
+                  <surchangeIndicator>n</surchangeIndicator>
+                  <transactionTypeCode>c_loss_due</transactionTypeCode>
+                  <invoiceId>24807</invoiceId>
+                  <invoiceNumber>1</invoiceNumber>
+                  <disbursementId>24707</disbursementId>
+                  <reserveId>21850</reserveId>
+                  <monetoryTypeCode>loss_pymnt</monetoryTypeCode>
+                  <monetoryTypeName>Loss Payment </monetoryTypeName>
+                  <montetoryCategoryCode>loss</montetoryCategoryCode>
+                  <payableId>28114</payableId>
+                  <claimPaymentAllocatedAmount>18.00</claimPaymentAllocatedAmount>
+                  <claimId>24124</claimId>
+                  <transactionTypeId>50004</transactionTypeId>
+                </paymentDetailItemClaimDTO>
+              </paymentDetailItemClaim>
+              <claimPaymentAmount>18.00</claimPaymentAmount>
+              <claimParticipant class="list">
+                <claimParticipantData>
+                  <participantName>Jane Winters</participantName>
+                  <participationType>insrd</participationType>
+                  <customerNumber>1374</customerNumber>
+                  <addressLine1>50 Shore Dr</addressLine1>
+                  <addressCity>LONDONDERRY</addressCity>
+                  <addressState>NH</addressState>
+                  <addressCountry>usa</addressCountry>
+                  <addressZipcode>03053</addressZipcode>
+                </claimParticipantData>
+              </claimParticipant>
+            </paymentDetailClaimDTO>
+          </paymentDetailClaim>
+          <paymentDetailTrailer>
+            <updated>false</updated>
+            <childUpdated>false</childUpdated>
+            <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+            <recordTypeId>399</recordTypeId>
+            <itemCount>1</itemCount>
+          </paymentDetailTrailer>
+        </paymentDetail>
+      </paymentDetailHeader>
+      <paymentPayeeCheck class="list">
+        <paymentPayeeCheckDTO>
+          <updated>false</updated>
+          <childUpdated>false</childUpdated>
+          <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+          <recordTypeId>210</recordTypeId>
+          <primaryPayeeName>Jane Winters</primaryPayeeName>
+          <inCareOfPayeeName>Wes Field</inCareOfPayeeName>
+          <addressLine1>1375 Washington Street</addressLine1>
+          <city>Denver</city>
+          <state>CO</state>
+          <addressZip>80203-2055</addressZip>
+          <country>usa</country>
+          <cresPreference>chck</cresPreference>
+          <primaryPayeePartyId>10942</primaryPayeePartyId>
+          <partyPayOrdOfNameDerived>Wes Field</partyPayOrdOfNameDerived>
+        </paymentPayeeCheckDTO>
+      </paymentPayeeCheck>
+      <paymentTrailer>
+        <updated>false</updated>
+        <childUpdated>false</childUpdated>
+        <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+        <recordTypeId>299</recordTypeId>
+        <itemCount>1</itemCount>
+        <summaryAmount>18.00</summaryAmount>
+      </paymentTrailer>
+      <accountingBusinessDate>2014-02-09 00:00:00.000 MST</accountingBusinessDate>
+    </payment>
+    <payment>
+      <updated>false</updated>
+      <childUpdated>false</childUpdated>
+      <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+      <recordTypeId>200</recordTypeId>
+      <payorAdddressId>6000300</payorAdddressId>
+      <controlNumber>10</controlNumber>
+      <disbursmentId>24708</disbursmentId>
+      <paymentRequestTarget>schedule</paymentRequestTarget>
+      <paymentMethodType>chck</paymentMethodType>
+      <referenceNumber>4362</referenceNumber>
+      <paymentDate>2013-08-15 00:00:00.000 MDT</paymentDate>
+      <paymentAmount>255.38</paymentAmount>
+      <checkExpireDate>2013-08-15 00:00:00.000 MDT</checkExpireDate>
+      <paymentID>4362</paymentID>
+      <payorNameLine1>Mt Washington Assurance Corporation</payorNameLine1>
+      <payorAddressLine1>81 Hall St</payorAddressLine1>
+      <payorCity>Concord</payorCity>
+      <payorAddressZip>033013488</payorAddressZip>
+      <payorCountry>United States</payorCountry>
+      <corporationId>1</corporationId>
+      <companyId>1</companyId>
+      <dipoCode>allclm</dipoCode>
+      <comment>Payment for Glass loss service</comment>
+      <dipoName>Payment of Full and Final Payment of Any and All Claims</dipoName>
+      <paymentDetailHeader class="list">
+        <paymentDetail>
+          <updated>false</updated>
+          <childUpdated>false</childUpdated>
+          <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+          <recordTypeId>300</recordTypeId>
+          <detailControlNumber>1</detailControlNumber>
+          <paymentType>clmpay</paymentType>
+          <context>clm</context>
+          <paymentDetailClaim class="list">
+            <paymentDetailClaimDTO>
+              <changesetId>0</changesetId>
+              <recordId>0</recordId>
+              <version>0</version>
+              <updated>false</updated>
+              <childUpdated>false</childUpdated>
+              <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+              <recordTypeId>320</recordTypeId>
+              <claimId>24125</claimId>
+              <claimNumber>142500125225</claimNumber>
+              <claimType>glassdamonly</claimType>
+              <claimStatusCode>cmpl</claimStatusCode>
+              <claimStateCode>clos</claimStateCode>
+              <policyNumber>MWA00001010007</policyNumber>
+              <companyLobId>2</companyLobId>
+              <policyPeriodBeginDate>2012-08-03 00:00:00.000 MDT</policyPeriodBeginDate>
+              <policyPeriodEndDate>2017-12-01 00:00:00.000 MST</policyPeriodEndDate>
+              <plcyJurisdictionId>41</plcyJurisdictionId>
+              <claimMadeDate>2013-08-15 00:00:00.000 MDT</claimMadeDate>
+              <claimJursidicationId>0</claimJursidicationId>
+              <participantName>Jacquelyn Cook</participantName>
+              <participationType>insrd</participationType>
+              <customerNumber>793</customerNumber>
+              <addressLine1>135 Main St apt 14</addressLine1>
+              <addressCity>MILFORD</addressCity>
+              <addressState>NH</addressState>
+              <addressCountry>usa</addressCountry>
+              <postalRegion>03055</postalRegion>
+              <lossDate>2013-02-14 00:00:00.000 MST</lossDate>
+              <lossTime>1970-01-01 00:00:00.000 MST</lossTime>
+              <lossTimeZone>est</lossTimeZone>
+              <lossJursidicationId>42</lossJursidicationId>
+              <benefitJursidicationId>41</benefitJursidicationId>
+              <agencyName>Paramount Insurance Agency, Inc.</agencyName>
+              <agencyAddressLine1>579 Daniel Webster Highway</agencyAddressLine1>
+              <agencyAddressCity>Merrimack</agencyAddressCity>
+              <agencyAddressState>NH</agencyAddressState>
+              <agencyPostalCode>03054</agencyPostalCode>
+              <agencyAddressCountry>usa</agencyAddressCountry>
+              <agencyCustomerNumber>3143</agencyCustomerNumber>
+              <adjusterName>Michael J Brady</adjusterName>
+              <adjusterTitle>dev</adjusterTitle>
+              <adjusterOffice>STG</adjusterOffice>
+              <adjusterPhoneNumber>3035551212</adjusterPhoneNumber>
+              <adjusterEmailAddress>anothertest@email.com</adjusterEmailAddress>
+              <paymentDetailItemClaim class="list">
+                <paymentDetailItemClaimDTO>
+                  <updated>false</updated>
+                  <childUpdated>false</childUpdated>
+                  <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+                  <recordTypeId>321</recordTypeId>
+                  <transactionType>Loss Pay</transactionType>
+                  <unitType>veh</unitType>
+                  <unitDescription>2011 - NISSAN - ROGUE | VINJN8AS5MVXBW298448</unitDescription>
+                  <unitParticipantName>Jacquelyn Cook</unitParticipantName>
+                  <reserveStatus>Closed</reserveStatus>
+                  <coverageTypeName>Comprehensive</coverageTypeName>
+                  <coverageTypeCode>comp</coverageTypeCode>
+                  <reserveTypeName>Loss</reserveTypeName>
+                  <reserveTypeCode>loss</reserveTypeCode>
+                  <lossTypeName>Glass</lossTypeName>
+                  <lossTypeCode>glass</lossTypeCode>
+                  <ftcId>28116</ftcId>
+                  <partyId>7601</partyId>
+                  <companyId>1</companyId>
+                  <surchangeIndicator>n</surchangeIndicator>
+                  <transactionTypeCode>c_loss_due</transactionTypeCode>
+                  <invoiceId>24808</invoiceId>
+                  <invoiceNumber>503324353</invoiceNumber>
+                  <invoiceDate>2013-08-15 00:00:00.000 MDT</invoiceDate>
+                  <disbursementId>24708</disbursementId>
+                  <reserveId>21851</reserveId>
+                  <monetoryTypeCode>loss_pymnt</monetoryTypeCode>
+                  <monetoryTypeName>Loss Payment </monetoryTypeName>
+                  <montetoryCategoryCode>loss</montetoryCategoryCode>
+                  <payableId>28116</payableId>
+                  <claimPaymentAllocatedAmount>255.38</claimPaymentAllocatedAmount>
+                  <claimId>24125</claimId>
+                  <transactionTypeId>50004</transactionTypeId>
+                </paymentDetailItemClaimDTO>
+              </paymentDetailItemClaim>
+              <claimPaymentAmount>255.38</claimPaymentAmount>
+              <claimParticipant class="list">
+                <claimParticipantData>
+                  <participantName>Jacquelyn Cook</participantName>
+                  <participationType>insrd</participationType>
+                  <customerNumber>793</customerNumber>
+                  <addressLine1>135 Main St apt 14</addressLine1>
+                  <addressCity>MILFORD</addressCity>
+                  <addressState>NH</addressState>
+                  <addressCountry>usa</addressCountry>
+                  <addressZipcode>03055</addressZipcode>
+                </claimParticipantData>
+              </claimParticipant>
+            </paymentDetailClaimDTO>
+          </paymentDetailClaim>
+          <paymentDetailTrailer>
+            <updated>false</updated>
+            <childUpdated>false</childUpdated>
+            <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+            <recordTypeId>399</recordTypeId>
+            <itemCount>1</itemCount>
+          </paymentDetailTrailer>
+        </paymentDetail>
+      </paymentDetailHeader>
+      <paymentPayeeCheck class="list">
+        <paymentPayeeCheckDTO>
+          <updated>false</updated>
+          <childUpdated>false</childUpdated>
+          <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+          <recordTypeId>210</recordTypeId>
+          <primaryPayeeName>Jacquelyn Cook</primaryPayeeName>
+          <addressLine1>6351 Bayshore Rd</addressLine1>
+          <addressLine2>Ste 18</addressLine2>
+          <city>Fort Myers</city>
+          <state>FL</state>
+          <addressZip>33917-3195</addressZip>
+          <country>usa</country>
+          <cresPreference>chck</cresPreference>
+          <primaryPayeePartyId>7601</primaryPayeePartyId>
+          <partyPayOrdOfNameDerived>LYNXSERVICES</partyPayOrdOfNameDerived>
+        </paymentPayeeCheckDTO>
+      </paymentPayeeCheck>
+      <paymentTrailer>
+        <updated>false</updated>
+        <childUpdated>false</childUpdated>
+        <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+        <recordTypeId>299</recordTypeId>
+        <itemCount>1</itemCount>
+        <summaryAmount>255.38</summaryAmount>
+      </paymentTrailer>
+      <accountingBusinessDate>2014-02-09 00:00:00.000 MST</accountingBusinessDate>
+    </payment>
+    <payment>
+      <updated>false</updated>
+      <childUpdated>false</childUpdated>
+      <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+      <recordTypeId>200</recordTypeId>
+      <payorAdddressId>6000300</payorAdddressId>
+      <controlNumber>11</controlNumber>
+      <disbursmentId>24709</disbursmentId>
+      <disbursementNumber></disbursementNumber>
+      <paymentRequestTarget>schedule</paymentRequestTarget>
+      <paymentMethodType>chck</paymentMethodType>
+      <referenceNumber>4363</referenceNumber>
+      <paymentDate>2014-02-07 14:28:01.913 MST</paymentDate>
+      <paymentAmount>5000.00</paymentAmount>
+      <checkExpireDate>2014-02-07 14:28:01.913 MST</checkExpireDate>
+      <paymentID>4363</paymentID>
+      <payorNameLine1>Mt Washington Assurance Corporation</payorNameLine1>
+      <payorAddressLine1>81 Hall St</payorAddressLine1>
+      <payorCity>Concord</payorCity>
+      <payorAddressZip>033013488</payorAddressZip>
+      <payorCountry>United States</payorCountry>
+      <corporationId>1</corporationId>
+      <companyId>1</companyId>
+      <printGroupCode>batch</printGroupCode>
+      <comment></comment>
+      <paymentDetailHeader class="list">
+        <paymentDetail>
+          <updated>false</updated>
+          <childUpdated>false</childUpdated>
+          <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+          <recordTypeId>300</recordTypeId>
+          <detailControlNumber>1</detailControlNumber>
+          <paymentType>clmpay</paymentType>
+          <context>clm</context>
+          <paymentDetailClaim class="list">
+            <paymentDetailClaimDTO>
+              <changesetId>0</changesetId>
+              <recordId>0</recordId>
+              <version>0</version>
+              <updated>false</updated>
+              <childUpdated>false</childUpdated>
+              <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+              <recordTypeId>320</recordTypeId>
+              <claimId>23817</claimId>
+              <claimNumber>149100125191</claimNumber>
+              <claimType>onecarinjr</claimType>
+              <claimStatusCode>acpt</claimStatusCode>
+              <claimStateCode>opn</claimStateCode>
+              <policyNumber>MWA00001006564</policyNumber>
+              <companyLobId>2</companyLobId>
+              <policyPeriodBeginDate>2012-07-26 00:00:00.000 MDT</policyPeriodBeginDate>
+              <policyPeriodEndDate>2013-07-26 00:00:00.000 MDT</policyPeriodEndDate>
+              <plcyJurisdictionId>41</plcyJurisdictionId>
+              <claimJursidicationId>0</claimJursidicationId>
+              <participantName>Stephen J Adams</participantName>
+              <participationType>insrd</participationType>
+              <customerNumber>1305</customerNumber>
+              <taxIdNumber>XXXXX2423</taxIdNumber>
+              <addressLine1>691 KEARSARGE AVE</addressLine1>
+              <addressCity>CONTOOCOOK</addressCity>
+              <addressState>NH</addressState>
+              <addressCountry>usa</addressCountry>
+              <postalRegion>03229</postalRegion>
+              <lossDate>2013-06-01 00:00:00.000 MDT</lossDate>
+              <lossTime>1970-01-01 00:00:00.000 MST</lossTime>
+              <lossTimeZone>cst</lossTimeZone>
+              <lossJursidicationId>42</lossJursidicationId>
+              <benefitJursidicationId>41</benefitJursidicationId>
+              <adjusterName>Peggy  Davis</adjusterName>
+              <adjusterTitle>clm_dir</adjusterTitle>
+              <adjusterOffice>NE Director 2</adjusterOffice>
+              <adjusterPhoneNumber>6179511647</adjusterPhoneNumber>
+              <adjusterEmailAddress>pdavis@plymouthrock.com</adjusterEmailAddress>
+              <paymentDetailItemClaim class="list">
+                <paymentDetailItemClaimDTO>
+                  <updated>false</updated>
+                  <childUpdated>false</childUpdated>
+                  <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+                  <recordTypeId>321</recordTypeId>
+                  <transactionType>Loss Pay</transactionType>
+                  <unitType>thrd_veh</unitType>
+                  <unitDescription>2012 - Dodge - Dart</unitDescription>
+                  <unitParticipantName>Josh Taylor</unitParticipantName>
+                  <reserveStatus>Open</reserveStatus>
+                  <coverageTypeName>Property Damage</coverageTypeName>
+                  <coverageTypeCode>pd</coverageTypeCode>
+                  <reserveTypeName>Loss</reserveTypeName>
+                  <reserveTypeCode>loss</reserveTypeCode>
+                  <lossTypeName>Property Damage</lossTypeName>
+                  <lossTypeCode>prop_dam</lossTypeCode>
+                  <ftcId>28118</ftcId>
+                  <partyId>6003</partyId>
+                  <companyId>1</companyId>
+                  <surchangeIndicator>n</surchangeIndicator>
+                  <transactionTypeCode>c_loss_due</transactionTypeCode>
+                  <invoiceId>24809</invoiceId>
+                  <disbursementId>24709</disbursementId>
+                  <reserveId>21536</reserveId>
+                  <monetoryTypeCode>loss_pymnt</monetoryTypeCode>
+                  <monetoryTypeName>Loss Payment </monetoryTypeName>
+                  <montetoryCategoryCode>loss</montetoryCategoryCode>
+                  <payableId>28118</payableId>
+                  <claimPaymentAllocatedAmount>5000.00</claimPaymentAllocatedAmount>
+                  <claimId>23817</claimId>
+                  <transactionTypeId>50004</transactionTypeId>
+                </paymentDetailItemClaimDTO>
+              </paymentDetailItemClaim>
+              <claimPaymentAmount>5000.00</claimPaymentAmount>
+              <claimParticipant class="list">
+                <claimParticipantData>
+                  <participantName>Stephen J Adams</participantName>
+                  <participationType>insrd</participationType>
+                  <customerNumber>1305</customerNumber>
+                  <taxIdNumber>XXXXX2423</taxIdNumber>
+                  <addressLine1>691 KEARSARGE AVE</addressLine1>
+                  <addressCity>CONTOOCOOK</addressCity>
+                  <addressState>NH</addressState>
+                  <addressCountry>usa</addressCountry>
+                  <addressZipcode>03229</addressZipcode>
+                </claimParticipantData>
+              </claimParticipant>
+            </paymentDetailClaimDTO>
+          </paymentDetailClaim>
+          <paymentDetailTrailer>
+            <updated>false</updated>
+            <childUpdated>false</childUpdated>
+            <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+            <recordTypeId>399</recordTypeId>
+            <itemCount>1</itemCount>
+          </paymentDetailTrailer>
+        </paymentDetail>
+      </paymentDetailHeader>
+      <paymentPayeeCheck class="list">
+        <paymentPayeeCheckDTO>
+          <updated>false</updated>
+          <childUpdated>false</childUpdated>
+          <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+          <recordTypeId>210</recordTypeId>
+          <primaryPayeeName>Josh Taylor</primaryPayeeName>
+          <inCareOfPayeeName></inCareOfPayeeName>
+          <addressLine1>1289 Main St</addressLine1>
+          <city>Denver</city>
+          <state>CO</state>
+          <addressZip>80237</addressZip>
+          <country>usa</country>
+          <cresPreference>chck</cresPreference>
+          <primaryPayeePartyId>6003</primaryPayeePartyId>
+          <partyPayOrdOfNameDerived>Josh Taylor</partyPayOrdOfNameDerived>
+        </paymentPayeeCheckDTO>
+      </paymentPayeeCheck>
+      <paymentTrailer>
+        <updated>false</updated>
+        <childUpdated>false</childUpdated>
+        <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+        <recordTypeId>299</recordTypeId>
+        <itemCount>1</itemCount>
+        <summaryAmount>5000.00</summaryAmount>
+      </paymentTrailer>
+      <accountingBusinessDate>2014-02-09 00:00:00.000 MST</accountingBusinessDate>
+    </payment>
+    <payment>
+      <updated>false</updated>
+      <childUpdated>false</childUpdated>
+      <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+      <recordTypeId>200</recordTypeId>
+      <payorAdddressId>6000300</payorAdddressId>
+      <controlNumber>12</controlNumber>
+      <disbursmentId>24711</disbursmentId>
+      <disbursementNumber></disbursementNumber>
+      <paymentRequestTarget>schedule</paymentRequestTarget>
+      <paymentMethodType>chck</paymentMethodType>
+      <referenceNumber>4365</referenceNumber>
+      <paymentDate>2014-02-08 21:09:11.179 MST</paymentDate>
+      <paymentAmount>15000.00</paymentAmount>
+      <checkExpireDate>2014-02-08 21:09:11.179 MST</checkExpireDate>
+      <paymentID>4365</paymentID>
+      <payorNameLine1>Mt Washington Assurance Corporation</payorNameLine1>
+      <payorAddressLine1>81 Hall St</payorAddressLine1>
+      <payorCity>Concord</payorCity>
+      <payorAddressZip>033013488</payorAddressZip>
+      <payorCountry>United States</payorCountry>
+      <corporationId>1</corporationId>
+      <companyId>1</companyId>
+      <printGroupCode>batch</printGroupCode>
+      <comment></comment>
+      <paymentDetailHeader class="list">
+        <paymentDetail>
+          <updated>false</updated>
+          <childUpdated>false</childUpdated>
+          <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+          <recordTypeId>300</recordTypeId>
+          <detailControlNumber>1</detailControlNumber>
+          <paymentType>clmpay</paymentType>
+          <context>clm</context>
+          <paymentDetailClaim class="list">
+            <paymentDetailClaimDTO>
+              <changesetId>0</changesetId>
+              <recordId>0</recordId>
+              <version>0</version>
+              <updated>false</updated>
+              <childUpdated>false</childUpdated>
+              <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+              <recordTypeId>320</recordTypeId>
+              <claimId>24128</claimId>
+              <claimNumber>142800125228</claimNumber>
+              <claimType>multicar</claimType>
+              <claimStatusCode>acpt</claimStatusCode>
+              <claimStateCode>opn</claimStateCode>
+              <policyNumber>MWA00001007720</policyNumber>
+              <companyLobId>2</companyLobId>
+              <policyPeriodBeginDate>2012-01-16 00:00:00.000 MST</policyPeriodBeginDate>
+              <policyPeriodEndDate>2014-01-16 00:00:00.000 MST</policyPeriodEndDate>
+              <plcyJurisdictionId>41</plcyJurisdictionId>
+              <claimJursidicationId>0</claimJursidicationId>
+              <participantName>Erwin Huffmeister</participantName>
+              <participationType>insrd</participationType>
+              <customerNumber>1674</customerNumber>
+              <taxIdNumber>240934248</taxIdNumber>
+              <addressLine1>141 Constance Lane</addressLine1>
+              <addressCity>NORTH HAVERHILL</addressCity>
+              <addressState>NH</addressState>
+              <addressCountry>usa</addressCountry>
+              <postalRegion>03774</postalRegion>
+              <lossDate>2014-02-06 00:00:00.000 MST</lossDate>
+              <lossTime>1970-01-01 14:15:00.000 MST</lossTime>
+              <lossTimeZone>mst</lossTimeZone>
+              <lossJursidicationId>42</lossJursidicationId>
+              <benefitJursidicationId>41</benefitJursidicationId>
+              <agencyName>H.J. Graham Agency, Inc.</agencyName>
+              <agencyAddressLine1>PO Box 146</agencyAddressLine1>
+              <agencyAddressCity>Woodsville</agencyAddressCity>
+              <agencyAddressState>NH</agencyAddressState>
+              <agencyPostalCode>03785</agencyPostalCode>
+              <agencyAddressCountry>usa</agencyAddressCountry>
+              <agencyCustomerNumber>1675</agencyCustomerNumber>
+              <adjusterName>Barb Audet-AddedName</adjusterName>
+              <adjusterTitle>clmsupr</adjusterTitle>
+              <adjusterOffice>NH Claims</adjusterOffice>
+              <adjusterPhoneNumber>6032246288</adjusterPhoneNumber>
+              <adjusterEmailAddress>baudet@mwac.com</adjusterEmailAddress>
+              <paymentDetailItemClaim class="list">
+                <paymentDetailItemClaimDTO>
+                  <updated>false</updated>
+                  <childUpdated>false</childUpdated>
+                  <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+                  <recordTypeId>321</recordTypeId>
+                  <transactionType>Loss Pay</transactionType>
+                  <unitType>veh</unitType>
+                  <unitDescription>2010 - DODGE - GRAND CARAVAN SE | VIN2D4RN4DE4AR282434</unitDescription>
+                  <unitParticipantName>Erwin Huffmeister</unitParticipantName>
+                  <reserveStatus>Open</reserveStatus>
+                  <coverageTypeName>Collision</coverageTypeName>
+                  <coverageTypeCode>collsn</coverageTypeCode>
+                  <reserveTypeName>Loss Collision</reserveTypeName>
+                  <reserveTypeCode>loss_coll</reserveTypeCode>
+                  <lossTypeName>Collision</lossTypeName>
+                  <lossTypeCode>collsn</lossTypeCode>
+                  <ftcId>28122</ftcId>
+                  <partyId>13708</partyId>
+                  <companyId>1</companyId>
+                  <surchangeIndicator>n</surchangeIndicator>
+                  <transactionTypeCode>c_loss_due</transactionTypeCode>
+                  <invoiceId>24811</invoiceId>
+                  <invoiceNumber>23456789</invoiceNumber>
+                  <invoiceDate>2014-02-04 00:00:00.000 MST</invoiceDate>
+                  <serviceEffectiveDate>2014-02-03 00:00:00.000 MST</serviceEffectiveDate>
+                  <disbursementId>24711</disbursementId>
+                  <reserveId>21854</reserveId>
+                  <monetoryTypeCode>ded_wvr</monetoryTypeCode>
+                  <monetoryTypeName>Deductible Waived</monetoryTypeName>
+                  <montetoryCategoryCode>loss</montetoryCategoryCode>
+                  <payableId>28122</payableId>
+                  <claimPaymentAllocatedAmount>15000.00</claimPaymentAllocatedAmount>
+                  <claimId>24128</claimId>
+                  <transactionTypeId>50004</transactionTypeId>
+                </paymentDetailItemClaimDTO>
+              </paymentDetailItemClaim>
+              <claimPaymentAmount>15000.00</claimPaymentAmount>
+              <claimParticipant class="list">
+                <claimParticipantData>
+                  <participantName>Erwin Huffmeister</participantName>
+                  <participationType>insrd</participationType>
+                  <customerNumber>1674</customerNumber>
+                  <taxIdNumber>240934248</taxIdNumber>
+                  <addressLine1>141 Constance Lane</addressLine1>
+                  <addressCity>NORTH HAVERHILL</addressCity>
+                  <addressState>NH</addressState>
+                  <addressCountry>usa</addressCountry>
+                  <addressZipcode>03774</addressZipcode>
+                </claimParticipantData>
+              </claimParticipant>
+            </paymentDetailClaimDTO>
+          </paymentDetailClaim>
+          <paymentDetailTrailer>
+            <updated>false</updated>
+            <childUpdated>false</childUpdated>
+            <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+            <recordTypeId>399</recordTypeId>
+            <itemCount>1</itemCount>
+          </paymentDetailTrailer>
+        </paymentDetail>
+      </paymentDetailHeader>
+      <paymentPayeeCheck class="list">
+        <paymentPayeeCheckDTO>
+          <updated>false</updated>
+          <childUpdated>false</childUpdated>
+          <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+          <recordTypeId>210</recordTypeId>
+          <primaryPayeeName>Erwin Huffmeister</primaryPayeeName>
+          <inCareOfPayeeName></inCareOfPayeeName>
+          <addressLine1>141 Constance Lane</addressLine1>
+          <city>NORTH HAVERHILL</city>
+          <state>NH</state>
+          <addressZip>03774</addressZip>
+          <country>usa</country>
+          <cresPreference>chck</cresPreference>
+          <primaryPayeePartyId>13708</primaryPayeePartyId>
+          <partyPayOrdOfNameDerived>Erwin Huffmeister</partyPayOrdOfNameDerived>
+        </paymentPayeeCheckDTO>
+      </paymentPayeeCheck>
+      <paymentTrailer>
+        <updated>false</updated>
+        <childUpdated>false</childUpdated>
+        <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+        <recordTypeId>299</recordTypeId>
+        <itemCount>1</itemCount>
+        <summaryAmount>15000.00</summaryAmount>
+      </paymentTrailer>
+      <accountingBusinessDate>2014-02-09 00:00:00.000 MST</accountingBusinessDate>
+    </payment>
+    <payment>
+      <updated>false</updated>
+      <childUpdated>false</childUpdated>
+      <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+      <recordTypeId>200</recordTypeId>
+      <payorAdddressId>6000300</payorAdddressId>
+      <controlNumber>13</controlNumber>
+      <disbursmentId>24712</disbursmentId>
+      <paymentRequestTarget>schedule</paymentRequestTarget>
+      <paymentMethodType>chck</paymentMethodType>
+      <referenceNumber>4366</referenceNumber>
+      <paymentDate>2014-01-14 00:00:00.000 MST</paymentDate>
+      <paymentAmount>44.50</paymentAmount>
+      <checkExpireDate>2014-01-14 00:00:00.000 MST</checkExpireDate>
+      <paymentID>4366</paymentID>
+      <payorNameLine1>Mt Washington Assurance Corporation</payorNameLine1>
+      <payorAddressLine1>81 Hall St</payorAddressLine1>
+      <payorCity>Concord</payorCity>
+      <payorAddressZip>033013488</payorAddressZip>
+      <payorCountry>United States</payorCountry>
+      <corporationId>1</corporationId>
+      <companyId>1</companyId>
+      <dipoCode>allclm</dipoCode>
+      <dipoName>Payment of Full and Final Payment of Any and All Claims</dipoName>
+      <paymentDetailHeader class="list">
+        <paymentDetail>
+          <updated>false</updated>
+          <childUpdated>false</childUpdated>
+          <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+          <recordTypeId>300</recordTypeId>
+          <detailControlNumber>1</detailControlNumber>
+          <paymentType>clmpay</paymentType>
+          <context>clm</context>
+          <paymentDetailClaim class="list">
+            <paymentDetailClaimDTO>
+              <changesetId>0</changesetId>
+              <recordId>0</recordId>
+              <version>0</version>
+              <updated>false</updated>
+              <childUpdated>false</childUpdated>
+              <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+              <recordTypeId>320</recordTypeId>
+              <claimId>3905</claimId>
+              <claimNumber>148300000183</claimNumber>
+              <claimType>onecarinjr</claimType>
+              <claimStatusCode>acpt</claimStatusCode>
+              <claimStateCode>opn</claimStateCode>
+              <policyNumber>MWA00001007720</policyNumber>
+              <companyLobId>2</companyLobId>
+              <policyPeriodBeginDate>2012-01-16 00:00:00.000 MST</policyPeriodBeginDate>
+              <policyPeriodEndDate>2014-01-16 00:00:00.000 MST</policyPeriodEndDate>
+              <plcyJurisdictionId>41</plcyJurisdictionId>
+              <claimJursidicationId>0</claimJursidicationId>
+              <participantName>Erwin A Schrodinger</participantName>
+              <participationType>insrd</participationType>
+              <customerNumber>4</customerNumber>
+              <taxIdNumber>305484545</taxIdNumber>
+              <addressLine1>141 Constance Lane</addressLine1>
+              <addressCity>NORTH HAVERHILL</addressCity>
+              <addressState>NH</addressState>
+              <addressCountry>usa</addressCountry>
+              <postalRegion>03774</postalRegion>
+              <lossDate>2013-08-19 00:00:00.000 MDT</lossDate>
+              <lossTime>1970-01-01 00:00:00.000 MST</lossTime>
+              <lossTimeZone>mst</lossTimeZone>
+              <lossJursidicationId>28</lossJursidicationId>
+              <benefitJursidicationId>41</benefitJursidicationId>
+              <agencyName>H.J. Graham Agency, Inc.</agencyName>
+              <agencyAddressLine1>PO Box 146</agencyAddressLine1>
+              <agencyAddressCity>Woodsville</agencyAddressCity>
+              <agencyAddressState>NH</agencyAddressState>
+              <agencyPostalCode>03785</agencyPostalCode>
+              <agencyAddressCountry>usa</agencyAddressCountry>
+              <agencyCustomerNumber>5</agencyCustomerNumber>
+              <adjusterName>Stream Import</adjusterName>
+              <adjusterTitle>sysadmin</adjusterTitle>
+              <adjusterOffice>STG</adjusterOffice>
+              <paymentDetailItemClaim class="list">
+                <paymentDetailItemClaimDTO>
+                  <updated>false</updated>
+                  <childUpdated>false</childUpdated>
+                  <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+                  <recordTypeId>321</recordTypeId>
+                  <transactionType>Loss Pay</transactionType>
+                  <unitType>veh</unitType>
+                  <unitDescription>2010 - DODGE - GRAND CARAVAN SE | VIN2D4RN4DE4AR282434</unitDescription>
+                  <unitParticipantName>Joan Bull</unitParticipantName>
+                  <reserveStatus>Closed</reserveStatus>
+                  <coverageTypeName>Property Damage</coverageTypeName>
+                  <coverageTypeCode>pd</coverageTypeCode>
+                  <reserveTypeName>Loss</reserveTypeName>
+                  <reserveTypeCode>loss</reserveTypeCode>
+                  <lossTypeName>Bodily Injury</lossTypeName>
+                  <lossTypeCode>bodinj</lossTypeCode>
+                  <ftcId>28124</ftcId>
+                  <partyId>532</partyId>
+                  <companyId>1</companyId>
+                  <surchangeIndicator>n</surchangeIndicator>
+                  <transactionTypeCode>c_loss_due</transactionTypeCode>
+                  <invoiceId>24812</invoiceId>
+                  <disbursementId>24712</disbursementId>
+                  <reserveId>20000</reserveId>
+                  <monetoryTypeCode>loss_pymnt</monetoryTypeCode>
+                  <monetoryTypeName>Loss Payment </monetoryTypeName>
+                  <montetoryCategoryCode>loss</montetoryCategoryCode>
+                  <payableId>28124</payableId>
+                  <claimPaymentAllocatedAmount>44.50</claimPaymentAllocatedAmount>
+                  <claimId>3905</claimId>
+                  <transactionTypeId>50004</transactionTypeId>
+                </paymentDetailItemClaimDTO>
+              </paymentDetailItemClaim>
+              <claimPaymentAmount>44.50</claimPaymentAmount>
+              <claimParticipant class="list">
+                <claimParticipantData>
+                  <participantName>Erwin A Schrodinger</participantName>
+                  <participationType>insrd</participationType>
+                  <customerNumber>4</customerNumber>
+                  <taxIdNumber>305484545</taxIdNumber>
+                  <addressLine1>141 Constance Lane</addressLine1>
+                  <addressCity>NORTH HAVERHILL</addressCity>
+                  <addressState>NH</addressState>
+                  <addressCountry>usa</addressCountry>
+                  <addressZipcode>03774</addressZipcode>
+                </claimParticipantData>
+              </claimParticipant>
+            </paymentDetailClaimDTO>
+          </paymentDetailClaim>
+          <paymentDetailTrailer>
+            <updated>false</updated>
+            <childUpdated>false</childUpdated>
+            <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+            <recordTypeId>399</recordTypeId>
+            <itemCount>1</itemCount>
+          </paymentDetailTrailer>
+        </paymentDetail>
+      </paymentDetailHeader>
+      <paymentPayeeCheck class="list">
+        <paymentPayeeCheckDTO>
+          <updated>false</updated>
+          <childUpdated>false</childUpdated>
+          <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+          <recordTypeId>210</recordTypeId>
+          <primaryPayeeName>Amy Anderson</primaryPayeeName>
+          <addressLine1>124 Address</addressLine1>
+          <city>Denver</city>
+          <state>CO</state>
+          <addressZip>80237</addressZip>
+          <country>usa</country>
+          <cresPreference>chck</cresPreference>
+          <primaryPayeePartyId>7005</primaryPayeePartyId>
+          <partyPayOrdOfNameDerived>Amy Anderson</partyPayOrdOfNameDerived>
+        </paymentPayeeCheckDTO>
+      </paymentPayeeCheck>
+      <paymentTrailer>
+        <updated>false</updated>
+        <childUpdated>false</childUpdated>
+        <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+        <recordTypeId>299</recordTypeId>
+        <itemCount>1</itemCount>
+        <summaryAmount>44.50</summaryAmount>
+      </paymentTrailer>
+      <accountingBusinessDate>2014-02-09 00:00:00.000 MST</accountingBusinessDate>
+    </payment>
+  </paymentList>
+</clientExportDisbursementsResultDTO>

@@ -1,0 +1,8 @@
+ClearCase CopyAreaDB|4
+iip_starter_kit\claim_starter_kit\common-intrg\src\main\java\com\client\iip\integration\financials\disbursement\helper
+2
+4
+22:ClientIssuedPaymentImportPojo.java|1|14c95712500|72a|d904948b|8af933d7b1124215b25c63946d9b8ef3|0
+24:ClientGeneralLedgerExportHelper.java|1|14e8f074762|3ef|90ba5708|0fdc87b59b17476189b463c9405b4890|0
+1e:ClientImportPaymentHelper.java|1|14c957124ce|3cfe|8b2bed6a|a480438a01cc48328ae48efb1ef5c3d5|0
+1e:ClientExportPaymentHelper.java|1|14c957124ba|4a7f|218e11b2|542916b96e454c699a0d4b2a04a19e31|0

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:spring="http://www.springframework.org/schema/beans" xmlns:stdio="http://www.mulesoft.org/schema/mule/stdio"
+	xmlns:vm="http://www.mulesoft.org/schema/mule/vm" xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+		http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/3.3/mule.xsd
+		http://www.mulesoft.org/schema/mule/stdio http://www.mulesoft.org/schema/mule/stdio/3.3/mule-stdio.xsd
+		http://www.mulesoft.org/schema/mule/vm http://www.mulesoft.org/schema/mule/vm/3.3/mule-vm.xsd
+      http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/3.3/mule-http.xsd">
+      
+	<spring:beans>
+
+		<spring:bean id="clientQueryLoader"
+			class="com.client.iip.integration.core.util.ClientQueryLoaderImpl">
+			<spring:property name="queryFiles">
+				<spring:list>
+					<spring:value>iip-integration-config/client-claim-queries.xml</spring:value>
+					<spring:value>iip-integration-config/client-claims-sa-queries.xml</spring:value>
+					<spring:value>iip-integration-config/batch-queries.xml</spring:value>
+					<spring:value>iip-integration-config/client-entconfig-queries.xml</spring:value>
+					<spring:value>iip-integration-config/client-financials-queries.xml</spring:value>
+					<spring:value>iip-integration-config/client-party-queries.xml</spring:value>
+					<spring:value>iip-integration-config/client-queries.xml</spring:value>
+				</spring:list>
+			</spring:property>
+			<spring:property name="unmarshaller" ref="jaxbQueryMarshaller" />
+		</spring:bean>
+		
+   		<spring:bean id="client.claim.ClientQuery" class="com.client.iip.integration.core.util.ClientQueryHelper">
+      		<spring:property name="lds" ref="clientLogicalDataSource" />
+   		</spring:bean>
+
+		<!-- BeanFactoryPostProcessor that takes care of processing client metadata annotations. -->
+		<spring:bean id="client.core.annotationProcessor" class="com.fiserv.isd.iip.core.meta.namespace.parser.postprocessor.AnnotationParserBeanFactoryPostProcessor"> 
+			<spring:property name="order" value="-1" /> 
+			<spring:property name="packageNames"> 
+				<spring:list> 
+					<spring:value>com.client</spring:value> 
+				</spring:list> 
+			</spring:property> 
+		</spring:bean>
+	</spring:beans>
+   
+</mule>
+

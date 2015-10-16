@@ -1,0 +1,239 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:include schemaLocation="../xsd/Common.xsd" />
+
+	<xs:annotation>
+		<xs:documentation>Claim Detail Request Schema</xs:documentation>
+	</xs:annotation>
+
+	<xs:element name="claimDetailCriteria" type="ClaimDetailCriteriaType">
+		<xs:annotation>
+			<xs:documentation>Claim detail criteria.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+
+	<xs:complexType name="ClaimDetailCriteriaType">
+		<xs:sequence>
+			<xs:element name="claimId" type="long" minOccurs="0"
+				maxOccurs="1">
+			</xs:element>
+			<xs:element name="claimNumber" type="string" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Claim Number</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="lobCode" type="string" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Lob Code, Maps to LOB_CD Column from
+						COMPANY_LINE_OF_BUSINESS_XREF Table.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="claimExternalSourceId" type="string"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>External Source Id.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="returnAssignments" type="boolean"
+				minOccurs="0" maxOccurs="1" default="true">
+				<xs:annotation>
+					<xs:documentation>Return assignments, Defaulted to true
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="returnBills" type="boolean" minOccurs="0"
+				maxOccurs="1" default="true">
+				<xs:annotation>
+					<xs:documentation>Return Bills, Defaulted to true
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="returnDocuments" type="boolean"
+				minOccurs="0" maxOccurs="1" default="true">
+				<xs:annotation>
+					<xs:documentation>Return Documents, Defaulted to true
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="returnFinancialSummary" type="boolean"
+				minOccurs="0" maxOccurs="1" default="true">
+				<xs:annotation>
+					<xs:documentation>Return Financials, Defaulted to true
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="returnNotes" type="boolean" minOccurs="0"
+				maxOccurs="1" default="true">
+				<xs:annotation>
+					<xs:documentation>Return Notes, Defaulted to true
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="returnWorkItems" type="boolean"
+				minOccurs="0" maxOccurs="1" default="true">
+				<xs:annotation>
+					<xs:documentation>Return Workitems, Defaulted to true
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="returnUnits" type="boolean" minOccurs="0"
+				maxOccurs="1" default="true">
+				<xs:annotation>
+					<xs:documentation>Return Units, Defaulted to true
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="returnAuthorities" type="boolean"
+				minOccurs="0" maxOccurs="1" default="true">
+				<xs:annotation>
+					<xs:documentation>Return Authorities, Defaulted to true
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="returnClaimLossIndicatorProfiles" type="boolean"
+				minOccurs="0" maxOccurs="1" default="true">
+				<xs:annotation>
+					<xs:documentation>Return Loss indicators, Defaulted to true
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="returnClaimPolicyIndicatorProfiles"
+				type="boolean" minOccurs="0" maxOccurs="1" default="true">
+				<xs:annotation>
+					<xs:documentation>Return Policy indicators, Defaulted to true
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="returnWitnesses" type="boolean"
+				minOccurs="0" maxOccurs="1" default="true">
+				<xs:annotation>
+					<xs:documentation>Return Witness, Defaulted to true
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="returnClaimServices" type="boolean"
+				minOccurs="0" maxOccurs="1" default="true">
+				<xs:annotation>
+					<xs:documentation>Return Service info, Defaulted to true
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="returnClaimPolicy" type="boolean"
+				minOccurs="0" maxOccurs="1" default="true">
+				<xs:annotation>
+					<xs:documentation>Return Claim policy, Defaulted to true
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="returnRelatedClaims" type="boolean"
+				minOccurs="0" maxOccurs="1" default="true">
+				<xs:annotation>
+					<xs:documentation>Return related claim info, Defaulted to true
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="returnInjuredWorker" type="boolean"
+				minOccurs="0" maxOccurs="1" default="true">
+				<xs:annotation>
+					<xs:documentation>Return Injured worker, Defaulted to true
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="returnAdjusterDetails" type="boolean"
+				minOccurs="0" maxOccurs="1" default="true">
+				<xs:annotation>
+					<xs:documentation>Return Adjuster details, Defaulted to true
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="returnClaimLossProfiles" type="boolean"
+				minOccurs="0" maxOccurs="1" default="true">
+				<xs:annotation>
+					<xs:documentation>Return Loss profile, Defaulted to true
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="returnClaimJurisdictionProfiles" type="boolean"
+				minOccurs="0" maxOccurs="1" default="true">
+				<xs:annotation>
+					<xs:documentation>Return Jurisdiction profile, Defaulted to true
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="returnClaimParticipants" type="boolean"
+				minOccurs="0" maxOccurs="1" default="true">
+				<xs:annotation>
+					<xs:documentation>Return Participants, Defaulted to true
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="returnClaimReservesWithCoverages" type="boolean"
+				minOccurs="0" maxOccurs="1" default="true">
+				<xs:annotation>
+					<xs:documentation>Return Claim reserves, Defaulted to true
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="returnClaimPayment" type="boolean"
+				minOccurs="0" maxOccurs="1" default="true">
+				<xs:annotation>
+					<xs:documentation>Return Claim payments, Defaulted to true
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="returnClaimRecovery" type="boolean"
+				minOccurs="0" maxOccurs="1" default="true">
+				<xs:annotation>
+					<xs:documentation>Return Recoveries, Defaulted to true
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="returnClaimMiscTransaction" type="boolean"
+				minOccurs="0" maxOccurs="1" default="true">
+				<xs:annotation>
+					<xs:documentation>Return Claim payment, Defaulted to true
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="returnCases" type="boolean" minOccurs="0"
+				maxOccurs="1" default="true">
+				<xs:annotation>
+					<xs:documentation>Return Claim payments, Defaulted to true
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="returnClaimPaymentSchedule" type="boolean"
+				minOccurs="0" maxOccurs="1" default="true">
+				<xs:annotation>
+					<xs:documentation>Return payment schedule, Defaulted to true
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="returnLiteralDescription" type="boolean"
+				minOccurs="0" maxOccurs="1" default="true">
+				<xs:annotation>
+					<xs:documentation>Return literals, Defaulted to true
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="returnDetailsForClaimImport" type="boolean"
+				minOccurs="0" maxOccurs="1" default="false">
+				<xs:annotation>
+					<xs:documentation>Return Details for Claim Import, If true then it
+						will export the claim with association
+						between partcipants and
+						financials representing complete image of the
+						claim tree.This is
+						useful when
+						copying claim from one region to another intact with
+						all of the claim
+						tree information.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+</xs:schema>  

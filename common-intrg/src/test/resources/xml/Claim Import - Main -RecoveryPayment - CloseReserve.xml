@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?> 
+<claimImportCompositeDTO>
+	<claimNumber>PAL 29696700</claimNumber>
+	<recoveries class="list">
+			<claimRecovery>
+				<claimRecoveryPayables class="list">
+					<claimRecoveryPayable>
+						<transactionType>c_recov</transactionType>
+						<transactionAmount>280.00</transactionAmount>
+						<transactionDate>2012-06-05 00:00:00.000 EST</transactionDate>
+						<claimNumber>040000001052</claimNumber>
+         					<externalUnitIdentifier>000014PAL00001004092201117000106/19/20112</externalUnitIdentifier>
+         					<externalParticipantIdentifier>2043</externalParticipantIdentifier>
+						<coverageType>collsn</coverageType> 
+						<reserveType>payrcvr</reserveType> 
+						<lossType>collsn</lossType>
+						<monitoryTypeCode>payrcvr</monitoryTypeCode>
+						<companyId>201</companyId>
+						<jurId>41</jurId>
+						<remittanceId>242476</remittanceId>
+					</claimRecoveryPayable>
+				</claimRecoveryPayables>
+				<claimRemittance>
+					<transactionType>c_recov_remit</transactionType>
+					<transactionAmount>280.00</transactionAmount>
+					<transactionDate>2012-06-05 00:00:00.000 EST</transactionDate>
+					<remitterPartyNumber>4002</remitterPartyNumber>
+					<paymentMethodTypeCode>chck</paymentMethodTypeCode>
+					<receiptDate>2012-06-04 00:00:00.000 EST</receiptDate>
+					<receiptNumber>PK-389432</receiptNumber>
+					<remittanceDescription>subr_rect</remittanceDescription>
+					<remittanceIndicator>true</remittanceIndicator>
+					<companyId>201</companyId>
+					<jurId>41</jurId>
+					<remittanceId>242476</remittanceId>
+				</claimRemittance>
+			</claimRecovery>
+		</recoveries>
+   <closeRecovery>true</closeRecovery>
+</claimImportCompositeDTO>

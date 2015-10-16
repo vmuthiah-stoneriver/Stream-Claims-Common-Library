@@ -1,0 +1,762 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:vm="http://www.mulesoft.org/schema/mule/vm"
+	xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:mulexml="http://www.mulesoft.org/schema/mule/xml"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:spring="http://www.springframework.org/schema/beans" 
+	xmlns:core="http://www.mulesoft.org/schema/mule/core" xmlns:jersey="http://www.mulesoft.org/schema/mule/jersey" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cxf="http://www.mulesoft.org/schema/mule/cxf"
+	xmlns:mule-xml="http://www.mulesoft.org/schema/mule/xml" xmlns:servlet="http://www.mulesoft.org/schema/mule/servlet"
+	xsi:schemaLocation="
+http://www.mulesoft.org/schema/mule/vm http://www.mulesoft.org/schema/mule/vm/3.3/mule-vm.xsd 
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/3.3/mule-http.xsd 
+http://www.mulesoft.org/schema/mule/xml http://www.mulesoft.org/schema/mule/xml/3.3/mule-xml.xsd 
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd 
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/3.3/mule.xsd
+http://www.mulesoft.org/schema/mule/jersey http://www.mulesoft.org/schema/mule/jersey/3.3/mule-jersey.xsd
+http://www.mulesoft.org/schema/mule/cxf http://www.mulesoft.org/schema/mule/cxf/3.3/mule-cxf.xsd
+http://www.mulesoft.org/schema/mule/xml http://www.mulesoft.org/schema/mule/xml/3.0/mule-xml.xsd
+http://www.mulesoft.org/schema/mule/servlet http://www.mulesoft.org/schema/mule/servletmule-servlet.xsd
+">
+
+   	<spring:beans>
+    	<spring:bean id="soap" class="com.client.iip.integration.core.webservice.SOAPReceiverImpl"/>
+	</spring:beans>
+
+
+	<!--  Customer Details -->
+   	<flow name="CustomerDetailsSOAPFlow">
+   
+  		<inbound-endpoint address="${iip.interface.communication.protocol}://localhost:${iip.interface.port:80}/iip/services/customerDetails"  
+  				exchange-pattern="request-response"  ref="InBoundEndPointRef" 
+  				transformer-refs="InputStreamToStringTransformer" responseTransformer-refs="MuleMessagePropertiesTransformer" responseTimeout="600000">
+  				
+			<message-properties-transformer scope="session">
+				<add-message-property key="endPointName" value="customerDetails" />
+			</message-properties-transformer>
+			
+			<transformer ref="SOAPHeaderTransformer" />  				
+         
+			<cxf:jaxws-service serviceClass="com.client.iip.integration.core.webservice.SOAPReceiver" />
+		 
+        </inbound-endpoint>
+        
+ 		<component>
+    		<spring-object bean="soap" />
+		</component>
+		
+	</flow>
+	
+ 	<!-- Claim Import -->
+   	<flow name="ClaimImportSOAPFlow">
+   
+  		<inbound-endpoint address="${iip.interface.communication.protocol}://localhost:${iip.interface.port:80}/iip/services/claimImport" 
+  				exchange-pattern="request-response"  ref="InBoundEndPointRef" 
+  				transformer-refs="InputStreamToStringTransformer" responseTransformer-refs="MuleMessagePropertiesTransformer" responseTimeout="600000">
+  				
+			<message-properties-transformer scope="session">
+				<add-message-property key="endPointName" value="claimImport" />
+			</message-properties-transformer>
+			
+			<transformer ref="SOAPHeaderTransformer" />   				
+         
+			<cxf:jaxws-service serviceClass="com.client.iip.integration.core.webservice.SOAPReceiver" />
+		 
+        </inbound-endpoint>
+        
+        <component>
+    		<spring-object bean="soap" />
+		</component>
+        
+	</flow>
+	
+	<!-- Claim Details -->
+   	<flow name="ClaimDetailsSOAPFlow">
+   
+  		<inbound-endpoint address="${iip.interface.communication.protocol}://localhost:${iip.interface.port:80}/iip/services/claimDetails" 
+  				exchange-pattern="request-response"  ref="InBoundEndPointRef" 
+  				transformer-refs="InputStreamToStringTransformer" responseTransformer-refs="MuleMessagePropertiesTransformer" responseTimeout="600000">
+  				
+			<message-properties-transformer scope="session">
+				<add-message-property key="endPointName" value="claimDetailImage" />
+			</message-properties-transformer>
+			
+			<transformer ref="SOAPHeaderTransformer" />   				
+         
+			<cxf:jaxws-service serviceClass="com.client.iip.integration.core.webservice.SOAPReceiver" />
+		 
+        </inbound-endpoint>
+        
+        <component>
+    		<spring-object bean="soap" />
+		</component>
+        
+	</flow>
+	
+	<!-- Claim Search -->
+	<flow name="ClaimSearchSOAPFlow" doc:name="Claim Search Flow">
+                     
+        <inbound-endpoint address="${iip.interface.communication.protocol}://localhost:${iip.interface.port:80}/iip/services/claimSearch" 
+        		exchange-pattern="request-response" ref="InBoundEndPointRef" 
+                transformer-refs="InputStreamToStringTransformer" responseTransformer-refs="MuleMessagePropertiesTransformer" responseTimeout="600000">
+                
+			<message-properties-transformer scope="session">
+				<add-message-property key="endPointName" value="claimList" />
+			</message-properties-transformer>
+			
+			<transformer ref="SOAPHeaderTransformer" />                 
+
+			<cxf:jaxws-service serviceClass="com.client.iip.integration.core.webservice.SOAPReceiver" />
+		 
+        </inbound-endpoint>
+        
+        <component>
+    		<spring-object bean="soap" />
+		</component>
+
+	</flow>		
+
+  <!-- Batch Job Interface -->	
+   	<flow name="BatchJobSOAPFlow">
+   
+  		<inbound-endpoint address="${iip.interface.communication.protocol}://localhost:${iip.interface.port:80}/iip/services/batchJobSubmit" 
+  				exchange-pattern="request-response"  ref="InBoundEndPointRef" 
+  				transformer-refs="InputStreamToStringTransformer" responseTransformer-refs="MuleMessagePropertiesTransformer" responseTimeout="600000">
+   				
+ 			<message-properties-transformer scope="session">
+				<add-message-property key="endPointName" value="batchJobSubmit" />
+			</message-properties-transformer>
+			
+			<transformer ref="SOAPHeaderTransformer" />  				
+           
+			<cxf:jaxws-service serviceClass="com.client.iip.integration.core.webservice.SOAPReceiver" />
+		 
+        </inbound-endpoint>
+        
+        <component>
+    		<spring-object bean="soap" />
+		</component>
+        
+	</flow>	
+	
+   	<flow name="BatchJobStatusSOAPFlow">
+   
+       <inbound-endpoint address="${iip.interface.communication.protocol}://localhost:${iip.interface.port:80}/iip/services/batchJobStatusInquiry" 
+       			exchange-pattern="request-response" ref="InBoundEndPointRef" 
+                transformer-refs="InputStreamToStringTransformer" responseTransformer-refs="MuleMessagePropertiesTransformer" responseTimeout="600000">
+  	
+  			<message-properties-transformer scope="session">
+				<add-message-property key="endPointName" value="batchJobStatusInquiry" />
+			</message-properties-transformer>
+			
+			<transformer ref="SOAPHeaderTransformer" />                 
+                  
+			<cxf:jaxws-service serviceClass="com.client.iip.integration.core.webservice.SOAPReceiver" />
+		 
+        </inbound-endpoint>
+        
+        <component>
+    		<spring-object bean="soap" />
+		</component>
+        
+	</flow>
+	
+	 <!-- Export Payment -->
+   <flow name="ExportPaymentSOAPFlow">
+
+        <inbound-endpoint address="${iip.interface.communication.protocol}://localhost:${iip.interface.port:80}/iip/services/disbursementExport" 
+        	exchange-pattern="request-response" ref="InBoundEndPointRef" 
+            transformer-refs="InputStreamToStringTransformer" responseTransformer-refs="MuleMessagePropertiesTransformer" responseTimeout="600000">
+            
+  			<message-properties-transformer scope="session">
+				<add-message-property key="endPointName" value="disbursementExport" />
+			</message-properties-transformer>
+			
+			<transformer ref="SOAPHeaderTransformer" />  
+  
+			<cxf:jaxws-service serviceClass="com.client.iip.integration.core.webservice.SOAPReceiver" />
+		 
+        </inbound-endpoint>
+        
+        <component>
+    		<spring-object bean="soap" />
+		</component>
+  
+   </flow>
+
+	<!-- ReExport Payment -->   
+   <flow name="ReExportPaymentSOAPFlow">
+
+        <inbound-endpoint address="${iip.interface.communication.protocol}://localhost:${iip.interface.port:80}/iip/services/disbursementReExport" 
+        	exchange-pattern="request-response" ref="InBoundEndPointRef" 
+            transformer-refs="InputStreamToStringTransformer" responseTransformer-refs="MuleMessagePropertiesTransformer"  responseTimeout="600000">
+
+  			<message-properties-transformer scope="session">
+				<add-message-property key="endPointName" value="disbursementReExport" />
+			</message-properties-transformer>
+			
+			<transformer ref="SOAPHeaderTransformer" />
+			
+			<cxf:jaxws-service serviceClass="com.client.iip.integration.core.webservice.SOAPReceiver" />
+		 
+        </inbound-endpoint>
+        
+        <component>
+    		<spring-object bean="soap" />
+		</component>
+  
+   </flow>   
+   
+ 	 <!-- Import Payment -->
+   <flow name="ImportPaymentSOAPFlow">
+
+        <inbound-endpoint address="${iip.interface.communication.protocol}://localhost:${iip.interface.port:80}/iip/services/disbursementImport" 
+        	exchange-pattern="request-response" ref="InBoundEndPointRef" 
+            transformer-refs="InputStreamToStringTransformer" responseTransformer-refs="MuleMessagePropertiesTransformer" responseTimeout="600000">
+
+  			<message-properties-transformer scope="session">
+				<add-message-property key="endPointName" value="disbursementImport" />
+			</message-properties-transformer>
+			
+			<transformer ref="SOAPHeaderTransformer" />
+			
+			<cxf:jaxws-service serviceClass="com.client.iip.integration.core.webservice.SOAPReceiver" />
+		 
+        </inbound-endpoint>
+        
+        <component>
+    		<spring-object bean="soap" />
+		</component>
+  
+   </flow>
+   
+	<!-- Customer Update -->   
+	<flow name="CustomerUpdateSOAPFlow">
+
+        <inbound-endpoint address="${iip.interface.communication.protocol}://localhost:${iip.interface.port:80}/iip/services/customerUpdate" 
+        	exchange-pattern="request-response" ref="InBoundEndPointRef" 
+            transformer-refs="InputStreamToStringTransformer" responseTransformer-refs="MuleMessagePropertiesTransformer" responseTimeout="600000">
+
+  			<message-properties-transformer scope="session">
+				<add-message-property key="endPointName" value="customerUpdate" />
+			</message-properties-transformer>
+			
+			<transformer ref="SOAPHeaderTransformer" />
+			
+ 			<cxf:jaxws-service serviceClass="com.client.iip.integration.core.webservice.SOAPReceiver" />
+ 			
+ 		</inbound-endpoint>
+	
+        <component>
+    		<spring-object bean="soap" />
+		</component>	 		
+ 			
+	</flow>
+
+		
+	<!-- Customer Search -->
+	<flow name="CustomerListSOAPFlow">
+
+        <inbound-endpoint address="${iip.interface.communication.protocol}://localhost:${iip.interface.port:80}/iip/services/customerSearch" 
+        	exchange-pattern="request-response" ref="InBoundEndPointRef" 
+            transformer-refs="InputStreamToStringTransformer" responseTransformer-refs="MuleMessagePropertiesTransformer" responseTimeout="600000">
+
+  			<message-properties-transformer scope="session">
+				<add-message-property key="endPointName" value="customerList" />
+			</message-properties-transformer>
+			
+			<transformer ref="SOAPHeaderTransformer" />
+			
+   			<cxf:jaxws-service serviceClass="com.client.iip.integration.core.webservice.SOAPReceiver" />
+ 			
+ 		</inbound-endpoint>
+	
+        <component>
+    		<spring-object bean="soap" />
+		</component>	 		
+        
+	</flow>
+	
+	<!-- DupCustomer Search -->
+	<flow name="DuplicateCustomerSearchSOAPFlow">
+
+        <inbound-endpoint address="${iip.interface.communication.protocol}://localhost:${iip.interface.port:80}/iip/services/customerDupCheck" 
+        	exchange-pattern="request-response" ref="InBoundEndPointRef" 
+            transformer-refs="InputStreamToStringTransformer" responseTransformer-refs="MuleMessagePropertiesTransformer" responseTimeout="600000">
+
+  			<message-properties-transformer scope="session">
+				<add-message-property key="endPointName" value="customerDupCheck" />
+			</message-properties-transformer>
+			
+			<transformer ref="SOAPHeaderTransformer" />
+
+   			<cxf:jaxws-service serviceClass="com.client.iip.integration.core.webservice.SOAPReceiver" />
+ 			
+ 		</inbound-endpoint>
+	
+        <component>
+    		<spring-object bean="soap" />
+		</component>	  
+
+	</flow>
+	
+	<!-- Vendor Export -->
+	<flow name="VendorExportSOAPFlow">
+
+        <inbound-endpoint address="${iip.interface.communication.protocol}://localhost:${iip.interface.port:80}/iip/services/vendorExport" 
+        	exchange-pattern="request-response" ref="InBoundEndPointRef" 
+            transformer-refs="InputStreamToStringTransformer" responseTransformer-refs="MuleMessagePropertiesTransformer" responseTimeout="600000">
+
+  			<message-properties-transformer scope="session">
+				<add-message-property key="endPointName" value="vendorExport" />
+			</message-properties-transformer>
+			
+			<transformer ref="SOAPHeaderTransformer" />
+			
+   			<cxf:jaxws-service serviceClass="com.client.iip.integration.core.webservice.SOAPReceiver" />
+ 			
+ 		</inbound-endpoint>
+	
+        <component>
+    		<spring-object bean="soap" />
+		</component>   
+   
+	</flow>
+	
+	<!-- Retrieve Companies For Corporation -->	
+	<flow name="CompaniesForCorporationSOAPFlow">
+
+        <inbound-endpoint address="${iip.interface.communication.protocol}://localhost:${iip.interface.port:80}/iip/services/companyForCorporationList" 
+        	exchange-pattern="request-response" ref="InBoundEndPointRef" 
+            transformer-refs="InputStreamToStringTransformer" responseTransformer-refs="MuleMessagePropertiesTransformer" responseTimeout="600000">
+
+  			<message-properties-transformer scope="session">
+				<add-message-property key="endPointName" value="companyForCorporationList" />
+			</message-properties-transformer>
+			
+			<transformer ref="SOAPHeaderTransformer" />            
+            
+   			<cxf:jaxws-service serviceClass="com.client.iip.integration.core.webservice.SOAPReceiver" />
+ 			
+ 		</inbound-endpoint>
+	
+        <component>
+    		<spring-object bean="soap" />
+		</component>        
+        	
+   	</flow>
+   
+    <!-- Retrieve Company LOB For Company -->
+    <flow name="CompanyLOBForCompanySOAPFlow">
+
+        <inbound-endpoint address="${iip.interface.communication.protocol}://localhost:${iip.interface.port:80}/iip/services/companyLOBForCompanyList" 
+        	exchange-pattern="request-response" ref="InBoundEndPointRef" 
+            transformer-refs="InputStreamToStringTransformer" responseTransformer-refs="MuleMessagePropertiesTransformer" responseTimeout="600000">
+ 
+   			<message-properties-transformer scope="session">
+				<add-message-property key="endPointName" value="companyLOBForCompanyList" />
+			</message-properties-transformer>
+			
+			<transformer ref="SOAPHeaderTransformer" />
+         
+   			<cxf:jaxws-service serviceClass="com.client.iip.integration.core.webservice.SOAPReceiver" />
+ 			
+ 		</inbound-endpoint>
+	
+        <component>
+    		<spring-object bean="soap" />
+		</component>        
+        	
+   	</flow>
+   	
+    <!-- Retrieve Cities -->
+    <flow name="CitiesSOAPFlow">
+
+        <inbound-endpoint address="${iip.interface.communication.protocol}://localhost:${iip.interface.port:80}/iip/services/cityList" 
+        	exchange-pattern="request-response" ref="InBoundEndPointRef" 
+            transformer-refs="InputStreamToStringTransformer" responseTransformer-refs="MuleMessagePropertiesTransformer" responseTimeout="600000">
+            
+   			<message-properties-transformer scope="session">
+				<add-message-property key="endPointName" value="cityList" />
+			</message-properties-transformer>
+			
+			<transformer ref="SOAPHeaderTransformer" />            
+
+   			<cxf:jaxws-service serviceClass="com.client.iip.integration.core.webservice.SOAPReceiver" />
+ 			
+ 		</inbound-endpoint>
+	
+        <component>
+    		<spring-object bean="soap" />
+		</component>     
+        	
+   	</flow>
+   	
+    <!-- Retrieve Counties -->
+    <flow name="CountiesSOAPFlow">
+
+        <inbound-endpoint address="${iip.interface.communication.protocol}://localhost:${iip.interface.port:80}/iip/services/countyList" 
+        	exchange-pattern="request-response" ref="InBoundEndPointRef" 
+            transformer-refs="InputStreamToStringTransformer" responseTransformer-refs="MuleMessagePropertiesTransformer" responseTimeout="600000">
+
+   			<message-properties-transformer scope="session">
+				<add-message-property key="endPointName" value="countyList" />
+			</message-properties-transformer>
+			
+			<transformer ref="SOAPHeaderTransformer" />
+			
+   			<cxf:jaxws-service serviceClass="com.client.iip.integration.core.webservice.SOAPReceiver" />
+ 			
+ 		</inbound-endpoint>
+	
+        <component>
+    		<spring-object bean="soap" />
+		</component>          
+        	
+   	</flow>
+   	
+    <!-- Retrieve States -->
+    <flow name="StatesSOAPFlow">
+
+        <inbound-endpoint address="${iip.interface.communication.protocol}://localhost:${iip.interface.port:80}/iip/services/stateList" 
+        	exchange-pattern="request-response" ref="InBoundEndPointRef" 
+            transformer-refs="InputStreamToStringTransformer" responseTransformer-refs="MuleMessagePropertiesTransformer" responseTimeout="600000">
+
+   			<message-properties-transformer scope="session">
+				<add-message-property key="endPointName" value="stateList" />
+			</message-properties-transformer>
+			
+			<transformer ref="SOAPHeaderTransformer" />
+			
+   			<cxf:jaxws-service serviceClass="com.client.iip.integration.core.webservice.SOAPReceiver" />
+ 			
+ 		</inbound-endpoint>
+	
+        <component>
+    		<spring-object bean="soap" />
+		</component>         
+        	
+   	</flow>
+   	
+    <!-- Retrieve Reserve Financial Data -->
+    <flow name="ReserveFinancialSOAPFlow">
+
+        <inbound-endpoint address="${iip.interface.communication.protocol}://localhost:${iip.interface.port:80}/iip/services/reserveFinancialDetails" 
+        	exchange-pattern="request-response" ref="InBoundEndPointRef" 
+            transformer-refs="InputStreamToStringTransformer" responseTransformer-refs="MuleMessagePropertiesTransformer" responseTimeout="600000">
+
+   			<message-properties-transformer scope="session">
+				<add-message-property key="endPointName" value="reserveFinancialDetails" />
+			</message-properties-transformer>
+			
+			<transformer ref="SOAPHeaderTransformer" />
+
+   			<cxf:jaxws-service serviceClass="com.client.iip.integration.core.webservice.SOAPReceiver" />
+ 			
+ 		</inbound-endpoint>
+	
+        <component>
+    		<spring-object bean="soap" />
+		</component>         
+        	
+   	</flow>
+   	
+    <!-- Retrieve Coverage Financial Data -->
+    <flow name="CoverageFinancialSOAPFlow">
+
+        <inbound-endpoint address="${iip.interface.communication.protocol}://localhost:${iip.interface.port:80}/iip/services/coverageFinancialDetails" 
+        	exchange-pattern="request-response" ref="InBoundEndPointRef" 
+            transformer-refs="InputStreamToStringTransformer" responseTransformer-refs="MuleMessagePropertiesTransformer" responseTimeout="600000">
+
+   			<message-properties-transformer scope="session">
+				<add-message-property key="endPointName" value="coverageFinancialDetails" />
+			</message-properties-transformer>
+			
+			<transformer ref="SOAPHeaderTransformer" />
+			
+   			<cxf:jaxws-service serviceClass="com.client.iip.integration.core.webservice.SOAPReceiver" />
+ 			
+ 		</inbound-endpoint>
+	
+        <component>
+    		<spring-object bean="soap" />
+		</component>         
+        	
+   	</flow>
+   	
+    <!-- Retrieve Monetary Category Code -->
+    <flow name="MonetaryCategoryCodeSOAPFlow">
+
+        <inbound-endpoint address="${iip.interface.communication.protocol}://localhost:${iip.interface.port:80}/iip/services/monetaryCategory" 
+        	exchange-pattern="request-response" ref="InBoundEndPointRef" 
+            transformer-refs="InputStreamToStringTransformer" responseTransformer-refs="MuleMessagePropertiesTransformer" responseTimeout="600000">
+
+   			<message-properties-transformer scope="session">
+				<add-message-property key="endPointName" value="monetaryCategory" />
+			</message-properties-transformer>
+			
+			<transformer ref="SOAPHeaderTransformer" />
+			
+   			<cxf:jaxws-service serviceClass="com.client.iip.integration.core.webservice.SOAPReceiver" />
+ 			
+ 		</inbound-endpoint>
+	
+        <component>
+    		<spring-object bean="soap" />
+		</component> 
+        	
+   	</flow>
+   	
+    <!-- Retrieve ReserveType Nested Data -->
+    <flow name="ReserveTypeNestedSOAPFlow">
+
+        <inbound-endpoint address="${iip.interface.communication.protocol}://localhost:${iip.interface.port:80}/iip/services/reserveTypeNestedDetails" 
+        	exchange-pattern="request-response" ref="InBoundEndPointRef" 
+            transformer-refs="InputStreamToStringTransformer" responseTransformer-refs="MuleMessagePropertiesTransformer" responseTimeout="600000">
+
+   			<message-properties-transformer scope="session">
+				<add-message-property key="endPointName" value="reserveTypeNestedDetails" />
+			</message-properties-transformer>
+			
+			<transformer ref="SOAPHeaderTransformer" />
+
+   			<cxf:jaxws-service serviceClass="com.client.iip.integration.core.webservice.SOAPReceiver" />
+ 			
+ 		</inbound-endpoint>
+	
+        <component>
+    		<spring-object bean="soap" />
+		</component> 
+        	
+   	</flow>
+   	
+    <!-- Retrieve Code Lookup Data-->
+    <flow name="CodeLookupSOAPFlow">
+
+        <inbound-endpoint address="${iip.interface.communication.protocol}://localhost:${iip.interface.port:80}/iip/services/lookupCodelist" 
+        	exchange-pattern="request-response" ref="InBoundEndPointRef" 
+            transformer-refs="InputStreamToStringTransformer" responseTransformer-refs="MuleMessagePropertiesTransformer" responseTimeout="600000">
+
+   			<message-properties-transformer scope="session">
+				<add-message-property key="endPointName" value="lookupCodelist" />
+			</message-properties-transformer>
+			
+			<transformer ref="SOAPHeaderTransformer" />
+
+   			<cxf:jaxws-service serviceClass="com.client.iip.integration.core.webservice.SOAPReceiver" />
+ 			
+ 		</inbound-endpoint>
+	
+        <component>
+    		<spring-object bean="soap" />
+		</component>
+        	
+   	</flow>
+   	
+	<!-- Retrieve User Information-->
+    <flow name="UserInformationSOAPFlow">
+
+        <inbound-endpoint address="${iip.interface.communication.protocol}://localhost:${iip.interface.port:80}/iip/services/userList" 
+        	exchange-pattern="request-response" ref="InBoundEndPointRef" 
+            transformer-refs="InputStreamToStringTransformer" responseTransformer-refs="MuleMessagePropertiesTransformer" responseTimeout="600000">
+
+   			<message-properties-transformer scope="session">
+				<add-message-property key="endPointName" value="userList" />
+			</message-properties-transformer>
+			
+			<transformer ref="SOAPHeaderTransformer" />
+			
+   			<cxf:jaxws-service serviceClass="com.client.iip.integration.core.webservice.SOAPReceiver" />
+ 			
+ 		</inbound-endpoint>
+	
+        <component>
+    		<spring-object bean="soap" />
+		</component> 
+        	
+   	</flow>
+   	
+    <!-- Retrieve User Details Data-->
+    <flow name="UserDetailsSOAPFlow">
+
+        <inbound-endpoint address="${iip.interface.communication.protocol}://localhost:${iip.interface.port:80}/iip/services/userDetails" 
+        	exchange-pattern="request-response" ref="InBoundEndPointRef" 
+            transformer-refs="InputStreamToStringTransformer" responseTransformer-refs="MuleMessagePropertiesTransformer" responseTimeout="600000">
+
+   			<message-properties-transformer scope="session">
+				<add-message-property key="endPointName" value="userDetails" />
+			</message-properties-transformer>
+			
+			<transformer ref="SOAPHeaderTransformer" />
+
+   			<cxf:jaxws-service serviceClass="com.client.iip.integration.core.webservice.SOAPReceiver" />
+ 			
+ 		</inbound-endpoint>
+	
+        <component>
+    		<spring-object bean="soap" />
+		</component>
+        	
+   	</flow>
+   	
+    <!-- Retrieve All LOBs by Company -->
+    <flow name="AllLOBsByCompanySOAPFlow">
+
+        <inbound-endpoint address="${iip.interface.communication.protocol}://localhost:${iip.interface.port:80}/iip/services/allLOBsByCompanyList" 
+        	exchange-pattern="request-response" ref="InBoundEndPointRef" 
+            transformer-refs="InputStreamToStringTransformer" responseTransformer-refs="MuleMessagePropertiesTransformer" responseTimeout="600000">
+
+   			<message-properties-transformer scope="session">
+				<add-message-property key="endPointName" value="allLOBsByCompanyList" />
+			</message-properties-transformer>
+			
+			<transformer ref="SOAPHeaderTransformer" />
+			
+   			<cxf:jaxws-service serviceClass="com.client.iip.integration.core.webservice.SOAPReceiver" />
+ 			
+ 		</inbound-endpoint>
+	
+        <component>
+    		<spring-object bean="soap" />
+		</component> 
+        	
+   	</flow>
+   	
+    <!-- Retrieve All Reserve types by company LOB -->
+    <flow name="AllReserveTypesSOAPFlow">
+
+        <inbound-endpoint address="${iip.interface.communication.protocol}://localhost:${iip.interface.port:80}/iip/services/reserveTypeList" 
+        	exchange-pattern="request-response" ref="InBoundEndPointRef" 
+            transformer-refs="InputStreamToStringTransformer" responseTransformer-refs="MuleMessagePropertiesTransformer" responseTimeout="600000">
+
+   			<message-properties-transformer scope="session">
+				<add-message-property key="endPointName" value="reserveTypeList" />
+			</message-properties-transformer>
+			
+			<transformer ref="SOAPHeaderTransformer" />
+			
+   			<cxf:jaxws-service serviceClass="com.client.iip.integration.core.webservice.SOAPReceiver" />
+ 			
+ 		</inbound-endpoint>
+	
+        <component>
+    		<spring-object bean="soap" />
+		</component> 
+        	
+   	</flow>
+   	
+    <!-- Retrieve All Reserve types with Monetary types  -->
+    <flow name="AllMonetaryTypesSOAPFlow">
+
+        <inbound-endpoint address="${iip.interface.communication.protocol}://localhost:${iip.interface.port:80}/iip/services/monetaryTypeList" 
+        	exchange-pattern="request-response" ref="InBoundEndPointRef" 
+            transformer-refs="InputStreamToStringTransformer" responseTransformer-refs="MuleMessagePropertiesTransformer" responseTimeout="600000" >
+
+   			<message-properties-transformer scope="session">
+				<add-message-property key="endPointName" value="monetaryTypeList" />
+			</message-properties-transformer>
+			
+			<transformer ref="SOAPHeaderTransformer" />
+			
+   			<cxf:jaxws-service serviceClass="com.client.iip.integration.core.webservice.SOAPReceiver" />
+ 			
+ 		</inbound-endpoint>
+	
+        <component>
+    		<spring-object bean="soap" />
+		</component> 
+        	
+   	</flow>
+   	
+    <!-- Retrieve All company organization units  -->
+    <flow name="AllOrgUnitsSOAPFlow">
+
+        <inbound-endpoint address="${iip.interface.communication.protocol}://localhost:${iip.interface.port:80}/iip/services/allOrgUnitList" 	
+        	exchange-pattern="request-response" ref="InBoundEndPointRef" 
+            transformer-refs="InputStreamToStringTransformer" responseTransformer-refs="MuleMessagePropertiesTransformer" responseTimeout="600000">
+
+   			<message-properties-transformer scope="session">
+				<add-message-property key="endPointName" value="allOrgUnitList" />
+			</message-properties-transformer>
+			
+			<transformer ref="SOAPHeaderTransformer" />
+			
+   			<cxf:jaxws-service serviceClass="com.client.iip.integration.core.webservice.SOAPReceiver" />
+ 			
+ 		</inbound-endpoint>
+	
+        <component>
+    		<spring-object bean="soap" />
+		</component>
+        	
+   	</flow>
+   	
+    <!-- Retrieve All coverages with company, LOB and reserve type  -->
+	<flow name="AllCoveragesCompLOBRTSOAPFlow">
+
+        <inbound-endpoint address="${iip.interface.communication.protocol}://localhost:${iip.interface.port:80}/iip/services/allCoverageCompLOBRTList" 
+        	exchange-pattern="request-response" ref="InBoundEndPointRef" 
+            transformer-refs="InputStreamToStringTransformer" responseTransformer-refs="MuleMessagePropertiesTransformer" responseTimeout="600000">
+
+   			<message-properties-transformer scope="session">
+				<add-message-property key="endPointName" value="allCoverageCompLOBRTList" />
+			</message-properties-transformer>
+			
+			<transformer ref="SOAPHeaderTransformer" />
+			
+   			<cxf:jaxws-service serviceClass="com.client.iip.integration.core.webservice.SOAPReceiver" />
+ 			
+ 		</inbound-endpoint>
+	
+        <component>
+    		<spring-object bean="soap" />
+		</component>
+        	
+   	</flow>
+   	
+  	<!-- Retrieve All loss types with coverages, company, LOB and reserve type  -->
+   <flow name="AllLossTypesCovCompLOBRTSOAPFlow">
+
+        <inbound-endpoint address="${iip.interface.communication.protocol}://localhost:${iip.interface.port:80}/iip/services/allLossTypeCovCompLOBRTList" 
+        	exchange-pattern="request-response" ref="InBoundEndPointRef" 
+            transformer-refs="InputStreamToStringTransformer" responseTransformer-refs="MuleMessagePropertiesTransformer" responseTimeout="600000">
+
+   			<message-properties-transformer scope="session">
+				<add-message-property key="endPointName" value="allLossTypeCovCompLOBRTList" />
+			</message-properties-transformer>
+			
+			<transformer ref="SOAPHeaderTransformer" />
+			
+   			<cxf:jaxws-service serviceClass="com.client.iip.integration.core.webservice.SOAPReceiver" />
+ 			
+ 		</inbound-endpoint>
+ 		
+        <component>
+    		<spring-object bean="soap" />
+		</component>
+        	
+   	</flow>
+   	
+   	<!--  Receive Orders -->
+   	<flow name="ReceiveOrderSOAPFlow" doc:name="Receive inbound order returns">
+   	
+         <inbound-endpoint address="${iip.interface.communication.protocol}://localhost:${iip.interface.port:80}/iip/services/orderReturn" 
+         	exchange-pattern="request-response" ref="InBoundEndPointRef" 
+            transformer-refs="InputStreamToStringTransformer" responseTransformer-refs="MuleMessagePropertiesTransformer" responseTimeout="600000" >
+ 
+    		<message-properties-transformer scope="session">
+				<add-message-property key="endPointName" value="receiveOrder" />
+			</message-properties-transformer>
+			
+			<transformer ref="SOAPHeaderTransformer" />
+			           
+   			<cxf:jaxws-service serviceClass="com.client.iip.integration.core.webservice.SOAPReceiver" />
+ 			
+ 		</inbound-endpoint>            
+
+        <component>
+    		<spring-object bean="soap" />
+		</component>
+   	
+   	</flow>   				     		
+	
+</mule>

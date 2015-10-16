@@ -1,0 +1,11 @@
+ClearCase CopyAreaDB|4
+iip_starter_kit\claim_starter_kit\common-intrg\src\main\java\com\client\iip\integration\core
+2
+7
+5:cache|2|0|0|0|c5b8faeeea814b47a44b42efcb93fc55|0
+9:converter|2|0|0|0|cc52da9a87d446a0b120d05eefe31593|0
+9:exception|2|0|0|0|4c7aadcf561944b99efdbb297845e250|0
+b:transformer|2|0|0|0|5bbf947345264c22840b42e731b66cd2|0
+8:security|2|0|0|0|f77df720ea2a4ac4bc2da773dbb49f1c|0
+a:webservice|2|0|0|0|4c8d41526c684241aa71e8215bb1f8a7|0
+4:util|2|0|0|0|fbc1dc4b578f4c51adc539bb3245fed3|0

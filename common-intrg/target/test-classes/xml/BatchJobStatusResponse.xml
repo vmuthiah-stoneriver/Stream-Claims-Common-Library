@@ -1,0 +1,93 @@
+<batchLogDTO>
+  <recordId>4009</recordId>
+  <version>0</version>
+  <updated>false</updated>
+  <childUpdated>false</childUpdated>
+  <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+  <userIdCreated>1001</userIdCreated>
+  <createdDateTime>2015-07-07 16:19:23.930 CDT</createdDateTime>
+  <batchLogTypeCode>btchprcscmp</batchLogTypeCode>
+  <agreementTypeCode>clm</agreementTypeCode>
+  <batchJobTypeCode>ClaimImport</batchJobTypeCode>
+  <jobId>304</jobId>
+  <description>Job Claim Import, FAILED</description>
+  <runDate>2015-07-07 16:19:22.020 CDT</runDate>
+  <logDetails class="list">
+    <batchLogDetailDTO>
+      <recordId>2300</recordId>
+      <version>0</version>
+      <updated>false</updated>
+      <childUpdated>false</childUpdated>
+      <dtoUtilsSynchronized>false</dtoUtilsSynchronized>
+      <userIdCreated>1001</userIdCreated>
+      <createdDateTime>2015-07-07 16:19:23.930 CDT</createdDateTime>
+      <createDate>2015-07-07 16:19:25.010 CDT</createDate>
+      <message>java.lang.ExceptionInInitializerError&#xd;
+	at java.lang.J9VMInternals.initialize(J9VMInternals.java:258)&#xd;
+	at com.client.iip.integration.batch.XMLFileResourceItemProcessor.process(XMLFileResourceItemProcessor.java:72)&#xd;
+	at com.client.iip.integration.batch.XMLFileResourceItemProcessor.process(XMLFileResourceItemProcessor.java:1)&#xd;
+	at org.springframework.batch.core.step.item.SimpleChunkProcessor.doProcess(SimpleChunkProcessor.java:125)&#xd;
+	at org.springframework.batch.core.step.item.SimpleChunkProcessor.transform(SimpleChunkProcessor.java:288)&#xd;
+	at org.springframework.batch.core.step.item.SimpleChunkProcessor.process(SimpleChunkProcessor.java:187)&#xd;
+	at org.springframework.batch.core.step.item.ChunkOrientedTasklet.execute(ChunkOrientedTasklet.java:74)&#xd;
+	at org.springframework.batch.core.step.tasklet.TaskletStep$ChunkTransactionCallback.doInTransaction(TaskletStep.java:386)&#xd;
+	at org.springframework.transaction.jta.WebSphereUowTransactionManager$UOWActionAdapter.run(WebSphereUowTransactionManager.java:337)&#xd;
+	at com.ibm.ws.uow.EmbeddableUOWManagerImpl.runUnderNewUOW(EmbeddableUOWManagerImpl.java:786)&#xd;
+	at com.ibm.ws.uow.EmbeddableUOWManagerImpl.runUnderUOW(EmbeddableUOWManagerImpl.java:365)&#xd;
+	at org.springframework.transaction.jta.WebSphereUowTransactionManager.execute(WebSphereUowTransactionManager.java:281)&#xd;
+	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:124)&#xd;
+	at org.springframework.batch.core.step.tasklet.TaskletStep$2.doInChunkContext(TaskletStep.java:264)&#xd;
+	at org.springframework.batch.core.scope.context.StepContextRepeatCallback.doInIteration(StepContextRepeatCallback.java:76)&#xd;
+	at org.springframework.batch.repeat.support.RepeatTemplate.getNextResult(RepeatTemplate.java:367)&#xd;
+	at org.springframework.batch.repeat.support.RepeatTemplate.executeInternal(RepeatTemplate.java:214)&#xd;
+	at org.springframework.batch.repeat.support.RepeatTemplate.iterate(RepeatTemplate.java:143)&#xd;
+	at org.springframework.batch.core.step.tasklet.TaskletStep.doExecute(TaskletStep.java:250)&#xd;
+	at org.springframework.batch.core.step.AbstractStep.execute(AbstractStep.java:195)&#xd;
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)&#xd;
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:60)&#xd;
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:37)&#xd;
+	at java.lang.reflect.Method.invoke(Method.java:611)&#xd;
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:309)&#xd;
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:183)&#xd;
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:150)&#xd;
+	at org.springframework.aop.aspectj.AspectJAfterAdvice.invoke(AspectJAfterAdvice.java:42)&#xd;
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:161)&#xd;
+	at org.springframework.aop.aspectj.AspectJAfterThrowingAdvice.invoke(AspectJAfterThrowingAdvice.java:55)&#xd;
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:161)&#xd;
+	at org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor.invoke(MethodBeforeAdviceInterceptor.java:50)&#xd;
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:161)&#xd;
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:90)&#xd;
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:172)&#xd;
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:202)&#xd;
+	at com.sun.proxy.$Proxy128.execute(Unknown Source)&#xd;
+	at org.springframework.batch.core.job.SimpleStepHandler.handleStep(SimpleStepHandler.java:135)&#xd;
+	at org.springframework.batch.core.job.flow.JobFlowExecutor.executeStep(JobFlowExecutor.java:61)&#xd;
+	at org.springframework.batch.core.job.flow.support.state.StepState.handle(StepState.java:60)&#xd;
+	at org.springframework.batch.core.job.flow.support.SimpleFlow.resume(SimpleFlow.java:144)&#xd;
+	at org.springframework.batch.core.job.flow.support.SimpleFlow.start(SimpleFlow.java:124)&#xd;
+	at org.springframework.batch.core.job.flow.FlowJob.doExecute(FlowJob.java:135)&#xd;
+	at org.springframework.batch.core.job.AbstractJob.execute(AbstractJob.java:281)&#xd;
+	at com.fiserv.isd.iip.core.batch.IIPSimpleJobLauncher$1.run(IIPSimpleJobLauncher.java:116)&#xd;
+	at org.springframework.scheduling.commonj.DelegatingWork.run(DelegatingWork.java:61)&#xd;
+	at com.ibm.ws.asynchbeans.J2EEContext.run(J2EEContext.java:1178)&#xd;
+	at com.ibm.ws.asynchbeans.WorkWithExecutionContextImpl.go(WorkWithExecutionContextImpl.java:199)&#xd;
+	at com.ibm.ws.asynchbeans.CJWorkItemImpl.run(CJWorkItemImpl.java:236)&#xd;
+	at com.ibm.ws.util.ThreadPool$Worker.run(ThreadPool.java:1691)&#xd;
+Caused by: org.springframework.security.core.userdetails.UsernameNotFoundException: User not found: mcesinger&#xd;
+	at com.fiserv.isd.iip.core.security.services.impl.UserDetailsServiceImpl.loadUserByUsername(UserDetailsServiceImpl.java:83)&#xd;
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)&#xd;
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:60)&#xd;
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:37)&#xd;
+	at java.lang.reflect.Method.invoke(Method.java:611)&#xd;
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:309)&#xd;
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:196)&#xd;
+	at com.sun.proxy.$Proxy214.loadUserByUsername(Unknown Source)&#xd;
+	at com.client.iip.integration.batch.BatchUtils.getUserDetails(BatchUtils.java:73)&#xd;
+	at com.client.iip.integration.batch.BatchUtils.&lt;clinit&gt;(BatchUtils.java:23)&#xd;
+	at java.lang.J9VMInternals.initializeImpl(Native Method)&#xd;
+	at java.lang.J9VMInternals.initialize(J9VMInternals.java:236)&#xd;
+	... 49 more&#xd;
+</message>
+    </batchLogDetailDTO>
+  </logDetails>
+</batchLogDTO>

@@ -1,0 +1,1272 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<xs:annotation>
+		<xs:documentation>Claim Bill Schema</xs:documentation>
+	</xs:annotation>
+	
+	<xs:element name="claimBillDetailDTO" type="ClaimBillDetailDTO">
+		<xs:annotation>
+			<xs:documentation>Claim bill.</xs:documentation>
+		</xs:annotation>
+	</xs:element>	
+
+	<xs:element name="claimBill" type="ClientClaimBillDTO">
+		<xs:annotation>
+			<xs:documentation>Client claim bill.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+
+	<xs:complexType name="ClientClaimBillDTO">
+		<xs:annotation>
+			<xs:documentation>Claim Bill Information</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="ClaimBillDetailDTO">
+				<xs:sequence>
+					<xs:element name="currentBillCycle" type="ClientClaimBillCycleDTO"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Holds the current Cycle information for the
+								Bill as ClientClaimBillCycleDTO
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="previousBillCycles" type="clientClaimBillCycleType"
+						minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Collection of previous Cycle informations for
+								the Bill.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="ClaimBillDetailDTO">
+		<xs:annotation>
+			<xs:documentation>Extended Claim Bill information used for Claim
+				Details Interface
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="ClaimBillDTO">
+				<xs:sequence>
+					<xs:element name="paymentNumber" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Bill payment number</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="paymentDate" type="dateType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Bill payment date</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="totalApproved" type="dollarAmount"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Approved amount</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="totalTax" type="dollarAmount"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Taxed amount</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="unitDescription" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Unit description</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="participantName" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Participant name</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="coverageTypeCode" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Coverage type code, Maps to CLM_COV_CD column
+								from CLAIM_COVERAGE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="coverageName" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Coverage name, Maps to CLM_COV_NM column from
+								CLAIM_COVERAGE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="reserveTypeCode" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Reserve type code, Maps to CLM_RSRV_TYP_CD
+								column from CLAIM_RESERVE_TYPE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="lossTypeCode" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Loss type code, Maps to CLM_LOSS_TYP_CD column
+								from CLAIM_LOSS_TYPE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="reserveStatusCode" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Reserve status code, Maps to CLM_RSRV_STS_NC_CD
+								column from CLAIM_RESERVE_STATUS_NC_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="reserveOwner" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Reserve owner.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="clientClaimBillCycleType">
+		<xs:annotation>
+			<xs:documentation>Collection of Claim bill cycle</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="clientClaimBillCycleDTO" type="ClientClaimBillCycleDTO"
+				minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Claim bill cycles.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="class" type="collectionType" use="optional" />
+	</xs:complexType>
+
+	<xs:complexType name="ClientClaimBillCycleDTO">
+		<xs:annotation>
+			<xs:documentation>Claim Bill Cycle Non Comp Informations
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="ClaimBillCycleNCDTO">
+				<xs:sequence>
+					<xs:element name="claimBillLineItems" type="claimBillLineItemType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Collection of Bill Line Items for the Bill
+								Cycle.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="ClaimBillDTO">
+		<xs:annotation>
+			<xs:documentation>Claim Bill Information</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="BillDTO">
+				<xs:sequence>
+					<xs:element name="claimId" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Claim associated with the Bill
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="lineItems" type="claimBillLineItemType"
+						minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Not used for Claim Import, Place holder for
+								Claim Details
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="evaluateReserves" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Not used for Claim Import, Place holder for
+								Claim Details
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="BillDTO">
+		<xs:annotation>
+			<xs:documentation>Common Bill information.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="DataTransferObject">
+				<xs:sequence>
+					<xs:element name="payeeTypeCode" type="string"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Bill Payee Type, Maps to BILL_PAYE_TYP_CD column from BILL_PAYEE_TYPE_CD Table.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="partyIdBillingProv" type="long"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Party Id of the Bill</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="vendorCategoryCode" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Vendor Category code of the Bill, 
+								Maps to	VEND_CTG_CD Column from VENDOR_CATEGORY_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="vendorType" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Vendor Type code of the Bill, 
+								Maps to VEND_TYP_CD	Column from VENDOR_TYPE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="billNumber" type="string" minOccurs="1"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Unique reference number for the Bill
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="ediSourceCode" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>EDI Source for the Bill, 
+								Maps to BILL_EDI_SRC_CD	Column from BILL_EDI_SOURCE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="primaryEDIRefNumber" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Primary EDI Reference Number provided by
+								external source
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="secondaryEDIRefNumber" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Secondary EDI Reference Number provided by
+								external source
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="billConvertedNumber" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Unique Bill Number assigned to a Bill that has
+								been converted from external system to the Carrier's system.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+
+					<xs:element name="currentCycle" type="BillCycleDTO"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Holds the current Cycle information for the
+								Bill as BillCycleDTO, This is not used
+								for Claim Import because
+								XStream requires a concrete class and we
+								cannot import
+								ClaimBillCycleNCDTO, So
+								we are using currentBillCycle which is of
+								type
+								ClientClaimBillCycleDTO
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="previousCycles" type="billCycleType"
+						minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Collection of previous Cycle informations for
+								the Bill.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+
+					<xs:element name="partyBillingProv" type="MinimalPartyForVendorDTO"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Billing provider, Minimal Party
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="validateDateOfBirth" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Date of birth validation flag.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="validateDateOfDeath" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Date of death validation flag.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="billingProviderDateOfDeath" type="dateType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Provider date of death</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="maximumBillServiceDateConstant" type="long"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Billing service date threshold
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="completedDate" type="dateType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Service completion date</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="openedDate" type="dateType" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Service opened date</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="reOpenedDate" type="dateType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Reopened date</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="reCompletedDate" type="dateType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Completion date</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="lastTransactionDate" type="dateType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Last transaction date</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="billCycleType">
+		<xs:annotation>
+			<xs:documentation>Collection of bill cycle</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="billCycleDTO" type="BillCycleDTO"
+				minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Bill cycle.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="class" type="collectionType" use="optional" />
+	</xs:complexType>
+
+	<xs:complexType name="ClaimBillCycleNCDTO">
+		<xs:annotation>
+			<xs:documentation>Bill cycle for non Workers Comp Claims
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="BillCycleDTO">
+				<xs:sequence>
+					<xs:element name="reserveId" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Reserve associated with the Bill
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="unitId" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Not used for Claim Import, Place holder for
+								Claim Details
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="participantId" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Not used for Claim Import, Place holder for
+								Claim Details
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="claimNumber" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Not used for Claim Import, Place holder for
+								Claim Details
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="BillCycleDTO">
+		<xs:annotation>
+			<xs:documentation>Bill Cycle Information</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="AuditDTO">
+				<xs:sequence>
+					<xs:element name="partyIdServiceProv" type="long"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Party Id of the Bill Service Provider
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="serviceVendorCategoryCode" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Vendor Category code of the Service Provider, 
+								Maps to VEND_CTG_CD Column from VENDOR_CATEGORY_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="serviceVendorTypeCode" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Vendor Type code of the Service Provider, 
+								Maps to	VEND_TYP_CD Column from VENDOR_TYPE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="partyIdFacilityProv" type="long"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Party Id of the Facility Provider
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="facilityVendorCategoryCode" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Vendor Category code of the Facility Provider, 
+								Maps to VEND_CTG_CD Column from VENDOR_CATEGORY_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="facilityVendorTypeCode" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Vendor Type code of the Facility Provider, 
+								Maps to VEND_TYP_CD Column from VENDOR_TYPE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="formatCode" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Bill Format Code, 
+								Maps to BILL_FRMT_CD Column from BILL_FORMAT_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="mediaCode" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Media Code how Bill arrives, 
+								Maps to BILL_MEDA_CD Column from BILL_MEDIA_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="cycleNumber" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Cycle Number, If not passed generated by the
+								application.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="medicalRecordNumber" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Medical Record Number</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="referenceNumber" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>External bill reference number.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="serviceEffectiveDate" type="dateType"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Service Date covered by the Bill
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="serviceEndDate" type="dateType"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Service End Date of the Bill</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="receivedDate" type="dateType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Bill Received date.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="totalChargeAmount" type="dollarAmount"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Total Charged amount for the Bill.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="partyServiceProv" type="MinimalPartyForVendorDTO"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Service provider, Minimalparty
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="partyFacilityProv" type="MinimalPartyForVendorDTO"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Facility provider, Minimalparty
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="billId" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Bill Identifier, Set the Bill Id if available.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="facilityProvDateOfDeath" type="dateType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Facility provider date of death
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="serviceProvDateOfDeath" type="dateType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Service provider date of death
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="status" type="BillCycleStatusCompositeDTO"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Bill Cycle status composite.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="sourceCode" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Bill Source code, 
+								Maps to BILL_SRC_CD Column from	BILL_SOURCE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="prePaymentTypeCode" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Pre payment types for the Bill, 
+								Maps to	BILL_PREPAY_TYP_CD Column from BILL_PREPAYMENT_TYPE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="professionalLicense" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Physicians License Number</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="notesOrAttachmentsIndicator" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Indicates whether Notes are attached to the
+								Bill
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="freeScheduleOverrideIndicator" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Indicates whether the fee schedule should be
+								overridden or not.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="doNotReportIndicator" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Indicates whether Bill should be reported or
+								not
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="freeScheduleOverrideReasonCode" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Reason for Fee schedule override, 
+								Maps to	FEE_SCH_OVRRD_RSN_CD Column from FEE_SCHEDULE_OVERRIDE_RSN_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="fastTrackActionCode" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Fast Track action for the Bill, 
+								Maps to BILL_FAST_TRK_ACTN_CD Column from BILL_FAST_TRACK_ACTION_CD	Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="fastTrackActionReasonCode" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Fast Track Reason, 
+								Maps to	BILL_FAST_TRK_ACTN_RSN_CD Column from BILL_FAST_TRACK_ACTION_RSN_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="doNotReportReasonCode" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Reason for Not Reporting, 
+								Maps to	BILL_DO_NOT_RPT_RSN_CD Column from BILL_DO_NOT_REPORT_REASON_CD	Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="diagnosisCodes" type="billCycleDiagnosisCodeType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Collection containing Diagnosis Codes as
+								BillCycleDiagnosisCodeDTO.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="externalCauseOfInjuryCodes" type="billCycleExternalCOIType"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Collection containing External Cause of Injury
+								Codes as BillCycleExternalCOIDTO.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="admittingDiagnosis" type="BillCodeDTO"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Diagonosis bill Codes</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="dgr" type="BillCodeDTO" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Bill codes</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+
+	</xs:complexType>
+
+	<xs:complexType name="billCycleExternalCOIType">
+		<xs:annotation>
+			<xs:documentation>Collection of Bill cycle cause of injury codes
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="billCycleExternalCOIDTO" type="BillCycleExternalCOIDTO"
+				minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>External Cause of Injury bill cycles.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="class" type="collectionType" use="optional" />
+	</xs:complexType>
+
+	<xs:complexType name="BillCycleExternalCOIDTO">
+		<xs:annotation>
+			<xs:documentation>Bill Cycle External Cause of Injury Codes
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="BillCycleCodeDTO">
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="billCycleDiagnosisCodeType">
+		<xs:annotation>
+			<xs:documentation>Collection of bill cycle diagonosis codes
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="billCycleDiagnosisCodeDTO" type="BillCycleDiagnosisCodeDTO"
+				minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Diagnosis code bill cycles.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="class" type="collectionType" use="optional" />
+	</xs:complexType>
+
+	<xs:complexType name="BillCycleDiagnosisCodeDTO">
+		<xs:annotation>
+			<xs:documentation>Bill Cycle Diagnosis Codes</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="BillCycleCodeDTO">
+				<xs:sequence>
+					<xs:element name="dummy" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Dummy field to prevent parse exception
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="BillCycleCodeDTO">
+		<xs:annotation>
+			<xs:documentation>Bill Cycle Code</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="AuditDTO">
+				<xs:sequence>
+					<xs:element name="subscriptionCode" type="BillCodeDTO"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Subscription Code for the Bill
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="number" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Number associated with the Bill Cycle Code.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="BillCodeDTO">
+		<xs:annotation>
+			<xs:documentation>Bill Code details</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="code" type="string" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Unique Code for Bill.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="description" type="string" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Description for Bill Code</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="verified" type="boolean" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Indicates whether the code is verified or not.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="commentRequired" type="boolean"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Indicates whether the comment is required or not
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+
+	<xs:complexType name="BillCycleStatusCompositeDTO">
+		<xs:annotation>
+			<xs:documentation>Complete Bill Cycle status information.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="current" type="BillCycleStatusDTO"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Current status of the Bill Cycle as
+						BillCycleStatusDTO.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="expired" type="billCycleStatusType"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Collection of expired Bill Cycle statuses as
+						BillCycleStatusDTO
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="billCycleStatusType">
+		<xs:annotation>
+			<xs:documentation>Collection of bill cycle status</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="billCycleStatusDTO" type="BillCycleStatusDTO"
+				minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Bill cycle status list.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="class" type="collectionType" use="optional" />
+	</xs:complexType>
+
+
+	<xs:complexType name="BillCycleStatusDTO">
+		<xs:annotation>
+			<xs:documentation>Bill Cycle status information.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="AuditWithExpireDTO">
+				<xs:sequence>
+					<xs:element name="stateCode" type="string" minOccurs="1"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>State of the Bill Cycle, 
+								Maps to BILL_STT_CD	Column from BILL_STATE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="statusCode" type="string" minOccurs="1"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Status of the Bill Cycle, 
+								Maps to BILL_STS_CD	Column from BILL_STATUS_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="reasonCode" type="string" minOccurs="1"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Bill Cycle Status Reason code, 
+								Maps to	BILL_STS_RSN_CD Column from BILL_STATUS_REASON_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="comment" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Bill Cycle status comment</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="auditUserName" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Audit user</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+
+	<xs:complexType name="claimBillLineItemType">
+		<xs:annotation>
+			<xs:documentation>Collection of bill line item</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="claimBillLineItemDTO" type="ClaimBillLineItemDTO"
+				minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Claim bill line items.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="class" type="collectionType" use="optional" />
+	</xs:complexType>
+
+	<xs:complexType name="ClaimBillLineItemDTO">
+		<xs:annotation>
+			<xs:documentation>Claim Bill Line Item</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="BillLineItemDTO">
+				<xs:sequence>
+					<xs:element name="claimReserveId" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Reserve Associated with Bill Line Item
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="BillLineItemDTO">
+		<xs:annotation>
+			<xs:documentation>Bill Line Item Information</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="AuditWithDeleteDTO">
+				<xs:sequence>
+					<xs:element name="billCycleId" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Bill Cycle associated with the Bill Line Item
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="adjustedBillCycleId" type="long"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Adjusted Bill Cycle associated with the Bill
+								Line Item
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="itemTypeCode" type="string" minOccurs="1"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Bill Line Item Type Code, 
+								Maps to	BILL_LN_ITEM_TYP_CD Column from BILL_LINE_ITEM_TYPE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="primaryCodeType" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Primary Bill Line Item Code Type Code, 
+								Maps to	BILL_LN_ITEM_CD_TYP_CD Column from BILL_LINE_ITEM_CODE_TYPE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="costCenterCode" type="string"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Cost Center Code, 
+								Maps to CST_CNTR_CD Column from COST_CENTER_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="costCenterTypeCode" type="string"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Cost Center Type Code, 
+								Maps to CST_CNTR_TYP_CD Column from COST_CENTER_TYPE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="secondaryCodeType" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Secondary Bill Line Item Code Type Code, 
+								Maps to	BILL_LN_ITEM_CD_TYP_CD Column from BILL_LINE_ITEM_CODE_TYPE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="dmeOwnerCode" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Durable medical equipment ownership types, 
+								Maps to DME_OWNSHP_TYP_CD Column from DME_OWNSHP_TYP_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="perDiemTypeCode" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Per Diem types, 
+								Maps to PER_DIEM_TYP_CD column from PER_DIEM_TYPE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="travelTypeCode" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Travel Re-imbursement Types, 
+								Maps to TRVL_TYP_CD	Column from TRAVEL_TYPE_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="itemNumber" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>External Reference Number for a Line Item
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="ediRefNumber" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>EDI Reference Number for a Line Item
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="serviceEffectiveDate" type="dateType"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Service From Date</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="serviceEndDate" type="dateType"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Service Through Date</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="surcharge" type="boolean" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Surcharge Indicator</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="comments" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Comments for the Line Item</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="startTime" type="dateType" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Start Time of Service</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="endTime" type="dateType" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>End Time of Service</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="units" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Unit Count</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="minutes" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Number of Minutes</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="submittedPrimaryCode" type="BillCodeDTO"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Submitted Primary code for Line Item
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="primaryCode" type="BillCodeDTO"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Primary code for Line Item</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="secondaryCode" type="BillCodeDTO"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Secondary code for Line Item</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="placeOfServiceCode" type="BillCodeDTO"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Place of Service Code</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="typeOfServiceCode" type="BillCodeDTO"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Type of Service Code</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="toothCode" type="BillCodeDTO"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Tooth Code</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="toothSurfaceCode" type="BillCodeDTO"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Tooth Surface Code</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="travelFromName" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Travelled from Name</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="travelToName" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Travelled to name</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="travelDistance" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Total distance travelled</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="travelExclDistance" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Distance excluded from reimbursement
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="presQualCode" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Prescriber identifier qualifiers, 
+								Maps to PRSCRBR_ID_QUAL_CD Column from PRESCRIBER_IDENTIFIER_QUAL_CD Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="presAsWrittenCode" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Prescription dispensed written code, 
+								Maps to	RX_DSPNSD_AS_WRTN_CD Column from PRESCRIPTION_DSPNSD_AS_WRTN_CD	Table.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="presNumber" type="string" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Prescription Number</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="presSupplyDays" type="long" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Number of Days Prescribed</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="presRefill" type="boolean" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Indicates whether the prescription is a refill.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="presDate" type="dateType" minOccurs="0"
+						maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Date of prescription.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="presPhysnName" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Name of the Prescribing Physician.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="presPhysnIdentifier" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Prescribing Physician's Identifier.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="submittedAmount" type="dollarAmount"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Amount Submitted</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="paySubmitted" type="boolean"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Indicates whether the Submitted amount should
+								be paid
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="approvedAmount" type="dollarAmount"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Approved Amount</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="paidAmountDerived" type="dollarAmount"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Actual paid Amount</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="taxAmount" type="dollarAmount"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Tax Amount</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="penaltyAmount" type="dollarAmount"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Penalty Amount</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+</xs:schema>

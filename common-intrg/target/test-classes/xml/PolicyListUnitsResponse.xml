@@ -1,0 +1,20 @@
+<list>
+    <policyUnitDescDTO>
+        <unitIdTxt>1FTEX14N5TEST05375</unitIdTxt>    
+        <unitDataTypeCd>veh</unitDataTypeCd>    
+        <unitTypeCd>veh</unitTypeCd>
+        <unitDesc>1994 FORD F250</unitDesc>
+    </policyUnitDescDTO>
+	<policyUnitDescDTO>
+    	<unitIdTxt>1FM5K8F85DGA05859</unitIdTxt>
+    	<unitDataTypeCd>veh</unitDataTypeCd>    		
+    	<unitTypeCd>veh</unitTypeCd>
+    	<unitDesc>2013 FORD EXPLORER LIMITED</unitDesc>
+	</policyUnitDescDTO>
+	<policyUnitDescDTO>
+    	<unitIdTxt>WBABB1304H1925775</unitIdTxt>
+    	<unitDataTypeCd>veh</unitDataTypeCd>    		
+    	<unitTypeCd>veh</unitTypeCd>
+    	<unitDesc>1987 BMW 325I</unitDesc>
+	</policyUnitDescDTO>
+</list>

@@ -1,0 +1,19 @@
+ClearCase CopyAreaDB|4
+iip_starter_kit\claim_starter_kit\common-intrg\src\main\java\com\client\iip\integration\party
+2
+f
+23:PostalServiceRegionTransformer.java|1|14c957128de|11a8|9b7ce24c|d35a174c50f248f5a464fb841e5ca421|0
+16:ClientPartyMerger.java|1|14c957128de|2ed4d|2fd244b7|ecc1ffa2cfb4400c8ef7c2ebe0a9a7b7|0
+2a:ClientClaimPolicyPartyImportProcessor.java|1|14e9c9b406f|1060c|5d26aad8|6017b37cb8744feeb022963a129685d3|0
+22:ClientPartySearchQueryBuilder.java|1|14c9571294c|90f2|8d1e629c|83a9157a04de403b861fe17643cb713d|0
+1e:ClientPartySearchCriteria.java|1|14c95712546|70c|f33e51a7|3505a831e29b43cbbb1def1c93d2d868|0
+14:ClientPersonDTO.java|1|14c957128de|3a9|5cae33ce|c5d4ead249c746e5a82cf4abfb5d3c71|0
+15:ClientProfileDTO.java|1|14c957128de|2aa|1795d495|22064d5e86e14c799f4396f98d647e14|0
+1a:ClientOrganizationDTO.java|1|14c95712500|379|73a1288f|baa80e298dff4e688c2bc7c64117b7dd|0
+13:ClientPartyDAO.java|1|14c9571250a|7cb|355389dd|029c9e6548ba4f5cb6d625de89e99580|0
+29:VerifyAddressPostalRegionTransformer.java|1|14c957128de|12b4|e5042f5c|d7d725bb68974b688b009157315e8db2|0
+1c:ClientPartySearchResult.java|1|14c95712550|140d|fb662ea|06a3b399dd0a403e80b4f5fc3e2a25a4|0
+1b:ClientPartyServiceImpl.java|1|14ff08f7651|7c2b|2af56910|1deb55377e9d4fe3afcaaee5837f6afb|0
+17:ClientPartyService.java|1|14c95712546|2d2|c250234|8fb10d5a78e84493b3e12c08f20881ef|0
+19:ClientPartyValidator.java|1|14c9571255a|2288|4bde5a87|a815cc109bd44a8cba0d1ba47b70b87d|0
+18:VendorExportRequest.java|1|14c957128de|201|6c839f6b|a745ae56486b49d7befd6abea1d97ec1|0

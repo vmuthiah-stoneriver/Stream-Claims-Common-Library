@@ -1,0 +1,85 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:include schemaLocation="../xsd/PolicyImportRequest.xsd" />
+
+	<xs:annotation>
+		<xs:documentation>Refresh Units Request Schema</xs:documentation>
+	</xs:annotation>
+
+	<xs:element name="reImportRequestDTO" type="ReImportRequestDTO">
+		<xs:annotation>
+			<xs:documentation>Policy refresh request.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+
+	<xs:complexType name="ReImportRequestDTO">
+		<xs:annotation>
+			<xs:documentation>Refresh Policy Request Criteria DTO.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="PolicyImportRequestDTO">
+				<xs:sequence>
+					<xs:element name="importUnits" type="unitDescriptionType"
+						minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Units to be imported.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="unitDescriptionType">
+		<xs:annotation>
+			<xs:documentation>Collection of Units</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="policyUnitDescDTO" type="PolicyUnitDescriptionDTO"
+				minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Policy units.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="class" type="collectionType" use="optional" />
+	</xs:complexType>
+
+
+	<xs:complexType name="PolicyUnitDescriptionDTO">
+		<xs:annotation>
+			<xs:documentation>Unit Description.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="unitIdTxt" type="string" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Unit Identifier.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="unitDataTypeCd" type="string" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Unit Data Type Code, Maps to UNT_DATA_TYP_CD
+						Column from UNIT_DATA_TYPE_CD Table.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="unitTypeCd" type="string" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Unit Type, Maps to UNT_TYP_CD Column from
+						UNIT_TYPE_CD Table.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="unitDesc" type="string" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Unit Description.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+</xs:schema>	
