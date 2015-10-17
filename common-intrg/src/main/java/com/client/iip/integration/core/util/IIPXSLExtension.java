@@ -309,4 +309,5 @@ public class IIPXSLExtension {
 	public String getSQLSystemTimestamp() {		
 		return DateUtility.getSQLSystemTimestamp().toString();
 	}
+	
 }
