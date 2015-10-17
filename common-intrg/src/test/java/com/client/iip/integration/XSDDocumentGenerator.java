@@ -18,7 +18,7 @@ public class XSDDocumentGenerator {
 		//Doc Root Folder - The documentation would be written to this root folder.
 		private final static String XSD_DOCUMENT_ROOT = System.getProperty("iip.xsddoc.dir.path");
 		
-		private final static String[] schemaList = new String[]{"ClaimSearchRequest", "ClaimSearchResponse",
+		private final static String[] schemaList = new String[]{"ClaimSearchRequest", "ClaimSearchResult",
 		"ClaimDetailRequest", "ClaimImport", "Common", "BatchJobRequest", "BatchJob", "BatchJobStatus",
 		"DisbursementExport", "DisbursementImport",	"PolicySearchRequest", "PolicySearchResponse", "PolicyRetrieveDetailsRequest", 
 		"PolicyRetrieveDetailsResponse", "PolicyImportRequest", "PolicyReimportRequest", "PolicyImportResponse", "PolicyListUnitsRequest", 

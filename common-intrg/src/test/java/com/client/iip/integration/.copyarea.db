@@ -4,9 +4,9 @@ iip_starter_kit\claim_starter_kit\common-intrg\src\test\java\com\client\iip\inte
 9
 24:StreamDTO2XSDValidationTestCase.java|1|14ff822efea|774b|1a66cc61|1bbbe73f0b4a4390b4a7bccce5b37a67|0
 6:claims|2|0|0|0|9ad82d1ac7be4bf28e56fda0bb23f0a8|0
-19:XSDDocumentGenerator.java|1|14f2850c81e|db0|71985993|7b4ae289bb594f52af478a1c3b71fde5|0
-1c:RegressionTestProcessor.java|1|1505c8c1204|2569|331e5f9a|006eb6b38c814277ae73cd61df3817f3|0
+19:XSDDocumentGenerator.java|1|14f2850c81e|db0|71985993|7b4ae289bb594f52af478a1c3b71fde5|1
 1a:XMLValidationTestCase.java|1|14c95713cc0|7a9|753b6408|77675a3719b64f148ee30b7b9570a808|0
+1c:RegressionTestProcessor.java|1|1505c8c1204|2569|331e5f9a|006eb6b38c814277ae73cd61df3817f3|0
 11:WorkerThread.java|1|1503f5d01e8|32e|92250ca3|8c4b827a7322411b9fb9cf3265489a65|0
 4:core|2|0|0|0|60ca29a2ef3544559f7612c10feca475|0
 5:party|2|0|0|0|504e10d328304c9dab6f22cffeceec52|0
