@@ -33,6 +33,8 @@ public class SFTPGetRemoteFilesTasklet implements Tasklet, InitializingBean
     private boolean autoCreateLocalDirectory = true;
 
     private boolean deleteLocalFiles = true;
+   
+    private boolean deleteRemoteFiles = false;
 
     private String fileNamePattern;
 
@@ -79,6 +81,7 @@ public class SFTPGetRemoteFilesTasklet implements Tasklet, InitializingBean
         ftpInboundFileSynchronizer = new SftpInboundFileSynchronizer(sessionFactory);
         ((SftpInboundFileSynchronizer) ftpInboundFileSynchronizer).setFilter(new SftpSimplePatternFileListFilter(fileNamePattern));
         ftpInboundFileSynchronizer.setRemoteDirectory(remoteDirectory);
+		ftpInboundFileSynchronizer.setDeleteRemoteFiles(deleteRemoteFiles);
     }
     
     private void deleteLocalFiles()
@@ -305,6 +308,13 @@ public class SFTPGetRemoteFilesTasklet implements Tasklet, InitializingBean
 	
 	public void setPassword(String _password) {
 		sessionFactory.setPassword(_password);
+	}
+
+	/**
+	 * @param deleteRemoteFiles the deleteRemoteFiles to set
+	 */
+	public void setDeleteRemoteFiles(boolean deleteRemoteFiles) {
+		this.deleteRemoteFiles = deleteRemoteFiles;
 	}    
 }
 
