@@ -32,9 +32,6 @@
 		</batch:step>
 		<batch:step id="AcctsPayableImp_moveFiles">
 			<batch:tasklet ref="processedFilesTasklet" />
-			<batch:listeners>
-				<batch:listener ref="stepExecutionListener" />
-			</batch:listeners>
 		</batch:step>		
 	</batch:job>
 
@@ -76,9 +73,6 @@
 		</batch:step>
 		<batch:step id="receiveOrder_moveFiles">
 			<batch:tasklet ref="processedFilesTasklet" />
-				<batch:listeners>
-					<batch:listener ref="stepExecutionListener" />
-				</batch:listeners>			
 		</batch:step>		
 	</batch:job>
 	
@@ -115,9 +109,6 @@
 		</batch:step>
 		<batch:step id="ClaimImport_moveFiles">
 			<batch:tasklet ref="processedFilesTasklet" />
-			<batch:listeners>
-				<batch:listener ref="stepExecutionListener" />
-			</batch:listeners>			
 		</batch:step>		
 	</batch:job>
 	
@@ -160,9 +151,6 @@
 		</batch:step>
 		<batch:step id="PartyImport_moveFiles">
 			<batch:tasklet ref="processedFilesTasklet" />
-			<batch:listeners>
-				<batch:listener ref="stepExecutionListener" />
-			</batch:listeners>			
 		</batch:step>
 	</batch:job>
 	

@@ -33,6 +33,7 @@ public class ClaimImportBatchWriter implements ItemWriter<Map<File, Object>> {
 	 */
 	public void write(List<? extends Map<File, Object>> items) throws Exception {
 		
+
 		logger.debug("INSIDE Writer");
 		if(items != null && !items.isEmpty()){
 				logger.info("There are items to be written with size: " + items.size());
@@ -51,6 +52,10 @@ public class ClaimImportBatchWriter implements ItemWriter<Map<File, Object>> {
 						MuleServiceFactory.getService(ClientClaimImportService.class).importClaim(claimImportDTO);
 						logger.info("After Claim Import Call : " + file.getName());
 						logger.info("File Name: " + file.getName());
+						if(stepExecutionListener.getJobExecutionCtx().get("processedFiles") != null 
+								&& !((List<File>)stepExecutionListener.getJobExecutionCtx().get("processedFiles")).isEmpty()) {
+							processedFiles = (List<File>)stepExecutionListener.getJobExecutionCtx().get("processedFiles");
+						}
 						processedFiles.add(file);
 					}
 					catch(Exception ex){
@@ -61,11 +66,13 @@ public class ClaimImportBatchWriter implements ItemWriter<Map<File, Object>> {
 					}
 				}
 				stepExecutionListener.getJobExecutionCtx().put("processedFiles", processedFiles);
+				logger.info("Processed File Size : " + processedFiles.size());
 
 		}else{
 			logger.info("There are no items to be written");
 		}
 		
-	}	
+	}
+	
 
 }

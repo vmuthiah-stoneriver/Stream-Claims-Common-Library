@@ -39,8 +39,8 @@ public class StepExecutionListenerCtxInjecter {
 	} 	
 	
 	public ExecutionContext getStepExecutionCtx()     
-	{         
-		return stepExecutionCtx;     
+	{        
+		return stepExecutionCtx;
 	}       
 	
 	public ExecutionContext getJobExecutionCtx()     
