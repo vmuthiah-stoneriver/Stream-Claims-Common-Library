@@ -71,6 +71,10 @@ public class OrderReturnBatchWriter implements ItemWriter<Map<File, Object>> {
 							MuleServiceFactory.getService(ClientDocumentService.class).createNewInboundAttachment(document);
 						}
 						logger.info("File Name: " + file.getName());
+						if(stepExecutionListener.getJobExecutionCtx().get("processedFiles") != null 
+								&& !((List<File>)stepExecutionListener.getJobExecutionCtx().get("processedFiles")).isEmpty()) {
+							processedFiles = (List<File>)stepExecutionListener.getJobExecutionCtx().get("processedFiles");
+						}						
 						processedFiles.add(file);						
 					}
 					catch(Exception ex){

@@ -50,6 +50,10 @@ public class PartyImportBatchWriter implements ItemWriter<Map<File, Object>> {
 					try{
 						MuleServiceFactory.getService(ClientPartyService.class).saveParty(party);
 						logger.info("File Name: " + file.getName());
+						if(stepExecutionListener.getJobExecutionCtx().get("processedFiles") != null 
+								&& !((List<File>)stepExecutionListener.getJobExecutionCtx().get("processedFiles")).isEmpty()) {
+							processedFiles = (List<File>)stepExecutionListener.getJobExecutionCtx().get("processedFiles");
+						}						
 						processedFiles.add(file);
 					}
 					catch(Exception ex){
