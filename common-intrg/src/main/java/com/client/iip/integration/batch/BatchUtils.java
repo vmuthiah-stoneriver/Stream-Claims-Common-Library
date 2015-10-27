@@ -37,7 +37,8 @@ public class BatchUtils {
 		batchLogDTO.setJobId(stepExec.getJobExecution().getId());
 		batchLogDTO.setStepId(stepExec.getId());
 		batchLogDTO.setDescription(message);
-		batchLogDTO.setRunDate(DateUtility.getSystemDateTime());
+		batchLogDTO.setRunDate(stepExec.getJobExecution().getJobInstance().getJobParameters().getDate(
+				BatchLogConstants.BATCH_PARAMETER_RUN_DATE, DateUtility.getSystemDateTime()));
 		BatchLogDetailDTO batchLogDetailDTO = new BatchLogDetailDTO();
 		batchLogDetailDTO.setCreateDate(DateUtility.getSystemDateTime());
 		batchLogDetailDTO.setMessage(message);
@@ -61,7 +62,8 @@ public class BatchUtils {
 		batch.setJobId(stepExec.getJobExecution().getId());
 		batch.setStepId(stepExec.getId());
 		batch.setDescription(message);
-		batch.setRunDate(DateUtility.getSystemDateTime());
+		batch.setRunDate(stepExec.getJobExecution().getJobInstance().getJobParameters().getDate(
+				BatchLogConstants.BATCH_PARAMETER_RUN_DATE, DateUtility.getSystemDateTime()));
 		StackTrace st = new StackTrace(exception);
 		BatchLogDetailDTO detail = new BatchLogDetailDTO();
 		detail.setCreateDate(DateUtility.getSystemDateTime());
@@ -69,6 +71,37 @@ public class BatchUtils {
 		batch.getBatchLogDetail().add(detail);				
 		MuleServiceFactory.getService(BatchLogService.class).saveBatchLog(batch);		
 	}
+	
+	/**
+	 * writes error into batch log.
+	 * @param stepExec
+	 * @param message string
+	 * @param exception exception details
+	 */
+	public static void writeIntoBatchLog(StepExecution stepExec, String agreementTypeCode, Long agreementId, 
+			String agreementSubTypeCode, Long agreementSubTypeId, String message,
+			Exception exception){
+		//writing an error into batch log
+		BatchLogDTO batch = new BatchLogDTO();
+		batch.setAgreementTypeCode(agreementTypeCode);
+		batch.setAgreementId(agreementId);
+		batch.setAgreementSubTypeCode(agreementSubTypeCode);
+		batch.setAgreementSubId(agreementSubTypeId);
+		batch.setBatchJobTypeCode(stepExec.getJobExecution().getJobInstance().getJobName());
+		batch.setBatchLogTypeCode(BatchLogConstants.BATCH_PROCESS_ERROR);
+		batch.setJobId(stepExec.getJobExecution().getId());
+		batch.setStepId(stepExec.getId());
+		batch.setDescription(message);
+		batch.setRunDate(stepExec.getJobExecution().getJobInstance().getJobParameters().getDate(
+				BatchLogConstants.BATCH_PARAMETER_RUN_DATE, DateUtility.getSystemDateTime()));
+		StackTrace st = new StackTrace(exception);
+		BatchLogDetailDTO detail = new BatchLogDetailDTO();
+		detail.setCreateDate(DateUtility.getSystemDateTime());
+		detail.setMessage(st.toString());
+		batch.getBatchLogDetail().add(detail);				
+		MuleServiceFactory.getService(BatchLogService.class).saveBatchLog(batch);		
+	}	
+	
 	
 	public static UserDetails getUserDetails(){
 		return MuleServiceFactory.getService(UserDetailsService.class).
