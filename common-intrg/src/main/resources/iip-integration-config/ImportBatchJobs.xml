@@ -45,7 +45,7 @@
     	</property>
 	</bean>
 	
-	<bean id="paymentReconBatchReader" class="com.client.iip.integration.batch.SynchronizedResourceItemReader" scope="step">
+	<bean id="paymentReconBatchReader" class="com.client.iip.integration.batch.SynchronizedResourceItemReader">
 		<property name="resources" value="file:${APImportFolder}/*.xml" />
 	</bean>
 	
@@ -76,12 +76,12 @@
 		</batch:step>		
 	</batch:job>
 	
-	<bean id="orderReturnBatchReader" class="com.client.iip.integration.batch.SynchronizedResourceItemReader" scope="step">
+	<bean id="orderReturnBatchReader" class="com.client.iip.integration.batch.SynchronizedResourceItemReader">
 		<property name="resources" value="file:${OrderReturnFolder}/*.xml" />
 	</bean>
 	
 	<bean id="orderReturnBatchProcessor"
-				  class="com.client.iip.integration.batch.XMLFileResourceItemProcessor" scope="prototype">
+				  class="com.client.iip.integration.batch.XMLFileResourceItemProcessor">
     	<property name="schemaFileName" value="xsd/OrderReturn.xsd" />
     	<property name="aliasFileList">
     		<list>
@@ -112,7 +112,7 @@
 		</batch:step>		
 	</batch:job>
 	
-	<bean id="claimImportBatchReader" class="com.client.iip.integration.batch.SynchronizedResourceItemReader" scope="step">
+	<bean id="claimImportBatchReader" class="com.client.iip.integration.batch.SynchronizedResourceItemReader">
 		<property name="resources" value="file:${ClaimImportFolder}/*.xml" />
 	</bean>
 	
@@ -154,7 +154,7 @@
 		</batch:step>
 	</batch:job>
 	
-	<bean id="partyImportBatchReader" class="com.client.iip.integration.batch.SynchronizedResourceItemReader" scope="step">
+	<bean id="partyImportBatchReader" class="com.client.iip.integration.batch.SynchronizedResourceItemReader">
 		<property name="resources" value="file:${PartyImportFolder}/*.xml" />
 	</bean>
 	

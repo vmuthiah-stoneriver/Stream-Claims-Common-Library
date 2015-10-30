@@ -189,6 +189,7 @@
 						Per Day
 						Physical Damage
 						Liability
+						General Aggregate
 					</xs:documentation>
 				</xs:annotation>
 			</xs:element>

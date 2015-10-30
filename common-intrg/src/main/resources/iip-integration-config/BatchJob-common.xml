@@ -17,6 +17,6 @@
 	</bean>
 	
 	<!-- File Cleanup Task -->
-	<bean id="processedFilesTasklet" class="com.client.iip.integration.batch.FileHandlerTasklet" scope="step"/>	
+	<bean id="processedFilesTasklet" class="com.client.iip.integration.batch.FileHandlerTasklet"/>	
   
 </beans>

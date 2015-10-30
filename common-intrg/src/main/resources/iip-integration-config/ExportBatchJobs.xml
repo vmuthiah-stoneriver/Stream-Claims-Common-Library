@@ -32,11 +32,11 @@
 		</batch:step>
 	</batch:job>
 	
-	<bean id="batchExportReader" class="com.client.iip.integration.batch.BatchExportReader" scope="step" />
+	<bean id="batchExportReader" class="com.client.iip.integration.batch.BatchExportReader" />
 	
-   	<bean id="paymentExportProcessor" class="com.client.iip.integration.batch.PaymentExportProcessor" scope="step" />
+   	<bean id="paymentExportProcessor" class="com.client.iip.integration.batch.PaymentExportProcessor" />
    	
-	<bean id="paymentExportWriter" class="com.client.iip.integration.batch.XMLFileResourceItemWriter" scope="step">
+	<bean id="paymentExportWriter" class="com.client.iip.integration.batch.XMLFileResourceItemWriter">
     	<property name="exportFolderPath" value="${APExportFolder}" />
     	<property name="aliasFileList">
     		<list>
@@ -64,12 +64,12 @@
 		</batch:step>
 	</batch:job>
 	
-	<bean id="vendorExportReader" class="com.client.iip.integration.batch.VendorExportReader" scope="step" />
+	<bean id="vendorExportReader" class="com.client.iip.integration.batch.VendorExportReader" />
 	
-	<bean id="vendorExportProcessor" class="com.client.iip.integration.batch.VendorExportProcessor" scope="step" />
+	<bean id="vendorExportProcessor" class="com.client.iip.integration.batch.VendorExportProcessor" />
 
 	
-	<bean id="vendorExportWriter" class="com.client.iip.integration.batch.XMLFileResourceItemWriter" scope="step">
+	<bean id="vendorExportWriter" class="com.client.iip.integration.batch.XMLFileResourceItemWriter">
     	<property name="exportFolderPath" value="${VendorExportFolder}" />
     	<property name="aliasFileList">
     		<list>
@@ -107,10 +107,10 @@
 		</property>
 	</bean>
 	
-	<bean id="claimExportProcessor" class="com.client.iip.integration.batch.ClaimExportProcessor" scope="step" />
+	<bean id="claimExportProcessor" class="com.client.iip.integration.batch.ClaimExportProcessor" />
 
 	
-	<bean id="claimExportWriter" class="com.client.iip.integration.batch.XMLFileResourceItemWriter" scope="step">
+	<bean id="claimExportWriter" class="com.client.iip.integration.batch.XMLFileResourceItemWriter">
     	<property name="exportFolderPath" value="${ClaimExportFolder}" />
     	<property name="aliasFileList">
     		<list>
@@ -139,9 +139,9 @@
 		</batch:step>
 	</batch:job>
 	
-	<bean id="glExportBatchProcessor" class="com.client.iip.integration.batch.GeneralLedgerExportProcessor" scope="step" />
+	<bean id="glExportBatchProcessor" class="com.client.iip.integration.batch.GeneralLedgerExportProcessor" />
 	
-	<bean id="glExportBatchWriter" class="com.client.iip.integration.batch.XMLFileResourceItemWriter" scope="step">
+	<bean id="glExportBatchWriter" class="com.client.iip.integration.batch.XMLFileResourceItemWriter">
     	<property name="exportFolderPath" value="${GLExportFolder}" />
     	<property name="aliasFileList">
     		<list>
