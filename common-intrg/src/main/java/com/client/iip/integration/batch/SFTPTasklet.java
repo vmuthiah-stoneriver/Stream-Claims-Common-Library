@@ -7,6 +7,7 @@ import java.util.Date;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
+import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.batch.core.StepContribution;
@@ -39,9 +40,27 @@ public class SFTPTasklet extends ResourcesItemReader implements Tasklet {
 	
 	private int port;	
 
-	private String remoteDirectory = null;
-
+	private String remoteDirectory;
 	
+    private String privateKeyPath;
+    
+    private String privateKeyPassphrase;	
+
+
+	/**
+	 * @param privateKeyPath the privateKeyPath to set
+	 */
+	public void setPrivateKeyPath(String privateKeyPath) {
+		this.privateKeyPath = privateKeyPath;
+	}
+
+	/**
+	 * @param privateKeyPassphrase the privateKeyPassphrase to set
+	 */
+	public void setPrivateKeyPassphrase(String privateKeyPassphrase) {
+		this.privateKeyPassphrase = privateKeyPassphrase;
+	}
+
 	public void setLocalDirectory(Resource[] resources) {
 		super.setResources(resources);
 	}
@@ -78,7 +97,7 @@ public class SFTPTasklet extends ResourcesItemReader implements Tasklet {
 					/*Message message = MessageBuilder.withPayload(file).build();
 				    sftpChannel.send(message);*/
 					if(channel == null ){
-						setupSFTPChannel();
+						channel = setupSFTPChannel();
 					}		            
 
 		            FileInputStream fileInput = new FileInputStream(file);
@@ -108,18 +127,31 @@ public class SFTPTasklet extends ResourcesItemReader implements Tasklet {
 		 }
 	 }
 	 
-	 private void setupSFTPChannel() throws Exception{
+	 public ChannelSftp setupSFTPChannel() throws Exception{
 		 
-			JSch jsch = new JSch();			
-            Session session = jsch.getSession(user,host,port);
-            session.setPassword(password);
+	        JSch jsch = new JSch();
+	        Session session;
+
+	        logger.debug("Setting up session: " + user + ":" + host + ":" + port);
+
+	        if (StringUtils.isNotEmpty(privateKeyPath) && StringUtils.isNotEmpty(privateKeyPassphrase) 
+	        		&& !StringUtils.contains(privateKeyPath, "dummy")) {
+	            logger.debug("Adding Security Identity: " + privateKeyPath + ":" + privateKeyPassphrase);
+	            jsch.addIdentity(privateKeyPath, privateKeyPassphrase);
+	            session = jsch.getSession(user, host, port);
+	        } else {
+	            session = jsch.getSession(user, host, port);
+	            session.setPassword(password);
+	        }
+            
             java.util.Properties config = new java.util.Properties();
             config.put("StrictHostKeyChecking", "no");
             session.setConfig(config);
             session.connect();
             channel = (ChannelSftp)session.openChannel("sftp");            
             channel.connect();            
-            channel.cd(remoteDirectory);		 
+            channel.cd(remoteDirectory);
+            return channel;
 	 }
  
 	 public void backupFile(File file) throws Exception{
