@@ -13,6 +13,7 @@ import org.springframework.batch.core.scope.context.ChunkContext;
 import org.springframework.batch.core.step.tasklet.Tasklet;
 import org.springframework.batch.repeat.RepeatStatus;
 import org.springframework.beans.factory.InitializingBean;
+import org.springframework.core.io.Resource;
 import org.springframework.integration.file.filters.SimplePatternFileListFilter;
 import org.springframework.integration.file.remote.synchronizer.AbstractInboundFileSynchronizer;
 import org.springframework.integration.sftp.filters.SftpSimplePatternFileListFilter;
@@ -315,7 +316,24 @@ public class SFTPGetRemoteFilesTasklet implements Tasklet, InitializingBean
 	 */
 	public void setDeleteRemoteFiles(boolean deleteRemoteFiles) {
 		this.deleteRemoteFiles = deleteRemoteFiles;
-	}    
+	}
+	
+	/**
+	 * Set Security Key location.
+	 * @param privateKey
+	 */	
+	public void setprivateKeyPath(Resource privateKeyLocation) throws Exception{
+		sessionFactory.setPrivateKey(privateKeyLocation.getURI().getPath().equals("/default")?null:privateKeyLocation);
+	}
+	
+	/**
+	 * Set key password
+	 * @param password
+	 */
+	public void setPrivateKeyPassphrase(String password){
+		sessionFactory.setPrivateKeyPassphrase(password);
+	}
+
 }
 
 

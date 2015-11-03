@@ -50,15 +50,15 @@ public class SFTPTasklet extends ResourcesItemReader implements Tasklet {
 	/**
 	 * @param privateKeyPath the privateKeyPath to set
 	 */
-	public void setPrivateKeyPath(String privateKeyPath) {
-		this.privateKeyPath = privateKeyPath;
+	public void setPrivateKeyPath(String _privateKeyPath) {
+		this.privateKeyPath = _privateKeyPath.equals("/default")?"":_privateKeyPath;
 	}
 
 	/**
 	 * @param privateKeyPassphrase the privateKeyPassphrase to set
 	 */
-	public void setPrivateKeyPassphrase(String privateKeyPassphrase) {
-		this.privateKeyPassphrase = privateKeyPassphrase;
+	public void setPrivateKeyPassphrase(String _privateKeyPassphrase) {
+		this.privateKeyPassphrase = _privateKeyPassphrase;
 	}
 
 	public void setLocalDirectory(Resource[] resources) {
@@ -134,8 +134,7 @@ public class SFTPTasklet extends ResourcesItemReader implements Tasklet {
 
 	        logger.debug("Setting up session: " + user + ":" + host + ":" + port);
 
-	        if (StringUtils.isNotEmpty(privateKeyPath) && StringUtils.isNotEmpty(privateKeyPassphrase) 
-	        		&& !StringUtils.contains(privateKeyPath, "dummy")) {
+	        if (StringUtils.isNotEmpty(privateKeyPath) && StringUtils.isNotEmpty(privateKeyPassphrase)) {
 	            logger.debug("Adding Security Identity: " + privateKeyPath + ":" + privateKeyPassphrase);
 	            jsch.addIdentity(privateKeyPath, privateKeyPassphrase);
 	            session = jsch.getSession(user, host, port);
