@@ -3,6 +3,7 @@ package com.client.iip.integration.batch;
 import java.io.File;
 import java.io.FileInputStream;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Date;
 
 import org.apache.commons.io.FileUtils;
@@ -11,11 +12,14 @@ import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.batch.core.StepContribution;
+import org.springframework.batch.core.StepExecution;
+import org.springframework.batch.core.annotation.BeforeStep;
 import org.springframework.batch.core.scope.context.ChunkContext;
 import org.springframework.batch.core.step.tasklet.Tasklet;
 import org.springframework.batch.item.file.ResourcesItemReader;
 import org.springframework.batch.repeat.RepeatStatus;
 import org.springframework.core.io.Resource;
+import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.stereotype.Component;
 
 import com.jcraft.jsch.ChannelSftp;
@@ -26,6 +30,8 @@ import com.jcraft.jsch.Session;
 public class SFTPTasklet extends ResourcesItemReader implements Tasklet {
 	
 	private static final Logger logger = LoggerFactory.getLogger(SFTPTasklet.class);
+	
+	private static final String ENABLE_SECURED_KEY = "enableSecuredKeyAuth";
 	
 	@javax.annotation.Resource(name = "stepExecutionListener")
 	private StepExecutionListenerCtxInjecter stepExecutionListener;
@@ -44,14 +50,26 @@ public class SFTPTasklet extends ResourcesItemReader implements Tasklet {
 	
     private String privateKeyPath;
     
-    private String privateKeyPassphrase;	
+    private String privateKeyPassphrase;
+    
+    private String filePath;
+
+    
+	@BeforeStep
+	public void beforeStep(StepExecution _stepExecution) throws Exception 
+	{
+		PathMatchingResourcePatternResolver filePattern = new PathMatchingResourcePatternResolver();
+		Resource[] resources = filePattern.getResources(this.filePath);
+		super.setResources(Arrays.asList(resources).toArray(new Resource[resources.length]));	
+	}
 
 
 	/**
 	 * @param privateKeyPath the privateKeyPath to set
 	 */
 	public void setPrivateKeyPath(String _privateKeyPath) {
-		this.privateKeyPath = _privateKeyPath.equals("/default")?"":_privateKeyPath;
+		this.privateKeyPath = System.getProperty(ENABLE_SECURED_KEY) != null 
+								&& System.getProperty(ENABLE_SECURED_KEY).equals("true")?_privateKeyPath:"";
 	}
 
 	/**
@@ -61,8 +79,8 @@ public class SFTPTasklet extends ResourcesItemReader implements Tasklet {
 		this.privateKeyPassphrase = _privateKeyPassphrase;
 	}
 
-	public void setLocalDirectory(Resource[] resources) {
-		super.setResources(resources);
+	public void setLocalDirectory(String _filePath) throws Exception{
+		this.filePath = _filePath;
 	}
 	
 	public void setRemoteDirectory(String _remoteDir) {
@@ -112,7 +130,7 @@ public class SFTPTasklet extends ResourcesItemReader implements Tasklet {
 				}
 				res = super.read();
 			}
-			
+
 			return RepeatStatus.FINISHED;
 		 }catch(Exception ex){
 			logger.error("File Transmission Failed :" + file==null?"":file.getName(), ex);

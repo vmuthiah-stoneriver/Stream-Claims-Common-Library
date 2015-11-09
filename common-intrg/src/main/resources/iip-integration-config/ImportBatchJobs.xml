@@ -36,7 +36,7 @@
 	</batch:job>
 
 	<bean id="paymentReconBatchProcessor"
-				  class="com.client.iip.integration.batch.XMLFileResourceItemProcessor" scope="prototype">
+				  class="com.client.iip.integration.batch.XMLFileResourceItemProcessor">
     	<property name="schemaFileName" value="xsd/DisbursementImport.xsd" />
     	<property name="aliasFileList">
     		<list>
@@ -117,7 +117,7 @@
 	</bean>
 	
 	<bean id="claimImportBatchProcessor"
-				  class="com.client.iip.integration.batch.XMLFileResourceItemProcessor" scope="prototype">
+				  class="com.client.iip.integration.batch.XMLFileResourceItemProcessor">
     	<property name="schemaFileName" value="xsd/ClaimImport.xsd" />
     	<property name="aliasFileList">
     		<list>
@@ -159,7 +159,7 @@
 	</bean>
 	
 	<bean id="partyImportBatchProcessor"
-				  class="com.client.iip.integration.batch.XMLFileResourceItemProcessor" scope="prototype">
+				  class="com.client.iip.integration.batch.XMLFileResourceItemProcessor">
     	<property name="schemaFileName" value="xsd/Party.xsd" />
     	<property name="aliasFileList">
     		<list>

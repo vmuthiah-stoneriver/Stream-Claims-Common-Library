@@ -6,12 +6,15 @@ import java.util.Comparator;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.springframework.batch.core.StepExecution;
+import org.springframework.batch.core.annotation.BeforeStep;
 import org.springframework.batch.item.ExecutionContext;
 import org.springframework.batch.item.ItemStreamException;
 import org.springframework.batch.item.ParseException;
 import org.springframework.batch.item.UnexpectedInputException;
 import org.springframework.batch.item.file.ResourcesItemReader;
 import org.springframework.core.io.Resource;
+import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -24,6 +27,17 @@ public class SynchronizedResourceItemReader extends
 	private static final Log logger = LogFactory.getLog(SynchronizedResourceItemReader.class);
 	 
 	private String xsdFileName = null;
+	
+	private String filePath;
+	
+	@BeforeStep
+	public void beforeStep(StepExecution _stepExecution) throws Exception 
+	{
+		PathMatchingResourcePatternResolver filePattern = new PathMatchingResourcePatternResolver();
+		Resource[] resources = filePattern.getResources(this.filePath);
+		Arrays.sort(resources, comparator);
+		super.setResources(Arrays.asList(resources).toArray(new Resource[resources.length]));	
+	}	
 	 
 	public void setSchemaFileName(String _xsdFileName){
 		xsdFileName = _xsdFileName;
@@ -46,9 +60,8 @@ public class SynchronizedResourceItemReader extends
 	 * 
 	 * @param resources the resources
 	 */
-	public void setResources(Resource[] resources) {
-		Arrays.sort(resources, comparator);			
-		super.setResources(resources);
+	public void setResources(String _filePath) throws Exception{
+		this.filePath = _filePath;
 	}	 
 	
 	 @Override

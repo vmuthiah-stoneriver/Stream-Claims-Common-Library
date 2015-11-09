@@ -24,6 +24,8 @@ import org.springframework.util.Assert;
 public class SFTPGetRemoteFilesTasklet implements Tasklet, InitializingBean
 {
     private Logger logger = LoggerFactory.getLogger(SFTPGetRemoteFilesTasklet.class);
+    
+    private static final String ENABLE_SECURED_KEY = "enableSecuredKeyAuth";
 
     private File localDirectory;
 
@@ -46,6 +48,7 @@ public class SFTPGetRemoteFilesTasklet implements Tasklet, InitializingBean
     private long retryIntervalMilliseconds = 300000;
 
     private boolean retryIfNotFound = false;
+    
 
 
     /* (non-Javadoc)
@@ -322,8 +325,9 @@ public class SFTPGetRemoteFilesTasklet implements Tasklet, InitializingBean
 	 * Set Security Key location.
 	 * @param privateKey
 	 */	
-	public void setprivateKeyPath(Resource privateKeyLocation) throws Exception{
-		sessionFactory.setPrivateKey(privateKeyLocation.getURI().getPath().equals("/default")?null:privateKeyLocation);
+	public void setPrivateKeyPath(Resource privateKeyLocation) throws Exception{
+		sessionFactory.setPrivateKey(System.getProperty(ENABLE_SECURED_KEY) != null 
+									&& System.getProperty(ENABLE_SECURED_KEY).equals("true")?privateKeyLocation:null);
 	}
 	
 	/**
