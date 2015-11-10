@@ -18,6 +18,7 @@ public class BatchExportReader implements ItemReader<DataTransferObject> {
 			startNewBatchProcess = false;
 			return new DataTransferObject();
 		}
+		startNewBatchProcess = true;
 		return null;
 	}	
 

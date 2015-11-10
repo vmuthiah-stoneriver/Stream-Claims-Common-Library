@@ -55,6 +55,9 @@ public class PaymentExportProcessor implements ItemProcessor<DataTransferObject,
 			//Set step runtime execution stats.
 			stepExecution.setWriteCount(results.getPaymentList()==null?0:results.getPaymentList().size());
 			
+			//set results to null when there is no records to export
+			if(results.getTotalRecordCount().intValue() == 0) results = null;
+			
 			return results;
 			
 		}catch(Exception ex){
