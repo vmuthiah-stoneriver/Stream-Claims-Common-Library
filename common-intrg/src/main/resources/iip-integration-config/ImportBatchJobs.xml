@@ -26,6 +26,7 @@
 				</batch:chunk>
 				<batch:listeners>
 					<batch:listener ref="stepExecutionListener" />
+					<batch:listener ref="paymentReconBatchReader" />
 					<batch:listener ref="skipListener" on-skip-in-write-method="onSkipInWrite"/>
 				</batch:listeners>
 			</batch:tasklet>
@@ -67,6 +68,7 @@
 				</batch:chunk>
 				<batch:listeners>
 					<batch:listener ref="stepExecutionListener" />
+					<batch:listener ref="orderReturnBatchReader" />
 					<batch:listener ref="skipListener" on-skip-in-write-method="onSkipInWrite"/>
 				</batch:listeners>
 			</batch:tasklet>
@@ -104,6 +106,7 @@
 					writer="claimImportBatchWriter" commit-interval="1" />
 				<batch:listeners>
 					<batch:listener ref="stepExecutionListener" />
+					<batch:listener ref="claimImportBatchReader" />
 				</batch:listeners>				
 			</batch:tasklet>
 		</batch:step>
@@ -145,6 +148,7 @@
 				</batch:chunk>
 				<batch:listeners>
 					<batch:listener ref="stepExecutionListener" />
+					<batch:listener ref="partyImportBatchReader" />
 					<batch:listener ref="skipListener" on-skip-in-write-method="onSkipInWrite"/>
 				</batch:listeners>				
 			</batch:tasklet>

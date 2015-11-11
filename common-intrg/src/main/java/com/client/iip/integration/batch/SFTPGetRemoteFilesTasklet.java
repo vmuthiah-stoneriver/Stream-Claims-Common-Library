@@ -35,7 +35,7 @@ public class SFTPGetRemoteFilesTasklet implements Tasklet, InitializingBean
 
     private boolean autoCreateLocalDirectory = true;
 
-    private boolean deleteLocalFiles = true;
+    private boolean deleteLocalFiles = false;
    
     private boolean deleteRemoteFiles = false;
 
@@ -110,10 +110,8 @@ public class SFTPGetRemoteFilesTasklet implements Tasklet, InitializingBean
     public RepeatStatus execute(StepContribution contribution, ChunkContext chunkContext) throws Exception
     {
     	deleteLocalFiles();
-    	//If deleteLocalFiles is false then do not synchronize again, The processed files would be moved by the FileHandlerTasklet.
-    	if(deleteLocalFiles){
-    		ftpInboundFileSynchronizer.synchronizeToLocalDirectory(localDirectory);
-    	}
+    	
+    	ftpInboundFileSynchronizer.synchronizeToLocalDirectory(localDirectory);
 
         if (retryIfNotFound)
         {
