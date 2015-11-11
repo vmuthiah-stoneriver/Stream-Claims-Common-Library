@@ -313,7 +313,7 @@ public class ClientImportPaymentHelper extends ImportPaymentHelper {
 	private void writeIntoBatchLog(String message) {
 		BatchLogDTO batchLogDTO = new BatchLogDTO();
 
-		batchLogDTO.setBatchLogTypeCode(BatchLogConstants.BATCH_PROCESS_INFO);
+		batchLogDTO.setBatchLogTypeCode(BatchLogConstants.BATCH_PROCESS_ERROR);
 		batchLogDTO
 				.setAgreementTypeCode("clm");
 		batchLogDTO.setBatchJobTypeCode("AcctsPayableImp");

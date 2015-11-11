@@ -36,7 +36,8 @@ public class SynchronizedResourceItemReader extends
 		PathMatchingResourcePatternResolver filePattern = new PathMatchingResourcePatternResolver();
 		Resource[] resources = filePattern.getResources(this.filePath);
 		Arrays.sort(resources, comparator);
-		super.setResources(Arrays.asList(resources).toArray(new Resource[resources.length]));	
+		open(_stepExecution.getExecutionContext());
+		setResources(Arrays.asList(resources).toArray(new Resource[resources.length]));	
 	}	
 	 
 	public void setSchemaFileName(String _xsdFileName){

@@ -60,7 +60,8 @@ public class SFTPTasklet extends ResourcesItemReader implements Tasklet {
 	{
 		PathMatchingResourcePatternResolver filePattern = new PathMatchingResourcePatternResolver();
 		Resource[] resources = filePattern.getResources(this.filePath);
-		super.setResources(Arrays.asList(resources).toArray(new Resource[resources.length]));	
+		open(_stepExecution.getExecutionContext());
+		setResources(Arrays.asList(resources).toArray(new Resource[resources.length]));
 	}
 
 
@@ -109,15 +110,13 @@ public class SFTPTasklet extends ResourcesItemReader implements Tasklet {
 		 File file = null;
 		 try{
 			 int writeCount = 0;
+			 channel = setupSFTPChannel();
 			 Resource res = super.read();
 			 while(res != null) {
 				file = res.getFile();
 				if (file.exists()) {
 					/*Message message = MessageBuilder.withPayload(file).build();
 				    sftpChannel.send(message);*/
-					if(channel == null ){
-						channel = setupSFTPChannel();
-					}		            
 
 		            FileInputStream fileInput = new FileInputStream(file);
 		            
