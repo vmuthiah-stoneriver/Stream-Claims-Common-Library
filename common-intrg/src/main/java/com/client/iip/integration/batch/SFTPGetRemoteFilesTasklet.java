@@ -109,13 +109,14 @@ public class SFTPGetRemoteFilesTasklet implements Tasklet, InitializingBean
      */
     public RepeatStatus execute(StepContribution contribution, ChunkContext chunkContext) throws Exception
     {
+    	SimplePatternFileListFilter filter = new SimplePatternFileListFilter(fileNamePattern);
+    	
     	deleteLocalFiles();
     	
     	ftpInboundFileSynchronizer.synchronizeToLocalDirectory(localDirectory);
 
         if (retryIfNotFound)
-        {
-            SimplePatternFileListFilter filter = new SimplePatternFileListFilter(fileNamePattern);
+        {            
             int attemptCount = 1;
             while (filter.filterFiles(localDirectory.listFiles()).size() == 0 && attemptCount <= downloadFileAttempts)
             {
@@ -130,6 +131,11 @@ public class SFTPGetRemoteFilesTasklet implements Tasklet, InitializingBean
                 throw new FileNotFoundException("Could not find remote file(s) matching " + fileNamePattern + " after " + downloadFileAttempts + " attempts.");
             }
         }
+        int fileCount = filter.filterFiles(localDirectory.listFiles()).size();
+        logger.info(" localDirectory File Count : " + fileCount);
+  		//Set read/write count.
+	  	chunkContext.getStepContext().getStepExecution().setReadCount(fileCount);
+ 		chunkContext.getStepContext().getStepExecution().setWriteCount(fileCount);        
 
         return null;
     }

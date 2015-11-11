@@ -34,7 +34,7 @@ public class PaymentReconBatchWriter implements ItemWriter<Map<File, Object>> {
 	public void write(List<? extends Map<File, Object>> items) throws Exception {
 		
 		logger.debug("INSIDE Writer");
-		try{
+
 			if(items != null && !items.isEmpty()){
 					logger.info("There are items to be written with size: " + items.size());
 	
@@ -69,12 +69,7 @@ public class PaymentReconBatchWriter implements ItemWriter<Map<File, Object>> {
 			}else{
 				logger.info("There are no items to be written");
 			}
-		}catch(Exception ex){
-			logger.error("PaymentReconBatchWriter Failure", ex);
-			//BatchUtils.writeIntoBatchLog(stepExecutionListener.getStepExecution(), "clm", "Resource write Failure : " + ex.toString());
-			throw new Exception("PaymentReconBatchWriter Failed : ", ex);				
-		}
-		
+				
 	}	
 	
 }

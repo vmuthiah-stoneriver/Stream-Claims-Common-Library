@@ -41,9 +41,11 @@ public class GeneralLedgerExportProcessor implements ItemProcessor<DataTransferO
 
 			logger.info("Number of GL exported successfuly = {}", results.size());
 			
-			//Set step runtime execution stats.
-			stepExecution.setReadCount(results.size());
-			stepExecution.setWriteCount(results.size());
+			//Set step runtime execution stats.(Dummy Reader size is added to context count, subtract one from it)
+			stepExecution.setReadCount(results.size() - 1);
+			stepExecution.setWriteCount(results.size()==0?results.size():results.size()-1);
+			//Set to null to suppress dummy export file.
+			if(results.size() == 0) results = null;
 		}catch(Exception ex){
 			logger.error("Failure when processing GLExport", ex);
 			BatchUtils.writeIntoBatchLog(stepExecution, "clm", "GLExport processing Failure : " , ex);

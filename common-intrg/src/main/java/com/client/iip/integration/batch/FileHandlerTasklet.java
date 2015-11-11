@@ -34,7 +34,7 @@ public class FileHandlerTasklet implements Tasklet {
 		@Override
 		public RepeatStatus execute(StepContribution contribution,
 				ChunkContext chunkContext) throws Exception {
-			try{
+		try{
 			int writeCount = 0;
 			//Iterate through the Sucessfully processed Files and move to bak folder
 			List<File> processedFiles = (List<File>) stepExecutionListener.getJobExecutionCtx().get("processedFiles");
@@ -58,8 +58,10 @@ public class FileHandlerTasklet implements Tasklet {
 							newFile = new File(destDir + File.separator + FilenameUtils.getBaseName(oldFile.getName()) + "_" + formattedDate + ".processed");
 				        }
 			          FileUtils.moveFile(oldFile, newFile);
-			  		//Set write count.
-			  		chunkContext.getStepContext().getStepExecution().setWriteCount(++writeCount);
+			  		//Set read/write count.
+			         ++writeCount;
+				  	chunkContext.getStepContext().getStepExecution().setReadCount(writeCount);
+			  		chunkContext.getStepContext().getStepExecution().setWriteCount(writeCount);
 				}
 				//Clear the list once the files are moved.
 				processedFiles.clear();
@@ -87,8 +89,10 @@ public class FileHandlerTasklet implements Tasklet {
 						newFile = new File(destDir + File.separator + FilenameUtils.getBaseName(oldFile.getName()) + "_" + formattedDate + ".processed");
 			        }
 			        FileUtils.moveFile(oldFile, newFile);
-				  	//Set write count.
-				  	chunkContext.getStepContext().getStepExecution().setWriteCount(++writeCount);				          
+			  		//Set read/write count.
+			         ++writeCount;
+				  	chunkContext.getStepContext().getStepExecution().setReadCount(writeCount);
+			  		chunkContext.getStepContext().getStepExecution().setWriteCount(writeCount);			          
 				}
 				
 			}

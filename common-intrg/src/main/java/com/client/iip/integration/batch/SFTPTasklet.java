@@ -108,8 +108,9 @@ public class SFTPTasklet extends ResourcesItemReader implements Tasklet {
 	 public RepeatStatus execute(StepContribution contribution, ChunkContext chunkContext) throws Exception {
 		 File file = null;
 		 try{
-			Resource res = super.read();
-			while(res != null) {
+			 int writeCount = 0;
+			 Resource res = super.read();
+			 while(res != null) {
 				file = res.getFile();
 				if (file.exists()) {
 					/*Message message = MessageBuilder.withPayload(file).build();
@@ -125,12 +126,15 @@ public class SFTPTasklet extends ResourcesItemReader implements Tasklet {
 		            fileInput.close();
 				    //If sucessful then move the file to the bak folder
 				    backupFile(file);
+			  		//Set read/write count.
+			         ++writeCount;
+				  	chunkContext.getStepContext().getStepExecution().setReadCount(writeCount);
+			  		chunkContext.getStepContext().getStepExecution().setWriteCount(writeCount);				    
 				} else {
 				  logger.error("File does not exist.");
 				}
 				res = super.read();
 			}
-
 			return RepeatStatus.FINISHED;
 		 }catch(Exception ex){
 			logger.error("File Transmission Failed :" + file==null?"":file.getName(), ex);

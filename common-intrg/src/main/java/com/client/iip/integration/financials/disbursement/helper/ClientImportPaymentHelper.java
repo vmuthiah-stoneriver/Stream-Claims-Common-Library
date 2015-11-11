@@ -32,6 +32,8 @@ import com.stoneriver.iip.entconfig.batch.BatchLogConstants;
 import com.stoneriver.iip.entconfig.batch.BatchLogDTO;
 import com.stoneriver.iip.entconfig.batch.BatchLogDetailDTO;
 import com.stoneriver.iip.entconfig.batch.BatchLogService;
+import com.stoneriver.iip.entconfig.date.BusinessDateType;
+import com.stoneriver.iip.entconfig.date.DateService;
 
 /**
  * Helper class to import payment from external system.
@@ -316,7 +318,9 @@ public class ClientImportPaymentHelper extends ImportPaymentHelper {
 				.setAgreementTypeCode("clm");
 		batchLogDTO.setBatchJobTypeCode("AcctsPayableImp");
 		batchLogDTO.setDescription(message);
-
+		batchLogDTO.setRunDate(MuleServiceFactory
+				.getService(DateService.class).getBusinessDate(1L,
+						BusinessDateType.BUSINESS));
 		BatchLogDetailDTO batchLogDetailDTO = new BatchLogDetailDTO();
 		batchLogDetailDTO.setCreateDate(DateUtility.getSystemDateTime());
 		batchLogDetailDTO.setMessage(message);

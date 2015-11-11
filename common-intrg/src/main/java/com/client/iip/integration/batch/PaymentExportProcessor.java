@@ -49,8 +49,8 @@ public class PaymentExportProcessor implements ItemProcessor<DataTransferObject,
 
 			logger.info("Number of disbursements processed successfuly = {}", results.getTotalRecordCount());
 			
-			//Set step runtime execution stats.
-			stepExecution.setReadCount(results.getTotalRecordCount().intValue());
+			//Set step runtime execution stats.(Dummy Reader size is added to context count, subtract one from it)
+			stepExecution.setReadCount(results.getTotalRecordCount().intValue() - 1);
 			
 			//Set step runtime execution stats.
 			stepExecution.setWriteCount(results.getPaymentList()==null?0:results.getPaymentList().size());
