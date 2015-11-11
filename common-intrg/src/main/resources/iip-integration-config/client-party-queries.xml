@@ -818,7 +818,7 @@
                  AND ED.AGRE_SUBTYP_CD IS NULL
                  AND ED.EVNT_DATA_DTM &gt;= :eventStartDate
                  AND ED.EVNT_DATA_DTM &lt;= :eventEndDate
-                 AND ED.EVNT_TYP_CD IN (:partyEventsFilter) ORDER BY ED.EVNT_DATA_DTM DESC)
+                 AND ED.EVNT_TYP_CD IN (:partyEventsFilter))
 				</iipda:fragment-sql>
 			</iipda:sql-fragment>			
 

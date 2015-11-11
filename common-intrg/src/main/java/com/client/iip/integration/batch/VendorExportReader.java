@@ -28,6 +28,7 @@ public class VendorExportReader implements ItemReader<ClientPartySearchResult> {
 	private static final Logger logger = LoggerFactory.getLogger(VendorExportReader.class);
 	
 	private static final String MAX_VENDOR_RESULTS_SYSTEM_OPTION_CODE = "mvrc";
+	private static final String MAX_SEARCH_RESULTS_SYSTEM_OPTION_CODE = "mprc";
 	
 	private Collection<ClientPartySearchResult> vendorList = null;
 	
@@ -59,13 +60,23 @@ public class VendorExportReader implements ItemReader<ClientPartySearchResult> {
 	@Transactional(propagation = Propagation.REQUIRED)
 	public synchronized ClientPartySearchResult read() throws Exception {
 		logger.debug("In VendorExportReader read()");
+		SystemOptionAssociationDTO option = null;
 		//retrieve accounts list for next company only if accounts collection is null
 		if(vendorList==null || this.startNewBatchProcess){
-			SystemOptionAssociationDTO option = MuleServiceFactory.getService(
+			try{
+				option = MuleServiceFactory.getService(
 					SystemOptionService.class).retrieveSystemOptionValue(
 							MAX_VENDOR_RESULTS_SYSTEM_OPTION_CODE);
+			}catch(Exception ex){
+				//Fetch from max customer search threshold
+				option = MuleServiceFactory.getService(
+						SystemOptionService.class).retrieveSystemOptionValue(
+								MAX_SEARCH_RESULTS_SYSTEM_OPTION_CODE);			
+			}
+			//Default to 500 if not configured.
+			int maxResults = Integer.valueOf(option==null?"500":option.getStringValue());
 			
-			int maxResults = Integer.valueOf(option.getStringValue());
+			//int maxResults = Integer.valueOf(option.getStringValue());
 			
 			//Obtain All Party Events
 			Collection<String> partyEvents = new ArrayList<String>();
