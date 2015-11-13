@@ -6,6 +6,7 @@ package com.client.iip.integration.core.util;
  * XSL Extension for Generic translations and stream code lookup.
  */
 
+import java.text.SimpleDateFormat;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -240,7 +241,26 @@ public class IIPXSLExtension {
 		}
 		
 		return endorsementName;			
-	}	
+	}
+	
+	public String getPolicyEndorsementDateByFormNumber(String formNumber, String formSuffix, String lobCode, String defaultDate){
+		String endorsementDate = "0";
+		Collection<ClmPlcyEndorsementFormCodeLookupDTO> endorsements = 
+				MuleServiceFactory.getService(ClientConfigService.class).retrieveClmPlcyEndorsementFormInfoByLOB(lobCode);
+		for(ClmPlcyEndorsementFormCodeLookupDTO endorsement: endorsements){
+			if(endorsement.getFormNumber().equals(formNumber) && endorsement.getFormSuffix().equals(formSuffix)){
+				endorsementDate = new SimpleDateFormat("yyyy-MM-dd").format(endorsement.getFormEditionDate());
+				break;
+			}
+		}
+		
+		if(endorsementDate.equals("0")){
+			endorsementDate = defaultDate;
+			logger.info("Policy Endorsement Not Mapped in Stream: " + formNumber + " Suffix: " + formSuffix);
+		}
+		
+		return endorsementDate;			
+	}
 	
 	public String isUsageContextAvailableForUsageType(String partyType, String usageType, String agreType){
 		

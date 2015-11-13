@@ -15,6 +15,9 @@ import com.fiserv.isd.iip.bc.financials.disbursement.external.PaymentMarkerInter
 import com.fiserv.isd.iip.bc.financials.disbursement.external.PaymentPayeeCheckDTO;
 import com.fiserv.isd.iip.bc.financials.disbursement.external.PaymentProcessor;
 import com.fiserv.isd.iip.bc.financials.disbursement.external.processor.BasePaymentProcessor;
+import com.fiserv.isd.iip.bc.party.PartyService;
+import com.fiserv.isd.iip.bc.party.api.PartyContextCriteria;
+import com.fiserv.isd.iip.bc.party.api.PartyInteractionChannelDataDTO;
 import com.fiserv.isd.iip.core.meta.annotation.Pojo;
 import com.fiserv.isd.iip.core.service.MuleServiceFactory;
 
@@ -86,10 +89,15 @@ public class ClientPaymentPayeeCheckProcessor extends BasePaymentProcessor imple
 			paymentPayeeCheckDTO.setAddressZip(disbursementAddressDTO.getPostalCode());
 			paymentPayeeCheckDTO.setCountry(disbursementAddressDTO.getCountry());
 		}
-		/*if (emailAddress != null) {
-			paymentPayeeCheckDTO.setEmail(emailAddress.getInteractionChannelTypeAddress());
+		//Set Email and Fax Number
+		PartyContextCriteria criteria = new PartyContextCriteria();
+		criteria.setPartyId(disbursementPartyDTO.getPartyIdPayeePrimary());
+		criteria.setContextTypeCode("party");
+		PartyInteractionChannelDataDTO channel = MuleServiceFactory.getService(PartyService.class).retrievePartyInteractionChannelForContext(criteria);
+		if (channel != null) {
+			paymentPayeeCheckDTO.setEmail(channel.getBusinessEmail()==null?channel.getPersonalEmail():channel.getBusinessEmail());
+			paymentPayeeCheckDTO.setFaxNumber(channel.getFax());
 		}
-		paymentPayeeCheckDTO.setFaxNumber(getFaxNo(phoneChannelDTO));*/
 		paymentPayeeCheckDTO.setCresPreference(DisbursementConstants.PAY_PAYEE_CHECK);
 		java.util.Collection<DisbursementPartyRoleVendorData> partyRoleVendors = MuleServiceFactory.getService(
 				DisbursementService.class).retrieveDisbursementPartyRoleVendorInfo(
