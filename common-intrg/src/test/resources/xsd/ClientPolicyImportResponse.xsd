@@ -189,6 +189,7 @@
 						Per Day
 						Physical Damage
 						Liability
+						General Aggregate
 					</xs:documentation>
 				</xs:annotation>
 			</xs:element>
@@ -392,7 +393,7 @@
 					<xs:documentation>External identifier.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="firstName" type="xs:string" minOccurs="1"
+			<xs:element name="firstName" type="xs:string" minOccurs="0"
 				maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>First name.</xs:documentation>
@@ -1491,6 +1492,18 @@
 					<xs:documentation>Vehicle unit.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element name="Limits" type="LimitList" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Limits</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Deductibles" type="DeductibleList"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Deductibles.</xs:documentation>
+				</xs:annotation>
+			</xs:element>			
 		</xs:sequence>
 	</xs:complexType>
 
@@ -1740,6 +1753,18 @@
 					</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element name="Limits" type="LimitList" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Limits</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Deductibles" type="DeductibleList"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Deductibles.</xs:documentation>
+				</xs:annotation>
+			</xs:element>			
 		</xs:sequence>
 	</xs:complexType>
 
@@ -1826,6 +1851,18 @@
 					<xs:documentation>Endorsements.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element name="Limits" type="LimitList" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Limits</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Deductibles" type="DeductibleList"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Deductibles.</xs:documentation>
+				</xs:annotation>
+			</xs:element>			
 		</xs:sequence>
 	</xs:complexType>
 

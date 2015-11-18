@@ -27,8 +27,6 @@ public class XSDValidationTransformer extends AbstractMessageTransformer {
 	
 	public static final String WSDL_OPERATION = "operationName";
 	
-	public static final String DEFAULT_PAYLOAD = "returnPayload";
-	
 	public static final String SOAP_CLIENT = System.getProperty("iip.interface.soap.client")==null?"DEFAULT":System.getProperty("iip.interface.soap.client");
 	
 	private Logger logger = LoggerFactory
@@ -42,15 +40,12 @@ public class XSDValidationTransformer extends AbstractMessageTransformer {
 		try {
 	        IIPThreadContext threadCtx = IIPThreadContextFactory.getIIPThreadContext();
 	        IIPDataContext context = threadCtx.getDataContext();		
-			synchronousResponse = (context == null || context.getAppData("ExternalInterfaceRequest")==null)?"false":(String)context.getAppData("ExternalInterfaceRequest");			
+			synchronousResponse = (context == null || context.getAppData("ExternalInterfaceRequest")==null)?"false":(String)context.getAppData("ExternalInterfaceRequest");
 			if(message.getPayload() != null && message.getPayload() instanceof String){
 				payload = message.getPayloadAsString();
 				// Check whether payload has system exception
 				if (payload.trim().length() > 0 && !payload.contains("iipCoreSystemException") 
 						&& !payload.contains("ErrorResponse")) {
-					//Load with default payload if available from session.
-					payload = message.getProperty(DEFAULT_PAYLOAD, PropertyScope.SESSION) == null?payload:(String)message.getProperty(DEFAULT_PAYLOAD, PropertyScope.SESSION);
-					logger.info("payload: {} ", payload);
 					String xsdFileName = (String) message.getOutboundProperty("xsd");
 					logger.info("xsdFileName using outbound property scope: {} ", xsdFileName==null?"NULL":xsdFileName);
 					if (StringUtils.isEmpty(xsdFileName)) {

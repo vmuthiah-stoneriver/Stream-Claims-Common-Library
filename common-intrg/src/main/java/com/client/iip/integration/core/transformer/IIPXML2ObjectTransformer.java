@@ -33,6 +33,8 @@ public class IIPXML2ObjectTransformer extends AbstractMessageTransformer {
 		
 	public static final String WSDL_OPERATION = "operationName";
 	
+	public static final String DEFAULT_PAYLOAD = "returnPayload";
+	
 	private IIPXStream xstream = null;
 
 	private List<String> aliasFileList;
@@ -102,7 +104,12 @@ public class IIPXML2ObjectTransformer extends AbstractMessageTransformer {
 					String payloadData = commType + " Payload : "+ payload;
 					MessageTracker.write(transTime);
 					MessageTracker.write(payloadData);
-				}				
+				}
+				//Load with default payload if available from session.
+				if (!payload.contains("iipCoreSystemException") && !payload.contains("ErrorResponse") 
+					&&  message.getProperty(DEFAULT_PAYLOAD, PropertyScope.SESSION) != null){
+					payload = (String)message.getProperty(DEFAULT_PAYLOAD, PropertyScope.SESSION);
+				}
 				return xstream.convert2Object(payload);
 			}
 
