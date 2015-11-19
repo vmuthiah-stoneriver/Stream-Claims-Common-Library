@@ -49,7 +49,7 @@ public class SFTPGetRemoteFilesTasklet implements Tasklet, InitializingBean
 
     private boolean retryIfNotFound = false;
     
-
+    
 
     /* (non-Javadoc)
      * @see org.springframework.beans.factory.InitializingBean#afterPropertiesSet()
@@ -112,6 +112,10 @@ public class SFTPGetRemoteFilesTasklet implements Tasklet, InitializingBean
     	SimplePatternFileListFilter filter = new SimplePatternFileListFilter(fileNamePattern);
     	
     	deleteLocalFiles();
+    	
+    	logger.info("SessionFactory: " + sessionFactory);
+    	
+    	logger.info("Session: " + sessionFactory.getSession());
     	
     	ftpInboundFileSynchronizer.synchronizeToLocalDirectory(localDirectory);
 
@@ -302,21 +306,6 @@ public class SFTPGetRemoteFilesTasklet implements Tasklet, InitializingBean
         this.sessionFactory = sessionFactory;
     }
     
-	public void setHost(String _host) {
-		sessionFactory.setHost(_host);
-	}
-	
-	public void setPort(String _port) {
-		sessionFactory.setPort(Integer.parseInt(_port));
-	}
-	
-	public void setUser(String _user) {
-		sessionFactory.setUser(_user);
-	}
-	
-	public void setPassword(String _password) {
-		sessionFactory.setPassword(_password);
-	}
 
 	/**
 	 * @param deleteRemoteFiles the deleteRemoteFiles to set
