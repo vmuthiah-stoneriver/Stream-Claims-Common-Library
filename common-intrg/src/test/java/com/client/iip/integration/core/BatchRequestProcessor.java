@@ -35,7 +35,7 @@ public class BatchRequestProcessor {
 		String responseString = null;
 		String strPollInterval = config.get("POLLING_FREQ").toString();
 		PostMethod method = new PostMethod(config.get("HOST").toString().trim() +"/iip/services/batchJobSubmit");
-		boolean runOnSystemDate = config.get("RUN_DATE").equals("BUSINESS")?false:true;
+		boolean runOnSystemDate = config.get("RUN_DATE").toString().equals("BUSINESS")?false:true;
 		//method.setRequestHeader("Authorization", "Basic c3lzYWRtaW46dGVzdA==");
 		method.addRequestHeader("TOKEN_ID", config.get("TOKEN_ID").toString());
 		method.addRequestHeader("TRACKING_ID", config.get("TRACKING_ID").toString());
@@ -48,6 +48,7 @@ public class BatchRequestProcessor {
 	      logger.info("Job : " + jobName + " JobID - Response : " + responseString);
 	      statsMap.put(jobName,Long.toString(responseTimeMilliSeconds));
 	    } catch (Exception e) {
+	    	e.printStackTrace();
 	    	jobStatus = "FAILED";
 			logErrorFile(jobName, responseString==null?e.toString():responseString, responseTimeMilliSeconds);
 		    return jobStatus;
@@ -88,19 +89,23 @@ public class BatchRequestProcessor {
 				      responseString =  method.getResponseBodyAsString();
 				      logger.info("Job : " + jobName + " JobStatus - Response : " + responseString);
 				      responseTimeMilliSeconds = new Date().getTime() - startTime;
-				      statsMap.put(jobName,Long.toString(responseTimeMilliSeconds));				      
-				      batchJobStatus =  XMLUtility.getInstance().fetchNodeValue(responseString, "/batchLogDTO/batchLogTypeCode");
-				      String jobDescription = XMLUtility.getInstance().fetchNodeValue(responseString, "/batchLogDTO/description");
-				      
-				      if(!batchJobStatus.contains("btchprcscmp")) continue;
-				      
-				      if(jobDescription.contains("WITH ERROR")){
-				    	  jobStatus = "COMPLETED WITH ERROR";
-				      }else if(jobDescription.contains("COMPLETED")){
-				    	  jobStatus = "COMPLETED";
-				      }else{
-				    	  jobStatus = "FAILED";
-				      }
+				      statsMap.put(jobName,Long.toString(responseTimeMilliSeconds));
+						if(responseString.indexOf("xception") != -1 || responseString.indexOf("ErrorResponse") != -1 || responseString.indexOf("NullPayload") != -1) {
+							jobStatus = "FAILED";
+						}else{
+					      batchJobStatus =  XMLUtility.getInstance().fetchNodeValue(responseString, "/batchLogDTO/batchLogTypeCode");
+					      String jobDescription = XMLUtility.getInstance().fetchNodeValue(responseString, "/batchLogDTO/description");
+					      
+					      if(!batchJobStatus.contains("btchprcscmp")) continue;
+					      
+					      if(jobDescription.contains("WITH ERROR")){
+					    	  jobStatus = "COMPLETED WITH ERROR";
+					      }else if(jobDescription.contains("COMPLETED")){
+					    	  jobStatus = "COMPLETED";
+					      }else{
+					    	  jobStatus = "FAILED";
+					      }
+						}
 				      
 				      if(jobStatus.equals("FAILED") || jobStatus.equals("COMPLETED WITH ERROR")) throw new Exception("Job " + jobName + " Status Inquiry Failed");
 	      
@@ -137,10 +142,9 @@ public class BatchRequestProcessor {
 			
 			factory = new AuthSSLProtocolSocketFactory(keyFileURL, "stream",
 					keyFileURL, "stream");
-			
 	        Protocol authhttps = new Protocol("https", factory,url.getPort());
 	        Protocol.registerProtocol("https", authhttps);
-	        HttpClient client = new HttpClient();
+	        client = new HttpClient();
 	        client.getHostConfiguration().setHost(url.getHost(), url.getPort(), authhttps);	    
 		}else{
 			client = new HttpClient();

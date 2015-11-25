@@ -155,6 +155,7 @@ public class BatchJobLauncher {
 	    	//properties.put("mail.smtp.user", "guru.radhakrishnan");
 	    	//properties.put("mail.smtps.password", "Gskr0612");
 	    	properties.put("mail.smtp.auth", "true");
+	    	properties.put("mail.smtp.ssl.trust", "smtp.gmail.com");
 	    	Authenticator auth = new Authenticator() {                  
 	    		@Override                 
 	    		protected PasswordAuthentication getPasswordAuthentication() {                     
@@ -194,6 +195,7 @@ public class BatchJobLauncher {
 	   			multipart.addBodyPart(messagePart);    			
 	        		// Set the email attachment file  
 	    			for( int i = 0; i < attachments.length; i++ ) {
+	    				if(!attachments[i].exists()) continue;
 	    				MimeBodyPart attachmentPart = new MimeBodyPart();
 	    				FileDataSource fileDataSource =new FileDataSource(attachments[i]) {                 
 	    	    			@Override                
