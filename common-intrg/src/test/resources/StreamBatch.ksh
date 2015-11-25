@@ -1,19 +1,20 @@
 ########### Batch Configuration - Environment ###########
-export BATCH_RUN_PATH=/usr/claimstream/Batch
-export JAVA_HOME=/opt/IBM/WebSphere/AppServer/java/bin/java
-REM ############## Environment Setup ######################
+export BATCH_RUN_PATH=/software/stream/support/StreamBatch
+export JAVA_HOME=/opt/was08/AppServer/java/jre/bin
+############## Environment Setup ######################
 
 export BATCH_INVOKER=com.client.iip.integration.BatchJobLauncher
-export CP=$BATCH_RUN_PATH\resources;$BATCH_RUN_PATH\security;$BATCH_RUN_PATH\StreamBatch.jar
+export CP=$BATCH_RUN_PATH/resources:$BATCH_RUN_PATH/security:$BATCH_RUN_PATH/StreamBatch.jar
 
 ## Grab all command line arguments at once
 export CMD_LINE_ARGS=$*
 
-export CP =
-for i in 'ls ./lib/*.jar'
+for i in $(ls $BATCH_RUN_PATH/lib/*.jar)
 do
-  CP=$CP;$i
+  CP=$CP:$i
 done
 
+echo $CP
+
 ### Launch the Batch
-$JAVA_HOME -cp $CP $BATCH_INVOKER $CMD_LINE_ARGS
+$JAVA_HOME/java -cp $CP $BATCH_INVOKER $CMD_LINE_ARGS
