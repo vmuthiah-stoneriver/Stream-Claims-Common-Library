@@ -373,6 +373,11 @@ http://www.mulesoft.org/schema/mule/servlet http://www.mulesoft.org/schema/mule/
 
 	<!--  Document Beans -->
 	
+	<spring:beans>
+		<spring:bean id="integration.serviceObject.ClientDSSProxyService" 
+		class="com.client.iip.integration.documents.ClientDSSProxyServiceImpl" />
+	</spring:beans>
+	
 	<message-properties-transformer name="updateDocumentStatusMethod">
 		<add-message-property key="method" value="updateDocumentStatus" />
 	</message-properties-transformer>

@@ -149,25 +149,27 @@ public class BatchJobLauncher {
 	    	String subject = "Claim Stream Batch Job Results";         
 	    	String filename = "Error.log";           
 	    	Properties properties = new Properties();
+	    	
 	    	properties.put("mail.smtp.starttls.enable", "true");
 	    	properties.put("mail.smtp.host", hm.get("EMAIL_HOST").toString());         
 	    	properties.put("mail.smtp.port", hm.get("EMAIL_PORT").toString());
 	    	//properties.put("mail.smtp.user", "guru.radhakrishnan");
 	    	//properties.put("mail.smtps.password", "Gskr0612");
-	    	properties.put("mail.smtp.auth", "true");
-	    	properties.put("mail.smtp.ssl.trust", "smtp.gmail.com");
+	    	properties.put("mail.smtp.auth", hm.get("SMTP_AUTH").toString());
+	    	properties.put("mail.smtp.ssl.trust", hm.get("EMAIL_HOST").toString());
 	    	Authenticator auth = new Authenticator() {                  
 	    		@Override                 
 	    		protected PasswordAuthentication getPasswordAuthentication() {                     
-	    			return new PasswordAuthentication(hm.get("EMAIL_USER").toString(), hm.get("EMAIL_PASSWORD").toString());                 
-	    			}             
+	    			return new PasswordAuthentication(hm.get("EMAIL_USER")==null?"":hm.get("EMAIL_USER").toString(), 
+	    					hm.get("EMAIL_PASSWORD")==null?"":hm.get("EMAIL_PASSWORD").toString());                 
+	    			}
 	    		};     	
 	    	 
 	    		properties.put("mail.smtp.debug", "true"); 
 	    		//properties.put("mail.smtp.socketFactory.port", "587") ;
 	    		//properties.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
 	    		//properties.put("mail.smtp.socketFactory.fallback", "false");  	
-	    		Session session = Session.getDefaultInstance(properties, auth);
+	    		Session session = Session.getDefaultInstance(properties, hm.get("SMTP_AUTH").toString().equals("false")?null:auth);
 	    		session.setDebug(true);
 	    	try {
 	    		//Initialize Recepient Array.

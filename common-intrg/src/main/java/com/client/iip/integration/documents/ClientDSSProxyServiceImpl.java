@@ -10,7 +10,7 @@ import com.stoneriver.iip.document.dss.DSSResponse;
 import com.stoneriver.iip.document.dss.IIPDSSIntegrationException;
 import com.stoneriver.iip.document.dss.StoreDocumentRequest;
 
-@Service(id = "integration.serviceObject.ClientDSSProxyService")
+
 public class ClientDSSProxyServiceImpl implements DSSProxyService {
 	
 	public static final String DOCUMENT_VIEWER_URL = System.getProperty("documentViewerURL",
