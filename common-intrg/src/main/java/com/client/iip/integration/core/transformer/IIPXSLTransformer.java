@@ -16,7 +16,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.client.iip.integration.core.exception.IIPErrorResponse;
+import com.client.iip.integration.core.util.MessageTracker;
+import com.fiserv.isd.iip.core.date.DateUtility;
 import com.fiserv.isd.iip.core.messageresolver.MessageConstants;
+import com.fiserv.isd.iip.core.thread.IIPDataContext;
+import com.fiserv.isd.iip.core.thread.IIPThreadContext;
+import com.fiserv.isd.iip.core.thread.IIPThreadContextFactory;
 import com.fiserv.isd.iip.core.validation.IIPObjectError;
 
 public class IIPXSLTransformer extends XsltTransformer {
@@ -56,10 +61,22 @@ public class IIPXSLTransformer extends XsltTransformer {
 			throws TransformerException {
 		// TODO Auto-generated method stub
 		logger.info("Inside IIPXSLTransformer");
+		
+        IIPThreadContext threadCtx = IIPThreadContextFactory.getIIPThreadContext();
+        IIPDataContext context = threadCtx.getDataContext();		
+		String synchronousResponse = (context == null || context.getAppData("ExternalInterfaceRequest")==null)?"false":(String)context.getAppData("ExternalInterfaceRequest");		
+		
 
 		try{
 			if(message.getPayload() != null && message.getPayload() instanceof String){
 				String payload = (String)message.getPayload();
+				if(MessageTracker.isEnabled()){
+					String commType = synchronousResponse.equals("true")?"Response":"Request";
+					String transTime = "Transaction Time: " + DateUtility.getSystemDateTime();
+					String payloadData = commType + " Payload : "+ payload;
+					MessageTracker.write(transTime);
+					MessageTracker.write(payloadData);
+				}				
 				// Check whether payload has system exception
 				if (payload.trim().length() > 0 && !payload.contains("iipCoreSystemException") 
 						&& !payload.contains("ErrorResponse")) {

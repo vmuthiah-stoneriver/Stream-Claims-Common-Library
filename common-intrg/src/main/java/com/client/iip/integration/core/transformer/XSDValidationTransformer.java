@@ -60,6 +60,7 @@ public class XSDValidationTransformer extends AbstractMessageTransformer {
 				}
 				message.setPayload(payload);
 			}
+			
 		} catch (Exception ex) {
 			
 			//Log the Payload in Tracking File

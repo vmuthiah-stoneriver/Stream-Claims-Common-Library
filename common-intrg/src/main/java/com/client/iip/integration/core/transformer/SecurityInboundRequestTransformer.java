@@ -116,7 +116,9 @@ public class SecurityInboundRequestTransformer extends AbstractMessageTransforme
 			
 			//Generate RequestId and assign to MDC Context for Log4j debug tracking
 			MDC.put("REQUEST_ID", generateRequestId()); 
-			
+			if(message.getPayload() == null  || !(message.getPayload() instanceof String) || message.getPayloadAsString().trim().isEmpty()){
+				throw new Exception("Payload must be String. Invalid Payload.");
+			}
 
 			//By-pass confirmation messages, if flag is turned ON - default to TRUE to by-pass messages
 			String skipConfirmationMessages = message.getProperty(SKIP_CONFIRMATION_MESSAGES_PROPERTY, PropertyScope.INBOUND);
