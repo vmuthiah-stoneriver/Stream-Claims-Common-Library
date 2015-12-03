@@ -283,11 +283,6 @@ http://www.mulesoft.org/schema/mule/servlet http://www.mulesoft.org/schema/mule/
 	<custom-transformer name="VerifyAddresTransformer"
 			class="com.client.iip.integration.party.VerifyAddressPostalRegionTransformer" />
 	
-	<!--  SMTP Email Beans -->
-	
-	<custom-transformer name="smtpEmailMessageTransformer" class="com.client.iip.integration.core.transformer.SMTPEMailMessageTransformer" />				
-			
-
 	<!--  Disbursement Beans -->
 	
 		<flow name="clientDisbursementService">
@@ -536,6 +531,26 @@ http://www.mulesoft.org/schema/mule/servlet http://www.mulesoft.org/schema/mule/
 			</spring:list>
 		</spring:property>
 	</custom-transformer>
+	
+	<!--  Delivery Tool Notification -->
+	
+	<spring:beans>
+		<spring:bean id="integration.serviceObject.ClientToolDeliveryProxyService" 
+		class="com.client.iip.integration.sa.ClientToolDeliveryProxyServiceImpl" />
+	</spring:beans>
+	
+	<vm:endpoint name="entconfig.endpoint.ToolDeliveryProxyServiceInbound"
+		path="toolDeliveryProxyServiceInbound.in"
+       	exchange-pattern="request-response"
+        connector-ref="vmSync"/>	
 
+	<flow name="ToolDeliveryService">
+		<vm:inbound-endpoint ref="entconfig.endpoint.ToolDeliveryProxyServiceInbound"
+			exchange-pattern="request-response"/>
+		<component>
+			<spring-object bean="integration.serviceObject.ClientToolDeliveryProxyService"/>
+		</component>
+	</flow>	
+	
 </mule> 	      
 	   

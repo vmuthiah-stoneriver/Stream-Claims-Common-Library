@@ -8,6 +8,10 @@
 		http://www.mulesoft.org/schema/mule/vm http://www.mulesoft.org/schema/mule/vm/current/mule-vm.xsd
 		http://www.mulesoft.org/schema/mule/smtp http://www.mulesoft.org/schema/mule/smtp/3.3/mule-smtp.xsd
 		">
+		
+	<!--  SMTP Email Beans -->
+	
+	<custom-transformer name="smtpEmailMessageTransformer" class="com.client.iip.integration.core.transformer.SMTPEMailMessageTransformer" />
 	
    	<smtp:endpoint name="entconfig.endpoint.emailNotification"                                                           
                               user="${emailuser}"
@@ -15,10 +19,32 @@
                               host="${smtphost}" 
                               port="${smtpport}"                               
                               from="${emailfrom}"
-                              subject="${emailsubject}" 
                               transformer-refs="smtpEmailMessageTransformer">
    	</smtp:endpoint>
-	
-	
+
+	<custom-transformer name="smtpDeliveyToolEmailMessageTransformer" 
+		class="com.client.iip.integration.sa.SMTPDeliveyToolEMailMessageTransformer" />
+        
+   	<smtp:endpoint name="entconfig.endpoint.deliveryToolNotificationEmail"                                                           
+                              user="${emailuser}"
+                              password="${emailpassword}"
+                              host="${smtphost}" 
+                              port="${smtpport}"                               
+                              from="${emailfrom}"
+                              transformer-refs="smtpDeliveyToolEmailMessageTransformer">
+   	</smtp:endpoint>
+   	
+	<vm:endpoint name="emailToolEndpoint"
+		path="emailToolInbound.in"
+       	exchange-pattern="request-response"
+        connector-ref="vmSync"/>	
+
+	<flow name="EmailToolService">
+		<vm:inbound-endpoint ref="emailToolEndpoint"
+			exchange-pattern="request-response"/>
+		
+		<outbound-endpoint ref="entconfig.endpoint.deliveryToolNotificationEmail"/>
+		
+	</flow>		  	
 	
 </mule>		

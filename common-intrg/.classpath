@@ -301,4 +301,5 @@
   <classpathentry kind="var" path="M2_REPO/org/springframework/integration/spring-integration-file/2.2.0.RELEASE/spring-integration-file-2.2.0.RELEASE.jar" sourcepath="M2_REPO/org/springframework/integration/spring-integration-file/2.2.0.RELEASE/spring-integration-file-2.2.0.RELEASE-sources.jar"/>
   <classpathentry kind="var" path="M2_REPO/com/jcraft/jsch/0.1.45/jsch-0.1.45.jar" sourcepath="M2_REPO/com/jcraft/jsch/0.1.45/jsch-0.1.45-sources.jar"/>
   <classpathentry kind="var" path="M2_REPO/jsch/jsch/0.1.8/jsch-0.1.8.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/springframework/batch/spring-batch-test/2.1.8.RELEASE/spring-batch-test-2.1.8.RELEASE.jar"/>
 </classpath>

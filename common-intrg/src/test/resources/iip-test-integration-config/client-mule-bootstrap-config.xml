@@ -134,6 +134,7 @@
 		<spring:import resource="classpath*:/iip-integration-config/ExportBatchJobs.xml" />
 		<spring:import resource="classpath*:/iip-integration-config/BatchJob-services-endpoints.xml" />
 		<spring:import resource="classpath*:/iip-integration-config/client-orders-integration-config.xml" />
+		<spring:import resource="classpath*:/iip-integration-config/client-email-config.xml" />
 		<!-- <spring:import resource="classpath*:/iip-integration-config/client-financials-endpoints.xml" /> -->
 		
 		<!-- Client Test Configuration -->
@@ -142,7 +143,7 @@
 		<spring:import resource="classpath*:/iip-test-integration-config/authentication-providers.xml" />
 		<spring:import resource="classpath*:/iip-test-integration-config/test-datasource-config.xml" />
 		<spring:import resource="classpath*:/iip-test-integration-config/activiti-process-engine.xml" />
-		<!-- <spring:import resource="classpath*:/iip-test-integration-config/test-email-config.xml" /> -->
+
 		
 		<spring:alias name="iip-core-impl-daoInterfaceFactory" alias="clientDaoInterfaceFactory" />
 		<spring:alias name="entconfigLogicalDataSource" alias="clientLogicalDataSource" />

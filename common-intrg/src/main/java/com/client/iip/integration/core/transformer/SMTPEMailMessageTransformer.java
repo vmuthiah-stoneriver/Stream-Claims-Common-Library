@@ -51,12 +51,12 @@ public class SMTPEMailMessageTransformer extends AbstractMessageTransformer {
 				throw new TransformerException(this, new Exception("Email Address not configured for user"));
 			}
 			email.setRecipients(Message.RecipientType.TO, MailUtils.stringToInternetAddresses(mailInfo.getToRecepients().iterator().next()));
-
-			if(endpoint.getProperty("subject") == null) {
+			
+			if(System.getProperty("emailsubject") == null) {				
 				throw new TransformerException(this, new Exception("Subject not configured. Please set \"emailsubject\" JVM property."));
 			}
 			
-			email.setSubject((String)endpoint.getProperty("subject"));
+			email.setSubject(System.getProperty("emailsubject"));
 			email.setContent("Your New password: " + mailInfo.getPassword(),"text/html");
 			
 			//message.setOutboundProperty(MailProperties.TO_ADDRESSES_PROPERTY,mailInfo.getTo());

@@ -37,7 +37,15 @@ public class IIPXSLExtension {
 	
 	public Map<String, String> participantMap = new HashMap<String, String>();
 	
-	public AtomicInteger seq = new AtomicInteger();
+	public AtomicInteger seq = null;
+	
+	public IIPXSLExtension(){
+		seq = new AtomicInteger();
+	}
+	
+	public IIPXSLExtension(int initValue){
+		seq = new AtomicInteger(initValue);
+	}
 
 
 	public String getCompanyNameFromCode(String companyCode){

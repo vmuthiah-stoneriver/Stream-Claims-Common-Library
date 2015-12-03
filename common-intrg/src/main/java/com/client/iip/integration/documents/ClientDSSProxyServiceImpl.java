@@ -3,7 +3,6 @@ package com.client.iip.integration.documents;
 import java.io.InputStream;
 import java.net.URL;
 
-import com.fiserv.isd.iip.core.meta.annotation.Service;
 import com.stoneriver.iip.document.api.ImageIndexDTO;
 import com.stoneriver.iip.document.dss.DSSProxyService;
 import com.stoneriver.iip.document.dss.DSSResponse;
