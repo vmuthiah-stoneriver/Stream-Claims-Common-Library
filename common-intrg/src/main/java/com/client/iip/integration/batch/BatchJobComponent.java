@@ -77,7 +77,8 @@ public class BatchJobComponent {
 		builder.addDate("currentDate", DateUtility.getSystemDateTime());
 		exec =	BatchJobLauncher.launchJob(request.getJobName(),  builder);
 		ExitStatus status = exec.getExitStatus();
-		jobId = exec.getJobId();
+		//It is really the Job Execution id that we need as the Job Id.
+		jobId = exec.getId();
 		logger.info("Returning the job id for call job: {}", jobId);
 		logger.info("Job Completed with Status: {}", status);
 		logger.info("Job Completed with Exit Code: {}", exec.getStatus());

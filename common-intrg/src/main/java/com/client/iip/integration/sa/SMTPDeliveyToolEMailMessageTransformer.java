@@ -31,20 +31,33 @@ public class SMTPDeliveyToolEMailMessageTransformer extends
 		try{
 			email = new MimeMessage(((SmtpConnector) endpoint.getConnector()).getSessionDetails(endpoint).getSession());
 			
-			if(endpoint.getProperty("fromAddress") == null) {
-				throw new TransformerException(this, new Exception("From Address not configured. Please set \"emailfrom\" JVM property."));
-			}
+    		//From User			
+			String fromEmail = "";
+			if(tool.getReplyToEmail() == null ){
+				if(endpoint.getProperty("from") == null) {
+					throw new TransformerException(this, new Exception("From Address not configured. Please set \"emailfrom\" JVM property."));
+				}else{
+					fromEmail = (String)endpoint.getProperty("from");
+				}
+			}else{
+				fromEmail = tool.getReplyToEmail();
+			}		
 			
-			email.setFrom(MailUtils.stringToInternetAddresses((String)endpoint.getProperty("fromAddress"))[0]);
+			email.setFrom(MailUtils.stringToInternetAddresses(fromEmail)[0]);
 			
-			UserDetailsDTO userDTO = tool.getToRecipients().iterator().next();
+			//Reciepient Email
+            String toEmail = "";
+    		
+            for(UserDetailsDTO userDetail:tool.getToRecipients()){
+            	if(!toEmail.isEmpty()) toEmail = toEmail + ",";
+    			if(userDetail.getEmail() == null) {
+    				throw new TransformerException(this, new Exception("To Email not configured. Please configure email address for the user - " 
+    												+ userDetail.getFirstName() + " " + userDetail.getLastName()));
+    			}           	
+            	toEmail = userDetail.getEmail();
+            }
 			
-			if(userDTO.getEmail() == null) {
-				throw new TransformerException(this, new Exception("To Email not configured. Please configure email address for the user - " 
-												+ userDTO.getFirstName() + " " + userDTO.getLastName()));
-			}
-			
-			email.setRecipients(Message.RecipientType.TO, MailUtils.stringToInternetAddresses(userDTO.getEmail()));			
+			email.setRecipients(Message.RecipientType.TO, MailUtils.stringToInternetAddresses(toEmail));			
 			email.setSubject(tool.getSubject());	
 			email.setContent(tool.getDescription(), "text/html");
 			

@@ -43,10 +43,10 @@ public class SMTPEMailMessageTransformer extends AbstractMessageTransformer {
 		
 		try {
 			email = new MimeMessage(((SmtpConnector) endpoint.getConnector()).getSessionDetails(endpoint).getSession());
-			if(endpoint.getProperty("fromAddress") == null) {
+			if(endpoint.getProperty("from") == null) {
 				throw new TransformerException(this, new Exception("From Address not configured. Please set \"emailfrom\" JVM property."));
 			}
-			email.setFrom(MailUtils.stringToInternetAddresses((String)endpoint.getProperty("fromAddress"))[0]);
+			email.setFrom(MailUtils.stringToInternetAddresses((String)endpoint.getProperty("from"))[0]);
 			if (mailInfo.getToRecepients() == null || mailInfo.getToRecepients().isEmpty()) {
 				throw new TransformerException(this, new Exception("Email Address not configured for user"));
 			}
