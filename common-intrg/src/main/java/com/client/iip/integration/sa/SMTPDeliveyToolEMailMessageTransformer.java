@@ -45,11 +45,11 @@ public class SMTPDeliveyToolEMailMessageTransformer extends
 			
 			email.setFrom(MailUtils.stringToInternetAddresses(fromEmail)[0]);
 			
-			//Reciepient Email
+			//Recipient Email
             String toEmail = "";
     		
             for(UserDetailsDTO userDetail:tool.getToRecipients()){
-            	if(!toEmail.isEmpty()) toEmail = toEmail + ",";
+            	if(!toEmail.isEmpty()) toEmail = toEmail + ";";
     			if(userDetail.getEmail() == null) {
     				throw new TransformerException(this, new Exception("To Email not configured. Please configure email address for the user - " 
     												+ userDetail.getFirstName() + " " + userDetail.getLastName()));
