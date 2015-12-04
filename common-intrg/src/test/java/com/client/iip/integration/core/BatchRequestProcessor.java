@@ -45,6 +45,7 @@ public class BatchRequestProcessor {
 		  client.executeMethod(method);
 	      responseString =  method.getResponseBodyAsString();
 	      responseTimeMilliSeconds = new Date().getTime() - startTime;
+	      System.out.println("Job : " + jobName + " JobID - Response : " + responseString);
 	      logger.info("Job : " + jobName + " JobID - Response : " + responseString);
 	      statsMap.put(jobName,Long.toString(responseTimeMilliSeconds));
 	    } catch (Exception e) {
@@ -107,7 +108,7 @@ public class BatchRequestProcessor {
 					      }
 						}
 				      
-				      if(jobStatus.equals("FAILED") || jobStatus.equals("COMPLETED WITH ERROR")) throw new Exception("Job " + jobName + " Status Inquiry Failed");
+				      if(jobStatus.equals("FAILED") || jobStatus.equals("COMPLETED WITH ERROR")) throw new Exception("Job " + jobName + " Failed.");
 	      
 					}catch (Exception e) {
 						//jobStatus = "FAILED";
