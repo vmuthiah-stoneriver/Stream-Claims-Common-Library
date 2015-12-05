@@ -23,6 +23,7 @@ public class ClientToolDeliveryProxyServiceImpl extends MuleEndpointAdapter
 	public void sendToolInformation(
 			ToolDeliveryDetailsCompositeDTO deliveryDetailsCompositeDTO)
 			throws IIPToolDeliveryException {
+		logger.info("Entering sendToolInformation with Claim ID: " + deliveryDetailsCompositeDTO.getContextId());
 		//Call SMTP Email endpoint here.
 		try{
 			sendSyncEvent(EMAIL_TOOL_ENDPOINT, deliveryDetailsCompositeDTO);

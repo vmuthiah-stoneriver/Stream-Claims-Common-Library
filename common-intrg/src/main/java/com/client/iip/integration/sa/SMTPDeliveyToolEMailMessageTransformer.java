@@ -34,10 +34,10 @@ public class SMTPDeliveyToolEMailMessageTransformer extends
     		//From User			
 			String fromEmail = "";
 			if(tool.getReplyToEmail() == null ){
-				if(endpoint.getProperty("from") == null) {
+				if(endpoint.getProperty("fromAddress") == null) {
 					throw new TransformerException(this, new Exception("From Address not configured. Please set \"emailfrom\" JVM property."));
 				}else{
-					fromEmail = (String)endpoint.getProperty("from");
+					fromEmail = (String)endpoint.getProperty("fromAddress");
 				}
 			}else{
 				fromEmail = tool.getReplyToEmail();
