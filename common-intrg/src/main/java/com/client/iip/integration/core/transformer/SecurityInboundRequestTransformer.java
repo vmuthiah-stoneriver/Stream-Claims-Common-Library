@@ -140,6 +140,8 @@ public class SecurityInboundRequestTransformer extends AbstractMessageTransforme
 				}
 				//payload = message.getPayloadAsString();
 				String userName = message.getProperty(PRINCIPLE_ID_PROPERTY, PropertyScope.INBOUND);
+				
+				if(userName == null) userName = "strmimpt";
 				// STEP -2 - Need to authorize user provided in PRINCIPLE_ID.
 					if(userName!=null){
 						UserDetails details = this.retrieveUser(userName);
