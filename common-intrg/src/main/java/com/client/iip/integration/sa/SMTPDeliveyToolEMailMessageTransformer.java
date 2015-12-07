@@ -25,7 +25,8 @@ public class SMTPDeliveyToolEMailMessageTransformer extends
 	
 	@Override
 	public Object transformMessage(MuleMessage message, String outputEncoding)
-			throws TransformerException{		
+			throws TransformerException{
+		logger.info("In SMTPDeliveyToolEMailMessageTransformer");
 		ToolDeliveryDetailsCompositeDTO tool = (ToolDeliveryDetailsCompositeDTO) message.getPayload();
 		Message email=null;
 		try{
@@ -43,6 +44,8 @@ public class SMTPDeliveyToolEMailMessageTransformer extends
 				fromEmail = tool.getReplyToEmail();
 			}		
 			
+			logger.info("Email from : " + fromEmail);
+			
 			email.setFrom(MailUtils.stringToInternetAddresses(fromEmail)[0]);
 			
 			//Recipient Email
@@ -56,10 +59,11 @@ public class SMTPDeliveyToolEMailMessageTransformer extends
     			}           	
             	toEmail = userDetail.getEmail();
             }
-			
+            logger.info("Email to : " + toEmail);
 			email.setRecipients(Message.RecipientType.TO, MailUtils.stringToInternetAddresses(toEmail));			
 			email.setSubject(tool.getSubject());	
 			email.setContent(tool.getDescription(), "text/html");
+			logger.info("Email Sent");
 			
 		}catch (Exception ex) {
 			throw new TransformerException(this, ex);			
