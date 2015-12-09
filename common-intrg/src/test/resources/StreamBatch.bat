@@ -1,7 +1,6 @@
 cls
 @echo on
 
-REM Server Drive where the Jar file is kept
 REM ############## Environment Setup ######################
 set BATCH_RUN_PATH=C:\StreamBatch
 set JAVA_HOME=C:\jdk1.6.0_21\bin\java
