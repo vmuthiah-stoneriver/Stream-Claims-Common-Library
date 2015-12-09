@@ -136,6 +136,7 @@ public class SFTPTasklet extends ResourcesItemReader implements Tasklet {
 			}
 			return RepeatStatus.FINISHED;
 		 }catch(Exception ex){
+			ex.printStackTrace();
 			logger.error("File Transmission Failed :" + file==null?"":file.getName(), ex);
 			//BatchUtils.writeIntoBatchLog(stepExecutionListener.getStepExecution(), "clm",
 			//		"File Transmission Failed : " + file==null?"":file.getName(), ex);

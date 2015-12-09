@@ -17,4 +17,4 @@ done
 echo $CP
 
 ### Launch the Batch
-$JAVA_HOME/java -Dlog4j.configuration=%BATCH_RUN_PATH%\log4j.xml -cp $CP $BATCH_INVOKER $CMD_LINE_ARGS
+$JAVA_HOME/java -Dlog4j.configuration=file:$BATCH_RUN_PATH/log4j.xml -cp $CP $BATCH_INVOKER $CMD_LINE_ARGS
