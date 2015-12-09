@@ -45,8 +45,7 @@ public class BatchRequestProcessor {
 		  client.executeMethod(method);
 	      responseString =  method.getResponseBodyAsString();
 	      responseTimeMilliSeconds = new Date().getTime() - startTime;
-	      System.out.println("Job : " + jobName + " JobID - Response : " + responseString);
-	      logger.info("Job : " + jobName + " JobID - Response : " + responseString);
+	      logger.info("Job : " + jobName + " JobSubmission Response : " + responseString);
 	      statsMap.put(jobName,Long.toString(responseTimeMilliSeconds));
 	    } catch (Exception e) {
 	    	e.printStackTrace();
@@ -158,6 +157,7 @@ public class BatchRequestProcessor {
 							"<jobName>" + jobName +"</jobName>\n" +
 							"<runOnSystemDate>" + runOnSystemDate + "</runOnSystemDate>\n" +
 							"</clientBatchJobRequest>";
+		logger.info("Batch Request Payload : " + payload);
 		return payload;
 	}
 	
@@ -189,14 +189,14 @@ public class BatchRequestProcessor {
 		 
 		 out.close();*/
 		}catch(Exception ex){
-			System.out.println("Exception while writing to file: " + ex.toString());
+			logger.info("Exception while writing to file: " + ex.toString());
 		}
 		finally{
 			try{
 			if(raf != null) 
 				raf.close();
 			}catch(Exception ex){
-				System.out.println("Exception while writing to file: " + ex.toString());
+				logger.info("Exception while writing to file: " + ex.toString());
 			}			
 			
 		}
@@ -227,14 +227,14 @@ public class BatchRequestProcessor {
 		 
 		 out.close();*/
 		}catch(Exception ex){
-			System.out.println("Exception while writing to file: " + ex.toString());
+			logger.info("Exception while writing to file: " + ex.toString());
 		}
 		finally{
 			try{
 			if(raf != null) 
 				raf.close();
 			}catch(Exception ex){
-				System.out.println("Exception while writing to file: " + ex.toString());
+				logger.info("Exception while writing to file: " + ex.toString());
 			}			
 			
 		}
@@ -274,7 +274,7 @@ public class BatchRequestProcessor {
 			FileUtils.writeStringToFile(file, outString);
 			
 		}catch(Exception ex){
-			System.out.println("Exception while writing to file: " + ex.toString());
+			logger.info("Exception while writing to file: " + ex.toString());
 		}
 	
 		

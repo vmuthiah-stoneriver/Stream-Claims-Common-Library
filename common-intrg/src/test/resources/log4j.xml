@@ -5,7 +5,7 @@
 # from the command line and from within Eclipse
 # for log4j documentation: http://logging.apache.org/log4j/docs/documentation.html
 # set the root logger level to ERROR and send it to the console
-# to log to the console and a file, add FILE, it logs to a file named "iip-core.log"
+# to log to the console and a file, add FILE
 # to log only to a file, replace stdout with FILE
 -->
 <log4j:configuration xmlns:log4j='http://jakarta.apache.org/log4j/'>
@@ -17,10 +17,11 @@
   </appender>
 
   <appender name="FILE" class="org.apache.log4j.RollingFileAppender">
-     <param name="File" value="iip-core.log"/>
-     <param name="Append" value="false"/>
+     <param name="File" value="ClientStream.log"/>
+     <param name="MaxFileSize" value="2000KB"/>
+     <param name="MaxBackupIndex" value="2"/>
     <layout class="org.apache.log4j.PatternLayout">
-          <param name="ConversionPattern" value="%d{HH:mm:ss,SSS} %p %X{MDC_SERVER_NAME} %X{MDC_IP_ADDRESS} %X{MDC_USER_NAME} %c{1} %m %n"/>
+          <param name="ConversionPattern" value="%d{HH:mm:ss,SSS} %p %c{1} %m %n"/>
     </layout>
     <!--filter class="org.apache.log4j.varia.LevelRangeFilter">
       <param name="LevelMin" value="ERROR" />
@@ -40,22 +41,20 @@
         
   <category name="com.fiserv">
         <priority value="DEBUG"/>
+        <appender-ref ref="FILE"/>
   </category>
   <category name="com.stoneriver">
         <priority value="INFO"/>
+        <appender-ref ref="FILE"/>
   </category>
       
   <category name="com.client">
-        <priority value="DEBUG"/>
+        <priority value="INFO"/>
+        <appender-ref ref="FILE"/>
   </category>
   <category name="org">
         <priority value="INFO"/>
-  </category>
-  <category name="com.mchange">
-        <priority value="INFO"/>
-  </category>
-  <category name="net.sf">
-        <priority value="INFO"/>
+        <appender-ref ref="FILE"/>
   </category>
 
   <root>

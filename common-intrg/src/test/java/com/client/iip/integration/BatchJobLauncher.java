@@ -31,12 +31,16 @@ import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 
 import org.apache.commons.io.FileUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.client.iip.integration.core.BatchRequestProcessor;
 
 public class BatchJobLauncher {
+	
+	private static final Logger logger = LoggerFactory.getLogger(BatchJobLauncher.class);
 
-	HashMap hm = new HashMap();
+	HashMap<String, String> hm = new HashMap<String, String>();
 	
 	public Properties loadPropFromClassPath(String propFileName) throws Exception{
 		// loading properties from the classpath 
@@ -63,7 +67,7 @@ public class BatchJobLauncher {
 		}
 		
     }catch(Exception ex){
-    	System.out.println("Exception while reading properties file");    	
+    	logger.info("Exception while reading properties file");    	
     	ex.printStackTrace();
     }
 		
@@ -75,6 +79,8 @@ public class BatchJobLauncher {
 	}
 	
 	public void launch(String jobName, String mode){
+		
+		logger.info("Launching Batch Job with JobName : " + jobName + " Mode : " + mode);
 		
 		FileInputStream input = null;
 		
@@ -98,40 +104,48 @@ public class BatchJobLauncher {
 			boolean runFlag = false;
 			while(it.hasNext()){
 				String name = it.next().toString();
-				if(name.indexOf("Job") >= 0 ){
+				if(name.startsWith("Job")){
 					if(!runFlag && !jobName.equals(hm.get(name)) && mode.equals("RESTART")) continue;
 					if(!jobName.equals(hm.get(name)) && mode.equals("RUN")) continue;
 			        BatchRequestProcessor batchRequest = BatchRequestProcessor.getInstance();					
 					String status = batchRequest.runJob((String)hm.get(name), hm);
-					System.out.println("Job : " + hm.get(name) + " Ended with Status : " + status);
+					logger.info("Job : " + hm.get(name) + " Ended with Status : " + status);
 					runFlag = true;
 					batchRequest.logStatsFile((String)hm.get(name), status);
 					if(status.equals("FAILED")) break;
+				}else if(name.startsWith("SJob")){
+					if(!mode.equals("RUN")) continue;
+					if(!jobName.equals(hm.get(name)) && mode.equals("RUN")) continue;
+			        BatchRequestProcessor batchRequest = BatchRequestProcessor.getInstance();					
+					String status = batchRequest.runJob((String)hm.get(name), hm);
+					logger.info("Job : " + hm.get(name) + " Ended with Status : " + status);
+					batchRequest.logStatsFile((String)hm.get(name), status);
 				}
 			}
 			//Send Test Results to the Mail Group.
 			
 			if(hm.get("SEND_MAIL").equals("Y")){
 				File infile = new File("Stats.log");
-				List<String> lines = FileUtils.readLines(infile);
-
-				 String messagebody  = " The Results of the Batch Jobs that ran as of " +  new Date()  + " are outlined below, Please refer to the Error.log attachment for "
-						 				+ "investigating the failures if any.\n";
-				 
-				for (int i=0; i<lines.size(); i++){
-					messagebody += lines.get(i) + "\t\n";
-				}				 
-				
-				messagebody += "\n============================ AUTO GENERATED PLEASE DONOT RESPOND ===============================";
-				File[] attachments = new File[]{new File("Error.log"), new File("Success.log")};
-				System.out.println("Sending Email");
-				sendEmail(messagebody,attachments);
-				System.out.println("Email Sent");
+				if(infile.exists()){
+					List<String> lines = FileUtils.readLines(infile);
+	
+					 String messagebody  = " The Results of the Batch Jobs that ran as of " +  new Date()  + " are outlined below, Please refer to the Error.log attachment for "
+							 				+ "investigating the failures if any.\n";
+					 
+					for (int i=0; i<lines.size(); i++){
+						messagebody += lines.get(i) + "\t\n";
+					}				 
+					
+					messagebody += "\n============================ AUTO GENERATED PLEASE DONOT RESPOND ===============================";
+					File[] attachments = new File[]{new File("Error.log"), new File("Success.log")};
+					logger.info("Sending Email");
+					sendEmail(messagebody,attachments);
+					logger.info("Email Sent");
+				}
 			}
 			
 		}catch (Exception e) {
-			e.printStackTrace();
-			
+			e.printStackTrace();			
 		}
 		finally{
 			try{
@@ -216,14 +230,14 @@ public class BatchJobLauncher {
 	    			transport.close();
 	    		} 
 	    		catch (MessagingException e) {
-	    			System.out.println("Exception Ocurred while sending Email: " + e.toString());    			
+	    			logger.info("Exception Ocurred while sending Email: " + e.toString());    			
 	    			e.printStackTrace();         
 	    		}     
 	    	}		
 	
 	
 	public static void main(String[] args) throws Exception{
-		System.out.println("Batch Launch Begin");
+		logger.info("Batch Launch Begin");
 		BatchJobLauncher batch = new BatchJobLauncher();
 		//System.out.println(" Batch Launcher Command - BatchJobLauncher (No arguments by default will invoke jobs sequence configured in Batch_client.properties) \n");
 		//System.out.println(" 						- BatchJobLauncher RUN AcctsPayableExp ( Runs the Requested Job) \n");
@@ -234,6 +248,6 @@ public class BatchJobLauncher {
 				|| args.length == 1 )
 				throw new Exception("Invalid Argument - Valid Arguments are RESTART <jobName> or RUN <jobName>");		
 		batch.launch(args.length == 0?"DEFAULT":args[1], args.length == 0?"DEFAULT":args[0]);
-		System.out.println("Batch Launch End");
+		logger.info("Batch Launch End");
 	}	
 }
