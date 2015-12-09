@@ -72,7 +72,7 @@ public class PGPEncryption {
 	
 	
 
-		public String encryptFile(String inData)
+		public String encrypt(String inData)
 		    throws IOException, NoSuchProviderException
 		{
 			String encryptedString = "";
