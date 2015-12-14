@@ -90,6 +90,9 @@ public class SecurityOutboundResponseTransformer extends AbstractMessageTransfor
 				String principleIdData = "PRINCIPLE_ID Received : " + userName;
 				MessageTracker.write(trackingIdData);
 				MessageTracker.write(principleIdData);
+				if(message != null && message.getPayload() instanceof String){
+					MessageTracker.write("Response Payload : " + message.getPayloadAsString());
+				}				
 				logger.info("TRACKING_ID Received : {} and Date_Time : {} ", 
 					trackingId, DateUtility.getSystemDateTime());
 			}			

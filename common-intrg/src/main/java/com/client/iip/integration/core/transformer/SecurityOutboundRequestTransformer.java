@@ -73,6 +73,9 @@ public class SecurityOutboundRequestTransformer extends AbstractMessageTransform
 					if(MessageTracker.isEnabled()){
 						String principleIdData = "PRINCIPLE_ID Sent: " + principleId;
 						MessageTracker.write(principleIdData);
+						if(message != null && message.getPayload() instanceof String){
+							MessageTracker.write("Request Payload : " + message.getPayloadAsString());
+						}
 					}					
 				}
 			}catch(Exception ex){
