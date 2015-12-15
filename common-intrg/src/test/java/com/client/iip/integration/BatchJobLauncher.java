@@ -42,6 +42,8 @@ public class BatchJobLauncher {
 
 	HashMap<String, String> hm = new HashMap<String, String>();
 	
+	private String jobFrequency = "DAILY" ; //Default frequency, Monthe end would be MONTHLY
+	
 	public Properties loadPropFromClassPath(String propFileName) throws Exception{
 		// loading properties from the classpath 
 		Properties props = new Properties(); 
@@ -78,9 +80,13 @@ public class BatchJobLauncher {
 		loadPropFile();
 	}
 	
-	public void launch(String jobName, String mode){
+	public void launch(String jobName, String mode, String frequency){
 		
 		logger.info("Launching Batch Job with JobName : " + jobName + " Mode : " + mode);
+		
+		if(!frequency.isEmpty()){
+			hm.put("FREQUENCY", "mm");
+		}
 		
 		FileInputStream input = null;
 		
@@ -239,15 +245,14 @@ public class BatchJobLauncher {
 	public static void main(String[] args) throws Exception{
 		logger.info("Batch Launch Begin");
 		BatchJobLauncher batch = new BatchJobLauncher();
-		//System.out.println(" Batch Launcher Command - BatchJobLauncher (No arguments by default will invoke jobs sequence configured in Batch_client.properties) \n");
-		//System.out.println(" 						- BatchJobLauncher RUN AcctsPayableExp ( Runs the Requested Job) \n");
-		//System.out.println(" 						- BatchJobLauncher RESTART AcctsPayableExp ( Restarts the Job and continues the execute the remaining jobs defined in Batch_client.properties)");
-		//System.out.println("This script will terminate when a Job errors in the sequence. Choose RUN <jobName> option for running a single Job.");
-		//System.out.println(" All jobs must be defined in Batch_client.properties.");
 		if((args.length == 2 && !args[0].equals("RESTART") && !args[0].equals("RUN"))
 				|| args.length == 1 )
-				throw new Exception("Invalid Argument - Valid Arguments are RESTART <jobName> or RUN <jobName>");		
-		batch.launch(args.length == 0?"DEFAULT":args[1], args.length == 0?"DEFAULT":args[0]);
+				throw new Exception("Invalid Argument - Valid Arguments are RESTART <jobName> or RUN <jobName>");
+		if(args.length == 3 && !args[0].equals("RUN"))
+			throw new Exception("Invalid Argument - Valid Arguments are RUN <jobName> <Frequency>");
+		if(args.length == 3 && args[0].equals("RUN") && !args[2].equals("MONTHLY"))
+			throw new Exception("Invalid Argument - Valid Arguments are RUN <jobName> MONTHLY - No argument defaults to DAILY");
+		batch.launch(args.length == 0?"DEFAULT":args[1], args.length == 0?"DEFAULT":args[0], args.length == 0?"DEFAULT":args[2]);
 		logger.info("Batch Launch End");
 	}	
 }

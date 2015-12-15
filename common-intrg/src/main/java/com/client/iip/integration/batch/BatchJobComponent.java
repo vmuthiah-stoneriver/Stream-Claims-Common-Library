@@ -74,22 +74,51 @@ public class BatchJobComponent {
 		            .getBusinessDate(DateConstants.BUSN_DATE_CMPY_ID, 
 				     BusinessDateType.BUSINESS), 1));
 			}
-		builder.addDate("currentDate", DateUtility.getSystemDateTime());
-		exec =	BatchJobLauncher.launchJob(request.getJobName(),  builder);
-		ExitStatus status = exec.getExitStatus();
-		//It is really the Job Execution id that we need as the Job Id.
-		jobId = exec.getId();
-		logger.info("Returning the job id for call job: {}", jobId);
-		logger.info("Job Completed with Status: {}", status);
-		logger.info("Job Completed with Exit Code: {}", exec.getStatus());
-		logger.info("---------------------------------Process Ended-----------------------------------------");
-		}catch(Exception ex){
-			logger.error("Exception occured while executing Batch", ex);
-			jobId = Long.valueOf(0);
-			logger.info("Returning the job id as 0 in case of exception in call job.");				
+			
+			//Add additional job parameters used by glBalance Job
+			if(request.getRunType() != null){
+				builder.addString("runType", request.getRunType());
+			}
+			
+			if(request.getAcctgPeriodMonth() != null){
+				builder.addString("acctgPeriodMonth", request.getAcctgPeriodMonth());
+			}
+			
+			if(request.getAcctgPeriodYr() != null){
+				builder.addString("acctgPeriodYr", request.getAcctgPeriodYr());
+			}
+			
+			if(request.getAcctgYearBasisCd() != null){
+				builder.addString("acctgYearBasisCd", request.getAcctgYearBasisCd());
+			}
+			
+			if(request.getBusDate() != null){
+				builder.addDate("busDate",MuleServiceFactory.getService(DateService.class)
+			            .getBusinessDate(DateConstants.BUSN_DATE_CMPY_ID, 
+							     BusinessDateType.BUSINESS));
+			}
+			
+			if(request.getCompany() != null){
+				builder.addString("company", request.getCompany());
+			}
+			
+			builder.addDate("currentDate", DateUtility.getSystemDateTime());
+			exec =	BatchJobLauncher.launchJob(request.getJobName(),  builder);
+			ExitStatus status = exec.getExitStatus();
+			//It is really the Job Execution id that we need as the Job Id.
+			jobId = exec.getId();
+			logger.info("Returning the job id for call job: {}", jobId);
+			logger.info("Job Completed with Status: {}", status);
+			logger.info("Job Completed with Exit Code: {}", exec.getStatus());
+			logger.info("---------------------------------Process Ended-----------------------------------------");
+			}catch(Exception ex){
+				logger.error("Exception occured while executing Batch", ex);
+				jobId = Long.valueOf(0);
+				logger.info("Returning the job id as 0 in case of exception in call job.");				
+				return jobId;
+			}
+		
 			return jobId;
-		}
-		return jobId;
 	}
 	
 	// Changes as per new requirement by Gaurav R. This API will accept a batch Id and use it to fetch batch status
