@@ -36,8 +36,8 @@ SELECT
                            AND FATC.FNCL_AGRE_TYP_CD = 'clm'
                            AND Dialect.getDateOnlyExpression(DISB.EFF_DTM) &gt; :startDate
                            AND Dialect.getDateOnlyExpression(DISB.EFF_DTM) &lt;= :endDate
-                           AND STATUS.DSB_STT_TYP_CD IN('incomp','opn')
-                           AND (STATUS.DSB_STS_TYP_CD IN ('incomp_pay')
+                           AND ((STATUS.DSB_STT_TYP_CD IN('incomp','opn')
+                           AND STATUS.DSB_STS_TYP_CD IN ('incomp_pay'))
                            OR 	(STATUS.AUDT_USER_CREA_ID NOT IN (6000302) AND STATUS.DSB_STS_TYP_CD IN ('pay_stp_niss', 'pay_vd_niss')))
                            LEFT JOIN (SELECT DISTINCT DPD.DSB_ID FROM DISBURSEMENT_PAYABLE_DRV DPD 
             							JOIN CLM_FNCL_TRAN_CLM_ASMT_SURCHR CFTCAS ON CFTCAS.FTC_ID_ASMT_SURCHR = DPD.FTC_ID

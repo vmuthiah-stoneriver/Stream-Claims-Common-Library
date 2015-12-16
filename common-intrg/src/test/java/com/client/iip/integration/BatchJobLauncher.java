@@ -6,6 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Enumeration;
 import java.util.HashMap;
@@ -42,8 +43,6 @@ public class BatchJobLauncher {
 
 	HashMap<String, String> hm = new HashMap<String, String>();
 	
-	private String jobFrequency = "DAILY" ; //Default frequency, Monthe end would be MONTHLY
-	
 	public Properties loadPropFromClassPath(String propFileName) throws Exception{
 		// loading properties from the classpath 
 		Properties props = new Properties(); 
@@ -68,6 +67,25 @@ public class BatchJobLauncher {
 			hm.put(name, value);
 		}
 		
+		//Initialize additional properties
+		Calendar cal = Calendar.getInstance();
+		cal.setTime(new Date());
+		if(hm.get("ACCTMONTH") == null){
+			hm.put("ACCTMONTH", String.valueOf(cal.get(Calendar.MONTH)+1));
+		}
+		if(hm.get("ACCTYEAR") == null){
+			hm.put("ACCTYEAR", String.valueOf(cal.get(Calendar.YEAR)));			
+		}
+		if(hm.get("ACCTBASIS") == null){
+			hm.put("ACCTBASIS", "cal");	
+		}
+		if(hm.get("BUSDATE") == null){
+			hm.put("BUSDATE", "1970-01-01");	
+		}
+		if(hm.get("FREQUENCY") == null){
+			hm.put("FREQUENCY", "dd");
+		}
+		
     }catch(Exception ex){
     	logger.info("Exception while reading properties file");    	
     	ex.printStackTrace();
@@ -84,7 +102,7 @@ public class BatchJobLauncher {
 		
 		logger.info("Launching Batch Job with JobName : " + jobName + " Mode : " + mode);
 		
-		if(!frequency.isEmpty()){
+		if(!frequency.equals("DEFAULT")){
 			hm.put("FREQUENCY", "mm");
 		}
 		
@@ -243,16 +261,14 @@ public class BatchJobLauncher {
 	
 	
 	public static void main(String[] args) throws Exception{
-		logger.info("Batch Launch Begin");
+		logger.info("Batch Launch Begin : ");
 		BatchJobLauncher batch = new BatchJobLauncher();
 		if((args.length == 2 && !args[0].equals("RESTART") && !args[0].equals("RUN"))
 				|| args.length == 1 )
 				throw new Exception("Invalid Argument - Valid Arguments are RESTART <jobName> or RUN <jobName>");
-		if(args.length == 3 && !args[0].equals("RUN"))
-			throw new Exception("Invalid Argument - Valid Arguments are RUN <jobName> <Frequency>");
-		if(args.length == 3 && args[0].equals("RUN") && !args[2].equals("MONTHLY"))
+		else if(args.length == 3 && (!args[0].equals("RUN") || !args[2].equals("MONTHLY")))
 			throw new Exception("Invalid Argument - Valid Arguments are RUN <jobName> MONTHLY - No argument defaults to DAILY");
-		batch.launch(args.length == 0?"DEFAULT":args[1], args.length == 0?"DEFAULT":args[0], args.length == 0?"DEFAULT":args[2]);
+		batch.launch(args.length < 2?"DEFAULT":args[1], args.length < 1?"DEFAULT":args[0], args.length < 3?"DEFAULT":args[2]);
 		logger.info("Batch Launch End");
 	}	
 }

@@ -3,7 +3,6 @@ package com.client.iip.integration.core;
 import java.io.File;
 import java.io.RandomAccessFile;
 import java.net.URL;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -153,20 +152,18 @@ public class BatchRequestProcessor {
 		
 	}
 	
-	public String generateSubmitBatchPayload(String jobName, boolean runOnSystemDate, HashMap config){
-		
-		Calendar cal = Calendar.getInstance();
-		cal.setTime(new Date());
+	public String generateSubmitBatchPayload(String jobName, boolean runOnSystemDate, HashMap config){		
 		StringBuffer  payload = new StringBuffer();				
 		payload.append("<clientBatchJobRequest>\n");
 		payload.append("<jobName>" + jobName +"</jobName>\n");
 		payload.append("<runOnSystemDate>" + runOnSystemDate + "</runOnSystemDate>\n");
 		if(jobName.equals("glBalance")){			
-			payload.append("<runType>"+  config.get("FREQUENCY").toString()+"</runType>\n");
-			payload.append("<company>"+  config.get("COMPANYID").toString()+"</company>\n");
-			payload.append("<acctgPeriodMonth>"+  config.get("ACCTMONTH")==null?cal.get(Calendar.MONTH)+1:config.get("ACCTMONTH").toString()+"</acctgPeriodMonth>\n");
-			payload.append("<acctgPeriodYr>"+  config.get("ACCTYEAR")==null?cal.get(Calendar.YEAR):config.get("ACCTYEAR").toString()+"</acctgPeriodYr>\n");
-			payload.append("<acctgYearBasisCd>"+  config.get("ACCTBASIS").toString()+"</acctgYearBasisCd>\n");		
+			payload.append("<runType>"+  config.get("FREQUENCY").toString() +"</runType>\n");
+			payload.append("<companyID>"+  config.get("COMPANYID").toString() +"</companyID>\n");
+			payload.append("<acctgPeriodMonth>"+  config.get("ACCTMONTH").toString() +"</acctgPeriodMonth>\n");
+			payload.append("<acctgPeriodYr>"+ config.get("ACCTYEAR").toString() +"</acctgPeriodYr>\n");
+			payload.append("<acctgYearBasisCd>"+  config.get("ACCTBASIS").toString() +"</acctgYearBasisCd>\n");
+			payload.append("<busDate>"+  config.get("BUSDATE").toString() + " 00:00:00.0" +"</busDate>\n");	
 		}
 		payload.append("</clientBatchJobRequest>");
 		logger.info("Batch Request Payload : " + payload.toString());

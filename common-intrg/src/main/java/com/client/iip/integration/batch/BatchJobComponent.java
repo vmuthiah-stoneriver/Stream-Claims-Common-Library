@@ -1,7 +1,10 @@
 package com.client.iip.integration.batch;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Collection;
 import java.util.Iterator;
+import java.util.TimeZone;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -93,13 +96,22 @@ public class BatchJobComponent {
 			}
 			
 			if(request.getBusDate() != null){
-				builder.addDate("busDate",MuleServiceFactory.getService(DateService.class)
+				Calendar cal = Calendar.getInstance();
+				cal.setTime(new SimpleDateFormat("yyyy-MM-dd").parse("1970-01-01"));
+				cal.setTimeZone(TimeZone.getTimeZone("UTC"));
+				if(request.getBusDate().compareTo(cal.getTime()) == 0){
+					logger.info("Default Business Date : " + request.getBusDate());
+					builder.addDate("busDate",MuleServiceFactory.getService(DateService.class)
 			            .getBusinessDate(DateConstants.BUSN_DATE_CMPY_ID, 
 							     BusinessDateType.BUSINESS));
+				}else{
+					logger.info("Business Date : " + request.getBusDate());
+					builder.addDate("busDate", request.getBusDate());
+				}
 			}
 			
-			if(request.getCompany() != null){
-				builder.addString("company", request.getCompany());
+			if(request.getCompanyID() != null){
+				builder.addString("company", request.getCompanyID());
 			}
 			
 			builder.addDate("currentDate", DateUtility.getSystemDateTime());

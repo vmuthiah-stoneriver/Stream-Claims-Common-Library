@@ -8,7 +8,6 @@ import java.util.Date;
  * @author saurabh.bhatnagar
  *
  */
-// Changes as per new requirement by Gaurav R. Removing asynchronous flag as request will always be asynchronous.
 public class ClientBatchJobRequest implements Serializable{
 
 	private static final long serialVersionUID = 7595109179310387693L;
@@ -19,7 +18,7 @@ public class ClientBatchJobRequest implements Serializable{
 	
 	private String runType;
 	
-	private String company;
+	private String companyID;
 	
 	private String acctgPeriodMonth;
 	
@@ -42,16 +41,16 @@ public class ClientBatchJobRequest implements Serializable{
 		this.runType = runType;
 	}
 	/**
-	 * @return the company
+	 * @return the companyID
 	 */
-	public String getCompany() {
-		return company;
+	public String getCompanyID() {
+		return companyID;
 	}
 	/**
-	 * @param company the company to set
+	 * @param companyID the companyID to set
 	 */
-	public void setCompany(String company) {
-		this.company = company;
+	public void setCompanyID(String companyID) {
+		this.companyID = companyID;
 	}
 	/**
 	 * @return the acctgPeriodMonth
