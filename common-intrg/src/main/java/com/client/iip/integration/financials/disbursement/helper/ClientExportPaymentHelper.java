@@ -271,7 +271,7 @@ public class ClientExportPaymentHelper extends ExportPaymentHelper {
 				if (disbursementStatusDTO.getEndDateTime() == null){
 					disbursementStatusDTO.setEndDateTime(DateUtility.getSystemDateTime());
 				}
-				//Check for voids and stop pay no issues statuses
+				//Check for voids and stop pay no issue statuses
 				if(disbursementStatusDTO.getDisbursementStatusType().
 						equals(DisbursementConstants.DISB_STATUS_TYPE_CODE_PAYMENT_VOIDED_NOT_REISSUED)
 						|| disbursementStatusDTO.getDisbursementStatusType().
@@ -281,17 +281,17 @@ public class ClientExportPaymentHelper extends ExportPaymentHelper {
 			}
 			
 			DisbursementStatusDTO currentStatus = new DisbursementStatusDTO();
-
-			if( (dto.isManualCheckIndicator()) ||
-					(dto.getFinancialAgreementTypeCode().equals("dsb") &&  dto.getDisbursementTypeCode().equals("prenote"))	) {
-				currentStatus.setDisbursementStatusType(DisbursementConstants.DISB_STATUS_TYPE_CODE_ISSUED_PAYMENT);
-				currentStatus.setDisbursementState(DisbursementConstants.DISB_STATE_TYPE_CODE_OPEN);
-			}else if(voidedDisbStatus != null){
+			
+			if(voidedDisbStatus != null){
 				//If voided copy the current codes for the new status record.
 				currentStatus
 				.setDisbursementStatusType(voidedDisbStatus.getDisbursementStatusType());
 				currentStatus
 				.setDisbursementState(voidedDisbStatus.getDisbursementState());				
+			}else if( (dto.isManualCheckIndicator()) ||
+					(dto.getFinancialAgreementTypeCode().equals("dsb") &&  dto.getDisbursementTypeCode().equals("prenote"))	) {
+				currentStatus.setDisbursementStatusType(DisbursementConstants.DISB_STATUS_TYPE_CODE_ISSUED_PAYMENT);
+				currentStatus.setDisbursementState(DisbursementConstants.DISB_STATE_TYPE_CODE_OPEN);
 			}else{
 				currentStatus
 				.setDisbursementStatusType(DisbursementConstants.DISB_STATUS_TYPE_CODE_AWAITING_PAYMENT);
