@@ -42,7 +42,7 @@
 								I -
 								Issued Payment, P - Cleared Payment, S - Stopped Payment, V -
 								Voided Payment,
-								S - Stale Dated Payment, E - Unclaimed Property
+								T - Stale Dated Payment, E - Unclaimed Property
 								Payment.
 							</xs:documentation>
 						</xs:annotation>
