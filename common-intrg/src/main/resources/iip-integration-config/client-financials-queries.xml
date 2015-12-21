@@ -38,7 +38,9 @@ SELECT
                            AND Dialect.getDateOnlyExpression(DISB.EFF_DTM) &lt;= :endDate
                            AND ((STATUS.DSB_STT_TYP_CD IN('incomp','opn')
                            AND STATUS.DSB_STS_TYP_CD IN ('incomp_pay'))
-                           OR 	(STATUS.AUDT_USER_CREA_ID NOT IN (6000302) AND STATUS.DSB_STS_TYP_CD IN ('pay_stp_niss', 'pay_vd_niss')))
+                           OR 	(STATUS.AUDT_USER_CREA_ID NOT IN (SELECT USER_ID FROM USER_LOGIN_CD WHERE USER_LGN_NM = 'strmimpt') 
+                           AND STATUS.DSB_STS_TYP_CD IN ('pay_stp_niss', 'pay_vd_niss')
+                           AND STATUS.DSB_STS_RSN_CD != 'snt_pay_prcssr'))
                            LEFT JOIN (SELECT DISTINCT DPD.DSB_ID FROM DISBURSEMENT_PAYABLE_DRV DPD 
             							JOIN CLM_FNCL_TRAN_CLM_ASMT_SURCHR CFTCAS ON CFTCAS.FTC_ID_ASMT_SURCHR = DPD.FTC_ID
      									JOIN DISBURSEMENT_PAYABLE_DRV DPD2 ON DPD2.FTC_ID = CFTCAS.FTC_ID 
@@ -119,7 +121,6 @@ SELECT
             INNER JOIN DISBURSEMENT_STATUS STATUS
             ON DISB.DSB_ID=STATUS.DSB_ID
             AND FATC.FNCL_AGRE_TYP_CD = 'clm'
-            AND STATUS.DSB_STT_TYP_CD IN('incomp','opn')
             AND STATUS.DSB_STS_RSN_CD IN ('snt_pay_prcssr')	
             AND STATUS.EFF_DTM &gt; :startDate
             AND STATUS.EFF_DTM &lt;= :endDate
