@@ -34,6 +34,8 @@ public class XMLFileResourceItemWriter extends IIPXSLTransformer implements Item
 	
 	private String jobName;
 	
+	private String fileName;
+	
 	private String fileExtension = "xml";
 	
 	@javax.annotation.Resource(name = "stepExecutionListener")  
@@ -80,6 +82,29 @@ public class XMLFileResourceItemWriter extends IIPXSLTransformer implements Item
 	public String getExportFolderPath() {
 		return exportFolderPath;
 	}
+	
+	/**
+	 * @param fileName the fileName to set
+	 */
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
+	}
+	
+	
+
+	/**
+	 * @return the fileName
+	 */
+	public String getFileName() {
+		//Generate fileName if not set.
+		if(this.fileName == null){
+			SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yy_HH-mm-ss.SSS");
+			String formattedDate = dateFormat.format(new Date());			
+			return jobName + "_" + formattedDate  + "." + fileExtension;
+		}else{
+			return this.fileName;
+		}
+	}
 
 	/**
 	 * @param exportFolderPath the exportFolderPath to set
@@ -109,30 +134,29 @@ public class XMLFileResourceItemWriter extends IIPXSLTransformer implements Item
 	public void write(List<? extends Object> items) throws Exception {
 		logger.debug("Inside writer");
 		try{
-		//Loop through objects, Convert to xml and write to file
-		for (Object object : items) {			
-			String responseXML = null;
-			//Convert object to xml string
-			String strXML = getXStreamInstance().convert2XML(object);
-			//logger.debug("XML : " + strXML);
-			SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yy_HH-mm-ss.SSS");
-			String formattedDate = dateFormat.format(new Date());
-			//Transform xml if xsl is provided
-			if (getXslFile() != null){
-				MuleMessage message = new DefaultMuleMessage(strXML, new HashMap(), muleContext);
-				MuleMessage response = (MuleMessage)transformMessage(message, "UTF-8");
-				responseXML = (String)response.getPayload();
-			}else{
-				responseXML = strXML;
+			//Loop through objects, Convert to xml and write to file
+			for (Object object : items) {			
+				String responseXML = null;
+				//Convert object to xml string
+				String strXML = getXStreamInstance().convert2XML(object);
+				//logger.debug("XML : " + strXML);
+
+				//Transform xml if xsl is provided
+				if (getXslFile() != null){
+					MuleMessage message = new DefaultMuleMessage(strXML, new HashMap(), muleContext);
+					MuleMessage response = (MuleMessage)transformMessage(message, "UTF-8");
+					responseXML = (String)response.getPayload();
+				}else{
+					responseXML = strXML;
+				}
+				
+				//Write to File			
+				if(responseXML != null){
+					FileUtils.writeStringToFile(new File(getExportFolderPath() + File.separator + getFileName()), responseXML);
+				}else{
+					logger.error("Error in Transformation responseXML : " + responseXML);
+				}
 			}
-			
-			//Write to File			
-			if(responseXML != null){
-				FileUtils.writeStringToFile(new File(getExportFolderPath() + File.separator + jobName + "_" + formattedDate  + "." + fileExtension), responseXML);
-			}else{
-				logger.error("Error in Transformation responseXML : " + responseXML);
-			}
-		}
 		}catch(Exception ex){
 			logger.error("Failure when writing resource", ex);
 			BatchUtils.writeIntoBatchLog(stepExecutionListener.getStepExecution(), "clm" , "Resource write Failure : ", ex);
@@ -140,7 +164,7 @@ public class XMLFileResourceItemWriter extends IIPXSLTransformer implements Item
 		}
 
 	}
-	
+
 	public IIPXStream getXStreamInstance() throws Exception{
 		IIPXStream xstream = new IIPXStream(aliasFileList);
 		xstream.registerConverter(new CustomReflectionConverter(xstream.getMapper(),new PureJavaReflectionProvider()));
@@ -151,6 +175,8 @@ public class XMLFileResourceItemWriter extends IIPXSLTransformer implements Item
 		xstream.addDefaultImplementation(java.util.ArrayList.class, java.util.List.class);
 		xstream.addDefaultImplementation(java.util.HashMap.class, java.util.Map.class);			
 		return xstream;
-	}	
+	}
+
+
 
 }
