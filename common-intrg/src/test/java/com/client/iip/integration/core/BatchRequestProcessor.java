@@ -157,12 +157,22 @@ public class BatchRequestProcessor {
 		payload.append("<clientBatchJobRequest>\n");
 		payload.append("<jobName>" + jobName +"</jobName>\n");
 		payload.append("<runOnSystemDate>" + runOnSystemDate + "</runOnSystemDate>\n");
-		if(jobName.equals("glBalance")){			
-			payload.append("<runType>"+  config.get("FREQUENCY").toString() +"</runType>\n");
-			payload.append("<companyID>"+  config.get("COMPANYID").toString() +"</companyID>\n");
-			payload.append("<acctgPeriodMonth>"+  config.get("ACCTMONTH").toString() +"</acctgPeriodMonth>\n");
-			payload.append("<acctgPeriodYr>"+ config.get("ACCTYEAR").toString() +"</acctgPeriodYr>\n");
-			payload.append("<acctgYearBasisCd>"+  config.get("ACCTBASIS").toString() +"</acctgYearBasisCd>\n");
+		payload.append("<runType>"+  config.get("FREQUENCY").toString() +"</runType>\n");
+		if(jobName.equals("glBalance")){
+			
+			if(!config.get("COMPANYID").toString().isEmpty()){
+				payload.append("<companyID>"+  config.get("COMPANYID").toString() +"</companyID>\n");
+			}
+			if(!config.get("ACCTMONTH").toString().isEmpty()){
+				payload.append("<acctgPeriodMonth>"+  config.get("ACCTMONTH").toString() +"</acctgPeriodMonth>\n");
+			}
+			if(!config.get("ACCTYEAR").toString().isEmpty()){
+				payload.append("<acctgPeriodYr>"+ config.get("ACCTYEAR").toString() +"</acctgPeriodYr>\n");
+			}
+			if(!config.get("ACCTBASIS").toString().isEmpty()){
+				payload.append("<acctgYearBasisCd>"+  config.get("ACCTBASIS").toString() +"</acctgYearBasisCd>\n");
+			}
+			
 			payload.append("<busDate>"+  config.get("BUSDATE").toString() + " 00:00:00.0" +"</busDate>\n");	
 		}
 		payload.append("</clientBatchJobRequest>");
