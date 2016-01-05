@@ -162,8 +162,8 @@ public class SFTPTasklet extends ResourcesItemReader implements Tasklet {
 		 }finally{
 			 if(channel != null){
 				 if(protocol.equals("ftp")){
+					 ((FTPClient)channel).logout();
 					 ((FTPClient)channel).disconnect();
-					 ((FTPClient)channel).quit();
 				 }else{
 					 ((ChannelSftp)channel).getSession().disconnect();
 					 ((ChannelSftp)channel).exit();
