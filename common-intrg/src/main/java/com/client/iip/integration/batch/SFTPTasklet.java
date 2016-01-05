@@ -9,6 +9,7 @@ import java.util.Date;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.lang.StringUtils;
+import org.apache.commons.net.ftp.FTPClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.batch.core.StepContribution;
@@ -36,7 +37,7 @@ public class SFTPTasklet extends ResourcesItemReader implements Tasklet {
 	@javax.annotation.Resource(name = "stepExecutionListener")
 	private StepExecutionListenerCtxInjecter stepExecutionListener;
 	
-	private ChannelSftp channel;
+	private Object channel;
 	
 	private String user;
 	
@@ -53,8 +54,18 @@ public class SFTPTasklet extends ResourcesItemReader implements Tasklet {
     private String privateKeyPassphrase;
     
     private String filePath;
+    
+    private String protocol;
 
     
+	/**
+	 * @param protocol the protocol to set
+	 */
+	public void setProtocol(String protocol) {
+		this.protocol = protocol;
+	}
+
+
 	@BeforeStep
 	public void beforeStep(StepExecution _stepExecution) throws Exception 
 	{
@@ -110,7 +121,11 @@ public class SFTPTasklet extends ResourcesItemReader implements Tasklet {
 		 File file = null;
 		 try{
 			 int writeCount = 0;
-			 channel = setupSFTPChannel();
+			 if(protocol.equals("ftp")){
+				 channel = setupFTPChannel();	
+			 }else{
+				 channel = setupSFTPChannel();
+			 }
 			 Resource res = super.read();
 			 while(res != null) {
 				file = res.getFile();
@@ -119,8 +134,11 @@ public class SFTPTasklet extends ResourcesItemReader implements Tasklet {
 				    sftpChannel.send(message);*/
 
 		            FileInputStream fileInput = new FileInputStream(file);
-		            
-		            channel.put(fileInput, file.getName());
+		            if(protocol.equals("ftp")){
+		            	((FTPClient)channel).storeFile(file.getName(), fileInput);
+		            }else{
+		            	((ChannelSftp)channel).put(fileInput, file.getName());
+		            }
 
 		            fileInput.close();
 				    //If sucessful then move the file to the bak folder
@@ -143,10 +161,26 @@ public class SFTPTasklet extends ResourcesItemReader implements Tasklet {
 			throw new Exception("File Transmission Failed " + file==null?"":file.getName(), ex);				 
 		 }finally{
 			 if(channel != null){
-				 channel.getSession().disconnect();
-				 channel.exit();
+				 if(protocol.equals("ftp")){
+					 ((FTPClient)channel).disconnect();
+					 ((FTPClient)channel).quit();
+				 }else{
+					 ((ChannelSftp)channel).getSession().disconnect();
+					 ((ChannelSftp)channel).exit();
+				 }
 			 }
 		 }
+	 }
+	 
+	 public FTPClient setupFTPChannel() throws Exception{
+		 
+		 FTPClient channel = new FTPClient();
+		 
+		 channel.connect(host, port);
+		 
+		 channel.login(user, password);
+		 
+		 return channel;
 	 }
 	 
 	 public ChannelSftp setupSFTPChannel() throws Exception{
@@ -169,7 +203,7 @@ public class SFTPTasklet extends ResourcesItemReader implements Tasklet {
             config.put("StrictHostKeyChecking", "no");
             session.setConfig(config);
             session.connect();
-            channel = (ChannelSftp)session.openChannel("sftp");            
+            ChannelSftp channel = (ChannelSftp)session.openChannel("sftp");            
             channel.connect();            
             channel.cd(remoteDirectory);
             return channel;
