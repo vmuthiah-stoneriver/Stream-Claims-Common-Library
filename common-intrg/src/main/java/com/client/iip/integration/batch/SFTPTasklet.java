@@ -55,7 +55,7 @@ public class SFTPTasklet extends ResourcesItemReader implements Tasklet {
     
     private String filePath;
     
-    private String protocol;
+    private String protocol = "sftp";
 
     
 	/**
