@@ -175,7 +175,9 @@ public class SFTPTasklet extends ResourcesItemReader implements Tasklet {
 	 public FTPClient setupFTPChannel() throws Exception{
 		 
 		 FTPClient channel = new FTPClient();
-		 
+
+	     logger.info("Setting up session: " + user + ":" + host + ":" + port);
+
 		 channel.connect(host, port);
 		 
 		 channel.login(user, password);
@@ -188,7 +190,7 @@ public class SFTPTasklet extends ResourcesItemReader implements Tasklet {
 	        JSch jsch = new JSch();
 	        Session session;
 
-	        logger.debug("Setting up session: " + user + ":" + host + ":" + port);
+	        logger.info("Setting up session: " + user + ":" + host + ":" + port);
 
 	        if (StringUtils.isNotEmpty(privateKeyPath) && StringUtils.isNotEmpty(privateKeyPassphrase)) {
 	            logger.debug("Adding Security Identity: " + privateKeyPath + ":" + privateKeyPassphrase);
