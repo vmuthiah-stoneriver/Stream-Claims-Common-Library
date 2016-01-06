@@ -2,13 +2,19 @@ package com.client.iip.integration.policy;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Date;
+import java.util.HashMap;
 
 import org.apache.commons.collections.CollectionUtils;
+import org.mule.api.transport.PropertyScope;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 
 import com.client.iip.integration.core.exception.IIPErrorResponse;
 import com.client.iip.integration.core.util.MuleEndpointAdapter;
+import com.fiserv.isd.iip.core.security.IIPUser;
 import com.fiserv.isd.iip.core.util.IIPCoreSystemException;
 import com.fiserv.isd.iip.core.validation.IIPObjectError;
 import com.stoneriver.iip.policy.mediation.adapter.PolicyMediationIntegrationAdapter;
@@ -47,6 +53,8 @@ public class PolicyPullMediationAdapterImpl extends MuleEndpointAdapter
 	
 	private PolicyImportProcessor policyImportProcessor;
 	
+	private static HashMap policyLossDateLookup = new HashMap<String, Date>();	
+	
 
 	/**
 	 * @param policyImportProcessor the policyImportProcessor to set
@@ -70,6 +78,15 @@ public class PolicyPullMediationAdapterImpl extends MuleEndpointAdapter
 			ClaimsPolicySearchCriteriaDTO criteria) {
 
 		logger.info("Entering Policy Search with Criteria: {} ", criteria);
+		
+		//Load the Loss date for the logged in user
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		if(authentication!=null && 	authentication.getPrincipal()!=null){
+			if(authentication.getPrincipal() instanceof IIPUser){
+				IIPUser user = (IIPUser) authentication.getPrincipal();
+				policyLossDateLookup.put(user.getUsername(), criteria.getOccurrenceDate());
+			}
+		}		
 
 		Collection<ClaimsPolicySearchResultDTO> searchResults = null;
 		Object payload = null;
@@ -136,6 +153,19 @@ public class PolicyPullMediationAdapterImpl extends MuleEndpointAdapter
 	public PolicyDetailsDTO retrievePolicyDetails(PolicyImportRequestDTO req) {
 
 		logger.info("Entering Policy Retrieve Policy Details with Request: {} ", req.toString());
+		
+		//Get Loss date if Occurrence date is null		
+		if(req.getOccurrenceDate() == null){
+			Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+			if(authentication!=null && 	authentication.getPrincipal()!=null){
+				if(authentication.getPrincipal() instanceof IIPUser){
+					IIPUser user = (IIPUser) authentication.getPrincipal();
+					req.setOccurrenceDate((Date)policyLossDateLookup.get(user.getUsername()));
+					//Remove element from lookup
+					policyLossDateLookup.remove(user.getUsername());
+				}
+			}			
+		}
 
 		PolicyDetailsDTO policyDetails = null;
 		Object payload = null;
