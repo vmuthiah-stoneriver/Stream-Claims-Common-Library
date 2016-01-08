@@ -154,17 +154,23 @@ public class PolicyPullMediationAdapterImpl extends MuleEndpointAdapter
 
 		logger.info("Entering Policy Retrieve Policy Details with Request: {} ", req.toString());
 		
-		//Get Loss date if Occurrence date is null		
-		if(req.getOccurrenceDate() == null){
-			Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-			if(authentication!=null && 	authentication.getPrincipal()!=null){
-				if(authentication.getPrincipal() instanceof IIPUser){
-					IIPUser user = (IIPUser) authentication.getPrincipal();
-					req.setOccurrenceDate((Date)policyLossDateLookup.get(user.getUsername()));
-					//Remove element from lookup
-					policyLossDateLookup.remove(user.getUsername());
-				}
-			}			
+		IIPUser user = null;
+		
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		if(authentication!=null && 	authentication.getPrincipal()!=null){
+			if(authentication.getPrincipal() instanceof IIPUser){
+				user = (IIPUser) authentication.getPrincipal();
+			}
+		}		
+		
+		//Get Occurrence date from SearchRequest if Occurrence date is null in PolicyImportRequest
+		
+		if(req.getOccurrenceDate() == null && user != null){
+			req.setOccurrenceDate((Date)policyLossDateLookup.get(user.getUsername()));
+		}
+		
+		if(user != null){
+			policyLossDateLookup.remove(user.getUsername());
 		}
 
 		PolicyDetailsDTO policyDetails = null;
