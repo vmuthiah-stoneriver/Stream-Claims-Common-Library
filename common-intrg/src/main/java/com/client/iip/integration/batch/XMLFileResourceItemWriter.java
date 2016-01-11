@@ -19,6 +19,7 @@ import org.springframework.oxm.XmlMappingException;
 
 import com.client.iip.integration.core.converter.CustomReflectionConverter;
 import com.client.iip.integration.core.converter.IIPXStreamDateConverter;
+import com.client.iip.integration.core.security.PGPEncryption;
 import com.client.iip.integration.core.transformer.IIPXSLTransformer;
 import com.client.iip.integration.core.util.IIPXStream;
 import com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider;
@@ -41,11 +42,20 @@ public class XMLFileResourceItemWriter extends IIPXSLTransformer implements Item
 	@javax.annotation.Resource(name = "stepExecutionListener")  
 	private StepExecutionListenerCtxInjecter stepExecutionListener;	
 	
+	private PGPEncryption pgpBean;
+	
 
 	public XMLFileResourceItemWriter() throws Exception{
 		if(getXslFile() != null){
 			super.initialise();
 		}
+	}
+
+	/**
+	 * @param pgpBean the pgpBean to set
+	 */
+	public void setPgpBean(PGPEncryption pgpBean) {
+		this.pgpBean = pgpBean;
 	}
 
 	/**
@@ -152,7 +162,13 @@ public class XMLFileResourceItemWriter extends IIPXSLTransformer implements Item
 				
 				//Write to File			
 				if(responseXML != null){
-					FileUtils.writeStringToFile(new File(getExportFolderPath() + File.separator + getFileName()), responseXML);
+					//Encrypt Payload
+					if(pgpBean != null){
+						byte[] encryptedData = pgpBean.encrypt(responseXML);
+						FileUtils.writeByteArrayToFile(new File(getExportFolderPath() + File.separator + getFileName()), encryptedData);
+					}else{
+						FileUtils.writeStringToFile(new File(getExportFolderPath() + File.separator + getFileName()), responseXML);
+					}
 				}else{
 					logger.error("Error in Transformation responseXML : " + responseXML);
 				}

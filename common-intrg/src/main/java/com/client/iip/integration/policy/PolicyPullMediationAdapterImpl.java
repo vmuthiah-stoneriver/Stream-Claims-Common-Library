@@ -6,7 +6,6 @@ import java.util.Date;
 import java.util.HashMap;
 
 import org.apache.commons.collections.CollectionUtils;
-import org.mule.api.transport.PropertyScope;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.security.core.Authentication;
