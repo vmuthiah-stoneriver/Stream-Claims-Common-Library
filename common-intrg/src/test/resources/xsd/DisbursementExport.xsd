@@ -1,5 +1,5 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
-	<xs:include schemaLocation="../xsd/Common.xsd" />
+<xs:include schemaLocation="../xsd/Common.xsd" />
 
 	<xs:annotation>
 		<xs:documentation>Disbursement Export Schema.</xs:documentation>
@@ -2058,9 +2058,15 @@
 					<xs:element name="primaryPayeePartyNumber" type="string"
 						minOccurs="0" maxOccurs="1">
 						<xs:annotation>
-							<xs:documentation>Primary payee party nmber.</xs:documentation>
+							<xs:documentation>Primary payee party number.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
+					<xs:element name="requestedBy" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Payment Requestor.</xs:documentation>
+						</xs:annotation>
+					</xs:element>					
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -2083,7 +2089,16 @@
 			<xs:documentation>Check payment info</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
-			<xs:extension base="PaymentPayeeCommonDTO" />
+			<xs:extension base="PaymentPayeeCommonDTO">
+				<xs:sequence>
+					<xs:element name="requestedBy" type="string"
+						minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Payment Requestor.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>			
 		</xs:complexContent>
 	</xs:complexType>
 
