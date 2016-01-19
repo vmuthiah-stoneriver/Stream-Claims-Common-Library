@@ -1017,6 +1017,18 @@
 					<xs:documentation>Person names.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element name="Contacts" type="ContactNameList" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Contact names.</xs:documentation>
+				</xs:annotation>			
+			</xs:element>
+			<xs:element name="Identifiers" type="IdentifierList"
+				minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Party identifiers.</xs:documentation>
+				</xs:annotation>
+			</xs:element>						
 			<xs:element name="Roles" type="RoleList" minOccurs="0"
 				maxOccurs="1">
 				<xs:annotation>
@@ -1074,6 +1086,136 @@
 			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
+	
+	<xs:complexType name="ContactNameList">
+		<xs:sequence>
+			<xs:element name="contactName" type="ContactName" minOccurs="0"
+				maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Contact name.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="IdentifierList">
+		<xs:sequence>
+			<xs:element name="identifier" type="Identifier"
+				minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Party identifiers.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="Identifier">	
+		<xs:sequence>
+			<xs:element name="effectiveDate" type="xs:date" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Effective date.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="expiryDate" type="xs:date" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Expiry date.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="identifierType" type="xs:string" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Identifier type
+					IVANS Account Number
+					IVANS UserId
+					IBM Number
+					IVANS Batch Download Indicator
+					Agency Number
+					Agency Policy Number Format
+					National Provider ID
+					Provider Number
+					Health Insurance Number
+					Business Identification Number
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="identifierNumber" type="xs:string"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Identifier number.</xs:documentation>
+				</xs:annotation>
+			</xs:element>						
+		</xs:sequence>	
+	</xs:complexType>	
+	
+	
+	<xs:complexType name="ContactName">
+		<xs:sequence>
+			<xs:element name="effectiveDate" type="xs:date" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Effective date.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="expiryDate" type="xs:date" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Expiry date.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="firstName" type="xs:string" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>First name.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="lastName" type="xs:string" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Last name.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="contactName" type="xs:string" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Contact name.</xs:documentation>
+				</xs:annotation>
+			</xs:element>			
+			<xs:element name="contactTypeCode" type="xs:string"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Contact types
+					Policy Contact
+					Risk Manager
+					Claims Coordinator
+					Friend
+					Attorney
+					Auditor
+					In Care Of
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="comment" type="xs:string" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Contact comment.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="emailAddress" type="xs:string" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Contact email.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Communications" type="CommunicationList"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Contact communication.</xs:documentation>
+				</xs:annotation>
+			</xs:element>						
+		</xs:sequence>
+	</xs:complexType>	
 
 	<xs:complexType name="OrganizationName">
 		<xs:sequence>
@@ -1183,6 +1325,18 @@
 				minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Organization names.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Contacts" type="ContactNameList" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Contact names.</xs:documentation>
+				</xs:annotation>			
+			</xs:element>
+			<xs:element name="Identifiers" type="IdentifierList"
+				minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Party Identifiers.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="Profiles" type="ProfileList" minOccurs="0"
