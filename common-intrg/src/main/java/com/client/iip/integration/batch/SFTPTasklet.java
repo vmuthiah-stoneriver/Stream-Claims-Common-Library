@@ -181,7 +181,7 @@ public class SFTPTasklet extends ResourcesItemReader implements Tasklet {
 		 channel.connect(host, port);
 		 
 		 channel.login(user, password);
-		 
+		 channel.changeWorkingDirectory(remoteDirectory);
 		 return channel;
 	 }
 	 
