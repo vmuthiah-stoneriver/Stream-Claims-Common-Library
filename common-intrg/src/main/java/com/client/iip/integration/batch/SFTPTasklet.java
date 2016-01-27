@@ -132,7 +132,7 @@ public class SFTPTasklet extends ResourcesItemReader implements Tasklet {
 				if (file.exists()) {
 					/*Message message = MessageBuilder.withPayload(file).build();
 				    sftpChannel.send(message);*/
-
+					if (channel == null) initChannel();
 		            FileInputStream fileInput = new FileInputStream(file);
 		            if(protocol.equals("ftp")){
 		            	((FTPClient)channel).storeFile(file.getName(), fileInput);
@@ -155,21 +155,34 @@ public class SFTPTasklet extends ResourcesItemReader implements Tasklet {
 			return RepeatStatus.FINISHED;
 		 }catch(Exception ex){
 			ex.printStackTrace();
-			logger.error("File Transmission Failed :" + file==null?"":file.getName(), ex);
+			logger.error("File Transmission Failed :" + (file==null?"":file.getName()), ex);
 			//BatchUtils.writeIntoBatchLog(stepExecutionListener.getStepExecution(), "clm",
 			//		"File Transmission Failed : " + file==null?"":file.getName(), ex);
-			throw new Exception("File Transmission Failed " + file==null?"":file.getName(), ex);				 
+			throw new Exception("File Transmission Failed " + (file==null?"":file.getName()), ex);				 
 		 }finally{
 			 if(channel != null){
-				 if(protocol.equals("ftp")){
-					 ((FTPClient)channel).logout();
-					 ((FTPClient)channel).disconnect();
-				 }else{
-					 ((ChannelSftp)channel).getSession().disconnect();
-					 ((ChannelSftp)channel).exit();
-				 }
+				 closeChannel();
 			 }
 		 }
+	 }
+	 
+	 public void initChannel() throws Exception{		
+		 if(protocol.equals("ftp")){
+			 channel = setupFTPChannel();	
+		 }else{
+			 channel = setupSFTPChannel();
+		 }		 
+	 }
+	 
+	 
+	 public void closeChannel() throws Exception{
+		 if(protocol.equals("ftp")){
+			 ((FTPClient)channel).logout();
+			 ((FTPClient)channel).disconnect();
+		 }else{
+			 ((ChannelSftp)channel).getSession().disconnect();
+			 ((ChannelSftp)channel).exit();
+		 }		 
 	 }
 	 
 	 public FTPClient setupFTPChannel() throws Exception{

@@ -52,7 +52,7 @@ public class PolicyPullMediationAdapterImpl extends MuleEndpointAdapter
 	
 	private PolicyImportProcessor policyImportProcessor;
 	
-	private static HashMap policyLossDateLookup = new HashMap<String, Date>();	
+	private static HashMap<String, Date> policyLossDateLookup = new HashMap<String, Date>();	
 	
 
 	/**
@@ -164,7 +164,7 @@ public class PolicyPullMediationAdapterImpl extends MuleEndpointAdapter
 		
 		//Get Occurrence date from SearchRequest if Occurrence date is null in PolicyImportRequest
 		
-		if(req.getOccurrenceDate() == null && user != null){
+		if(user != null && policyLossDateLookup.get(user.getUsername()) != null){
 			req.setOccurrenceDate((Date)policyLossDateLookup.get(user.getUsername()));
 		}
 		
