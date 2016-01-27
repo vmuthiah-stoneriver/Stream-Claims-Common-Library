@@ -10,10 +10,14 @@ import com.stoneriver.iip.claims.CompanyDetailDTO;
 import com.stoneriver.iip.claims.composite.search.ClaimsCompositeServiceImpl;
 import com.stoneriver.iip.claims.policy.AllClaimsPolicyService;
 import com.stoneriver.iip.claims.policy.ClaimPolicyDTO;
+import com.stoneriver.iip.claims.policy.ClaimPolicyInformationDTO;
+import com.stoneriver.iip.claims.refreshunit.RefreshUnitRequestDTO;
 import com.stoneriver.iip.claims.search.ClaimDuplicatesSearchCriteriaDTO;
 import com.stoneriver.iip.claims.search.ClearClaimSearchResult;
 import com.stoneriver.iip.policy.mediation.claims.ClaimsPolicySearchResultDTO;
 import com.stoneriver.iip.policy.mediation.claims.ClaimsPolicySearchService;
+import com.stoneriver.iip.policy.mediation.policyimport.ListUnitsCriteriaDTO;
+import com.stoneriver.iip.policy.mediation.policyimport.PolicyImportService;
 
 public class ClientClaimsCompositeServiceImpl extends ClaimsCompositeServiceImpl {
 	
@@ -77,6 +81,41 @@ public class ClientClaimsCompositeServiceImpl extends ClaimsCompositeServiceImpl
 		}
 		
 		return changeDateOfOccurence;
+	}
+	
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	public void changeDateOfOccurrence(ClaimChangeDateOfOccurenceDTO changeDateOfOccurrence) {
+		if(!changeDateOfOccurrence.getMinimalInternalClaim().isUnverified()) {
+			if(changeDateOfOccurrence.getChangePolicy() && changeDateOfOccurrence.getNewPolicySearchResult() != null) {
+				ListUnitsCriteriaDTO listUnitsCriteria = new ListUnitsCriteriaDTO();
+				listUnitsCriteria.setPolicyNumber(changeDateOfOccurrence.getNewPolicySearchResult().getPolicyNumber());
+				listUnitsCriteria.setRecordSrcCd(changeDateOfOccurrence.getNewPolicySearchResult().getRecordSrcCd());
+				listUnitsCriteria.setOccurrenceDate(changeDateOfOccurrence.getNewOccurrenceDate());
+				
+				RefreshUnitRequestDTO refreshUnitsRequest = new RefreshUnitRequestDTO();
+				refreshUnitsRequest.setClaimPolicyInformation(new ClaimPolicyInformationDTO());
+				refreshUnitsRequest.getClaimPolicyInformation().setClaimId(changeDateOfOccurrence.getClaimRequest().getClaimId());
+				refreshUnitsRequest.getClaimPolicyInformation().setCmpyLobId(changeDateOfOccurrence.getNewPolicySearchResult().getCompanyLobId());
+				refreshUnitsRequest.getClaimPolicyInformation().setLobCode(changeDateOfOccurrence.getNewPolicySearchResult().getLineOfBusiness());
+				refreshUnitsRequest.getClaimPolicyInformation().setPolicyExternalId(changeDateOfOccurrence.getNewPolicySearchResult().getPolicyExternalId());
+				refreshUnitsRequest.getClaimPolicyInformation().setPolicyId(changeDateOfOccurrence.getNewPolicySearchResult().getRecordId());
+				refreshUnitsRequest.getClaimPolicyInformation().setPolicyNumber(changeDateOfOccurrence.getNewPolicySearchResult().getPolicyNumber());
+				refreshUnitsRequest.getClaimPolicyInformation().setRecordSourceCode(changeDateOfOccurrence.getNewPolicySearchResult().getRecordSrcCd());
+				refreshUnitsRequest.setMarkOldUnitsAsInactive(true);
+				refreshUnitsRequest.setSelectedUnits(MuleServiceFactory.getService(PolicyImportService.class).listPolicyUnits(listUnitsCriteria));
+				//DE5922: Setting loss date because we need to check the whether  the claim policy unit coverage is effective.
+				//Fix @GR - 01/27/2016 - Use new loss date for policy search
+				refreshUnitsRequest.setOccurrenceDate(changeDateOfOccurrence.getNewOccurrenceDate());
+				
+				getPolicyHelper().refreshUnits(refreshUnitsRequest);
+			}
+		}
+		
+		MuleServiceFactory.getService(CWSClaimService.class).changeDateOfOccurrence(changeDateOfOccurrence);
+	
 	}	
 
 }

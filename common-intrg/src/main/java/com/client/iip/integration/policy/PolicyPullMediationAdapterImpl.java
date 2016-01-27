@@ -76,8 +76,7 @@ public class PolicyPullMediationAdapterImpl extends MuleEndpointAdapter
 	public Collection<ClaimsPolicySearchResultDTO> search(
 			ClaimsPolicySearchCriteriaDTO criteria) {
 
-		logger.info("Entering Policy Search with Criteria: {} ", criteria);
-		
+		logger.info("Entering Policy Search with Criteria: {} {}", criteria.getPolicyNumber(), criteria.getOccurrenceDate());		
 		//Load the Loss date for the logged in user
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 		if(authentication!=null && 	authentication.getPrincipal()!=null){
@@ -151,7 +150,7 @@ public class PolicyPullMediationAdapterImpl extends MuleEndpointAdapter
 	@Override
 	public PolicyDetailsDTO retrievePolicyDetails(PolicyImportRequestDTO req) {
 
-		logger.info("Entering Policy Retrieve Policy Details with Request: {} ", req.toString());
+		logger.info("Entering Policy Retrieve Policy Details with Request: {} {}", req.getPolicyNumber(), req.getOccurrenceDate());
 		
 		IIPUser user = null;
 		
@@ -162,8 +161,7 @@ public class PolicyPullMediationAdapterImpl extends MuleEndpointAdapter
 			}
 		}		
 		
-		//Get Occurrence date from SearchRequest if Occurrence date is null in PolicyImportRequest
-		
+		//Get Occurrence date from SearchRequest if available		
 		if(user != null && policyLossDateLookup.get(user.getUsername()) != null){
 			req.setOccurrenceDate((Date)policyLossDateLookup.get(user.getUsername()));
 		}
@@ -233,10 +231,28 @@ public class PolicyPullMediationAdapterImpl extends MuleEndpointAdapter
 	 */
 	@Override
 	public PolicyImportStatusDTO importPolicy(PolicyImportStatusDTO stat) {
-		PolicyImportRequestDTO req = stat.getRequest();
 
-		//PolicyImportProcessor policyImportProcessor = new PolicyImportProcessor();
-		logger.info("Entering Import Policy with Request: {} ", req.toString());
+		logger.info("Entering Import Policy with Request: {} {}", stat.getRequest().getPolicyNumber(), stat.getRequest().getOccurrenceDate());
+		
+		IIPUser user = null;
+
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		if(authentication!=null && 	authentication.getPrincipal()!=null){
+			if(authentication.getPrincipal() instanceof IIPUser){
+				user = (IIPUser) authentication.getPrincipal();
+			}
+		}		
+		
+		//Get Occurrence date from SearchRequest if available		
+		if(user != null && policyLossDateLookup.get(user.getUsername()) != null){
+			stat.getRequest().setOccurrenceDate((Date)policyLossDateLookup.get(user.getUsername()));
+		}
+		
+		if(user != null){
+			policyLossDateLookup.remove(user.getUsername());
+		}
+		
+		PolicyImportRequestDTO req = stat.getRequest();
 
 		ClientPolicyImportWrapperDTO policyImportWrapper = null;
 		PolicyImportStatusDTO importStatus = null;
@@ -311,7 +327,7 @@ public class PolicyPullMediationAdapterImpl extends MuleEndpointAdapter
 	public Collection<PolicyUnitDescDTO> listPolicyUnits(
 			ListUnitsCriteriaDTO req) {
 
-		logger.info("Entering List Policy Units with Request: {} ", req);
+		logger.info("Entering List Policy Units with Request: {} {}", req.getPolicyNumber(), req.getOccurrenceDate());
 
 		Object payload = null;
 		Collection<PolicyUnitDescDTO> policyUnits = null;
@@ -381,10 +397,26 @@ public class PolicyPullMediationAdapterImpl extends MuleEndpointAdapter
 	 */
 	@Override
 	public PolicyImportStatusDTO reImportPolicy(ReImportRequestDTO req) {
+
+		logger.info("Entering Re-Import Policy with Request: {} {}", req.getPolicyNumber(), req.getOccurrenceDate());
 		
-		//PolicyImportProcessor policyImportProcessor = new PolicyImportProcessor();
-		logger.info("Entering Re-Import Policy with Request: {} ", req);
-		//Convert Flex Collection to plain java collection type.
+		IIPUser user = null;
+		
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		if(authentication!=null && 	authentication.getPrincipal()!=null){
+			if(authentication.getPrincipal() instanceof IIPUser){
+				user = (IIPUser) authentication.getPrincipal();
+			}
+		}		
+		
+		//Get Occurrence date from SearchRequest if available		
+		if(user != null && policyLossDateLookup.get(user.getUsername()) != null){
+			req.setOccurrenceDate((Date)policyLossDateLookup.get(user.getUsername()));
+		}
+		
+		if(user != null){
+			policyLossDateLookup.remove(user.getUsername());
+		}
 		Collection<PolicyUnitDescDTO> units = new ArrayList<PolicyUnitDescDTO>();
 		for(PolicyUnitDescDTO unitDescDTO:req.getImportUnits()){
 			units.add(unitDescDTO);
