@@ -121,11 +121,6 @@ public class SFTPTasklet extends ResourcesItemReader implements Tasklet {
 		 File file = null;
 		 try{
 			 int writeCount = 0;
-			 if(protocol.equals("ftp")){
-				 channel = setupFTPChannel();	
-			 }else{
-				 channel = setupSFTPChannel();
-			 }
 			 Resource res = super.read();
 			 while(res != null) {
 				file = res.getFile();
