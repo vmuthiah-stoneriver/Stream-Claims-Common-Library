@@ -119,6 +119,7 @@ public class SFTPTasklet extends ResourcesItemReader implements Tasklet {
 	 @Override
 	 public RepeatStatus execute(StepContribution contribution, ChunkContext chunkContext) throws Exception {
 		 File file = null;
+		 Object channel = null;
 		 try{
 			 int writeCount = 0;
 			 Resource res = super.read();
