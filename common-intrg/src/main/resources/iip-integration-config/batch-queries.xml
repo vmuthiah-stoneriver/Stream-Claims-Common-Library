@@ -93,16 +93,15 @@
 	
 	<iipda:rdbms accessId="client.claims.batch.claimExport">
 		<iipda:content>
-						SELECT 
+						SELECT DISTINCT 
 							clm.CLM_ID claimId, 
 							clm.CLM_NO claimNumber
 						FROM 
 							CLAIM clm, CLAIM_CHANGE_TRACKING cct
 						WHERE clm.CLM_ID = cct.CLM_CHG_TRK_PK_ID
 							AND cct.CLM_CHG_TRK_AUDT_DTM > 
-								(SELECT COALESCE((SELECT BTCH_LST_RUN_DT FROM BATCH_LAST_RUN_DATE WHERE BTCH_JOB_TYP_CD = 'ClaimExport'),'1990-01-01') 
+								(SELECT COALESCE((SELECT COALESCE(AUDT_USER_UPDT_DTM, AUDT_USER_CREA_DTM) FROM BATCH_LAST_RUN_DATE WHERE BTCH_JOB_TYP_CD = 'ClaimExport'),'1990-01-01') 
 									FROM CYCLE_SYSTEM_DATE WHERE BUSN_DT_TYP_CD = 'busn_dt')
-						Dialect.getFetchRowExpression(5, null)
 		</iipda:content>
 		<iipda:description>
 			Retrieve updated claims from the last batch run date.
