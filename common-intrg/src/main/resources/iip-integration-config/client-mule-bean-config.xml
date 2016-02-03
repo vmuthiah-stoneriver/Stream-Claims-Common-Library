@@ -241,12 +241,12 @@ http://www.mulesoft.org/schema/mule/servlet http://www.mulesoft.org/schema/mule/
 	</flow>   
    
 	<spring:beans>
-	       <spring:bean
-         id=" claims.serviceObject.claimReserveRecoveryService"
-         class="com.client.iip.integration.claim.imports.ClientClaimReserveRecoveryServiceImpl" />
-         
-		<spring:bean id="entconfig.iipservice.date"
-			class="com.client.iip.integration.core.util.ClientDateServiceImpl" />
+ 			<spring:bean id="claims.pojo.composite.claimsComposite" 
+				class="com.client.iip.integration.claim.ClientClaimsCompositeServiceImpl" />
+	       <spring:bean  id=" claims.serviceObject.claimReserveRecoveryService"
+	         class="com.client.iip.integration.claim.imports.ClientClaimReserveRecoveryServiceImpl" />         
+			<spring:bean id="entconfig.iipservice.date"
+				class="com.client.iip.integration.core.util.ClientDateServiceImpl" />
 	</spring:beans>
    
    	<!-- Transformer used for converting XML message to Object -->

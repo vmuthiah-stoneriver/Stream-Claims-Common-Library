@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 
+import com.client.iip.integration.user.ClientUserDetailsService;
 import com.fiserv.isd.iip.bc.financials.batch.FinancialsBatchConstants;
 import com.fiserv.isd.iip.bc.financials.disbursement.DisbursementAddressDTO;
 import com.fiserv.isd.iip.bc.financials.disbursement.DisbursementBankAccountSummaryDTO;
@@ -31,6 +32,7 @@ import com.fiserv.isd.iip.core.service.MuleServiceFactory;
 import com.stoneriver.iip.claims.reserve.ClaimReserveConstants;
 import com.stoneriver.iip.entconfig.date.BusinessDateType;
 import com.stoneriver.iip.entconfig.date.DateService;
+import com.stoneriver.iip.entconfig.sa.api.users.UserInfoDTO;
 
 /**
  * Helper class to export payment to external system.
@@ -103,7 +105,9 @@ public class ClientPaymentPayeeEFTProcessor extends BasePaymentProcessor impleme
 				emailAddress = minimalPartyContactDTO.getEmailAddress();
 			}
 		}*/
-		PaymentPayeeEFTDTO paymentPayeeEFTDTO = new PaymentPayeeEFTDTO();
+		ClientPaymentPayeeEFTDTO paymentPayeeEFTDTO = new ClientPaymentPayeeEFTDTO();
+		UserInfoDTO userInfo = MuleServiceFactory.getService(ClientUserDetailsService.class).retrieveUser(disbursementPartyDTO.getUserIdCreated());
+		paymentPayeeEFTDTO.setRequestedBy(userInfo.getUserDisplayName());		
 		paymentPayeeEFTDTO.setRecordTypeId(new BigDecimal(220));
 		if (disbursementPartyDTO != null) {
 			paymentPayeeEFTDTO.setPrimaryPayeeName(disbursementPartyDTO.getPartyPayeePrimaryNameDerived());

@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import com.client.iip.integration.user.ClientUserDetailsService;
 import com.fiserv.isd.iip.bc.financials.disbursement.DisbursementAddressDTO;
 import com.fiserv.isd.iip.bc.financials.disbursement.DisbursementConstants;
 import com.fiserv.isd.iip.bc.financials.disbursement.DisbursementDTO;
@@ -20,6 +21,7 @@ import com.fiserv.isd.iip.bc.party.api.PartyContextCriteria;
 import com.fiserv.isd.iip.bc.party.api.PartyInteractionChannelDataDTO;
 import com.fiserv.isd.iip.core.meta.annotation.Pojo;
 import com.fiserv.isd.iip.core.service.MuleServiceFactory;
+import com.stoneriver.iip.entconfig.sa.api.users.UserInfoDTO;
 
 /**
  * Helper class to export payment to external system.
@@ -71,7 +73,9 @@ public class ClientPaymentPayeeCheckProcessor extends BasePaymentProcessor imple
 				emailAddress = minimalPartyContactDTO.getEmailAddress();
 			}
 		}*/
-		PaymentPayeeCheckDTO paymentPayeeCheckDTO = new PaymentPayeeCheckDTO();
+		ClientPaymentPayeeCheckDTO paymentPayeeCheckDTO = new ClientPaymentPayeeCheckDTO();
+		UserInfoDTO userInfo = MuleServiceFactory.getService(ClientUserDetailsService.class).retrieveUser(disbursementPartyDTO.getUserIdCreated());
+		paymentPayeeCheckDTO.setRequestedBy(userInfo.getUserDisplayName());
 		paymentPayeeCheckDTO.setRecordTypeId(new BigDecimal(210));
 		if (disbursementPartyDTO != null) {
 			paymentPayeeCheckDTO.setPrimaryPayeeName(disbursementPartyDTO.getPartyPayeePrimaryNameDerived());

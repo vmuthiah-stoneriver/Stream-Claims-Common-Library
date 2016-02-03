@@ -29,6 +29,45 @@
 					</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<!--  Attributes below used by glBalance Job -->
+			<xs:element name="runType" type="string"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Defaulted to dd, Indicates if Daily or Monthly run.
+						Use mm for Monthly run
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="companyID" type="string"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>GL Company ID.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="acctgPeriodMonth" type="int"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Defaulted to current month, Accounting month.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="acctgPeriodYr" type="int"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Defaulted to current year, Accounting year.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="acctgYearBasisCd" type="string"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Defaulted to cal, Accounting basis</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="busDate" type="dateType"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Defaulted to system business date, Run Batch on Business Date.</xs:documentation>
+				</xs:annotation>
+			</xs:element>				
 		</xs:sequence>
 	</xs:complexType>
 </xs:schema>  

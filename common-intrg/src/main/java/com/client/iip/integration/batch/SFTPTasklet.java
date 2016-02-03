@@ -9,6 +9,7 @@ import java.util.Date;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.lang.StringUtils;
+import org.apache.commons.net.ftp.FTPClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.batch.core.StepContribution;
@@ -36,7 +37,7 @@ public class SFTPTasklet extends ResourcesItemReader implements Tasklet {
 	@javax.annotation.Resource(name = "stepExecutionListener")
 	private StepExecutionListenerCtxInjecter stepExecutionListener;
 	
-	private ChannelSftp channel;
+	private Object channel;
 	
 	private String user;
 	
@@ -53,8 +54,18 @@ public class SFTPTasklet extends ResourcesItemReader implements Tasklet {
     private String privateKeyPassphrase;
     
     private String filePath;
+    
+    private String protocol = "sftp";
 
     
+	/**
+	 * @param protocol the protocol to set
+	 */
+	public void setProtocol(String protocol) {
+		this.protocol = protocol;
+	}
+
+
 	@BeforeStep
 	public void beforeStep(StepExecution _stepExecution) throws Exception 
 	{
@@ -108,19 +119,22 @@ public class SFTPTasklet extends ResourcesItemReader implements Tasklet {
 	 @Override
 	 public RepeatStatus execute(StepContribution contribution, ChunkContext chunkContext) throws Exception {
 		 File file = null;
+		 channel = null;
 		 try{
 			 int writeCount = 0;
-			 channel = setupSFTPChannel();
 			 Resource res = super.read();
 			 while(res != null) {
 				file = res.getFile();
 				if (file.exists()) {
 					/*Message message = MessageBuilder.withPayload(file).build();
 				    sftpChannel.send(message);*/
-
+					if (channel == null) initChannel();
 		            FileInputStream fileInput = new FileInputStream(file);
-		            
-		            channel.put(fileInput, file.getName());
+		            if(protocol.equals("ftp")){
+		            	((FTPClient)channel).storeFile(file.getName(), fileInput);
+		            }else{
+		            	((ChannelSftp)channel).put(fileInput, file.getName());
+		            }
 
 		            fileInput.close();
 				    //If sucessful then move the file to the bak folder
@@ -137,16 +151,47 @@ public class SFTPTasklet extends ResourcesItemReader implements Tasklet {
 			return RepeatStatus.FINISHED;
 		 }catch(Exception ex){
 			ex.printStackTrace();
-			logger.error("File Transmission Failed :" + file==null?"":file.getName(), ex);
+			logger.error("File Transmission Failed :" + (file==null?"":file.getName()), ex);
 			//BatchUtils.writeIntoBatchLog(stepExecutionListener.getStepExecution(), "clm",
 			//		"File Transmission Failed : " + file==null?"":file.getName(), ex);
-			throw new Exception("File Transmission Failed " + file==null?"":file.getName(), ex);				 
+			throw new Exception("File Transmission Failed " + (file==null?"":file.getName()), ex);				 
 		 }finally{
 			 if(channel != null){
-				 channel.getSession().disconnect();
-				 channel.exit();
+				 closeChannel();
 			 }
 		 }
+	 }
+	 
+	 public void initChannel() throws Exception{		
+		 if(protocol.equals("ftp")){
+			 channel = setupFTPChannel();	
+		 }else{
+			 channel = setupSFTPChannel();
+		 }		 
+	 }
+	 
+	 
+	 public void closeChannel() throws Exception{
+		 if(protocol.equals("ftp")){
+			 ((FTPClient)channel).logout();
+			 ((FTPClient)channel).disconnect();
+		 }else{
+			 ((ChannelSftp)channel).getSession().disconnect();
+			 ((ChannelSftp)channel).exit();
+		 }		 
+	 }
+	 
+	 public FTPClient setupFTPChannel() throws Exception{
+		 
+		 FTPClient channel = new FTPClient();
+
+	     logger.info("Setting up session: " + user + ":" + host + ":" + port);
+
+		 channel.connect(host, port);
+		 
+		 channel.login(user, password);
+		 channel.changeWorkingDirectory(remoteDirectory);
+		 return channel;
 	 }
 	 
 	 public ChannelSftp setupSFTPChannel() throws Exception{
@@ -154,7 +199,7 @@ public class SFTPTasklet extends ResourcesItemReader implements Tasklet {
 	        JSch jsch = new JSch();
 	        Session session;
 
-	        logger.debug("Setting up session: " + user + ":" + host + ":" + port);
+	        logger.info("Setting up session: " + user + ":" + host + ":" + port);
 
 	        if (StringUtils.isNotEmpty(privateKeyPath) && StringUtils.isNotEmpty(privateKeyPassphrase)) {
 	            logger.debug("Adding Security Identity: " + privateKeyPath + ":" + privateKeyPassphrase);
@@ -169,7 +214,7 @@ public class SFTPTasklet extends ResourcesItemReader implements Tasklet {
             config.put("StrictHostKeyChecking", "no");
             session.setConfig(config);
             session.connect();
-            channel = (ChannelSftp)session.openChannel("sftp");            
+            ChannelSftp channel = (ChannelSftp)session.openChannel("sftp");            
             channel.connect();            
             channel.cd(remoteDirectory);
             return channel;

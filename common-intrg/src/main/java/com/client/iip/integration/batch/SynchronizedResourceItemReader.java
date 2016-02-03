@@ -18,6 +18,7 @@ import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.client.iip.integration.core.security.PGPEncryption;
 import com.client.iip.integration.core.util.XSDValidator;
 
 
@@ -30,6 +31,26 @@ public class SynchronizedResourceItemReader extends
 	
 	private String filePath;
 	
+	private PGPEncryption pgpBean;
+	
+	private String privateKeyPassphrase;
+	
+
+
+	/**
+	 * @param privateKeyPassphrase the privateKeyPassphrase to set
+	 */
+	public void setPrivateKeyPassphrase(String privateKeyPassphrase) {
+		this.privateKeyPassphrase = privateKeyPassphrase;
+	}
+
+	/**
+	 * @param pgpBean the pgpBean to set
+	 */
+	public void setPgpBean(PGPEncryption pgpBean) {
+		this.pgpBean = pgpBean;
+	}
+
 	@BeforeStep
 	public void beforeStep(StepExecution _stepExecution) throws Exception 
 	{
@@ -81,6 +102,10 @@ public class SynchronizedResourceItemReader extends
 	    Resource res = super.read();
 	    if(res != null){
 		    String strXML = FileUtils.readFileToString(res.getFile());
+		    //Decrypt Payload
+	    	if(pgpBean != null){
+	    		strXML = new String(pgpBean.decrypt(strXML, privateKeyPassphrase));
+	    	}		    
 			//Validate against XSD
 		    if(xsdFileName != null){
 		    	XSDValidator xsdval = new XSDValidator();

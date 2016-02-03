@@ -20,7 +20,7 @@
 						minOccurs="0" maxOccurs="1">
 						<xs:annotation>
 							<xs:documentation>Specific communication type, Maps to
-								USAGE_TYPE_CD Table. from USG_TYP_CD Column.</xs:documentation>
+								USAGE_TYPE_CD Table from USG_TYP_CD Column.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="interactionChannelTypeAddress" type="string"

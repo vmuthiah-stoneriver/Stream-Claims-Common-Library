@@ -1,4 +1,5 @@
 <clientBatchJobRequest>
 	<jobName>ClmPrdcEvnt</jobName>
 	<runOnSystemDate>true</runOnSystemDate>
+	<runType>dd</runType>
 </clientBatchJobRequest>

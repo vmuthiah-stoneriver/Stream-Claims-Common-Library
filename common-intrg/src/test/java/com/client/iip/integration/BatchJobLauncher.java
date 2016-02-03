@@ -6,6 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Enumeration;
 import java.util.HashMap;
@@ -66,6 +67,25 @@ public class BatchJobLauncher {
 			hm.put(name, value);
 		}
 		
+		//Initialize additional properties
+		Calendar cal = Calendar.getInstance();
+		cal.setTime(new Date());
+		if(hm.get("ACCTMONTH") == null){
+			hm.put("ACCTMONTH", String.valueOf(cal.get(Calendar.MONTH)+1));
+		}
+		if(hm.get("ACCTYEAR") == null){
+			hm.put("ACCTYEAR", String.valueOf(cal.get(Calendar.YEAR)));			
+		}
+		if(hm.get("ACCTBASIS") == null){
+			hm.put("ACCTBASIS", "cal");	
+		}
+		if(hm.get("BUSDATE") == null){
+			hm.put("BUSDATE", "1970-01-01");	
+		}
+		if(hm.get("FREQUENCY") == null){
+			hm.put("FREQUENCY", "dd");
+		}
+		
     }catch(Exception ex){
     	logger.info("Exception while reading properties file");    	
     	ex.printStackTrace();
@@ -78,9 +98,13 @@ public class BatchJobLauncher {
 		loadPropFile();
 	}
 	
-	public void launch(String jobName, String mode){
+	public void launch(String jobName, String mode, String frequency){
 		
 		logger.info("Launching Batch Job with JobName : " + jobName + " Mode : " + mode);
+		
+		if(!frequency.equals("DEFAULT")){
+			hm.put("FREQUENCY", "mm");
+		}
 		
 		FileInputStream input = null;
 		
@@ -237,17 +261,14 @@ public class BatchJobLauncher {
 	
 	
 	public static void main(String[] args) throws Exception{
-		logger.info("Batch Launch Begin");
+		logger.info("Batch Launch Begin : ");
 		BatchJobLauncher batch = new BatchJobLauncher();
-		//System.out.println(" Batch Launcher Command - BatchJobLauncher (No arguments by default will invoke jobs sequence configured in Batch_client.properties) \n");
-		//System.out.println(" 						- BatchJobLauncher RUN AcctsPayableExp ( Runs the Requested Job) \n");
-		//System.out.println(" 						- BatchJobLauncher RESTART AcctsPayableExp ( Restarts the Job and continues the execute the remaining jobs defined in Batch_client.properties)");
-		//System.out.println("This script will terminate when a Job errors in the sequence. Choose RUN <jobName> option for running a single Job.");
-		//System.out.println(" All jobs must be defined in Batch_client.properties.");
 		if((args.length == 2 && !args[0].equals("RESTART") && !args[0].equals("RUN"))
 				|| args.length == 1 )
-				throw new Exception("Invalid Argument - Valid Arguments are RESTART <jobName> or RUN <jobName>");		
-		batch.launch(args.length == 0?"DEFAULT":args[1], args.length == 0?"DEFAULT":args[0]);
+				throw new Exception("Invalid Argument - Valid Arguments are RESTART <jobName> or RUN <jobName>");
+		else if(args.length == 3 && (!args[0].equals("RUN") || !args[2].equals("MONTHLY")))
+			throw new Exception("Invalid Argument - Valid Arguments are RUN <jobName> MONTHLY - No argument defaults to DAILY");
+		batch.launch(args.length < 2?"DEFAULT":args[1], args.length < 1?"DEFAULT":args[0], args.length < 3?"DEFAULT":args[2]);
 		logger.info("Batch Launch End");
 	}	
 }
